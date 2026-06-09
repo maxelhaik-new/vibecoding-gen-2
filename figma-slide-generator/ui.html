@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --figma-bg: var(--figma-color-bg, #2c2c2c);
+      --figma-bg-secondary: var(--figma-color-bg-secondary, #383838);
+      --figma-text: var(--figma-color-text, #ffffff);
+      --figma-text-secondary: var(--figma-color-text-secondary, #b3b3b3);
+      --figma-border: var(--figma-color-border, #444444);
+      --figma-brand: var(--figma-color-bg-brand, #0c8ce9);
+      --figma-brand-hover: var(--figma-color-bg-brand-hover, #1096f2);
+      --figma-brand-text: var(--figma-color-text-onbrand, #ffffff);
+      --figma-danger: #f24822;
+      --figma-success: #14ae5c;
+      --figma-warning: #ffcd29;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: var(--figma-bg);
+      color: var(--figma-text);
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      margin: 0;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      gap: 10px;
+      user-select: none;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    h2 {
+      font-size: 11px;
+      font-weight: 600;
+      margin: 0;
+      color: var(--figma-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 4px;
+    }
+
+    .icon-btn {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--figma-text);
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+
+    .icon-btn:hover {
+      background: var(--figma-bg-secondary);
+      border-color: var(--figma-border);
+    }
+
+    .icon-btn:active {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .icon-btn.active {
+      background: rgba(12, 140, 233, 0.15);
+      border-color: var(--figma-brand);
+      color: var(--figma-brand);
+    }
+
+    .primary-btn {
+      background: var(--figma-brand);
+      color: var(--figma-brand-text);
+      border: 1px solid transparent;
+    }
+
+    .primary-btn:hover {
+      background: var(--figma-brand-hover);
+    }
+
+    .counter-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--figma-bg-secondary);
+      border: 1px solid var(--figma-border);
+      border-radius: 5px;
+      padding: 5px 8px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--figma-text-secondary);
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+      height: 24px;
+    }
+
+    .counter-badge.active {
+      border-color: var(--figma-brand);
+      color: var(--figma-text);
+    }
+
+    .counter-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--figma-text-secondary);
+      flex-shrink: 0;
+    }
+
+    .counter-badge.active .dot {
+      background-color: var(--figma-brand);
+      box-shadow: 0 0 4px var(--figma-brand);
+    }
+
+    .counter-badge .count-number {
+      font-weight: 600;
+      color: var(--figma-text);
+    }
+
+    .main-actions {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .main-actions .icon-btn {
+      flex: 1;
+      height: 36px;
+      border: 1px solid var(--figma-border);
+    }
+
+    .main-actions .primary-btn {
+      border: 1px solid transparent;
+    }
+
+    #status {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--figma-text-secondary);
+      text-align: center;
+      margin-top: auto;
+      padding-bottom: 2px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .success { color: var(--figma-success) !important; }
+    .error   { color: var(--figma-danger) !important; }
+    .warning { color: var(--figma-warning) !important; }
+
+    #resize-handle {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 12px;
+      height: 12px;
+      cursor: se-resize;
+      z-index: 99999;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h2>Vibe Slides</h2>
+    <div class="header-actions">
+      <button id="replaceImageBtn" class="icon-btn" title="Remplacer l'image">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+      </button>
+      <button id="renameBtn" class="icon-btn" title="Auto-renommer le template">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="counterBadge" class="counter-badge">
+    <span class="dot"></span>
+    <span id="counterText" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">Aucune sélection</span>
+  </div>
+
+  <div class="main-actions">
+    <!-- Paste & Generate -->
+    <button id="generateBtn" class="icon-btn primary-btn" title="Générer / Corriger depuis le presse-papier">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+        <path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/>
+      </svg>
+    </button>
+
+    <!-- Split -->
+    <button id="splitBtn" class="icon-btn" title="Découper les étapes">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" x2="8.12" y1="4" y2="15.88"/><line x1="14.47" x2="20" y1="14.48" y2="20"/><line x1="8.12" x2="12" y1="8.12" y2="12"/>
+      </svg>
+    </button>
+
+    <!-- Prototype -->
+    <button id="prototypeBtn" class="icon-btn" title="Lier le prototype">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="16" y="16" width="6" height="6" rx="1" /><rect x="2" y="16" width="6" height="6" rx="1" /><rect x="9" y="2" width="6" height="6" rx="1" /><path d="M5 16v-3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3" /><path d="M12 8v3" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Zone de collage masquée pour contourner les restrictions Electron/Figma -->
+  <textarea id="hiddenPasteArea" style="position: fixed; left: -9999px; opacity: 0;" tabindex="-1"></textarea>
+
+  <div id="status">Prêt</div>
+
+  <script>
+    const generateBtn     = document.getElementById('generateBtn');
+    const renameBtn       = document.getElementById('renameBtn');
+    const replaceImageBtn = document.getElementById('replaceImageBtn');
+    const splitBtn        = document.getElementById('splitBtn');
+    const prototypeBtn    = document.getElementById('prototypeBtn');
+    const statusDiv       = document.getElementById('status');
+    const hiddenPasteArea = document.getElementById('hiddenPasteArea');
+
+    // Fonction commune de traitement du JSON
+    function handlePasteData(text) {
+      if (!text || !text.trim()) {
+        showStatus('Presse-papier vide', 'error');
+        return;
+      }
+      try {
+        let cleanText = text.trim();
+        // Nettoyage markdown
+        if (cleanText.startsWith('```json')) {
+          cleanText = cleanText.replace(/^```json/, '').replace(/```$/, '').trim();
+        } else if (cleanText.startsWith('```')) {
+          cleanText = cleanText.replace(/^```/, '').replace(/```$/, '').trim();
+        }
+
+        const parsed = JSON.parse(cleanText);
+        showStatus('Traitement en cours...', '');
+        if (parsed.corrections && Array.isArray(parsed.corrections)) {
+          parent.postMessage({ pluginMessage: { type: 'apply-corrections', data: parsed } }, '*');
+        } else {
+          parent.postMessage({ pluginMessage: { type: 'generate-slides', data: parsed } }, '*');
+        }
+      } catch (err) {
+        console.error(err);
+        showStatus('JSON invalide', 'error');
+      }
+    }
+
+    // Clic sur le bouton d'envoi : on focus la zone cachée et on invite à faire Cmd+V
+    generateBtn.onclick = () => {
+      hiddenPasteArea.focus();
+      showStatus('👉 Faites Cmd+V pour coller', 'warning');
+    };
+
+    // Écouteur global de paste (si le plugin est simplement focus)
+    window.addEventListener('paste', (e) => {
+      const text = e.clipboardData.getData('text');
+      if (text) {
+        handlePasteData(text);
+      }
+    });
+
+    // Écouteur de paste sur la zone cachée
+    hiddenPasteArea.addEventListener('paste', (e) => {
+      e.stopPropagation(); // Évite le double déclenchement sur window
+      const text = e.clipboardData.getData('text');
+      if (text) {
+        handlePasteData(text);
+      }
+    });
+
+    renameBtn.onclick = () => {
+      showStatus('Analyse...', '');
+      parent.postMessage({ pluginMessage: { type: 'rename-template' } }, '*');
+    };
+
+    replaceImageBtn.onclick = () => {
+      parent.postMessage({ pluginMessage: { type: 'toggle-replace-mode' } }, '*');
+    };
+
+    splitBtn.onclick = () => {
+      showStatus('Découpage...', '');
+      parent.postMessage({ pluginMessage: { type: 'split-slides' } }, '*');
+    };
+
+    prototypeBtn.onclick = () => {
+      showStatus('Prototypage...', '');
+      parent.postMessage({ pluginMessage: { type: 'prototype-slides' } }, '*');
+    };
+
+    window.onmessage = (event) => {
+      const msg = event.data.pluginMessage;
+      if (msg.type === 'success') {
+        showStatus(msg.message, 'success');
+      } else if (msg.type === 'error') {
+        showStatus(msg.message, 'error');
+      } else if (msg.type === 'warning') {
+        showStatus(msg.message, 'warning');
+      } else if (msg.type === 'replace-mode-state') {
+        if (msg.active) {
+          replaceImageBtn.classList.add('active');
+          showStatus('Sélectionnez la source...', 'warning');
+        } else {
+          replaceImageBtn.classList.remove('active');
+          showStatus('Prêt', '');
+        }
+      } else if (msg.type === 'selection-update') {
+        const badge = document.getElementById('counterBadge');
+        const text  = document.getElementById('counterText');
+        if (msg.count > 0) {
+          badge.classList.add('active');
+          if (msg.text && msg.text.startsWith('Icône détectée')) {
+            text.innerHTML = `<strong>${msg.name}</strong>`;
+          } else {
+            text.innerHTML = `<span class="count-number">${msg.count}</span> car. &mdash; "${msg.name}"`;
+          }
+        } else {
+          badge.classList.remove('active');
+          text.textContent = 'Aucune sélection';
+        }
+      } else if (msg.type === 'fetch-assets') {
+        async function fetchIcon(task) {
+          try {
+            const response = await fetch(task.url);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            if (task.type === 'image') {
+              const buffer = await response.arrayBuffer();
+              const bytes = Array.from(new Uint8Array(buffer));
+              return { id: task.id, name: task.name, type: 'image', data: bytes };
+            } else {
+              const text = await response.text();
+              return { id: task.id, name: task.name, type: 'icon', data: text };
+            }
+          } catch (e) {
+            return { id: task.id, name: task.name, type: task.type || 'icon', error: true, message: e.message };
+          }
+        }
+        Promise.all(msg.tasks.map(fetchIcon)).then(results => {
+          parent.postMessage({ pluginMessage: { type: 'assets-loaded', results } }, '*');
+        });
+      }
+    };
+
+    function showStatus(text, className) {
+      statusDiv.textContent = text;
+      statusDiv.className = className;
+    }
+
+    const resizeHandle = document.getElementById('resize-handle');
+    let isResizing = false;
+    let startWidth, startHeight, startX, startY;
+
+    resizeHandle.addEventListener('pointerdown', (e) => {
+      isResizing = true;
+      startWidth = window.innerWidth;
+      startHeight = window.innerHeight;
+      startX = e.screenX;
+      startY = e.screenY;
+      resizeHandle.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+
+    resizeHandle.addEventListener('pointermove', (e) => {
+      if (!isResizing) return;
+      const dx = e.screenX - startX;
+      const dy = e.screenY - startY;
+      const width = Math.round(Math.max(240, startWidth + dx));
+      const height = Math.round(Math.max(170, startHeight + dy));
+      parent.postMessage({ pluginMessage: { type: 'resize-window', width, height } }, '*');
+    });
+
+    const stopResize = (e) => {
+      if (isResizing) {
+        isResizing = false;
+        try { resizeHandle.releasePointerCapture(e.pointerId); } catch (err) {}
+      }
+    };
+
+    resizeHandle.addEventListener('pointerup', stopResize);
+    resizeHandle.addEventListener('pointercancel', stopResize);
+  </script>
+  <div id="resize-handle">
+    <svg width="8" height="8" viewBox="0 0 10 10" fill="none" style="opacity: 0.35;">
+      <path d="M10 0 L0 10 M10 4 L4 10 M10 8 L8 10" stroke="var(--figma-text-secondary)" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+  </div>
+</body>
+</html>

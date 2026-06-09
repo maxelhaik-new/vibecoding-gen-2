@@ -1,0 +1,3457 @@
+/* ICON CATALOG */
+
+position: relative;
+width: 3436px;
+height: 9911px;
+
+background: #EBEBEB;
+border: 200px solid #E74C3C;
+border-radius: 2px;
+
+
+/* Frame 273 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 693px;
+height: 147px;
+left: 681px;
+top: calc(50% - 147px/2 - 1967px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:script-text */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #000000;
+
+
+/* Introduction */
+
+width: 463px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 274 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1447.07px;
+height: 146.93px;
+left: 681px;
+top: calc(50% - 146.93px/2 - 538.05px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:numbers */
+
+width: 95px;
+height: 95px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 16.67%;
+bottom: 16.67%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Midjourney en quelques chiffres */
+
+width: 1217px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 275 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1342px;
+height: 136.73px;
+left: 681px;
+top: calc(50% - 136.73px/2 - 78.08px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:podium-gold */
+
+width: 85px;
+height: 85px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.17%;
+right: 4.16%;
+top: 4.17%;
+bottom: 4.16%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Les avantages de Midjourney */
+
+width: 1122px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 276 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 939px;
+height: 147px;
+left: 681px;
+top: calc(50% - 147px/2 - 3939px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:seedling */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 16.41%;
+bottom: 8.33%;
+
+background: #000000;
+
+
+/* Le concept de seed */
+
+width: 709px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 277 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1003px;
+height: 147px;
+left: 681px;
+top: calc(50% - 147px/2 - 3098px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:code-less-than-or-equal */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+background: #000000;
+
+
+/* Le paramètre --seed */
+
+width: 773px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 278 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 971.07px;
+height: 146.93px;
+left: 681px;
+top: calc(50% - 146.93px/2 - 2128.72px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:magic */
+
+width: 95px;
+height: 95px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.16%;
+right: 8.33%;
+top: 8.33%;
+bottom: 4.15%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* La qualité de rendu */
+
+width: 741px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 279 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1498.07px;
+height: 146.93px;
+left: 681px;
+top: calc(50% - 146.93px/2 + 866.91px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:sword-fight */
+
+width: 95px;
+height: 95px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 8.36%;
+right: 8.36%;
+top: 16.67%;
+bottom: 12.51%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Midjourney face aux alternatives */
+
+width: 1268px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 280 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1436.07px;
+height: 146.93px;
+left: 681px;
+top: calc(50% - 146.93px/2 + 391.96px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:city-variant */
+
+width: 95px;
+height: 95px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Quelques usages professionnels */
+
+width: 1206px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 285 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1569.07px;
+height: 146.93px;
+left: 681px;
+top: calc(50% - 146.93px/2 - 2613.14px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:flowchart */
+
+width: 95px;
+height: 95px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.17%;
+right: 4.17%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Un workflow adapté à la correction */
+
+width: 1339px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 286 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1478.07px;
+height: 146.93px;
+left: 681px;
+top: calc(50% - 146.93px/2 - 3455.07px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:format-textbox */
+
+width: 95px;
+height: 95px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Réduire les erreurs liées au texte */
+
+width: 1248px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 287 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1300.98px;
+height: 146.93px;
+left: 681px;
+top: calc(50% - 146.93px/2 - 3616.95px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:format-paint */
+
+width: 95px;
+height: 95px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 16.67%;
+right: 12.5%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Réduire les artefacts visuels */
+
+width: 1070.91px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 288 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1284.42px;
+height: 146.93px;
+left: 681px;
+top: calc(50% - 146.93px/2 - 2774.94px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:mixer-settings-vertical */
+
+width: 95px;
+height: 95px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Bien choisir ses paramètres */
+
+width: 1054.36px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 284 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1527px;
+height: 147px;
+left: 681px;
+top: calc(50% - 147px/2 - 1806px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:check-decagram */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.17%;
+right: 4.17%;
+top: 6.42%;
+bottom: 6.37%;
+
+background: #000000;
+
+
+/* Mettre en place la bonne méthode */
+
+width: 1297px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 283 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1109.07px;
+height: 146.93px;
+left: 681px;
+top: calc(50% - 146.93px/2 - 1483.81px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:format-text-variant-outline */
+
+width: 95px;
+height: 95px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 14.57%;
+right: 14.57%;
+top: 12.5%;
+bottom: 12.5%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Problèmes liés au texte */
+
+width: 879px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 282 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1383px;
+height: 147px;
+left: calc(50% - 1383px/2 - 345.5px);
+top: calc(50% - 147px/2 + 79px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:stop-alert */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+background: #000000;
+
+
+/* Les limites de MidJourney */
+
+width: 1608px;
+height: 66px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 100px;
+line-height: 92px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 281 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 623.07px;
+height: 146.93px;
+left: 681px;
+top: calc(50% - 146.93px/2 + 554.53px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:text-short */
+
+width: 95px;
+height: 95px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 16.67%;
+right: 16.67%;
+top: 37.5%;
+bottom: 37.5%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* En résumé */
+
+width: 393px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 289 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1488px;
+height: 137px;
+left: 681px;
+top: calc(50% - 137px/2 + 1024px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:court-hammer */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 8.36%;
+right: 7.95%;
+top: 7.91%;
+bottom: 8.33%;
+
+background: #000000;
+
+
+/* Midjourney et ses enjeux éthique */
+
+width: 1258px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 290 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1419px;
+height: 137px;
+left: 681px;
+top: calc(50% - 137px/2 - 381px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:robber */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #000000;
+
+
+/* Des risques liés aux utilisations */
+
+width: 1189px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 291 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1666px;
+height: 181px;
+left: calc(50% - 1666px/2 - 204px);
+top: calc(50% - 181px/2 - 3276px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:art */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+background: #000000;
+
+
+/* Générer une palette de couleurs */
+
+width: 1453px;
+height: 66px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 100px;
+line-height: 92px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 297 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1387px;
+height: 147px;
+left: 681px;
+top: calc(50% - 147px/2 - 2290px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:aspect-ratio */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.17%;
+right: 4.17%;
+top: 12.5%;
+bottom: 12.5%;
+
+background: #000000;
+
+
+/* Faire varier le ratio de l’image */
+
+width: 1157px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 295 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1309px;
+height: 223px;
+left: calc(50% - 1309px/2 - 382.5px);
+top: calc(50% - 223px/2 - 1123px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:mixer-settings */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+background: #000000;
+
+
+/* La gestion des paramètres techniques */
+
+width: 1096px;
+height: 158px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 100px;
+line-height: 92px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 296 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1371.07px;
+height: 146.93px;
+left: 681px;
+top: calc(50% - 146.93px/2 - 2937px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:dinosaur-pixel */
+
+width: 95px;
+height: 95px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Les paramètres de génération */
+
+width: 1141px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 293 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1547px;
+height: 147px;
+left: 681px;
+top: calc(50% - 147px/2 - 1645px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:microscope */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 14.58%;
+right: 10.42%;
+top: 8.63%;
+bottom: 8.33%;
+
+background: #000000;
+
+
+/* Anatomie d’un prompt Midjourney */
+
+width: 1317px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 294 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1231px;
+height: 147px;
+left: 681px;
+top: calc(50% - 147px/2 - 2451px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:123 */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 29.17%;
+bottom: 29.17%;
+
+background: #000000;
+
+
+/* L’ordre a une importance ! */
+
+width: 1001px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 292 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1712px;
+height: 211px;
+left: calc(50% - 1712px/2 - 181px);
+top: calc(50% - 211px/2 - 892px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:code-braces-box */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+background: #000000;
+
+
+/* Le prompt engineering spécifique à l’outil Midjourney */
+
+width: 1503px;
+height: 158px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 100px;
+line-height: 92px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 299 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1184px;
+height: 147px;
+left: 681px;
+top: calc(50% - 147px/2 - 699px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:podium-gold */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.17%;
+right: 4.17%;
+top: 4.17%;
+bottom: 4.17%;
+
+background: #000000;
+
+
+/* Optimiser son prompting */
+
+width: 954px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 298 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1647px;
+height: 147px;
+left: 681px;
+top: calc(50% - 147px/2 - 1322px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:check-decagram */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.17%;
+right: 4.17%;
+top: 6.42%;
+bottom: 6.37%;
+
+background: #000000;
+
+
+/* Règles d’or du prompting Midjourney */
+
+width: 1417px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 300 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1264px;
+height: 147px;
+left: 681px;
+top: calc(50% - 147px/2 - 3778px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:code-braces-box */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 12.5%;
+bottom: 12.5%;
+
+background: #000000;
+
+
+/* La fonction describe */
+
+width: 1034px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 310 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1419px;
+height: 137px;
+left: 681px;
+top: calc(50% - 137px/2 + 711px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:robber */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #000000;
+
+
+/* Des risques liés aux utilisations */
+
+width: 1189px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 311 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1604px;
+height: 147px;
+left: 681px;
+top: calc(50% - 147px/2 + 1180px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:check-decagram */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.17%;
+right: 4.17%;
+top: 6.42%;
+bottom: 6.37%;
+
+background: #000000;
+
+
+/* Notre responsabilité sur Midjourney */
+
+width: 1374px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 317 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1643px;
+height: 218px;
+left: calc(50% - 1643px/2 - 215.5px);
+top: calc(50% - 218px/2 + 3327.5px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:shield-unlocked */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 4.17%;
+bottom: 4.17%;
+
+background: #000000;
+
+
+/* Comprendre les défis et enjeux de la protection de données */
+
+width: 1413px;
+height: 158px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 100px;
+line-height: 92px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 318 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1030px;
+height: 218px;
+left: calc(50% - 1030px/2 - 522px);
+top: calc(50% - 218px/2 + 2621.5px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:shield-unlocked */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 4.17%;
+bottom: 4.17%;
+
+background: #000000;
+
+
+/* Données sensibles */
+
+width: 800px;
+height: 66px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 100px;
+line-height: 92px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 319 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1138px;
+height: 217px;
+left: calc(50% - 1138px/2 - 468px);
+top: calc(50% - 217px/2 + 1538px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:shield-unlocked */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.5%;
+right: 12.5%;
+top: 4.17%;
+bottom: 4.17%;
+
+background: #000000;
+
+
+/* Sécuriser un prompt */
+
+width: 908px;
+height: 66px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 100px;
+line-height: 92px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 313 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1846px;
+height: 221px;
+left: calc(50% - 1846px/2 - 114px);
+top: calc(50% - 221px/2 + 2084px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:people-group */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 22.92%;
+bottom: 16.67%;
+
+background: #000000;
+
+
+/* Comprendre les enjeux d’inclusivité numérique dans l’usage de l’IA */
+
+width: 1616px;
+height: 158px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 100px;
+line-height: 92px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 314 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1618px;
+height: 147px;
+left: 681px;
+top: calc(50% - 147px/2 + 2970px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:script-text */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #000000;
+
+
+/* Introduction : de quoi parlons nous ? */
+
+width: 1388px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 316 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1546px;
+height: 136.73px;
+left: 681px;
+top: calc(50% - 136.73px/2 + 3943.78px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:category-plus */
+
+width: 85px;
+height: 85px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 8.34%;
+right: 8.33%;
+top: 8.34%;
+bottom: 8.33%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Les diversités à prendre en compte */
+
+width: 1326px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 315 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 599.07px;
+height: 146.93px;
+left: 681px;
+top: calc(50% - 146.93px/2 + 1885.54px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:book-open-variant */
+
+width: 95px;
+height: 95px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.17%;
+right: 4.17%;
+top: 18.75%;
+bottom: 10.42%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Définition */
+
+width: 369px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 312 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1034.07px;
+height: 146.93px;
+left: 681px;
+top: calc(50% - 146.93px/2 + 1341.24px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:check-all */
+
+width: 95px;
+height: 95px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 1.71%;
+right: 1.42%;
+top: 23.25%;
+bottom: 20.83%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Les bonnes pratiques */
+
+width: 804px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 323 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1073px;
+height: 136.73px;
+left: 681px;
+top: calc(50% - 136.73px/2 + 2813.11px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:podium-gold */
+
+width: 85px;
+height: 85px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 4.17%;
+right: 4.16%;
+top: 4.17%;
+bottom: 4.16%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Un post qui fonctionne */
+
+width: 853px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 322 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 917px;
+height: 136.73px;
+left: 681px;
+top: calc(50% - 136.73px/2 + 2429.22px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:text-box-search */
+
+width: 85px;
+height: 85px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.51%;
+right: 6.7%;
+top: 12.5%;
+bottom: 2.54%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Structurer un post */
+
+width: 697px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 321 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1551px;
+height: 136.73px;
+left: 681px;
+top: calc(50% - 136.73px/2 + 2276.78px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:post */
+
+width: 85px;
+height: 85px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.51%;
+right: 12.49%;
+top: 12.51%;
+bottom: 12.49%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Quel contenu mettre sur LinkedIn ? */
+
+width: 1331px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 320 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1258px;
+height: 136.73px;
+left: 681px;
+top: calc(50% - 136.73px/2 + 1728.98px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:trophy-variant */
+
+width: 85px;
+height: 85px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 8.34%;
+right: 8.33%;
+top: 8.34%;
+bottom: 8.33%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* L’impact d’un post LinkedIn */
+
+width: 1038px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 324 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1009px;
+height: 136.73px;
+left: 681px;
+top: calc(50% - 136.73px/2 + 235.16px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:magnify */
+
+width: 85px;
+height: 85px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.51%;
+right: 14.57%;
+top: 12.51%;
+bottom: 14.57%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* D’autres inspirations */
+
+width: 789px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 327 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1194px;
+height: 136.73px;
+left: 681px;
+top: calc(50% - 136.73px/2 - 229.97px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* mdi:image */
+
+width: 85px;
+height: 85px;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 12.51%;
+right: 12.49%;
+top: 12.51%;
+bottom: 12.49%;
+
+background: #000000;
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+
+/* Que mettre sur le visuel ? */
+
+width: 974px;
+height: 56px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 85px;
+line-height: 78px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+transform: matrix(1, 0, 0, 1, 0, 0);
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 326 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1342px;
+height: 251px;
+left: calc(50% - 1342px/2 - 366px);
+top: calc(50% - 251px/2 + 3576px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:instagram */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #000000;
+
+
+/* En apprendre plus sur les visuels Instagram */
+
+width: 1112px;
+height: 158px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 100px;
+line-height: 92px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 325 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1382px;
+height: 147px;
+left: calc(50% - 1382px/2 - 346px);
+top: calc(50% - 147px/2 + 3131px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:footprints */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 16.61%;
+right: 16.6%;
+top: 8.35%;
+bottom: 8.42%;
+
+background: #000000;
+
+
+/* Rédiger, étape par étape */
+
+width: 1152px;
+height: 66px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 100px;
+line-height: 92px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 328 */
+
+/* Mise en page automatique */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 25px 50px;
+gap: 35px;
+
+position: relative;
+width: 1128px;
+height: 146px;
+left: calc(50% - 1128px/2 - 473px);
+top: calc(50% - 146px/2 + 3788.5px);
+
+/* Purple 25 */
+background: #ECEAFF;
+/* Black */
+border: 10px solid #1C1C1C;
+border-radius: 0px;
+
+
+/* mdi:account-cowboy-hat */
+
+width: 95px;
+height: 95px;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 16.67%;
+right: 16.67%;
+top: 8.05%;
+bottom: 8.33%;
+
+background: #000000;
+
+
+/* À vous de créer ! */
+
+width: 789px;
+height: 66px;
+
+font-family: 'League Spartan';
+font-style: normal;
+font-weight: 800;
+font-size: 100px;
+line-height: 92px;
+/* leading-trim and text-edge are draft CSS properties.
+
+Read more: https://drafts.csswg.org/css-inline-3/#leading-trim
+*/
+leading-trim: both;
+text-edge: cap;
+text-align: center;
+
+/* Black */
+color: #1C1C1C;
+
+
+/* À l'intérieur de l'auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;

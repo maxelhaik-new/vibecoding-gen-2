@@ -1,0 +1,217 @@
+{
+  "lessonTitle": "Histoire du Vibe Coding",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Histoire et évolution du Vibe Coding"
+      }
+    },
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Chapitre 1 : Les origines et l'émergence"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "De l'autocomplétion aux agents autonomes",
+        "Intro": "La programmation a évolué d'une écriture manuelle de lignes de code vers un paradigme où l'humain supervise et guide des agents d'intelligence artificielle autonomes.",
+        "Titre 1": "Autocomplétion",
+        "Texte 1": "L'IA suggère des mots-clés ou des lignes de code au sein de l'éditeur de texte.",
+        "Titre 2": "Mode conversation",
+        "Texte 2": "On échange avec l'IA en langage naturel pour corriger ou structurer des fonctions.",
+        "Titre 3": "Agents autonomes",
+        "Texte 3": "L'agent planifie et exécute les modifications de fichiers en totale autonomie."
+      }
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs de la leçon",
+        "Intro": "Comprendre la trajectoire historique des outils d'IA pour le code et maîtriser la posture de superviseur d'agents autonomes.",
+        "Titre 1": "Comprendre la genèse des assistants de code",
+        "Titre 2": "Analyser l'impact des modèles conversationnels",
+        "Titre 3": "Théoriser le concept moderne de Vibe Coding",
+        "Titre 4": "Étudier le fonctionnement des agents autonomes",
+        "Titre 5": "Mesurer les gains réels de productivité",
+        "Titre 6": "Adopter les réflexes de contrôle et de test"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "content": {
+        "Ses principales limites graphiques": "L'ère de l'autocomplétion",
+        "Intro": "GitHub Copilot lance une première révolution en intégrant des suggestions de code directement au cœur des éditeurs.",
+        "Titre 1": "L'intégration du modèle Codex d'OpenAI",
+        "Texte 1": "Il s'agit du premier grand modèle entraîné spécifiquement sur des milliards de lignes de code public.",
+        "Titre 2": "La suggestion en temps réel",
+        "Texte 2": "L'outil propose des blocs entiers ou des fins de fonctions pendant la saisie du développeur.",
+        "Titre 3": "Le gain initial de rapidité",
+        "Texte 3": "On gagne du temps sur l'écriture des fonctions répétitives et de la syntaxe de base.",
+        "Titre 4": "Les limites de la suggestion",
+        "Texte 4": "L'absence de contexte global sur l'ensemble du projet produit parfois du code obsolète ou incohérent.",
+        "Picto 1": "mdi:script-text",
+        "Picto 2": "mdi:clock-outline",
+        "Picto 3": "mdi:flash",
+        "Picto 4": "mdi:stop-alert"
+      }
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Prompter des visuels dans ChatGPT": "L'explosion du mode chat",
+        "La création débute par une description simple, app": "L'arrivée de ChatGPT à la fin 2022 et de GPT-4 en 2023 transforme le développement en permettant d'échanger avec l'intelligence artificielle pour concevoir ou corriger du code.",
+        "Titre 1": "Génération complète",
+        "Texte 1": "On demande à l'IA d'écrire des fichiers de code entiers à partir d'une simple description fonctionnelle en langage naturel, sans toucher à son clavier.",
+        "Titre 2": "Débogage interactif",
+        "Texte 2": "On soumet des traces d'erreurs ou des fichiers de logs à l'outil pour obtenir des propositions de correctifs cibles et des explications détaillées.",
+        "Titre 3": "Explications de code",
+        "Texte 3": "L'IA commente en détail les lignes complexes et aide le développeur à comprendre rapidement le fonctionnement de projets ou librairies inconnues."
+      }
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "La théorie du Vibe Coding",
+        "Source": "Andrej Karpathy - Mars 2024",
+        "Intro": "L'ORIGINE DU CONCEPT",
+        "Titre 2": "Programmer au niveau de l'intention et du ton",
+        "Texte 1": "En mars 2024, Andrej Karpathy, ancien directeur de l'IA chez Tesla et cofondateur d'OpenAI, publie un message décrivant sa nouvelle manière de programmer. Il explique ne plus écrire de code lui-même, mais guider des intelligences artificielles par la discussion, les incitant à concevoir, tester et modifier les fichiers. Ce paradigme déplace l'effort de la syntaxe vers le design et la supervision de haut niveau.",
+        "Texte Bulle": "Le Vibe Coding ne signifie pas coder au hasard, mais collaborer de manière fluide avec un assistant intelligent qui prend en charge l'exécution technique, laissant l'humain se concentrer sur l'architecture et les tests."
+      }
+    },
+    {
+      "template": "VIBECODING - 5 BLOCS",
+      "content": {
+        "La méthode “few shots”": "Le cycle de l'agent",
+        "Intro": "Le fonctionnement d'un agent autonome de code au quotidien :",
+        "Titre 1": "Planification",
+        "Texte 1": "L'agent analyse la demande, parcourt les fichiers locaux et établit une suite d'actions.",
+        "Titre  4": "Validation et tests",
+        "Texte 4": "Il lance les tests unitaires pour valider les modifications et vérifier l'absence de régression.",
+        "Titre  2": "Écriture du code",
+        "Texte 2": "Il modifie ou crée les fichiers en appliquant les règles de programmation définies.",
+        "Titre 5": "Déploiement final",
+        "Texte 5": "Il livre le code corrigé ou la fonctionnalité prête à être testée par l'utilisateur.",
+        "Titre 3": "Correction autonome",
+        "Texte 3": "En cas d'erreur de compilation, l'agent lit les logs et ajuste son code automatiquement.",
+        "Texte Bulle": "Principe : L'humain n'intervient plus dans l'écriture mais valide chaque étape clé et gère les permissions d'accès.",
+        "Picto 1": "mdi:lightbulb-on-outline",
+        "Picto 2": "mdi:code-braces",
+        "Picto 3": "mdi:wrench-outline",
+        "Picto 4": "mdi:check-all",
+        "Picto 5": "mdi:send-outline"
+      }
+    },
+    {
+      "template": "VIBECODING - 5 BLOCS - VARIATION",
+      "content": {
+        "Titre": "Avantages de l'architecture",
+        "Intro": "Pourquoi standardiser ses intégrations avec MCP plutôt que de coder des API ad-hoc ?",
+        "Titre 1": "Réutilisabilité",
+        "Texte 1": "Un serveur MCP fonctionne immédiatement sur n'importe quel client compatible sans modification.",
+        "Titre 2": "Abstractions simples",
+        "Texte 2": "Les schémas d'arguments sont décrits en JSON Schema pour faciliter la compréhension de l'IA.",
+        "Titre 3": "Découverte dynamique",
+        "Texte 3": "Le client interroge le serveur au démarrage pour découvrir la liste des outils disponibles.",
+        "Titre 4": "Transport flexible",
+        "Texte 4": "Le protocole supporte le transport via Standard Input/Output (stdio) ou via WebSockets.",
+        "Titre 5": "Communauté active",
+        "Texte 5": "De nombreux serveurs open-source existent déjà pour GitHub, Postgres, Slack ou Figma.",
+        "Texte Bulle": "MCP simplifie l'écriture des outils pour les agents en proposant un standard de communication robuste.",
+        "Picto 1": "mdi:podium-gold",
+        "Picto 2": "mdi:book-open-variant",
+        "Picto 3": "mdi:magnify",
+        "Picto 4": "mdi:flowchart",
+        "Picto 5": "mdi:people-group"
+      }
+    },
+    {
+      "template": "VIBECODING - 6 BLOCS",
+      "content": {
+        "Titre": "Intégrer un serveur existant",
+        "Intro": "La procédure standard pour ajouter un nouveau serveur MCP à son environnement de travail quotidien.",
+        "Titre 1": "Paquet npm",
+        "Texte 1": "Trouver le nom du paquet npm ou du projet Python du serveur souhaité.",
+        "Titre 2": "Fichier config",
+        "Texte 2": "Éditer le fichier de configuration JSON de Claude Desktop dans son éditeur de texte.",
+        "Titre 3": "Déclarer l'outil",
+        "Texte 3": "Déclarer la commande d'exécution (ex: npx) et les variables d'environnement.",
+        "Titre 4": "Redémarrer",
+        "Texte 4": "Redémarrer l'application hôte pour forcer la lecture de la nouvelle configuration.",
+        "Titre 5": "Vérifier l'icône",
+        "Texte 5": "S'assurer que l'icône de prise électrique apparaît bien dans la console de chat.",
+        "Titre 6": "Tester un outil",
+        "Texte 6": "Lancer une requête simple en langage naturel pour valider la réponse de l'outil.",
+        "Texte Bulle": "Règle : Toujours surveiller les logs lors de la première connexion pour détecter les erreurs.",
+        "Picto 1": "mdi:script-text",
+        "Picto 2": "mdi:mixer-settings",
+        "Picto 3": "mdi:code-braces-box",
+        "Picto 4": "mdi:loop",
+        "Picto 5": "mdi:check-decagram",
+        "Picto 6": "mdi:account-cowboy-hat"
+      }
+    },
+    {
+      "template": "VIBECODING - CHIFFRES",
+      "content": {
+        "Titre": "L'impact du Vibe Coding",
+        "Intro": "L'intégration des modèles de langage au cœur des processus de développement a transformé la vitesse de livraison et la posture des ingénieurs en entreprise.",
+        "Chiffre 1": "x10",
+        "Titre 1": "Gain de vitesse",
+        "Texte 1": "Accélération constatée sur le prototypage d'applications et de scripts.",
+        "Chiffre 2": "0",
+        "Titre 2": "Ligne écrite",
+        "Texte 2": "Le développeur ne saisit plus de syntaxe mais orchestre la génération.",
+        "Chiffre 3": "50%",
+        "Titre 3": "De temps libre",
+        "Texte 3": "Temps réalloué à la conception de l'architecture et à la sécurité."
+      }
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Différents types d’entraînement": "Développement classique vs Vibe",
+        "Intro": "Deux approches complémentaires du développement logiciel. Voici une comparaison point par point de leurs caractéristiques :",
+        "Titre A": "Code classique",
+        "Titre B": "Vibe Coding",
+        "Item 1": "Activité principale",
+        "Item 2": "Vitesse",
+        "Item 3": "Focus",
+        "Item 4": "Risques",
+        "Texte A Item 1": "Saisie manuelle de la syntaxe et des instructions.",
+        "Texte B1": "Supervision, rédaction de prompts et revue de code.",
+        "Texte A Item 2": "Limitée par la vitesse de frappe et la recherche.",
+        "Texte B2": "Génération instantanée de structures complexes.",
+        "Texte A Item 3": "Résolution de bugs de syntaxe.",
+        "Texte B3": "Architecture globale et logique métier.",
+        "Texte A Item 4": "Erreurs d'inattention humaines.",
+        "Texte B4": "Hallucinations de l'IA et dette technique."
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Adopter la bonne posture de contrôle",
+        "Intro": "L'IA est un agent d'exécution rapide, l'humain reste le garant de la cohérence.",
+        "Titre 2": "Checklist de validation",
+        "Texte 1": "Vérifier l'absence de blabla dans les fonctions.",
+        "Texte 2": "Lancer les tests automatiques après chaque modification.",
+        "Texte 3": "Valider la sécurité des clés d'API et des accès.",
+        "Texte 4": "Vérifier l'adéquation avec le cahier des charges.",
+        "Texte 5": "Documenter les choix d'architecture dans un fichier."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Le Vibe Coding marque un tournant dans la manière de concevoir des logiciels. On passe d'un rôle d'écrivain de code à un rôle d'architecte et de superviseur. Cette méthode permet de multiplier sa vitesse de production par dix, mais exige une rigueur accrue sur les phases de test et de validation pour éviter d'introduire des bugs ou de la dette technique au sein des projets.",
+        "Titre Bulle": "En bref",
+        "Texte Bulle": "Maîtriser les concepts du Vibe Coding permet à chacun de se concentrer sur la logique métier et la conception, tout en déléguant l'écriture de code rébarbative à des modèles de langage entraînés et performants."
+      }
+    }
+  ]
+}

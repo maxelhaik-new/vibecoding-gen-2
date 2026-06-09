@@ -1,0 +1,201 @@
+/*
+ * CHARTE GRAPHIQUE VIBECODING
+ * Définition des variables de marque et règles CSS pour les slides et éléments custom.
+ */
+
+:root {
+  /* --- PALETTE DE COULEURS DE MARQUE --- */
+  --color-brand-purple: #6634D9;      /* Purple Thinking - Principal Cover / Bandeaux d'intro / Accents */
+  --color-brand-fig: #18093B;         /* Fig (Dark Purple/Navy) - Texte principal, fonds de badges/en-têtes */
+  --color-brand-sunny: #FFFF77;       /* Sunny - Accent jaune vif, pictos, texte chiffres, puces */
+  --color-brand-pink: #FFB2B2;        /* Pink Feeling - Accent rose, illustrations, formes géométriques */
+  
+  /* Variations et Opacités */
+  --color-pink-80: #FFBABB;           /* Pink Feeling 80% */
+  --color-pink-50: #F8DBDA;           /* Pink Feeling 50% - Fonds de lignes paires */
+  --color-pink-20: #FCF1F0;           /* Pink Feeling 20% - Fonds de lignes impaires */
+  --color-purple-dark: #4B14BA;       /* Violet sombre pour titres de chiffres */
+  --color-text-dark: #1C1C1C;         /* Gris sombre pour textes secondaires */
+  --color-bg-white: #FFFFFF;          /* Fond standard des slides de contenu */
+
+  /* --- TYPOGRAPHIE --- */
+  --font-family-main: 'Basic Sans Alt', sans-serif;
+
+  /* Tailles de police */
+  --font-size-cover-title: 120px;
+  --font-size-slide-title: 90px;
+  --font-size-intro: 35px;
+  --font-size-block-title: 45px;
+  --font-size-badge-number: 50px;
+  --font-size-body: 30px;
+  --font-size-source: 24px;
+  --font-size-table-item: 36px;
+  
+  /* Graisses (Font weights) & Styles Figma */
+  --font-weight-black: 900;           /* Titres principaux (Style: Black) */
+  --font-weight-bold: 700;            /* Titres de blocs, chiffres (Style: Bold) */
+  --font-weight-semibold: 600;        /* Textes d'intros en cartes colorées (Style: Regular/SemiBold) */
+  --font-weight-regular: 400;         /* Corps de texte standard (Style: Regular) */
+
+  /* Espacement de lettres */
+  --letter-spacing-titles: -0.014em;  /* Appliqué sur tous les grands titres (90px/120px) */
+  
+  /* --- GÉOMÉTRIE & BORDURES --- */
+  --border-radius-pill: 167.5px;       /* Pour les badges ronds, puces ou pastilles */
+  --border-radius-square: 0px;        /* Angle droit strict pour les cartes et blocs de concepts */
+}
+
+/* Conteneur principal d'une slide (Ratio 16:9) */
+.slide-container {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.slide-content-bg {
+  background-color: var(--color-bg-white);
+}
+
+.slide-cover-bg {
+  background-color: var(--color-brand-purple);
+}
+
+.slide-chapter-bg {
+  background-color: var(--color-brand-fig);
+}
+
+/* Grand titre de slide de contenu */
+.slide-title {
+  position: absolute;
+  left: 100px;
+  top: 70px;
+  width: 1300px;
+  height: 90px;
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-black);
+  font-size: var(--font-size-slide-title);
+  line-height: 100%;
+  letter-spacing: var(--letter-spacing-titles);
+  color: var(--color-brand-fig);
+}
+
+/* Texte d'introduction (sous le titre) */
+.slide-intro {
+  position: absolute;
+  left: 100px;
+  top: 234px;
+  width: 1644px;
+  height: 70px;
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-intro);
+  line-height: 100%;
+  color: var(--color-brand-fig);
+}
+
+/* Bloc d'introduction mis en valeur dans un bandeau violet */
+.slide-intro-card {
+  position: absolute;
+  left: 100px;
+  top: 234px;
+  width: 1720px;
+  height: 146px;
+  background-color: var(--color-brand-purple);
+  border-radius: var(--border-radius-square);
+}
+.slide-intro-card-text {
+  position: absolute;
+  left: 138px;
+  top: 272px; /* par rapport à la slide, soit top: 38px par rapport à la carte */
+  width: 1644px;
+  height: 70px;
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-intro);
+  line-height: 100%;
+  color: #FFFFFF;
+}
+
+/* --- STRUCTURES DE GRILLE DE CONTENU --- */
+
+/* Alignements horizontaux types pour 3 colonnes */
+.col-3-1 { left: 100px;  width: 517px; }
+.col-3-2 { left: 663px;  width: 517px; }
+.col-3-3 { left: 1238px; width: 517px; }
+
+/* Alignements horizontaux pour 2 colonnes / 2x2 Blocs */
+.col-2-1 { left: 100px;  width: 607px; }
+.col-2-2 { left: 879px;  width: 651px; }
+
+/* Positions verticales standards pour les blocs de contenu */
+.row-top { top: 455px; height: 184px; }
+.row-bottom { top: 720px; height: 184px; }
+
+/* --- ÉLÉMENTS GRAPHIQUES ET GRAPHES CUSTOM --- */
+
+/* Bloc de concept standard (picto + titre + texte) */
+.concept-bloc {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Conteneur de picto de bloc */
+.concept-picto-bg {
+  width: 77px;
+  height: 82px;
+  background-color: var(--color-brand-fig);
+  border-radius: var(--border-radius-square);
+}
+
+.concept-picto-icon {
+  width: 61px;
+  height: 61px;
+  color: var(--color-brand-sunny);
+}
+
+/* Titre de concept (associé au picto) */
+.concept-title {
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-block-title);
+  line-height: 100%;
+  color: var(--color-brand-fig);
+}
+
+/* Texte de description de concept */
+.concept-description {
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  line-height: 100%;
+  color: var(--color-brand-fig);
+}
+
+/* Badges de numérotation pour listes/puces ordonnées */
+.badge-number-bg {
+  width: 49px;
+  height: 49px;
+  background-color: var(--color-brand-purple);
+  border-radius: var(--border-radius-square);
+}
+
+.badge-number-text {
+  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-badge-number);
+  line-height: 60px;
+  text-align: center;
+  color: var(--color-brand-sunny);
+}
+
+/* Connecteurs / Flèches custom de processus */
+.arrow-connector {
+  border: 4px solid var(--color-brand-purple);
+  background-color: transparent;
+}
+.arrow-connector-alt {
+  border: 4px solid var(--color-brand-fig);
+}

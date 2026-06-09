@@ -1,0 +1,13 @@
+# PROMPTS MIDJOURNEY GÉNÉRÉS
+# Copiez-collez les commandes ci-dessous dans Discord (Midjourney)
+# Enregistrez ensuite les images dans le dossier assets/ sous les noms correspondants.
+
+## Concept: sécurité (Arrière-plan ciblé : Fig)
+/imagine prompt: A conceptual editorial illustration of sécurité. Digital painting in retro woodcut print engraving. Delicate thin outline drawings, fine line hatch patterns for textures, and subtle halftone dot shading on a solid dark navy blue (#18093B) background. Strict color palette of dark navy (#18093B), pastel pink (#FFB2B2), and accent highlights of bright yellow (#FFFF77). Clean composition. --ar 1:1 --style raw
+
+## Concept: rapidité (Arrière-plan ciblé : Pink Feeling)
+/imagine prompt: A conceptual editorial illustration of rapidité. Digital painting in retro woodcut print engraving. Delicate thin outline drawings, fine line hatch patterns for textures, and subtle halftone dot shading on a solid soft pastel pink (#FFB2B2) background. Strict color palette of dark navy (#18093B), pastel pink (#FFB2B2), and accent highlights of bright yellow (#FFFF77). Clean composition. --ar 1:1 --style raw
+
+## Concept: parcours professionnel (Arrière-plan ciblé : Fig)
+/imagine prompt: A conceptual editorial illustration of parcours professionnel. Digital painting in retro woodcut print engraving. Delicate thin outline drawings, fine line hatch patterns for textures, and subtle halftone dot shading on a solid dark navy blue (#18093B) background. Strict color palette of dark navy (#18093B), pastel pink (#FFB2B2), and accent highlights of bright yellow (#FFFF77). Clean composition. --ar 1:1 --style raw
+
