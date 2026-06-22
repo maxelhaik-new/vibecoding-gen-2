@@ -1,0 +1,129 @@
+{
+  "lessonTitle": "M1C4L3",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Pour qui le Vibe Coding change la donne"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "content": {
+        "Titre": "À qui ça profite vraiment ?",
+        "Intro": "Quatre profils se retrouvent dans la vague Vibe Coding. Lequel correspond le mieux ?",
+        "Titre 1": "En reconversion\nprofessionnelle",
+        "Texte 1": "Créer un portfolio réel dès les premières semaines, avant même la fin de la formation.",
+        "Titre 2": "Freelance et\nsolopreneur",
+        "Texte 2": "Lancer seul ce qui demandait autrefois une équipe entière ou un budget conséquent.",
+        "Titre 3": "Métiers non-tech\net indépendants",
+        "Texte 3": "Se créer l'outil exact dont on a besoin, sans dépendre d'un développeur externe.",
+        "Titre 4": "Développeur\nconfirmé ou junior",
+        "Texte 4": "Accélérer sur le code répétitif et concentrer l'énergie sur l'architecture et la valeur.",
+        "Picto 1": "mdi:footprints",
+        "Picto 2": "mdi:account-cowboy-hat",
+        "Picto 3": "mdi:city-variant",
+        "Picto 4": "mdi:code-braces-box"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Profil 1 : en reconversion",
+        "Intro": "UN PORTFOLIO RÉEL DÈS LE DÉBUT",
+        "Texte 1": "Parcours classique : des mois de formation avant de sortir un premier vrai projet. Avec le Vibe Coding, on crée dès les premières semaines. Le problème du CV vide disparaît. Un projet fonctionnel — une app, un outil, un prototype — pèse bien plus qu'un diplôme lors d'un entretien. On ne attend plus la fin de la formation pour prouver ce qu'on sait faire : on construit en apprenant.",
+        "Texte Bulle": "En reconversion, le Vibe Coding transforme l'apprentissage en production réelle. On sort de la formation avec des livrables concrets, pas seulement des connaissances.",
+        "Source": "Source : Wemodo"
+      },
+      "image_concept": "A person at a crossroads, one path long and winding through academic buildings, the other short and direct leading to a glowing laptop screen displaying a launched app — symbolizing the shortcut from learning to real production.",
+      "image_style": "constructivist",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - CHIFFRES",
+      "content": {
+        "Titre": "Freelance et solopreneur",
+        "Intro": "Un MVP en un week-end, là où il fallait autrefois des mois et des dizaines de milliers d'euros.",
+        "Chiffre 3": "1",
+        "Titre 3": "WEEK-END",
+        "Texte 3": "Délai pour monter un MVP complet avec expertise métier, selon Forbes (mars 2026).",
+        "Chiffre 2": "30K$",
+        "Titre 2": "ÉCONOMISÉS",
+        "Texte 2": "Coût moyen d'un développement externalisé évité grâce au Vibe Coding en solo.",
+        "Chiffre 1": "3",
+        "Titre 1": "MOIS DE MOINS",
+        "Texte 1": "De recrutement ou de négociation évités pour lancer un premier produit fonctionnel."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Profil 3 : métiers non-tech",
+        "Intro": "L'OUTIL SUR-MESURE SANS DÉVELOPPEUR",
+        "Texte 1": "Marketing, RH, ops, indépendants : les SaaS du marché ne correspondent jamais exactement au process réel. Avec le Vibe Coding, on code l'outil dont on a besoin — un mini-CRM, un tableau de bord, un outil de suivi client — en quelques heures. Des entrepreneurs non-tech construisent leurs propres solutions sans attendre une équipe technique. Source : Business Insider, 2026.",
+        "Texte Bulle": "La connaissance du métier suffit pour définir l'outil. Le Vibe Coding se charge de la traduction en code. On arrête de subir les compromis des SaaS génériques.",
+        "Source": "Business Insider"
+      },
+      "image_concept": "A marketing professional at a desk, surrounded by generic software boxes that don't fit, while on their screen a perfectly tailored custom dashboard glows — symbolizing the power of building exactly what you need without a developer.",
+      "image_style": "grainy-editorial",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Le développeur face au Vibe Coding",
+        "Intro": "Le Vibe Coding accélère le développeur confirmé — mais le junior doit rester aux commandes.",
+        "Titre A": "CONFIRMÉ",
+        "Titre B": "JUNIOR",
+        "Item 1": "Gain principal",
+        "Item 2": "Risque",
+        "Item 3": "Usage idéal",
+        "Item 4": "Posture",
+        "Texte A Item 1": "Déléguer le code répétitif, concentrer l'énergie sur l'architecture",
+        "Texte A Item 2": "Faible : il comprend le code généré et sait le corriger",
+        "Texte A Item 3": "Booster la vélocité sur les tâches à faible valeur ajoutée",
+        "Texte A Item 4": "Chef d'orchestre qui valide et oriente l'IA",
+        "Texte B1": "Produire plus vite, mais sans toujours comprendre ce qui est généré",
+        "Texte B2": "Élevé : l'outil peut freiner l'apprentissage s'il remplace la compréhension",
+        "Texte B3": "Prototypage rapide, jamais en remplacement de la pratique fondamentale",
+        "Texte B4": "Rester aux commandes, comprendre avant de déléguer"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Le point commun entre les 4 profils",
+        "Mot": "L'expertise métier prime sur le diplôme",
+        "Definition": "Peu importe le profil de départ, c'est la connaissance du domaine qui détermine la qualité du résultat. Un bon prompt naît d'une intention claire et d'une expertise réelle. Le Vibe Coding est un levier — pas un substitut à la compétence métier.",
+        "Bulle": "On n'a pas besoin d'un diplôme technique pour bien utiliser le Vibe Coding — on a besoin de savoir ce qu'on veut construire."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Quatre profils, une même opportunité. La reconversion crée un portfolio réel dès le début. Le freelance lance seul à la vitesse d'un week-end. Le métier non-tech construit l'outil exact dont il a besoin. Le développeur accélère et monte en valeur. Dans tous les cas, l'expertise métier et une intention claire comptent plus que le diplôme technique.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Peu importe d'où on part, il y a une porte d'entrée dans le Vibe Coding. La suite : voyons concrètement ce qu'on peut créer avec ces nouvelles capacités — dès maintenant !"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

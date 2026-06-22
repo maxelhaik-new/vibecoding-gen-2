@@ -1,0 +1,1120 @@
+{
+  "lessonTitle": "M1C1L1",
+  "slides": [
+    {
+      "template": "VIBECODING - VIDE",
+      "content": {
+        "Titre": "Découvrir le programme \nde la formation",
+        "Intro": ""
+      },
+      "custom_elements": [
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Group 72",
+          "properties": {
+            "x": 576.7549126100494,
+            "y": 182.84371650636604,
+            "width": 766.2450873899506,
+            "height": 714.6332122045715
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Group 516",
+          "properties": {
+            "x": 1604.0,
+            "y": 790.171875,
+            "width": 266.24505615234375,
+            "height": 248.3148651123047
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Frame 273",
+          "properties": {
+            "x": 289.5,
+            "y": 435.5,
+            "width": 1341.0,
+            "height": 208.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.047058823529411764,
+                  "g": 0.5490196078431373,
+                  "b": 0.9137254901960784,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "template": "VIBECODING - VIDE",
+      "content": {
+        "Titre": "Pédagogie de la formation",
+        "Intro": ""
+      },
+      "custom_elements": [
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Group 516",
+          "properties": {
+            "x": 1604.0,
+            "y": 790.171875,
+            "width": 266.24505615234375,
+            "height": 248.3148651123047
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "RECTANGLE",
+          "name": "Rectangle 182",
+          "properties": {
+            "x": 90.0,
+            "y": 708.0,
+            "width": 380.0,
+            "height": 218.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.047058823529411764,
+                  "g": 0.5490196078431373,
+                  "b": 0.9137254901960784,
+                  "a": 1.0
+                },
+                "opacity": 0.5
+              }
+            ]
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "RECTANGLE",
+          "name": "Rectangle 185",
+          "properties": {
+            "x": 593.0,
+            "y": 708.0,
+            "width": 366.0,
+            "height": 218.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.047058823529411764,
+                  "g": 0.5490196078431373,
+                  "b": 0.9137254901960784,
+                  "a": 1.0
+                },
+                "opacity": 0.5
+              }
+            ]
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "RECTANGLE",
+          "name": "Rectangle 186",
+          "properties": {
+            "x": 1082.0,
+            "y": 708.0,
+            "width": 465.0,
+            "height": 218.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.047058823529411764,
+                  "g": 0.5490196078431373,
+                  "b": 0.9137254901960784,
+                  "a": 1.0
+                },
+                "opacity": 0.5
+              }
+            ]
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Les différentes étapes pour maîtriser l'IA & l'uti",
+          "properties": {
+            "x": 100.0,
+            "y": 313.15625,
+            "width": 1337.0,
+            "height": 92.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Les différentes étapes pour maîtriser l'IA  & l'utiliser professionnellement",
+            "fontSize": 50.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "À travers cette formation, vous apprendrez à utili",
+          "properties": {
+            "x": 100.0,
+            "y": 450.0,
+            "width": 1645.0,
+            "height": 111.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "À travers cette formation, vous apprendrez à utiliser l'Intelligence Artificielle dans un cadre professionnel, mais pas seulement ! Vous allez aussi comprendre les fondamentaux de l'IA, découvrir ses applications en entreprise et réaliser des projets qui feront de vous un·e professionnel·le de l'IA.",
+            "fontSize": 40.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Regular"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "LES 3 grands axes de la formation",
+          "properties": {
+            "x": 100.0,
+            "y": 625.0,
+            "width": 891.0,
+            "height": 46.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "LES 3 grands axes de la formation",
+            "fontSize": 50.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Compréhension des concepts et technologies IA",
+          "properties": {
+            "x": 112.0,
+            "y": 757.0,
+            "width": 335.0,
+            "height": 139.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Compréhension des concepts et technologies IA",
+            "fontSize": 40.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Maîtrise des outils IA générative pour le travail",
+          "properties": {
+            "x": 617.0,
+            "y": 748.0,
+            "width": 316.0,
+            "height": 141.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Maîtrise des outils IA générative pour le travail",
+            "fontSize": 40.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Mise en pratique à travers des cas d'usage réels e",
+          "properties": {
+            "x": 1106.0,
+            "y": 748.0,
+            "width": 373.0,
+            "height": 148.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Mise en pratique à travers des cas d'usage réels en entreprise",
+            "fontSize": 40.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "template": "VIBECODING - VIDE",
+      "content": {
+        "Titre": "Les objectifs de la formation",
+        "Intro": ""
+      },
+      "custom_elements": [
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Group 516",
+          "properties": {
+            "x": 1651.2421875,
+            "y": 829.0,
+            "width": 171.0,
+            "height": 171.0
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Group 1121",
+          "properties": {
+            "x": 100.0,
+            "y": 318.0,
+            "width": 50.0,
+            "height": 50.0
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Group 1122",
+          "properties": {
+            "x": 100.0,
+            "y": 467.0,
+            "width": 50.0,
+            "height": 50.0
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Group 1123",
+          "properties": {
+            "x": 100.0,
+            "y": 616.0,
+            "width": 50.0,
+            "height": 50.0
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Group 1124",
+          "properties": {
+            "x": 100.0,
+            "y": 765.0,
+            "width": 50.0,
+            "height": 50.0
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Group 1124",
+          "properties": {
+            "x": 100.0,
+            "y": 914.0,
+            "width": 50.0,
+            "height": 50.0
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Group 1196",
+          "properties": {
+            "x": 1604.0078125,
+            "y": 790.171875,
+            "width": 266.24505615234375,
+            "height": 248.3148651123047
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Comprendre quand, où & comment on utilise l'IA",
+          "properties": {
+            "x": 180.0,
+            "y": 325.0,
+            "width": 1166.0,
+            "height": 51.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Comprendre quand, où & comment on utilise l'IA",
+            "fontSize": 55.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "dans le monde professionnel & plus particulièremen",
+          "properties": {
+            "x": 180.0,
+            "y": 382.0,
+            "width": 1430.0,
+            "height": 37.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "dans le monde professionnel & plus particulièrement dans la productivité et la création.",
+            "fontSize": 40.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Regular"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Apprendre à utiliser l'IA en tant que professionne",
+          "properties": {
+            "x": 180.0,
+            "y": 474.0,
+            "width": 1202.0,
+            "height": 51.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Apprendre à utiliser l'IA en tant que professionnel",
+            "fontSize": 55.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "dans le monde de l'entreprise, en étant salarié ou",
+          "properties": {
+            "x": 180.0,
+            "y": 531.0,
+            "width": 1037.0,
+            "height": 37.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "dans le monde de l'entreprise, en étant salarié ou indépendant.",
+            "fontSize": 40.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Regular"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Découvrir les bases de l'IA générative",
+          "properties": {
+            "x": 180.0,
+            "y": 623.0,
+            "width": 902.0,
+            "height": 51.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Découvrir les bases de l'IA générative",
+            "fontSize": 55.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "et appliquer les fondamentaux pour créer des conte",
+          "properties": {
+            "x": 180.0,
+            "y": 680.0,
+            "width": 1617.0,
+            "height": 37.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "et appliquer les fondamentaux pour créer des contenus qui répondent aux besoins des entreprises.",
+            "fontSize": 40.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Regular"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Créer un portfolio de cas d'usage concrets",
+          "properties": {
+            "x": 180.0,
+            "y": 772.0,
+            "width": 1009.0,
+            "height": 51.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Créer un portfolio de cas d'usage concrets",
+            "fontSize": 55.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "pour être opérationnel sur l'ensemble des demandes",
+          "properties": {
+            "x": 180.0,
+            "y": 829.0,
+            "width": 1362.0,
+            "height": 60.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "pour être opérationnel sur l'ensemble des demandes & mettre en avant son savoir-faire.",
+            "fontSize": 40.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Regular"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Obtenir une certification reconnue",
+          "properties": {
+            "x": 180.0,
+            "y": 921.0,
+            "width": 824.0,
+            "height": 51.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Obtenir une certification reconnue",
+            "fontSize": 55.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "par l'état, mais aussi par les professionnels, à t",
+          "properties": {
+            "x": 180.0,
+            "y": 978.0,
+            "width": 1406.0,
+            "height": 37.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "par l'état, mais aussi par les professionnels, à travers une série de cas pratiques",
+            "fontSize": 40.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Regular"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "template": "VIBECODING - VIDE",
+      "content": {
+        "Titre": "Programme de formation",
+        "Intro": "Présentation de la formation, certification  & enjeux liés à l’intelligence atificielle"
+      },
+      "custom_elements": [
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Group 516",
+          "properties": {
+            "x": 1604.0,
+            "y": 790.171875,
+            "width": 266.24505615234375,
+            "height": 248.3148651123047
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Frame 2",
+          "properties": {
+            "x": 100.0,
+            "y": 317.0,
+            "width": 394.0,
+            "height": 53.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.047058823529411764,
+                  "g": 0.5490196078431373,
+                  "b": 0.9137254901960784,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Frame 3",
+          "properties": {
+            "x": 100.0,
+            "y": 410.0,
+            "width": 872.0,
+            "height": 53.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.047058823529411764,
+                  "g": 0.5490196078431373,
+                  "b": 0.9137254901960784,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Frame 4",
+          "properties": {
+            "x": 100.0,
+            "y": 503.0,
+            "width": 1096.0,
+            "height": 53.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.047058823529411764,
+                  "g": 0.5490196078431373,
+                  "b": 0.9137254901960784,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Frame 5",
+          "properties": {
+            "x": 100.0,
+            "y": 596.0,
+            "width": 1136.0,
+            "height": 53.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.047058823529411764,
+                  "g": 0.5490196078431373,
+                  "b": 0.9137254901960784,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Frame 6",
+          "properties": {
+            "x": 100.0,
+            "y": 689.0,
+            "width": 685.0,
+            "height": 53.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.047058823529411764,
+                  "g": 0.5490196078431373,
+                  "b": 0.9137254901960784,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Frame 7",
+          "properties": {
+            "x": 100.0,
+            "y": 782.0,
+            "width": 558.0,
+            "height": 53.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.047058823529411764,
+                  "g": 0.5490196078431373,
+                  "b": 0.9137254901960784,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Frame 274",
+          "properties": {
+            "x": 100.0,
+            "y": 875.0,
+            "width": 898.0,
+            "height": 53.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.047058823529411764,
+                  "g": 0.5490196078431373,
+                  "b": 0.9137254901960784,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "FRAME",
+          "name": "Frame 275",
+          "properties": {
+            "x": 100.0,
+            "y": 968.0,
+            "width": 775.0,
+            "height": 53.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.047058823529411764,
+                  "g": 0.5490196078431373,
+                  "b": 0.9137254901960784,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Prise en main & maîtrise de ChatGPT et de ses alternatives",
+          "properties": {
+            "x": 1327.0,
+            "y": 516.0,
+            "width": 379.0,
+            "height": 40.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Prise en main & maîtrise de ChatGPT\net de ses alternatives",
+            "fontSize": 25.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Regular"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Prise en main & maîtrise de Midjourney et de ses alternatives",
+          "properties": {
+            "x": 1327.0,
+            "y": 611.0,
+            "width": 399.0,
+            "height": 40.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Prise en main & maîtrise de Midjourney\net de ses alternatives",
+            "fontSize": 25.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Regular"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Découverte des fondamentaux des l’intelligence artificielle générative",
+          "properties": {
+            "x": 1327.0,
+            "y": 416.0,
+            "width": 471.0,
+            "height": 47.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Découverte des fondamentaux des l’intelligence artificielle générative ",
+            "fontSize": 25.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Regular"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Mise en pratique des modules 2 & 3 à travers des briefs fictifs créés depuis nos demandes clients",
+          "properties": {
+            "x": 1327.0,
+            "y": 695.0,
+            "width": 518.0,
+            "height": 40.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Mise en pratique des modules 2 & 3 à travers\ndes briefs fictifs créés depuis nos demandes clients",
+            "fontSize": 25.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Regular"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Découvrez les concurrents de ChatGPT,  leurs forces, leurs faiblesses et leurs spécificités",
+          "properties": {
+            "x": 924.0,
+            "y": 790.0,
+            "width": 484.0,
+            "height": 40.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Découvrez les concurrents de ChatGPT,  leurs forces, leurs faiblesses et leurs spécificités",
+            "fontSize": 25.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Regular"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Découvrez les concurrents de MidJourney,  leurs forces, leurs faiblesses et leurs spécificités",
+          "properties": {
+            "x": 1085.0,
+            "y": 881.0,
+            "width": 484.0,
+            "height": 40.0,
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": {
+                  "r": 0.10980392156862745,
+                  "g": 0.10980392156862745,
+                  "b": 0.10980392156862745,
+                  "a": 1.0
+                },
+                "opacity": 1.0
+              }
+            ],
+            "characters": "Découvrez les concurrents de MidJourney,  leurs forces, leurs faiblesses et leurs spécificités",
+            "fontSize": 25.0,
+            "textAlignHorizontal": "LEFT",
+            "textAlignVertical": "TOP",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Regular"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

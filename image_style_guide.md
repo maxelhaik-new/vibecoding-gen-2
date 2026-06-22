@@ -11,7 +11,7 @@ Le style graphique s'inspire du travail d'illustration éditoriale moderne avec 
 
 *   **Hachures de texture** : Utilisation de fines hachures ou de lignes blanches et foncées pour texturer les details, les vêtements ou les volumes (style gravure).
 *   **Composition** : Épurée, minimaliste . Utiliser des métaphores visuelles intelligentes plutôt que des représentations littérales.
-
+*   **Langue des Textes Intégrés** : Si l'image contient du texte lisible ou suggéré (comme des boutons, des étiquettes, des morceaux de code fictif ou des fenêtres d'interface), ce texte doit être **systématiquement écrit en français**. Cela ne force pas l'apparition de texte pour autant, mais s'il y en a, la langue doit être le français.
 
 ---
 

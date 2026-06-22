@@ -1,0 +1,46 @@
+{
+  "lessonTitle": "Aux origines du terme : Andrej Karpathy",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Aux origines du terme : Andrej Karpathy"
+      }
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "L'origine du terme",
+        "Mot": "Vibe Coding",
+        "Definition": "Ce terme désigne une nouvelle approche du développement logiciel où l'humain ne rédige plus directement de lignes de code. À la place, on guide des agents d'intelligence artificielle autonomes en exprimant clairement ses intentions en langage naturel. Le rôle du développeur évolue ainsi vers celui de superviseur, de concepteur ou de chef de produit.",
+        "Bulle": "Popularisé par Andrej Karpathy, ancien directeur de l'IA chez Tesla et cofondateur d'OpenAI, lors d'un post marquant sur X. Il y décrit sa propre transition vers cette méthode de création fluide."
+      }
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Le constat de Karpathy",
+        "Intro": "L'EXPÉRIENCE DE L'EXPERT",
+        "Texte 1": "Andrej Karpathy a partagé une expérience marquante : concevoir des projets entiers sans toucher au code. En guidant simplement l'IA, il s'est senti comme un chef de produit supervisant des agents autonomes. Le problème ? On ne tape plus de lignes de code, on oriente des intentions. L'agent IA écrit l'intégralité du programme pendant que l'humain valide la direction globale. C'est une rupture majeure dans l'ingénierie logicielle.",
+        "Texte Bulle": "En bref : on passe d'un travail d'écriture technique à un rôle de direction artistique et fonctionnelle. On ne code plus, on insuffle une direction, on valide des comportements et on ajuste les vibes du projet.",
+        "Source": "Source : An abstract portrait of a modern thinker contemplating conne - Illustration générée par IA - Maxime Elhaik",
+        "image": "http://localhost:8080/assets/vibe_m1c2l3_slide_3.png"
+      }
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO",
+      "content": {
+        "Titre": "Le futur du développement",
+        "Intro": "Cette métaphore des vibes redéfinit l'ingénierie logicielle. L'important n'est plus la syntaxe, mais la clarté de la vision globale.",
+        "Titre 1": "La vision",
+        "Texte 1": "Exprimer clairement ses idées et ses besoins fonctionnels. L'humain assure la cohérence globale et l'architecture du projet.",
+        "Titre 2": "La supervision",
+        "Titre Bulle": "Le développeur de demain orchestre des agents autonomes au lieu de s'épuiser sur des détails de syntaxe.",
+        "Titre 3": "L'orchestration",
+        "Texte 3": "Guider des agents autonomes pour concrétiser la vision. On ajuste les résultats de manière itérative et fluide.",
+        "Source": "Source : An abstract portrait of a modern thinker contemplating glowi - Illustration générée par IA - Maxime Elhaik",
+        "image": "http://localhost:8080/assets/vibe_m1c2l3_slide_4.png"
+      }
+    }
+  ]
+}

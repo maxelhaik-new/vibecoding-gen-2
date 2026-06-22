@@ -1,0 +1,120 @@
+{
+  "lessonTitle": "Adopter l'état d'esprit du Vibe Coder",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Adopter l'état d'esprit du Vibe Coder"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Une posture avant une compétence",
+        "Intro": "Avant d'aller plus loin, parlons d'une chose qu'on oublie trop souvent dans les formations techniques : l'état d'esprit. Devenir Vibe Coder, ce n'est pas devenir développeur. C'est adopter une nouvelle façon de travailler avec l'IA — et cette posture s'apprend dès maintenant.",
+        "Titre 1": "Piloter, pas coder",
+        "Texte 1": "Comprendre que votre vraie compétence, c'est décrire clairement ce que vous voulez — pas écrire du code.",
+        "Titre 2": "Itérer et corriger",
+        "Texte 2": "Découvrir que l'erreur fait partie du processus normal et apprendre à rebondir sans paniquer.",
+        "Titre 3": "Garder le contrôle",
+        "Texte 3": "Saisir pourquoi l'esprit critique reste votre meilleur atout face à un agent IA."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Vous n'avez pas besoin de savoir coder",
+        "Mot": "Pilote, pas exécutant",
+        "Definition": "Le Vibe Coder ne tape pas tout le code à la main. Il guide des agents d'intelligence artificielle en décrivant clairement ce qu'il veut obtenir. Votre vraie compétence, c'est la clarté de votre intention — et ça, vous savez déjà le faire. Le syndrome de l'imposteur « je ne suis pas développeur » n'est pas un frein, c'est le point de départ exact de cette formation.",
+        "Bulle": "Vous demandez un bouton bleu, l'IA en fait un rouge. Que faites-vous ? Vous corrigez l'instruction. C'est tout. Pas besoin de comprendre pourquoi le rouge est apparu dans le code."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "L'erreur fait partie du jeu",
+        "Intro": "Le code qui ne marche pas du premier coup, c'est la règle, pas l'exception. L'IA se trompe — et ce n'est pas vous le problème.",
+        "Titre 1": "L'IA se trompe",
+        "Texte 1": "Les agents produisent parfois du code défaillant ou des résultats inattendus. Ce n'est pas un signe d'échec de votre part, c'est le comportement normal d'un outil probabiliste qu'on apprend à affiner.",
+        "Titre 2": "Lire le message d'erreur",
+        "Texte 2": "Face à une erreur, le bon réflexe n'est pas de paniquer. C'est de lire le message, de le redonner à l'IA et de lui demander de corriger. L'erreur devient une instruction.",
+        "Titre 3": "Recommencer sans peur",
+        "Texte 3": "Tout est réversible. On peut toujours revenir en arrière, relancer une génération ou repartir d'une version propre. Rien n'est définitif dans le Vibe Coding."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "content": {
+        "Titre": "Itérer plutôt que viser la perfection",
+        "Intro": "On ne planifie pas tout parfaitement avant de commencer. On avance par petites versions qui s'améliorent, comme un sculpteur qui affine sa statue progressivement.",
+        "Titre 1": "Essayer sans attendre",
+        "Texte 1": "Lancer une première version imparfaite est toujours plus utile qu'attendre d'avoir un plan parfait. La première tentative donne de l'information.",
+        "Titre 2": "Observer ce qui se passe",
+        "Texte 2": "Après chaque génération, on observe le résultat avec un œil critique avant de valider ou de corriger. C'est une lecture active, pas passive.",
+        "Titre 3": "Corriger par étapes",
+        "Texte 3": "On n'exige pas tout d'un coup. On corrige un problème à la fois, en petites passes successives qui convergent vers le résultat voulu.",
+        "Titre 4": "Recommencer en boucle",
+        "Texte 4": "La boucle Essayer → Observer → Corriger → Recommencer est le cœur du métier de Vibe Coder. Elle remplace la planification exhaustive initiale."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": {
+        "Titre": "Garder le contrôle et l'esprit critique",
+        "Intro": "L'IA est un copilote, pas un pilote automatique. C'est vous qui décidez, vous qui validez — et c'est vous qui portez la responsabilité du résultat final.",
+        "Titre 4": "Toujours relire ce que l'IA produit",
+        "Texte 4": "Pas besoin de comprendre chaque ligne de code. Mais il est essentiel de comprendre globalement ce que l'IA a fait, pourquoi, et si ça correspond à ce qu'on voulait vraiment obtenir.",
+        "Texte Bulle": "Amorce : les enjeux de sécurité et d'éthique liés à cette posture seront approfondis au Module 2. Pour l'instant, retenez : vous restez décisionnaire.",
+        "Source": "Source : Formation Vibe Coding — Module 1"
+      },
+      "image_concept": "A confident person at a cockpit with glowing screens, holding the controls, AI assistant visible on screen beside them, calm and in charge",
+      "image_style": "chiaroscuro",
+      "image_ratio": "4:3"
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO",
+      "content": {
+        "Titre": "La curiosité comme moteur",
+        "Intro": "Le domaine bouge vite. La bonne posture, c'est tester, explorer, rester curieux — et ne pas avoir peur de casser quelque chose qu'on peut toujours réparer.",
+        "Titre 1": "Tester sans tabou",
+        "Texte 1": "Essayer des fonctionnalités non prévues, modifier ce qui existe, combiner des outils différents. L'exploration génère des découvertes qu'aucun tutoriel ne prévoie.",
+        "Titre Bulle": "Pont naturel : votre curiosité sera nourrie tout au long de la formation, et particulièrement dans le chapitre dédié à la veille technologique.",
+        "Titre 2": "Explorer les outils",
+        "Titre 3": "Rester curieux",
+        "Texte 3": "Le Vibe Coding évolue chaque semaine. Ceux qui gardent une posture d'apprentissage permanent s'adaptent mieux que ceux qui cherchent à maîtriser un état figé de l'outil.",
+        "Source": "Source : Illustration générée par IA — Formation Vibe Coding",
+        "image": "http://localhost:8080/assets/vibe_m1c3l4_slide_7.png"
+      },
+      "image_concept": "A curious person exploring glowing digital pathways and floating icons, discovering new tools in a vibrant luminous environment",
+      "image_style": "grainy-editorial",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Être Vibe Coder, c'est une posture avant d'être une compétence technique. Vous pilotez l'IA, vous n'exécutez pas tout vous-même. L'erreur est normale et fait partie du processus — on avance par petites itérations, en gardant toujours un œil critique sur ce que l'IA produit. Avec de la curiosité et l'envie d'essayer, vous avez déjà tout ce qu'il faut. Maintenant que l'état d'esprit est posé, on peut vraiment commencer.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Vous n'avez pas besoin de savoir coder pour être Vibe Coder. Vous avez besoin de savoir décrire, corriger, itérer et garder le cap. Ces quatre réflexes s'apprennent — et vous venez de les poser."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

@@ -56,6 +56,128 @@ function hexToFigmaColor(hexStr) {
   return { r, g, b };
 }
 
+// Convertit une couleur Figma (RGB de 0 à 1) en format Hexadécimal (#RRGGBB)
+function figmaColorToHex(color) {
+  if (!color) return "#000000";
+  const r = Math.max(0, Math.min(255, Math.round(color.r * 255))).toString(16).padStart(2, '0');
+  const g = Math.max(0, Math.min(255, Math.round(color.g * 255))).toString(16).padStart(2, '0');
+  const b = Math.max(0, Math.min(255, Math.round(color.b * 255))).toString(16).padStart(2, '0');
+  return `#${r}${g}${b}`.toLowerCase();
+}
+
+// Mappe une couleur d'origine vers la palette DA V2
+function mapDAColor(hex) {
+  const h = hex.toLowerCase().replace('#', '');
+  const r = parseInt(h.substring(0, 2), 16);
+  const g = parseInt(h.substring(2, 4), 16);
+  const b = parseInt(h.substring(4, 6), 16);
+
+  // 1. Blanc ou proche du blanc
+  if (r > 240 && g > 240 && b > 240) {
+    return "#ffffff";
+  }
+
+  // 2. Noir ou très sombre (texte principal, etc.)
+  if (r < 50 && g < 50 && b < 50) {
+    return "#1c1c1c";
+  }
+
+  // 3. Nuances de gris (bords, fond gris clair)
+  if (Math.abs(r - g) < 20 && Math.abs(g - b) < 20 && Math.abs(r - b) < 20) {
+    if (r > 200) return "#f2f3f6"; // Fond gris clair
+    return "#444444"; // Gris moyen pour les bordures
+  }
+
+  // 4. Couleurs saturées ou accents (bleus, violets, roses, etc.) -> violet de marque
+  if (b > r && b > g) {
+    return "#6634d9";
+  }
+  if (r > g && b > g) {
+    return "#6634d9";
+  }
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  const saturation = max > 0 ? (max - min) / max : 0;
+  if (saturation > 0.15) {
+    return "#6634d9";
+  }
+
+  return "#444444";
+}
+
+// Adapte récursivement un nœud cloné aux polices et couleurs DA V2
+async function adaptNode(node) {
+  let targetNode = node;
+  if (node.type === 'INSTANCE') {
+    try {
+      targetNode = node.detachInstance();
+    } catch (e) {
+      console.log("Could not detach instance", e);
+    }
+  }
+
+  // 1. Adapter les couleurs de fond (fills)
+  if ('fills' in targetNode && targetNode.fills && targetNode.fills !== figma.mixed) {
+    const newFills = [];
+    for (const fill of targetNode.fills) {
+      if (fill.type === 'SOLID') {
+        const oldHex = figmaColorToHex(fill.color);
+        const newHex = mapDAColor(oldHex);
+        newFills.push(Object.assign({}, fill, { color: hexToFigmaColor(newHex) }));
+      } else {
+        newFills.push(fill);
+      }
+    }
+    targetNode.fills = newFills;
+  }
+
+  // 2. Adapter les couleurs de contour (strokes)
+  if ('strokes' in targetNode && targetNode.strokes && targetNode.strokes !== figma.mixed && targetNode.strokes.length > 0) {
+    const newStrokes = [];
+    for (const stroke of targetNode.strokes) {
+      if (stroke.type === 'SOLID') {
+        const oldHex = figmaColorToHex(stroke.color);
+        const newHex = mapDAColor(oldHex);
+        newStrokes.push(Object.assign({}, stroke, { color: hexToFigmaColor(newHex) }));
+      } else {
+        newStrokes.push(stroke);
+      }
+    }
+    targetNode.strokes = newStrokes;
+  }
+
+  // 3. Adapter la police si c'est du texte
+  if (targetNode.type === 'TEXT') {
+    const originalFont = targetNode.fontName;
+    if (originalFont === figma.mixed) {
+      const targetFont = { family: "Basic Sans Alt", style: "Regular" };
+      await figma.loadFontAsync(targetFont);
+      targetNode.fontName = targetFont;
+    } else if (originalFont && typeof originalFont === 'object') {
+      const targetFont = {
+        family: "Basic Sans Alt",
+        style: originalFont.style || "Regular"
+      };
+      try {
+        await figma.loadFontAsync(targetFont);
+        targetNode.fontName = targetFont;
+      } catch (e) {
+        const fallbackFont = { family: "Basic Sans Alt", style: "Regular" };
+        await figma.loadFontAsync(fallbackFont);
+        targetNode.fontName = fallbackFont;
+      }
+    }
+  }
+
+  // 4. Parcourir récursivement les enfants
+  if ('children' in targetNode) {
+    for (const child of targetNode.children) {
+      await adaptNode(child);
+    }
+  }
+}
+
+
 // Trouve une forme (Rectangle, Vector, etc.) qui sert d'arrière-plan à un nœud
 function findBackgroundForNode(node, container) {
   if (!container || !('children' in container)) return null;
@@ -320,6 +442,61 @@ let assetsResolve = null;
 let replaceModeTargetId = null;
 const isIconValue = (val) => typeof val === 'string' && (val.startsWith('iconify:') || /^[a-z0-9_-]+:[a-z0-9_-]+$/.test(val.trim()));
 const isImageUrlValue = (val) => typeof val === 'string' && (val.startsWith('http://') || val.startsWith('https://') || val.startsWith('data:image/'));
+
+// Cherche un picto en priorité dans son bloc parent, puis par nom exact
+function getTargetPictoNode(slideNode, key, shapeNodes, usedNodes) {
+  const match = key.match(/\d+/);
+  if (!match) return null;
+  const blockNum = parseInt(match[0], 10);
+
+  // 1. Recherche exacte par nom de calque (ex: "Picto 3")
+  const exactNode = shapeNodes.find(node => 
+    !usedNodes.has(node) && 
+    normalize(node.name) === normalize(key)
+  );
+  if (exactNode) return exactNode;
+
+  // Helper pour vérifier si un nœud est un placeholder de picto
+  const isPictoPlaceholder = (node) => {
+    const norm = node.name.toLowerCase();
+    return isIconPlaceholderNode(node) ||
+           norm.includes("picto") ||
+           norm.includes("icon") ||
+           norm.includes("svg") ||
+           norm.includes("logo") ||
+           norm.includes("mdi:") ||
+           norm.includes("iconify:");
+  };
+
+  // 2. Recherche du conteneur du bloc (ex: "Bloc 3", "Colonne 3", "Item 3") et recherche du picto dedans
+  const container = slideNode.findOne(node => {
+    const norm = node.name.toLowerCase();
+    const regex = new RegExp(`(?:bloc|colonne|item|point|étape|step)\\s*${blockNum}\\b`, 'i');
+    return regex.test(norm);
+  });
+  if (container && 'findAll' in container) {
+    const pictoInContainer = container.findOne(node => !usedNodes.has(node) && isPictoPlaceholder(node));
+    if (pictoInContainer) return pictoInContainer;
+  }
+
+  // 3. Recherche du picto via un calque texte du même bloc (ex: "Titre 3" ou "Texte 3") et son parent
+  const relativeTextNode = slideNode.findOne(node => {
+    if (node.type !== 'TEXT') return false;
+    const norm = node.name.toLowerCase();
+    return norm === `titre ${blockNum}` || norm === `titre  ${blockNum}` || norm === `texte ${blockNum}`;
+  });
+  if (relativeTextNode) {
+    let parent = relativeTextNode.parent;
+    for (let depth = 0; depth < 3; depth++) {
+      if (!parent || parent.type === 'PAGE' || parent.type === 'DOCUMENT') break;
+      const pictoInParent = parent.findOne(node => !usedNodes.has(node) && isPictoPlaceholder(node));
+      if (pictoInParent) return pictoInParent;
+      parent = parent.parent;
+    }
+  }
+
+  return null;
+}
 
 // Cherche récursivement un nœud contenant un remplissage de type IMAGE
 function findImageNode(node) {
@@ -1380,409 +1557,505 @@ figma.ui.onmessage = async (msg) => {
   }
 
   if (msg.type === 'generate-slides') {
-
-    const data = msg.data;
-
-    if (!data.slides || !Array.isArray(data.slides)) {
-      figma.ui.postMessage({ type: 'error', message: 'Format invalide : "slides" doit être une liste.' });
-      return;
-    }
-
-    // 1. Récupère tous les composants et tous les cadres (Frames) de la page active
-    const allComponents = figma.root.findAllWithCriteria({ types: ['COMPONENT'] });
-    const currentPageFrames = figma.currentPage.findAllWithCriteria({ types: ['FRAME'] });
-
-    // Position de départ pour les nouvelles slides (centre de la vue de l'utilisateur)
-    let currentX = figma.viewport.center.x - ((data.slides.length * 2020) / 2);
-    let currentY = figma.viewport.center.y - 540;
-
-    const createdInstances = [];
-    const fetchTasks = [];
-
-    // Boucle sur chaque slide définie dans le JSON
-    for (let i = 0; i < data.slides.length; i++) {
-      const slideData = data.slides[i];
-      const templateName = slideData.template;
-
-      // Recherche du template (soit un Composant, soit un Cadre/Frame)
-      let templateNode = null;
-
-      // 1. Recherche dans les cadres (Frames) de la page active (nom exact + dimensions de slide 1920x1080)
-      templateNode = currentPageFrames.find(f => normalize(f.name) === normalize(templateName) && f.width === 1920 && f.height === 1080);
-
-      // 2. Recherche dans les composants (nom exact + dimensions de slide 1920x1080)
-      if (!templateNode) {
-        templateNode = allComponents.find(c => normalize(c.name) === normalize(templateName) && c.width === 1920 && c.height === 1080);
-      }
-
-      // 3. Recherche dans les variants de composants (nom exact)
-      if (!templateNode) {
-        templateNode = allComponents.find(c => {
-          if (c.parent && c.parent.type === 'COMPONENT_SET') {
-            const properties = c.name.split(',').map(p => {
-              const parts = p.split('=');
-              return parts[1] ? parts[1].trim() : p.trim();
-            });
-            return properties.some(val => normalize(val) === normalize(templateName));
+    try {
+      let data = msg.data;
+      let lessons = [];
+      if (data) {
+        if (Array.isArray(data)) {
+          if (data.length > 0 && (data[0].template || data[0].content)) {
+            lessons = [{
+              lessonTitle: "Leçon",
+              slides: data
+            }];
+          } else {
+            lessons = data;
           }
-          return false;
-        });
+        } else if (data.lessons && Array.isArray(data.lessons)) {
+          lessons = data.lessons;
+        } else if (data.slides && Array.isArray(data.slides)) {
+          lessons = [{
+            lessonTitle: data.lessonTitle || "Leçon",
+            slides: data.slides
+          }];
+        } else if (data.template || data.content) {
+          lessons = [{
+            lessonTitle: "Leçon",
+            slides: [data]
+          }];
+        }
       }
-
-      // 4. Repli de secours sans filtrage de dimensions
-      if (!templateNode) {
-        templateNode = currentPageFrames.find(f => normalize(f.name) === normalize(templateName));
-      }
-      if (!templateNode) {
-        templateNode = allComponents.find(c => normalize(c.name) === normalize(templateName));
-      }      // Si le template n'a pas été trouvé
-      if (!templateNode) {
-        const availableNames = [
-          ...allComponents.map(c => c.name),
-          ...currentPageFrames.map(f => f.name)
-        ].filter((val, idx, self) => self.indexOf(val) === idx);
-
-        figma.ui.postMessage({
-          type: 'error',
-          message: `Template "${templateName}" introuvable.\n\n` +
-            `Pour résoudre cela :\n` +
-            `1. Assurez-vous d'avoir un cadre (Frame) ou un composant nommé exactement "${templateName}" dans votre fichier Figma (sur la page courante).\n` +
-            `2. Si vos templates sont sur une autre page, allez sur cette page ou copiez-les ici.\n\n` +
-            `Éléments trouvés : ` + (availableNames.slice(0, 10).join(', ') || 'aucun') +
-            (availableNames.length > 10 ? '...' : '')
-        });
+      if (lessons.length === 0) {
+        figma.ui.postMessage({ type: 'error', message: 'Format invalide : fourni une slide, une liste de slides ou un format leçons.' });
         return;
       }
 
-      // 2. Duplication du template (création d'une instance ou clonage du cadre)
-      let instance;
-      if (templateNode.type === 'COMPONENT') {
-        instance = templateNode.createInstance();
-      } else {
-        instance = templateNode.clone();
+    // Aplatit toutes les slides pour les traitements post-création (renommage, etc.)
+    const flatSlidesData = [];
+    for (const lesson of lessons) {
+      if (lesson.slides && Array.isArray(lesson.slides)) {
+        flatSlidesData.push(...lesson.slides);
+      }
+    }
+
+    // 1. Récupère tous les composants et tous les cadres (Frames) de toutes les pages
+    const allComponents = figma.root.findAllWithCriteria({ types: ['COMPONENT'] });
+    const currentPageFrames = figma.root.findAllWithCriteria({ types: ['FRAME'] });
+
+    // Calcul de la largeur totale pour centrer l'ensemble des leçons côte à côte
+    const totalLessons = lessons.length;
+    let totalWidth = 0;
+    for (let idx = 0; idx < totalLessons; idx++) {
+      const slidesCount = (lessons[idx].slides || []).length;
+      const slidesWidth = slidesCount > 0 ? (slidesCount * 2020 - 100) : 1920;
+      const lessonWidth = slidesWidth + 1000; // 500px padding à gauche et 500px à droite
+      totalWidth += lessonWidth;
+      if (idx < totalLessons - 1) {
+        totalWidth += 500; // Espace entre les leçons plus proche
+      }
+    }
+
+    // Position de départ horizontale et verticale centrée
+    let currentX = figma.viewport.center.x - (totalWidth / 2);
+    // Hauteur totale : 500 (top) + 1080 (slides) + 250 (gap) + 200 (séparateur) + 8640 (bottom) = 10670px
+    let currentY = figma.viewport.center.y - (10670 / 2);
+
+    const createdInstances = [];
+    const lessonFrames = [];
+    const fetchTasks = [];
+
+    // Boucle sur chaque leçon (côte à côte)
+    for (let lessonIndex = 0; lessonIndex < totalLessons; lessonIndex++) {
+      const lesson = lessons[lessonIndex];
+      const slides = lesson.slides || [];
+      const slidesWidth = slides.length > 0 ? (slides.length * 2020 - 100) : 1920;
+      const lessonWidth = slidesWidth + 1000; // +1000px pour les marges gauche/droite de 500px
+
+      // Création du conteneur (Frame) de la leçon uniquement si plusieurs slides sont générées au total
+      const isSingleSlide = (flatSlidesData.length === 1);
+      let lessonFrame = null;
+      if (!isSingleSlide) {
+        lessonFrame = figma.createFrame();
+        lessonFrame.name = lesson.lessonId || lesson.code || lesson.lessonTitle || `Leçon ${lessonIndex + 1}`;
+        lessonFrame.resize(lessonWidth, 10670);
+        lessonFrame.x = currentX;
+        lessonFrame.y = currentY;
+        lessonFrame.fills = [{ type: 'SOLID', color: hexToFigmaColor("#F2F3F6") }]; // Couleur de fond gris clair
+        figma.currentPage.appendChild(lessonFrame);
+        lessonFrames.push(lessonFrame);
       }
 
-      // Ajout explicite sur la page active
-      figma.currentPage.appendChild(instance);
+      // Boucle sur chaque slide définie dans la leçon
+      for (let i = 0; i < slides.length; i++) {
+        const slideData = slides[i];
+        const templateName = slideData.template;
 
-      // Positionnement de la slide
-      instance.x = currentX;
-      instance.y = currentY;
+        // Recherche du template (soit un Composant, soit un Cadre/Frame)
+        let templateNode = null;
 
-      // Renommage de la slide
-      instance.name = `${i + 1}. ${templateNode.name}`;
+        // 1. Recherche dans les cadres (Frames) de la page active (nom exact + dimensions de slide 1920x1080)
+        templateNode = currentPageFrames.find(f => normalize(f.name) === normalize(templateName) && f.width === 1920 && f.height === 1080);
 
-      // Décalage pour la slide suivante (1920px de large + 100px d'espace)
-      currentX += 2020;
-      createdInstances.push(instance);
-
-      // 3. Remplissage des textes et préparation des assets dans l'instance (calques visibles uniquement)
-      const textNodes = findTextNodes(instance).filter(isNodeVisible);
-      const sortedTextNodes = sortNodesByPosition(textNodes);
-
-      const allShapes = findPlaceholderNodes(instance).filter(isNodeVisible);
-      const shapeNodes = filterShapeNodes(allShapes, instance);
-      const sortedShapeNodes = sortNodesByPosition(shapeNodes);
-
-      const slideContent = slideData.content || slideData.data;
-
-      if (Array.isArray(slideContent)) {
-        // Cas A : Le contenu est une simple liste ordonnée de textes
-        for (let j = 0; j < Math.min(slideContent.length, sortedTextNodes.length); j++) {
-          const node = sortedTextNodes[j];
-          const text = slideContent[j];
-          await loadFontForNode(node);
-          node.characters = text;
-          node.visible = true; // S'assure que le calque est visible s'il a du contenu
+        // 2. Recherche dans les composants (nom exact + dimensions de slide 1920x1080)
+        if (!templateNode) {
+          templateNode = allComponents.find(c => normalize(c.name) === normalize(templateName) && c.width === 1920 && c.height === 1080);
         }
-      } else if (typeof slideContent === 'object' && slideContent !== null) {
-        // Cas B : Le contenu est un objet clé-valeur
-        const keys = Object.keys(slideContent);
-        const usedNodes = new Set();
 
-        // Étape 1 : Correspondance exacte par le nom du calque
-        for (const key of keys) {
-          const val = slideContent[key];
-
-          if (isImageUrlValue(val)) {
-            // C'est une image. On cherche une forme correspondante (par nom exact, ou contenant "photo", "image", etc.)
-            const targetNode = shapeNodes.find(node =>
-              !usedNodes.has(node) &&
-              (normalize(node.name) === normalize(key) ||
-               normalize(node.name).includes("photo") ||
-               normalize(node.name).includes("image") ||
-               normalize(node.name).includes("illustration"))
-            );
-            if (targetNode) {
-              fetchTasks.push({ id: targetNode.id, url: val.trim(), name: key, type: 'image' });
-              usedNodes.add(targetNode);
+        // 3. Recherche dans les variants de composants (nom exact)
+        if (!templateNode) {
+          templateNode = allComponents.find(c => {
+            if (c.parent && c.parent.type === 'COMPONENT_SET') {
+              const properties = c.name.split(',').map(p => {
+                const parts = p.split('=');
+                return parts[1] ? parts[1].trim() : p.trim();
+              });
+              return properties.some(val => normalize(val) === normalize(templateName));
             }
-          } else if (isIconValue(val)) {
-            // C'est une icône. On cherche une forme correspondante.
-            const targetNode = shapeNodes.find(node =>
-              !usedNodes.has(node) &&
-              normalize(node.name) === normalize(key)
-            );
-            if (targetNode) {
-              const iconName = val.startsWith('iconify:') ? val.substring(8).trim() : val.trim();
-              const parts = iconName.split(':');
-              if (parts.length === 2) {
-                const iconUrl = `https://api.iconify.design/${parts[0]}/${parts[1]}.svg`;
-                fetchTasks.push({ id: targetNode.id, url: iconUrl, name: iconName, type: 'icon' });
-                usedNodes.add(targetNode);
-              }
-            }
-          } else {
-            // C'est du texte brut
-            const targetNode = textNodes.find(node =>
-              !usedNodes.has(node) &&
-              normalize(node.name) === normalize(key)
-            );
+            return false;
+          });
+        }
 
-            if (targetNode) {
-              await loadFontForNode(targetNode);
-              targetNode.characters = String(val);
-              targetNode.visible = true;
-              usedNodes.add(targetNode);
+        // 4. Repli de secours sans filtrage de dimensions
+        if (!templateNode) {
+          templateNode = currentPageFrames.find(f => normalize(f.name) === normalize(templateName));
+        }
+        if (!templateNode) {
+          templateNode = allComponents.find(c => normalize(c.name) === normalize(templateName));
+        }
+
+        // Si le template n'a pas été trouvé
+        if (!templateNode) {
+          const availableNames = [
+            ...allComponents.map(c => c.name),
+            ...currentPageFrames.map(f => f.name)
+          ].filter((val, idx, self) => self.indexOf(val) === idx);
+
+          figma.ui.postMessage({
+            type: 'error',
+            message: `Template "${templateName}" introuvable.\n\n` +
+              `Pour résoudre cela :\n` +
+              `1. Assurez-vous d'avoir un cadre (Frame) ou un composant nommé exactement "${templateName}" dans votre fichier Figma (sur la page courante).\n` +
+              `2. Si vos templates sont sur une autre page, allez sur cette page ou copiez-les ici.\n\n` +
+              `Éléments trouvés : ` + (availableNames.slice(0, 10).join(', ') || 'aucun') +
+              (availableNames.length > 10 ? '...' : '')
+          });
+          return;
+        }
+
+        // 2. Duplication du template (création d'une instance ou clonage du cadre)
+        let instance;
+        if (templateNode.type === 'COMPONENT') {
+          instance = templateNode.createInstance();
+        } else {
+          instance = templateNode.clone();
+        }
+
+        // Ajout à l'intérieur du cadre de la leçon ou direct sur la page
+        if (lessonFrame) {
+          lessonFrame.appendChild(instance);
+          // Positionnement local de la slide dans la leçon (marge interne de 500px à gauche et en haut)
+          instance.x = 500 + i * 2020;
+          instance.y = 500;
+        } else {
+          figma.currentPage.appendChild(instance);
+          instance.x = currentX;
+          instance.y = currentY;
+        }
+
+        // Renommage hiérarchique de la slide (ex: 1.1. NomTemplate, ou 1. NomTemplate)
+        const prefixIndex = totalLessons > 1 ? `${lessonIndex + 1}.${i + 1}` : `${i + 1}`;
+        instance.name = `${prefixIndex}. ${templateNode.name}`;
+
+        createdInstances.push(instance);
+
+        // 3. Remplissage des textes et préparation des assets dans l'instance (calques visibles uniquement)
+        const textNodes = findTextNodes(instance).filter(isNodeVisible);
+        const sortedTextNodes = sortNodesByPosition(textNodes);
+
+        const allShapes = findPlaceholderNodes(instance).filter(isNodeVisible);
+        const shapeNodes = filterShapeNodes(allShapes, instance);
+        const sortedShapeNodes = sortNodesByPosition(shapeNodes);
+
+        let slideContent = slideData.content || slideData.data;
+
+        // Normalisation si le contenu est sous forme de tableau de paires clé-valeur [{"key": "...", "value": "..."}]
+        if (Array.isArray(slideContent) && slideContent.length > 0 && typeof slideContent[0] === 'object' && slideContent[0] !== null && 'key' in slideContent[0]) {
+          const normalized = {};
+          for (const item of slideContent) {
+            if (item && typeof item === 'object' && 'key' in item) {
+              normalized[item.key] = item.value;
             }
           }
+          slideContent = normalized;
         }
 
-        // Étape 2 : Pour les clés restantes non associées, on remplit par ordre de position
-        const remainingTextKeys = [];
-        const remainingIconKeys = [];
+        if (Array.isArray(slideContent)) {
+          // Cas A : Le contenu est une simple liste ordonnée de textes
+          for (let j = 0; j < Math.min(slideContent.length, sortedTextNodes.length); j++) {
+            const node = sortedTextNodes[j];
+            const text = slideContent[j];
+            await loadFontForNode(node);
+            node.characters = text;
+            node.visible = true; // S'assure que le calque est visible s'il a du contenu
+          }
+        } else if (typeof slideContent === 'object' && slideContent !== null) {
+          // Cas B : Le contenu est un objet clé-valeur
+          const keys = Object.keys(slideContent);
+          const usedNodes = new Set();
 
-        for (const key of keys) {
-          const val = slideContent[key];
-          const isConsumed = shapeNodes.some(node => usedNodes.has(node) && (normalize(node.name) === normalize(key) || (isImageUrlValue(val) && (normalize(node.name).includes("photo") || normalize(node.name).includes("image") || normalize(node.name).includes("illustration"))))) ||
-            textNodes.some(node => usedNodes.has(node) && normalize(node.name) === normalize(key));
+          // Étape 1 : Correspondance exacte par le nom du calque
+          for (const key of keys) {
+            const val = slideContent[key];
 
-          if (!isConsumed) {
             if (isImageUrlValue(val)) {
-              // C'est une image non consommée. On cherche une forme libre.
+              // C'est une image. On cherche une forme correspondante (par nom exact, ou contenant "photo", "image", etc.)
               const targetNode = shapeNodes.find(node =>
                 !usedNodes.has(node) &&
-                (normalize(node.name).includes("photo") ||
+                (normalize(node.name) === normalize(key) ||
+                 normalize(node.name).includes("photo") ||
                  normalize(node.name).includes("image") ||
                  normalize(node.name).includes("illustration"))
-              ) || shapeNodes.find(node => !usedNodes.has(node) && !isIconPlaceholderNode(node));
+              );
               if (targetNode) {
                 fetchTasks.push({ id: targetNode.id, url: val.trim(), name: key, type: 'image' });
                 usedNodes.add(targetNode);
               }
             } else if (isIconValue(val)) {
-              remainingIconKeys.push(val);
-            } else {
-              remainingTextKeys.push({ key, val });
-            }
-          }
-        }
-
-        // A. Remplissage des textes par position
-        const remainingTextNodes = sortedTextNodes.filter(node => !usedNodes.has(node));
-        for (let j = 0; j < Math.min(remainingTextKeys.length, remainingTextNodes.length); j++) {
-          const { val } = remainingTextKeys[j];
-          const node = remainingTextNodes[j];
-          await loadFontForNode(node);
-          node.characters = String(val);
-          node.visible = true;
-          usedNodes.add(node);
-        }
-
-        // B. Remplissage des icônes par position
-        const potentialIconNodes = sortedShapeNodes.filter(node => {
-          if (usedNodes.has(node)) return false;
-          return isIconPlaceholderNode(node) ||
-            normalize(node.name).includes("picto") ||
-            normalize(node.name).includes("icon") ||
-            normalize(node.name).includes("svg") ||
-            normalize(node.name).includes("logo");
-        });
-        for (let j = 0; j < Math.min(remainingIconKeys.length, potentialIconNodes.length); j++) {
-          const val = remainingIconKeys[j];
-          const node = potentialIconNodes[j];
-          const iconName = val.startsWith('iconify:') ? val.substring(8).trim() : val.trim();
-          const parts = iconName.split(':');
-          if (parts.length === 2) {
-            const iconUrl = `https://api.iconify.design/${parts[0]}/${parts[1]}.svg`;
-            fetchTasks.push({ id: node.id, url: iconUrl, name: iconName, type: 'icon' });
-            usedNodes.add(node);
-          }
-        }
-      }
-
-      // 3.5. Application des éléments sur-mesure (custom_elements)
-      if (slideData.custom_elements && Array.isArray(slideData.custom_elements)) {
-        for (const element of slideData.custom_elements) {
-          try {
-            if (element.action === 'create_node') {
-              let parentNode = instance;
-              if (element.parent_selector) {
-                parentNode = instance.findAll(n => normalize(n.name) === normalize(element.parent_selector))[0] || instance;
-              }
-
-              let newNode;
-              const nodeType = (element.node_type || 'FRAME').toUpperCase();
-              if (nodeType === 'FRAME') {
-                newNode = figma.createFrame();
-              } else if (nodeType === 'TEXT') {
-                newNode = figma.createText();
-              } else if (nodeType === 'RECTANGLE') {
-                newNode = figma.createRectangle();
-              } else {
-                continue;
-              }
-
-              if (element.name) {
-                newNode.name = element.name;
-              }
-
-              parentNode.appendChild(newNode);
-
-              // Renseigne les propriétés (position, dimensions, couleurs, texte)
-              if (element.properties) {
-                let w = newNode.width;
-                let h = newNode.height;
-                let hasWidth = false;
-                let hasHeight = false;
-
-                // Charge la police en premier si elle est définie dans les propriétés pour éviter les erreurs Figma
-                let fontToLoad = { family: "Inter", style: "Regular" };
-                if (nodeType === 'TEXT') {
-                  if (element.properties.fontName) {
-                    const f = element.properties.fontName;
-                    if (f.family && f.style) {
-                      fontToLoad = { family: f.family, style: f.style };
-                    }
-                  }
-                  await figma.loadFontAsync(fontToLoad);
-                  newNode.fontName = fontToLoad;
-                }
-
-                for (const [prop, val] of Object.entries(element.properties)) {
-                  if (prop === 'width') {
-                    w = Number(val);
-                    hasWidth = true;
-                  } else if (prop === 'height') {
-                    h = Number(val);
-                    hasHeight = true;
-                  } else if (prop === 'fills') {
-                    if (typeof val === 'string' && val.startsWith('#')) {
-                      newNode.fills = [{ type: 'SOLID', color: hexToFigmaColor(val) }];
-                    } else if (Array.isArray(val)) {
-                      newNode.fills = val.map(f => {
-                        if (typeof f === 'string' && f.startsWith('#')) {
-                          return { type: 'SOLID', color: hexToFigmaColor(f) };
-                        } else if (f && f.hex) {
-                          return { type: 'SOLID', color: hexToFigmaColor(f.hex), opacity: f.opacity !== undefined ? f.opacity : 1 };
-                        }
-                        return f;
-                      });
-                    }
-                  } else if (prop === 'strokes') {
-                    if (typeof val === 'string' && val.startsWith('#')) {
-                      newNode.strokes = [{ type: 'SOLID', color: hexToFigmaColor(val) }];
-                    } else if (Array.isArray(val)) {
-                      newNode.strokes = val.map(f => {
-                        if (typeof f === 'string' && f.startsWith('#')) {
-                          return { type: 'SOLID', color: hexToFigmaColor(f) };
-                        } else if (f && f.hex) {
-                          return { type: 'SOLID', color: hexToFigmaColor(f.hex), opacity: f.opacity !== undefined ? f.opacity : 1 };
-                        }
-                        return f;
-                      });
-                    }
-                  } else if (prop === 'characters' && nodeType === 'TEXT') {
-                    newNode.characters = String(val);
-                  } else if (prop === 'image') {
-                    fetchTasks.push({ id: newNode.id, url: val.trim(), name: 'image', type: 'image' });
-                  } else if (prop === 'fontName') {
-                    // Déjà appliqué en amont
-                  } else if (prop in newNode) {
-                    newNode[prop] = val;
-                  }
-                }
-                if (hasWidth || hasHeight) {
-                  newNode.resize(w, h);
-                }
-              }
-
-              // Chargement optionnel d'icône pour ce nouveau nœud
-              if (element.icon) {
-                const iconName = element.icon.startsWith('iconify:') ? element.icon.substring(8).trim() : element.icon.trim();
+              // C'est une icône. On cherche une forme correspondante (par bloc ou nom exact).
+              const targetNode = getTargetPictoNode(instance, key, shapeNodes, usedNodes);
+              if (targetNode) {
+                const iconName = val.startsWith('iconify:') ? val.substring(8).trim() : val.trim();
                 const parts = iconName.split(':');
                 if (parts.length === 2) {
                   const iconUrl = `https://api.iconify.design/${parts[0]}/${parts[1]}.svg`;
-                  fetchTasks.push({ id: newNode.id, url: iconUrl, name: iconName, type: 'icon' });
+                  fetchTasks.push({ id: targetNode.id, url: iconUrl, name: iconName, type: 'icon' });
+                  usedNodes.add(targetNode);
                 }
               }
+            } else {
+              // C'est du texte brut
+              const targetNode = textNodes.find(node =>
+                !usedNodes.has(node) &&
+                normalize(node.name) === normalize(key)
+              );
 
-              // Chargement optionnel d'image pour ce nouveau nœud
-              if (element.image) {
-                fetchTasks.push({ id: newNode.id, url: element.image.trim(), name: 'image', type: 'image' });
+              if (targetNode) {
+                await loadFontForNode(targetNode);
+                targetNode.characters = String(val);
+                targetNode.visible = true;
+                usedNodes.add(targetNode);
               }
-            } else if (element.action === 'delete_node' || element.action === 'delete_layer') {
-              if (element.selector) {
-                const target = instance.findAll(n => normalize(n.name) === normalize(element.selector))[0];
-                if (target) target.remove();
+            }
+          }
+
+          // Étape 2 : Pour les clés restantes non associées, on remplit par ordre de position
+          const remainingTextKeys = [];
+          const remainingIconKeys = [];
+
+          for (const key of keys) {
+            const val = slideContent[key];
+            const isConsumed = shapeNodes.some(node => usedNodes.has(node) && (normalize(node.name) === normalize(key) || (isImageUrlValue(val) && (normalize(node.name).includes("photo") || normalize(node.name).includes("image") || normalize(node.name).includes("illustration"))))) ||
+              textNodes.some(node => usedNodes.has(node) && normalize(node.name) === normalize(key));
+
+            if (!isConsumed) {
+              if (isImageUrlValue(val)) {
+                // C'est une image non consommée. On cherche une forme libre.
+                const targetNode = shapeNodes.find(node =>
+                  !usedNodes.has(node) &&
+                  (normalize(node.name).includes("photo") ||
+                   normalize(node.name).includes("image") ||
+                   normalize(node.name).includes("illustration"))
+                ) || shapeNodes.find(node => !usedNodes.has(node) && !isIconPlaceholderNode(node));
+                if (targetNode) {
+                  fetchTasks.push({ id: targetNode.id, url: val.trim(), name: key, type: 'image' });
+                  usedNodes.add(targetNode);
+                }
+              } else if (isIconValue(val)) {
+                remainingIconKeys.push(val);
+              } else {
+                remainingTextKeys.push({ key, val });
               }
-            } else if (element.action === 'set_property') {
-              if (element.selector) {
-                const target = instance.findAll(n => normalize(n.name) === normalize(element.selector))[0];
-                if (target) {
-                  const prop = element.property;
-                  const val = element.value;
-                  if (prop === 'width') {
-                    target.resize(Number(val), target.height);
-                  } else if (prop === 'height') {
-                    target.resize(target.width, Number(val));
-                  } else if (prop === 'fills') {
-                    if (typeof val === 'string' && val.startsWith('#')) {
-                      target.fills = [{ type: 'SOLID', color: hexToFigmaColor(val) }];
-                    } else if (Array.isArray(val)) {
-                      target.fills = val.map(f => {
-                        if (typeof f === 'string' && f.startsWith('#')) {
-                          return { type: 'SOLID', color: hexToFigmaColor(f) };
-                        } else if (f && f.hex) {
-                          return { type: 'SOLID', color: hexToFigmaColor(f.hex), opacity: f.opacity !== undefined ? f.opacity : 1 };
-                        }
-                        return f;
-                      });
+            }
+          }
+
+          // A. Remplissage des textes par position
+          const remainingTextNodes = sortedTextNodes.filter(node => !usedNodes.has(node));
+          for (let j = 0; j < Math.min(remainingTextKeys.length, remainingTextNodes.length); j++) {
+            const { val } = remainingTextKeys[j];
+            const node = remainingTextNodes[j];
+            await loadFontForNode(node);
+            node.characters = String(val);
+            node.visible = true;
+            usedNodes.add(node);
+          }
+
+          // B. Remplissage des icônes par position
+          const potentialIconNodes = sortedShapeNodes.filter(node => {
+            if (usedNodes.has(node)) return false;
+            return isIconPlaceholderNode(node) ||
+              normalize(node.name).includes("picto") ||
+              normalize(node.name).includes("icon") ||
+              normalize(node.name).includes("svg") ||
+              normalize(node.name).includes("logo");
+          });
+          for (let j = 0; j < Math.min(remainingIconKeys.length, potentialIconNodes.length); j++) {
+            const val = remainingIconKeys[j];
+            const node = potentialIconNodes[j];
+            const iconName = val.startsWith('iconify:') ? val.substring(8).trim() : val.trim();
+            const parts = iconName.split(':');
+            if (parts.length === 2) {
+              const iconUrl = `https://api.iconify.design/${parts[0]}/${parts[1]}.svg`;
+              fetchTasks.push({ id: node.id, url: iconUrl, name: iconName, type: 'icon' });
+              usedNodes.add(node);
+            }
+          }
+        }
+
+        // 3.5. Application des éléments sur-mesure (custom_elements)
+        if (slideData.custom_elements && Array.isArray(slideData.custom_elements)) {
+          for (const element of slideData.custom_elements) {
+            try {
+              if (element.action === 'create_node') {
+                let parentNode = instance;
+                if (element.parent_selector) {
+                  parentNode = instance.findAll(n => normalize(n.name) === normalize(element.parent_selector))[0] || instance;
+                }
+
+                let newNode;
+                const nodeType = (element.node_type || 'FRAME').toUpperCase();
+                if (nodeType === 'FRAME') {
+                  newNode = figma.createFrame();
+                } else if (nodeType === 'TEXT') {
+                  newNode = figma.createText();
+                } else if (nodeType === 'RECTANGLE') {
+                  newNode = figma.createRectangle();
+                } else {
+                  continue;
+                }
+
+                if (element.name) {
+                  newNode.name = element.name;
+                }
+
+                parentNode.appendChild(newNode);
+
+                // Renseigne les propriétés (position, dimensions, couleurs, texte)
+                if (element.properties) {
+                  let w = newNode.width;
+                  let h = newNode.height;
+                  let hasWidth = false;
+                  let hasHeight = false;
+
+                  // Charge la police en premier si elle est définie dans les propriétés pour éviter les erreurs Figma
+                  let fontToLoad = { family: "Inter", style: "Regular" };
+                  if (nodeType === 'TEXT') {
+                    if (element.properties.fontName) {
+                      const f = element.properties.fontName;
+                      if (f.family && f.style) {
+                        fontToLoad = { family: f.family, style: f.style };
+                      }
                     }
-                  } else if (prop === 'strokes') {
-                    if (typeof val === 'string' && val.startsWith('#')) {
-                      target.strokes = [{ type: 'SOLID', color: hexToFigmaColor(val) }];
-                    } else if (Array.isArray(val)) {
-                      target.strokes = val.map(f => {
-                        if (typeof f === 'string' && f.startsWith('#')) {
-                          return { type: 'SOLID', color: hexToFigmaColor(f) };
-                        } else if (f && f.hex) {
-                          return { type: 'SOLID', color: hexToFigmaColor(f.hex), opacity: f.opacity !== undefined ? f.opacity : 1 };
-                        }
-                        return f;
-                      });
+                    await figma.loadFontAsync(fontToLoad);
+                    newNode.fontName = fontToLoad;
+                  }
+
+                  for (const [prop, val] of Object.entries(element.properties)) {
+                    if (prop === 'width') {
+                      w = Number(val);
+                      hasWidth = true;
+                    } else if (prop === 'height') {
+                      h = Number(val);
+                      hasHeight = true;
+                    } else if (prop === 'fills') {
+                      if (typeof val === 'string' && val.startsWith('#')) {
+                        newNode.fills = [{ type: 'SOLID', color: hexToFigmaColor(val) }];
+                      } else if (Array.isArray(val)) {
+                        newNode.fills = val.map(f => {
+                          if (typeof f === 'string' && f.startsWith('#')) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f) };
+                          } else if (f && f.hex) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f.hex), opacity: f.opacity !== undefined ? f.opacity : 1 };
+                          }
+                          return f;
+                        });
+                      }
+                    } else if (prop === 'strokes') {
+                      if (typeof val === 'string' && val.startsWith('#')) {
+                        newNode.strokes = [{ type: 'SOLID', color: hexToFigmaColor(val) }];
+                      } else if (Array.isArray(val)) {
+                        newNode.strokes = val.map(f => {
+                          if (typeof f === 'string' && f.startsWith('#')) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f) };
+                          } else if (f && f.hex) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f.hex), opacity: f.opacity !== undefined ? f.opacity : 1 };
+                          }
+                          return f;
+                        });
+                      }
+                    } else if (prop === 'characters' && nodeType === 'TEXT') {
+                      newNode.characters = String(val);
+                    } else if (prop === 'image') {
+                      fetchTasks.push({ id: newNode.id, url: val.trim(), name: 'image', type: 'image' });
+                    } else if (prop === 'fontName') {
+                      // Déjà appliqué en amont
+                    } else if (prop in newNode) {
+                      newNode[prop] = val;
                     }
-                  } else if (prop === 'fontName' && target.type === 'TEXT') {
-                    if (val && val.family && val.style) {
-                      await figma.loadFontAsync(val);
-                      target.fontName = val;
+                  }
+                  if (hasWidth || hasHeight) {
+                    newNode.resize(w, h);
+                  }
+                }
+
+                // Chargement optionnel d'icône pour ce nouveau nœud
+                if (element.icon) {
+                  const iconName = element.icon.startsWith('iconify:') ? element.icon.substring(8).trim() : element.icon.trim();
+                  const parts = iconName.split(':');
+                  if (parts.length === 2) {
+                    const iconUrl = `https://api.iconify.design/${parts[0]}/${parts[1]}.svg`;
+                    fetchTasks.push({ id: newNode.id, url: iconUrl, name: iconName, type: 'icon' });
+                  }
+                }
+
+                // Chargement optionnel d'image pour ce nouveau nœud
+                if (element.image) {
+                  fetchTasks.push({ id: newNode.id, url: element.image.trim(), name: 'image', type: 'image' });
+                }
+              } else if (element.action === 'delete_node' || element.action === 'delete_layer') {
+                if (element.selector) {
+                  const target = instance.findAll(n => normalize(n.name) === normalize(element.selector))[0];
+                  if (target) target.remove();
+                }
+              } else if (element.action === 'set_property') {
+                if (element.selector) {
+                  const target = instance.findAll(n => normalize(n.name) === normalize(element.selector))[0];
+                  if (target) {
+                    const prop = element.property;
+                    const val = element.value;
+                    if (prop === 'width') {
+                      target.resize(Number(val), target.height);
+                    } else if (prop === 'height') {
+                      target.resize(target.width, Number(val));
+                    } else if (prop === 'fills') {
+                      if (typeof val === 'string' && val.startsWith('#')) {
+                        target.fills = [{ type: 'SOLID', color: hexToFigmaColor(val) }];
+                      } else if (Array.isArray(val)) {
+                        target.fills = val.map(f => {
+                          if (typeof f === 'string' && f.startsWith('#')) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f) };
+                          } else if (f && f.hex) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f.hex), opacity: f.opacity !== undefined ? f.opacity : 1 };
+                          }
+                          return f;
+                        });
+                      }
+                    } else if (prop === 'strokes') {
+                      if (typeof val === 'string' && val.startsWith('#')) {
+                        target.strokes = [{ type: 'SOLID', color: hexToFigmaColor(val) }];
+                      } else if (Array.isArray(val)) {
+                        target.strokes = val.map(f => {
+                          if (typeof f === 'string' && f.startsWith('#')) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f) };
+                          } else if (f && f.hex) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f.hex), opacity: f.opacity !== undefined ? f.opacity : 1 };
+                          }
+                          return f;
+                        });
+                      }
+                    } else if (prop === 'fontName' && target.type === 'TEXT') {
+                      if (val && val.family && val.style) {
+                        await figma.loadFontAsync(val);
+                        target.fontName = val;
+                      }
+                    } else if (prop === 'characters' && target.type === 'TEXT') {
+                      await figma.loadFontAsync(target.fontName);
+                      target.characters = String(val);
+                    } else if (prop === 'image') {
+                      fetchTasks.push({ id: target.id, url: val.trim(), name: 'image', type: 'image' });
+                    } else if (prop in target) {
+                      target[prop] = val;
                     }
-                  } else if (prop === 'characters' && target.type === 'TEXT') {
-                    await figma.loadFontAsync(target.fontName);
-                    target.characters = String(val);
-                  } else if (prop === 'image') {
-                    fetchTasks.push({ id: target.id, url: val.trim(), name: 'image', type: 'image' });
-                  } else if (prop in target) {
-                    target[prop] = val;
                   }
                 }
               }
+            } catch (err) {
+              console.error("Erreur lors de la création d'un élément sur-mesure :", err);
             }
-          } catch (err) {
-            console.error("Erreur lors de la création d'un élément sur-mesure :", err);
           }
         }
       }
+      // Ajout du rectangle séparateur rose sous les slides de cette leçon (bord à bord) uniquement si le cadre de leçon existe
+      if (lessonFrame) {
+        const separator = figma.createRectangle();
+        separator.name = "Séparateur";
+        separator.resize(lessonWidth, 200); // Toute la largeur de la leçon
+        separator.x = 0; // Aligné sur le bord gauche
+        separator.y = 1830; // 500px (top) + 1080px (slides) + 250px (gap)
+        separator.fills = [{ type: 'SOLID', color: hexToFigmaColor("#FFB2B2") }];
+        lessonFrame.appendChild(separator);
+      }
+
+      // Décalage horizontal pour positionner la leçon suivante côte à côte
+      currentX += lessonWidth + 500;
     }
 
     // 4. Récupération et application asynchrone des assets (icônes uniquement)
@@ -1906,7 +2179,8 @@ figma.ui.onmessage = async (msg) => {
 
     // Renommer les calques des slides custom (à partir de templates vides ou contenant des éléments custom)
     for (let i = 0; i < createdInstances.length; i++) {
-      const slideData = data.slides[i];
+      const slideData = flatSlidesData[i];
+      if (!slideData) continue;
       const instance = createdInstances[i];
       const templateNameNorm = normalize(slideData.template);
       if ((slideData.custom_elements && slideData.custom_elements.length > 0) || templateNameNorm.includes("blank") || templateNameNorm.includes("vide")) {
@@ -1918,13 +2192,20 @@ figma.ui.onmessage = async (msg) => {
       }
     }
 
-    // Sélectionne les nouvelles slides générées
-    figma.currentPage.selection = createdInstances;
+    // Sélectionne les cadres des leçons générées
+    figma.currentPage.selection = lessonFrames;
 
     figma.ui.postMessage({
       type: 'success',
-      message: `Félicitations ! ${data.slides.length} slides ont été créées avec succès.`
+      message: `Félicitations ! ${flatSlidesData.length} slides ont été créées avec succès.`
     });
+    } catch (globalError) {
+      console.error("Erreur de génération :", globalError);
+      figma.ui.postMessage({
+        type: 'error',
+        message: `Une erreur est survenue lors de la génération : ${globalError.message || globalError}`
+      });
+    }
   } else if (msg.type === 'toggle-replace-mode') {
     if (replaceModeTargetId !== null) {
       replaceModeTargetId = null;
@@ -1994,6 +2275,17 @@ figma.ui.onmessage = async (msg) => {
         const slideIndex = parseInt(match[1], 10) - 1;
         if (slideIndex >= 0 && slideIndex < data.slides.length) {
           jsonSlideContent = data.slides[slideIndex].content || data.slides[slideIndex].data;
+          
+          // Normalisation si le contenu est sous forme de tableau de paires clé-valeur [{"key": "...", "value": "..."}]
+          if (Array.isArray(jsonSlideContent) && jsonSlideContent.length > 0 && typeof jsonSlideContent[0] === 'object' && jsonSlideContent[0] !== null && 'key' in jsonSlideContent[0]) {
+            const normalized = {};
+            for (const item of jsonSlideContent) {
+              if (item && typeof item === 'object' && 'key' in item) {
+                normalized[item.key] = item.value;
+              }
+            }
+            jsonSlideContent = normalized;
+          }
         }
       }
     }
@@ -2001,14 +2293,11 @@ figma.ui.onmessage = async (msg) => {
     if (jsonSlideContent && typeof jsonSlideContent === 'object') {
       const keys = Object.keys(jsonSlideContent);
 
-      // A. Correspondance par nom exact de calque (ex: "Picto 1")
+      // A. Correspondance par bloc ou nom exact de calque (ex: "Picto 1")
       for (const key of keys) {
         const val = jsonSlideContent[key];
         if (isIconValue(val)) {
-          const targetNode = shapeNodes.find(node =>
-            !usedNodes.has(node) &&
-            normalize(node.name) === normalize(key)
-          );
+          const targetNode = getTargetPictoNode(selection, key, shapeNodes, usedNodes);
           if (targetNode) {
             const iconName = val.startsWith('iconify:') ? val.substring(8).trim() : val.trim();
             const parts = iconName.split(':');
@@ -2181,17 +2470,35 @@ figma.ui.onmessage = async (msg) => {
       });
     }
   } else if (msg.type === 'split-slides') {
-    // 1. Récupère la sélection Figma active
     const selection = figma.currentPage.selection;
     if (!selection || selection.length === 0) {
-      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez au moins une slide.' });
+      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez au moins une slide ou une Frame de leçon.' });
       return;
     }
+    // Résout la sélection pour obtenir les slides cibles (gère la sélection de la Frame leçon parente)
+    let targetSlides = [];
+    for (const node of selection) {
+      if (node.type === 'FRAME' || node.type === 'COMPONENT' || node.type === 'INSTANCE') {
+        const isLessonFrame = /^[Mm]\d+/.test(node.name);
+        const childSlides = 'children' in node 
+          ? node.children.filter(child => {
+              const isSlide = (child.type === 'FRAME' || child.type === 'COMPONENT' || child.type === 'INSTANCE') && child.width === 1920 && child.height === 1080;
+              if (isLessonFrame) {
+                return isSlide && child.y < 1830;
+              }
+              return isSlide;
+            })
+          : [];
+        if (childSlides.length > 0) {
+          targetSlides.push(...childSlides);
+        } else {
+          targetSlides.push(node);
+        }
+      }
+    }
 
-    // Filtre pour ne garder que les Frames, Components et Instances
-    const targetSlides = selection.filter(node => node.type === 'FRAME' || node.type === 'COMPONENT' || node.type === 'INSTANCE');
     if (targetSlides.length === 0) {
-      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez des cadres (Frames), composants ou instances.' });
+      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez des slides ou une Frame de leçon valide.' });
       return;
     }
 
@@ -2336,7 +2643,12 @@ figma.ui.onmessage = async (msg) => {
 
           // Positionnement en colonne (en dessous de l'originale)
           clone.x = workingSlide.x;
-          clone.y = workingSlide.y + (m + 1) * (workingSlide.height + 200);
+          const isLessonFrame = workingSlide.parent && workingSlide.parent.type === 'FRAME' && /^[Mm]\d+/.test(workingSlide.parent.name);
+          if (isLessonFrame) {
+            clone.y = 2280 + m * (workingSlide.height + 200);
+          } else {
+            clone.y = workingSlide.y + (m + 1) * (workingSlide.height + 200);
+          }
 
           // Renommage
           const baseName = workingSlide.name.replace(/ - Étape \d+$/, '');
@@ -2415,17 +2727,35 @@ figma.ui.onmessage = async (msg) => {
     });
 
   } else if (msg.type === 'prototype-slides') {
-    // 1. Récupère la sélection Figma active
     const selection = figma.currentPage.selection;
     if (!selection || selection.length === 0) {
-      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez les slides à relier.' });
+      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez les slides ou la Frame de leçon à relier.' });
       return;
     }
+    // Résout la sélection pour obtenir les slides cibles (gère la sélection de la Frame leçon parente)
+    let rawSlides = [];
+    for (const node of selection) {
+      if (node.type === 'FRAME' || node.type === 'COMPONENT' || node.type === 'INSTANCE') {
+        const isLessonFrame = /^[Mm]\d+/.test(node.name);
+        const childSlides = 'children' in node 
+          ? node.children.filter(child => {
+              const isSlide = (child.type === 'FRAME' || child.type === 'COMPONENT' || child.type === 'INSTANCE') && child.width === 1920 && child.height === 1080;
+              if (isLessonFrame) {
+                return isSlide && child.y > 1830;
+              }
+              return isSlide;
+            })
+          : [];
+        if (childSlides.length > 0) {
+          rawSlides.push(...childSlides);
+        } else {
+          rawSlides.push(node);
+        }
+      }
+    }
 
-    // Filtre pour ne garder que les Frames, Components et Instances
-    const rawSlides = selection.filter(node => node.type === 'FRAME' || node.type === 'COMPONENT' || node.type === 'INSTANCE');
     if (rawSlides.length < 2) {
-      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez au moins 2 slides pour créer le prototype.' });
+      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez au moins 2 slides (ou une Frame de leçon contenant plusieurs slides) pour créer le prototype.' });
       return;
     }
 
@@ -2474,74 +2804,109 @@ figma.ui.onmessage = async (msg) => {
     // Relie linéairement chaque slide à la suivante
     let errorMessage = "";
     for (let i = 0; i < slides.length - 1; i++) {
-      try {
-        const currentSlide = slides[i];
-        const nextSlide = slides[i + 1];
-        
-        const newReaction = {
+      const currentSlide = slides[i];
+      const nextSlide = slides[i + 1];
+
+      const candidates = [
+        // Candidate 1: Modern actions syntax with transition: null
+        {
           trigger: { type: "ON_CLICK" },
           actions: [
             {
               type: "NODE",
               destinationId: nextSlide.id,
               navigation: "NAVIGATE",
-              // [ANCIEN SYSTÈME - SMART ANIMATE] Réactiver pour revenir aux transitions animées
-              // transition: {
-              //   type: "SMART_ANIMATE",
-              //   easing: { type: "EASE_IN_AND_OUT" },
-              //   duration: 0.5
-              // }
               transition: null
             }
           ]
-        };
-
-        // Appliquer la réaction (on écrase pour éviter les doublons ou conflits)
-        currentSlide.reactions = [newReaction];
-        linkCount++;
-      } catch (e) {
-        try {
-          // Fallback avec l'ancienne syntaxe `action` au cas où
-          const currentSlide = slides[i];
-          const nextSlide = slides[i + 1];
-          currentSlide.reactions = [
+        },
+        // Candidate 2: Modern actions syntax with a valid simple transition
+        {
+          trigger: { type: "ON_CLICK" },
+          actions: [
             {
-              trigger: { type: "ON_CLICK" },
-              action: {
-                type: "NODE",
-                destinationId: nextSlide.id,
-                navigation: "NAVIGATE",
-                // [ANCIEN SYSTÈME - SMART ANIMATE] Réactiver pour revenir aux transitions animées
-                // transition: {
-                //   type: "SMART_ANIMATE",
-                //   easing: { type: "EASE_IN_AND_OUT" },
-                //   duration: 0.5
-                // }
-                transition: null
+              type: "NODE",
+              destinationId: nextSlide.id,
+              navigation: "NAVIGATE",
+              transition: {
+                type: "DISSOLVE",
+                easing: { type: "EASE_IN_AND_OUT" },
+                duration: 0.3
               }
             }
-          ];
-          linkCount++;
-        } catch (e2) {
-          console.error(`Impossible de prototyper la slide ${slides[i].name}:`, e2);
-          errorMessage = e2.message || String(e2);
+          ]
+        },
+        // Candidate 3: Modern actions syntax without transition key (fallback)
+        {
+          trigger: { type: "ON_CLICK" },
+          actions: [
+            {
+              type: "NODE",
+              destinationId: nextSlide.id,
+              navigation: "NAVIGATE"
+            }
+          ]
         }
+      ];
+
+      let success = false;
+      let errors = [];
+      
+      // Ensure the slide is unlocked before modifying reactions
+      try {
+        if (currentSlide.locked) {
+          currentSlide.locked = false;
+        }
+      } catch (e) {}
+
+      for (let idx = 0; idx < candidates.length; idx++) {
+        try {
+          currentSlide.reactions = [candidates[idx]];
+          success = true;
+          break;
+        } catch (err) {
+          errors.push(`Candidate ${idx + 1}: ${err.message || String(err)}`);
+        }
+      }
+
+      if (success) {
+        linkCount++;
+      } else {
+        console.error(`Impossible de prototyper la slide ${currentSlide.name}. Détail des erreurs:`, errors);
+        errorMessage = errors.join(" / ");
       }
     }
 
-    // Ajoute un point de départ pour le flux (Flow Starting Point) sur la première slide
+    // Ajoute un point de départ pour le flux (Flow Starting Point)
     try {
       if (slides.length > 0) {
         const currentFlows = figma.currentPage.flowStartingPoints;
-        // Évite d'ajouter un point de départ s'il y en a déjà un pour ce nœud
-        if (!currentFlows.some(flow => flow.nodeId === slides[0].id)) {
-          figma.currentPage.flowStartingPoints = [
-            ...currentFlows,
-            {
-              nodeId: slides[0].id,
-              name: "Présentation Auto"
-            }
-          ];
+        // Si la slide est au premier niveau de la page (top-level frame)
+        if (slides[0].parent === figma.currentPage) {
+          if (!currentFlows.some(flow => flow.nodeId === slides[0].id)) {
+            figma.currentPage.flowStartingPoints = [
+              ...currentFlows,
+              {
+                nodeId: slides[0].id,
+                name: "Présentation Auto"
+              }
+            ];
+          }
+        } else {
+          // Sinon, on cherche le conteneur parent de premier niveau (la Frame leçon)
+          let topParent = slides[0];
+          while (topParent.parent && topParent.parent.type !== 'PAGE') {
+            topParent = topParent.parent;
+          }
+          if (topParent && topParent.type === 'FRAME' && !currentFlows.some(flow => flow.nodeId === topParent.id)) {
+            figma.currentPage.flowStartingPoints = [
+              ...currentFlows,
+              {
+                nodeId: topParent.id,
+                name: topParent.name
+              }
+            ];
+          }
         }
       }
     } catch (e) {
@@ -2561,6 +2926,542 @@ figma.ui.onmessage = async (msg) => {
         type: 'error',
         message: `Erreur lors de la création du prototype. Aucune liaison n'a été créée. Détail de l'erreur API Figma: ${errorMessage}`
       });
+    }
+  } else if (msg.type === 'clear-slides') {
+    const selection = figma.currentPage.selection;
+    if (!selection || selection.length === 0) {
+      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez au moins une slide ou une Frame de leçon.' });
+      return;
+    }
+
+    // Resolve context parent
+    let parent = null;
+    for (const node of selection) {
+      let current = node;
+      while (current) {
+        if (current.type === 'FRAME' && /^[Mm]\d+/.test(current.name)) {
+          parent = current;
+          break;
+        }
+        if (current.type === 'PAGE' || current.type === 'DOCUMENT') {
+          break;
+        }
+        current = current.parent;
+      }
+      if (parent) break;
+    }
+
+    if (!parent && selection[0].parent) {
+      parent = selection[0].parent;
+    }
+
+    if (!parent) {
+      figma.ui.postMessage({ type: 'error', message: 'Aucun conteneur parent trouvé pour la sélection.' });
+      return;
+    }
+
+    // Collect all candidate children from this parent container (only Frame/Component/Instance)
+    const candidates = [];
+    if ('children' in parent) {
+      for (const child of parent.children) {
+        if (child.type === 'FRAME' || child.type === 'COMPONENT' || child.type === 'INSTANCE') {
+          candidates.push(child);
+        }
+      }
+    }
+
+    // Build sets of nodes that have prototype links:
+    // 1. outgoing target IDs (nodes that have reactions pointing to another node)
+    // 2. incoming target IDs (nodes that are destination of a reaction from another node)
+    const incomingTargets = new Set();
+    const hasOutgoing = new Set();
+
+    function analyzeReactions(node, rootCandidate) {
+      if ('reactions' in node && node.reactions && node.reactions.length > 0) {
+        for (const rx of node.reactions) {
+          let destId = null;
+          if (rx.action && rx.action.type === 'NODE' && rx.action.destinationId) {
+            destId = rx.action.destinationId;
+          } else if (rx.actions && Array.isArray(rx.actions)) {
+            for (const act of rx.actions) {
+              if (act && act.type === 'NODE' && act.destinationId) {
+                destId = act.destinationId;
+                break;
+              }
+            }
+          }
+          if (destId) {
+            incomingTargets.add(destId);
+            hasOutgoing.add(rootCandidate.id);
+          }
+        }
+      }
+      if ('children' in node) {
+        for (const child of node.children) {
+          analyzeReactions(child, rootCandidate);
+        }
+      }
+    }
+
+    for (const cand of candidates) {
+analyzeReactions(cand, cand);
+    }
+
+    // Find candidates to delete: those that have outgoing or incoming prototype connections
+    const nodesToDelete = [];
+    for (const cand of candidates) {
+      const isPrototyped = hasOutgoing.has(cand.id) || incomingTargets.has(cand.id);
+      if (isPrototyped) {
+        nodesToDelete.push(cand);
+      }
+    }
+
+    let deletedCount = 0;
+    for (const node of nodesToDelete) {
+      try {
+        node.remove();
+        deletedCount++;
+      } catch (e) {
+        console.error("Erreur de suppression de la slide prototypée :", e);
+      }
+    }
+
+    if (deletedCount > 0) {
+      figma.ui.postMessage({
+        type: 'success',
+        message: `Nettoyage réussi : ${deletedCount} slide(s) prototypée(s) supprimée(s). Les slides non prototypées ont été conservées.`
+      });
+    } else {
+      figma.ui.postMessage({
+        type: 'error',
+        message: 'Aucune slide prototypée (reliée par des liens entrants ou sortants) trouvée dans le conteneur.'
+      });
+    }
+  } else if (msg.type === 'transform-slides') {
+    try {
+      let data = msg.data;
+      if (data) {
+        if (Array.isArray(data)) {
+          data = { slides: data };
+        } else if (data.template || data.content) {
+          data = { slides: [data] };
+        }
+      }
+      const fetchTasks = [];
+      if (!data || !data.slides || !Array.isArray(data.slides)) {
+        figma.ui.postMessage({ type: 'error', message: 'Format JSON invalide : "slides" doit être une liste.' });
+        return;
+      }
+
+      const selection = figma.currentPage.selection;
+      if (!selection || selection.length === 0) {
+        figma.ui.postMessage({ type: 'error', message: 'Sélectionnez la leçon d\'origine (ou ses slides) dans Figma.' });
+        return;
+      }
+
+      // 1. Récupération des slides sources depuis la sélection
+      let sourceSlides = [];
+      const selectedFrames = selection.filter(node => node.type === 'FRAME' || node.type === 'COMPONENT' || node.type === 'INSTANCE');
+      if (selectedFrames.length > 1) {
+        sourceSlides = selectedFrames.slice();
+      } else if (selection.length === 1) {
+        const parentNode = selection[0];
+        if ('children' in parentNode && parentNode.children.length > 0) {
+          sourceSlides = parentNode.children.filter(node => node.type === 'FRAME' || node.type === 'COMPONENT' || node.type === 'INSTANCE');
+        }
+      }
+
+      // Tri des slides d'origine par coordonnée X (de gauche à droite)
+      sourceSlides.sort((a, b) => a.x - b.x);
+
+      if (sourceSlides.length === 0) {
+        figma.ui.postMessage({ type: 'error', message: 'Aucune slide source trouvée dans la sélection.' });
+        return;
+      }
+
+      // 2. Récupération des templates
+      const allComponents = figma.root.findAllWithCriteria({ types: ['COMPONENT'] });
+      const currentPageFrames = figma.root.findAllWithCriteria({ types: ['FRAME'] });
+
+      function findTemplate(name) {
+        let t = currentPageFrames.find(f => normalize(f.name) === normalize(name) && f.width === 1920 && f.height === 1080);
+        if (!t) t = allComponents.find(c => normalize(c.name) === normalize(name) && c.width === 1920 && c.height === 1080);
+        if (!t) t = currentPageFrames.find(f => normalize(f.name) === normalize(name));
+        if (!t) t = allComponents.find(c => normalize(c.name) === normalize(name));
+        return t;
+      }
+
+      const coverTemplate = findTemplate("VIBECODING - COVER");
+      const videTemplate = findTemplate("VIBECODING - VIDE");
+
+      if (!videTemplate) {
+        figma.ui.postMessage({ type: 'error', message: 'Template "VIBECODING - VIDE" introuvable dans le fichier Figma.' });
+        return;
+      }
+
+      // 3. Création du conteneur de la nouvelle leçon
+      const lessonFrame = figma.createFrame();
+      lessonFrame.name = data.lessonTitle || "Nouvelle Leçon";
+      const slidesCount = data.slides.length;
+      const slidesWidth = slidesCount > 0 ? (slidesCount * 2020 - 100) : 1920;
+      const lessonWidth = slidesWidth + 1000;
+      lessonFrame.resize(lessonWidth, 10670);
+
+      const originalParent = sourceSlides[0].parent;
+      lessonFrame.x = originalParent ? originalParent.x : figma.viewport.center.x;
+      lessonFrame.y = originalParent ? originalParent.y + (originalParent.height || 10670) + 500 : figma.viewport.center.y;
+      lessonFrame.fills = [{ type: 'SOLID', color: hexToFigmaColor("#F2F3F6") }];
+      figma.currentPage.appendChild(lessonFrame);
+
+      // Titre de la leçon extrait de la première slide d'origine
+      function extractTitleFromSlide(slideNode) {
+        const textNodes = findTextNodes(slideNode);
+        if (textNodes.length === 0) return "";
+        const sortedByFontSize = textNodes.slice().sort((a, b) => {
+          const sizeA = typeof a.fontSize === 'number' ? a.fontSize : 0;
+          const sizeB = typeof b.fontSize === 'number' ? b.fontSize : 0;
+          return sizeB - sizeA;
+        });
+        return sortedByFontSize[0].characters.trim();
+      }
+
+      const extractedLessonTitle = extractTitleFromSlide(sourceSlides[0]) || data.lessonTitle || "Leçon";
+
+      // Helper pour savoir si on exclut un élément d'origine
+      function shouldSkipSourceNode(child, slideData) {
+        // 1. Exclure le fond de la slide (pleine taille)
+        if (child.type === 'RECTANGLE' && child.width >= 1900 && child.height >= 1000) {
+          return true;
+        }
+        
+        // 2. Exclure les éléments du haut (titre d'origine, son cadre, header bar)
+        if (child.y < 240) {
+          return true;
+        }
+
+        // 3. Exclure le décor bas-droite (cercle/grille) si positionné précisément à x > 1590, y > 780 et que c'est un groupe générique
+        if (child.x > 1590 && child.y > 780 && (child.type === 'GROUP' || child.type === 'FRAME' || nameNorm.includes('group'))) {
+          return true;
+        }
+
+        const nameNorm = normalize(child.name);
+        if (nameNorm === 'background' || nameNorm === 'bg' || nameNorm === 'fond' || nameNorm === 'cadre titre' || nameNorm === 'header' || nameNorm === 'footer') {
+          return true;
+        }
+
+        if (child.type === 'TEXT') {
+          const textChars = child.characters.trim();
+          if (slideData.content) {
+            for (const val of Object.values(slideData.content)) {
+              if (typeof val === 'string' && textChars === val.trim()) {
+                return true;
+              }
+            }
+          }
+        }
+        return false;
+      }
+
+      // 4. Génération et adaptation slide par slide
+      for (let i = 0; i < slidesCount; i++) {
+        const slideData = data.slides[i];
+        const sourceSlide = sourceSlides[i];
+
+        // Choix du template (utilise la clé du JSON si présente, sinon Cover pour i=0, ou Vide)
+        let templateNode = null;
+        if (slideData.template) {
+          templateNode = findTemplate(slideData.template);
+        }
+        if (!templateNode) {
+          templateNode = (i === 0 && coverTemplate) ? coverTemplate : videTemplate;
+        }
+        
+        let instance;
+        if (templateNode.type === 'COMPONENT') {
+          instance = templateNode.createInstance();
+        } else {
+          instance = templateNode.clone();
+        }
+
+        lessonFrame.appendChild(instance);
+        instance.x = 500 + i * 2020;
+        instance.y = 500;
+        instance.name = `${i + 1}. ${templateNode.name}`;
+
+        // Initialisation des textes du template
+        const newTextNodes = findTextNodes(instance).filter(isNodeVisible);
+        const newShapeNodes = filterShapeNodes(findPlaceholderNodes(instance).filter(isNodeVisible), instance);
+
+        const isCover = templateNode.name.includes("COVER");
+        const isVide = templateNode.name.includes("VIDE");
+
+        if (isCover) {
+          // Slide COVER : titre de la leçon
+          let titleNode = newTextNodes.find(n => normalize(n.name).includes("titre") || normalize(n.name).includes("title")) || newTextNodes[0];
+          if (titleNode) {
+            await loadFontForNode(titleNode);
+            titleNode.characters = extractedLessonTitle;
+          }
+        } else if (isVide) {
+          // Slide VIDE : Titre et Intro
+          const titreNode = newTextNodes.find(n => normalize(n.name) === "titre" || normalize(n.name).includes("titre"));
+          const introNode = newTextNodes.find(n => normalize(n.name) === "intro" || normalize(n.name).includes("intro"));
+
+          if (titreNode && slideData.content && slideData.content.Titre) {
+            await loadFontForNode(titreNode);
+            titreNode.characters = slideData.content.Titre;
+          }
+          if (introNode && slideData.content && slideData.content.Intro) {
+            await loadFontForNode(introNode);
+            introNode.characters = slideData.content.Intro;
+          }
+        } else {
+          // Tout autre template structurel : Remplissage standard
+          if (slideData.content && typeof slideData.content === 'object') {
+            const keys = Object.keys(slideData.content);
+            const usedNodes = new Set();
+
+            // 1. Remplissage par correspondance exacte de nom de calque
+            for (const key of keys) {
+              const val = slideData.content[key];
+              if (isIconValue(val)) {
+                const targetNode = getTargetPictoNode(instance, key, newShapeNodes, usedNodes);
+                if (targetNode) {
+                  const iconName = val.startsWith('iconify:') ? val.substring(8).trim() : val.trim();
+                  const parts = iconName.split(':');
+                  if (parts.length === 2) {
+                    const iconUrl = `https://api.iconify.design/${parts[0]}/${parts[1]}.svg`;
+                    fetchTasks.push({ id: targetNode.id, url: iconUrl, name: iconName, type: 'icon' });
+                    usedNodes.add(targetNode);
+                  }
+                }
+              } else if (isImageUrlValue(val)) {
+                const targetNode = newShapeNodes.find(node => !usedNodes.has(node) && (normalize(node.name) === normalize(key) || normalize(node.name).includes("photo") || normalize(node.name).includes("image")));
+                if (targetNode) {
+                  fetchTasks.push({ id: targetNode.id, url: val.trim(), name: key, type: 'image' });
+                  usedNodes.add(targetNode);
+                }
+              } else {
+                const targetNode = newTextNodes.find(node => !usedNodes.has(node) && normalize(node.name) === normalize(key));
+                if (targetNode) {
+                  await loadFontForNode(targetNode);
+                  targetNode.characters = String(val);
+                  usedNodes.add(targetNode);
+                }
+              }
+            }
+
+            // 2. Remplissage des textes restants par ordre de position
+            const remainingTextNodes = newTextNodes.filter(node => !usedNodes.has(node));
+            const remainingTextKeys = keys.filter(key => {
+              const val = slideData.content[key];
+              return !isIconValue(val) && !isImageUrlValue(val) && !newTextNodes.some(node => usedNodes.has(node) && normalize(node.name) === normalize(key));
+            });
+
+            for (let j = 0; j < Math.min(remainingTextKeys.length, remainingTextNodes.length); j++) {
+              const key = remainingTextKeys[j];
+              const val = slideData.content[key];
+              const node = remainingTextNodes[j];
+              await loadFontForNode(node);
+              node.characters = String(val);
+              usedNodes.add(node);
+            }
+          }
+        }
+
+        // Duplication des éléments de la slide d'origine (uniquement pour les slides VIDE)
+        if (isVide && sourceSlide && 'children' in sourceSlide) {
+          for (const child of sourceSlide.children) {
+            if (shouldSkipSourceNode(child, slideData)) {
+              continue;
+            }
+
+            // Cloner l'élément
+            const cloned = child.clone();
+            instance.appendChild(cloned);
+            cloned.x = child.x;
+            cloned.y = child.y;
+
+            // Adapter les polices et couleurs récursivement
+            await adaptNode(cloned);
+          }
+        }
+
+        // 3.5. Application des éléments sur-mesure (custom_elements)
+        if (slideData.custom_elements && Array.isArray(slideData.custom_elements)) {
+          for (const element of slideData.custom_elements) {
+            try {
+              if (element.action === 'create_node') {
+                let parentNode = instance;
+                if (element.parent_selector) {
+                  parentNode = instance.findAll(n => normalize(n.name) === normalize(element.parent_selector))[0] || instance;
+                }
+
+                let newNode;
+                const nodeType = (element.node_type || 'FRAME').toUpperCase();
+                if (nodeType === 'FRAME') {
+                  newNode = figma.createFrame();
+                } else if (nodeType === 'TEXT') {
+                  newNode = figma.createText();
+                } else if (nodeType === 'RECTANGLE') {
+                  newNode = figma.createRectangle();
+                } else {
+                  continue;
+                }
+
+                if (element.name) {
+                  newNode.name = element.name;
+                }
+
+                parentNode.appendChild(newNode);
+
+                if (element.properties) {
+                  let w = newNode.width;
+                  let h = newNode.height;
+                  let hasWidth = false;
+                  let hasHeight = false;
+
+                  let fontToLoad = { family: "Inter", style: "Regular" };
+                  if (nodeType === 'TEXT') {
+                    if (element.properties.fontName) {
+                      const f = element.properties.fontName;
+                      if (f.family && f.style) {
+                        fontToLoad = { family: f.family, style: f.style };
+                      }
+                    }
+                    await figma.loadFontAsync(fontToLoad);
+                    newNode.fontName = fontToLoad;
+                  }
+
+                  for (const [prop, val] of Object.entries(element.properties)) {
+                    if (prop === 'width') {
+                      w = Number(val);
+                      hasWidth = true;
+                    } else if (prop === 'height') {
+                      h = Number(val);
+                      hasHeight = true;
+                    } else if (prop === 'fills') {
+                      if (typeof val === 'string' && val.startsWith('#')) {
+                        newNode.fills = [{ type: 'SOLID', color: hexToFigmaColor(val) }];
+                      } else if (Array.isArray(val)) {
+                        newNode.fills = val.map(f => {
+                          if (typeof f === 'string' && f.startsWith('#')) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f) };
+                          } else if (f && f.hex) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f.hex), opacity: f.opacity !== undefined ? f.opacity : 1 };
+                          }
+                          return f;
+                        });
+                      }
+                    } else if (prop === 'strokes') {
+                      if (typeof val === 'string' && val.startsWith('#')) {
+                        newNode.strokes = [{ type: 'SOLID', color: hexToFigmaColor(val) }];
+                      } else if (Array.isArray(val)) {
+                        newNode.strokes = val.map(f => {
+                          if (typeof f === 'string' && f.startsWith('#')) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f) };
+                          } else if (f && f.hex) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f.hex), opacity: f.opacity !== undefined ? f.opacity : 1 };
+                          }
+                          return f;
+                        });
+                      }
+                    } else if (prop === 'characters' && nodeType === 'TEXT') {
+                      newNode.characters = String(val);
+                    } else if (prop === 'image') {
+                      fetchTasks.push({ id: newNode.id, url: val.trim(), name: 'image', type: 'image' });
+                    } else if (prop === 'fontName') {
+                      // Already loaded
+                    } else if (prop in newNode) {
+                      newNode[prop] = val;
+                    }
+                  }
+                  if (hasWidth || hasHeight) {
+                    newNode.resize(w, h);
+                  }
+                }
+
+                if (element.icon) {
+                  const iconName = element.icon.startsWith('iconify:') ? element.icon.substring(8).trim() : element.icon.trim();
+                  const parts = iconName.split(':');
+                  if (parts.length === 2) {
+                    const iconUrl = `https://api.iconify.design/${parts[0]}/${parts[1]}.svg`;
+                    fetchTasks.push({ id: newNode.id, url: iconUrl, name: iconName, type: 'icon' });
+                  }
+                }
+
+                if (element.image) {
+                  fetchTasks.push({ id: newNode.id, url: element.image.trim(), name: 'image', type: 'image' });
+                }
+              } else if (element.action === 'delete_node' || element.action === 'delete_layer') {
+                if (element.selector) {
+                  const target = instance.findAll(n => normalize(n.name) === normalize(element.selector))[0];
+                  if (target) target.remove();
+                }
+              } else if (element.action === 'set_property') {
+                if (element.selector) {
+                  const target = instance.findAll(n => normalize(n.name) === normalize(element.selector))[0];
+                  if (target) {
+                    const prop = element.property;
+                    const val = element.value;
+                    if (prop === 'width') {
+                      target.resize(Number(val), target.height);
+                    } else if (prop === 'height') {
+                      target.resize(target.width, Number(val));
+                    } else if (prop === 'fills') {
+                      if (typeof val === 'string' && val.startsWith('#')) {
+                        target.fills = [{ type: 'SOLID', color: hexToFigmaColor(val) }];
+                      } else if (Array.isArray(val)) {
+                        target.fills = val.map(f => {
+                          if (typeof f === 'string' && f.startsWith('#')) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f) };
+                          } else if (f && f.hex) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f.hex), opacity: f.opacity !== undefined ? f.opacity : 1 };
+                          }
+                          return f;
+                        });
+                      }
+                    } else if (prop === 'strokes') {
+                      if (typeof val === 'string' && val.startsWith('#')) {
+                        target.strokes = [{ type: 'SOLID', color: hexToFigmaColor(val) }];
+                      } else if (Array.isArray(val)) {
+                        target.strokes = val.map(f => {
+                          if (typeof f === 'string' && f.startsWith('#')) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f) };
+                          } else if (f && f.hex) {
+                            return { type: 'SOLID', color: hexToFigmaColor(f.hex), opacity: f.opacity !== undefined ? f.opacity : 1 };
+                          }
+                          return f;
+                        });
+                      }
+                    } else if (prop === 'characters' && target.type === 'TEXT') {
+                      await loadFontForNode(target);
+                      target.characters = String(val);
+                    } else if (prop in target) {
+                      target[prop] = val;
+                    }
+                  }
+                }
+              }
+            } catch (e) {
+              console.error("Erreur sur l'élément sur-mesure de la slide transformée :", e);
+            }
+          }
+        }
+      }
+
+      if (fetchTasks.length > 0) {
+        figma.ui.postMessage({ type: 'fetch-assets', tasks: fetchTasks });
+      }
+
+      figma.ui.postMessage({
+        type: 'success',
+        message: `Transformation réussie : ${slidesCount} slide(s) adaptée(s) avec succès.`
+      });
+
+    } catch (err) {
+      console.error(err);
+      figma.ui.postMessage({ type: 'error', message: 'Erreur lors de la transformation : ' + err.message });
     }
   }
 };

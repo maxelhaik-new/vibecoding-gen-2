@@ -1,0 +1,126 @@
+{
+  "lessonTitle": "M1C4L9",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "En finir avec le mythe du remplacement"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "L'IA va-t-elle nous remplacer ?",
+        "Intro": "Voici ce que disent les faits. On affronte la question au lieu de la fuir. Pas de slogans rassurants ni de catastrophisme, on regarde la réalité en face pour comprendre l'évolution de notre métier.",
+        "Titre 1": "Le code basique",
+        "Texte 1": "L'IA génère rapidement des scripts simples et répétitifs. Ces tâches deviennent une commodité.",
+        "Titre 2": "Impact marché",
+        "Texte 2": "L'entrée de gamme se contracte. C'est un fait mesurable qui redéfinit les attentes des recruteurs.",
+        "Titre 3": "Nouvelle valeur",
+        "Texte 3": "L'expertise se déplace vers l'architecture, le débogage complexe et la compréhension du métier."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "Ce qui devient une commodité",
+        "Intro": "Écrire du code basique, de la documentation ou des tests unitaires simples : l'IA le fait vite et bien. Ce ne sont pas les développeurs qui disparaissent, mais certaines tâches.",
+        "Titre 1": "Code simple",
+        "Texte 1": "La génération de scripts standards et de fonctions répétitives est désormais automatisée. L'IA produit ces éléments de base avec une grande efficacité, réduisant le temps de saisie manuelle.",
+        "Picto 1": "mdi:code-braces-box",
+        "Titre 2": "Documentation",
+        "Texte 2": "Rédiger des commentaires ou expliquer le fonctionnement d'une fonction devient instantané. Les modèles de langage excellent pour structurer et clarifier le code existant sans effort humain.",
+        "Picto 2": "mdi:book-open-variant",
+        "Titre 3": "Tests basiques",
+        "Texte 3": "Créer des tests unitaires pour vérifier des comportements standards est une tâche déléguée. On obtient une couverture de code rapide pour les cas d'usage les plus évidents et prévisibles.",
+        "Picto 3": "mdi:check-all"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CHIFFRES",
+      "content": {
+        "Titre": "Ce que dit le marché actuel",
+        "Intro": "L'impact sur l'emploi junior est réel. On observe une contraction de l'entrée de gamme, sans tomber dans l'alarmisme.",
+        "Titre 1": "Embauche junior",
+        "Texte 1": "Baisse des recrutements de profils juniors entre fin 2022 et mi-2025.",
+        "Titre 2": "Tâches IA",
+        "Texte 2": "Part du travail d'entrée de gamme qui serait absorbée par l'IA.",
+        "Chiffre 3": "40-70",
+        "Titre 3": "POURCENT",
+        "Texte 3": "Du travail basique est désormais automatisé selon les études récentes."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "content": {
+        "Titre": "Où se déplace la valeur ?",
+        "Intro": "La valeur ne disparaît pas, elle se déplace vers ce que l'IA ne peut pas faire seule. L'humain reste décisif.",
+        "Titre 1": "Comprendre l'expertise métier",
+        "Texte 1": "Saisir les enjeux du domaine est crucial. Il ne s'agit plus seulement de coder, mais de résoudre un vrai problème.",
+        "Picto 1": "mdi:city-variant",
+        "Titre 2": "Concevoir l'architecture globale",
+        "Texte 2": "Penser les systèmes dans leur ensemble. L'IA écrit des briques, mais on doit assembler le tout de manière cohérente.",
+        "Picto 2": "mdi:flowchart",
+        "Titre 3": "Déboguer les cas complexes",
+        "Texte 3": "L'IA rate souvent les cas limites. On intervient pour traquer les erreurs subtiles et corriger les failles.",
+        "Picto 3": "mdi:microscope",
+        "Titre 4": "Assurer la revue stratégique",
+        "Texte 4": "Valider la logique, garantir la sécurité et prendre des décisions d'impact. Le jugement humain reste irremplaçable.",
+        "Picto 4": "mdi:shield-unlocked"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "La règle d'or de l'évaluation",
+        "Mot": "Ne livrer que le connu",
+        "Definition": "Peu importe la qualité apparente du résultat généré, si on ne peut pas le vérifier, on ne le livre pas. Cette règle s'applique à tous les niveaux pour éviter le code sans compréhension.",
+        "Bulle": "Toujours évaluer et remettre en question."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 2 BLOC - EVOLUTION",
+      "content": {
+        "Titre": "Ce que ça change pour nous",
+        "Intro": "L'effort se déplace : moins taper du code, plus comprendre ce qui est produit.",
+        "Titre 1": "L'ancienne approche",
+        "Texte 1": "Se concentrer sur la syntaxe et la saisie manuelle des lignes de code.",
+        "Titre 2": "La nouvelle approche",
+        "Texte 2": "Détecter les erreurs, orienter les choix et élever la compétence technique."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Le Vibe Coding ne remplace pas la compétence, il la redéfinie totalement. La valeur se déplace vers le jugement, l'expertise métier et la capacité à évaluer ce qu'on produit. C'est exactement ce que la suite de cette formation va construire. On apprend à penser l'architecture et à valider les résultats générés pour garder le contrôle absolu sur nos projets.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "La compétence technique s'élève. On passe d'un rôle d'exécutant à celui de chef d'orchestre. Il faut garder un esprit critique face au code généré et ne jamais livrer ce qu'on ne comprend pas parfaitement."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

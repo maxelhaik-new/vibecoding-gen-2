@@ -1,0 +1,789 @@
+{
+  "lessonTitle": "M1C3L6",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Les 6 outils leaders du Vibe Coding en 2026"
+        }
+      ],
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Quel outil pour quel projet ?"
+        },
+        {
+          "key": "Intro",
+          "value": "En 2026, le Vibe Coding est un écosystème mature. La vraie question n'est plus « l'IA peut-elle coder ? » mais « quel outil matérialise mon intention de façon stable et économique ? »"
+        },
+        {
+          "key": "Titre 1",
+          "value": "3 grandes familles"
+        },
+        {
+          "key": "Texte 1",
+          "value": "IDE natifs IA (local), bacs à sable full-stack (navigateur) et spécialistes du design & déploiement : chaque famille répond à un besoin précis."
+        },
+        {
+          "key": "Titre 2",
+          "value": "6 outils à maîtriser"
+        },
+        {
+          "key": "Texte 2",
+          "value": "Cursor, Windsurf, Bolt.new, Lovable.dev, v0.dev, Claude Code et Antigravity couvrent l'intégralité du cycle de création d'une application."
+        },
+        {
+          "key": "Titre 3",
+          "value": "Une erreur à éviter"
+        },
+        {
+          "key": "Texte 3",
+          "value": "Utiliser un outil généraliste comme ChatGPT web pour gérer un projet complexe mène à la perte de contexte et à l'effondrement de l'application."
+        }
+      ],
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Les 3 grandes familles d'outils"
+        },
+        {
+          "key": "Intro",
+          "value": "Chaque famille d'outils répond à un contexte précis. Choisir la mauvaise catégorie dès le départ, c'est multiplier les frictions techniques inutiles."
+        },
+        {
+          "key": "Picto 1",
+          "value": "mdi:code-braces-box"
+        },
+        {
+          "key": "Titre 1",
+          "value": "IDE natifs IA"
+        },
+        {
+          "key": "Texte 1",
+          "value": "Installés sur l'ordinateur, ils remplacent l'éditeur de code classique. Ils manipulent directement les fichiers locaux et offrent un contrôle total sur le code source. Exemples : Cursor, Windsurf."
+        },
+        {
+          "key": "Picto 2",
+          "value": "mdi:web"
+        },
+        {
+          "key": "Titre 2",
+          "value": "Bacs à sable full-stack"
+        },
+        {
+          "key": "Texte 2",
+          "value": "Zéro installation. Le code, le serveur et la base de données tournent dans un onglet de navigateur. Idéal pour voir une idée prendre vie en moins de 3 minutes. Exemples : Bolt.new, Lovable.dev."
+        },
+        {
+          "key": "Picto 3",
+          "value": "mdi:magic"
+        },
+        {
+          "key": "Titre 3",
+          "value": "Design & déploiement"
+        },
+        {
+          "key": "Texte 3",
+          "value": "Spécialisés dans la création visuelle instantanée ou la mise en ligne automatisée. Ils interviennent en complément des deux premières familles. Exemples : v0.dev, Antigravity."
+        }
+      ],
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "L'erreur fatale du débutant"
+        },
+        {
+          "key": "Mot",
+          "value": "Le mauvais outil pour le bon projet"
+        },
+        {
+          "key": "Definition",
+          "value": "Utiliser ChatGPT web pour gérer un projet logiciel complexe, c'est condamner son projet. Sans mémoire persistante ni accès aux fichiers, l'IA perd le contexte à chaque échange. Le code se fragmente, les incohérences s'accumulent et l'application finit par s'effondrer."
+        },
+        {
+          "key": "Bulle",
+          "value": "Un outil généraliste gère des tâches ponctuelles. Un IDE IA gère un projet."
+        }
+      ],
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Les IDE natifs IA : environnements locaux"
+        }
+      ],
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Focus sur Cursor (Anysphere)"
+        },
+        {
+          "key": "Intro",
+          "value": "Cursor s'est imposé comme la référence des IDE IA. Son mode Composer modifie simultanément backend, frontend et routes en une seule instruction."
+        },
+        {
+          "key": "Chiffre 2",
+          "value": "35%"
+        },
+        {
+          "key": "Titre 2",
+          "value": "de parts de marché IDE IA"
+        },
+        {
+          "key": "Chiffre 3",
+          "value": "VS Code"
+        },
+        {
+          "key": "Titre 3",
+          "value": "fork — base technique\nde Cursor"
+        },
+        {
+          "key": "Titre 4",
+          "value": "Mode Composer multi-fichiers (Cmd+I)"
+        },
+        {
+          "key": "Texte 4",
+          "value": "On décrit une fonctionnalité globale. Cursor modifie backend, frontend et routes en une passe. Idéal pour les profils techniques et non-techniques voulant garder le contrôle local."
+        },
+        {
+          "key": "Texte Bulle",
+          "value": "Gratuit limité · Pro 20$/mois · Business 40$/mois/utilisateur"
+        },
+        {
+          "key": "Source",
+          "value": "Source : Cursor.com"
+        }
+      ],
+      "image_concept": "A sleek desktop code editor interface glowing with blue light, multiple files open simultaneously, lines of code cascading across backend and frontend panels like a synchronized orchestra, dark background with neon highlights",
+      "image_style": "editorial",
+      "image_ratio": "4:3"
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Focus sur Windsurf (Codeium)"
+        },
+        {
+          "key": "Intro",
+          "value": "Windsurf introduit l'architecture agentique Cascade : l'agent lance le terminal, exécute les tests, lit les logs et s'auto-corrige sans intervention humaine."
+        },
+        {
+          "key": "Chiffre 2",
+          "value": "Cascade"
+        },
+        {
+          "key": "Titre 2",
+          "value": "moteur agentique\nautonome intégré"
+        },
+        {
+          "key": "Chiffre 3",
+          "value": "0"
+        },
+        {
+          "key": "Titre 3",
+          "value": "intervention humaine\npour le débogage"
+        },
+        {
+          "key": "Titre 4",
+          "value": "Boucle fermée d'auto-correction"
+        },
+        {
+          "key": "Texte 4",
+          "value": "L'agent détecte l'erreur, lit les logs système, applique la correction et relance les tests. On donne l'objectif, Cascade gère la tuyauterie. Parfait pour les bugs complexes."
+        },
+        {
+          "key": "Texte Bulle",
+          "value": "Gratuit limité · Pro 15$/mois · Teams 35$/mois/utilisateur"
+        },
+        {
+          "key": "Source",
+          "value": "Source : Codeium.com"
+        }
+      ],
+      "image_concept": "An autonomous robotic agent navigating a complex maze of server logs and terminal commands, self-correcting its path in a closed loop, sparks of electricity representing bug fixes, dark industrial atmosphere",
+      "image_style": "constructivist",
+      "image_ratio": "4:3"
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Cursor vs Windsurf : deux philosophies"
+        },
+        {
+          "key": "Intro",
+          "value": "Même catégorie, deux approches opposées. Cursor mise sur la collaboration contrôlée, Windsurf sur l'autonomie agentique totale."
+        },
+        {
+          "key": "Titre A",
+          "value": "CURSOR"
+        },
+        {
+          "key": "Titre B",
+          "value": "WINDSURF"
+        },
+        {
+          "key": "Item 1",
+          "value": "Approche"
+        },
+        {
+          "key": "Texte A Item 1",
+          "value": "Collaboration guidée,\nvalidation à chaque étape"
+        },
+        {
+          "key": "Texte B1",
+          "value": "Exécution autonome\nen boucle fermée"
+        },
+        {
+          "key": "Item 2",
+          "value": "MOTEUR"
+        },
+        {
+          "key": "Texte A Item 2",
+          "value": "Mode Composer\nmulti-fichiers (Cmd+I)"
+        },
+        {
+          "key": "Texte B2",
+          "value": "Architecture agentique\nCascade"
+        },
+        {
+          "key": "Item 3",
+          "value": "IDÉAL"
+        },
+        {
+          "key": "Texte A Item 3",
+          "value": "Contrôle total\ndu code source"
+        },
+        {
+          "key": "Texte B3",
+          "value": "Débogage complexe\nautomatisé"
+        },
+        {
+          "key": "Item 4",
+          "value": "PROFIL"
+        },
+        {
+          "key": "Texte A Item 4",
+          "value": "Profils tech\net non-tech"
+        },
+        {
+          "key": "Texte B4",
+          "value": "Projets avec\nbugs récurrents"
+        }
+      ],
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Les bacs à sable full-stack : dans le navigateur"
+        }
+      ],
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Focus sur Bolt.new (StackBlitz)"
+        },
+        {
+          "key": "Intro",
+          "value": "Bolt.new fait tourner un serveur Node.js complet dans le navigateur via WebContainers. Zéro installation, une idée tapée, une app fonctionnelle en moins de 3 minutes."
+        },
+        {
+          "key": "Chiffre 2",
+          "value": "< 3min"
+        },
+        {
+          "key": "Titre 2",
+          "value": "de l'idée à l'app\nfonctionnelle"
+        },
+        {
+          "key": "Chiffre 3",
+          "value": "2-4h"
+        },
+        {
+          "key": "Titre 3",
+          "value": "de paramétrage\néconomisées par projet"
+        },
+        {
+          "key": "Titre 4",
+          "value": "WebContainers : un serveur dans le navigateur"
+        },
+        {
+          "key": "Texte 4",
+          "value": "On tape l'idée, Bolt installe les packages, configure la base de données, génère l'interface et affiche l'app avec un lien de déploiement en un clic. Aucune machine à configurer."
+        },
+        {
+          "key": "Texte Bulle",
+          "value": "Gratuit limité · Pro 20$/mois · déploiement 1 clic inclus"
+        },
+        {
+          "key": "Source",
+          "value": "Source : StackBlitz, 2025"
+        }
+      ],
+      "image_concept": "A glowing web browser tab containing a miniature full-stack server, database cylinders and a running application all packed inside the browser window like a ship in a bottle, vibrant neon colors on dark background",
+      "image_style": "grainy-editorial",
+      "image_ratio": "4:3"
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Focus sur Lovable.dev"
+        },
+        {
+          "key": "Intro",
+          "value": "Lovable est une plateforme SaaS Prompt-to-Product. Elle connecte nativement l'application générée à Supabase pour la gestion des utilisateurs et des bases de données réelles."
+        },
+        {
+          "key": "Chiffre 2",
+          "value": "MVP"
+        },
+        {
+          "key": "Titre 2",
+          "value": "produit minimum viable\nprêt à lancer"
+        },
+        {
+          "key": "Chiffre 3",
+          "value": "0"
+        },
+        {
+          "key": "Titre 3",
+          "value": "ligne de code\nà écrire manuellement"
+        },
+        {
+          "key": "Titre 4",
+          "value": "Itérations en langage naturel"
+        },
+        {
+          "key": "Texte 4",
+          "value": "On décrit l'évolution souhaitée en texte, Lovable applique les changements et maintient la connexion Supabase. Idéal pour les entrepreneurs qui lancent une app connectée à de vrais clients."
+        },
+        {
+          "key": "Texte Bulle",
+          "value": "Gratuit limité · Starter 20$/mois · Launch 50$/mois"
+        },
+        {
+          "key": "Source",
+          "value": "Source : Lovable.dev"
+        }
+      ],
+      "image_concept": "A text prompt transforming into a fully formed product box with a launch button, connected by glowing wires to a database and user profile icons, clean startup aesthetic with bold colors",
+      "image_style": "offset-screenprint",
+      "image_ratio": "4:3"
+    },
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Spécialistes : interface, design & déploiement"
+        }
+      ],
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Focus sur v0.dev (Vercel)"
+        },
+        {
+          "key": "Intro",
+          "value": "v0.dev génère des interfaces React + Tailwind CSS + Shadcn en quelques secondes depuis une description textuelle ou une capture d'écran d'un site existant."
+        },
+        {
+          "key": "Chiffre 2",
+          "value": "React"
+        },
+        {
+          "key": "Titre 2",
+          "value": "Tailwind & Shadcn\ngénérés automatiquement"
+        },
+        {
+          "key": "Chiffre 3",
+          "value": "< 10s"
+        },
+        {
+          "key": "Titre 3",
+          "value": "pour une interface\nresponsive complète"
+        },
+        {
+          "key": "Titre 4",
+          "value": "Design génératif par screenshot ou texte"
+        },
+        {
+          "key": "Texte 4",
+          "value": "On fournit une description ou une capture d'écran. v0 génère le code visuel prêt à copier-coller dans le projet principal. Parfait pour débloquer l'aspect esthétique sans compétences CSS."
+        },
+        {
+          "key": "Texte Bulle",
+          "value": "Gratuit limité · Premium 20$/mois · API Vercel incluse"
+        },
+        {
+          "key": "Source",
+          "value": "Source : v0.dev, Vercel"
+        }
+      ],
+      "image_concept": "A screenshot of a website being fed into a machine that outputs clean React component code and a polished UI mockup, design tokens floating around like puzzle pieces snapping into place, bright editorial palette",
+      "image_style": "editorial",
+      "image_ratio": "4:3"
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Focus sur Claude Code (Anthropic)"
+        },
+        {
+          "key": "Intro",
+          "value": "Claude Code vit dans le terminal. Sans interface graphique, il scanne l'architecture d'un projet, localise le bug exact, applique la correction et s'arrête."
+        },
+        {
+          "key": "Chiffre 2",
+          "value": "CLI"
+        },
+        {
+          "key": "Titre 2",
+          "value": "agent natif en ligne\nde commande"
+        },
+        {
+          "key": "Chiffre 3",
+          "value": "0"
+        },
+        {
+          "key": "Titre 3",
+          "value": "interface graphique\nnécessaire"
+        },
+        {
+          "key": "Titre 4",
+          "value": "Raisonnement chirurgical sur gros projets"
+        },
+        {
+          "key": "Texte 4",
+          "value": "On invoque Claude Code dans le dossier du projet avec une instruction précise. Il lit les fichiers, identifie la cause racine et applique la correction exacte. Ses capacités de raisonnement dépassent les extensions graphiques classiques."
+        },
+        {
+          "key": "Texte Bulle",
+          "value": "Usage API · ~3$/heure d'utilisation intensive estimée"
+        },
+        {
+          "key": "Source",
+          "value": "Source : Anthropic, 2025"
+        }
+      ],
+      "image_concept": "A surgical scalpel made of light cutting precisely into a tangled mass of code in a dark terminal window, the blade illuminating only the exact line that needs fixing, dramatic chiaroscuro lighting",
+      "image_style": "chiaroscuro",
+      "image_ratio": "4:3"
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Focus sur Antigravity"
+        },
+        {
+          "key": "Intro",
+          "value": "Antigravity résout le blocage final du non-développeur : publier son app sur Internet. L'IA analyse les fichiers, configure l'hébergement et répare les pannes par dialogue texte."
+        },
+        {
+          "key": "Chiffre 2",
+          "value": "DevOps"
+        },
+        {
+          "key": "Titre 2",
+          "value": "remplacé par\nune IA de déploiement"
+        },
+        {
+          "key": "Chiffre 3",
+          "value": "0"
+        },
+        {
+          "key": "Titre 3",
+          "value": "serveur à configurer\nmanuellement"
+        },
+        {
+          "key": "Titre 4",
+          "value": "De l'app locale au site public en quelques clics"
+        },
+        {
+          "key": "Texte 4",
+          "value": "Antigravity se connecte au dossier du projet, analyse les besoins (base de données, puissance serveur) et configure l'hébergement. Si l'app bugge en ligne, on dialogue par texte pour que l'IA répare."
+        },
+        {
+          "key": "Texte Bulle",
+          "value": "Tarif usage · plans selon ressources serveur allouées"
+        },
+        {
+          "key": "Source",
+          "value": "Source : Antigravity.dev"
+        }
+      ],
+      "image_concept": "A laptop with a local application floating upward like a balloon being launched into a cloud-shaped server infrastructure, gravity arrows reversed, the app ascending effortlessly into the internet sky",
+      "image_style": "woodcut",
+      "image_ratio": "4:3"
+    },
+    {
+      "template": "VIBECODING - CHIFFRES",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "L'essor des outils AI-first en 2026"
+        },
+        {
+          "key": "Intro",
+          "value": "Les chiffres confirment le basculement : les IDE IA et les bacs à sable en ligne redéfinissent les standards de création d'applications."
+        },
+        {
+          "key": "Chiffre 1",
+          "value": "35%"
+        },
+        {
+          "key": "Titre 1",
+          "value": "DE PARTS DE MARCHÉ"
+        },
+        {
+          "key": "Texte 1",
+          "value": "Cursor et Windsurf captent 35% du marché des créateurs d'apps web face à VS Code. (Stack Overflow, 2025)"
+        },
+        {
+          "key": "Chiffre 2",
+          "value": "2-4h"
+        },
+        {
+          "key": "Titre 2",
+          "value": "ÉCONOMISÉES PAR PROJET"
+        },
+        {
+          "key": "Texte 2",
+          "value": "Bolt.new réduit à zéro le temps de configuration initial grâce aux WebContainers. (StackBlitz, 2025)"
+        },
+        {
+          "key": "Chiffre 3",
+          "value": "< 3min"
+        },
+        {
+          "key": "Titre 3",
+          "value": "DE L'IDÉE À L'APP"
+        },
+        {
+          "key": "Texte 3",
+          "value": "Temps moyen pour obtenir une application fonctionnelle avec déploiement sur Bolt.new ou Lovable.dev."
+        }
+      ],
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 6 BLOCS",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Quel outil pour quel profil ?"
+        },
+        {
+          "key": "Intro",
+          "value": "Six outils, six cas d'usage distincts. Chaque profil a son outil de prédilection selon son niveau technique et son objectif."
+        },
+        {
+          "key": "Texte Bulle",
+          "value": "Ces outils sont complémentaires. On peut créer l'interface avec v0, coder avec Cursor et déployer avec Antigravity sur un même projet."
+        },
+        {
+          "key": "Titre 1",
+          "value": "CURSOR"
+        },
+        {
+          "key": "Texte 1",
+          "value": "Profils tech et non-tech voulant garder le contrôle total du code source en local sur des projets complexes."
+        },
+        {
+          "key": "Picto 1",
+          "value": "mdi:code-braces-box"
+        },
+        {
+          "key": "Titre 2",
+          "value": "WINDSURF"
+        },
+        {
+          "key": "Texte 2",
+          "value": "Projets avec bugs récurrents ou phases de débogage fastidieuses à automatiser via l'agent Cascade."
+        },
+        {
+          "key": "Picto 2",
+          "value": "mdi:robot-outline"
+        },
+        {
+          "key": "Titre 3",
+          "value": "BOLT.NEW"
+        },
+        {
+          "key": "Texte 3",
+          "value": "Non-développeurs absolus souhaitant voir leur idée fonctionner en moins de 3 minutes sans rien installer."
+        },
+        {
+          "key": "Picto 3",
+          "value": "mdi:lightning-bolt"
+        },
+        {
+          "key": "Titre 4",
+          "value": "LOVABLE"
+        },
+        {
+          "key": "Texte 4",
+          "value": "Entrepreneurs et équipes marketing lançant une app web connectée à de vrais utilisateurs à moindre coût."
+        },
+        {
+          "key": "Picto 4",
+          "value": "mdi:city-variant"
+        },
+        {
+          "key": "Titre 5",
+          "value": "V0.DEV"
+        },
+        {
+          "key": "Texte 5",
+          "value": "Non-développeurs bloqués par l'esthétique et chefs de projet web pour prototyper des interfaces rapidement."
+        },
+        {
+          "key": "Picto 5",
+          "value": "mdi:magic"
+        },
+        {
+          "key": "Titre 6",
+          "value": "CLAUDE"
+        },
+        {
+          "key": "Texte 6",
+          "value": "Professionnels gérant de gros projets existants qui veulent un agent d'élite ultra-rapide en ligne de commande."
+        },
+        {
+          "key": "Picto 6",
+          "value": "mdi:microscope"
+        }
+      ],
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Construire sa stack AI-first"
+        },
+        {
+          "key": "Intro",
+          "value": "La stack idéale dépend du projet, pas des tendances."
+        },
+        {
+          "key": "Texte Intro",
+          "value": "Il n'existe pas de stack universelle. Un entrepreneur qui lance un MVP n'a pas besoin de Claude Code. Un développeur qui débogue un projet complexe n'a pas besoin de Bolt.new. Choisir son outil, c'est d'abord clarifier son objectif, son niveau technique et le stade de son projet."
+        },
+        {
+          "key": "Nom Checklist",
+          "value": "Checklist de sélection d'outil"
+        },
+        {
+          "key": "Texte 1",
+          "value": "Définir si le projet est local (IDE) ou sans installation (navigateur)."
+        },
+        {
+          "key": "Texte 2",
+          "value": "Identifier si l'enjeu est le code, le design ou le déploiement."
+        },
+        {
+          "key": "Texte 3",
+          "value": "Vérifier si l'app doit se connecter à une vraie base de données utilisateurs."
+        },
+        {
+          "key": "Texte 4",
+          "value": "Estimer si des bugs complexes nécessitent un agent autonome (Windsurf)."
+        },
+        {
+          "key": "Texte 5",
+          "value": "Prévoir Antigravity dès le départ si la mise en ligne est l'objectif final."
+        }
+      ],
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": [
+        {
+          "key": "Titre",
+          "value": "Ce qu'il faut retenir"
+        },
+        {
+          "key": "Intro",
+          "value": "En 2026, six outils structurent l'écosystème du Vibe Coding. Cursor et Windsurf dominent les IDE locaux avec des approches opposées — collaboration vs autonomie. Bolt.new et Lovable.dev éliminent toute friction d'installation pour les non-développeurs. v0.dev règne sur le design génératif, Claude Code sur le débogage chirurgical, et Antigravity résout le blocage du déploiement. La stack gagnante n'est pas celle qui utilise tous les outils, mais celle qui associe les bons outils au bon stade du projet."
+        },
+        {
+          "key": "Titre Bulle",
+          "value": "En bref"
+        },
+        {
+          "key": "Texte Bulle",
+          "value": "Dans les prochaines leçons, on passe à la pratique : on configure Cursor de A à Z et on crée notre premier projet Vibe Coding avec une vraie structure de fichiers. À nous de jouer !"
+        }
+      ],
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

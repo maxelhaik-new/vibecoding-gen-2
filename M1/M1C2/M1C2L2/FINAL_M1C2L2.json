@@ -1,0 +1,56 @@
+{
+  "lessonTitle": "Leçon M1C2L2 : Définir le Vibe Coding",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Définir le Vibe Coding : coder par l'intention"
+      }
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Qu'est-ce que le Vibe Coding ?",
+        "Mot": "Le Vibe Coding",
+        "Definition": "Une pratique de développement moderne où l'humain ne rédige plus directement de syntaxe informatique. À la place, on interagit en langage naturel avec un agent IA pour lui décrire nos intentions et nos besoins. L'agent se charge ensuite de générer, d'intégrer et d'exécuter les modifications de code directement au sein de l'architecture du projet.",
+        "Bulle": "L'humain abandonne la saisie manuelle de lignes de code (HTML, CSS, JS) pour se concentrer uniquement sur l'expression claire de ses idées et la validation des résultats produits par l'intelligence artificielle."
+      }
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "On passe d'un rôle d'exécutant technique à un rôle de superviseur et d'architecte. L'activité se concentre désormais sur le pilotage stratégique et la validation des propositions de l'IA.",
+        "Titre 1": "Définir",
+        "Texte 1": "On commence par formuler une intention claire et un plan structuré. L'objectif est de guider l'agent IA en lui fournissant le contexte nécessaire pour qu'il comprenne parfaitement le but recherché.",
+        "Titre 2": "Valider le code",
+        "Texte 2": "On analyse et on teste rigoureusement chaque proposition de l'agent. Cette étape de supervision humaine garantit la sécurité, la cohérence et la qualité globale de l'application finale.",
+        "Titre 3": "Orienter l'IA",
+        "Texte 3": "On ajuste la trajectoire du projet par des retours itératifs. On gère l'architecture globale et l'expérience utilisateur, en s'assurant que l'outil reste aligné avec la vision de départ."
+      }
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO",
+      "content": {
+        "Titre": "Les bénéfices du Vibe Coding",
+        "Intro": "En déléguant la syntaxe à l'intelligence artificielle, on transforme radicalement la productivité et la qualité des projets de développement :",
+        "Titre 1": "Vitesse",
+        "Texte 1": "Une vitesse d'exécution décuplée. On passe de l'idée au prototype fonctionnel en quelques minutes seulement, sans bloquer sur la saisie de code.",
+        "Titre 2": "Zéro bug simple",
+        "Titre Bulle": "Élimination des erreurs de syntaxe simples. L'IA génère un code propre et directement fonctionnel, évitant les fautes d'inattention.",
+        "Titre 3": "Focus produit",
+        "Texte 3": "On se concentre sur la conception, l'architecture et l'expérience utilisateur plutôt que sur le débogage fastidieux de la syntaxe.",
+        "Source": "Source : An elegant conductor leading holographic digital lines of co - Illustration générée par IA - Maxime Elhaik",
+        "image": "http://localhost:8080/assets/vibe_m1c2l2_slide_4.png"
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Le Vibe Coding redéfinit la relation entre le développeur et la machine. En confiant la rédaction de la syntaxe à des agents IA, on libère du temps pour se concentrer sur la valeur ajoutée : l'architecture, l'expérience utilisateur et la résolution de problèmes complexes. Ce n'est pas la fin du code, mais l'avènement d'un développement piloté par l'intention et la créativité.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Le développeur moderne devient un chef d'orchestre. On ne tape plus de code, on pilote des agents intelligents en langage naturel pour donner vie à nos idées à une vitesse sans précédent. À nous de jouer !"
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "lessonTitle": "Les objectifs du chapitre : qu'est-ce que le Vibe Coding ?",
+  "slides": [
+    {
+      "title": "Qu'est-ce que le Vibe Coding ?",
+      "template": "VIBECODING - COVER"
+    },
+    {
+      "title": "Une nouvelle ère du développement",
+      "template": "VIBECODING - INTRO"
+    },
+    {
+      "title": "Les objectifs pédagogiques",
+      "template": "VIBECODING - OBJECTIF CHAP"
+    },
+    {
+      "title": "Pourquoi maîtriser cette approche ?",
+      "template": "VIBECODING - VIDE"
+    }
+  ]
+}

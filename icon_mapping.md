@@ -26,6 +26,9 @@ Ce guide sert de source de vérité pour associer des icônes du pack **Material
 | `mdi:text-short` | Résumés, synthèse de fin de chapitre, fiches de révision, conclusions rapides, takeaways. | *En résumé* |
 | `mdi:check-all` | Checklists de validation, listes de contrôle, bonnes pratiques, critères d'acceptation du code. | *Les bonnes pratiques* |
 | `mdi:flowchart` | Logigrammes, architectures, pipelines logiques, enchaînements de tâches, diagrammes. | *Un workflow adapté à la correction* |
+| `mdi:metronome` | Répétitivité d'une tâche, récurrence, cadence régulière, fréquence élevée. | *Prioriser l'évaluation* |
+| `mdi:compass` | Standardisation, règles claires, direction stable, processus normés. | *Les critères d'évaluation* |
+
 
 ### 🏆 Réussite, Optimisation & Comparaison
 
@@ -51,6 +54,8 @@ Ce guide sert de source de vérité pour associer des icônes du pack **Material
 | `mdi:numbers` | Statistiques, métriques chiffrées, volumétrie de données, quantitatif. | *Midjourney en quelques chiffres* |
 | `mdi:123` | Importance de l'ordre, hiérarchisation, structure de prompt, étapes séquentielles prioritaires. | *L’ordre a une importance !* |
 | `mdi:microscope` | Analyse détaillée, désassemblage de code, audit de structure, observation minutieuse. | *Anatomie d’un prompt Midjourney* |
+| `mdi:puzzle` | Données structurées, JSON, CSV, formats compatibles qui s'emboîtent proprement. | *Vibe Coding Checklist* |
+
 
 ### 🎨 Art, Contenus & Réseaux Sociaux
 
@@ -76,3 +81,6 @@ Ce guide sert de source de vérité pour associer des icônes du pack **Material
 | `mdi:court-hammer` | Cadre éthique, législation de l'IA, procès, droits d'auteur, propriété intellectuelle. | *Midjourney et ses enjeux éthiques* |
 | `mdi:robber` | Risques de sécurité majeurs, plagiat, vol de données, piratage de compte. | *Des risques liés aux utilisations* |
 | `mdi:stop-alert` | Limites logicielles, barrières de modération, interdictions, plantages système, blocages. | *Les limites de MidJourney* |
+| `mdi:lifebuoy` | Tolérance aux erreurs, filet de sécurité, risques faibles acceptables. | *Critères de priorisation* |
+| `mdi:island` | Isolation complète d'une tâche, autonomie, absence de dépendances externes. | *Checklist d'éligibilité* |
+

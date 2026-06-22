@@ -1,0 +1,97 @@
+{
+  "lessonTitle": "M1C4L3",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Pour qui le Vibe Coding change la donne"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "À qui ça profite vraiment ?",
+        "Intro": "Le Vibe Coding ne s'adresse pas qu'aux experts. Cette approche redéfinit l'accès à la création technique pour quatre profils distincts, en plaçant l'intention et l'expertise métier au centre du processus.",
+        "Titre 1": "La reconversion",
+        "Texte 1": "On passe de l'apprentissage théorique à la production immédiate de projets réels pour convaincre.",
+        "Titre 2": "Le solopreneur",
+        "Texte 2": "On construit un MVP fonctionnel en un week-end sans associé technique ni budget de développement.",
+        "Titre 3": "Les non-technologiques",
+        "Texte 3": "On crée des outils internes sur-mesure au lieu de subir les limites des logiciels du marché."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Le profil reconversion",
+        "Intro": "Raccourcir drastiquement le chemin entre apprendre et produire.",
+        "Texte 1": "Traditionnellement, se reconvertir exige des mois de théorie avant de coder la moindre application. Avec le Vibe Coding, on inverse la logique. On crée et on montre de vrais projets fonctionnels dès le premier jour. C'est le meilleur moyen de prouver sa valeur sur le marché."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Freelance & solopreneur",
+        "Intro": "Bâtir un MVP en un week-end sans associé technique.",
+        "Texte 1": "Plus besoin de chercher un cofondateur technique ou de dépenser des dizaines de milliers d'euros. Un fondateur avec une expertise métier peut désormais coder sa solution seul en quelques jours. On gagne en autonomie et on valide son marché à moindre coût."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Les métiers non-tech",
+        "Intro": "Créer des outils sur-mesure plutôt que de subir un SaaS.",
+        "Texte 1": "Que l'on travaille en marketing, RH ou opérations, on fait face à des besoins spécifiques. Au lieu de s'adapter aux limites d'un logiciel générique, on fabrique ses propres outils. On automatise ses tâches répétitives sans dépendre de l'équipe technique."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Le profil développeur",
+        "Intro": "Accélérer la production et déléguer le code répétitif.",
+        "Texte 1": "Pour les profils techniques, l'outil permet de se concentrer sur l'architecture et la valeur ajoutée. Attention toutefois au piège pour les juniors : s'appuyer trop tôt sur l'IA peut freiner l'apprentissage profond si on saute l'étape de compréhension."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "L'expertise métier d'abord",
+        "Intro": "L'intention claire et la logique priment sur la syntaxe.",
+        "Texte 1": "Le dénominateur commun de cette révolution ? Ce qui compte désormais, c'est la clarté de l'intention et la connaissance du problème à résoudre. Le diplôme technique s'efface derrière l'expertise métier. Savoir guider l'IA devient la compétence clé."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "À chacun sa porte d'entrée",
+        "Intro": "Le Vibe Coding ouvre de nouvelles perspectives pour tous les profils. La reconversion produit plus vite, le freelance lance seul son MVP, le non-tech crée ses propres outils sur-mesure, et le développeur accélère sa production. Peu importe d'où on part, l'important est de formuler une intention claire pour commencer à créer dès maintenant.",
+        "Titre Bulle": "En bref",
+        "Texte Bulle": "L'expertise métier et la clarté de l'intention comptent désormais plus que le diplôme technique. On se concentre sur la valeur créée plutôt que sur la syntaxe du code !"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

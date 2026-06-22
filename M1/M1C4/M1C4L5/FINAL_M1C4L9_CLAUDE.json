@@ -1,0 +1,137 @@
+{
+  "lessonTitle": "M1C4L9",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "En finir avec le mythe du remplacement"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "L'IA va-t-elle remplacer les développeurs ?",
+        "Intro": "L'IA va-t-elle nous remplacer ? Voici ce que disent les faits — pas les slogans rassurants, ni les catastrophismes. On regarde en face : ce qui se banalise, ce qui se déplace, et ce que ça change concrètement pour nous.",
+        "Titre 1": "Ce qui se banalise",
+        "Texte 1": "Le code basique, les tests simples, la documentation : l'IA les produit vite. Ce ne sont pas les développeurs qui disparaissent — ce sont certaines tâches qui deviennent des commodités.",
+        "Titre 2": "Ce que dit le marché",
+        "Texte 2": "L'embauche junior a reculé de 20 % entre 2022 et 2025. 40 à 70 % du travail d'entrée de gamme serait absorbé par l'IA. Des chiffres mesurables, pas une rumeur. (Keyhole Software, 2026)",
+        "Titre 3": "Où va la valeur",
+        "Texte 3": "La valeur se déplace vers le jugement, l'expertise métier et la capacité à évaluer ce qu'on produit. C'est exactement ce que cette formation entraîne."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "L'IA va-t-elle nous remplacer ?",
+        "Mot": "Affronter la question sans la fuir",
+        "Definition": "La peur est légitime. On ne la minimise pas. Mais on ne la laisse pas non plus tourner en catastrophisme. On regarde les faits : ce que l'IA fait vraiment bien, ce qu'elle ne peut pas faire seule, et ce que ça implique pour ceux qui apprennent à coder aujourd'hui.",
+        "Bulle": "En réalité, la question n'est pas « l'IA va-t-elle coder à ma place ? » — elle code déjà certaines choses. La vraie question : quelle valeur reste irremplaçable ?"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Ce qui devient une commodité",
+        "Mot": "Le code basique",
+        "Definition": "Écrire du code répétitif, générer de la documentation, produire des tests unitaires simples : l'IA le fait vite et bien. Ce ne sont pas les développeurs qui disparaissent — ce sont certaines tâches qui se banalisent. Les fiches de poste évoluent, mais la profession ne s'efface pas. Elle se recompose autour de ce que l'IA ne peut pas décider seule.",
+        "Bulle": "Une tâche banalisée n'est pas une compétence perdue — c'est du temps libéré pour ce qui a plus de valeur.",
+        "Picto 1": "mdi:dinosaur-pixel"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CHIFFRES",
+      "content": {
+        "Titre": "Ce que dit le marché",
+        "Intro": "L'impact de l'IA sur l'emploi junior est mesurable depuis 2022. Ce n'est pas une tendance à ignorer — ni à dramatiser sans contexte.",
+        "Chiffre 1": "-20 %",
+        "Titre 1": "EMBAUCHE JUNIOR",
+        "Texte 1": "Recul des recrutements de développeurs juniors (22-25 ans) entre fin 2022 et mi-2025. (Keyhole Software, 2026)",
+        "Chiffre 2": "40-70%",
+        "Titre 2": "TÂCHES ABSORBÉES",
+        "Texte 2": "Part du travail d'entrée de gamme que l'IA serait capable d'absorber selon les estimations actuelles du secteur.",
+        "Chiffre 3": "2022",
+        "Titre 3": "POINT DE BASCULE",
+        "Texte 3": "Année à partir de laquelle la contraction du marché junior devient statistiquement visible dans les données de recrutement."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "content": {
+        "Titre": "Où va la valeur",
+        "Intro": "La valeur ne disparaît pas — elle se déplace vers ce que l'IA ne peut pas décider seule. Quatre domaines où l'humain reste décisif.",
+        "Titre 1": "Expertise\nmétier",
+        "Texte 1": "Comprendre le domaine, pas juste le code : l'IA génère, mais c'est le contexte métier qui valide si le résultat a du sens.",
+        "Picto 1": "mdi:city-variant",
+        "Titre 2": "Architecture\nsystème",
+        "Texte 2": "Concevoir les systèmes, pas seulement les écrire : les choix structurels engagent la scalabilité et la maintenabilité sur le long terme.",
+        "Picto 2": "mdi:flowchart",
+        "Titre 3": "Débogage\ndes cas complexes",
+        "Texte 3": "L'IA rate souvent les cas limites et les bugs d'interaction. Identifier ces angles morts reste une compétence humaine critique.",
+        "Picto 3": "mdi:microscope",
+        "Titre 4": "Revue\nstratégique",
+        "Texte 4": "Logique, sécurité, décisions d'impact : évaluer ce que l'IA produit et décider ce qu'on livre — c'est un jugement, pas une génération.",
+        "Picto 4": "mdi:check-decagram"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "La règle d'or",
+        "Intro": "OPENCLASSROOMS — LA RÈGLE D'ÉVALUATION",
+        "Texte 1": "Peu importe la qualité apparente du résultat généré, si on ne peut pas le vérifier, on ne le livre pas. OpenClassrooms l'a formalisé comme règle d'évaluation du code généré par IA. Le problème ? Un code qui semble fonctionner peut contenir des failles de sécurité, des cas limites non gérés ou une logique incorrecte — invisibles sans compréhension réelle. Cette règle s'applique à tous les niveaux : junior comme senior.",
+        "Texte Bulle": "En bref : le Vibe Coding sans compréhension, c'est signer un document sans le lire. La règle d'or ne bride pas la vitesse — elle garantit qu'on reste responsable de ce qu'on produit.",
+        "Source": "Source : OpenClassrooms"
+      },
+      "image_concept": "A human hand holding a magnifying glass over a dense block of printed code on paper, with a red ink stamp reading 'VERIFIED' partially visible at the edge. The scene evokes careful scrutiny, accountability, and the act of signing off on something one truly understands.",
+      "image_style": "grainy-editorial",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Ce que ça change pour nous",
+        "Intro": "Le Vibe Coding déplace l'effort : moins taper du code, plus comprendre ce qui est produit. C'est exactement ce que cette formation entraîne — du jugement, pas juste de la génération.",
+        "Titre 1": "Comprendre ce que l'IA génère",
+        "Titre 2": "Détecter les erreurs et les cas limites",
+        "Titre 3": "Orienter les choix techniques",
+        "Titre 4": "Évaluer avant de livrer",
+        "Titre 5": "Développer une expertise métier solide",
+        "Titre 6": "Élever la compétence technique, pas la remplacer"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "En bref",
+        "Intro": "On a confronté le mythe aux faits : le code basique devient une commodité, l'embauche junior se contracte, mais la valeur ne disparaît pas — elle se déplace. Vers le métier, l'architecture, le débogage et le jugement. La règle d'or reste la même à tous les niveaux : ne jamais livrer ce qu'on ne sait pas évaluer. Le Vibe Coding ne remplace pas la compétence — il la redéfinit. La valeur se déplace vers ce qu'on est capable de penser, pas juste de générer.",
+        "Titre Bulle": "En BREF",
+        "Texte Bulle": "La suite de la formation construit exactement ça : la capacité à comprendre, évaluer et orienter ce que l'IA produit. Pas juste générer du code — savoir quoi en faire."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

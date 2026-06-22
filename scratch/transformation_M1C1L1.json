@@ -1,0 +1,187 @@
+{
+  "lessonTitle": "M1C1L1",
+  "slides": [
+    {
+      "content": {
+        "Titre": "Bienvenue dans la formation",
+        "Intro": ""
+      }
+    },
+    {
+      "content": {
+        "Titre": "Enchanté ! Moi c’est Maxime",
+        "Intro": ""
+      }
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "Ma vision de l'IA & du Vibe Coding",
+        "Intro": "",
+        "Titre 1": "Vibe Coding",
+        "Texte 1": "Collaborer intelligemment avec l'IA pour concevoir et déployer des applications web complètes à la vitesse de la pensée. L'effort se déplace ainsi de l'écriture pure de la syntaxe technique vers la formulation claire d'une vision globale et fonctionnelle.",
+        "Picto 1": "mdi:rocket-launch-outline",
+        "Titre 2": "Supervision",
+        "Texte 2": "L'humain reste au cœur du processus de création et de décision. Il est indispensable de superviser, d'architecturer, de tester et de sécuriser chaque bloc de code généré par les agents autonomes pour garantir la qualité et la robustesse du produit final.",
+        "Picto 2": "mdi:shield-check-outline",
+        "Titre 3": "Créativité",
+        "Texte 3": "Passer instantanément de l'idée au prototype fonctionnel en quelques heures seulement. Les barrières techniques s'effacent pour laisser place à la créativité, permettant à chacun de matérialiser ses projets et d'innover sans limite de compétences.",
+        "Picto 3": "mdi:palette-outline"
+      }
+    },
+    {
+      "template": "VIBECODING - VIDE",
+      "content": {
+        "Titre": "Mes outils au quotidien",
+        "Intro": "Les outils indispensables pour coder à la vitesse de la pensée."
+      },
+      "custom_elements": [
+        {
+          "action": "create_node",
+          "node_type": "RECTANGLE",
+          "name": "Antigravity-Logo",
+          "properties": {
+            "x": 230.0,
+            "y": 420.0,
+            "width": 260.0,
+            "height": 260.0,
+            "image": "http://localhost:8080/assets/logo_antigravity.png"
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Antigravity-Text",
+          "properties": {
+            "x": 230.0,
+            "y": 700.0,
+            "width": 260.0,
+            "height": 80.0,
+            "characters": "Antigravity\n(Google DeepMind)",
+            "fontSize": 22,
+            "textAlignHorizontal": "CENTER",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "RECTANGLE",
+          "name": "GoogleAIStudio-Logo",
+          "properties": {
+            "x": 600.0,
+            "y": 420.0,
+            "width": 260.0,
+            "height": 260.0,
+            "image": "http://localhost:8080/assets/logo_google_ai_studio.png"
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "GoogleAIStudio-Text",
+          "properties": {
+            "x": 600.0,
+            "y": 700.0,
+            "width": 260.0,
+            "height": 80.0,
+            "characters": "Google AI Studio\n(Gemini Pro / Flash)",
+            "fontSize": 22,
+            "textAlignHorizontal": "CENTER",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "RECTANGLE",
+          "name": "ClaudeCode-Logo",
+          "properties": {
+            "x": 970.0,
+            "y": 420.0,
+            "width": 260.0,
+            "height": 260.0,
+            "image": "http://localhost:8080/assets/logo_claude.png"
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "ClaudeCode-Text",
+          "properties": {
+            "x": 970.0,
+            "y": 700.0,
+            "width": 260.0,
+            "height": 80.0,
+            "characters": "Claude Code\n(Anthropic CLI)",
+            "fontSize": 22,
+            "textAlignHorizontal": "CENTER",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "RECTANGLE",
+          "name": "Lovable-Logo",
+          "properties": {
+            "x": 1340.0,
+            "y": 420.0,
+            "width": 260.0,
+            "height": 260.0,
+            "image": "http://localhost:8080/assets/logo_lovable.png"
+          }
+        },
+        {
+          "action": "create_node",
+          "node_type": "TEXT",
+          "name": "Lovable-Text",
+          "properties": {
+            "x": 1340.0,
+            "y": 700.0,
+            "width": 260.0,
+            "height": 80.0,
+            "characters": "Lovable\n(Fullstack Web Apps)",
+            "fontSize": 22,
+            "textAlignHorizontal": "CENTER",
+            "fontName": {
+              "family": "Basic Sans Alt",
+              "style": "Bold"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "content": {
+        "Titre": "Déroulé de la formation",
+        "Intro": "Votre coach vous accompagne tout au long de la formation.  C’est votre interlocuteur privilégié pour :",
+        "Titre 1": "Questions",
+        "Texte 1": "Posez-lui vos questions sur l’IA,  sur les vidéos e-learning....",
+        "Picto 1": "mdi:help-circle-outline",
+        "Titre 2": "Priorisation",
+        "Texte 2": "Ecoutez ses conseils pour acquérir les compétences IA  essentielles avec une bonne courbe d’apprentissage",
+        "Picto 2": "mdi:trending-up",
+        "Titre 3": "Cas pratiques",
+        "Texte 3": "Découvez des dizaines de cas d’usages \nprofessionnels de l’IA",
+        "Picto 3": "mdi:briefcase-outline",
+        "Titre 4": "Certification",
+        "Texte 4": "Réservez une dernière séance  pourréaliser une soutenance blanche",
+        "Picto 4": "mdi:school-outline"
+      }
+    },
+    {
+      "content": {
+        "Titre": "Échange et entraide",
+        "Intro": ""
+      }
+    }
+  ]
+}

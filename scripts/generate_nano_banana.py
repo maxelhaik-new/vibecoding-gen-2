@@ -40,7 +40,7 @@ def main():
     api_key       = load_env_var("GEMINI_API_KEY")
     image_model   = load_env_var("IMAGE_MODEL")
     default_ratio = os.environ.get("IMAGE_ASPECT_RATIO", "1:1")
-    default_size  = os.environ.get("IMAGE_SIZE", "1K")
+    default_size  = os.environ.get("IMAGE_SIZE", "2K")
     default_mime  = os.environ.get("IMAGE_MIME_TYPE", "image/png")
 
     client = genai.Client(api_key=api_key)
@@ -53,7 +53,7 @@ def main():
                         help="Concept à illustrer (ex: sécurité, rapidité)")
     parser.add_argument("--bg",           choices=["fig", "pink", "none"], default="fig",
                         help="Arrière-plan : fig (#18093B), pink (#FFB2B2) ou none (couleur libre déterminée par le prompt/modèle)")
-    parser.add_argument("--style",        choices=["woodcut", "editorial", "constructivist", "chiaroscuro", "grainy-editorial", "pedagogical", "offset-screenprint"], default="woodcut",
+    parser.add_argument("--style",        choices=["woodcut", "editorial", "constructivist", "chiaroscuro", "grainy-editorial", "pedagogical", "offset-screenprint"], default="chiaroscuro",
                         help="Style artistique : woodcut (gravure), editorial (vectoriel texturé), constructivist (mid-century constructiviste), chiaroscuro (grain minimaliste) ou grainy-editorial (éditorial granuleux vectoriel)")
     parser.add_argument("--output",
                         help="Fichier de sortie (défaut : assets/vibe_[concept].png)")
@@ -117,45 +117,55 @@ def main():
     print(f"\n[1/3] Modèle : {image_model} | Style : {args.style} | Format : {args.aspect_ratio} | Taille : {args.image_size}")
     print(f"      Prompt extrait : {prompt}")
 
-    # ── 6. Appel de l'API Nanobanana 2 via generate_content (Standard 2026) ──
-    try:
-        from google.genai import types as genai_types
-        # On force le préfixe strict requis par l'API pour éviter le routage 404
-        strict_model_name = image_model if image_model.startswith("models/") else f"models/{image_model}"
-
-        response = client.models.generate_content(
-            model=strict_model_name,
-            contents=prompt,
-            config=genai_types.GenerateContentConfig(
-                response_modalities=["IMAGE"],
-                image_config=genai_types.ImageConfig(
-                    aspect_ratio=args.aspect_ratio,
-                )
-            )
-        )
-    except Exception as e:
-        print(f"\n[Erreur] Échec de l'appel API : {e}")
-        print("Vérifiez votre clé API, votre quota, et que le modèle est bien accessible.")
-        sys.exit(1)
-
-    # ── 7. Extraction et sauvegarde (Correction pour Nanobanana 2) ──
+    # ── 6. Appel de l'API Nanobanana 2 via generate_content (Standard 2026) avec retry ──
+    from google.genai import types as genai_types
+    import time
+    
+    strict_model_name = image_model if image_model.startswith("models/") else f"models/{image_model}"
+    
+    max_retries = 3
     img_bytes = None
     
-    # On va chercher l'image directement dans les parts de la réponse binaire
-    if response.parts:
-        for part in response.parts:
-            if part.inline_data:
-                img_bytes = part.inline_data.data
+    for attempt in range(1, max_retries + 1):
+        try:
+            print(f"[Tentative {attempt}/{max_retries}] Appel de l'API pour l'image...")
+            response = client.models.generate_content(
+                model=strict_model_name,
+                contents=prompt,
+                config=genai_types.GenerateContentConfig(
+                    response_modalities=["IMAGE"],
+                    image_config=genai_types.ImageConfig(
+                        aspect_ratio=args.aspect_ratio,
+                    )
+                )
+            )
+            
+            # Extraction
+            if response.parts:
+                for part in response.parts:
+                    if part.inline_data:
+                        img_bytes = part.inline_data.data
+                        break
+            
+            if img_bytes:
                 break
+            else:
+                # Optionnel : si l'API a bloqué pour des raisons de sécurité, elle renvoie du texte explicatif
+                try:
+                    if response.text:
+                        print(f"Message de l'API (tentative {attempt}) : {response.text}")
+                except Exception:
+                    pass
+        except Exception as e:
+            print(f"[Warning] Échec tentative {attempt} : {e}")
+            
+        if attempt < max_retries:
+            sleep_time = attempt * 3
+            print(f"Attente de {sleep_time}s avant la prochaine tentative...")
+            time.sleep(sleep_time)
 
     if not img_bytes:
-        print("[Erreur] Aucune image retournée par l'API.")
-        # Optionnel : si l'API a bloqué pour des raisons de sécurité, elle renvoie du texte explicatif
-        try:
-            if response.text:
-                print(f"Message de l'API : {response.text}")
-        except Exception:
-            pass
+        print("[Erreur] Échec définitif : Aucune image retournée par l'API après plusieurs tentatives.")
         sys.exit(1)
 
     print(f"\n[2/3] Image reçue, sauvegarde en cours...")

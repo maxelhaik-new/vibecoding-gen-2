@@ -1,0 +1,135 @@
+{
+  "lessonTitle": "M1C1L5",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Préparer son environnement et ses accès"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "La boîte à outils du Vibe Coder",
+        "Intro": "Découvrir la boîte à outils de la formation en 3 minutes. Aucun outil à installer aujourd'hui : l'objectif est d'appréhender le fonctionnement de la stack et d'anticiper les accès à créer avant le début de la pratique.",
+        "Titre 1": "Familles d'outils",
+        "Texte 1": "Une architecture de production structurée en quatre catégories logiques : l'IDE, l'hébergement, le backend et les connecteurs tiers.",
+        "Titre 2": "Budget à prévoir",
+        "Texte 2": "Les outils complémentaires sont gratuits, mais le cœur du système repose sur des abonnements de modèles et d'IDE par IA.",
+        "Titre 3": "Création progressive",
+        "Texte 3": "Pas de configuration complexe immédiate : on crée les différents comptes à son rythme avant d'aborder les modules pratiques."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs de la leçon",
+        "Intro": "Découvrir l'écosystème technique de la formation, appréhender le budget nécessaire et anticiper la création des accès pour coder sereinement.",
+        "Titre 1": "Découvrir les quatre familles d'outils",
+        "Titre 2": "Identifier les abonnements obligatoires",
+        "Titre 3": "Consulter la checklist complète des coûts",
+        "Titre 4": "Créer les comptes de développement requis",
+        "Titre 5": "Accéder à la ressource d'accès partagée",
+        "Titre 6": "Anticiper la configuration de son espace"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "content": {
+        "Titre": "Les quatre familles d'outils",
+        "Intro": "On n'empile pas les technologies au hasard. Chaque catégorie a un rôle précis dans notre chaîne de production moderne :",
+        "Picto 1": "mdi:code-braces-box",
+        "Titre 1": "L'IDE agentique au cœur du code",
+        "Texte 1": "L'interface principale où on collabore directement avec l'agent d'IA pour générer, modifier et faire évoluer les fichiers du projet.",
+        "Picto 2": "mdi:cloud-upload",
+        "Titre 2": "Hébergement et versioning de l'app",
+        "Texte 2": "Les plateformes indispensables pour sauvegarder l'historique de son code et publier l'application finale en ligne en quelques clics.",
+        "Picto 3": "mdi:database",
+        "Titre 3": "Base de données et authentification",
+        "Texte 3": "Le moteur backend permettant de stocker les informations utilisateur et de sécuriser l'accès aux données privées de l'application.",
+        "Picto 4": "mdi:credit-card",
+        "Titre 4": "Services externes et connecteurs",
+        "Texte 4": "Les outils tiers à intégrer pour connecter l'application au monde réel, comme la gestion des paiements ou l'envoi de courriels."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 5 BLOCS",
+      "content": {
+        "La méthode “few shots”": "La boîte à outils dev",
+        "Intro": "Découvrez les outils, leur utilité et leur coût dans notre stack :",
+        "Texte Bulle": "Le vrai coût de la formation réside uniquement dans l'accès à l'IDE et aux modèles d'IA.",
+        "Titre 1": "L'IDE Agentique",
+        "Texte 1": "Cursor ou Antigravity pour programmer avec l'agent d'intelligence artificielle. Abonnement payant requis.",
+        "Picto 1": "mdi:code-braces-box",
+        "Titre 2": "Le moteur de modèle",
+        "Texte 2": "Claude ou Gemini pour faire tourner le moteur de génération de code. Comptez environ vingt euros par mois.",
+        "Picto 2": "mdi:robot",
+        "Titre 3": "Hébergement et Git",
+        "Texte 3": "GitHub et Vercel pour stocker l'historique du code et publier l'application en ligne de manière gratuite.",
+        "Picto 3": "mdi:cloud-upload",
+        "Titre 4": "Base de données",
+        "Texte 4": "Supabase pour stocker les informations de l'application et gérer les comptes utilisateurs de façon sécurisée.",
+        "Picto 4": "mdi:database",
+        "Titre 5": "Services et API tiers",
+        "Texte 5": "Google AI Studio pour concevoir les invites et Stripe pour encaisser les paiements lors du projet de fin.",
+        "Picto 5": "mdi:credit-card"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": {
+        "Titre": "Anticiper son budget mensuel",
+        "Intro": "Deux abonnements suffisent pour démarrer : un IDE agentique et un modèle d'IA. Tout le reste de la stack est disponible gratuitement pour les projets de la formation.",
+        "Chiffre 2": "~20€",
+        "Titre 2": "par mois pour l'IDE agentique\n(Cursor ou Antigravity)",
+        "Chiffre 3": "~22€",
+        "Titre 3": "par mois pour le modèle IA\n(Claude Pro ou Gemini Advanced)",
+        "Titre 4": "Maîtriser son investissement dès le départ",
+        "Texte 4": "Le seul coût obligatoire réside dans l'accès à l'IDE agentique et au modèle d'IA, soit entre 20 et 42 euros par mois selon la configuration choisie. GitHub, Vercel et Supabase disposent d'offres gratuites largement suffisantes pour tous les projets de la formation.",
+        "Texte Bulle": "Cursor : 20$/mois (Pro) · Antigravity : offre disponible · Claude Pro : 22€/mois · Gemini Advanced : 22€/mois · GitHub, Vercel, Supabase : gratuit ·",
+        "Source": "Source : tarifs 2025"
+      },
+      "image_concept": "A minimalist flat-lay of a laptop, credit card, and a small stack of euro coins on a clean desk with soft warm lighting",
+      "image_style": "chiaroscuro",
+      "image_ratio": "4:3"
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Créer ses accès à son rythme",
+        "Intro": "Une page de ressources centralisée regroupe tous les liens.",
+        "Texte 1": "Pour faciliter la préparation, tous les liens de création de comptes sont réunis dans un document partagé. L'objectif est de créer les différents accès progressivement, à son propre rythme, avant le début du module pratique. Inutile de chercher à configurer ou à comprendre chaque outil en détail dès aujourd'hui : chaque service sera présenté et utilisé pas à pas au moment opportun du parcours de formation."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Préparer l'environnement de travail demande principalement d'anticiper le budget pour l'IDE agentique et le modèle d'IA, constituant le seul investissement payant. Les autres services de la stack comme le stockage de code, l'hébergement et la base de données disposent d'offres gratuites largement suffisantes. On crée les comptes tranquillement via le document partagé.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "L'IDE agentique et les modèles IA sont les seuls outils payants à prévoir. Créer les accès dès maintenant à l'aide de la fiche ressource jointe pour aborder sereinement la suite de la formation. À nous de jouer !"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

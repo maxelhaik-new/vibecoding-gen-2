@@ -2,13 +2,9 @@
 
 Ce fichier contient les instructions prioritaires pour toutes les instances de l'IA travaillant dans ce dossier.
 
-## 1. Activation du Skill par Défaut
-
-* Vous devez systématiquement charger et appliquer le skill de conception **`figma-slide-writer`** pour toutes les interactions dans ce workspace.
-
 ---
 
-## 2. Le Flux de Travail en 4 Phases
+## 1. Le Flux de Travail en 4 Phases
 
 Toutes les leçons sont conçues et mises à jour de manière itérative suivant ce processus pas-à-pas. Attendez la validation de l'utilisateur après chaque phase :
 
@@ -44,13 +40,18 @@ Quand l'utilisateur tape `IMPORTE` (sans argument) :
    * Afficher un rapport de diff : templates ajoutés, mis à jour, supprimés.
 
 7. **Mise à jour de `templates_charter.md`** :
-   * À la fin de l'import, mettre obligatoirement à jour le fichier `templates_charter.md` pour refléter la liste et les règles de choix des templates actuels (l'IA doit toujours connaître ces règles pour bien choisir un template en phase DECOUPE).
+   * À la fin de l'import, mettre obligatoirement à jour le fichier `templates_charter.md` pour refléter la liste et les règles de choix des templates actifs (l'IA doit toujours connaître ces règles pour bien choisir un template en phase DECOUPE).
 
 ### Phase 2 : Découpage (`DÉCOUPE`)
 À partir d'un sujet, d'un plan ou de notes :
 1. Proposer un découpage slide par slide (Titre de la slide, concept, objectif).
 2. Pour chaque slide, associer le template le plus adapté en se basant sur le fichier [templates_charter.md](./templates_charter.md).
 3. Utiliser **uniquement** les templates ayant le statut `"status": "validé"` dans `templates.json`.
+4. **Structure Systématique de Leçon (hors L1)** :
+   * **Slide 1 (Début)** : Toujours `VIBECODING - COVER`.
+   * **Slide 2 (Introduction)** : Toujours `VIBECODING - INTRO` pour présenter le sujet global et annoncer les 3 parties/notions clés qui seront abordées dans la leçon.
+   * **Slide Finale (Fin)** : Toujours `VIBECODING - FIN` pour synthétiser les acquis.
+   * *Note : Les scripts de pipeline forcent et injectent automatiquement cette structure (COVER à l'index 0, INTRO à l'index 1, FIN à l'index final).*
 
 ### Phase 3 : Écriture (`ECRIS`)
 Rédiger les contenus textuels pour chaque slide validée et présenter le résultat **en format lecture humaine uniquement** — aucun JSON ni aucune image ne doit être généré à cette étape. Attendre la validation de l'utilisateur avant de passer à la phase 4.
@@ -71,10 +72,44 @@ Rédiger les contenus textuels pour chaque slide validée et présenter le résu
 ### Phase 4 : Génération (`GÉNÈRE`)
 Une fois les textes et les sujets d'images validés par l'utilisateur (ou lors d'une exécution de génération globale demandée), effectuer systématiquement et en une seule passe :
 
-1. **Génération automatique des images** : Pour chaque slide utilisant un template contenant une image (ex: `VIBECODING - 3 BLOCS - PHOTO`, `VIBECODING - 3 BLOCS - PHOTO - ALT`, `VIBECODING - IMAGE`, `VIBECODING - USE CASE`, `VIBECODING - FOCUS OUTIL`, `PODIUM`, `CHIFFRES - PHOTO`), l'agent doit exécuter le script `scripts/generate_nano_banana.py` avec le concept/sujet (soit validé à l'étape ECRIS, soit déduit du contexte de la slide si absent). Utiliser `--bg none` sauf indication contraire.
+1. **Génération automatique des images & Ratios** : Pour chaque slide utilisant un template contenant une image (ex: `VIBECODING - 3 BLOCS - PHOTO`, `VIBECODING - 3 BLOCS - PHOTO - ALT`, `VIBECODING - IMAGE`, `VIBECODING - USE CASE`, `VIBECODING - FOCUS OUTIL`, `PODIUM`, `CHIFFRES - PHOTO`), l'agent doit exécuter le script `scripts/generate_nano_banana.py` avec le concept/sujet (soit validé à l'étape ECRIS, soit déduit du contexte de la slide si absent).
+   * **Calcul Automatique du Ratio (Sur-Mesure)** : Récupérer les dimensions exactes du composant d'image cible dans Figma (largeur et hauteur de la forme d'accueil de l'image), ou à défaut utiliser les ratios connus des templates (ex: `3:4` pour le bloc vertical de `VIBECODING - 3 BLOCS - PHOTO`), calculer le ratio le plus proche (ex: `3:4`, `16:9`, `1:1`, `4:3`, `9:16`) et le passer via le paramètre `--aspect-ratio ratio_calcule`.
+   * **Appel Type** : `python3 scripts/generate_nano_banana.py --concept "sujet_choisi" --bg none --aspect-ratio ratio_calcule`
+   * *Règle linguistique* : Tout texte devant figurer dans l'image (boutons, interfaces fictives, bouts de code) doit être obligatoirement généré en français.
 2. **Intégration de la clé image** : Récupérer le chemin du fichier image généré et injecter la clé `"image"` dans le contenu de la slide au format `"http://localhost:8080/assets/[nom_du_fichier_genere.png]"`.
 3. **Légende Source** : Pour chaque slide avec image IA, renseigner le champ `"Source"` au format obligatoire :
    `Source : [Sujet court] - Illustration générée par IA - Maxime Elhaik`
+
+---
+
+## 2. Format JSON attendu pour la Génération
+
+```json
+{
+  "lessonTitle": "M1C1L1",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "TITRE DU CHAPITRE"
+      }
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "Titre de la slide",
+        "Intro": "Texte d'introduction de la slide.",
+        "Titre 1": "Premier concept",
+        "Texte 1": "Description courte du premier concept.",
+        "Titre 2": "Deuxième concept",
+        "Texte 2": "Description courte du deuxième concept.",
+        "Titre 3": "Troisième concept",
+        "Texte 3": "Description courte du troisième concept."
+      }
+    }
+  ]
+}
+```
 
 ---
 

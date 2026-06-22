@@ -1,0 +1,24 @@
+{
+  "lessonTitle": "M1C4L1",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Le Vibe Coding en contexte professionnel"
+      }
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Objectifs du chapitre",
+        "Intro": "Ce chapitre explore la place du Vibe Coding en contexte professionnel. On y analyse son impact sociétal, les profils concernés, les créations possibles et l'avenir des métiers.",
+        "Titre 1": "Comprendre l'impact sociétal de l'IA",
+        "Titre 2": "Identifier les profils les plus impactés",
+        "Titre 3": "Découvrir les types de projets à créer",
+        "Titre 4": "Mesurer la rentabilité des outils de code",
+        "Titre 5": "Intégrer ces nouvelles méthodes de travail",
+        "Titre 6": "Analyser l'évolution du rôle de développeur"
+      }
+    }
+  ]
+}

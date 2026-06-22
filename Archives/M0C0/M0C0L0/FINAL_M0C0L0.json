@@ -1,0 +1,42 @@
+{
+  "lessonTitle": "Rédiger du Code Robuste",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Rédiger du code robuste au quotidien"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "L'art d'anticiper les erreurs",
+        "Intro": "On doit concevoir le code pour qu'il gère les cas d'erreur de manière proactive. Cela évite les plantages en production et garantit une expérience utilisateur fluide et sans interruption.",
+        "Titre 1": "Gestion proactive",
+        "Texte 1": "On anticipe chaque scénario d'échec possible pour éviter que l'application ne s'arrête brutalement.",
+        "Titre 2": "Zéro plantage",
+        "Texte 2": "L'objectif est de maintenir le service actif même si une base de données ou une API externe échoue.",
+        "Titre 3": "Confiance accrue",
+        "Texte 3": "Un système qui gère ses propres faiblesses inspire une plus grande sécurité auprès des utilisateurs."
+      }
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "La règle de sécurité",
+        "Mot": "Zero Trust",
+        "Definition": "Un principe de sécurité informatique fondamental selon lequel on ne doit jamais faire confiance par défaut aux données entrantes, qu'elles proviennent de l'extérieur ou de l'intérieur du réseau. Chaque requête, formulaire ou paramètre doit être systématiquement vérifié, nettoyé et validé avant d'être traité par le système applicatif.",
+        "Bulle": "Principe clé : considérer chaque utilisateur externe comme un attaquant potentiel. Valider les types, les formats et les longueurs de toutes les données reçues permet de bloquer 90% des failles de sécurité."
+      }
+    },
+    {
+      "template": "VIBECODING - VIDE",
+      "content": {
+        "Titre": "La validation de schémas",
+        "Intro": "L'utilisation de bibliothèques comme Pydantic ou Zod permet de valider la forme exacte des données reçues en entrée.",
+        "image": "http://localhost:8080/assets/vibe_test_lesson_slide_4.png",
+        "Source": "Source : A sturdy medieval shield acting as a filter, allowing clean, - Illustration générée par IA - Maxime Elhaik"
+      }
+    }
+  ]
+}

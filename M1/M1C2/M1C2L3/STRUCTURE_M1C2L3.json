@@ -1,0 +1,21 @@
+{
+  "lessonTitle": "Aux origines du terme : Andrej Karpathy",
+  "slides": [
+    {
+      "title": "Aux origines du terme : Andrej Karpathy",
+      "template": "VIBECODING - COVER"
+    },
+    {
+      "title": "Le post historique sur X",
+      "template": "VIBECODING - USE CASE"
+    },
+    {
+      "title": "Le constat d'Andrej Karpathy",
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT"
+    },
+    {
+      "title": "L'avenir du génie logiciel",
+      "template": "VIBECODING - 3 BLOCS - PHOTO"
+    }
+  ]
+}

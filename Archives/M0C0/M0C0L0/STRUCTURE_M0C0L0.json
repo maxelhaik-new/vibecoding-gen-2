@@ -1,0 +1,21 @@
+{
+  "lessonTitle": "Rédiger du Code Robuste",
+  "slides": [
+    {
+      "title": "Rédiger du Code Robuste",
+      "template": "VIBECODING - COVER"
+    },
+    {
+      "title": "Introduction au Code Robuste",
+      "template": "VIBECODING - INTRO"
+    },
+    {
+      "title": "Ne jamais faire confiance aux entrées",
+      "template": "VIBECODING - DEFINITION"
+    },
+    {
+      "title": "Exemple : Validation de schémas",
+      "template": "VIBECODING - VIDE"
+    }
+  ]
+}

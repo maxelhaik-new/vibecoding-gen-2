@@ -1,0 +1,77 @@
+{
+  "lessonTitle": "M1C1L4_TEST_TEMPLATES",
+  "slides": [
+    {
+      "template": "VIBECODING - SCHEMA - 3 COLONNES",
+      "content": {
+        "Titre": "L'accompagnement",
+        "Intro": "Tout au long de votre parcours, vous bénéficiez d'un suivi sur-mesure pour aborder votre certification dans les meilleures conditions.",
+        "Picto 1": "mdi:account-tie",
+        "Titre 1": "Un expert dédié",
+        "Texte 1": "Votre formateur vous accompagne chaque semaine, rythme votre progression et valide l'acquisition des compétences obligatoires.",
+        "Picto 2": "mdi:pencil",
+        "Titre 2": "Exercices personnalisés",
+        "Texte 2": "Lors de vos séances individuelles, vous recevez des exercices adaptés pour pratiquer et monter en compétences ciblées.",
+        "Picto 3": "mdi:presentation",
+        "Titre 3": "Soutenance blanche",
+        "Texte 3": "Avant l'examen, vous êtes mis en condition réelle avec une évaluation blanche pour vous garantir d'être prêt le jour J."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 6 BLOCS",
+      "content": {
+        "Titre": "Le référentiel de compétences",
+        "Intro": "La certification valide votre capacité à mener un projet produit de A à Z à travers ces 6 compétences fondamentales :",
+        "Picto 1": "mdi:target",
+        "Titre 1": "C1. Cadrage",
+        "Texte 1": "Traduire une idée en parcours utilisateur et structurer des prompts exploitables.",
+        "Picto 2": "mdi:refresh",
+        "Titre 2": "C2. Itération",
+        "Texte 2": "Générer du code, résoudre des erreurs et ajuster ses directives pour prototyper.",
+        "Picto 3": "mdi:source-repository",
+        "Titre 3": "C3. Environnement",
+        "Texte 3": "Cloner et synchroniser son code en local via Git et respecter l'architecture.",
+        "Picto 4": "mdi:api",
+        "Titre 4": "C4. Intégration API",
+        "Texte 4": "Interfacer l'application avec des bases de données et des services tiers.",
+        "Picto 5": "mdi:cloud-upload",
+        "Titre 5": "C5. Déploiement",
+        "Texte 5": "Mettre l'application en ligne tout en appliquant les règles de sécurité (HTTPS, RLS).",
+        "Picto 6": "mdi:leaf",
+        "Titre 6": "C6. Responsabilité",
+        "Texte 6": "Maintenir une veille, protéger les données (RGPD) et limiter l'impact éthique."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 5 BLOCS",
+      "content": {
+        "Titre": "Le référentiel de compétences",
+        "Intro": "La certification valide votre capacité à mener un projet produit de A à Z à travers l'acquisition de compétences clés :",
+        "Picto 1": "mdi:target",
+        "Titre 1": "1. Cadrage & Prompt",
+        "Texte 1": "Traduire une idée en parcours utilisateur et structurer des instructions exploitables.",
+        "Picto 2": "mdi:refresh",
+        "Titre 2": "2. Prototype & Environnement",
+        "Texte 2": "Générer le code, configurer le projet localement via Git et résoudre les erreurs.",
+        "Picto 3": "mdi:api",
+        "Titre 3": "3. Intégration API",
+        "Texte 3": "Interfacer l'application avec des bases de données et des services tiers.",
+        "Picto 4": "mdi:cloud-upload",
+        "Titre 4": "4. Déploiement sécurisé",
+        "Texte 4": "Mettre l'application en ligne tout en appliquant les règles de sécurité (HTTPS, RLS).",
+        "Picto 5": "mdi:leaf",
+        "Titre 5": "5. Usage responsable",
+        "Texte 5": "Maintenir une veille, protéger les données (RGPD) et évaluer l'impact éthique de l'IA."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

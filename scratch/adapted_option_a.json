@@ -1,0 +1,41 @@
+{
+  "lessonTitle": "M1C1L1",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Découvrir le programme \nde la formation"
+      }
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "Pédagogie de la formation",
+        "Titre 1": "Les différentes étapes pour maîtriser l'IA  & l'utiliser professionnellement",
+        "Texte 1": "À travers cette formation, vous apprendrez à utiliser l'Intelligence Artificielle dans un cadre professionnel, mais pas seulement ! Vous allez aussi comprendre les fondamentaux de l'IA, découvrir ses applications en entreprise et réaliser des projets qui feront de vous un·e professionnel·le de l'IA.\nLES 3 grands axes de la formation\nCompréhension des concepts et technologies IA",
+        "Picto 1": "mdi:arrow-right-bold-circle-outline",
+        "Titre 2": "Maîtrise des outils IA générative pour le travail",
+        "Texte 2": "",
+        "Picto 2": "mdi:arrow-right-bold-circle-outline",
+        "Titre 3": "Mise en pratique à travers des cas d'usage réels en entreprise",
+        "Texte 3": "",
+        "Picto 3": "mdi:arrow-right-bold-circle-outline"
+      }
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Les objectifs de la formation",
+        "Texte 1": "Comprendre quand, où & comment on utilise l'IA\ndans le monde professionnel & plus particulièrement dans la productivité et la création.\nApprendre à utiliser l'IA en tant que professionnel\ndans le monde de l'entreprise, en étant salarié ou indépendant.\nDécouvrir les bases de l'IA générative\net appliquer les fondamentaux pour créer des contenus qui répondent aux besoins des entreprises.\nCréer un portfolio de cas d'usage concrets\npour être opérationnel sur l'ensemble des demandes & mettre en avant son savoir-faire.\nObtenir une certification reconnue\npar l'état, mais aussi par les professionnels, à travers une série de cas pratiques"
+      }
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Programme de formation",
+        "Intro": "Présentation de la formation, certification  & enjeux liés à l’intelligence atificielle",
+        "Texte 1": "Module 1 : Introduction\nModule 2 :  Fonctionement des IA et Prompt Engineering\nModule 3 : Maîtriser ChatGPT et les autres outils de génération de texte\nModule 4 : Maîtriser Midjourney et les autres outils de génération d’images\nModule 5 : Projets et cas professionalisant\nModule 6 : Découvrir d'autres LLM\nModule 7 : Découvrir d'autres outils de génération visuelle\nModule 8 : Professionnaliser son utilisation de l'IA\nDécouvrez les concurrents de ChatGPT,  leurs forces, leurs faiblesses et leurs spécificités\nDécouvrez les concurrents de MidJourney,  leurs forces, leurs faiblesses et leurs spécificités\nDécouverte des fondamentaux des l’intelligence artificielle générative\nPrise en main & maîtrise de ChatGPT\net de ses alternatives\nPrise en main & maîtrise de Midjourney\net de ses alternatives\nMise en pratique des modules 2 & 3 à travers\ndes briefs fictifs créés depuis nos demandes clients"
+      }
+    }
+  ]
+}

@@ -62,6 +62,27 @@ def calc_limits(text: str) -> Dict:
     return {"target_lenght": target, "min_lenght": min_l, "max_lenght": max_l}
 
 
+def get_closest_ratio(width: float, height: float) -> str:
+    ratios = {
+        "1:1": 1.0,
+        "16:9": 16.0 / 9.0,
+        "9:16": 9.0 / 16.0,
+        "4:3": 4.0 / 3.0,
+        "3:4": 3.0 / 4.0,
+        "3:2": 3.0 / 2.0,
+        "2:3": 2.0 / 3.0,
+    }
+    target = width / height
+    closest_name = "1:1"
+    min_diff = float('inf')
+    for name, val in ratios.items():
+        diff = abs(target - val)
+        if diff < min_diff:
+            min_diff = diff
+            closest_name = name
+    return closest_name
+
+
 def is_pure_number(s: str) -> bool:
     return bool(re.fullmatch(r"\d+", s.strip()))
 
@@ -88,13 +109,13 @@ def classify_node(node: dict) -> Optional[str]:
         if ntype != "TEXT":
             return "image"
 
-    if ntype != "TEXT":
-        return None
-
     # Detect picto layers
     picto_keywords = ["mdi:", "iconify:", "picto", "icon", "svg", "logo"]
     if any(kw in name for kw in picto_keywords):
         return "picto"
+
+    if ntype != "TEXT":
+        return None
 
     # Exclude pure number layers (Figma bullet numerals)
     chars = node.get("characters", "")
@@ -104,8 +125,15 @@ def classify_node(node: dict) -> Optional[str]:
     return "text"
 
 
-def collect_layers(node: dict, text_layers: list, picto_layers: list, image_layers: list, picto_counter: list):
+def collect_layers(node: dict, text_layers: list, picto_layers: list, image_layers: list, picto_counter: list, parent_block: Optional[int] = None):
     """Recursively traverse a node tree and collect layers."""
+    name = node.get("name", "")
+    
+    # Detect if this node is a block container (e.g., "Bloc 1", "Colonne 3", "Item 2")
+    match = re.search(r'(?:bloc|colonne|item|point|étape|step)\s*(\d+)', name, re.IGNORECASE)
+    if match:
+        parent_block = int(match.group(1))
+
     kind = classify_node(node)
     if kind == "text":
         chars = node.get("characters", "")
@@ -113,8 +141,11 @@ def collect_layers(node: dict, text_layers: list, picto_layers: list, image_laye
         entry.update(calc_limits(chars))
         text_layers.append(entry)
     elif kind == "picto":
-        idx = picto_counter[0]
-        picto_counter[0] += 1
+        if parent_block is not None:
+            idx = parent_block
+        else:
+            idx = picto_counter[0]
+            picto_counter[0] += 1
         picto_layers.append({
             "key": f"Picto {idx}",
             "original_placeholder": node.get("name", f"Picto {idx}")
@@ -122,13 +153,25 @@ def collect_layers(node: dict, text_layers: list, picto_layers: list, image_laye
     elif kind == "image":
         # Deduplicate so we don't add multiple entries for the same logical image if nested
         if not any(img["key"] == "image" for img in image_layers):
-            image_layers.append({
+            bbox = node.get("absoluteBoundingBox") or {}
+            width = bbox.get("width")
+            height = bbox.get("height")
+            ratio = "1:1"
+            if width and height:
+                ratio = get_closest_ratio(width, height)
+            
+            image_entry = {
                 "key": "image",
-                "original_placeholder": node.get("name", "image")
-            })
+                "original_placeholder": node.get("name", "image"),
+                "ratio": ratio
+            }
+            if width and height:
+                image_entry["width"] = round(width, 1)
+                image_entry["height"] = round(height, 1)
+            image_layers.append(image_entry)
 
     for child in node.get("children", []):
-        collect_layers(child, text_layers, picto_layers, image_layers, picto_counter)
+        collect_layers(child, text_layers, picto_layers, image_layers, picto_counter, parent_block)
 
 
 # ─── Main ───────────────────────────────────────────────────────────────────────
@@ -224,6 +267,23 @@ def main():
 
     # Build final ordered list (preserve Figma section order)
     final_list = [new_templates_map[f["name"]] for f in frames]
+
+    # Keep removed templates but set their status to "en attente"
+    # only if there is no equivalent template with "VIBECODING - " prefix
+    # or other known rename mappings
+    rename_mappings = {
+        "VIBECODING - 4 BLOCS - TITLE 2 LINES": "VIBECODING - 4 BLOCS",
+        "VIBECODING - DEFINITION ALT": "VIBECODING - DEFINITION",
+    }
+    for name in removed:
+        equivalent_name = f"VIBECODING - {name}"
+        if equivalent_name in figma_names:
+            continue
+        if name in rename_mappings and rename_mappings[name] in figma_names:
+            continue
+        entry = existing_map[name]
+        entry["status"] = "en attente"
+        final_list.append(entry)
 
     # Write output
     with open(TEMPLATES_PATH, "w", encoding="utf-8") as f:

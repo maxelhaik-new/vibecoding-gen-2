@@ -1,0 +1,171 @@
+{
+  "lessonTitle": "M1C4L4",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Ce qu'on peut concrètement créer"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "De l'idée au logiciel",
+        "Intro": "Voici cinq familles de projets que des non-développeurs créent déjà aujourd'hui. Des exemples réels, pas des cas d'école. On commence par le plus accessible pour finir sur le plus ambitieux.",
+        "Titre 1": "Sites et apps",
+        "Texte 1": "Site vitrine, portfolio, page de vente, ou app perso taillée pour son propre usage au quotidien.",
+        "Titre 2": "Outils et produits",
+        "Texte 2": "Outil interne sur-mesure pour son équipe, ou MVP lancé seul pour valider une vraie idée de produit.",
+        "Titre 3": "Automatisations",
+        "Texte 3": "Supprimer une tâche répétitive, relier deux services et gagner du temps sans écrire de vrai logiciel."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Un site web",
+        "Mot": "Le point d'entrée idéal",
+        "Definition": "Vitrine d'activité, portfolio, page de vente ou landing page. Le site sort en quelques heures, sans hébergement complexe à gérer. C'est le premier projet à privilégier pour gagner en confiance.",
+        "Bulle": "Succès rapide garanti : un résultat visible dès la première session."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Intro": "L'APP QUI SUIT SES PATIENTS",
+        "Titre": "Une app perso",
+        "Texte 1": "Tracker de budget, suivi de patients, journal de bord, tableau de bord personnel : on crée l'outil exact dont on a besoin, sans adapter son usage à un SaaS générique. Un médecin britannique a construit son app de suivi santé pour 130 dollars. Le problème ? La même app facturée en agence coûtait 130 000 dollars. Même résultat, mille fois moins cher.",
+        "Texte Bulle": "On ne plie plus son besoin à un logiciel : on construit l'outil qui colle pile à son usage. C'est tout le renversement permis par le Vibe Coding.",
+        "Source": "Source : Replit / Business Insider, 2025"
+      },
+      "image_concept": "A handcrafted personal tool shaped like a perfectly fitted glove, a doctor's hand sliding into a custom health-tracking dashboard that molds exactly to its fingers, glowing data lines wrapping around like tailored fabric",
+      "image_style": "grainy-editorial",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "Un outil interne sur-mesure",
+        "Intro": "Fini de subir les limites d'un SaaS générique. On construit un outil taillé pour le process exact de l'équipe, et non l'inverse. Trois exemples concrets que des équipes non-tech montent déjà.",
+        "Titre 1": "Webinaire",
+        "Texte 1": "Formulaire d'inscription à un webinaire, avec collecte des participants et suivi automatique. Adapté au flux exact de l'événement, sans bidouiller un outil prévu pour autre chose.",
+        "Titre 2": "Mini-CRM",
+        "Texte 2": "Mini-CRM de suivi commercial, calé sur les étapes réelles de l'équipe de vente. On note, on relance, on suit ses leads sans payer pour cent fonctions jamais utilisées.",
+        "Titre 3": "Suivi RH",
+        "Texte 3": "Tableau de bord de candidatures RH, pensé pour le process de recrutement maison. Chaque statut, chaque critère colle au besoin précis de l'équipe, pas à un modèle standard imposé."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Intro": "UN MVP EN UN WEEK-END",
+        "Titre": "Un MVP ou petit SaaS",
+        "Texte 1": "C'est la vague des entreprises d'une personne : des solopreneurs lancent de vrais produits, seuls, sans associé technique. Forbes le décrivait en mars 2026 : un fondateur avec une expertise métier lance un MVP en un week-end. Le problème ? Avant, c'était 3 mois de travail ou 30 000 dollars de développement classique. Ici, le marché valide l'idée, pas le code.",
+        "Texte Bulle": "On teste vite et pas cher pour vérifier qu'un vrai besoin existe. L'objectif n'est pas un code parfait, mais un marché qui dit oui.",
+        "Source": "Source : Forbes, 2026"
+      },
+      "image_concept": "A single founder at a desk launching a small rocket made of stacked product cards over a weekend, a calendar showing two days while a giant crowd of validation thumbs-up rises like fuel beneath the rocket",
+      "image_style": "grainy-editorial",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "content": {
+        "Titre": "Une automatisation",
+        "Intro": "Supprimer une tâche répétitive en quelques heures, sans déploiement complexe. Des gains immédiats, sans écrire un vrai logiciel.",
+        "Titre 1": "Relier deux services",
+        "Texte 1": "Connecter son CRM à son agenda, ou un formulaire à Notion : les données circulent toutes seules, sans copier-coller",
+        "Picto 1": "mdi:flowchart",
+        "Titre 2": "Envoyer un email auto",
+        "Texte 2": "Automatiser un envoi d'email de relance ou de confirmation, déclenché par une action précise, sans intervention manuelle",
+        "Picto 2": "mdi:email-fast",
+        "Titre 3": "Générer un rapport",
+        "Texte 3": "Produire un rapport hebdomadaire prêt à l'envoi, compilé automatiquement chaque semaine au même horaire",
+        "Picto 3": "mdi:file-chart",
+        "Titre 4": "Nettoyer un fichier",
+        "Texte 4": "Trier, dédoublonner et nettoyer un fichier CSV en quelques secondes, là où le faire à la main prendrait des heures",
+        "Picto 4": "mdi:broom"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 5 BLOCS",
+      "content": {
+        "Intro": "Cinq familles de projets, du plus simple au plus ambitieux :",
+        "Titre 1": "Site web",
+        "Texte 1": "Vitrine, portfolio ou landing page. Le point d'entrée le plus accessible pour démarrer.",
+        "Picto 1": "mdi:web",
+        "Titre  2": "App perso",
+        "Texte 2": "Tracker, journal de bord ou outil du quotidien, taillé pile pour son propre usage.",
+        "Picto 2": "mdi:cellphone-cog",
+        "Titre 3": "Outil interne",
+        "Texte 3": "Mini-CRM ou tableau de bord d'équipe, calé sur le process exact, pas l'inverse.",
+        "Picto 3": "mdi:toolbox",
+        "Titre  4": "MVP et SaaS",
+        "Texte 4": "Un vrai produit lancé seul, sans associé technique, pour valider une idée.",
+        "Picto 4": "mdi:rocket-launch",
+        "Titre 5": "Automatisation",
+        "Texte 5": "Une tâche répétitive éliminée, deux services reliés, du temps gagné aussitôt.",
+        "Picto 5": "mdi:robot-industrial",
+        "Texte Bulle": "La galerie va du plus simple au plus ambitieux. On commence par le site web pour installer un premier succès rapide."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Ce qui reste difficile",
+        "Mot": "Le prototype, oui. Le produit, c'est autre chose",
+        "Definition": "Le prototype sort vite, mais un produit fiable et sécurisé reste une autre histoire. Dès qu'un projet touche à la scalabilité, à la fiabilité ou à des données sensibles, il demande méthode et compréhension.",
+        "Bulle": "Ce point sera traité en détail dans les prochains modules."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Viser juste pour commencer",
+        "Intro": "Premier projet : simple, utile et tenable en un week-end.",
+        "Titre 2": "Bien choisir son premier projet",
+        "Texte 1": "Choisir un besoin réel et restreint, pas une idée de startup.",
+        "Texte 2": "Préférer l'utile au spectaculaire.",
+        "Texte 3": "Viser un périmètre faisable en un seul week-end.",
+        "Texte 4": "Se concentrer sur le résultat, pas la perfection du code.",
+        "Texte 5": "Garder un objectif clair et tenable."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "En bref",
+        "Intro": "Cinq familles de projets sont accessibles dès aujourd'hui : site web, app perso, outil interne, MVP ou petit SaaS, et automatisation. Chacune avec ses exemples concrets et chiffrés. La nuance honnête : le prototype sort vite, mais un produit fiable et sécurisé demande de la méthode. Pour bien démarrer, viser simple, utile et tenable en un week-end.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Cinq familles de projets sont à portée maintenant. La clé du premier projet n'est pas l'ambition, mais le bon périmètre. La suite ? Comment intégrer le Vibe Coding dans son travail au quotidien."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

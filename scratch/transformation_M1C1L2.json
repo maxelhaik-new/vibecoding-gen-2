@@ -1,0 +1,54 @@
+{
+  "lessonTitle": "M1C1L2",
+  "slides": [
+    {
+      "content": {
+        "Titre": "Découvrir le programme \nde la formation Vibe Coding",
+        "Intro": ""
+      }
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "Pédagogie de la formation",
+        "Intro": "Les 3 grands axes pour passer d'une simple idée à une application web complète en production.",
+        "Titre 1": "Conception & Prompting",
+        "Texte 1": "Apprendre à structurer une idée, modéliser la base de données et rédiger des instructions logiques claires pour guider efficacement les intelligences artificielles.",
+        "Picto 1": "mdi:xml",
+        "Titre 2": "Développement assisté",
+        "Texte 2": "Orchestrer des outils de génération et d'édition de code modernes (Cursor, Lovable, v0) pour assembler et itérer rapidement sur l'interface et la logique métier.",
+        "Picto 2": "mdi:rocket-launch-outline",
+        "Titre 3": "Supervision & Livraison",
+        "Texte 3": "Prendre de la hauteur pour tester, valider, sécuriser le code produit par l'IA et déployer l'application finale en continu.",
+        "Picto 3": "mdi:shield-check-outline"
+      }
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Les objectifs de la formation",
+        "Intro": "",
+        "Texte 1": "Concevoir sans coder : Traduire n'importe quelle idée d'application en spécifications fonctionnelles compréhensibles par les LLM.\nOrchestrer les IA : Utiliser les agents autonomes de codage pour générer 100% de la base technique et de l'interface.\nDéployer en production : Configurer les environnements de déploiement continu et mettre en ligne des applications web complexes.\nSuperviser la qualité : Tester, déboguer et valider chaque étape du développement avec un regard critique et technique.\nCertifier ses compétences : Valider ses acquis à travers des projets réels présentés devant un jury professionnel."
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "content": {
+        "Titre": "Programme de formation",
+        "Intro": "Un parcours intensif structuré pour devenir développeur full-stack assisté par IA.",
+        "Titre 1": "1. Outils & Fondations",
+        "Texte 1": "Prise en main de l'environnement de développement moderne (Git, GitHub) et initiation aux concepts clés du Vibe Coding.",
+        "Picto 1": "mdi:wrench",
+        "Titre 2": "2. UI & Bases de données",
+        "Texte 2": "Modélisation des données, connexion à Supabase et génération d'interfaces utilisateur modernes et réactives.",
+        "Picto 2": "mdi:database",
+        "Titre 3": "3. Logique & APis",
+        "Texte 3": "Intégration d'API tierces (Stripe, OpenAI) et orchestration de la logique métier de l'application.",
+        "Picto 3": "mdi:api",
+        "Titre 4": "4. Déploiement & Jury",
+        "Texte 4": "Mise en ligne continue sur Vercel, phase intensive de tests et soutenance du projet final devant un jury professionnel.",
+        "Picto 4": "mdi:school-outline"
+      }
+    }
+  ]
+}

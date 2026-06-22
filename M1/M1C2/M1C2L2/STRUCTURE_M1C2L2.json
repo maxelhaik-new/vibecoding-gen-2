@@ -1,0 +1,25 @@
+{
+  "lessonTitle": "Définir le Vibe Coding",
+  "slides": [
+    {
+      "title": "Définir le Vibe Coding",
+      "template": "VIBECODING - COVER"
+    },
+    {
+      "title": "Qu'est-ce que le Vibe Coding ?",
+      "template": "VIBECODING - DEFINITION"
+    },
+    {
+      "title": "Le nouveau rôle du développeur",
+      "template": "VIBECODING - 3 COLONNES"
+    },
+    {
+      "title": "Les bénéfices majeurs",
+      "template": "VIBECODING - 3 BLOCS - PHOTO"
+    },
+    {
+      "title": "En résumé",
+      "template": "VIBECODING - FIN"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "lessonTitle": "M1C1L1",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Bienvenue dans votre formation au Vibe Coding"
+      }
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Objectifs du chapitre",
+        "Intro": "Ce chapitre pose les bases de votre parcours de formation. On y découvre le programme, les compétences visées, l'environnement de travail et les modalités d'évaluation.",
+        "Titre 1": "Découvrir le parcours global et ses modules",
+        "Titre 2": "Comprendre les compétences clés à acquérir",
+        "Titre 3": "Appréhender le référentiel de certification",
+        "Titre 4": "Préparer son environnement et ses accès dev",
+        "Titre 5": "Connaître les modalités d'évaluation finale",
+        "Titre 6": "Valider le fonctionnement de son espace web"
+      }
+    }
+  ]
+}

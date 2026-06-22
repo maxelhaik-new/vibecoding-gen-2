@@ -6,7 +6,7 @@
     "text_layers": [
       {
         "key": "Titre",
-        "original_placeholder": "Titre du chapitre Basic Sans Alt Black 120 pts",
+        "original_placeholder": "Titre du chapitre  Basic Sans Alt Black  120 pts",
         "target_lenght": 48,
         "min_lenght": 33,
         "max_lenght": 63
@@ -20,7 +20,7 @@
     "text_layers": [
       {
         "key": "Titre",
-        "original_placeholder": "Titre du chapitre Basic Sans Alt Black 120 pts",
+        "original_placeholder": "Titre du chapitre  Basic Sans Alt Black 120 pts",
         "target_lenght": 47,
         "min_lenght": 32,
         "max_lenght": 62
@@ -83,7 +83,7 @@
       },
       {
         "key": "Intro",
-        "original_placeholder": "Découvrir le prompting propre à midjourney, comprendre les paramètres principaux et les appliquer pour faire varier ses images générées sur l’outil",
+        "original_placeholder": "Découvrir le prompting propre à midjourney, comprendre les paramètres  principaux et les appliquer pour faire varier ses images générées sur l’outil",
         "target_lenght": 148,
         "min_lenght": 103,
         "max_lenght": 193
@@ -97,7 +97,7 @@
     "text_layers": [
       {
         "key": "Intro",
-        "original_placeholder": "GPT Image (historiquement Dall-e) est depuis 2025 le moteur principal d’image dans ChatGPT. Il permet de générer des images directement dans l’outil, sans avoir à passer par une interface supplémentaire. ",
+        "original_placeholder": "GPT Image (historiquement Dall-e) est depuis 2025  le moteur principal d’image dans ChatGPT.  Il permet de générer des images directement  dans l’outil, sans avoir à passer par une interface  supplémentaire. ",
         "target_lenght": 208,
         "min_lenght": 145,
         "max_lenght": 271
@@ -111,7 +111,7 @@
       },
       {
         "key": "Texte 3",
-        "original_placeholder": "Clics, Impressions, CTR & position, Clics, Impressions, CTR & position Clics, Impressions, CTR & position",
+        "original_placeholder": "Clics, Impressions, CTR & position, Clics, Impressions,  CTR & position Clics, Impressions, CTR & position",
         "target_lenght": 106,
         "min_lenght": 74,
         "max_lenght": 138
@@ -125,7 +125,7 @@
       },
       {
         "key": "Texte 2",
-        "original_placeholder": "Clics, Impressions, CTR & position, Clics, Impressions, CTR & position Clics, Impressions, CTR  & position",
+        "original_placeholder": "Clics, Impressions, CTR & position, Clics, Impressions,  CTR & position Clics, Impressions, CTR  & position",
         "target_lenght": 107,
         "min_lenght": 74,
         "max_lenght": 140
@@ -161,9 +161,9 @@
       {
         "key": "Texte Bulle",
         "original_placeholder": "Même si la formation est centrée sur Midjourney pour son aspect professionnel et sa qualité de rendu, nous verrons dans les prochaines leçons comment créer des images avec GPT Image ! Même si la formation est centrée sur Midjourney pour son aspect ",
-        "target_lenght": 249,
-        "min_lenght": 174,
-        "max_lenght": 324
+        "target_lenght": 248,
+        "min_lenght": 173,
+        "max_lenght": 323
       },
       {
         "key": "Titre Bulle",
@@ -195,7 +195,7 @@
     "text_layers": [
       {
         "key": "Texte 3",
-        "original_placeholder": "L'ajout de mots-clés liés au médium (photo, illustration, rendu 3D) oriente immédiatement la patte graphique du résultat.",
+        "original_placeholder": "L'ajout de mots-clés liés au médium (photo, illustration, rendu 3D)  oriente immédiatement la patte graphique du résultat.",
         "target_lenght": 122,
         "min_lenght": 85,
         "max_lenght": 159
@@ -209,7 +209,7 @@
       },
       {
         "key": "Titre Bulle",
-        "original_placeholder": "La précision du format (carré, paysage ou portrait) s'intègre naturellement dans la demande pour adapter l'image au support. ",
+        "original_placeholder": "La précision du format (carré, paysage ou portrait) s'intègre naturellement  dans la demande pour adapter l'image au support. ",
         "target_lenght": 126,
         "min_lenght": 88,
         "max_lenght": 164
@@ -230,7 +230,7 @@
       },
       {
         "key": "Texte 1",
-        "original_placeholder": "L'utilisateur décrit la scène, l'ambiance et le sujet en langage naturel (FR). Le modèle interprète ces intentions pour construire la base visuelle.",
+        "original_placeholder": "L'utilisateur décrit la scène, l'ambiance et le sujet en langage naturel (FR).  Le modèle interprète ces intentions pour construire la base visuelle.",
         "target_lenght": 149,
         "min_lenght": 104,
         "max_lenght": 194
@@ -251,7 +251,7 @@
       },
       {
         "key": "Intro",
-        "original_placeholder": "L'IA Act s'applique progressivement entre 2024 et 2027, avec des échéances différentes selon le niveau de risque des systèmes et outils IA :",
+        "original_placeholder": "L'IA Act s'applique progressivement entre 2024 et 2027, avec des échéances  différentes selon le niveau de risque des systèmes et outils IA :",
         "target_lenght": 141,
         "min_lenght": 98,
         "max_lenght": 184
@@ -260,7 +260,10 @@
     "image_layers": [
       {
         "key": "image",
-        "original_placeholder": "Bloc Image"
+        "original_placeholder": "Bloc Image",
+        "ratio": "2:3",
+        "width": 434.0,
+        "height": 617.0
       }
     ]
   },
@@ -285,28 +288,28 @@
       },
       {
         "key": "Texte 1",
-        "original_placeholder": "Génération de lettres, typographies, logos : on obtient souvent des résultats incohérents nécessitant retouches externes",
+        "original_placeholder": "Génération de lettres, typographies, logos :  on obtient souvent des résultats incohérents  nécessitant retouches externes",
         "target_lenght": 122,
         "min_lenght": 85,
         "max_lenght": 159
       },
       {
         "key": "Titre 1",
-        "original_placeholder": "Texte dans les images encore difficile",
+        "original_placeholder": "Texte dans les images  encore difficile",
         "target_lenght": 39,
         "min_lenght": 27,
         "max_lenght": 51
       },
       {
         "key": "Texte 3",
-        "original_placeholder": "Maintenir un personnage identique sur plusieurs créations reste un défi malgré les seeds et style references",
+        "original_placeholder": "Maintenir un personnage identique sur plusieurs créations reste un défi malgré  les seeds et style references",
         "target_lenght": 109,
         "min_lenght": 76,
         "max_lenght": 142
       },
       {
         "key": "Titre 3",
-        "original_placeholder": "Cohérence entre les images limitée",
+        "original_placeholder": "Cohérence entre  les images limitée",
         "target_lenght": 35,
         "min_lenght": 24,
         "max_lenght": 46
@@ -320,23 +323,52 @@
       },
       {
         "key": "Titre 2",
-        "original_placeholder": "Mains et anatomie complexe imprécises",
+        "original_placeholder": "Mains et anatomie  complexe imprécises",
         "target_lenght": 38,
         "min_lenght": 26,
         "max_lenght": 50
       },
       {
         "key": "Intro",
-        "original_placeholder": "L'IA Act s'applique progressivement entre 2024 et 2027, avec des échéances différentes selon le niveau de risque des systèmes et outils IA :",
+        "original_placeholder": "L'IA Act s'applique progressivement entre 2024 et 2027, avec des échéances  différentes selon le niveau de risque des systèmes et outils IA :",
         "target_lenght": 141,
         "min_lenght": 98,
         "max_lenght": 184
       }
     ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:format-text"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Picto 1"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "mdi:controller-variant-outline"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "Picto 3"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "mdi:hand-wave-outline"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "Picto 2"
+      }
+    ],
     "image_layers": [
       {
         "key": "image",
-        "original_placeholder": "Bloc Image"
+        "original_placeholder": "Bloc Image",
+        "ratio": "2:3",
+        "width": 434.0,
+        "height": 617.0
       }
     ]
   },
@@ -354,14 +386,14 @@
       },
       {
         "key": "Texte Bulle",
-        "original_placeholder": "Le procès est encore en cours, mais il pose une question fondamentale : un modèle d'IA peut-il apprendre sur des contenus protégés puis les concurrencer ? Faut-il toujours attribuer les sources du contenu IA ? ",
+        "original_placeholder": "Le procès est encore en cours, mais il pose une question  fondamentale : un modèle d'IA peut-il apprendre  sur des contenus protégés puis les concurrencer ?  Faut-il toujours attribuer les sources du contenu IA ? ",
         "target_lenght": 213,
         "min_lenght": 149,
         "max_lenght": 277
       },
       {
         "key": "Texte 1",
-        "original_placeholder": "Le New York Times a poursuivi OpenAI et Microsoft en justice pour une raison simple mais explosive : OpenAI a utilisé des millions d'articles du journal (enquêtes, analyses, archives) pour entraîner ChatGPT, sans demander l'autorisation ni payer de licence. Le problème ? Maintenant, ChatGPT peut générer des résumés d'actualités ou des textes similaires aux articles originaux, sans renvoyer vers le NYT et sans partager de revenus. ",
+        "original_placeholder": "Le New York Times a poursuivi OpenAI et Microsoft en justice  pour une raison simple mais explosive : OpenAI a utilisé des millions  d'articles du journal (enquêtes, analyses, archives) pour entraîner  ChatGPT, sans demander l'autorisation ni payer de licence.  Le problème ? Maintenant, ChatGPT peut générer des résumés  d'actualités ou des textes similaires aux articles originaux,  sans renvoyer vers le NYT et sans partager de revenus. ",
         "target_lenght": 440,
         "min_lenght": 308,
         "max_lenght": 572
@@ -384,7 +416,10 @@
     "image_layers": [
       {
         "key": "image",
-        "original_placeholder": "Bloc Image"
+        "original_placeholder": "Bloc Image",
+        "ratio": "2:3",
+        "width": 542.0,
+        "height": 790.0
       }
     ]
   },
@@ -409,14 +444,14 @@
       },
       {
         "key": "Texte 3",
-        "original_placeholder": "Le New York Times a poursuivi OpenAI et Microsoft en justice pour une raison simple mais explosive : OpenAI a utilisé des millions d'articles du journal (enquêtes, analyses, archives) pour entraîner ChatGPT.",
+        "original_placeholder": "Le New York Times a poursuivi OpenAI et Microsoft en justice  pour une raison simple mais explosive : OpenAI a utilisé des millions  d'articles du journal (enquêtes, analyses, archives) pour entraîner  ChatGPT.",
         "target_lenght": 210,
         "min_lenght": 147,
         "max_lenght": 273
       },
       {
         "key": "Titre 3",
-        "original_placeholder": "Cohérence entre les images limitée",
+        "original_placeholder": "Cohérence entre  les images limitée",
         "target_lenght": 35,
         "min_lenght": 24,
         "max_lenght": 46
@@ -425,14 +460,17 @@
     "image_layers": [
       {
         "key": "image",
-        "original_placeholder": "Bloc Image"
+        "original_placeholder": "Bloc Image",
+        "ratio": "3:2",
+        "width": 1148.0,
+        "height": 790.0
       }
     ]
   },
   {
-    "name": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+    "name": "VIBECODING - 4 BLOCS",
     "status": "validé",
-    "description": "Template pour slide de type vibecoding - 4 blocs - title 2 lines.",
+    "description": "Template pour slide de type vibecoding - 4 blocs.",
     "text_layers": [
       {
         "key": "Titre",
@@ -442,67 +480,101 @@
         "max_lenght": 45
       },
       {
-        "key": "Intro",
-        "original_placeholder": "Midjourney, malgré son développement rapide, se but encore à certaines limites techniques comme la plupart des IA génératives d’images.",
-        "target_lenght": 136,
-        "min_lenght": 95,
-        "max_lenght": 177
-      },
-      {
         "key": "Texte 1",
-        "original_placeholder": "Génération de lettres, typographies, logos : on obtient souvent des résultats incohérents nécessitant retouches externes",
+        "original_placeholder": "Génération de lettres, typographies, logos :  on obtient souvent des résultats incohérents  nécessitant retouches externes",
         "target_lenght": 122,
         "min_lenght": 85,
         "max_lenght": 159
       },
       {
         "key": "Titre 1",
-        "original_placeholder": "Texte dans les images encore difficile",
+        "original_placeholder": "Texte dans les images  encore difficile",
         "target_lenght": 39,
         "min_lenght": 27,
         "max_lenght": 51
       },
       {
         "key": "Texte 3",
-        "original_placeholder": "Maintenir un personnage identique sur plusieurs créations reste un défi malgré les seeds et style references",
+        "original_placeholder": "Maintenir un personnage identique  sur plusieurs créations reste un défi malgré  les seeds et style references",
         "target_lenght": 110,
         "min_lenght": 77,
         "max_lenght": 143
       },
       {
         "key": "Titre 3",
-        "original_placeholder": "Cohérence entre les images limitée",
+        "original_placeholder": "Cohérence entre  les images limitée",
         "target_lenght": 35,
         "min_lenght": 24,
         "max_lenght": 46
       },
       {
         "key": "Texte 4",
-        "original_placeholder": "Placer des éléments spécifiques exactement où on veut : le prompt seul ne suffit pas toujours pour un contrôle pixel-parfait",
+        "original_placeholder": "Placer des éléments spécifiques exactement  où on veut : le prompt seul ne suffit pas toujours  pour un contrôle pixel-parfait",
         "target_lenght": 126,
         "min_lenght": 88,
         "max_lenght": 164
       },
       {
         "key": "Titre 4",
-        "original_placeholder": "Contrôle précis des détails difficile",
+        "original_placeholder": "Contrôle précis  des détails difficile",
         "target_lenght": 38,
         "min_lenght": 26,
         "max_lenght": 50
       },
       {
         "key": "Texte 2",
-        "original_placeholder": "Doigts déformés, positions anatomiques impossibles : on doit multiplier les générations pour obtenir un résultat correct",
+        "original_placeholder": "Doigts déformés, positions anatomiques impossibles :  on doit multiplier les générations pour obtenir  un résultat correct",
         "target_lenght": 122,
         "min_lenght": 85,
         "max_lenght": 159
       },
       {
         "key": "Titre 2",
-        "original_placeholder": "Mains et anatomie complexe imprécises",
+        "original_placeholder": "Mains et anatomie  complexe imprécises",
         "target_lenght": 38,
         "min_lenght": 26,
         "max_lenght": 50
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Pour un candidat qui postule, l’enjeu est important et la tâche complexe. Il doit comprendre les attentes du recruteur.",
+        "target_lenght": 119,
+        "min_lenght": 83,
+        "max_lenght": 155
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:format-text"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Picto 1"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "mdi:controller-variant-outline"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "Picto 3"
+      },
+      {
+        "key": "Picto 4",
+        "original_placeholder": "mdi:controller-variant-outline"
+      },
+      {
+        "key": "Picto 4",
+        "original_placeholder": "Picto 4"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "mdi:hand-wave-outline"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "Picto 2"
       }
     ]
   },
@@ -527,7 +599,7 @@
       },
       {
         "key": "Texte Bulle",
-        "original_placeholder": "Principe clé : Few-shot excelle pour reproduire un pattern identifiable avec 2-3 exemples au lieu de longues instructions.",
+        "original_placeholder": "Few-shot excelle pour reproduire un pattern identifiable avec 2-3 exemples  au lieu de longues instructions.",
         "target_lenght": 123,
         "min_lenght": 86,
         "max_lenght": 160
@@ -541,7 +613,7 @@
       },
       {
         "key": "Texte 1",
-        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions, emails récurrents avec style identique",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
         "target_lenght": 93,
         "min_lenght": 65,
         "max_lenght": 121
@@ -555,7 +627,7 @@
       },
       {
         "key": "Texte 2",
-        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions, emails récurrents avec style identique",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
         "target_lenght": 93,
         "min_lenght": 65,
         "max_lenght": 121
@@ -569,7 +641,7 @@
       },
       {
         "key": "Texte 3",
-        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions, emails récurrents avec style identique",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
         "target_lenght": 93,
         "min_lenght": 65,
         "max_lenght": 121
@@ -583,7 +655,7 @@
       },
       {
         "key": "Texte 4",
-        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions, emails récurrents avec style identique",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
         "target_lenght": 93,
         "min_lenght": 65,
         "max_lenght": 121
@@ -597,10 +669,52 @@
       },
       {
         "key": "Texte 5",
-        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions, emails récurrents avec style identique",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
         "target_lenght": 93,
         "min_lenght": 65,
         "max_lenght": 121
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:format-text"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Picto 1"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "mdi:format-text"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "Picto 2"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "mdi:format-text"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "Picto 3"
+      },
+      {
+        "key": "Picto 4",
+        "original_placeholder": "mdi:format-text"
+      },
+      {
+        "key": "Picto 4",
+        "original_placeholder": "Picto 4"
+      },
+      {
+        "key": "Picto 5",
+        "original_placeholder": "mdi:format-text"
+      },
+      {
+        "key": "Picto 5",
+        "original_placeholder": "Picto 5"
       }
     ]
   },
@@ -611,14 +725,14 @@
     "text_layers": [
       {
         "key": "Texte Bulle",
-        "original_placeholder": "Principe clé : Few-shot excelle pour reproduire un pattern identifiable avec 2-3 exemples au lieu de longues instructions.",
+        "original_placeholder": "Few-shot excelle pour reproduire  un pattern identifiable avec 2-3 exemples  au lieu de longues instructions.",
         "target_lenght": 124,
         "min_lenght": 86,
         "max_lenght": 162
       },
       {
         "key": "Texte 5",
-        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions, emails récurrents avec style identique",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
         "target_lenght": 93,
         "min_lenght": 65,
         "max_lenght": 121
@@ -632,7 +746,7 @@
       },
       {
         "key": "Texte 4",
-        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions, emails récurrents avec style identique",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
         "target_lenght": 93,
         "min_lenght": 65,
         "max_lenght": 121
@@ -646,7 +760,7 @@
       },
       {
         "key": "Texte 3",
-        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions, emails récurrents avec style identique",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
         "target_lenght": 93,
         "min_lenght": 65,
         "max_lenght": 121
@@ -660,7 +774,7 @@
       },
       {
         "key": "Texte 2",
-        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions, emails récurrents avec style identique",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
         "target_lenght": 93,
         "min_lenght": 65,
         "max_lenght": 121
@@ -674,7 +788,7 @@
       },
       {
         "key": "Texte 1",
-        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions, emails récurrents avec style identique",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
         "target_lenght": 93,
         "min_lenght": 65,
         "max_lenght": 121
@@ -700,6 +814,48 @@
         "min_lenght": 23,
         "max_lenght": 43
       }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 5",
+        "original_placeholder": "mdi:message-text-outline"
+      },
+      {
+        "key": "Picto 5",
+        "original_placeholder": "Picto 5"
+      },
+      {
+        "key": "Picto 4",
+        "original_placeholder": "mdi:message-text-outline"
+      },
+      {
+        "key": "Picto 4",
+        "original_placeholder": "Picto 4"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "mdi:message-text-outline"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "Picto 3"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "mdi:message-text-outline"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "Picto 2"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:message-text-outline"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Picto 1"
+      }
     ]
   },
   {
@@ -709,14 +865,14 @@
     "text_layers": [
       {
         "key": "Intro",
-        "original_placeholder": "Lorsque les algorithmes différencient les individus sur des variables sensibles, ils peuvent porter atteinte aux droits fondamentaux.",
+        "original_placeholder": "Lorsque les algorithmes différencient les individus sur des variables sensibles,  ils peuvent porter atteinte aux droits fondamentaux.",
         "target_lenght": 134,
         "min_lenght": 93,
         "max_lenght": 175
       },
       {
         "key": "Texte Bulle",
-        "original_placeholder": "Il devient alors essentiel de garantir des solutions algorithmiques justes, et à minima conformes à ce que dit la loi.",
+        "original_placeholder": "Il devient alors essentiel de garantir des solutions algorithmiques justes,  et à minima conformes à ce que dit la loi.",
         "target_lenght": 119,
         "min_lenght": 83,
         "max_lenght": 155
@@ -730,7 +886,7 @@
       },
       {
         "key": "Texte 6",
-        "original_placeholder": "La discrimination basée sur l'âge peut exclure certaines tranches d'âge des opportunités.",
+        "original_placeholder": "La discrimination basée sur l'âge  peut exclure certaines tranches  d'âge des opportunités.",
         "target_lenght": 91,
         "min_lenght": 63,
         "max_lenght": 119
@@ -744,7 +900,7 @@
       },
       {
         "key": "Texte 5",
-        "original_placeholder": "La discrimination basée sur l'âge peut exclure certaines tranches d'âge des opportunités.",
+        "original_placeholder": "La discrimination basée sur l'âge  peut exclure certaines tranches  d'âge des opportunités.",
         "target_lenght": 91,
         "min_lenght": 63,
         "max_lenght": 119
@@ -758,7 +914,7 @@
       },
       {
         "key": "Texte 4",
-        "original_placeholder": "La discrimination basée sur l'âge peut exclure certaines tranches d'âge des opportunités.",
+        "original_placeholder": "La discrimination basée sur l'âge  peut exclure certaines tranches  d'âge des opportunités.",
         "target_lenght": 91,
         "min_lenght": 63,
         "max_lenght": 119
@@ -772,7 +928,7 @@
       },
       {
         "key": "Texte 3",
-        "original_placeholder": "La discrimination basée sur l'âge peut exclure certaines tranches d'âge des opportunités.",
+        "original_placeholder": "La discrimination basée sur l'âge  peut exclure certaines tranches  d'âge des opportunités.",
         "target_lenght": 91,
         "min_lenght": 63,
         "max_lenght": 119
@@ -786,7 +942,7 @@
       },
       {
         "key": "Texte 2",
-        "original_placeholder": "La discrimination basée sur l'âge peut exclure certaines tranches d'âge des opportunités.",
+        "original_placeholder": "La discrimination basée sur l'âge  peut exclure certaines tranches  d'âge des opportunités.",
         "target_lenght": 91,
         "min_lenght": 63,
         "max_lenght": 119
@@ -800,7 +956,7 @@
       },
       {
         "key": "Texte 1",
-        "original_placeholder": "La discrimination basée sur l'âge peut exclure certaines tranches d'âge des opportunités.",
+        "original_placeholder": "La discrimination basée sur l'âge  peut exclure certaines tranches  d'âge des opportunités.",
         "target_lenght": 91,
         "min_lenght": 63,
         "max_lenght": 119
@@ -812,68 +968,59 @@
         "min_lenght": 15,
         "max_lenght": 33
       }
-    ]
-  },
-  {
-    "name": "VIBECODING - 3 BLOCS - LARGE TEXT",
-    "status": "validé",
-    "description": "Template pour slide de type vibecoding - 3 blocs - large text.",
-    "text_layers": [
+    ],
+    "picto_layers": [
       {
-        "key": "Titre",
-        "original_placeholder": "Prompter des visuels dans ChatGPT",
-        "target_lenght": 33,
-        "min_lenght": 23,
-        "max_lenght": 43
+        "key": "Picto 1",
+        "original_placeholder": "mdi:lightbulb-on-20"
       },
       {
-        "key": "Titre",
-        "original_placeholder": "Une fois le modèle activé, la création d’image débute par un prompt en français directement dans le champ de saisie. La requête et le panneau de style permettent d’agir sur la génération.",
-        "target_lenght": 188,
-        "min_lenght": 131,
-        "max_lenght": 245
+        "key": "Picto 6",
+        "original_placeholder": "mdi:baby-carriage"
       },
       {
-        "key": "Texte 3",
-        "original_placeholder": "L'utilisateur décrit la scène, l'ambiance et le sujet en langage naturel (FR). Le modèle interprète ces intentions pour construire la base visuelle.Lorem ipsum, pour construire la base visuelle lorem.",
-        "target_lenght": 203,
-        "min_lenght": 142,
-        "max_lenght": 264
+        "key": "Picto 6",
+        "original_placeholder": "Picto 6"
       },
       {
-        "key": "Titre 3",
-        "original_placeholder": "Format et ratio",
-        "target_lenght": 15,
-        "min_lenght": 10,
-        "max_lenght": 23
+        "key": "Picto 5",
+        "original_placeholder": "mdi:baby-carriage"
       },
       {
-        "key": "Titre 2",
-        "original_placeholder": "Style artistique",
-        "target_lenght": 16,
-        "min_lenght": 11,
-        "max_lenght": 24
+        "key": "Picto 5",
+        "original_placeholder": "Picto 5"
       },
       {
-        "key": "Texte 2",
-        "original_placeholder": "L'utilisateur décrit la scène, l'ambiance et le sujet en langage naturel (FR). Le modèle interprète ces intentions pour construire la base visuelle.Lorem ipsum, pour construire la base visuelle lorem.",
-        "target_lenght": 203,
-        "min_lenght": 142,
-        "max_lenght": 264
+        "key": "Picto 4",
+        "original_placeholder": "mdi:baby-carriage"
       },
       {
-        "key": "Texte 1",
-        "original_placeholder": "L'utilisateur décrit la scène, l'ambiance et le sujet en langage naturel (FR). Le modèle interprète ces intentions pour construire la base visuelle.Lorem ipsum, pour construire la base visuelle lorem.",
-        "target_lenght": 203,
-        "min_lenght": 142,
-        "max_lenght": 264
+        "key": "Picto 4",
+        "original_placeholder": "Picto 4"
       },
       {
-        "key": "Titre 1",
-        "original_placeholder": "La requête",
-        "target_lenght": 10,
-        "min_lenght": 7,
-        "max_lenght": 15
+        "key": "Picto 3",
+        "original_placeholder": "mdi:baby-carriage"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "Picto 3"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "mdi:baby-carriage"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "Picto 2"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:baby-carriage"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Picto 1"
       }
     ]
   },
@@ -884,7 +1031,7 @@
     "text_layers": [
       {
         "key": "Texte 3",
-        "original_placeholder": "Utilisateurs actifs qui créent quotidiennement sur la plateforme OpenAI.",
+        "original_placeholder": "Utilisateurs actifs  qui créent quotidiennement  sur la plateforme OpenAI.",
         "target_lenght": 74,
         "min_lenght": 51,
         "max_lenght": 97
@@ -905,7 +1052,7 @@
       },
       {
         "key": "Texte 2",
-        "original_placeholder": "Utilisateurs actifs qui créent quotidiennement sur la plateforme OpenAI.",
+        "original_placeholder": "Utilisateurs actifs  qui créent quotidiennement  sur la plateforme OpenAI.",
         "target_lenght": 74,
         "min_lenght": 51,
         "max_lenght": 97
@@ -919,7 +1066,7 @@
       },
       {
         "key": "Texte 1",
-        "original_placeholder": "Utilisateurs actifs qui créent quotidiennement sur la plateforme OpenAI.",
+        "original_placeholder": "Utilisateurs actifs  qui créent quotidiennement  sur la plateforme OpenAI.",
         "target_lenght": 74,
         "min_lenght": 51,
         "max_lenght": 97
@@ -989,56 +1136,56 @@
       },
       {
         "key": "Texte A Item 1",
-        "original_placeholder": "Collection de textes pour l'analyse linguistique",
+        "original_placeholder": "Collection de textes  pour l'analyse linguistique",
         "target_lenght": 49,
         "min_lenght": 34,
         "max_lenght": 64
       },
       {
         "key": "Texte A Item 2",
-        "original_placeholder": "Textes littéraires, articles, conversations...",
+        "original_placeholder": "Textes littéraires, articles,  conversations...",
         "target_lenght": 47,
         "min_lenght": 32,
         "max_lenght": 62
       },
       {
         "key": "Texte A Item 3",
-        "original_placeholder": "Documents, phrases, paragraphes",
+        "original_placeholder": "Documents, phrases,  paragraphes",
         "target_lenght": 32,
         "min_lenght": 22,
         "max_lenght": 42
       },
       {
         "key": "Texte A Item 4",
-        "original_placeholder": "Entraînement de modèles de langage (LLM)",
+        "original_placeholder": "Entraînement  de modèles de langage (LLM)",
         "target_lenght": 41,
         "min_lenght": 28,
         "max_lenght": 54
       },
       {
         "key": "Texte B1",
-        "original_placeholder": "Ensemble de données structurées pour l'apprentissage",
+        "original_placeholder": "Ensemble de données structurées  pour l'apprentissage",
         "target_lenght": 53,
         "min_lenght": 37,
         "max_lenght": 69
       },
       {
         "key": "Texte B2",
-        "original_placeholder": "Textes littéraires, articles, conversations...",
+        "original_placeholder": "Textes littéraires, articles,  conversations...",
         "target_lenght": 47,
         "min_lenght": 32,
         "max_lenght": 62
       },
       {
         "key": "Texte B3",
-        "original_placeholder": "Structuré avec labels et features",
+        "original_placeholder": "Structuré avec labels  et features",
         "target_lenght": 34,
         "min_lenght": 23,
         "max_lenght": 45
       },
       {
         "key": "Texte B4",
-        "original_placeholder": "Tout type de machine learning",
+        "original_placeholder": "Tout type  de machine learning",
         "target_lenght": 30,
         "min_lenght": 21,
         "max_lenght": 39
@@ -1072,15 +1219,15 @@
     "description": "Template pour slide de type vibecoding - checklist.",
     "text_layers": [
       {
-        "key": "Texte 1",
-        "original_placeholder": "Une stratégie qui n'est pas passée par le filtre de votre esprit critique est une stratégie morte-née. L'IA génère du volume et la création rapide, vous devez rester maître des choix en connaissant les riques.",
+        "key": "Texte Intro",
+        "original_placeholder": "Une stratégie qui n'est pas passée  par le filtre de votre esprit critique  est une stratégie morte-née.  L'IA génère du volume et la création rapide, vous devez rester maître des choix en connaissant les riques.",
         "target_lenght": 212,
         "min_lenght": 148,
         "max_lenght": 276
       },
       {
         "key": "Intro",
-        "original_placeholder": "L'IA est un assistant \nde création, pas un conseillerstratégique.",
+        "original_placeholder": "L'IA est un assistant \nde création,  pas un conseiller stratégique.",
         "target_lenght": 67,
         "min_lenght": 46,
         "max_lenght": 88
@@ -1128,11 +1275,33 @@
         "max_lenght": 54
       },
       {
-        "key": "Titre 2",
+        "key": "Nom Checklist",
         "original_placeholder": "Checklist de validation",
         "target_lenght": 23,
         "min_lenght": 16,
         "max_lenght": 35
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:check-decagram"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:check-decagram"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:check-decagram"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:check-decagram"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:check-decagram"
       }
     ]
   },
@@ -1150,14 +1319,14 @@
       },
       {
         "key": "Texte 3",
-        "original_placeholder": "Contrôle la liberté créative entre 0 et 1000. Stylize 0 suit littéralement le prompt, 100 est l'équilibre standard, 250-500 ajoute une forte esthétique Midjourney, 1000 crée ",
+        "original_placeholder": "Contrôle la liberté créative  entre 0 et 1000. Stylize 0 suit  littéralement le prompt, 100 est  l'équilibre standard, 250-500  ajoute une forte esthétique  Midjourney, 1000 crée ",
         "target_lenght": 179,
         "min_lenght": 125,
         "max_lenght": 233
       },
       {
         "key": "Violet 3",
-        "original_placeholder": "L'interprétation artistique du modèle",
+        "original_placeholder": "L'interprétation artistique  du modèle",
         "target_lenght": 38,
         "min_lenght": 26,
         "max_lenght": 50
@@ -1178,14 +1347,14 @@
       },
       {
         "key": "Texte 2",
-        "original_placeholder": "Contrôle la liberté créative entre 0 et 1000. Stylize 0 suit littéralement le prompt, 100 est l'équilibre standard, 250-500 ajoute une forte esthétique Midjourney, 1000 crée ",
+        "original_placeholder": "Contrôle la liberté créative  entre 0 et 1000. Stylize 0 suit  littéralement le prompt, 100 est  l'équilibre standard, 250-500  ajoute une forte esthétique  Midjourney, 1000 crée ",
         "target_lenght": 179,
         "min_lenght": 125,
         "max_lenght": 233
       },
       {
         "key": "Violet 2",
-        "original_placeholder": "L'interprétation artistique du modèle",
+        "original_placeholder": "L'interprétation artistique  du modèle",
         "target_lenght": 38,
         "min_lenght": 26,
         "max_lenght": 50
@@ -1206,14 +1375,14 @@
       },
       {
         "key": "Texte 1",
-        "original_placeholder": "Contrôle la liberté créative entre 0 et 1000. Stylize 0 suit littéralement le prompt, 100 est l'équilibre standard, 250-500 ajoute une forte esthétique Midjourney, 1000 crée ",
+        "original_placeholder": "Contrôle la liberté créative  entre 0 et 1000. Stylize 0 suit  littéralement le prompt, 100 est  l'équilibre standard, 250-500  ajoute une forte esthétique  Midjourney, 1000 crée ",
         "target_lenght": 179,
         "min_lenght": 125,
         "max_lenght": 233
       },
       {
         "key": "Violet 1",
-        "original_placeholder": "L'interprétation artistique du modèle",
+        "original_placeholder": "L'interprétation artistique  du modèle",
         "target_lenght": 38,
         "min_lenght": 26,
         "max_lenght": 50
@@ -1238,6 +1407,28 @@
         "target_lenght": 119,
         "min_lenght": 83,
         "max_lenght": 155
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 3",
+        "original_placeholder": "mdi:message-text-outline"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "Picto 3"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "mdi:message-text-outline"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "Picto 2"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:message-text-outline"
       }
     ]
   },
@@ -1276,42 +1467,42 @@
       },
       {
         "key": "Titre 5",
-        "original_placeholder": "Rédige une fiche de poste,une liste de ses besoins, etc.",
+        "original_placeholder": "Rédige une fiche de poste, une liste de ses besoins, etc.",
         "target_lenght": 57,
         "min_lenght": 39,
         "max_lenght": 75
       },
       {
         "key": "Violet 5",
-        "original_placeholder": "Le candidat n’a pas de vuesur cette partie",
+        "original_placeholder": "Le candidat n’a pas de vue sur cette partie",
         "target_lenght": 43,
         "min_lenght": 30,
         "max_lenght": 56
       },
       {
         "key": "Titre 3",
-        "original_placeholder": "Rédige une fiche de poste,une liste de ses besoins, etc.",
+        "original_placeholder": "Rédige une fiche de poste, une liste de ses besoins, etc.",
         "target_lenght": 57,
         "min_lenght": 39,
         "max_lenght": 75
       },
       {
         "key": "Violet 4",
-        "original_placeholder": "Le candidat n’a pas de vuesur cette partie",
+        "original_placeholder": "Le candidat n’a pas de vue sur cette partie",
         "target_lenght": 43,
         "min_lenght": 30,
         "max_lenght": 56
       },
       {
         "key": "Titre 1",
-        "original_placeholder": "Rédige une fiche de poste,une liste de ses besoins, etc.",
+        "original_placeholder": "Rédige une fiche de poste, une liste de ses besoins, etc.",
         "target_lenght": 57,
         "min_lenght": 39,
         "max_lenght": 75
       },
       {
         "key": "Violet 1",
-        "original_placeholder": "Le candidat n’a pas de vuesur cette partie",
+        "original_placeholder": "Le candidat n’a pas de vue sur cette partie",
         "target_lenght": 43,
         "min_lenght": 30,
         "max_lenght": 56
@@ -1322,6 +1513,20 @@
         "target_lenght": 35,
         "min_lenght": 24,
         "max_lenght": 46
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 5",
+        "original_placeholder": "mdi:fountain-pen-tip"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "mdi:fountain-pen-tip"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:fountain-pen-tip"
       }
     ]
   },
@@ -1509,7 +1714,10 @@
     "image_layers": [
       {
         "key": "image",
-        "original_placeholder": "Bloc Image"
+        "original_placeholder": "Bloc Image",
+        "ratio": "4:3",
+        "width": 780.0,
+        "height": 613.0
       }
     ]
   },
@@ -1520,7 +1728,7 @@
     "text_layers": [
       {
         "key": "Texte Bulle",
-        "original_placeholder": "Cette méthode encourage plutôt à réfléchir à l’intégration de l’IA avant que ses usages soient Intégrés dans nos usages, ou même rendus publics,  en parcourant dans l’ordre différentes phases du cadrage.  ",
+        "original_placeholder": "Cette méthode encourage plutôt à réfléchir à l’intégration de l’IA avant que ses usages soient  Intégrés dans nos usages, ou même rendus publics,  en parcourant dans l’ordre différentes  phases du cadrage.  ",
         "target_lenght": 207,
         "min_lenght": 144,
         "max_lenght": 270
@@ -1644,12 +1852,18 @@
         "min_lenght": 83,
         "max_lenght": 155
       }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:lightbulb-on-20"
+      }
     ]
   },
   {
-    "name": "VIBECODING - DEFINITION ALT",
+    "name": "VIBECODING - DEFINITION",
     "status": "validé",
-    "description": "Template pour slide de type vibecoding - definition alt.",
+    "description": "Template pour slide de type vibecoding - definition.",
     "text_layers": [
       {
         "key": "Titre",
@@ -1679,12 +1893,18 @@
         "min_lenght": 149,
         "max_lenght": 279
       }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:lightbulb-on-20"
+      }
     ]
   },
   {
-    "name": "PODIUM",
+    "name": "VIBECODING - PODIUM",
     "status": "validé",
-    "description": "Template pour slide de type podium.",
+    "description": "Template pour slide de type vibecoding - podium.",
     "text_layers": [
       {
         "key": "Intro",
@@ -1723,7 +1943,7 @@
       },
       {
         "key": "Violet 3",
-        "original_placeholder": "Ludo Salenne",
+        "original_placeholder": "Ludo  Salenne",
         "target_lenght": 13,
         "min_lenght": 9,
         "max_lenght": 20
@@ -1744,7 +1964,7 @@
       },
       {
         "key": "Violet 2",
-        "original_placeholder": "Ludo Salenne",
+        "original_placeholder": "Ludo  Salenne",
         "target_lenght": 13,
         "min_lenght": 9,
         "max_lenght": 20
@@ -1765,7 +1985,7 @@
       },
       {
         "key": "Violet 1",
-        "original_placeholder": "Ludo Salenne",
+        "original_placeholder": "Ludo  Salenne",
         "target_lenght": 13,
         "min_lenght": 9,
         "max_lenght": 20
@@ -1778,17 +1998,58 @@
         "max_lenght": 43
       }
     ],
+    "picto_layers": [
+      {
+        "key": "Picto 3",
+        "original_placeholder": "Picto 3 - 3"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "Picto 3 - 2"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "Picto 3 - 1"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "Picto 2 - 3"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "Picto 2 - 2"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "Picto 2 - 1"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Picto 1 - 3"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Picto 1 - 2"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Picto 1 - 1"
+      }
+    ],
     "image_layers": [
       {
         "key": "image",
-        "original_placeholder": "Capture d’écran 2025-10-30 à 16.51.38 3"
+        "original_placeholder": "Capture d’écran 2025-10-30 à 16.51.38 3",
+        "ratio": "1:1",
+        "width": 109.0,
+        "height": 109.0
       }
     ]
   },
   {
-    "name": "EXERCICE",
+    "name": "VIBECODING - EXERCICE",
     "status": "validé",
-    "description": "Template pour slide de type exercice.",
+    "description": "Template pour slide de type vibecoding - exercice.",
     "text_layers": [
       {
         "key": "Titre",
@@ -1849,9 +2110,106 @@
     ]
   },
   {
-    "name": "CYCLE",
+    "name": "VIBECODING - ACRONYME 3 LETTRES",
     "status": "validé",
-    "description": "Template pour slide de type cycle.",
+    "description": "Template pour slide de type vibecoding - acronyme 3 lettres.",
+    "text_layers": [
+      {
+        "key": "Titre 3",
+        "original_placeholder": "Texte complet",
+        "target_lenght": 13,
+        "min_lenght": 9,
+        "max_lenght": 20
+      },
+      {
+        "key": "Texte 3",
+        "original_placeholder": "Mettre sur le papier ses besoins métier, les parties prenantes et la valeur attendue du projet IA.",
+        "target_lenght": 98,
+        "min_lenght": 68,
+        "max_lenght": 128
+      },
+      {
+        "key": "Lettre 3",
+        "original_placeholder": "T",
+        "target_lenght": 1,
+        "min_lenght": 5,
+        "max_lenght": 2
+      },
+      {
+        "key": "Titre 2",
+        "original_placeholder": "Texte complet",
+        "target_lenght": 13,
+        "min_lenght": 9,
+        "max_lenght": 20
+      },
+      {
+        "key": "Texte 2",
+        "original_placeholder": "Mettre sur le papier ses besoins métier, les parties prenantes et la valeur attendue du projet IA.",
+        "target_lenght": 98,
+        "min_lenght": 68,
+        "max_lenght": 128
+      },
+      {
+        "key": "Lettre 2",
+        "original_placeholder": "P",
+        "target_lenght": 1,
+        "min_lenght": 5,
+        "max_lenght": 2
+      },
+      {
+        "key": "Lettre 1",
+        "original_placeholder": "G",
+        "target_lenght": 1,
+        "min_lenght": 5,
+        "max_lenght": 2
+      },
+      {
+        "key": "Titre 1",
+        "original_placeholder": "Texte complet",
+        "target_lenght": 13,
+        "min_lenght": 9,
+        "max_lenght": 20
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "Mettre sur le papier ses besoins métier, les parties prenantes et la valeur attendue du projet IA.",
+        "target_lenght": 98,
+        "min_lenght": 68,
+        "max_lenght": 128
+      },
+      {
+        "key": "Titre",
+        "original_placeholder": "Focus sur Caude (Anthropic) ",
+        "target_lenght": 28,
+        "min_lenght": 19,
+        "max_lenght": 42
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Pour un candidat qui postule, l’enjeu est important et la tâche complexe. Il doit comprendre les attentes du recruteur.",
+        "target_lenght": 119,
+        "min_lenght": 83,
+        "max_lenght": 155
+      },
+      {
+        "key": "Texte Bulle",
+        "original_placeholder": "Cette méthode encourage plutôt à réfléchir à l’intégration de l’IA avant que ses usages soient  Intégrés dans nos usages, ou même rendus publics,  en parcourant dans l’ordre différentes  phases du cadrage.  ",
+        "target_lenght": 207,
+        "min_lenght": 144,
+        "max_lenght": 270
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:lightbulb-on-20"
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - CYCLE",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - cycle.",
     "text_layers": [
       {
         "key": "Titre",
@@ -1883,7 +2241,7 @@
       },
       {
         "key": "Texte 1",
-        "original_placeholder": "Recherche, collecte d'informations, immersion dans le sujet",
+        "original_placeholder": "Recherche, collecte  d'informations,  immersion dans le sujet",
         "target_lenght": 61,
         "min_lenght": 42,
         "max_lenght": 80
@@ -1897,7 +2255,7 @@
       },
       {
         "key": "Texte 2",
-        "original_placeholder": "Recherche, collecte d'informations, immersion dans le sujet",
+        "original_placeholder": "Recherche, collecte  d'informations,  immersion dans le sujet",
         "target_lenght": 61,
         "min_lenght": 42,
         "max_lenght": 80
@@ -1911,7 +2269,7 @@
       },
       {
         "key": "Texte 3",
-        "original_placeholder": "Recherche, collecte d'informations, immersion dans le sujet",
+        "original_placeholder": "Recherche, collecte  d'informations,  immersion dans le sujet",
         "target_lenght": 61,
         "min_lenght": 42,
         "max_lenght": 80
@@ -1925,7 +2283,7 @@
       },
       {
         "key": "Texte 4",
-        "original_placeholder": "Recherche, collecte d'informations, immersion dans le sujet",
+        "original_placeholder": "Recherche, collecte  d'informations,  immersion dans le sujet",
         "target_lenght": 61,
         "min_lenght": 42,
         "max_lenght": 80
@@ -1933,9 +2291,9 @@
     ]
   },
   {
-    "name": "CHRONOLOGIE",
+    "name": "VIBECODING - CHRONOLOGIE",
     "status": "validé",
-    "description": "Template pour slide de type chronologie.",
+    "description": "Template pour slide de type vibecoding - chronologie.",
     "text_layers": [
       {
         "key": "Titre",
@@ -1946,7 +2304,7 @@
       },
       {
         "key": "Intro",
-        "original_placeholder": "L'IA Act s'applique progressivement entre 2024 et 2027, avec des échéances différentes selon le niveau de risque des systèmes et outils IA :",
+        "original_placeholder": "L'IA Act s'applique progressivement entre 2024 et 2027, avec des échéances  différentes selon le niveau de risque des systèmes et outils IA :",
         "target_lenght": 141,
         "min_lenght": 98,
         "max_lenght": 184
@@ -1967,7 +2325,7 @@
       },
       {
         "key": "Texte 1",
-        "original_placeholder": "Publication officielle au Journal de l'UE, début du compte à rebours",
+        "original_placeholder": "Publication officielle  au Journal de l'UE, début  du compte à rebours",
         "target_lenght": 70,
         "min_lenght": 49,
         "max_lenght": 91
@@ -1988,7 +2346,7 @@
       },
       {
         "key": "Texte 5",
-        "original_placeholder": "Publication officielle au Journal de l'UE, début du compte à rebours",
+        "original_placeholder": "Publication officielle  au Journal de l'UE, début  du compte à rebours",
         "target_lenght": 70,
         "min_lenght": 49,
         "max_lenght": 91
@@ -2009,7 +2367,7 @@
       },
       {
         "key": "Texte 3",
-        "original_placeholder": "Publication officielle au Journal de l'UE, début du compte à rebours",
+        "original_placeholder": "Publication officielle  au Journal de l'UE, début  du compte à rebours",
         "target_lenght": 70,
         "min_lenght": 49,
         "max_lenght": 91
@@ -2030,7 +2388,7 @@
       },
       {
         "key": "Texte 2",
-        "original_placeholder": "Publication officielle au Journal de l'UE, début du compte à rebours",
+        "original_placeholder": "Publication officielle  au Journal de l'UE, début  du compte à rebours",
         "target_lenght": 70,
         "min_lenght": 49,
         "max_lenght": 91
@@ -2051,14 +2409,14 @@
       },
       {
         "key": "Texte 4",
-        "original_placeholder": "Publication officielle au Journal de l'UE, début du compte à rebours",
+        "original_placeholder": "Publication officielle  au Journal de l'UE, début  du compte à rebours",
         "target_lenght": 70,
         "min_lenght": 49,
         "max_lenght": 91
       },
       {
         "key": "Texte Bulle",
-        "original_placeholder": "Mais, les entreprises doivent anticiper ces échéances et commencer le travail de la mise en conformité dès maintenant !",
+        "original_placeholder": "Mais, les entreprises doivent anticiper ces échéances et commencer  le travail de la mise en conformité dès maintenant !",
         "target_lenght": 120,
         "min_lenght": 84,
         "max_lenght": 156
@@ -2153,6 +2511,253 @@
         "target_lenght": 31,
         "min_lenght": 21,
         "max_lenght": 41
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - CONCEPT",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - concept.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "Le concept de la boîte à outil",
+        "target_lenght": 30,
+        "min_lenght": 21,
+        "max_lenght": 39
+      },
+      {
+        "key": "Definition",
+        "original_placeholder": "Une stack, c'est simplement l'ensemble des outils combinés pour faire fonctionner un projet numérique. On ne choisit pas ces outils au hasard : chacun a un rôle précis dans la chaîne de production. ",
+        "target_lenght": 198,
+        "min_lenght": 138,
+        "max_lenght": 258
+      },
+      {
+        "key": "Mot",
+        "original_placeholder": "Qu’est ce qu’un Stack ?",
+        "target_lenght": 23,
+        "min_lenght": 16,
+        "max_lenght": 35
+      },
+      {
+        "key": "Bulle",
+        "original_placeholder": "Comme un cuisinier a ses ustensiles, le Vibe Coder a sa stack.",
+        "target_lenght": 62,
+        "min_lenght": 43,
+        "max_lenght": 81
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - VEILLE",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - veille.",
+    "text_layers": [
+      {
+        "key": "Focus sur Caude (Anthropic)",
+        "original_placeholder": "Focus sur Caude (Anthropic) ",
+        "target_lenght": 28,
+        "min_lenght": 19,
+        "max_lenght": 42
+      },
+      {
+        "key": "Titre 1",
+        "original_placeholder": "Ludo  Salenne",
+        "target_lenght": 13,
+        "min_lenght": 9,
+        "max_lenght": 20
+      },
+      {
+        "key": "Violet 1",
+        "original_placeholder": "Chaîne YouTube française de vulgarisation sur l'IA générative",
+        "target_lenght": 61,
+        "min_lenght": 42,
+        "max_lenght": 80
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "Tutos pratiques, tests d'outils, analyses des dernières sorties (ChatGPT, Midjourney, etc).",
+        "target_lenght": 91,
+        "min_lenght": 63,
+        "max_lenght": 119
+      },
+      {
+        "key": "Titre 2",
+        "original_placeholder": "Ludo  Salenne",
+        "target_lenght": 13,
+        "min_lenght": 9,
+        "max_lenght": 20
+      },
+      {
+        "key": "Violet 2",
+        "original_placeholder": "Chaîne YouTube française de vulgarisation sur l'IA générative",
+        "target_lenght": 61,
+        "min_lenght": 42,
+        "max_lenght": 80
+      },
+      {
+        "key": "Texte 2",
+        "original_placeholder": "Tutos pratiques, tests d'outils, analyses des dernières sorties (ChatGPT, Midjourney, etc).",
+        "target_lenght": 91,
+        "min_lenght": 63,
+        "max_lenght": 119
+      },
+      {
+        "key": "Titre 3",
+        "original_placeholder": "Ludo  Salenne",
+        "target_lenght": 13,
+        "min_lenght": 9,
+        "max_lenght": 20
+      },
+      {
+        "key": "Violet 3",
+        "original_placeholder": "Chaîne YouTube française de vulgarisation sur l'IA générative",
+        "target_lenght": 61,
+        "min_lenght": 42,
+        "max_lenght": 80
+      },
+      {
+        "key": "Texte 3",
+        "original_placeholder": "Tutos pratiques, tests d'outils, analyses des dernières sorties (ChatGPT, Midjourney, etc).",
+        "target_lenght": 91,
+        "min_lenght": 63,
+        "max_lenght": 119
+      },
+      {
+        "key": "Titre 4",
+        "original_placeholder": "Ludo  Salenne",
+        "target_lenght": 13,
+        "min_lenght": 9,
+        "max_lenght": 20
+      },
+      {
+        "key": "Violet 4",
+        "original_placeholder": "Chaîne YouTube française de vulgarisation sur l'IA générative",
+        "target_lenght": 61,
+        "min_lenght": 42,
+        "max_lenght": 80
+      },
+      {
+        "key": "Texte 4",
+        "original_placeholder": "Tutos pratiques, tests d'outils, analyses des dernières sorties (ChatGPT, Midjourney, etc).",
+        "target_lenght": 91,
+        "min_lenght": 63,
+        "max_lenght": 119
+      },
+      {
+        "key": "Texte 5",
+        "original_placeholder": "Ludo  Salenne",
+        "target_lenght": 13,
+        "min_lenght": 9,
+        "max_lenght": 20
+      },
+      {
+        "key": "Violet 5",
+        "original_placeholder": "Chaîne YouTube française de vulgarisation sur l'IA générative",
+        "target_lenght": 61,
+        "min_lenght": 42,
+        "max_lenght": 80
+      },
+      {
+        "key": "Texte 5",
+        "original_placeholder": "Tutos pratiques, tests d'outils, analyses des dernières sorties (ChatGPT, Midjourney, etc).",
+        "target_lenght": 91,
+        "min_lenght": 63,
+        "max_lenght": 119
+      },
+      {
+        "key": "Titre 6",
+        "original_placeholder": "Ludo  Salenne",
+        "target_lenght": 13,
+        "min_lenght": 9,
+        "max_lenght": 20
+      },
+      {
+        "key": "Violet 6",
+        "original_placeholder": "Chaîne YouTube française de vulgarisation sur l'IA générative",
+        "target_lenght": 61,
+        "min_lenght": 42,
+        "max_lenght": 80
+      },
+      {
+        "key": "Texte 6",
+        "original_placeholder": "Tutos pratiques, tests d'outils, analyses des dernières sorties (ChatGPT, Midjourney, etc).",
+        "target_lenght": 91,
+        "min_lenght": 63,
+        "max_lenght": 119
+      }
+    ],
+    "image_layers": [
+      {
+        "key": "image",
+        "original_placeholder": "Image 1",
+        "ratio": "1:1",
+        "width": 83.0,
+        "height": 83.0
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - 3 BLOCS - LARGE TEXT",
+    "status": "en attente",
+    "description": "Template pour slide de type vibecoding - 3 blocs - large text.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "Prompter des visuels dans ChatGPT",
+        "target_lenght": 33,
+        "min_lenght": 23,
+        "max_lenght": 43
+      },
+      {
+        "key": "Titre",
+        "original_placeholder": "Une fois le modèle activé, la création d’image débute par un prompt en français directement dans le champ de saisie. La requête et le panneau de style permettent d’agir sur la génération.",
+        "target_lenght": 188,
+        "min_lenght": 131,
+        "max_lenght": 245
+      },
+      {
+        "key": "Texte 3",
+        "original_placeholder": "L'utilisateur décrit la scène, l'ambiance et le sujet en langage naturel (FR). Le modèle interprète ces intentions pour construire la base visuelle.Lorem ipsum, pour construire la base visuelle lorem.",
+        "target_lenght": 203,
+        "min_lenght": 142,
+        "max_lenght": 264
+      },
+      {
+        "key": "Titre 3",
+        "original_placeholder": "Format et ratio",
+        "target_lenght": 15,
+        "min_lenght": 10,
+        "max_lenght": 23
+      },
+      {
+        "key": "Titre 2",
+        "original_placeholder": "Style artistique",
+        "target_lenght": 16,
+        "min_lenght": 11,
+        "max_lenght": 24
+      },
+      {
+        "key": "Texte 2",
+        "original_placeholder": "L'utilisateur décrit la scène, l'ambiance et le sujet en langage naturel (FR). Le modèle interprète ces intentions pour construire la base visuelle.Lorem ipsum, pour construire la base visuelle lorem.",
+        "target_lenght": 203,
+        "min_lenght": 142,
+        "max_lenght": 264
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "L'utilisateur décrit la scène, l'ambiance et le sujet en langage naturel (FR). Le modèle interprète ces intentions pour construire la base visuelle.Lorem ipsum, pour construire la base visuelle lorem.",
+        "target_lenght": 203,
+        "min_lenght": 142,
+        "max_lenght": 264
+      },
+      {
+        "key": "Titre 1",
+        "original_placeholder": "La requête",
+        "target_lenght": 10,
+        "min_lenght": 7,
+        "max_lenght": 15
       }
     ]
   }

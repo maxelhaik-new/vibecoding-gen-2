@@ -1,0 +1,137 @@
+{
+  "lessonTitle": "CERTIFICATION",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Certification IQ Project : Construire une application grâce au Vibe Coding"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Qu'est-ce que le Vibe Coding ?",
+        "Intro": "Dans un contexte d'innovation, la transformation rapide d'idées en applications devient indispensable. Le Vibe Coding permet de concevoir et déployer des produits en autonomie via l'IA.",
+        "Titre 1": "Réduire les délais",
+        "Texte 1": "Permet d'accélérer l'innovation en déployant rapidement des prototypes fonctionnels.",
+        "Titre 2": "Autonomie des équipes",
+        "Texte 2": "S'affranchir de la dépendance aux développeurs et aux outils no-code traditionnels.",
+        "Titre 3": "Maîtrise du cycle",
+        "Texte 3": "Des compétences couvrant le cadrage, l'intégration d'API et le déploiement sécurisé."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "Modalités d'évaluation",
+        "Intro": "Le référentiel de la certification IQ Education est évalué à travers deux épreuves complémentaires pour valider vos compétences.",
+        "Picto 1": "mdi:laptop",
+        "Titre 1": "Épreuve 1 : Pratique",
+        "Texte 1": "Concevoir, développer et déployer une application web fonctionnelle répondant à un besoin utilisateur à l'aide d'IA générative.",
+        "Picto 2": "mdi:format-list-checks",
+        "Titre 2": "Épreuve 2 : QCM",
+        "Texte 2": "50 questions théoriques couvrant l'IA appliquée, le prompt engineering, la sécurité et le déploiement.",
+        "Picto 3": "mdi:human-capacity-increase",
+        "Titre 3": "Accessibilité",
+        "Texte 3": "Possibilité d'aménagements pour les personnes en situation de handicap (temps, formats, assistance technique)."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "C1. Cadrer le produit numérique",
+        "Intro": "Traduire une idée en parcours utilisateur et produire des instructions exploitables par l'intelligence artificielle.",
+        "Picto 1": "mdi:target",
+        "Titre 1": "Besoins & Contraintes",
+        "Texte 1": "Identifier et formaliser les objectifs du produit, les profils cibles et hiérarchiser les besoins fonctionnels.",
+        "Picto 2": "mdi:map-marker-path",
+        "Titre 2": "Parcours Utilisateur",
+        "Texte 2": "Illustrer et structurer les étapes clés du parcours sans rupture logique, en y associant les fonctionnalités.",
+        "Picto 3": "mdi:console",
+        "Titre 3": "Prompt engineering",
+        "Texte 3": "Définir le cadre technique initial et rédiger des prompts structurés (rôle, contexte, critères de validation)."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "C2 & C3. Prototype et Environnement",
+        "Intro": "Obtenir un produit stable et assurer la continuité du code via un système de gestion de versions local.",
+        "Picto 1": "mdi:refresh",
+        "Titre 1": "Itération du prototype",
+        "Texte 1": "Piloter la résolution d'erreurs et ajuster sa stratégie de prompt face à l'IA pour obtenir une application fonctionnelle.",
+        "Picto 2": "mdi:source-repository",
+        "Titre 2": "Configuration locale",
+        "Texte 2": "Cloner et synchroniser le code via un système de versions (Git) pour l'exécuter dans son environnement.",
+        "Picto 3": "mdi:folder-network",
+        "Titre 3": "Architecture propre",
+        "Texte 3": "Respecter les standards de structuration, fournir un README détaillé et produire un code maintenable."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "C4 & C5. Déploiement et Sécurité",
+        "Intro": "Interfacer le produit avec des services externes et le rendre accessible en respectant une sécurité stricte.",
+        "Picto 1": "mdi:api",
+        "Titre 1": "Services externes",
+        "Texte 1": "Intégrer et documenter des connexions tierces obligatoires comme des API REST, des MCP ou des bases de données.",
+        "Picto 2": "mdi:cloud-upload",
+        "Titre 2": "Déploiement en ligne",
+        "Texte 2": "Rendre le projet accessible sur un environnement de production (Vercel, Netlify) avec une documentation claire.",
+        "Picto 3": "mdi:shield-lock",
+        "Titre 3": "Sécurité rigoureuse",
+        "Texte 3": "Cacher ses clés API, imposer le HTTPS, protéger les routes privées et sécuriser les bases (Row Level Security)."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "C6. Veille et Responsabilité",
+        "Intro": "Maintenir une veille active sur les outils émergents et adopter une démarche éthique et réglementaire.",
+        "Picto 1": "mdi:magnify",
+        "Titre 1": "Évaluation des outils",
+        "Texte 1": "Justifier le choix de l'IA et de l'environnement selon les performances, les coûts et les limites techniques.",
+        "Picto 2": "mdi:scale-balance",
+        "Titre 2": "Protection des données",
+        "Texte 2": "Garantir le chiffrement, la gestion des accès sécurisés et l'application stricte des principes du RGPD.",
+        "Picto 3": "mdi:leaf",
+        "Titre 3": "Impact éthique",
+        "Texte 3": "Anticiper les biais de l'IA, s'engager sur la transparence de l'usage des données et mesurer l'impact écologique."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Le socle du Vibe Coding",
+        "Intro": "Le Vibe Coding redéfinit la manière de concevoir, générer et déployer des applications. La maîtrise de ces 6 compétences fondamentales vous permet de passer d'une simple idée à un produit déployé et sécurisé en toute autonomie.",
+        "Titre Bulle": "LEXIQUE CLÉ",
+        "Texte Bulle": "Des notions comme le MCP (Model Context Protocol), le Prompt Engineering, l'itération par l'erreur ou le Rollback sont désormais les piliers incontournables de la création logicielle moderne."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}
