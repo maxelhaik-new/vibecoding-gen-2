@@ -14,13 +14,13 @@
       "template": "VIBECODING - INTRO",
       "content": {
         "Titre": "La notice d'utilisation du parcours",
-        "Intro": "Vous avez le bon état d'esprit, vos outils et le vocabulaire. Reste une question : comment tirer le maximum de cette formation ? Une formation au Vibe Coding ne se regarde pas comme une série — elle se pratique. Voici les habitudes simples pour apprendre vite, bien, et sans frustration.",
-        "Titre 1": "Pratiquer en parallèle",
-        "Texte 1": "On ouvre ses outils en même temps que la vidéo. Le Vibe Coding s'apprend avec les mains.",
-        "Titre 2": "Construire son projet",
-        "Texte 2": "Chaque notion apprise s'applique immédiatement à votre propre projet fil rouge.",
-        "Titre 3": "Savoir se débloquer",
-        "Texte 3": "Premier réflexe face à un blocage : redonner le problème à l'IA. C'est ça, le Vibe Coding."
+        "Intro": "On a le bon état d'esprit, les outils et le vocabulaire. Reste une question clé : comment tirer le maximum de cette formation ? Le Vibe Coding ne se regarde pas comme une série — ça se pratique. Voici comment apprendre vite, bien, et sans frustration.",
+        "Titre 1": "Pratiquer en direct",
+        "Texte 1": "Ouvrir ses outils en même temps que la vidéo et refaire chaque manipulation. Mieux vaut 20 min de pratique active qu'1 h de visionnage passif.",
+        "Titre 2": "Avancer à son rythme",
+        "Texte 2": "Les modules sont progressifs : chaque brique s'appuie sur la précédente. Revoir une leçon ou mettre en pause pour refaire une manip — c'est normal et recommandé.",
+        "Titre 3": "Garder les ressources",
+        "Texte 3": "Cartes mémo, supports téléchargeables, liens utiles : tout est joint aux leçons et regroupé sur la page récapitulative. On les garde sous la main à chaque session."
       },
       "image_concept": null,
       "image_style": null,
@@ -29,18 +29,20 @@
     {
       "template": "VIBECODING - PROCESS",
       "content": {
-        "Titre": "La routine de l'apprenant",
-        "Intro": "Cinq habitudes simples qui font toute la différence entre regarder une formation et réellement progresser.",
-        "Titre 1": "PRATIQUER",
-        "Violet 1 ": "Ouvrir ses outils en même temps que la vidéo. 20 min de pratique active valent plus qu'1 h de visionnage passif.",
-        "Titre 2": "CONSTRUIRE",
-        "Violet 2": "Avancer sur son projet fil rouge à chaque module. Choisir un projet qui vous tient à cœur pour rester motivé.",
-        "Titre 3": "PROGRESSER",
-        "Violet 3": "Avancer à son rythme sans sauter les bases. Ne pas hésiter à revoir une leçon ou à mettre en pause.",
-        "Titre 4": "UTILISER",
-        "Violet 4": "Garder les ressources sous la main : cartes mémo, liens, supports téléchargeables joints aux leçons.",
-        "Titre 5": "DÉBLOQUER",
-        "Violet 5": "Redonner le problème à l'IA, consulter la communauté. Être bloqué quelques minutes est normal — c'est là qu'on apprend le plus."
+        "Titre": "La routine de l'apprenant en 5 étapes",
+        "Intro": "Cinq réflexes simples à adopter dès la première leçon pour progresser vite et construire des compétences solides.",
+        "Titre 1": "Pratiquer",
+        "Violet 1 ": "Ouvrir ses outils en même temps que la vidéo",
+        "Titre 2": "Coder",
+        "Violet 2": "Appliquer chaque notion au projet fil rouge",
+        "Titre 3": "Réviser",
+        "Violet 3": "Revoir une leçon sans honte si besoin",
+        "Titre 4": "S'entraîner",
+        "Violet 4": "Compléter les leçons À vous de jouer",
+        "Titre 5": "Débloquer",
+        "Violet 5": "Demander à l'IA, puis à la communauté",
+        "Titre 6": "",
+        "Violet 6": ""
       },
       "image_concept": null,
       "image_style": null,
@@ -51,23 +53,31 @@
       "content": {
         "Titre": "Le projet fil rouge",
         "Intro": "VOTRE COLONNE VERTÉBRALE",
-        "Texte 1": "La formation ne s'apprend pas dans l'abstrait. Elle se construit autour d'un projet concret qui grandit module après module. Dès le Module 4, vous créez votre propre application de A à Z. Chaque notion vue en leçon trouve immédiatement sa place dans votre projet réel. Conseil : choisissez dès maintenant un projet qui vous tient à cœur — votre motivation en dépendra.",
-        "Texte Bulle": "Teaser : le projet fil rouge démarre au Module 4. D'ici là, chaque section \"À vous de jouer\" vous prépare à le construire. Ne les zappez pas.",
-        "Source": "Source : Formation Vibe Coding — Parcours pédagogique"
+        "Texte 1": "La formation ne s'apprend pas en théorie abstraite — elle se construit autour d'un projet concret qui grandit module après module. Dès le Module 4, on démarre ce projet fil rouge et on y applique chaque notion vue en cours. Le principe ? Chaque brique technique apprise s'intègre immédiatement dans quelque chose de réel. Conseil : choisir un projet qui tient à cœur — une idée d'app, un outil interne, un prototype. La motivation suit naturellement quand le résultat nous appartient.",
+        "Texte Bulle": "Le projet fil rouge n'est pas un exercice supplémentaire — c'est le fil conducteur de toute la formation. Sans lui, les notions restent isolées. Avec lui, chaque leçon a un sens immédiat.",
+        "Source": "Module 4 — Projet"
       },
-      "image_concept": "A glowing blueprint or roadmap unfolding on a desk, with small app interface sketches and code lines visible, representing a project taking shape",
-      "image_style": "grainy-editorial",
+      "image_concept": "A single red thread weaving through a series of building blocks arranged in a rising staircase, each block representing a module, the thread connecting them all into one cohesive structure against a clean white background",
+      "image_style": "constructivist",
       "image_ratio": "2:3"
     },
     {
       "template": "VIBECODING - CHECKLIST",
       "content": {
-        "Titre": "Et si je suis bloqué ?",
-        "Titre 2": "Les bons réflexes",
-        "Intro": "Être bloqué n'est pas un échec — c'est une étape normale. Ce qui compte, c'est de savoir comment en sortir.",
-        "Texte 1": "Redonner le problème à l'IA en décrivant ce qui ne fonctionne pas. C'est ça, le Vibe Coding.",
-        "Texte 2": "Consulter la communauté ou le support si le blocage persiste (Slack, forum…).",
-        "Texte 3": "Accepter que quelques minutes de blocage soient les moments où l'on apprend le plus."
+        "Titre": "Et si je suis bloqué sur un exercice ?",
+        "Intro": "Être bloqué quelques minutes, c'est normal — c'est là qu'on apprend le plus.",
+        "Texte Intro": "Pas besoin de paniquer face à une erreur ou un bug. Il existe un ordre logique de réflexes à adopter pour se débloquer seul, rapidement, et en apprenant quelque chose au passage. C'est ça, la posture Vibe Coding.",
+        "Nom Checklist": "Réflexes pour se débloquer",
+        "Texte 1": "Relire le message d'erreur mot à mot.",
+        "Texte 2": "Redonner le problème complet à l'IA.",
+        "Texte 3": "Revoir la leçon concernée en entier.",
+        "Texte 4": "Consulter les ressources jointes à la leçon.",
+        "Texte 5": "Poser la question à la communauté.",
+        "Picto 1": "mdi:magnify",
+        "Picto 2": "mdi:code-braces-box",
+        "Picto 3": "mdi:book-open-variant",
+        "Picto 4": "mdi:text-short",
+        "Picto 5": "mdi:people-group"
       },
       "image_concept": null,
       "image_style": null,
@@ -77,9 +87,9 @@
       "template": "VIBECODING - FIN",
       "content": {
         "Titre": "Ce qu'il faut retenir",
-        "Intro": "Pratiquez en même temps que vous regardez, construisez votre projet fil rouge au fil des modules, avancez à votre rythme sans sauter les bases, et gardez vos ressources à portée de main. Et si vous bloquez, demandez d'abord à l'IA, puis à la communauté. Avec cette méthode, vous ne subissez pas la formation : vous la vivez. On est prêts — c'est parti !",
+        "Intro": "Pratiquer en même temps que la vidéo, construire son projet fil rouge module après module, avancer à son rythme sans zapper les bases, garder ses ressources à portée de main — et si on bloque, demander d'abord à l'IA, puis à la communauté. Avec cette méthode, on ne subit pas la formation : on la vit. À nous de jouer !",
         "Titre Bulle": "EN BREF",
-        "Texte Bulle": "Le Vibe Coding ne s'apprend pas en spectateur. Ouvrez vos outils, lancez votre projet, itérez. Chaque leçon pratique compte double."
+        "Texte Bulle": "Le chapitre d'onboarding est terminé. Dès le Module 2, on entre dans le vif du sujet : comprendre comment parler à l'IA pour obtenir exactement ce qu'on veut. La posture de demander à l'IA en cas de blocage, on va l'apprendre à fond — et elle changera tout."
       },
       "image_concept": null,
       "image_style": null,

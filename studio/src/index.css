@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Light Theme (Default, soft gray UI inspired by screenshot) */
+  --bg-primary: #f4f5f6;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #fafafa;
+  --bg-panel: #ffffff;
+  --border-color: #e4e4e7;
+  --border-focus: #3b82f6;
+  
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #8e8e93;
+  
+  --accent-blue: #3b82f6;
+  --accent-cyan: #0d9488;
+  --accent-gradient: #3b82f6;
+  
+  /* Badges styles */
+  --badge-green-text: #15803d;
+  --badge-green-bg: #dcfce7;
+  --badge-blue-text: #1d4ed8;
+  --badge-blue-bg: #dbeafe;
+  --badge-yellow-text: #b45309;
+  --badge-yellow-bg: #fef3c7;
+  --badge-red-text: #b91c1c;
+  --badge-red-bg: #fee2e2;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  --shadow-panel: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+  
+  --font-family-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-slides: 'Basic Sans Alt', 'Outfit', 'Inter', sans-serif;
+}
+
+[data-theme='dark'] {
+  /* Dark Theme (Minimalist flat dark) */
+  --bg-primary: #0f1013;
+  --bg-secondary: #18191e;
+  --bg-tertiary: #1f2127;
+  --bg-panel: #18191e;
+  --border-color: #2b2d35;
+  --border-focus: #3b82f6;
+  
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  
+  --accent-blue: #3b82f6;
+  --accent-cyan: #38bdf8;
+  --accent-gradient: #3b82f6;
+  
+  --badge-green-text: #34d399;
+  --badge-green-bg: rgba(52, 211, 153, 0.1);
+  --badge-blue-text: #60a5fa;
+  --badge-blue-bg: rgba(96, 165, 250, 0.1);
+  --badge-yellow-text: #fbbf24;
+  --badge-yellow-bg: rgba(251, 191, 36, 0.1);
+  --badge-red-text: #f87171;
+  --badge-red-bg: rgba(248, 113, 113, 0.1);
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  --shadow-panel: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-family-body);
+  height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbars (minimalist grey) */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Soft minimalist panel layout */
+.glass-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow-panel);
+}
+
+.glow-btn {
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: var(--font-family-body);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.glow-btn:hover {
+  background: #2563eb;
+}
+
+.glow-btn:disabled {
+  background: var(--border-color);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Form input styles */
+input[type="text"], select, textarea {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: border-color 0.15s ease;
+}
+
+input[type="text"]:focus, select:focus, textarea:focus {
+  border-color: var(--border-focus);
+}
+
+/* Contrast adjustment for placeholders */
+::placeholder {
+  color: var(--text-muted);
+  opacity: 0.75;
+}
+
+/* Disabled buttons styling overrides */
+button:disabled {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-muted) !important;
+  border-color: var(--border-color) !important;
+  cursor: not-allowed !important;
+  opacity: 0.7 !important;
+}
+
+/* IDE JSON Code Editor styles */
+:root {
+  --json-key: #0550ae;
+  --json-string: #0a3069;
+  --json-number: #0550ae;
+  --json-boolean: #cf222e;
+  --json-null: #cf222e;
+}
+
+[data-theme='dark'] {
+  --json-key: #79c0ff;
+  --json-string: #a5d6ff;
+  --json-number: #79c0ff;
+  --json-boolean: #ff7b72;
+  --json-null: #ff7b72;
+}
+
+.json-key { color: var(--json-key); font-weight: 600; }
+.json-string { color: var(--json-string); }
+.json-number { color: var(--json-number); }
+.json-boolean { color: var(--json-boolean); }
+.json-null { color: var(--json-null); }
+
+/* Notion-like Markdown rendering */
+.notion-preview {
+  font-family: var(--font-family-body);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px 20px 40px 20px;
+}
+
+.notion-h1 {
+  font-family: var(--font-family-slides);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 1.4em;
+  margin-bottom: 0.4em;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.3em;
+}
+
+.notion-h2 {
+  font-family: var(--font-family-slides);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 1.3em;
+  margin-bottom: 0.3em;
+}
+
+.notion-h3 {
+  font-family: var(--font-family-slides);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+.notion-h4 {
+  font-family: var(--font-family-slides);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 1.1em;
+  margin-bottom: 0.3em;
+}
+
+.notion-h5 {
+  font-family: var(--font-family-slides);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-top: 1.0em;
+  margin-bottom: 0.2em;
+}
+
+.notion-h6 {
+  font-family: var(--font-family-slides);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 1.0em;
+  margin-bottom: 0.2em;
+}
+
+.notion-hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 1.5em 0;
+}
+
+.notion-p {
+  margin-bottom: 0.6em;
+  color: var(--text-secondary);
+}
+
+.notion-list {
+  padding-left: 20px;
+  margin-bottom: 0.6em;
+  list-style-type: disc;
+}
+
+.notion-li {
+  margin-bottom: 0.2em;
+  color: var(--text-secondary);
+}
+
+.notion-quote {
+  border-left: 3px solid var(--accent-blue);
+  padding-left: 14px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0.8em 0;
+  background: rgba(59, 130, 246, 0.02);
+  padding: 6px 12px;
+  border-radius: 0 4px 4px 0;
+}
+
+.notion-code {
+  background: rgba(135, 131, 120, 0.12);
+  color: #eb5757;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 85%;
+}
+
+.notion-spacer {
+  height: 8px;
+}
+
+.notion-placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+

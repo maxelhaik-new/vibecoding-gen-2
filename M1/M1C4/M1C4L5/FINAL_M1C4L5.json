@@ -1,0 +1,123 @@
+{
+  "lessonTitle": "M1C4L5",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Cas d'usage métier réels en 2026"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Ce qu'on va voir dans cette leçon",
+        "Intro": "En 2026, des projets fonctionnels passent d'une consigne en français à une mise en ligne en moins de 3 heures. Voyons quels secteurs ont déjà adopté le Vibe Coding — et ce que leurs cas concrets nous apprennent.",
+        "Titre 1": "Curation & annuaires",
+        "Texte 1": "LaunchDirectories.com et PG Essay Tracker : centraliser des données publiques pour créer de la valeur immédiate, sans équipe technique.",
+        "Titre 2": "Micro-SaaS & assistants",
+        "Texte 2": "MyParu : 4 assistants IA avec personnalités distinctes pour gérer mails, voyages et plannings — lancé sur Product Hunt via Bolt.new.",
+        "Titre 3": "Impact social & BtoB",
+        "Texte 3": "SignatureForms AI, IVF Dekho, Plinq, Fire Fairness : des outils d'entreprise et d'intérêt général déployés sans compétences informatiques."
+      }
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "LaunchDirectories & PG Tracker",
+        "Intro": "CURATION DE DONNÉES PUBLIQUES",
+        "Texte 1": "LaunchDirectories.com, conçu avec Bolt.new par un créateur indépendant, recense et trie les meilleurs annuaires de lancement de start-ups (Product Hunt, BetaList) selon leur autorité SEO réelle. Le problème ? Aucun outil centralisé n'existait pour ce besoin marketing précis. Dans la même logique, PG Essay Tracker regroupe tous les essais de Paul Graham en un seul endroit : les utilisateurs y cochent leur progression de lecture. Ces deux projets prouvent que filtrer et afficher proprement des données publiques suffit à créer une valeur immédiate.",
+        "Texte Bulle": "Ces outils ne créent pas de données — ils les organisent. La valeur vient de la curation, pas du contenu. Un profil non technique peut identifier ce besoin et le livrer en quelques heures avec Bolt.new.",
+        "Source": "Source : Bolt.new",
+        "image": "http://localhost:8080/assets/vibe_launchdirectories_pg_tracker.png"
+      },
+      "image_concept": "A minimalist library sorting wall with hundreds of small labeled cards being organized by invisible hands into neat categorical columns, warm editorial light, sense of order emerging from chaos",
+      "image_style": "editorial",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "MyParu sur Product Hunt",
+        "Intro": "MICRO-SAAS AVEC ABONNEMENT",
+        "Texte 1": "MyParu a été propulsé sur Product Hunt grâce à Bolt.new. L'application intègre quatre assistants IA aux personnalités distinctes qui collaborent pour gérer la boîte mail, planifier des itinéraires de voyage complexes et structurer des plannings de productivité. Connecter des API tierces et synchroniser des données en temps réel pose habituellement un défi de développement lourd. Ici, ces fonctions ont été livrées en quelques jours, prouvant que des profils non techniques peuvent lancer et commercialiser un Micro-SaaS avec abonnement.",
+        "Texte Bulle": "MyParu n'est pas un prototype — c'est un produit commercialisé avec abonnement. La barrière entre idée et revenu s'est réduite à quelques sessions de Vibe Coding avec Bolt.new.",
+        "Source": "Source : Product Hunt",
+        "image": "http://localhost:8080/assets/vibe_myparu_on_product_hunt.png"
+      },
+      "image_concept": "Four distinct robot characters with different personalities collaborating around a glowing inbox, calendar and map on a shared holographic screen, playful and colorful, sense of teamwork",
+      "image_style": "offset-screenprint",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO",
+      "content": {
+        "Titre": "Logiciels d'entreprise sans code",
+        "Intro": "Lovable.dev a permis de livrer des outils BtoB critiques — signatures électroniques et comparateur médical — sans équipe de développement.",
+        "Titre 1": "SignatureForms",
+        "Texte 1": "Conçu avec Lovable, cet outil collecte les signatures électroniques et gère les formulaires clients depuis un tableau de bord unifié avec connexion base de données.",
+        "Titre 2": "IVF Dekho (santé)",
+        "Titre Bulle": "IVF Dekho aide les patients indiens à comparer cliniques de fertilité et spécialistes via Lovable.dev — un secteur de santé sensible, livré sans développeur.",
+        "Titre 3": "La preuve technique",
+        "Texte 3": "Connexion BDD, gestion sécurisée des accès et formulaires complexes : les fonctions classiques d'entreprise sont exécutées par les outils de code.",
+        "Source": "Source : Lovable.dev - Illustration générée par IA - Maxime Elhaik",
+        "image": "http://localhost:8080/assets/vibe_signatureforms_ivf_dekho.png"
+      },
+      "image_concept": "A clean enterprise dashboard interface floating in mid-air with electronic signature fields and medical comparison tables glowing softly, professional and precise, dark background with teal accents",
+      "image_style": "pedagogical",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Vibe Coding pour l'intérêt général",
+        "Intro": "Deux créatrices sans compétences informatiques ont déployé des solutions citoyennes à fort impact via Lovable.dev, en réponse à des urgences réelles.",
+        "Titre A": "PLINQ",
+        "Titre B": "FIREFAIR",
+        "Item 1": "Créatrice",
+        "Item 2": "Région",
+        "Item 3": "Problème",
+        "Item 4": "Impact",
+        "Texte A Item 1": "Sabrine Matos, profil non technique",
+        "Texte A Item 2": "Brésil, communautés et quartiers défavorisés",
+        "Texte A Item 3": "Violences : données publiques inaccessibles",
+        "Texte A Item 4": "Cartographie des risques locaux pour les femmes",
+        "Texte B1": "Shalini Ananda, profil de médecin non technique",
+        "Texte B2": "États-Unis, ville de Los Angeles en Californie",
+        "Texte B3": "Incendies : aides aux victimes mal réparties",
+        "Texte B4": "Aides équitables et ressources unifiées"
+      }
+    },
+    {
+      "template": "VIBECODING - 5 BLOCS",
+      "content": {
+        "La méthode “few shots”": "Ce que le Vibe Coding produit",
+        "Intro": "5 patterns récurrents dans les projets Vibe Coding réussis :",
+        "Texte Bulle": "Ces 5 patterns partagent un point commun : un besoin réel non couvert, une niche précise et une mise en ligne en moins de 3 heures de travail cumulées.",
+        "Titre 1": "CURATION DE DONNÉES",
+        "Texte 1": "Filtrer, trier et afficher des données publiques dans une interface propre et ciblée (annuaires, trackers)",
+        "Picto 1": "mdi:text-box-search",
+        "Titre  2": "MICRO-SAAS AVEC API",
+        "Texte 2": "Connecter des API tierces et synchroniser des données en temps réel pour des produits avec abonnement",
+        "Picto 2": "mdi:puzzle",
+        "Titre 3": "TABLEAUX DE BORD",
+        "Texte 3": "Centraliser la gestion de formulaires, signatures et accès utilisateurs dans une interface unifiée BtoB",
+        "Picto 3": "mdi:flowchart",
+        "Titre  4": "OUTILS DE NICHE",
+        "Texte 4": "Répondre à un besoin professionnel très précis non couvert par les logiciels généralistes du marché",
+        "Picto 4": "mdi:magnify",
+        "Titre 5": "IMPACT SOCIAL RAPIDE",
+        "Texte 5": "Déployer une solution citoyenne d'urgence sans financement ni équipe technique, en quelques heures",
+        "Picto 5": "mdi:check-decagram"
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Le Vibe Coding supprime le délai entre l'idée et le test réel. LaunchDirectories, MyParu ou Plinq partagent un point de départ identique : un besoin précis et une niche claire. L'infrastructure technique (base de données cloud, gestion des accès, API tierces) est accessible pour moins de 50 $ par mois. L'étape suivante consiste à identifier ce besoin dans votre métier et poser les bases de votre premier projet.",
+        "Titre Bulle": "En BREF",
+        "Texte Bulle": "Dans la prochaine leçon, on passe à la pratique : définir le périmètre d'un projet Vibe Coding réaliste, choisir l'outil adapté et rédiger la première consigne en langage naturel. À nous de jouer !"
+      }
+    }
+  ]
+}

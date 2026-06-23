@@ -3,676 +3,238 @@
   "slides": [
     {
       "template": "VIBECODING - COVER",
-      "content": [
-        {
-          "key": "Titre",
-          "value": "Bâtir son Portefeuille de Veille en Vibe Coding"
-        }
-      ],
+      "content": {
+        "Titre": "Bâtir son Portefeuille de Veille en Vibe Coding"
+      },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
       "template": "VIBECODING - INTRO",
-      "content": [
-        {
-          "key": "Titre",
-          "value": "Filtrer le bruit pour rester efficace"
-        },
-        {
-          "key": "Intro",
-          "value": "Plus de 3 000 outils IA sont lancés chaque mois. Résultat : un flux de contenus sensationnalistes qui génère de l'anxiété et pousse à de mauvaises pratiques. Voyons comment construire une veille ciblée et saine."
-        },
-        {
-          "key": "Titre 1",
-          "value": "3 critères de sélection"
-        },
-        {
-          "key": "Texte 1",
-          "value": "Preuve par l'écran, transparence sur les limites, vélocité sans hystérie : trois filtres pour ne garder que les sources qui valent vraiment le détour."
-        },
-        {
-          "key": "Titre 2",
-          "value": "4 formats de médias"
-        },
-        {
-          "key": "Texte 2",
-          "value": "Podcasts, newsletters, chaînes YouTube et communautés GitHub/Reddit : chaque format couvre un besoin distinct dans une routine de veille équilibrée."
-        },
-        {
-          "key": "Titre 3",
-          "value": "24 sources validées"
-        },
-        {
-          "key": "Texte 3",
-          "value": "Un catalogue opérationnel de 24 sources directement actionnables, sélectionnées pour un profil non-développeur qui veut du concret sans le bruit."
-        }
-      ],
+      "content": {
+        "Titre": "Filtrer le bruit pour rester efficace",
+        "Intro": "Plus de 3 000 outils IA sont lancés chaque mois. Résultat : un flux de contenus sensationnalistes qui génère de l'anxiété et pousse à de mauvaises pratiques. Voyons comment construire une veille ciblée et saine.",
+        "Titre 1": "3 critères de sélection",
+        "Texte 1": "Preuve par l'écran, transparence sur les limites, vélocité sans hystérie : trois filtres pour ne garder que les sources qui valent vraiment le détour.",
+        "Titre 2": "4 formats de médias",
+        "Texte 2": "Podcasts, newsletters, chaînes YouTube et communautés GitHub/Reddit : chaque format couvre un besoin distinct dans une routine de veille équilibrée.",
+        "Titre 3": "24 sources validées",
+        "Texte 3": "Un catalogue opérationnel de 24 sources directement actionnables, sélectionnées pour un profil non-développeur qui veut du concret sans le bruit."
+      },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
       "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
-      "content": [
-        {
-          "key": "Titre",
-          "value": "Les 3 critères d'une source de confiance"
-        },
-        {
-          "key": "Intro",
-          "value": "Avant de s'abonner à un canal, on le passe au crible de trois critères stricts. Un seul manquant, et la source génère plus de bruit que de valeur."
-        },
-        {
-          "key": "Titre 1",
-          "value": "Hands-on"
-        },
-        {
-          "key": "Picto 1",
-          "value": "mdi:monitor-screenshot"
-        },
-        {
-          "key": "Texte 1",
-          "value": "La source ouvre l'outil, partage son écran, montre le prompt initial et affiche les erreurs générées. Si aucune interface n'est visible en action, c'est un signal d'alarme immédiat à prendre au sérieux."
-        },
-        {
-          "key": "Titre 2",
-          "value": "Limites visibles"
-        },
-        {
-          "key": "Picto 2",
-          "value": "mdi:stop-alert"
-        },
-        {
-          "key": "Texte 2",
-          "value": "Une source fiable consacre une partie de son analyse aux angles morts : ce que le modèle ne sait pas faire, le coût réel des appels API et les moments où l'agent IA a commencé à halluciner."
-        },
-        {
-          "key": "Titre 3",
-          "value": "Rythme hebdo"
-        },
-        {
-          "key": "Picto 3",
-          "value": "mdi:metronome"
-        },
-        {
-          "key": "Texte 3",
-          "value": "Publication hebdomadaire minimum, car les outils évoluent trop vite. Mais la source privilégie le \"Pourquoi ça compte\" plutôt que de sauter sur chaque micro-mise à jour pour générer du clic facile."
-        }
-      ],
+      "content": {
+        "Titre": "Les 3 critères d'une source de confiance",
+        "Intro": "Avant de s'abonner à un canal, on le passe au crible de trois critères stricts. Un seul manquant, et la source génère plus de bruit que de valeur.",
+        "Titre 1": "Hands-on",
+        "Picto 1": "mdi:monitor-screenshot",
+        "Texte 1": "La source ouvre l'outil, partage son écran, montre le prompt initial et affiche les erreurs générées. Si aucune interface n'est visible en action, c'est un signal d'alarme immédiat à prendre au sérieux.",
+        "Titre 2": "Limites visibles",
+        "Picto 2": "mdi:stop-alert",
+        "Texte 2": "Une source fiable consacre une partie de son analyse aux angles morts : ce que le modèle ne sait pas faire, le coût réel des appels API et les moments où l'agent IA a commencé à halluciner.",
+        "Titre 3": "Rythme hebdo",
+        "Picto 3": "mdi:metronome",
+        "Texte 3": "Publication hebdomadaire minimum, car les outils évoluent trop vite. Mais la source privilégie le \"Pourquoi ça compte\" plutôt que de sauter sur chaque micro-mise à jour pour générer du clic facile."
+      },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
       "template": "VIBECODING - CHIFFRES",
-      "content": [
-        {
-          "key": "Titre",
-          "value": "L'écosystème IA en quelques chiffres"
-        },
-        {
-          "key": "Intro",
-          "value": "Le volume de l'écosystème IA rend la sélection de sources mathématiquement obligatoire. Sans filtre, la surcharge informationnelle est inévitable."
-        },
-        {
-          "key": "Chiffre 1",
-          "value": "3K+"
-        },
-        {
-          "key": "Titre 1",
-          "value": "OUTILS LANCÉS/MOIS"
-        },
-        {
-          "key": "Texte 1",
-          "value": "Nouveaux outils ou micro-modèles IA lancés chaque mois en ligne. (GenAI.Works, 2025/2026)"
-        },
-        {
-          "key": "Chiffre 2",
-          "value": "+180%"
-        },
-        {
-          "key": "Titre 2",
-          "value": "CROISSANCE COMMUNAUTÉS"
-        },
-        {
-          "key": "Texte 2",
-          "value": "Hausse des membres actifs dans les espaces dédiés au prompt-to-app entre 2024 et 2026. (Reddit/Discord Tech, 2026)"
-        },
-        {
-          "key": "Chiffre 3",
-          "value": "45min"
-        },
-        {
-          "key": "Titre 3",
-          "value": "DE VEILLE/SEMAINE"
-        },
-        {
-          "key": "Texte 3",
-          "value": "Temps de veille hebdomadaire atteint par un chef de projet après avoir remplacé les flux sociaux par 3 newsletters et 2 chaînes YouTube ciblées."
-        }
-      ],
+      "content": {
+        "Titre": "L'écosystème IA en quelques chiffres",
+        "Intro": "Le volume de l'écosystème IA rend la sélection de sources mathématiquement obligatoire. Sans filtre, la surcharge informationnelle est inévitable.",
+        "Chiffre 1": "3K",
+        "Titre 1": "OUTILS LANCÉS/MOIS",
+        "Texte 1": "Nouveaux outils ou micro-modèles IA lancés chaque mois en ligne. (GenAI.Works, 2025/2026)",
+        "Chiffre 2": "180%",
+        "Titre 2": "DE CROISSANCE ",
+        "Texte 2": "Hausse des membres actifs dans les espaces dédiés au prompt-to-app entre 2024 et 2026. (Reddit/Discord Tech, 2026)",
+        "Chiffre 3": "45min",
+        "Titre 3": "DE VEILLE/SEMAINE",
+        "Texte 3": "Temps de veille hebdomadaire atteint par un chef de projet après avoir remplacé les flux sociaux par 3 newsletters et 2 chaînes YouTube ciblées."
+      },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
       "template": "VIBECODING - USE CASE",
-      "content": [
-        {
-          "key": "Titre",
-          "value": "45 min de veille ciblée par semaine"
-        },
-        {
-          "key": "Intro",
-          "value": "CHEF DE PROJET EN RECONVERSION"
-        },
-        {
-          "key": "Texte 1",
-          "value": "Un chef de projet digital a banni les flux algorithmiques des réseaux sociaux grand public. Il a configuré un tableau de bord basé sur 3 newsletters ciblées et 2 chaînes YouTube techniques. Résultat ? Son temps de veille est passé de 5 heures à 45 minutes par semaine. Il a réussi à déployer une application interne sans aucun bug grâce aux tutoriels d'un canal de confiance. (Communauté VibeCoders, Décembre 2025)"
-        },
-        {
-          "key": "Texte Bulle",
-          "value": "Ce n'est pas le volume de sources qui compte, c'est leur pertinence. Trois newsletters ciblées surpassent vingt flux algorithmiques non filtrés. Quelle est votre liste minimale viable ?"
-        },
-        {
-          "key": "Source",
-          "value": "VibeCoders, 2025"
-        }
-      ],
+      "content": {
+        "Titre": "45 min de veille ciblée par semaine",
+        "Intro": "CHEF DE PROJET EN RECONVERSION",
+        "Texte 1": "Un chef de projet digital a banni les flux algorithmiques des réseaux sociaux grand public. Il a configuré un tableau de bord basé sur 3 newsletters ciblées et 2 chaînes YouTube techniques. Résultat ? Son temps de veille est passé de 5 heures à 45 minutes par semaine. Il a réussi à déployer une application interne sans aucun bug grâce aux tutoriels d'un canal de confiance. (Communauté VibeCoders, Décembre 2025)",
+        "Texte Bulle": "Ce n'est pas le volume de sources qui compte, c'est leur pertinence. Trois newsletters ciblées surpassent vingt flux algorithmiques non filtrés. Quelle est votre liste minimale viable ?",
+        "Source": "VibeCoders, 2025"
+      },
       "image_concept": "A focused professional at a clean desk with a single curated newspaper and two small screens showing code tutorials, surrounded by a chaotic pile of discarded noisy tabloids and social media feeds on the floor",
       "image_style": "grainy-editorial",
       "image_ratio": "2:3"
     },
     {
       "template": "VIBECODING - COMPARAISON",
-      "content": [
-        {
-          "key": "Titre",
-          "value": "Éviter le piège de la bulle de filtres"
-        },
-        {
-          "key": "Intro",
-          "value": "Même avec d'excellentes sources, un portefeuille trop homogène crée un biais de confirmation. On rate alors les ruptures technologiques majeures des outils concurrents."
-        },
-        {
-          "key": "Titre A",
-          "value": "BULLE FERMÉE"
-        },
-        {
-          "key": "Titre B",
-          "value": "PORTEFEUILLE MIXTE"
-        },
-        {
-          "key": "Item 1",
-          "value": "Couverture"
-        },
-        {
-          "key": "Item 2",
-          "value": "Biais"
-        },
-        {
-          "key": "Item 3",
-          "value": "Risque"
-        },
-        {
-          "key": "Item 4",
-          "value": "Résultat"
-        },
-        {
-          "key": "Texte A Item 1",
-          "value": "Uniquement des créateurs fans d'un seul écosystème (ex : Cursor)"
-        },
-        {
-          "key": "Texte A Item 2",
-          "value": "Confirmation permanente, absence de regard critique externe"
-        },
-        {
-          "key": "Texte A Item 3",
-          "value": "Rupture majeure chez Windsurf ou Claude Code totalement ignorée"
-        },
-        {
-          "key": "Texte A Item 4",
-          "value": "Mauvaises décisions techniques basées sur une vision partielle"
-        },
-        {
-          "key": "Texte B1",
-          "value": "Sources grand public + canaux bruts GitHub et Reddit combinés"
-        },
-        {
-          "key": "Texte B2",
-          "value": "Promesse marketing confrontée à la réalité terrain des devs"
-        },
-        {
-          "key": "Texte B3",
-          "value": "Détection rapide des ruptures technologiques multi-outils"
-        },
-        {
-          "key": "Texte B4",
-          "value": "Vision équilibrée pour choisir le bon outil au bon moment"
-        }
-      ],
+      "content": {
+        "Titre": "Éviter le piège de la bulle de filtres",
+        "Intro": "Même avec d'excellentes sources, un portefeuille trop homogène crée un biais de confirmation. On rate alors les ruptures technologiques majeures des outils concurrents.",
+        "Titre A": "BULLE FERMÉE",
+        "Titre B": "PORTEFEUILLE MIXTE",
+        "Item 1": "Couverture",
+        "Item 2": "Biais",
+        "Item 3": "Risque",
+        "Item 4": "Résultat",
+        "Texte A Item 1": "Uniquement des créateurs fans d'un seul écosystème (ex : Cursor)",
+        "Texte A Item 2": "Confirmation permanente, absence de regard critique externe",
+        "Texte A Item 3": "Rupture majeure chez Windsurf ou Claude Code totalement ignorée",
+        "Texte A Item 4": "Mauvaises décisions techniques basées sur une vision partielle",
+        "Texte B1": "Sources grand public + canaux bruts GitHub et Reddit combinés",
+        "Texte B2": "Promesse marketing confrontée à la réalité terrain des devs",
+        "Texte B3": "Détection rapide des ruptures technologiques multi-outils",
+        "Texte B4": "Vision équilibrée pour choisir le bon outil au bon moment"
+      },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
       "template": "VIBECODING - VEILLE",
-      "content": [
-        {
-          "key": "Focus sur Caude (Anthropic)",
-          "value": "🎧 Podcasts — Stratégie & fond"
-        },
-        {
-          "key": "Titre 1",
-          "value": "The AI Native Dev"
-        },
-        {
-          "key": "Violet 1",
-          "value": "Podcast dédié au développement natif avec l'IA"
-        },
-        {
-          "key": "Texte 1",
-          "value": "Workflows concrets pour construire des apps avec des outils IA. Idéal pour comprendre les patterns de Vibe Coding en profondeur."
-        },
-        {
-          "key": "Titre 2",
-          "value": "Fragmented — AI Dev"
-        },
-        {
-          "key": "Violet 2",
-          "value": "Podcast technique sur le développement assisté par IA"
-        },
-        {
-          "key": "Texte 2",
-          "value": "Épisodes courts et denses sur les outils, agents et architectures. Parfait pour les trajets quotidiens sans perdre en densité technique."
-        },
-        {
-          "key": "Titre 3",
-          "value": "Practical AI"
-        },
-        {
-          "key": "Violet 3",
-          "value": "Changelog Network — IA appliquée au quotidien"
-        },
-        {
-          "key": "Texte 3",
-          "value": "Cas d'usage réels, sans jargon excessif. Changelog Network garantit une ligne éditoriale rigoureuse et des invités praticiens vérifiés."
-        },
-        {
-          "key": "Titre 4",
-          "value": "Syntax.fm"
-        },
-        {
-          "key": "Violet 4",
-          "value": "Tasty Web Development Treats — dev web & IA"
-        },
-        {
-          "key": "Texte 4",
-          "value": "Référence du dev web depuis 2017, intègre désormais l'IA dans chaque épisode. Ton accessible, exemples concrets, rythme bihebdomadaire."
-        },
-        {
-          "key": "Texte 5",
-          "value": "Latent Space"
-        },
-        {
-          "key": "Violet 5",
-          "value": "Podcast de référence sur la recherche en IA appliquée"
-        },
-        {
-          "key": "Texte 5",
-          "value": "Interviews de chercheurs et builders. Permet de comprendre les fondements des modèles avant qu'ils n'arrivent dans les outils grand public."
-        },
-        {
-          "key": "Titre 6",
-          "value": "Julian Goldie Podcast"
-        },
-        {
-          "key": "Violet 6",
-          "value": "SEO, automatisation et outils IA pour non-développeurs"
-        },
-        {
-          "key": "Texte 6",
-          "value": "Orienté résultats business et automatisation sans code. Angle non-développeur assumé, avec des démonstrations d'outils accessibles."
-        }
-      ],
+      "content": {
+        "Focus sur Caude (Anthropic)": "🎧 Podcasts — Stratégie & fond",
+        "Titre 1": "The AI Native Dev",
+        "Violet 1": "Podcast dédié au développement natif avec l'IA",
+        "Texte 1": "Workflows concrets pour construire des apps avec des outils IA. Idéal pour comprendre les patterns de Vibe Coding en profondeur.",
+        "Titre 2": "Fragmented — AI Dev",
+        "Violet 2": "Podcast technique sur le développement assisté par IA",
+        "Texte 2": "Épisodes courts et denses sur les outils, agents et architectures. Parfait pour les trajets quotidiens sans perdre en densité technique.",
+        "Titre 3": "Practical AI",
+        "Violet 3": "Changelog Network — IA appliquée au quotidien",
+        "Texte 3": "Cas d'usage réels, sans jargon excessif. Changelog Network garantit une ligne éditoriale rigoureuse et des invités praticiens vérifiés.",
+        "Titre 4": "Syntax.fm",
+        "Violet 4": "Tasty Web Development Treats — dev web & IA",
+        "Texte 4": "Référence du dev web depuis 2017, intègre désormais l'IA dans chaque épisode. Ton accessible, exemples concrets, rythme bihebdomadaire.",
+        "Texte 5": "Interviews de chercheurs et builders. Permet de comprendre les fondements des modèles avant qu'ils n'arrivent dans les outils grand public.",
+        "Violet 5": "Podcast de référence sur la recherche en IA appliquée",
+        "Titre 6": "Julian Goldie Podcast",
+        "Violet 6": "SEO, automatisation et outils IA pour non-développeurs",
+        "Texte 6": "Orienté résultats business et automatisation sans code. Angle non-développeur assumé, avec des démonstrations d'outils accessibles."
+      },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
       "template": "VIBECODING - VEILLE",
-      "content": [
-        {
-          "key": "Focus sur Caude (Anthropic)",
-          "value": "✉️ Newsletters — Scan rapide du matin"
-        },
-        {
-          "key": "Titre 1",
-          "value": "TLDR AI"
-        },
-        {
-          "key": "Violet 1",
-          "value": "Résumé quotidien de l'actualité IA en 5 minutes"
-        },
-        {
-          "key": "Texte 1",
-          "value": "Format ultra-condensé : 3 à 5 actualités clés par jour. Idéal pour le scan matinal sans risque de tomber dans un rabbit hole chronophage."
-        },
-        {
-          "key": "Titre 2",
-          "value": "The Rundown AI"
-        },
-        {
-          "key": "Violet 2",
-          "value": "Newsletter quotidienne sur les outils et modèles IA"
-        },
-        {
-          "key": "Texte 2",
-          "value": "Plus de 600 000 abonnés en 2025. Couvre les lancements d'outils avec des exemples d'usage concrets, sans se perdre dans la technique pure."
-        },
-        {
-          "key": "Titre 3",
-          "value": "Ben's Bites"
-        },
-        {
-          "key": "Violet 3",
-          "value": "Curation quotidienne des meilleurs liens IA du web"
-        },
-        {
-          "key": "Texte 3",
-          "value": "Ben Tossell sélectionne manuellement chaque lien. Ton décontracté, signal-to-noise élevé. Référence pour les profils business non-techniques."
-        },
-        {
-          "key": "Titre 4",
-          "value": "Latent Space NL"
-        },
-        {
-          "key": "Violet 4",
-          "value": "Complément écrit du podcast — recherche et ingénierie IA"
-        },
-        {
-          "key": "Texte 4",
-          "value": "Analyses longues sur les modèles et architectures. À lire le week-end pour approfondir ce que les newsletters quotidiennes effleurent seulement."
-        },
-        {
-          "key": "Texte 5",
-          "value": "The Median"
-        },
-        {
-          "key": "Violet 5",
-          "value": "Par DataCamp — data science et IA appliquée"
-        },
-        {
-          "key": "Texte 5",
-          "value": "Synthèse hebdomadaire orientée data et IA pratique. DataCamp garantit une rigueur pédagogique rare dans l'écosystème des newsletters IA."
-        },
-        {
-          "key": "Titre 6",
-          "value": "The Atlas"
-        },
-        {
-          "key": "Violet 6",
-          "value": "Par GenAI.Works sur LinkedIn — IA générative pro"
-        },
-        {
-          "key": "Texte 6",
-          "value": "Format LinkedIn natif, idéal pour les profils en reconversion. Couvre les usages professionnels de l'IA générative avec des cas documentés."
-        }
-      ],
+      "content": {
+        "Focus sur Caude (Anthropic)": "✉️ Newsletters — Scan rapide du matin",
+        "Titre 1": "TLDR AI",
+        "Violet 1": "Résumé quotidien de l'actualité IA en 5 minutes",
+        "Texte 1": "Format ultra-condensé : 3 à 5 actualités clés par jour. Idéal pour le scan matinal sans risque de tomber dans un rabbit hole chronophage.",
+        "Titre 2": "The Rundown AI",
+        "Violet 2": "Newsletter quotidienne sur les outils et modèles IA",
+        "Texte 2": "Plus de 600 000 abonnés en 2025. Couvre les lancements d'outils avec des exemples d'usage concrets, sans se perdre dans la technique pure.",
+        "Titre 3": "Ben's Bites",
+        "Violet 3": "Curation quotidienne des meilleurs liens IA du web",
+        "Texte 3": "Ben Tossell sélectionne manuellement chaque lien. Ton décontracté, signal-to-noise élevé. Référence pour les profils business non-techniques.",
+        "Titre 4": "Latent Space NL",
+        "Violet 4": "Complément écrit du podcast — recherche et ingénierie IA",
+        "Texte 4": "Analyses longues sur les modèles et architectures. À lire le week-end pour approfondir ce que les newsletters quotidiennes effleurent seulement.",
+        "Texte 5": "Synthèse hebdomadaire orientée data et IA pratique. DataCamp garantit une rigueur pédagogique rare dans l'écosystème des newsletters IA.",
+        "Violet 5": "Par DataCamp — data science et IA appliquée",
+        "Titre 6": "The Atlas",
+        "Violet 6": "Par GenAI.Works sur LinkedIn — IA générative pro",
+        "Texte 6": "Format LinkedIn natif, idéal pour les profils en reconversion. Couvre les usages professionnels de l'IA générative avec des cas documentés."
+      },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
       "template": "VIBECODING - VEILLE",
-      "content": [
-        {
-          "key": "Focus sur Caude (Anthropic)",
-          "value": "📺 YouTube — Démonstration visuelle"
-        },
-        {
-          "key": "Titre 1",
-          "value": "Matthew Berman"
-        },
-        {
-          "key": "Violet 1",
-          "value": "Tests et benchmarks d'outils IA en conditions réelles"
-        },
-        {
-          "key": "Texte 1",
-          "value": "Publie plusieurs vidéos par semaine avec des tests hands-on. Montre systématiquement les limites et les erreurs, pas seulement les succès."
-        },
-        {
-          "key": "Titre 2",
-          "value": "Matt Wolfe"
-        },
-        {
-          "key": "Violet 2",
-          "value": "Veille hebdomadaire sur les outils IA grand public"
-        },
-        {
-          "key": "Texte 2",
-          "value": "Récapitulatifs hebdomadaires des sorties majeures avec démonstrations. Accessible aux non-développeurs, rythme régulier et ton pédagogique."
-        },
-        {
-          "key": "Titre 3",
-          "value": "CodingEntrepreneurs"
-        },
-        {
-          "key": "Violet 3",
-          "value": "Tutoriels pas-à-pas pour builder sans background dev"
-        },
-        {
-          "key": "Texte 3",
-          "value": "Projets complets construits de zéro avec des outils IA. Chaque vidéo montre le prompt, les erreurs et la résolution — format idéal pour apprendre."
-        },
-        {
-          "key": "Titre 4",
-          "value": "AI Explained"
-        },
-        {
-          "key": "Violet 4",
-          "value": "Vulgarisation rigoureuse des modèles et recherches IA"
-        },
-        {
-          "key": "Texte 4",
-          "value": "Décrypte les papers de recherche en langage accessible. Permet de comprendre pourquoi un modèle se comporte ainsi avant de l'utiliser en prod."
-        },
-        {
-          "key": "Texte 5",
-          "value": "Julian Goldie SEO"
-        },
-        {
-          "key": "Violet 5",
-          "value": "Automatisation SEO et workflows IA sans code"
-        },
-        {
-          "key": "Texte 5",
-          "value": "Démos concrètes d'automatisation avec des outils no-code et IA. Angle business assumé, parfait pour les profils marketing en reconversion."
-        },
-        {
-          "key": "Titre 6",
-          "value": "Ava Does AI"
-        },
-        {
-          "key": "Violet 6",
-          "value": "Vibe Coding et création d'apps pour non-développeurs"
-        },
-        {
-          "key": "Texte 6",
-          "value": "Construit des applications réelles avec Bolt, Cursor et v0 sans background technique. Perspective non-développeur authentique et très actionnable."
-        }
-      ],
+      "content": {
+        "Focus sur Caude (Anthropic)": "📺 YouTube — Démonstration visuelle",
+        "Titre 1": "Matthew Berman",
+        "Violet 1": "Tests et benchmarks d'outils IA en conditions réelles",
+        "Texte 1": "Publie plusieurs vidéos par semaine avec des tests hands-on. Montre systématiquement les limites et les erreurs, pas seulement les succès.",
+        "Titre 2": "Matt Wolfe",
+        "Violet 2": "Veille hebdomadaire sur les outils IA grand public",
+        "Texte 2": "Récapitulatifs hebdomadaires des sorties majeures avec démonstrations. Accessible aux non-développeurs, rythme régulier et ton pédagogique.",
+        "Titre 3": "CodingEntrepreneurs",
+        "Violet 3": "Tutoriels pas-à-pas pour builder sans background dev",
+        "Texte 3": "Projets complets construits de zéro avec des outils IA. Chaque vidéo montre le prompt, les erreurs et la résolution — format idéal pour apprendre.",
+        "Titre 4": "AI Explained",
+        "Violet 4": "Vulgarisation rigoureuse des modèles et recherches IA",
+        "Texte 4": "Décrypte les papers de recherche en langage accessible. Permet de comprendre pourquoi un modèle se comporte ainsi avant de l'utiliser en prod.",
+        "Texte 5": "Démos concrètes d'automatisation avec des outils no-code et IA. Angle business assumé, parfait pour les profils marketing en reconversion.",
+        "Violet 5": "Automatisation SEO et workflows IA sans code",
+        "Titre 6": "Ava Does AI",
+        "Violet 6": "Vibe Coding et création d'apps pour non-développeurs",
+        "Texte 6": "Construit des applications réelles avec Bolt, Cursor et v0 sans background technique. Perspective non-développeur authentique et très actionnable.",
+        "Titre 5": "Mister IA"
+      },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
       "template": "VIBECODING - VEILLE",
-      "content": [
-        {
-          "key": "Focus sur Caude (Anthropic)",
-          "value": "🌐 Communautés & dépôts bruts"
-        },
-        {
-          "key": "Titre 1",
-          "value": "r/vibecoding"
-        },
-        {
-          "key": "Violet 1",
-          "value": "Communauté Reddit dédiée au Vibe Coding"
-        },
-        {
-          "key": "Texte 1",
-          "value": "Retours terrain bruts de builders non-développeurs. On y trouve les vrais bugs, les vraies frustrations et les solutions peer-to-peer non filtrées."
-        },
-        {
-          "key": "Titre 2",
-          "value": "r/LocalLLaMA"
-        },
-        {
-          "key": "Violet 2",
-          "value": "Reddit — modèles open-source et LLM locaux"
-        },
-        {
-          "key": "Texte 2",
-          "value": "Référence pour suivre les modèles open-source avant leur adoption grand public. Contrebalance la vision cloud-only des newsletters mainstream."
-        },
-        {
-          "key": "Titre 3",
-          "value": "GitHub Trending"
-        },
-        {
-          "key": "Violet 3",
-          "value": "Dépôts IA les plus actifs du moment en temps réel"
-        },
-        {
-          "key": "Texte 3",
-          "value": "Filtrer par topic \"AI\" ou \"LLM\" pour détecter les projets qui montent avant qu'ils ne fassent la une des newsletters. Signal précoce fiable."
-        },
-        {
-          "key": "Titre 4",
-          "value": "Serveurs Discord"
-        },
-        {
-          "key": "Violet 4",
-          "value": "Cursor, Bolt.new, v0 — canaux officiels des outils"
-        },
-        {
-          "key": "Texte 4",
-          "value": "Les équipes produit y annoncent les mises à jour en avant-première. Les channels #bugs et #feedback révèlent les limites réelles avant les reviews."
-        },
-        {
-          "key": "Texte 5",
-          "value": "Hugging Face"
-        },
-        {
-          "key": "Violet 5",
-          "value": "Open LLM Leaderboard & Spaces — benchmarks ouverts"
-        },
-        {
-          "key": "Texte 5",
-          "value": "Leaderboard mis à jour en continu pour comparer les modèles open-source. Spaces permet de tester un modèle gratuitement avant de l'intégrer."
-        },
-        {
-          "key": "Titre 6",
-          "value": "Awesome AI Lists"
-        },
-        {
-          "key": "Violet 6",
-          "value": "Listes GitHub curatées d'outils open-source IA"
-        },
-        {
-          "key": "Texte 6",
-          "value": "Dépôts \"Awesome\" maintenus par la communauté. Chaque outil listé a été validé par des développeurs actifs — zéro contenu sponsorisé ou marketing."
-        }
-      ],
+      "content": {
+        "Focus sur Caude (Anthropic)": "🌐 Communautés & dépôts bruts",
+        "Titre 1": "r/vibecoding",
+        "Violet 1": "Communauté Reddit dédiée au Vibe Coding",
+        "Texte 1": "Retours terrain bruts de builders non-développeurs. On y trouve les vrais bugs, les vraies frustrations et les solutions peer-to-peer non filtrées.",
+        "Titre 2": "r/LocalLLaMA",
+        "Violet 2": "Reddit — modèles open-source et LLM locaux",
+        "Texte 2": "Référence pour suivre les modèles open-source avant leur adoption grand public. Contrebalance la vision cloud-only des newsletters mainstream.",
+        "Titre 3": "GitHub Trending",
+        "Violet 3": "Dépôts IA les plus actifs du moment en temps réel",
+        "Texte 3": "Filtrer par topic \"AI\" ou \"LLM\" pour détecter les projets qui montent avant qu'ils ne fassent la une des newsletters. Signal précoce fiable.",
+        "Titre 4": "Serveurs Discord",
+        "Violet 4": "Cursor, Bolt.new, v0 — canaux officiels des outils",
+        "Texte 4": "Les équipes produit y annoncent les mises à jour en avant-première. Les channels #bugs et #feedback révèlent les limites réelles avant les reviews.",
+        "Texte 5": "Leaderboard mis à jour en continu pour comparer les modèles open-source. Spaces permet de tester un modèle gratuitement avant de l'intégrer.",
+        "Violet 5": "Open LLM Leaderboard & Spaces — benchmarks ouverts",
+        "Titre 6": "Awesome AI Lists",
+        "Violet 6": "Listes GitHub curatées d'outils open-source IA",
+        "Texte 6": "Dépôts \"Awesome\" maintenus par la communauté. Chaque outil listé a été validé par des développeurs actifs — zéro contenu sponsorisé ou marketing."
+      },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
       "template": "VIBECODING - PODIUM",
-      "content": [
-        {
-          "key": "Titre",
-          "value": "Top 3 pour démarrer sa veille dès demain"
-        },
-        {
-          "key": "Intro",
-          "value": "Trois sources complémentaires pour couvrir l'essentiel : scan rapide du matin, démonstration visuelle et retour terrain brut sans filtre marketing."
-        },
-        {
-          "key": "Rang 1",
-          "value": "1ère place"
-        },
-        {
-          "key": "Violet 1",
-          "value": "TLDR AI"
-        },
-        {
-          "key": "Texte 1",
-          "value": "Newsletter quotidienne en 5 minutes chrono. Format condensé, signal élevé, zéro bruit. Le meilleur point d'entrée pour un scan matinal efficace sans risque de surcharge informationnelle."
-        },
-        {
-          "key": "Rang 2",
-          "value": "2ème place"
-        },
-        {
-          "key": "Violet 2",
-          "value": "Matt Wolfe"
-        },
-        {
-          "key": "Texte 2",
-          "value": "Récapitulatif hebdomadaire YouTube des sorties majeures avec démos visuelles. Accessible aux non-développeurs, rythme régulier, couvre les outils de Vibe Coding en priorité."
-        },
-        {
-          "key": "Rang 3",
-          "value": "3ème place"
-        },
-        {
-          "key": "Violet 3",
-          "value": "r/vibecoding"
-        },
-        {
-          "key": "Texte 3",
-          "value": "Communauté Reddit avec retours terrain non filtrés. Contrebalance les newsletters optimistes avec les vrais bugs et solutions peer-to-peer des builders actifs."
-        },
-        {
-          "key": "Titre Bulle",
-          "value": "Mentions honorables :"
-        },
-        {
-          "key": "Texte Bulle",
-          "value": "Matthew Berman · GitHub Trending · Practical AI · Ben's Bites · Ava Does AI"
-        }
-      ],
+      "content": {
+        "Titre": "Top 3 pour démarrer sa veille dès demain",
+        "Intro": "Trois sources complémentaires pour couvrir l'essentiel : scan rapide du matin, démonstration visuelle et retour terrain brut sans filtre marketing.",
+        "Rang 1": "1ère place",
+        "Violet 1": "TLDR AI",
+        "Texte 1": "Newsletter quotidienne en 5 minutes chrono. Format condensé, signal élevé, zéro bruit. Le meilleur point d'entrée pour un scan matinal efficace sans risque de surcharge informationnelle.",
+        "Rang 2": "2ème place",
+        "Violet 2": "Matt Wolfe",
+        "Texte 2": "Récapitulatif hebdomadaire YouTube des sorties majeures avec démos visuelles. Accessible aux non-développeurs, rythme régulier, couvre les outils de Vibe Coding en priorité.",
+        "Rang 3": "3ème place",
+        "Violet 3": "r/vibecoding",
+        "Texte 3": "Communauté Reddit avec retours terrain non filtrés. Contrebalance les newsletters optimistes avec les vrais bugs et solutions peer-to-peer des builders actifs.",
+        "Titre Bulle": "Mentions honorables :",
+        "Texte Bulle": "Matthew Berman · GitHub Trending · Practical AI · Ben's Bites · Ava Does AI"
+      },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
       "template": "VIBECODING - FIN",
-      "content": [
-        {
-          "key": "Titre",
-          "value": "Ce qu'il faut retenir"
-        },
-        {
-          "key": "Intro",
-          "value": "Une veille efficace en Vibe Coding ne se mesure pas au nombre de sources suivies, mais à leur complémentarité. On combine une newsletter quotidienne pour le scan rapide, une chaîne YouTube pour la démonstration visuelle et une communauté brute pour le retour terrain. Les trois critères — preuve par l'écran, transparence sur les limites, rythme hebdomadaire — restent le filtre de base avant tout abonnement. En bref : 3 sources bien choisies valent mieux que 20 flux algorithmiques non filtrés."
-        },
-        {
-          "key": "Titre Bulle",
-          "value": "En bref"
-        },
-        {
-          "key": "Texte Bulle",
-          "value": "Le catalogue complet de 24 sources est disponible en ressource téléchargeable dans cette leçon. On y retrouve les 4 catégories avec les liens directs — à garder comme référence pour construire sa propre routine de veille au fil des semaines !"
-        }
-      ],
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Une veille efficace en Vibe Coding ne se mesure pas au nombre de sources suivies, mais à leur complémentarité. On combine une newsletter quotidienne pour le scan rapide, une chaîne YouTube pour la démonstration visuelle et une communauté brute pour le retour terrain. Les trois critères — preuve par l'écran, transparence sur les limites, rythme hebdomadaire — restent le filtre de base avant tout abonnement. En bref : 3 sources bien choisies valent mieux que 20 flux algorithmiques non filtrés.",
+        "Titre Bulle": "En bref",
+        "Texte Bulle": "Le catalogue complet de 24 sources est disponible en ressource téléchargeable dans cette leçon. On y retrouve les 4 catégories avec les liens directs — à garder comme référence pour construire sa propre routine de veille au fil des semaines !"
+      },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null

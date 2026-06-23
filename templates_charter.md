@@ -1,39 +1,56 @@
 # Charte d'Usage des Templates Figma (Vibe Coding)
 
-Ce guide d√©finit les r√®gles d'attribution des templates de slides en fonction de la nature et de la structure du contenu p√©dagogique √† pr√©senter. Il aide l'IA d'√©criture √† s√©lectionner le bon gabarit durant la phase de **`D√âCOUPE`**.
+Ce guide définit les règles d'attribution des templates de slides en fonction de la nature et de la structure du contenu pédagogique à présenter. Il aide l'IA de découpage à sélectionner le bon gabarit durant la phase de **`DECOUPE`**.
 
 ---
 
-## 1. Matrice de S√©lection des Templates
+## 1. Matrice de Sélection des Templates Valides
 
-Lors du d√©coupage d'un cours ou d'un chapitre, l'IA doit analyser le but de la slide et choisir le template correspondant dans `templates.json` selon cette grille :
+Lors du découpage d'un cours ou d'un chapitre, l'IA doit analyser le but de la slide et choisir **uniquement** un template ayant le statut `"status": "validé"` dans `templates.json` selon cette grille :
 
-| Nature du contenu | Objectif de la slide | Template √† utiliser |
+| Nature du contenu | Objectif de la slide | Template à utiliser |
 | :--- | :--- | :--- |
-| **Titre / Lancement** | Titre de la le√ßon ou du module complet. | `VIBECODING - COVER` |
+| **Titre / Lancement** | Titre de la leçon ou du module complet. | `VIBECODING - COVER` |
 | **Transition / Chapitre** | Marquer une transition claire vers un nouveau sujet. | `VIBECODING - COVER CHAP` |
-| **Intro / Pr√©sentation g√©n√©rale** | Syst√©matique (apr√®s COVER) : introduire le sujet g√©n√©ral de la le√ßon avec ses 3 grandes notions. | `VIBECODING - INTRO` |
-| **Objectif / Sommaire** | Lister des objectifs p√©dagogiques ou √©tapes cl√©s (avec puces). | `VIBECODING - OBJECTIF CHAP` ou `VIBECODING - CHECKLIST` |
-| **Concepts structur√©s (3 id√©es)** | Pr√©senter 3 notions courtes (avec picto + titre + texte). | `VIBECODING - 3 BLOCS - LARGE TEXT` ou `VIBECODING - 3 COLONNES` |
-| **Concepts structur√©s (4 id√©es)** | Pr√©senter 4 notions courtes (avec picto + titre + texte). | `VIBECODING - 4 BLOCS - TITLE 2 LINES` ou `TEXTE + 4 POINTS` |
-| **Concepts structur√©s (5 id√©es)** | Pr√©senter 5 notions courtes (avec picto + titre + texte). | `VIBECODING - 5 BLOCS` ou `VIBECODING - 5 BLOCS - VARIATION` |
-| **Concepts structur√©s (6 id√©es)** | Pr√©senter 6 notions courtes (haute densit√© d'ic√¥nes/concepts). | `VIBECODING - 6 BLOCS` |
-| **Donn√©es / Statistiques** | Mettre en valeur 3 chiffres ou m√©triques cl√©s. | `VIBECODING - CHIFFRES` |
-| **Donn√©es chiffr√©es + Photo** | 3 m√©triques cl√©s accompagn√©es d'un visuel d'illustration. | `VIBECODING - FOCUS OUTIL` |
-| **√âtude de cas / R√©cit** | D√©crire un exemple r√©el complet avec une bulle de synth√®se. | `VIBECODING - USE CASE` |
-| **Comparatif / Duel** | Comparer deux outils, approches ou options face-√†-face. | `VIBECODING - COMPARAISON` |
-| **Processus / √âvolution** | D√©crire un cycle d'√©tapes ordonn√©es ou une progression historique. | `PROCESS` ou `VIBECODING - 2 BLOC - EVOLUTION` |
-| **Acronyme** | D√©tailler un acronyme de 3 √† 5 lettres avec description par lettre. | `VIBECODING - ACRONYME` |
-| **Concept g√©n√©ral** | Pr√©senter un concept, une id√©e cl√© ou une th√©orie non technique. | `VIBECODING - CONCEPT` |
-| **D√©finition** | D√©finir formellement un terme technique ou un mot informatique. | `VIBECODING - DEFINITION` |
-| **Sur-mesure / Dessin libre** | Slide personnalis√©e (titre + intro + sch√©ma/√©l√©ments cr√©√©s). | `VIBECODING - VIDE` |
-| **Fin de chapitre / Synth√®se** | R√©sum√© de le√## 2. R√®gles d'Architecture et de Diversit√©
+| **Intro / Présentation générale** | Systématique (après COVER) : introduire le sujet général de la leçon avec ses 3 grandes notions. | `VIBECODING - INTRO` |
+| **Sommaire / Objectifs** | Lister des objectifs pédagogiques ou étapes clés (avec puces). | `VIBECODING - OBJECTIF CHAP` |
+| **Illustration / Image pleine** | Présenter un visuel pleine page avec une légende courte. | `VIBECODING - IMAGE` |
+| **Notion courte + Photo** | Présenter 3 notions courtes accompagnées d'un visuel d'illustration (gauche ou droite). | `VIBECODING - 3 BLOCS - PHOTO` ou `VIBECODING - 3 BLOCS - PHOTO - ALT` |
+| **Étude de cas / Récit** | Décrire un exemple réel complet avec une bulle de synthèse. | `VIBECODING - USE CASE` |
+| **Concepts structurés (3 idées)** | Présenter 3 notions courtes sous forme de colonnes. | `VIBECODING - 3 COLONNES` |
+| **Concepts structurés (4 idées)** | Présenter 4 notions courtes. | `VIBECODING - 4 BLOCS` |
+| **Concepts structurées (5 idées)** | Présenter 5 notions courtes. | `VIBECODING - 5 BLOCS` ou `VIBECODING - 5 BLOCS - VARIATION` |
+| **Concepts structurés (6 idées)** | Présenter 6 notions courtes (haute densité d'icônes/concepts). | `VIBECODING - 6 BLOCS` |
+| **Données / Statistiques** | Mettre en valeur 3 chiffres ou métriques clés. | `VIBECODING - CHIFFRES` |
+| **Données chiffrées + Photo** | 3 métriques clés accompagnées d'un visuel d'illustration. | `VIBECODING - FOCUS OUTIL` |
+| **Comparatif / Duel** | Comparer deux outils, approches ou options face-à-face. | `VIBECODING - COMPARAISON` |
+| **Checklist / Recommandations** | Liste de points à valider ou d'étapes à suivre sous forme de checklist. | `VIBECODING - CHECKLIST` |
+| **Processus / Linéaire** | Décrire une suite d'étapes ordonnées ou un parcours linéaire. | `VIBECODING - PROCESS` |
+| **Cycle / Boucle** | Décrire un cycle d'étapes répétitif (boucle de feedback, etc.). | `VIBECODING - CYCLE` |
+| **Chronologie / Timeline** | Présenter une frise chronologique ou historique. | `VIBECODING - CHRONOLOGIE` |
+| **Acronyme général** | Détailler un acronyme de 4 à 5 lettres avec description par lettre. | `VIBECODING - ACRONYME` |
+| **Acronyme court** | Détailler un acronyme de 3 lettres. | `VIBECODING - ACRONYME 3 LETTRES` |
+| **Définition** | Définir formellement un terme technique ou un mot informatique. | `VIBECODING - DEFINITION` |
+| **Classement / Podium** | Présenter un podium ou un classement des 3 meilleures solutions. | `VIBECODING - PODIUM` |
+| **Exercice / Pratique** | Proposer une mise en situation pratique ou un exercice à faire. | `VIBECODING - EXERCICE` |
+| **Concept général** | Présenter un concept, une idée clé ou une théorie non technique. | `VIBECODING - CONCEPT` |
+| **Veille / Ressources** | Présenter des outils de veille ou des ressources documentaires. | `VIBECODING - VEILLE` |
+| **Schéma libre** | Slide personnalisée ou schéma structurel à 3 colonnes. | `VIBECODING - SCHEMA - 3 COLONNES` ou `VIBECODING - VIDE` |
+| **Fin de chapitre / Synthèse** | Résumé de la leçon avec une bulle de conclusion pour la suite. | `VIBECODING - FIN` |
 
-Ces r√®gles s'appliquent lors du d√©coupage d'un plan en slides pour garantir un rythme visuel captivant :
+> [!WARNING]
+> **Templates en attente (NE PAS UTILISER)** :
+> Les templates suivants ont le statut `"status": "en attente"` dans `templates.json` et ne doivent **sous aucun prétexte** être sélectionnés par l'IA lors du découpage :
+> - `VIBECODING - 3 BLOCS - LARGE TEXT`
+> - `VIBECODING - 2 BLOC - EVOLUTION`
 
-*   **Diversification des templates** : Ne jamais utiliser le m√™me template plus de 2 fois dans toute la le√ßon, quel que soit l'ordre.
-*   **Exception de r√©p√©tition (Parall√®le)** : L'utilisation de templates identiques cons√©cutifs (m√™me plus de 2 fois) n'est autoris√©e QUE si les slides sont con√ßues pour √™tre lues en parall√®le pour une parit√© visuelle (ex: comparer "Outil A" puis "Outil B" individuellement avec le m√™me layout, ou "Cas 1 : Devs" puis "Cas 2 : Freelances"). Dans les autres cas, la diversification est obligatoire.
-*   **Limitation de `VIBECODING - CONCEPT`** : √Ä utiliser UNIQUEMENT pour pr√©senter un mod√®le th√©orique, une notion abstraite (sans que ce soit une simple d√©finition dictionnaire). Si une slide tr√®s textuelle est n√©cessaire pour du contexte ou de la narration, privil√©gier plut√¥t `VIBECODING - USE CASE` (sans en abuser non plus).
-*   **Groupement des listes (Densit√© visuelle)** : Si le plan pr√©sente une liste ou une √©num√©ration d'√©l√©ments similaires (ex: liste d'outils, de profils, d'√©tapes, d'exemples), regrouper OBLIGATOIREMENT ces points dans un seul template multi-blocs (`3 BLOCS`, `4 BLOCS`, `5 BLOCS`, `6 BLOCS` ou `COLONNES`) au lieu de cr√©er une slide concept s√©par√©e pour chaque √©l√©ment. Cela r√©duit le bruit et augmente la densit√© visuelle.ngles d'arri√®re-plan, ic√¥nes) doivent √™tre g√©n√©r√©s en sp√©cifiant des actions de type `create_node` dans le JSON de correction en ciblant la slide parente comme conteneur.
+---
 
+## 2. Règles d'Architecture et de Diversité
 
+Ces règles s'appliquent lors du découpage d'un plan en slides pour garantir un rythme visuel captivant :
+
+* **Diversification des templates** : Ne jamais utiliser le même template plus de 2 fois dans toute la leçon, quel que soit l'ordre.
+* **Exception de répétition (Parallèle)** : L'utilisation de templates identiques consécutifs n'est autorisée QUE si les slides sont conçues pour être lues en parallèle pour une parité visuelle (ex: comparer "Outil A" puis "Outil B" individuellement avec le même layout). Dans les autres cas, la diversification est obligatoire.
+* **Limitation de `VIBECODING - CONCEPT`** : À utiliser UNIQUEMENT pour présenter un modèle théorique ou une notion abstraite. Si une slide très textuelle est nécessaire pour du contexte ou de la narration, privilégier plutôt `VIBECODING - USE CASE` (sans en abuser non plus).
+* **Groupement des listes (Densité visuelle)** : Si le plan présente une liste ou une énumération d'éléments similaires, regrouper OBLIGATOIREMENT ces points dans un seul template multi-blocs (`3 COLONNES`, `4 BLOCS`, `5 BLOCS`, `6 BLOCS`) au lieu de créer une slide concept séparée pour chaque élément. Cela réduit le bruit et augmente la densité visuelle.

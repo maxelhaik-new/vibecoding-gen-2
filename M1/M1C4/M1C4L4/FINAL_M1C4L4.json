@@ -13,14 +13,14 @@
     {
       "template": "VIBECODING - INTRO",
       "content": {
-        "Titre": "Passer de l'idée au logiciel concret",
-        "Intro": "Aujourd'hui, le Vibe Coding permet de donner vie à ses idées sans maîtriser la syntaxe. On découvre cinq grandes familles de projets que des non-développeurs conçoivent et déploient déjà de manière autonome.",
-        "Titre 1": "Sites et apps perso",
-        "Texte 1": "Des projets simples et rapides à déployer pour s'installer immédiatement dans une dynamique de succès.",
-        "Titre 2": "Outils et SaaS",
-        "Texte 2": "Des solutions sur-mesure pour automatiser son quotidien ou lancer un produit viable sur le marché.",
-        "Titre 3": "Limites et méthode",
-        "Texte 3": "Une vision honnête de ce qui reste difficile et des bonnes pratiques pour réussir son premier projet."
+        "Titre": "Ce qu'on peut concrètement créer",
+        "Intro": "Du simple site vitrine au MVP commercialisable, l'IA de code permet de bâtir des solutions fonctionnelles en quelques jours. Voyons les projets accessibles.",
+        "Titre 1": "La galerie de projets",
+        "Texte 1": "Voyons les cinq familles d'applications (site, mini-CRM, SaaS, script d'automatisation) réalisables sans coder.",
+        "Titre 2": "Les limites techniques",
+        "Texte 2": "Zoom sur ce qui reste complexe à sécuriser et à faire monter en charge sans méthode de travail rigoureuse.",
+        "Titre 3": "La clé de la réussite",
+        "Texte 3": "Découverte des critères pour choisir un premier projet tenable en un week-end et valider ses compétences."
       },
       "image_concept": null,
       "image_style": null,

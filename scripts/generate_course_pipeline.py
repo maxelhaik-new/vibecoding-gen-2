@@ -7,6 +7,7 @@ import hashlib
 import subprocess
 import concurrent.futures
 import time
+import re
 from pathlib import Path
 from typing import List, Dict, Optional, Any, Union, Type
 from pydantic import BaseModel, Field
@@ -63,6 +64,9 @@ class DecoupedSlide(BaseModel):
 class DecoupedLesson(BaseModel):
     lessonTitle: str = Field(description="The overall title of the lesson")
     slides: List[DecoupedSlide]
+
+class TextCorrection(BaseModel):
+    corrected_value: str = Field(description="The rewritten text strictly respecting the character count limits and brand voice")
 
 # ── 4. Helper to load and hash reference files for cache management ──
 def get_extracted_templates(template_names: List[str]) -> List[Dict]:
@@ -357,6 +361,20 @@ def run_phase_decoupe(client: genai.Client, model: str, outline: str, cache_name
         "Remember to select the correct template for each slide according to templates_charter.md.\n"
         "DO NOT write the slide contents at this step, only return the list of slides with their titles and templates chosen."
     )
+    
+    # Load templates from templates.json to validate
+    root_dir = Path(__file__).parent.parent
+    templates_path = root_dir / "templates.json"
+    valid_names = set()
+    if templates_path.exists():
+        try:
+            with open(templates_path, "r", encoding="utf-8") as f:
+                all_templates = json.load(f)
+            valid_names = {t.get("name") for t in all_templates if t.get("status") == "validé"}
+        except Exception as e:
+            print(f"  [Warning] Failed to load templates.json for validation: {e}")
+
+    lesson = None
     if model.startswith("claude-"):
         merged_context, _ = load_reference_files(with_full_templates=False, only_charter=True)
         system_instruction = (
@@ -369,18 +387,168 @@ def run_phase_decoupe(client: genai.Client, model: str, outline: str, cache_name
             prompt=prompt,
             schema_class=DecoupedLesson
         )
-        return DecoupedLesson.model_validate_json(json_text)
+        lesson = DecoupedLesson.model_validate_json(json_text)
+    else:
+        config = types.GenerateContentConfig(
+            response_mime_type="application/json",
+            response_schema=DecoupedLesson,
+            temperature=0.2,
+        )
+        if cache_name:
+            config.cached_content = cache_name
+        
+        response = call_model_with_retry(client, model, prompt, config)
+        lesson = DecoupedLesson.model_validate_json(response.text)
 
-    config = types.GenerateContentConfig(
-        response_mime_type="application/json",
-        response_schema=DecoupedLesson,
-        temperature=0.2,
-    )
-    if cache_name:
-        config.cached_content = cache_name
+    # Validate and auto-correct templates
+    correction_map = {
+        "VIBECODING - 2 BLOC - EVOLUTION": "VIBECODING - PROCESS",
+        "VIBECODING - 2 BLOCS - EVOLUTION": "VIBECODING - PROCESS",
+        "VIBECODING - 3 BLOCS - LARGE TEXT": "VIBECODING - 3 COLONNES",
+    }
     
-    response = call_model_with_retry(client, model, prompt, config)
-    return DecoupedLesson.model_validate_json(response.text)
+    for slide in lesson.slides:
+        # Check if template needs correction
+        if slide.template in correction_map:
+            old = slide.template
+            slide.template = correction_map[slide.template]
+            print(f"  [Auto-Correction] Mapped invalid template '{old}' to '{slide.template}'")
+        
+        # Verify it's a valid template
+        if valid_names and slide.template not in valid_names:
+            matched = False
+            for val_name in valid_names:
+                if val_name.lower().strip() == slide.template.lower().strip():
+                    slide.template = val_name
+                    matched = True
+                    break
+            if not matched:
+                raise ValueError(f"Template '{slide.template}' is not a valid template. Valid options are: {', '.join(sorted(list(valid_names)))}")
+
+    return lesson
+
+def validate_and_correct_lesson_lengths(client: genai.Client, lesson: Lesson, extracted_templates: List[Dict], model: str) -> Lesson:
+    print("\n  [Validation] Checking character counts for all slides...")
+    
+    # Index template definitions by name
+    templates_by_name = {t["name"]: t for t in extracted_templates}
+    
+    # Load brand voice guidelines for correction context
+    root_dir = Path(__file__).parent.parent
+    brand_voice_path = root_dir / "brand_voice.md"
+    brand_voice_content = ""
+    if brand_voice_path.exists():
+        try:
+            with open(brand_voice_path, "r", encoding="utf-8") as f:
+                brand_voice_content = f.read()
+        except Exception as e:
+            print(f"    [Warning] Could not load brand_voice.md for validation: {e}")
+
+    any_corrections_made = False
+    
+    for slide_idx, slide in enumerate(lesson.slides):
+        template_name = slide.template
+        template_def = templates_by_name.get(template_name)
+        if not template_def:
+            continue
+            
+        # Get expected text layers from template definition
+        text_layers = {layer["key"]: layer for layer in template_def.get("text_layers", [])}
+        
+        # Check text fields in slide content
+        for field in slide.content:
+            key = field.key
+            value = field.value
+            
+            if key in text_layers:
+                layer_def = text_layers[key]
+                min_len = layer_def.get("min_lenght")
+                max_len = layer_def.get("max_lenght")
+                target_len = layer_def.get("target_lenght", min_len)
+                
+                if min_len is None or max_len is None:
+                    continue
+                    
+                val_len = len(value) if value else 0
+                
+                # Check bounds
+                if val_len < min_len or val_len > max_len:
+                    print(f"    [Out of bounds] Slide {slide_idx+1} ({template_name}) -> Field '{key}': length {val_len} (limits: {min_len}-{max_len})")
+                    print(f"      Current value: \"{value}\"")
+                    
+                    corrected_value = value
+                    success = False
+                    for attempt in range(1, 4):
+                        print(f"      Attempt {attempt}/3 to correct '{key}'...")
+                        
+                        prompt = (
+                            f"You are a professional pedagogical writer. The following text in our lesson draft is outside the allowed character limits for the template '{template_name}', field '{key}'.\n\n"
+                            f"Field definition:\n"
+                            f"- Target length: {target_len} characters\n"
+                            f"- Strict minimum: {min_len} characters\n"
+                            f"- Strict maximum: {max_len} characters\n\n"
+                            f"Current text:\n"
+                            f"\"{corrected_value}\" (Length: {len(corrected_value)} characters)\n\n"
+                            f"Please rewrite this text so that its length is strictly between {min_len} and {max_len} characters (aim for around {target_len} characters).\n\n"
+                            f"CRITICAL RULES:\n"
+                            f"1. Follow the brand voice guidelines (active, direct, infinitives for lists, no 'tu' or 'vous', professional and concise).\n"
+                            f"2. Keep the exact same pedagogical meaning and context.\n"
+                            f"3. Do not include any quotes, markdown formatting, or introduction. Just output the corrected text."
+                        )
+                        
+                        system_instruction = (
+                            "You are a strict text shortener/optimizer. Your ONLY goal is to rewrite the input text to fit the requested length constraints while preserving the meaning and the brand voice."
+                        )
+                        if brand_voice_content:
+                            system_instruction += f"\n\nHere is the brand voice reference:\n{brand_voice_content}"
+                            
+                        try:
+                            if model.startswith("claude-"):
+                                json_text = call_claude_model_with_retry(
+                                    model=model,
+                                    system_instruction=system_instruction,
+                                    prompt=prompt,
+                                    schema_class=TextCorrection,
+                                    max_retries=2
+                                )
+                                corr_obj = TextCorrection.model_validate_json(json_text)
+                                candidate = corr_obj.corrected_value.strip()
+                            else:
+                                config = types.GenerateContentConfig(
+                                    response_mime_type="application/json",
+                                    response_schema=TextCorrection,
+                                    temperature=0.1,
+                                    system_instruction=system_instruction
+                                )
+                                response = call_model_with_retry(client, model, prompt, config)
+                                corr_obj = TextCorrection.model_validate_json(response.text)
+                                candidate = corr_obj.corrected_value.strip()
+                                
+                            cand_len = len(candidate)
+                            if min_len <= cand_len <= max_len:
+                                print(f"      [Correction Success] New length: {cand_len} (limits: {min_len}-{max_len}). Value: \"{candidate}\"")
+                                corrected_value = candidate
+                                success = True
+                                break
+                            else:
+                                print(f"      [Warning] Candidate length {cand_len} still outside limits. Retrying...")
+                                corrected_value = candidate
+                        except Exception as e:
+                            print(f"      [Error] Exception during correction: {e}")
+                            
+                    if success:
+                        field.value = corrected_value
+                        any_corrections_made = True
+                    else:
+                        print(f"      [Warning] Failed to correct automatically. Keeping best effort: \"{corrected_value}\" ({len(corrected_value)} chars)")
+                        field.value = corrected_value
+
+    if any_corrections_made:
+        print("  [Validation] Character counts successfully validated and corrected where needed.")
+    else:
+        print("  [Validation] All character counts are already within limits.")
+        
+    return lesson
 
 def run_phase_ecris(client: genai.Client, model: str, outline: str, structure: DecoupedLesson, cache_name: Optional[str]) -> Lesson:
     prompt = (
@@ -390,11 +558,13 @@ def run_phase_ecris(client: genai.Client, model: str, outline: str, structure: D
         "CRITICAL: For any slide using a template containing an image (e.g. PHOTO, IMAGE, USE CASE, FOCUS OUTIL), "
         "you MUST generate a non-null, descriptive 'image_concept' in English (as a prompt for a visual metaphor) and a non-null 'image_style'. "
         "Never return null or empty values for these fields when the template requires an image.\n\n"
-        "CRITICAL: You must strictly count characters and ensure EVERY field length is between the min_lenght and max_lenght defined in the extracted templates schema."
+        "CRITICAL: You must strictly count characters and ensure EVERY field length is between the min_lenght and max_lenght defined in the extracted templates schema.\n"
+        "WARNING: LLMs tend to underestimate character counts and write too much text. To avoid overflow, aim for the target_lenght (the original placeholder's length) which is shorter than max_lenght. Be as concise, punchy, and direct as possible in the Wemodo brand voice. Less is more."
     )
+    template_names = [slide.template for slide in structure.slides]
+    extracted = get_extracted_templates(template_names)
+    
     if model.startswith("claude-"):
-        template_names = [slide.template for slide in structure.slides]
-        extracted = get_extracted_templates(template_names)
         # Load static context (no extracted templates) to ensure the system prompt is identical across lessons
         static_context, _ = load_reference_files(with_full_templates=False, extracted_templates=None)
         system_instruction = (
@@ -417,7 +587,6 @@ def run_phase_ecris(client: genai.Client, model: str, outline: str, structure: D
         )
         return Lesson.model_validate_json(json_text)
 
-
     config = types.GenerateContentConfig(
         response_mime_type="application/json",
         response_schema=Lesson,
@@ -429,7 +598,12 @@ def run_phase_ecris(client: genai.Client, model: str, outline: str, structure: D
     response = call_model_with_retry(client, model, prompt, config)
     return Lesson.model_validate_json(response.text)
 
-import re
+def get_content_as_dict(content_field) -> dict:
+    if isinstance(content_field, list):
+        return {item.get("key"): item.get("value") for item in content_field if isinstance(item, dict) and "key" in item}
+    elif isinstance(content_field, dict):
+        return content_field
+    return {}
 
 def enforce_lesson_structure(structure_data: DecoupedLesson, lesson_slug: str) -> DecoupedLesson:
     parsed = parse_lesson_slug(lesson_slug)
@@ -499,8 +673,8 @@ def enforce_lesson_structure(structure_data: DecoupedLesson, lesson_slug: str) -
     return structure_data
 
 # ── 8. Process single lesson workflow ──
-def generate_lesson_workflow(client: genai.Client, model_decoupe: str, model_ecris: str, plan_file: Path, final_file: Path, lesson_slug: str, phase: str, force_new_cache: bool = False, generate_image: bool = False):
-    print(f"\n[Pipeline] Processing Lesson {lesson_slug.upper()} (Phase: {phase}, Models: Decoupe={model_decoupe}/Ecris={model_ecris}, Generate-Image: {generate_image})")
+def generate_lesson_workflow(client: genai.Client, model_decoupe: str, model_ecris: str, plan_file: Path, final_file: Path, lesson_slug: str, phase: str, force_new_cache: bool = False, generate_image: bool = False, no_correct: bool = False):
+    print(f"\n[Pipeline] Processing Lesson {lesson_slug.upper()} (Phase: {phase}, Models: Decoupe={model_decoupe}/Ecris={model_ecris}, Generate-Image: {generate_image}, No-Correct: {no_correct})")
     
     if not plan_file.exists() and (phase == "decoupe" or phase == "all"):
         print(f"[Error] Plan file not found at: {plan_file}")
@@ -552,7 +726,8 @@ def generate_lesson_workflow(client: genai.Client, model_decoupe: str, model_ecr
         # Reconstruct DecoupedLesson for the prompt from in-memory lesson_data
         slides_structure = []
         for s in lesson_data.get("slides", []):
-            title = s.get("title") or s.get("content", {}).get("Titre", "")
+            content_dict = get_content_as_dict(s.get("content"))
+            title = s.get("title") or content_dict.get("Titre", "")
             slides_structure.append(DecoupedSlide(title=title, template=s.get("template", "")))
             
         structure_data = DecoupedLesson(
@@ -571,11 +746,34 @@ def generate_lesson_workflow(client: genai.Client, model_decoupe: str, model_ecr
         
         lesson_obj = run_phase_ecris(client, model_ecris, outline, structure_data, cache_ecris)
         lesson_data = lesson_obj.model_dump()
+        
+        # Normalize serialized content to dictionary format for immediate draft writing
+        import copy
+        draft_data = copy.deepcopy(lesson_data)
+        for s in draft_data.get("slides", []):
+            if "content" in s:
+                s["content"] = get_content_as_dict(s["content"])
+            
+        # Write draft to file IMMEDIATELY so it can be loaded in Figma
+        with open(final_file, "w", encoding="utf-8") as f:
+            json.dump(draft_data, f, indent=2, ensure_ascii=False)
+        print(f"  [Ecris Success] Draft contents written directly to: {final_file}")
+
+        # Apply corrections if not disabled
+        if not no_correct:
+            lesson_obj = validate_and_correct_lesson_lengths(client, lesson_obj, extracted, model_ecris)
+            corrected_data = lesson_obj.model_dump()
+            
+            # Normalize and write corrected data
+            for s in corrected_data.get("slides", []):
+                if "content" in s:
+                    s["content"] = get_content_as_dict(s["content"])
+            
+            with open(final_file, "w", encoding="utf-8") as f:
+                json.dump(corrected_data, f, indent=2, ensure_ascii=False)
+            print(f"  [Ecris Success] Corrected contents updated in: {final_file}")
             
         if phase == "ecris":
-            with open(final_file, "w", encoding="utf-8") as f:
-                json.dump(lesson_data, f, indent=2, ensure_ascii=False)
-            print(f"  [Ecris Success] Draft contents written directly to: {final_file}")
             return
 
     # 3. GENERE Phase
@@ -586,6 +784,11 @@ def generate_lesson_workflow(client: genai.Client, model_decoupe: str, model_ecr
                 sys.exit(1)
             with open(final_file, "r", encoding="utf-8") as f:
                 lesson_data = json.load(f)
+        
+        # Normalize slides content from file to dict
+        for s in lesson_data.get("slides", []):
+            if "content" in s:
+                s["content"] = get_content_as_dict(s["content"])
             
         slides = lesson_data.get("slides", [])
         total_slides = len(slides)
@@ -718,6 +921,8 @@ def main():
                         help="The pipeline phase to execute: decoupe, ecris, genere, or all (default: all)")
     parser.add_argument("--image", action="store_true",
                         help="Generate slide images and clean up prompt metadata fields")
+    parser.add_argument("--no-correct", action="store_true",
+                        help="Disable automatic text length validation and correction")
                         
     args = parser.parse_args()
     
@@ -786,7 +991,8 @@ def main():
                 lesson_slug=lesson_slug,
                 phase=args.phase,
                 force_new_cache=args.force_new_cache,
-                generate_image=args.image
+                generate_image=args.image,
+                no_correct=args.no_correct
             )
         except Exception as e:
             print(f"[Error] Failed to generate lesson phase for {lesson_slug}: {e}")

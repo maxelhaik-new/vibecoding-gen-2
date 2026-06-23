@@ -1,0 +1,191 @@
+{
+  "lessonTitle": "M1C5L5",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "De bonnes pratiques pour rester à jour"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Se protéger des pannes imprévues",
+        "Intro": "Avoir de bonnes sources ne suffit pas. Une mise à jour d'un modèle de langage peut modifier la génération de code du jour au lendemain. Pour un débutant, rester à jour, c'est avant tout apprendre à se protéger des pannes imprévues.",
+        "Titre 1": "Le bac à sable",
+        "Texte 1": "Tester chaque nouveauté dans un projet isolé, sans jamais toucher au projet principal. Une règle simple qui évite la majorité des blocages graves rencontrés par les créateurs non techniques.",
+        "Titre 2": "Figer ce qui fonctionne",
+        "Texte 2": "Identifier les ruptures de compatibilité avant d'accepter une mise à jour. Savoir quand ne pas changer de version est une compétence aussi utile que savoir quand adopter une nouveauté.",
+        "Titre 3": "Apprendre par ses pannes",
+        "Texte 3": "Comprendre pourquoi un outil a changé de comportement en coulisses, c'est la veille la plus utile. Les forums et groupes communautaires sont la première ressource à consulter face à une erreur répétitive."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs de la leçon",
+        "Intro": "Appliquer une méthode simple et sécurisée pour tester les nouveautés de l'IA sans risquer de bloquer ou de casser ses applications en cours de création.",
+        "Titre 1": "Créer une zone d'essai isolée (bac à sable)",
+        "Titre 2": "Repérer les ruptures de compatibilité",
+        "Titre 3": "Apprendre par la résolution de ses pannes",
+        "Titre 4": "Savoir figer une version qui fonctionne",
+        "Titre 5": "Éviter l'épuisement lié aux mises à jour",
+        "Titre 6": "Prioriser la stabilité sur la nouveauté"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Règle n°1 : La zone d'essai isolée",
+        "Mot": "Le bac à sable",
+        "Definition": "La règle d'or pour tester une nouveauté sans prendre de risques, c'est l'isolement. Lorsque la veille révèle un nouvel outil ou une mise à jour majeure, on ne l'applique jamais directement sur le projet principal. On crée un petit projet de brouillon totalement séparé, on teste sur un cas simple déjà maîtrisé, et on observe si l'outil est plus rapide ou s'il introduit des erreurs inédites.",
+        "Bulle": "C'est seulement après cette validation en bac à sable qu'on intègre la nouveauté dans le vrai projet."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "Tester en bac à sable : 3 étapes",
+        "Intro": "Le bac à sable n'est pas un concept abstrait : c'est une routine concrète en trois gestes. On l'applique à chaque fois qu'une nouveauté mérite d'être testée, avant toute intégration dans un projet réel.",
+        "Titre 1": "Créer le brouillon",
+        "Texte 1": "Ouvrir un nouveau projet vide, totalement séparé du projet principal. Ce brouillon est jetable : son seul rôle est d'absorber les effets imprévisibles de la nouveauté. On ne mélange jamais les deux environnements, même pour un test rapide.",
+        "Titre 2": "Tester sur du connu",
+        "Texte 2": "Choisir un cas d'usage simple et déjà maîtrisé — générer un bouton, un formulaire de contact, une liste d'éléments. Si l'outil produit une erreur sur quelque chose de connu, c'est un signal clair que la mise à jour est risquée.",
+        "Titre 3": "Observer et décider",
+        "Texte 3": "Comparer le résultat avec ce qu'on obtenait avant : l'outil est-il plus rapide ? Introduit-il des erreurs inédites ? Si le comportement est stable et amélioré, on valide. Sinon, on reporte l'intégration jusqu'à la prochaine version."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Règle n°2 : Traquer les ruptures",
+        "Mot": "Rupture de compatibilité",
+        "Definition": "Quand on lit le résumé d'une mise à jour, l'œil doit chercher une information précise : ce qui a été supprimé ou modifié en profondeur, pas les nouvelles fonctions mises en avant. Les vidéos de présentation valorisent toujours les effets visuels. Ce qui compte, c'est de savoir si un outil change sa manière de se connecter aux bases de données, de générer du code ou de gérer les erreurs. Si c'est le cas et que l'application actuelle fonctionne, on refuse la mise à jour jusqu'à stabilisation.",
+        "Picto 1": "mdi:stop-alert",
+        "Bulle": "Les journaux de modifications des éditeurs IA publient des correctifs à un rythme de 1 à 2 fois par semaine (2025-2026). Lire la section « Breaking changes » en premier, avant les nouvelles fonctionnalités, est la méthode la plus efficace pour éviter les blocages."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Apprendre par ses propres pannes",
+        "Intro": "RÈGLE N°3 : LA PANNE COMME VEILLE",
+        "Texte 1": "Un morceau de code fonctionnait hier. Ce matin, l'outil génère une erreur répétitive sur ce même bloc. Le problème ? Une mise à jour silencieuse a changé le comportement de l'IA en coulisses. La bonne réaction n'est pas d'insister à l'aveugle. On copie le message d'erreur exact et on le colle dans le forum d'entraide de l'outil ou dans un groupe communautaire. D'autres utilisateurs ont rencontré le même blocage quelques heures plus tôt. C'est en comprenant pourquoi l'outil a changé qu'on fait sa veille la plus utile — bien plus qu'en lisant des articles théoriques.",
+        "Texte Bulle": "Plus de 40 % des blocages graves rencontrés par les créateurs non techniques viennent d'un changement invisible dans le comportement de l'IA utilisée, pas d'une erreur de leur part. (Enquête plateformes de génération de code, 2025)",
+        "Source": "Source : enquête 2025"
+      },
+      "image_concept": "A developer staring at a cracked screen showing a red error message, while a magnifying glass reveals tiny gears shifting inside the machine — metaphor for invisible internal changes causing visible failures",
+      "image_style": "grainy-editorial",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Règle n°4 : Figer une version stable",
+        "Intro": "En informatique traditionnelle, tout mettre à jour est la norme. En création d'applications avec l'IA, la stabilité prime sur la nouveauté — surtout quand le projet fonctionne déjà.",
+        "Titre A": "MISE À JOUR",
+        "Titre B": "VERSION FIGÉE",
+        "Item 1": "Principe",
+        "Item 2": "Risque",
+        "Item 3": "Résultat",
+        "Item 4": "Conseil",
+        "Texte A Item 1": "Adopter chaque nouvelle version dès sa sortie, même la nuit",
+        "Texte A Item 2": "Ruptures de compatibilité, comportements inédits, bugs non documentés",
+        "Texte A Item 3": "Temps passé à réparer plutôt qu'à créer",
+        "Texte A Item 4": "Réservé aux projets en phase de test, jamais en production",
+        "Texte B1": "Rester sur le modèle (Claude, GPT) et la version qui fonctionnent",
+        "Texte B2": "Légère obsolescence, mais comportement prévisible et maîtrisé",
+        "Texte B3": "Activité stable, énergie concentrée sur la création",
+        "Texte B4": "Migrer uniquement quand le besoin actuel n'est plus comblé"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CHIFFRES",
+      "content": {
+        "Titre": "La réalité des mises à jour IA",
+        "Intro": "Les outils d'IA évoluent à un rythme que peu d'utilisateurs anticipent. Ces deux chiffres résument pourquoi une méthode de veille structurée est indispensable.",
+        "Chiffre 1": "1-2×",
+        "Titre 1": "PAR SEMAINE",
+        "Texte 1": "Fréquence moyenne des améliorations ou correctifs publiés par les éditeurs d'outils IA. (Journaux de modifications, 2025-2026)",
+        "Chiffre 2": "+40 %",
+        "Titre 2": "DES BLOCAGES",
+        "Texte 2": "Part des blocages graves causés non par une erreur du créateur, mais par un changement invisible dans le comportement de l'IA. (Enquête, 2025)",
+        "Chiffre 3": "0",
+        "Titre 3": "OBLIGATION",
+        "Texte 3": "Nombre d'obligations de migrer vers une nouvelle version si l'application actuelle fonctionne parfaitement et que le besoin est comblé."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 2 BLOC - EVOLUTION",
+      "content": {
+        "Titre": "Le piège de l'épuisement face aux mises à jour",
+        "Intro": "À vouloir tout tester et tout mettre à jour, on finit par passer plus de temps à régler ses outils qu'à créer.",
+        "Titre 1": "LE PIÈGE",
+        "Texte 1": "Tester chaque brouillon, lire chaque guide, appliquer chaque nouveauté devient une activité secondaire qui vole l'énergie nécessaire au vrai projet. La fatigue mentale liée aux mises à jour est une cause réelle d'abandon.",
+        "Titre 2": "LA NUANCE",
+        "Texte 2": "Une combinaison d'outils légèrement dépassée (de quelques mois) mais parfaitement maîtrisée sera toujours plus productive qu'un système ultra-moderne que l'on passe son temps à réparer. La stabilité de l'activité prime sur la nouveauté technologique."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Synthèse : stabilité avant nouveauté",
+        "Intro": "Rester à jour ne signifie pas tout adopter. C'est choisir quoi intégrer, quand et comment.",
+        "Texte Intro": "Les outils d'IA évoluent 1 à 2 fois par semaine. Sans méthode, chaque mise à jour devient un risque de panne. Ces quatre règles forment un bouclier simple : tester en isolation, repérer les ruptures, apprendre de ses erreurs et figer ce qui fonctionne. La stabilité de l'activité doit toujours passer avant la nouveauté technologique.",
+        "Nom Checklist": "Les 4 règles à appliquer",
+        "Texte 1": "Tester toute nouveauté dans un bac à sable isolé",
+        "Texte 2": "Lire les ruptures de compatibilité en premier",
+        "Texte 3": "Chercher le message d'erreur exact sur les forums",
+        "Texte 4": "Figer la version stable tant que le besoin est comblé",
+        "Texte 5": "Limiter le temps de veille pour protéger l'énergie créative",
+        "Picto 1": "mdi:island",
+        "Picto 2": "mdi:stop-alert",
+        "Picto 3": "mdi:magnify",
+        "Picto 4": "mdi:check-decagram",
+        "Picto 5": "mdi:lifebuoy"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Rester à jour avec les outils d'IA ne signifie pas adopter chaque nouveauté dès sa sortie. Les éditeurs publient des correctifs 1 à 2 fois par semaine, et plus de 40 % des blocages graves viennent de changements invisibles dans le comportement des modèles. La méthode du bac à sable, la lecture des ruptures de compatibilité, l'apprentissage par ses propres pannes et la capacité à figer une version stable forment ensemble un bouclier efficace. Une combinaison d'outils maîtrisée vaut toujours mieux qu'un système ultra-récent que l'on passe son temps à réparer.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "La prochaine leçon abordera comment construire une routine de veille hebdomadaire réaliste — pour rester informé sans y consacrer plus de 20 minutes par semaine. La stabilité d'abord, la curiosité ensuite !"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

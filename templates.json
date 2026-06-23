@@ -1039,9 +1039,9 @@
       {
         "key": "Titre 3",
         "original_placeholder": "SECONDES",
-        "target_lenght": 8,
+        "target_lenght": 14,
         "min_lenght": 5,
-        "max_lenght": 12
+        "max_lenght": 17
       },
       {
         "key": "Chiffre 3",
@@ -1059,10 +1059,17 @@
       },
       {
         "key": "Titre 2",
-        "original_placeholder": "GPT IMAGE",
-        "target_lenght": 9,
-        "min_lenght": 6,
-        "max_lenght": 14
+        "original_placeholder": "D'UTILISATEURS",
+        "target_lenght": 14,
+        "min_lenght": 5,
+        "max_lenght": 17
+      },
+      {
+        "key": "Chiffre 2",
+        "original_placeholder": "12Md",
+        "target_lenght": 3,
+        "min_lenght": 1,
+        "max_lenght": 10
       },
       {
         "key": "Texte 1",
@@ -1073,10 +1080,17 @@
       },
       {
         "key": "Titre 1",
-        "original_placeholder": "M D’utilisateurs",
-        "target_lenght": 16,
-        "min_lenght": 11,
-        "max_lenght": 24
+        "original_placeholder": "DE DOLLARDS",
+        "target_lenght": 14,
+        "min_lenght": 5,
+        "max_lenght": 17
+      },
+      {
+        "key": "Chiffre 1",
+        "original_placeholder": "30K",
+        "target_lenght": 3,
+        "min_lenght": 1,
+        "max_lenght": 10
       },
       {
         "key": "Titre",
@@ -2646,7 +2660,7 @@
         "max_lenght": 119
       },
       {
-        "key": "Texte 5",
+        "key": "Titre 5",
         "original_placeholder": "Ludo  Salenne",
         "target_lenght": 13,
         "min_lenght": 9,
@@ -2711,7 +2725,7 @@
         "max_lenght": 43
       },
       {
-        "key": "Titre",
+        "key": "Intro",
         "original_placeholder": "Une fois le modèle activé, la création d’image débute par un prompt en français directement dans le champ de saisie. La requête et le panneau de style permettent d’agir sur la génération.",
         "target_lenght": 188,
         "min_lenght": 131,
@@ -2758,6 +2772,55 @@
         "target_lenght": 10,
         "min_lenght": 7,
         "max_lenght": 15
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - 2 BLOC - EVOLUTION",
+    "status": "en attente",
+    "description": "Template pour slide de type vibecoding - 2 bloc - evolution.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "Titre de la slide",
+        "target_lenght": 30,
+        "min_lenght": 10,
+        "max_lenght": 50
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Intro de la slide",
+        "target_lenght": 100,
+        "min_lenght": 50,
+        "max_lenght": 200
+      },
+      {
+        "key": "Titre 1",
+        "original_placeholder": "Titre 1",
+        "target_lenght": 20,
+        "min_lenght": 5,
+        "max_lenght": 40
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "Texte 1",
+        "target_lenght": 150,
+        "min_lenght": 50,
+        "max_lenght": 300
+      },
+      {
+        "key": "Titre 2",
+        "original_placeholder": "Titre 2",
+        "target_lenght": 20,
+        "min_lenght": 5,
+        "max_lenght": 40
+      },
+      {
+        "key": "Texte 2",
+        "original_placeholder": "Texte 2",
+        "target_lenght": 150,
+        "min_lenght": 50,
+        "max_lenght": 300
       }
     ]
   }

@@ -1,0 +1,24 @@
+{
+  "lessonTitle": "M2C1L1",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Comprendre le fonctionnement des agents de code"
+      }
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Ce chapitre présente le fonctionnement des agents de code. On y découvre les modèles génératifs et multimodaux, le vocabulaire technique clé et la transition vers l'approche agentique.",
+        "Titre 1": "Découvrir le fonctionnement de l'IA texte",
+        "Titre 2": "Comprendre le rôle des modèles multimodaux",
+        "Titre 3": "Appréhender le vocabulaire technique de l'IA",
+        "Titre 4": "Passer du LLM conversationnel au LLM de code",
+        "Titre 5": "Comprendre le principe agentique pour le code",
+        "Titre 6": "Comparer les modèles leaders pour coder"
+      }
+    }
+  ]
+}

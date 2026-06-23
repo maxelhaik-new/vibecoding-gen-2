@@ -1,10 +1,10 @@
 {
-  "lessonTitle": "M1C4L3",
+  "lessonTitle": "M1C4L3 — Pour qui le Vibe Coding change la donne ?",
   "slides": [
     {
       "template": "VIBECODING - COVER",
       "content": {
-        "Titre": "Pour qui le Vibe Coding change la donne"
+        "Titre": "Pour qui le Vibe Coding change la donne ?"
       },
       "image_concept": null,
       "image_style": null,
@@ -13,14 +13,14 @@
     {
       "template": "VIBECODING - INTRO",
       "content": {
-        "Titre": "À qui ça profite vraiment ?",
-        "Intro": "Le Vibe Coding ne s'adresse pas qu'aux experts. Cette approche redéfinit l'accès à la création technique pour quatre profils distincts, en plaçant l'intention et l'expertise métier au centre du processus.",
-        "Titre 1": "La reconversion",
-        "Texte 1": "On passe de l'apprentissage théorique à la production immédiate de projets réels pour convaincre.",
-        "Titre 2": "Le solopreneur",
-        "Texte 2": "On construit un MVP fonctionnel en un week-end sans associé technique ni budget de développement.",
-        "Titre 3": "Les non-technologiques",
-        "Texte 3": "On crée des outils internes sur-mesure au lieu de subir les limites des logiciels du marché."
+        "Titre": "Les profils transformés en 2026",
+        "Intro": "En 2026, le Vibe Coding ne transforme pas tous les métiers de la même façon. Certains profils basculent structurellement : la valeur ne réside plus dans la syntaxe, mais dans la maîtrise du métier.",
+        "Titre 1": "L'architecte non tech",
+        "Texte 1": "Profils marketing, vente ou gestion qui pilotent l'IA pour créer des solutions sans coder.",
+        "Titre 2": "Freelance & solopreneur",
+        "Texte 2": "La dépendance technique freinait tout. Le Vibe Coding supprime le besoin d'un dev pour tester une idée dès le premier jour.",
+        "Titre 3": "RevOps, PM & Designers",
+        "Texte 3": "Équipes opérationnelles et concepteurs autonomes : zéro ticket DSI, des prototypes testables directement."
       },
       "image_concept": null,
       "image_style": null,
@@ -29,53 +29,82 @@
     {
       "template": "VIBECODING - CONCEPT",
       "content": {
-        "Titre": "Le profil reconversion",
-        "Intro": "Raccourcir drastiquement le chemin entre apprendre et produire.",
-        "Texte 1": "Traditionnellement, se reconvertir exige des mois de théorie avant de coder la moindre application. Avec le Vibe Coding, on inverse la logique. On crée et on montre de vrais projets fonctionnels dès le premier jour. C'est le meilleur moyen de prouver sa valeur sur le marché."
+        "Titre": "L'architecte non technique",
+        "Mot": "Un nouveau profil hybride",
+        "Definition": "La frontière entre profils métier et développeurs s'efface. Comprendre le problème du client suffit pour piloter l'IA et fabriquer la solution — sans mémoriser de syntaxe. La maîtrise métier devient l'avantage décisif.",
+        "Bulle": "Comme un architecte dessine sans poser les briques : concevoir sans coder."
       },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
-      "template": "VIBECODING - CONCEPT",
+      "template": "VIBECODING - USE CASE",
       "content": {
-        "Titre": "Freelance & solopreneur",
-        "Intro": "Bâtir un MVP en un week-end sans associé technique.",
-        "Texte 1": "Plus besoin de chercher un cofondateur technique ou de dépenser des dizaines de milliers d'euros. Un fondateur avec une expertise métier peut désormais coder sa solution seul en quelques jours. On gagne en autonomie et on valide son marché à moindre coût."
+        "Titre": "Le freelance en solo complet",
+        "Intro": "FREELANCE & SOLOPRENEUR",
+        "Texte 1": "Pour un travailleur indépendant, la dépendance technique a toujours été le principal facteur de ralentissement — ou d'échec financier. Le Vibe Coding change radicalement la donne : un freelance peut désormais assumer seul l'intégralité de la chaîne de production d'un service numérique. Le problème ? Recruter ou s'associer avec un développeur coûte du temps et du budget. Désormais, ce budget se déplace vers l'acquisition de clients, et les phases de validation commerciale s'accélèrent sans attendre un tiers technique.",
+        "Texte Bulle": "EN BREF : les plateformes de recrutement intègrent désormais Cursor, v0 et Bolt comme compétences clés pour des postes de chefs de projet — preuve que le marché valorise déjà ce profil hybride.",
+        "Source": "LinkedIn Jobs, 2026"
       },
-      "image_concept": null,
-      "image_style": null,
-      "image_ratio": null
+      "image_concept": "A lone craftsman at a minimal wooden desk, surrounded by floating digital blueprints and glowing code fragments, assembling a complete product by hand — no team, no factory, just focused mastery",
+      "image_style": "editorial",
+      "image_ratio": "2:3"
     },
     {
-      "template": "VIBECODING - CONCEPT",
+      "template": "VIBECODING - 3 BLOCS - PHOTO",
       "content": {
-        "Titre": "Les métiers non-tech",
-        "Intro": "Créer des outils sur-mesure plutôt que de subir un SaaS.",
-        "Texte 1": "Que l'on travaille en marketing, RH ou opérations, on fait face à des besoins spécifiques. Au lieu de s'adapter aux limites d'un logiciel générique, on fabrique ses propres outils. On automatise ses tâches répétitives sans dépendre de l'équipe technique."
+        "Titre": "RevOps, Marketing & Opérations",
+        "Intro": "Les équipes opérationnelles souffrent du goulet d'étranglement DSI : la moindre modification d'outil prend des mois. Le Vibe Coding leur donne une autonomie totale.",
+        "Titre 1": "Le goulet DSI",
+        "Texte 1": "Chaque demande de modification d'outil interne génère un ticket, une file d'attente, un délai. Les équipes growth attendent des mois pour tester une simple hypothèse commerciale sur leurs flux.",
+        "Titre 2": "Autonomie totale",
+        "Titre 3": "EXPÉRIMENTATION",
+        "Texte 3": "Formuler son besoin en langage naturel et adapter ses outils internes sans dépendre d'un cycle de développement.",
+        "Titre Bulle": "En 2026, les plateformes de Vibe Coding métier sont adoptées majoritairement par des équipes non techniques : marketing, ventes et gestion de flux.",
+        "Source": "Image : profil Growth Marketer en autonomie opérationnelle"
       },
-      "image_concept": null,
-      "image_style": null,
-      "image_ratio": null
+      "image_concept": "A marketing professional at a standing desk, confidently adjusting a glowing dashboard of operational flows and metrics with their hands — no IT department in sight, pure autonomy",
+      "image_style": "grainy-editorial",
+      "image_ratio": "2:3"
     },
     {
-      "template": "VIBECODING - CONCEPT",
+      "template": "VIBECODING - 3 BLOCS - PHOTO - ALT",
       "content": {
-        "Titre": "Le profil développeur",
-        "Intro": "Accélérer la production et déléguer le code répétitif.",
-        "Texte 1": "Pour les profils techniques, l'outil permet de se concentrer sur l'architecture et la valeur ajoutée. Attention toutefois au piège pour les juniors : s'appuyer trop tôt sur l'IA peut freiner l'apprentissage profond si on saute l'étape de compréhension."
+        "Titre": "Les Product Managers & Designers",
+        "Intro": "Pour les concepteurs, le Vibe Coding supprime la couche de traduction intermédiaire. Fini les cahiers des charges figés — place aux prototypes testables.",
+        "Titre 1": "LA TRADUCTION AUTOMATIQUE SUPPRIMÉE",
+        "Texte 1": "Plus besoin de longs cahiers des charges ni de maquettes statiques à intégrer par un développeur externe.",
+        "Picto 1": "mdi:file-document-remove-outline",
+        "Titre 2": "L'intention exprimée directement",
+        "Texte 2": "Designers et PMs expriment leur intention directement en prototypes dynamiques — sans intermédiaire, sans perte de sens.",
+        "Picto 2": "mdi:gesture-tap-button",
+        "Titre 3": "Un rôle d'orchestrateur central",
+        "Texte 3": "Fini les specs : on orchestre des expériences testables directement, réduisant le cycle de feedback de semaines à heures.",
+        "Picto 3": "mdi:sitemap-outline",
+        "Source": "Image : designer orchestrant un prototype dynamique en temps réel"
       },
-      "image_concept": null,
-      "image_style": null,
-      "image_ratio": null
+      "image_concept": "A designer sitting cross-legged on a studio floor, surrounded by floating interactive wireframes and live prototype screens that respond to their gestures — no handoff, no waiting, pure creative control",
+      "image_style": "constructivist",
+      "image_ratio": "2:3"
     },
     {
-      "template": "VIBECODING - CONCEPT",
+      "template": "VIBECODING - 4 BLOCS",
       "content": {
-        "Titre": "L'expertise métier d'abord",
-        "Intro": "L'intention claire et la logique priment sur la syntaxe.",
-        "Texte 1": "Le dénominateur commun de cette révolution ? Ce qui compte désormais, c'est la clarté de l'intention et la connaissance du problème à résoudre. Le diplôme technique s'efface derrière l'expertise métier. Savoir guider l'IA devient la compétence clé."
+        "Titre": "4 profils transformés par le Vibe Coding",
+        "Intro": "En 2026, quatre profils basculent structurellement : la compétence technique cède la place à l'expertise métier comme principal facteur de valeur.",
+        "Titre 1": "L'ARCHITECTE NON TECHNIQUE DU PROJET",
+        "Texte 1": "Profils métier (marketing, vente, gestion) qui pilotent l'IA pour fabriquer des solutions : la logique métier remplace la syntaxe comme compétence centrale.",
+        "Picto 1": "mdi:account-hard-hat-outline",
+        "Titre 2": "LE FREELANCE & SOLOPRENEUR",
+        "Texte 2": "Assumer seul la chaîne de production : le budget sous-traitance se déplace vers l'acquisition client, la validation commerciale s'accélère.",
+        "Picto 2": "mdi:account-cowboy-hat",
+        "Titre 3": "LES PROFILS REVOPS & MARKETING",
+        "Texte 3": "Autonomie totale sur les flux internes : plus de ticket DSI, l'expert métier adapte ses outils à son rythme.",
+        "Picto 3": "mdi:chart-timeline-variant-shimmer",
+        "Titre 4": "LES PRODUCT MANAGERS & DESIGNERS",
+        "Texte 4": "Prototypes dynamiques directement testables sans cahier des charges figé : le rôle bascule de transmetteur de specs à orchestrateur d'expériences utilisateurs.",
+        "Picto 4": "mdi:palette-outline"
       },
       "image_concept": null,
       "image_style": null,
@@ -84,10 +113,10 @@
     {
       "template": "VIBECODING - FIN",
       "content": {
-        "Titre": "À chacun sa porte d'entrée",
-        "Intro": "Le Vibe Coding ouvre de nouvelles perspectives pour tous les profils. La reconversion produit plus vite, le freelance lance seul son MVP, le non-tech crée ses propres outils sur-mesure, et le développeur accélère sa production. Peu importe d'où on part, l'important est de formuler une intention claire pour commencer à créer dès maintenant.",
-        "Titre Bulle": "En bref",
-        "Texte Bulle": "L'expertise métier et la clarté de l'intention comptent désormais plus que le diplôme technique. On se concentre sur la valeur créée plutôt que sur la syntaxe du code !"
+        "Titre": "La valeur bascule vers le métier",
+        "Intro": "Le Vibe Coding ne remplace pas les développeurs — il déplace la frontière de la valeur. En 2026, les enquêtes sectorielles le confirment : produire du code brut perd en valeur relative au profit de l'architecture, de la compréhension client et de la gouvernance des systèmes. Quatre profils en bénéficient structurellement : architecte non technique, freelance solo, équipes RevOps, concepteurs produit. Pour chacun, maîtriser le problème métier devient l'avantage décisif — bien plus que la syntaxe.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Les offres d'emploi pour chefs de projet et analystes d'opérations intègrent désormais Cursor, v0 et Bolt comme compétences requises — signal fort que le marché a déjà intégré ce basculement. La prochaine leçon explore les outils concrets de ces nouveaux profils."
       },
       "image_concept": null,
       "image_style": null,

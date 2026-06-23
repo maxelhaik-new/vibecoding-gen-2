@@ -14,13 +14,13 @@
       "template": "VIBECODING - INTRO",
       "content": {
         "Titre": "Ce qu'on va découvrir aujourd'hui",
-        "Intro": "Le Vibe Coding dépasse largement le cadre de la tech. En 2026, créer un logiciel n'est plus réservé aux ingénieurs : c'est un véritable phénomène de société qui transforme notre rapport à la création.",
-        "Titre 1": "Une bascule historique",
-        "Texte 1": "On passe d'un métier d'experts très fermé à une ère où l'intention en langage naturel suffit pour créer.",
-        "Titre 2": "Des profils variés",
-        "Texte 2": "Une majorité d'utilisateurs ne sont pas développeurs et conçoivent des outils sur-mesure pour leur métier.",
+        "Intro": "Créer une application était réservé aux experts. Aujourd'hui, le Vibe Coding ouvre cette possibilité à une population de créateurs hors tech. Voyons comment.",
+        "Titre 1": "La fin d'un monopole",
+        "Texte 1": "Voyons comment l'arrivée des IA de code a effondré le ticket d'entrée pour la création de logiciels.",
+        "Titre 2": "Les nouveaux créateurs",
+        "Texte 2": "Zoom sur les profils hors tech qui développent déjà leurs propres outils et font reculer les intermédiaires.",
         "Titre 3": "Les impacts réels",
-        "Texte 3": "Cette démocratisation bouscule le marché du travail, notamment l'emploi junior, tout en ouvrant des portes."
+        "Texte 3": "Analyse de la baisse d'embauches chez les développeurs juniors et posture mentale à adopter face à ce séisme."
       },
       "image_concept": null,
       "image_style": null,
@@ -31,8 +31,8 @@
       "content": {
         "Titre": "La barrière historique du code",
         "Mot": "Hier, un métier d'experts",
-        "Definition": "Pendant des décennies, concevoir un logiciel exigeait des années d'études, une équipe dédiée et un budget colossal. Sans diplôme ni compétences techniques pointues, l'accès à la création était impossible.",
-        "Bulle": "Le code agissait comme une barrière d'entrée infranchissable."
+        "Definition": "Pendant des décennies, sortir une application demandait des années de formation, une équipe technique et un budget conséquent. Le code était une barrière d'entrée réelle. Sans diplôme ni équipe, on ne passait pas.",
+        "Bulle": "En 2010, lancer un SaaS coûtait en moyenne 500 000 $."
       },
       "image_concept": null,
       "image_style": null,
@@ -41,12 +41,12 @@
     {
       "template": "VIBECODING - 2 BLOC - EVOLUTION",
       "content": {
-        "Titre": "Le renversement du rapport de force",
-        "Intro": "Comment le langage naturel a fait s'effondrer le ticket d'entrée de la création logicielle.",
-        "Titre 1": "Avant : L'effort de syntaxe",
-        "Texte 1": "On devait traduire sa pensée dans un langage machine complexe et rigide.",
-        "Titre 2": "Maintenant : L'intention pure",
-        "Texte 2": "On formule son besoin en français, et l'agent IA génère toute la structure."
+        "Titre": "Ce qui a basculé",
+        "Intro": "Le rapport s'inverse. On formule une intention en langage naturel — l'agent produit la structure, les fichiers, la logique.",
+        "Titre 1": "AVANT — L'expertise comme prérequis",
+        "Texte 1": "Créer un logiciel impliquait de maîtriser un langage de programmation, de gérer une architecture technique et de coordonner une équipe. La compétence était le ticket d'entrée. Sans elle, aucun accès.",
+        "Titre 2": "L'INTENTION D'ABORD",
+        "Texte 2": "On décrit ce qu'on veut en langage naturel. L'agent de code génère la structure, les fichiers, la logique. Le ticket d'entrée s'effondre. La compétence reste utile — mais elle n'est plus le prérequis absolu."
       },
       "image_concept": null,
       "image_style": null,
@@ -56,16 +56,16 @@
       "template": "VIBECODING - CHIFFRES",
       "content": {
         "Titre": "Qui crée du logiciel en 2026 ?",
-        "Intro": "Les chiffres du State of Vibe Coding 2026 révèlent une réalité frappante : l'utilisateur type n'est plus un ingénieur.",
-        "Chiffre 1": "63%",
-        "Titre 1": "Non-développeurs",
-        "Texte 1": "La grande majorité des créateurs d'applications n'ont pas de profil technique.",
-        "Chiffre 2": "2026",
-        "Titre 2": "L'année pivot",
-        "Texte 2": "Où la création de logiciels s'est définitivement ouverte au grand public.",
-        "Chiffre 3": "10x",
-        "Titre 3": "De projets",
-        "Texte 3": "Multiplication des micro-outils créés directement par les équipes métiers."
+        "Intro": "Le profil type de l'utilisateur Vibe Coding n'est plus l'ingénieur. Les données le confirment : la majorité vient d'ailleurs.",
+        "Chiffre 1": "63 %",
+        "Titre 1": "NON-DÉVELOPPEURS",
+        "Texte 1": "Utilisateurs d'outils Vibe Coding sans profil développeur. (State of Vibe Coding, 2026)",
+        "Chiffre 2": "×1 000",
+        "Titre 2": "ÉCART DE COÛT",
+        "Texte 2": "Entre un projet DIY en Vibe Coding (~130 $) et une agence (~130 000 $).",
+        "Chiffre 3": "−20 %",
+        "Titre 3": "EMPLOIS JUNIORS",
+        "Texte 3": "Recul de l'embauche junior depuis 2022 : les postes d'entrée absorbés. (Keyhole Software, 2026)"
       },
       "image_concept": null,
       "image_style": null,
@@ -75,12 +75,12 @@
       "template": "VIBECODING - USE CASE",
       "content": {
         "Titre": "Le médecin qui code son app",
-        "Intro": "L'ÉCART DE COÛT DU DIY",
-        "Texte 1": "Un médecin britannique avait besoin d'une application sur-mesure pour assurer le suivi de ses patients. Après avoir consulté une agence de développement, le devis estimé s'élevait à près de 130 000 $. Face à ce montant exorbitant, il a décidé de concevoir lui-même son outil en utilisant des plateformes de Vibe Coding. Résultat ? L'application est parfaitement fonctionnelle et ne lui a coûté que 130 $ d'abonnements.",
-        "Texte Bulle": "Cet écart de coût gigantesque (un facteur de 1 000) montre comment le Vibe Coding court-circuite les intermédiaires traditionnels et rend la création accessible à tous les budgets.",
-        "Source": "Source : Replit"
+        "Intro": "DIY VS AGENCE : ÉCART ×1 000",
+        "Texte 1": "Un médecin britannique voulait une app de suivi santé pour ses patients. Devis d'une agence : ~130 000 $. Il décide de la construire lui-même avec des outils de Vibe Coding. Coût final : ~130 $. Le problème ? Aucun — l'app fonctionne, les patients l'utilisent. Ce cas illustre une réalité nouvelle : la compétence technique n'est plus le seul chemin vers un logiciel fonctionnel.",
+        "Texte Bulle": "Ce cas n'est pas isolé. Replit recense des centaines de projets similaires depuis 2024 : des non-développeurs qui construisent des outils réels, pour de vrais usages, à des coûts inaccessibles il y a cinq ans.",
+        "Source": "Replit / B. Insider"
       },
-      "image_concept": "A conceptual illustration showing a split screen: on one side, a glowing, simple smartphone app showing medical patient charts, and on the other side, a massive stack of gold coins representing a huge budget. Modern, clean, metaphorical.",
+      "image_concept": "A British doctor in a white coat sitting at a minimalist wooden desk, looking at a simple health-tracking app on a tablet screen, surrounded by medical charts and a stethoscope — the contrast between the high-tech hospital environment and the DIY simplicity of the app is striking",
       "image_style": "grainy-editorial",
       "image_ratio": "2:3"
     },
@@ -88,22 +88,22 @@
       "template": "VIBECODING - 3 COLONNES",
       "content": {
         "Titre": "Ces secteurs qui s'y mettent déjà",
-        "Intro": "Trois exemples concrets de secteurs non techniques où des professionnels créent désormais leurs propres outils sur-mesure.",
-        "Titre 1": "Secteur Santé",
-        "Parametre 1": "Médecine",
-        "Violet 1": "Suivi des patients en direct",
-        "Texte 1": "Un médecin conçoit son application de suivi clinique sans aucune équipe technique ni budget d'agence, répondant parfaitement aux besoins de son cabinet.",
-        "Picto 1": "mdi:heart-pulse",
-        "Titre 2": "Ressources H",
-        "Parametre 2": "Gestion RH",
+        "Intro": "Santé, RH, terrain : trois domaines éloignés de la tech où des non-développeurs créent déjà leurs propres outils.",
+        "Titre 1": "SANTÉ & MÉDICAL",
+        "Parametre 1": "MÉDECINS",
+        "Violet 1": "Suivi patient sans équipe technique",
+        "Texte 1": "Des praticiens construisent leurs propres apps de suivi patient. Sans équipe, sans budget agence. L'outil colle aux besoins cliniques réels — pas aux contraintes d'un SaaS générique.",
+        "Picto 1": "mdi:stethoscope",
+        "Titre 2": "RESSOURCES RH",
+        "Parametre 2": "Ressources humaines",
         "Violet 2": "Outils internes sur-mesure",
-        "Texte 2": "Des responsables RH développent leurs propres modules de suivi des candidats pour ne plus subir les limites rigides des logiciels SaaS du marché.",
-        "Picto 2": "mdi:account-multiple",
-        "Titre 3": "Logistique",
-        "Parametre 3": "Le terrain",
-        "Violet 3": "Automatisation des courses",
-        "Texte 3": "Un chauffeur automatise l'organisation de ses trajets quotidiens grâce à un script sur-mesure. L'outil s'adapte enfin à son flux de travail réel.",
-        "Picto 3": "mdi:truck-delivery"
+        "Texte 2": "Des responsables RH créent leurs propres outils de suivi et d'onboarding. Plus besoin de plier aux limites d'un SaaS. L'outil s'adapte au process, pas l'inverse.",
+        "Picto 2": "mdi:account-group",
+        "Titre 3": "Terrain",
+        "Parametre 3": "INDÉPENDANTS",
+        "Violet 3": "Automatisation du quotidien",
+        "Texte 3": "Un chauffeur automatise sa gestion de courses. Un artisan suit ses devis sans tableur. L'outil est construit pour un usage précis — pas adapté depuis un produit conçu pour tout le monde.",
+        "Picto 3": "mdi:steering"
       },
       "image_concept": null,
       "image_style": null,
@@ -114,8 +114,8 @@
       "content": {
         "Titre": "L'impact sur le marché de l'emploi",
         "Mot": "Le revers déjà visible",
-        "Definition": "L'embauche des développeurs juniors recule de près de 20% entre fin 2022 et mi-2025. Une part importante des tâches d'entrée de gamme est désormais absorbée par les outils d'intelligence artificielle.",
-        "Bulle": "Un défi de taille pour l'insertion des nouveaux profils."
+        "Definition": "L'embauche de développeurs juniors recule de ~20 % entre fin 2022 et mi-2025. Une part du travail d'entrée de gamme est absorbée par les agents de code. C'est déjà mesurable. (Keyhole Software, 2026)",
+        "Bulle": "Surtout impacté : boilerplate, tests unitaires, intégrations simples."
       },
       "image_concept": null,
       "image_style": null,
@@ -125,18 +125,15 @@
       "template": "VIBECODING - CHECKLIST",
       "content": {
         "Titre": "Adopter la bonne posture mentale",
-        "Intro": "Créer du logiciel devient une compétence courante, pas un privilège.",
-        "Texte 1": "Considérer le code comme un outil standard.",
-        "Titre 2": "Les principes clés",
+        "Intro": "Créer du logiciel devient accessible. Mais accessible ne veut pas dire sans compétence.",
+        "Nom Checklist": "La bonne lecture du phénomène",
+        "Texte Intro": "Le Vibe Coding abaisse le ticket d'entrée, sans supprimer la compétence. Comme le tableur n'a pas remplacé le comptable. Garder cette nuance évite deux erreurs : surestimer ce qu'on fait seul, ou sous-estimer ce que ça rend possible.",
         "Picto 1": "mdi:check-decagram",
-        "Texte 2": "Garder un esprit critique sur chaque ligne.",
-        "Picto 2": "mdi:check-decagram",
-        "Texte 3": "Se concentrer sur la valeur d'usage réelle.",
-        "Picto 3": "mdi:check-decagram",
-        "Texte 4": "Valider manuellement les fonctionnalités.",
-        "Picto 4": "mdi:check-decagram",
-        "Texte 5": "Apprendre à guider l'IA pas à pas.",
-        "Picto 5": "mdi:check-decagram"
+        "Texte 1": "Voir le Vibe Coding comme un abaissement de barrière",
+        "Texte 2": "Distinguer ce qu'on peut faire seul ou avec un expert",
+        "Texte 3": "Valider chaque résultat généré par l'agent",
+        "Texte 4": "Rester propriétaire de chaque décision finale",
+        "Texte 5": "Accepter que la compétence change de forme"
       },
       "image_concept": null,
       "image_style": null,
@@ -146,9 +143,9 @@
       "template": "VIBECODING - FIN",
       "content": {
         "Titre": "Ce qu'il faut retenir",
-        "Intro": "Le Vibe Coding marque une rupture historique : la création de logiciel sort définitivement du cercle restreint des ingénieurs pour devenir une compétence courante et accessible à tous. Cette transition bouscule le marché du travail et redéfinit les rôles, mais elle offre surtout une liberté de création inédite pour résoudre des problèmes concrets du quotidien sans barrière technique.",
-        "Titre Bulle": "En BREF",
-        "Texte Bulle": "La création de logiciel n'est plus une affaire de syntaxe, mais d'intention. Dans la prochaine leçon, on verra précisément pour qui cette révolution change la donne et comment en tirer parti dès maintenant !"
+        "Intro": "Le Vibe Coding déborde largement la tech : 63 % de ses utilisateurs ne sont pas développeurs. Des médecins, des responsables RH, des indépendants créent déjà leurs propres outils — à des coûts inaccessibles il y a cinq ans. La bascule est réelle, mesurable, et elle a des effets sur l'emploi junior. Créer un logiciel devient une compétence courante. Pas « tout le monde ingénieur » — une barrière qui tombe.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Le Vibe Coding fait sortir la création de logiciel du cercle des ingénieurs. La suite : pour qui, précisément, ça change la donne ? On va identifier les profils qui ont le plus à gagner — et ceux pour qui ça reste limité."
       },
       "image_concept": null,
       "image_style": null,
