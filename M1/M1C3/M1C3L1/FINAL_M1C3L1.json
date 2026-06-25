@@ -4,20 +4,20 @@
     {
       "template": "VIBECODING - COVER CHAP",
       "content": {
-        "Titre": "Découvrir l'écosystème du Vibe Coding"
+        "Titre": "Le Vibe Coding en contexte professionnel"
       }
     },
     {
       "template": "VIBECODING - OBJECTIF CHAP",
       "content": {
         "Titre": "Objectifs du chapitre",
-        "Intro": "Ce chapitre détaille les fondations du Vibe Coding. On y définit le concept, son histoire récente, sa place face aux autres méthodes et les outils disponibles en 2026.",
-        "Titre 1": "Définir le Vibe Coding et ses limites",
-        "Titre 2": "Tracer l'évolution de la technologie",
-        "Titre 3": "Distinguer le Vibe Coding du no-code",
-        "Titre 4": "Comparer l'IA au développement classique",
-        "Titre 5": "Identifier les principaux outils de 2026",
-        "Titre 6": "Choisir les solutions adaptées aux besoins"
+        "Intro": "Ce chapitre explore la place du Vibe Coding en contexte professionnel. On y analyse son impact sociétal, les profils concernés, les créations possibles et l'avenir des métiers.",
+        "Titre 1": "Comprendre l'impact sociétal de l'IA",
+        "Titre 2": "Identifier les profils les plus impactés",
+        "Titre 3": "Découvrir les types de projets à créer",
+        "Titre 4": "Mesurer la rentabilité des outils de code",
+        "Titre 5": "Intégrer ces nouvelles méthodes de travail",
+        "Titre 6": "Analyser l'évolution du rôle de développeur"
       }
     }
   ]

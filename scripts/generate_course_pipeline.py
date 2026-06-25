@@ -552,14 +552,59 @@ def validate_and_correct_lesson_lengths(client: genai.Client, lesson: Lesson, ex
 
 def run_phase_ecris(client: genai.Client, model: str, outline: str, structure: DecoupedLesson, cache_name: Optional[str]) -> Lesson:
     prompt = (
-        f"Fill the content variables for each slide defined in the following structure using the original outline as the source of truth.\n\n"
-        f"Original Outline:\n{outline}\n\n"
-        f"Structure:\n{structure.model_dump_json(indent=2)}\n\n"
-        "CRITICAL: For any slide using a template containing an image (e.g. PHOTO, IMAGE, USE CASE, FOCUS OUTIL), "
-        "you MUST generate a non-null, descriptive 'image_concept' in English (as a prompt for a visual metaphor) and a non-null 'image_style'. "
-        "Never return null or empty values for these fields when the template requires an image.\n\n"
-        "CRITICAL: You must strictly count characters and ensure EVERY field length is between the min_lenght and max_lenght defined in the extracted templates schema.\n"
-        "WARNING: LLMs tend to underestimate character counts and write too much text. To avoid overflow, aim for the target_lenght (the original placeholder's length) which is shorter than max_lenght. Be as concise, punchy, and direct as possible in the Wemodo brand voice. Less is more."
+        "ACT AS AN ELITE PEDAGOGICAL WRITER AND REWRITE THE DRAFT CONTENT FOR EACH SLIDE. DO NOT SIMPLY COPY OR MERELY COMPRESS THE OUTLINE. "
+        "YOU MUST TRANSFIGURE THE TEXT TO CONFORM TO WEMODO'S BRAND VOICE AND CHARACTER LIMITS.\n\n"
+        f"Original Outline (Raw material containing facts, data, and structures):\n{outline}\n\n"
+        f"Slide Sequence Structure:\n{structure.model_dump_json(indent=2)}\n\n"
+        "=== MANDATORY BRAND VOICE RULES ===\n"
+        "1. NO DIRECT ADDRESS: Never use 'vous' or 'tu' (and their verbs) in the slides, EXCEPT after a right arrow (→) in tips/conseils which use the imperative second-person plural.\n"
+        "2. CONCISION: Target short, punchy sentences. Maximum 15 words per sentence. Strip all corporate/academic fluff (e.g., 'Il est crucial de', 'Dans cette leçon nous allons...').\n"
+        "3. CORE FACTS: Every slide must contain concrete data points (exact numbers, named companies/people, dates, sources). Never generic statements.\n"
+        "4. NARRATIVE DRIVERS: Use short transitional questions like 'Le problème ?', 'Comment faire ?', 'Ça s'applique quand ?' to guide the flow.\n"
+        "5. BULLET POINTS VS PARAGRAPHS: Do not write literary essays. If the template uses multiple blocks, start with lists, nouns, or active infinitives.\n"
+        "6. THE BULLE RULE: A 'Bulle' or 'Texte Bulle' must NEVER be a summary. It must provide a fresh angle, a critical question, or an actionable takeaway.\n\n"
+        "=== SPECIAL TEMPLATE RULES ===\n"
+        "For 'VIBECODING - INTRO':\n"
+        "  - The 'Intro' field must pose the context and end with an invitation to start using a movement verb (e.g., 'Voyons...', 'Découvrons...', 'Faisons le point...').\n"
+        "  - The fields 'Texte 1', 'Texte 2', 'Texte 3' MUST strictly start with one of: 'Voyons...', 'Zoom sur...', 'Focus sur...', 'Découvrons...', 'Apprenons à...'.\n"
+        "  - NON-SPOIL RULE: Never name specific tools or examples that will be revealed in the subsequent slides. Keep it intriguing and high-level.\n\n"
+        "=== IMAGE RULES ===\n"
+        "For any slide requiring an image (e.g., USE CASE, PHOTO, IMAGE, FOCUS OUTIL, PODIUM):\n"
+        "  - You must generate a highly descriptive 'image_concept' in English (as a prompt for a visual metaphor, not a generic computer screen).\n"
+        "  - You must select a valid 'image_style' (woodcut | editorial | constructivist | chiaroscuro | grainy-editorial | pedagogical | offset-screenprint).\n"
+        "  - The 'Source' field must strictly respect: 'Source : [Sujet court] - Illustration générée par IA - Maxime Elhaik'.\n\n"
+        "=== CHAR-LIMIT SAFETY ===\n"
+        "LLMs underestimate character counts. To prevent overflow and validation failure, aim for the target_lenght (which is shorter than max_lenght). "
+        "Strictly respect the min_lenght and max_lenght of each field.\n\n"
+        "=== FEW-SHOT STYLE REFERENCE EXAMPLES ===\n\n"
+        "Example 1: USE CASE (Fact-heavy, narrative pivot)\n"
+        "{\n"
+        "  \"Titre\": \"Le cas du New York Times\",\n"
+        "  \"Intro\": \"NEW YORK TIMES VS OPENAI\",\n"
+        "  \"Texte 1\": \"Le New York Times a poursuivi OpenAI et Microsoft en justice. OpenAI a entraîné ses modèles sur des millions d'articles du journal, sans autorisation ni licence. Le problème ? Maintenant, ChatGPT peut générer des résumés d'actualités complets sans renvoyer vers le NYT, détournant ainsi son audience et ses revenus.\",\n"
+        "  \"Texte Bulle\": \"Le procès pose une question fondamentale : un modèle d'IA peut-il apprendre sur des contenus protégés pour ensuite les concurrencer directement ?\",\n"
+        "  \"Source\": \"Source : Procès NYT - Illustration générée par IA - Maxime Elhaik\"\n"
+        "}\n\n"
+        "Example 2: VIBECODING - INTRO (Non-spoil, exact prefixes)\n"
+        "{\n"
+        "  \"Titre\": \"Le Vibe Coding en 2026\",\n"
+        "  \"Intro\": \"La création de logiciel se démocratise sous l'impulsion des assistants génératifs. Voyons comment se positionner dans ce nouvel écosystème.\",\n"
+        "  \"Titre 1\": \"L'essor des micro-outils\",\n"
+        "  \"Texte 1\": \"Voyons comment des profils non techniques créent des applications ciblées en quelques heures.\",\n"
+        "  \"Titre 2\": \"La barrière technique s'effondre\",\n"
+        "  \"Texte 2\": \"Zoom sur la connexion simplifiée aux bases de données et aux API tierces.\",\n"
+        "  \"Titre 3\": \"Les limites de l'autonomie\",\n"
+        "  \"Texte 3\": \"Focus sur le rôle indispensable de l'architecte humain pour stabiliser le code.\"\n"
+        "}\n\n"
+        "Example 3: MULTI-BLOCS (Nominal, uppercase titles)\n"
+        "{\n"
+        "  \"Titre\": \"Limites graphiques de l'IA\",\n"
+        "  \"Intro\": \"Les modèles de génération d'images butent encore sur plusieurs défis techniques.\",\n"
+        "  \"Titre 1\": \"INTÉGRATION DU TEXTE\",\n"
+        "  \"Texte 1\": \"Génération de lettres et typographies : on obtient souvent des résultats illisibles nécessitant retouche.\",\n"
+        "  \"Titre 2\": \"COHÉRENCE DU STYLE\",\n"
+        "  \"Texte 2\": \"Maintenir le même personnage sur plusieurs visuels reste difficile malgré l'usage de seeds.\"\n"
+        "}"
     )
     template_names = [slide.template for slide in structure.slides]
     extracted = get_extracted_templates(template_names)
@@ -725,9 +770,18 @@ def generate_lesson_workflow(client: genai.Client, model_decoupe: str, model_ecr
             
         # Reconstruct DecoupedLesson for the prompt from in-memory lesson_data
         slides_structure = []
-        for s in lesson_data.get("slides", []):
+        old_slides = lesson_data.get("slides", [])
+        for s in old_slides:
             content_dict = get_content_as_dict(s.get("content"))
-            title = s.get("title") or content_dict.get("Titre", "")
+            # Robust fallback for slide titles
+            title = (
+                s.get("title") or 
+                content_dict.get("Titre") or 
+                content_dict.get("Titre 1") or 
+                content_dict.get("Intro") or 
+                content_dict.get("Titre Bulle") or 
+                ""
+            )
             slides_structure.append(DecoupedSlide(title=title, template=s.get("template", "")))
             
         structure_data = DecoupedLesson(
@@ -745,14 +799,39 @@ def generate_lesson_workflow(client: genai.Client, model_decoupe: str, model_ecr
         cache_ecris = get_or_create_cache(client, model_ecris, force_new=True, with_full_templates=False, extracted_templates=None, system_instruction=system_inst_ecris)
         
         lesson_obj = run_phase_ecris(client, model_ecris, outline, structure_data, cache_ecris)
-        lesson_data = lesson_obj.model_dump()
+        new_lesson_data = lesson_obj.model_dump()
+        
+        # Helper to merge old image metadata and paths back to protect them
+        def safe_merge_slides(old_list, new_list):
+            for i, new_s in enumerate(new_list):
+                if i < len(old_list):
+                    old_s = old_list[i]
+                    # Preserve custom generator fields if present in old and not generated in new
+                    if old_s.get("image_concept") and not new_s.get("image_concept"):
+                        new_s["image_concept"] = old_s["image_concept"]
+                    if old_s.get("image_style") and not new_s.get("image_style"):
+                        new_s["image_style"] = old_s["image_style"]
+                    if old_s.get("image_ratio") and not new_s.get("image_ratio"):
+                        new_s["image_ratio"] = old_s["image_ratio"]
+                    
+                    # Convert content representations to dict for comparison
+                    old_c = get_content_as_dict(old_s.get("content", {}))
+                    new_c = new_s.get("content", {})
+                    if isinstance(new_c, dict):
+                        # Preserve "image" field or asset URL key
+                        for k, v in old_c.items():
+                            if k.lower() in ["image", "image_url"]:
+                                new_c[k] = v
         
         # Normalize serialized content to dictionary format for immediate draft writing
         import copy
-        draft_data = copy.deepcopy(lesson_data)
+        draft_data = copy.deepcopy(new_lesson_data)
         for s in draft_data.get("slides", []):
             if "content" in s:
                 s["content"] = get_content_as_dict(s["content"])
+        
+        # Merge existing metadata into draft
+        safe_merge_slides(old_slides, draft_data.get("slides", []))
             
         # Write draft to file IMMEDIATELY so it can be loaded in Figma
         with open(final_file, "w", encoding="utf-8") as f:
@@ -768,6 +847,9 @@ def generate_lesson_workflow(client: genai.Client, model_decoupe: str, model_ecr
             for s in corrected_data.get("slides", []):
                 if "content" in s:
                     s["content"] = get_content_as_dict(s["content"])
+            
+            # Merge existing metadata into corrected final JSON
+            safe_merge_slides(old_slides, corrected_data.get("slides", []))
             
             with open(final_file, "w", encoding="utf-8") as f:
                 json.dump(corrected_data, f, indent=2, ensure_ascii=False)

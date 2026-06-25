@@ -1,0 +1,81 @@
+{
+  "lessonTitle": "M2C8L1 — Découvrir les agents IA",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Découvrir les agents IA et leurs capacités clés"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Les agents IA, c'est quoi ?",
+        "Intro": "Un agent IA ne se contente pas de répondre à une question : il planifie, agit et s'adapte en autonomie. C'est un saut qualitatif majeur par rapport aux chatbots classiques. Faisons le point sur ce qui les rend si différents.",
+        "Titre 1": "La notion d'agent",
+        "Texte 1": "Voyons ce qui distingue un agent IA d'un simple modèle de langage et pourquoi cette différence change tout dans la pratique.",
+        "Titre 2": "Leurs capacités réelles",
+        "Texte 2": "Zoom sur les actions concrètes que les agents peuvent enchaîner — et en quoi cela dépasse largement la génération de texte.",
+        "Titre 3": "Agents et code",
+        "Texte 3": "Focus sur l'application directe des agents dans le développement logiciel et ce que cela change pour le Vibe Coding."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Un peu de vocabulaire",
+        "Mot": "Agent IA (IA)",
+        "Definition": "Système d'IA capable de poursuivre un objectif de façon autonome : il décompose une tâche complexe en sous-étapes, choisit les outils à utiliser (recherche web, exécution de code, appels API), agit, observe le résultat et ajuste sa stratégie. Contrairement à un LLM classique qui répond en un seul tour, un agent opère en boucle — plan, action, observation, correction — jusqu'à atteindre le but fixé.",
+        "Bulle": "EN BREF : le terme vient de la théorie des agents rationnels (Russell & Norvig, 1995). Appliqué aux LLM depuis 2023, il désigne tout modèle couplé à des outils externes et capable d'enchaîner des actions sans intervention humaine à chaque étape.",
+        "Picto 1": "mdi:robot-outline"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "Ce que les agents font vraiment",
+        "Intro": "Un agent IA combine mémoire, outils et raisonnement en boucle. Résultat : des tâches impossibles pour un LLM classique deviennent exécutables en autonomie.",
+        "Titre 1": "Planifier",
+        "Parametre 1": "RAISONNEMENT",
+        "Violet 1": "Décomposer un objectif en étapes",
+        "Texte 1": "L'agent reçoit un objectif global, le découpe en sous-tâches ordonnées et adapte le plan si une étape échoue. GPT-4o et Claude 3.5 utilisent ce mécanisme nativement.",
+        "Picto 1": "mdi:flowchart",
+        "Titre 2": "PASSER À L'ACTION",
+        "Parametre 2": "OUTILS",
+        "Violet 2": "Appeler des APIs, lire des fichiers",
+        "Texte 2": "L'agent ne génère pas seulement du texte : il exécute du code, interroge des bases de données, envoie des requêtes HTTP. Cursor et Devin utilisent cette capacité pour modifier des fichiers réels dans un dépôt Git sans supervision.",
+        "Picto 2": "mdi:code-braces-box",
+        "Titre 3": "S'adapter",
+        "Parametre 3": "MÉMOIRE",
+        "Violet 3": "Observer, corriger, recommencer",
+        "Texte 3": "Après chaque action, l'agent observe le résultat et décide de continuer, corriger ou abandonner. Cette boucle rétroactive — absente des LLM simples — lui permet de récupérer d'une erreur sans intervention humaine à chaque étape.",
+        "Picto 3": "mdi:refresh-auto"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Devin, l'agent dev",
+        "Intro": "PREMIER AGENT DÉVELOPPEUR",
+        "Texte 1": "En mars 2024, Cognition Labs lance Devin — présenté comme le premier agent IA capable de mener un projet de développement de bout en bout. Lors de sa démo publique, Devin a résolu 13,86 % des issues GitHub réelles du benchmark SWE-bench, sans aide humaine. Le problème des outils précédents ? Ils généraient du code mais ne pouvaient pas l'exécuter, déboguer les erreurs, relancer les tests et pousser un commit. Devin, lui, enchaîne toutes ces étapes dans un terminal autonome — plan, code, test, correction, merge.",
+        "Texte Bulle": "13,86 % peut sembler modeste, mais les issues SWE-bench sont des bugs réels extraits de dépôts open source. Les développeurs humains en résolvent environ 20 % au premier essai. La question n'est plus si les agents coderont seuls, mais quand ils dépasseront ce seuil.",
+        "Source": "Source : Cognition AI"
+      },
+      "image_concept": "A lone mechanical robot arm soldering a glowing circuit board inside a dark server room, sparks flying, cables tangled like vines, a single terminal screen casting green light on the metal surface — metaphor for autonomous AI coding without human supervision",
+      "image_style": "chiaroscuro",
+      "image_ratio": "2:3"
+    }
+  ]
+}

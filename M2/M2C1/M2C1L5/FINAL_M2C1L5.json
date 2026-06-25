@@ -13,14 +13,14 @@
     {
       "template": "VIBECODING - INTRO",
       "content": {
-        "Titre": "Les modèles conçus pour le code",
-        "Intro": "Un LLM conversationnel et un LLM de code ne font pas le même travail. L'un prédit du texte fluide, l'autre manipule une architecture logicielle entière. Comprendre cette différence, c'est saisir pourquoi ChatGPT seul ne suffit pas dès que l'application grandit.",
-        "Titre 1": "L'entraînement spécifique",
-        "Texte 1": "Milliards de lignes de code, docs d'API, bugs : un entraînement ciblé pour maîtriser la rigueur syntaxique.",
-        "Titre 2": "La conscience du projet",
-        "Texte 2": "Lire un dossier entier, anticiper l'impact d'une modif sur tous les fichiers liés : impossible dans un chatbot.",
-        "Titre 3": "Vers l'agentique",
-        "Texte 3": "Ouvrir un terminal, interroger un serveur local, vérifier la syntaxe via le LSP : le modèle interagit avec la machine."
+        "Titre": "Ce qui différencie un LLM de code",
+        "Intro": "Un LLM généraliste et un LLM de code ne partagent ni les mêmes données d'entraînement, ni les mêmes capacités système. Voyons ce qui les distingue concrètement — et pourquoi ça change tout pour le Vibe Coding.",
+        "Titre 1": "Deux types de LLM",
+        "Texte 1": "Voyons pourquoi un LLM entraîné sur du code se comporte différemment d'un modèle généraliste face à un projet logiciel réel.",
+        "Titre 2": "Conscience du projet",
+        "Texte 2": "Focus sur la capacité des LLM de code à lire l'intégralité d'un dépôt et à anticiper les effets de bord entre fichiers.",
+        "Titre 3": "Limites à connaître",
+        "Texte 3": "Découvrons les pièges concrets liés à la fenêtre de contexte et aux corrections syntaxiquement correctes mais métier incorrectes."
       },
       "image_concept": null,
       "image_style": null,

@@ -1,138 +1,161 @@
 {
-  "lessonTitle": "Vibe Coding, no-code et développement classique",
+  "lessonTitle": "M1C3L4",
   "slides": [
     {
       "template": "VIBECODING - COVER",
       "content": {
-        "Titre": "Vibe Coding, no-code et développement classique"
-      }
+        "Titre": "Ce qu'on peut concrètement créer aujourd'hui"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     },
     {
       "template": "VIBECODING - INTRO",
       "content": {
-        "Titre": "Comparer trois méthodes de création",
-        "Intro": "Comment choisir la bonne approche pour créer un projet ? Entre développement classique, no-code et Vibe Coding, chaque méthode a sa logique. On va faire le point sur leurs forces pour savoir quand les utiliser.",
-        "Titre 1": "Découvrir la logique",
-        "Texte 1": "Comprendre le fonctionnement de chaque méthode de création pour voir précisément comment elles se positionnent.",
-        "Titre 2": "Comparer les critères",
-        "Texte 2": "Analyser les forces et limites de chaque approche sur la vitesse, le coût et la maîtrise du code source.",
-        "Titre 3": "Choisir l’approche",
-        "Texte 3": "Identifier l’approche idéale selon chaque type de projet et apprendre à les combiner intelligemment."
-      }
+        "Titre": "Ce qu'on peut concrètement créer",
+        "Intro": "Du simple site vitrine au MVP commercialisable, l'IA de code permet de bâtir des solutions fonctionnelles en quelques jours. Voyons les projets accessibles.",
+        "Titre 1": "La galerie de projets",
+        "Texte 1": "Voyons les cinq familles d'applications (site, mini-CRM, SaaS, script d'automatisation) réalisables sans coder.",
+        "Titre 2": "Les limites techniques",
+        "Texte 2": "Zoom sur ce qui reste complexe à sécuriser et à faire monter en charge sans méthode de travail rigoureuse.",
+        "Titre 3": "La clé de la réussite",
+        "Texte 3": "Découverte des critères pour choisir un premier projet tenable en un week-end et valider ses compétences."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     },
     {
-      "template": "VIBECODING - 3 BLOCS - PHOTO - ALT",
+      "template": "VIBECODING - CONCEPT",
       "content": {
-        "Titre": "Créer en développement classique",
-        "Intro": "Cette approche historique consiste à écrire chaque ligne de code soi-même. C’est la méthode traditionnelle pour concevoir des logiciels.",
-        "Picto 1": "mdi:podium-gold",
-        "Titre 1": "Les forces et avantages de l’approche",
-        "Texte 1": "Bénéficier d’un contrôle total sur l’architecture et d’une flexibilité maximale pour coder absolument tout ce que l’on souhaite.",
-        "Picto 2": "mdi:stop-alert",
-        "Titre 2": "Les contraintes et limites principales",
-        "Texte 2": "Devoir investir plusieurs années d’apprentissage technique et accepter des délais de développement longs sur le projet.",
-        "Picto 3": "mdi:compass",
-        "Titre 3": "Les cas d’usage et domaines idéaux",
-        "Texte 3": "Privilégier cette approche pour les projets techniques complexes, hautement sur-mesure et faits pour durer.",
-        "image": "http://localhost:8080/assets/vibe_clavier_code_editorial.png",
-        "Source": "Source : Analyse comparative des méthodologies de développement moderne (2025)"
-      }
+        "Titre": "Le point d'entrée idéal",
+        "Mot": "Créer un site web",
+        "Definition": "Le site web est parfait pour débuter. Qu'il s'agisse d'une vitrine d'activité, d'un portfolio ou d'une page de vente, on obtient un résultat professionnel en quelques heures sans gérer d'hébergement complexe.",
+        "Bulle": "Idéal pour valider une idée rapidement."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     },
     {
-      "template": "VIBECODING - 3 BLOCS - PHOTO - ALT",
+      "template": "VIBECODING - CHIFFRES",
       "content": {
-        "Titre": "La méthode de création du no-code",
-        "Intro": "Le no-code consiste à assembler des blocs logiques visuels par glisser-déposer. Cette méthode moderne permet de concevoir des projets sans écrire de code.",
-        "Picto 1": "mdi:podium-gold",
-        "Titre 1": "Les forces et avantages de l’approche",
-        "Texte 1": "Créer et lancer un projet de manière extrêmement rapide et accessible à tous, sans aucune compétence technique en programmation.",
-        "Picto 2": "mdi:stop-alert",
-        "Titre 2": "Les contraintes et limites principales",
-        "Texte 2": "Rester confiné dans le cadre imposé par l’outil et dépendre de la plateforme pour la maintenance et les évolutions futures.",
-        "Picto 3": "mdi:compass",
-        "Titre 3": "Les cas d’usage et domaines idéaux",
-        "Texte 3": "Privilégier cette option pour concevoir des sites vitrines, des automatisations internes ou des prototypes simples.",
-        "image": "http://localhost:8080/assets/vibe_coding_layouts.png",
-        "Source": "Source : Analyse comparative des méthodologies de développement moderne (2025)"
-      }
+        "Titre": "L'essor des applications perso",
+        "Intro": "On crée l'outil exact dont on a besoin au quotidien, sans devoir adapter ses habitudes à un logiciel générique du marché.",
+        "Chiffre 3": "1000x",
+        "Titre 3": "MOINS CHER",
+        "Texte 3": "Un coût de développement divisé par mille par rapport à une agence web.",
+        "Titre 2": "BUDGET",
+        "Texte 2": "Seulement 130 dollars investis pour concevoir une application de santé.",
+        "Titre 1": "GAIN DE TEMPS",
+        "Texte 1": "Un outil sur-mesure opérationnel en quelques jours d'expérimentation."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     },
     {
-      "template": "VIBECODING - 3 BLOCS - PHOTO - ALT",
+      "template": "VIBECODING - USE CASE",
       "content": {
-        "Titre": "L’approche moderne du Vibe Coding",
-        "Intro": "Le Vibe Coding consiste à décrire une intention à l’IA en langage naturel pour qu’elle génère du vrai code source exploitable par l’humain.",
-        "Picto 1": "mdi:podium-gold",
-        "Titre 1": "Les forces et avantages de l’approche",
-        "Texte 1": "Allier la flexibilité et la liberté du développement classique à l’accessibilité et la vitesse d’exécution propre au no-code.",
-        "Picto 2": "mdi:stop-alert",
-        "Titre 2": "Les contraintes et limites principales",
-        "Texte 2": "Nécessiter de savoir guider l’IA en langage naturel, d’auditer la cohérence du code et de comprendre les bases techniques.",
-        "Picto 3": "mdi:compass",
-        "Titre 3": "Les cas d’usage et domaines idéaux",
-        "Texte 3": "Adopter cette méthode pour créer des prototypes rapides, itérer en direct et concevoir des applications sur-mesure.",
-        "image": "http://localhost:8080/assets/vibe_dev_robot_vibecoding.png",
-        "Source": "Source : Analyse comparative des méthodologies de développement moderne (2025)"
-      }
-    },
-    {
-      "template": "VIBECODING - COMPARAISON",
-      "content": {
-        "Titre": "Le comparatif en un coup d'œil",
-        "Intro": "Cinq critères pour situer chaque approche. Aucune case n'est parfaite — on choisit selon le projet et ses contraintes :",
-        "Titre A": "DEV CLASSIQUE",
-        "Titre B": "VIBE CODING",
-        "Item 1": "Compétence",
-        "Item 2": "Vitesse",
-        "Item 3": "Flexibilité",
-        "Item 4": "Propriété",
-        "Texte A Item 1": "Expertise technique indispensable, des années d'apprentissage",
-        "Texte A Item 2": "Lent : chaque fonctionnalité demande du temps d'écriture",
-        "Texte A Item 3": "Totale : aucune limite technique, on construit tout sur-mesure",
-        "Texte A Item 4": "Code 100 % maîtrisé, hébergé où on veut, sans dépendance",
-        "Texte B1": "Savoir décrire et valider, les bases techniques suffisent",
-        "Texte B2": "Rapide : un prototype fonctionnel en quelques heures",
-        "Texte B3": "Élevée : du vrai code, ajustable et extensible librement",
-        "Texte B4": "Code source récupérable, hébergeable n'importe où aussi"
-      }
-    },
-    {
-      "template": "VIBECODING - 5 BLOCS",
-      "content": {
-        "La méthode “few shots”": "Ça s'applique quand ?",
-        "Intro": "Chaque approche a son terrain de jeu idéal. Comment faire son choix :",
-        "Texte Bulle": "On choisit l'approche selon le projet, pas selon la mode. Et on les combine souvent entre elles.",
-        "Picto 1": "mdi:lightbulb-outline",
-        "Titre 1": "Prototype rapide",
-        "Texte 1": "Le Vibe Coding excelle pour valider une idée en quelques heures sans investir des semaines de développement.",
-        "Picto 2": "mdi:rocket-launch-outline",
-        "Titre  2": "MVP à tester vite",
-        "Texte 2": "Le no-code permet de lancer un premier test sans aucune connaissance technique. Idéal pour valider un marché.",
-        "Picto 3": "mdi:cog-outline",
-        "Titre 3": "App sur-mesure durable",
-        "Texte 3": "Le développement classique reste la référence quand on a les ressources et que le produit doit durer des années.",
-        "Picto 4": "mdi:briefcase-outline",
-        "Titre  4": "Outil métier interne",
-        "Texte 4": "Le Vibe Coding brille : spécifications claires, usage restreint, itérations rapides avec les utilisateurs finaux.",
-        "Picto 5": "mdi:swap-horizontal",
-        "Titre 5": "Combinaison hybride",
-        "Texte 5": "Tester en no-code, industrialiser en Vibe Coding, peaufiner en dev classique. Les approches se complètent."
-      }
+        "Titre": "L'outil interne sur-mesure",
+        "Intro": "FINI LES LOGICIELS RIGIDES",
+        "Texte 1": "Les équipes non-techniques subissent souvent les limites des logiciels génériques. Avec le Vibe Coding, on conçoit des outils parfaitement adaptés à ses propres processus : formulaires intelligents, mini-CRM de suivi commercial ou tableaux de bord RH. L'outil s'adapte enfin à l'humain, et non l'inverse. On gagne en efficacité immédiate sans dépendre d'un budget de développement lourd ou d'une file d'attente interminable auprès du service informatique.",
+        "Texte Bulle": "En réalité, concevoir son propre outil interne permet d'éliminer les frictions quotidiennes et de libérer du temps pour les tâches à forte valeur ajoutée.",
+        "Source": "Source : Replit"
+      },
+      "image_concept": "A sleek, modern split-screen illustration. On one side, a cluttered, rigid spreadsheet with red error marks. On the other side, a clean, custom-built digital dashboard with glowing purple and blue UI elements, representing a tailored internal tool.",
+      "image_style": "grainy-editorial",
+      "image_ratio": "2:3"
     },
     {
       "template": "VIBECODING - VIDE",
       "content": {
-        "Titre": "Pas des cases étanches",
-        "Intro": "En réalité, on combine souvent les approches. Un prototype no-code pour valider l'idée, du Vibe Coding pour industrialiser, du dev classique pour les parties critiques. La pensée « tout ou rien » est un piège."
-      }
+        "Titre": "L'art de l'automatisation",
+        "Intro": "On élimine les tâches répétitives en reliant ses outils préférés. Quelques heures suffisent pour automatiser un rapport ou nettoyer un fichier de données."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 5 BLOCS",
+      "content": {
+        "La méthode “few shots”": "La galerie de projets",
+        "Intro": "Cinq familles de projets, du plus simple au plus ambitieux",
+        "Texte Bulle": "Commencer petit pour maîtriser les bases avant de s'attaquer à des architectures complexes.",
+        "Titre 1": "Le site vitrine",
+        "Texte 1": "Idéal pour débuter, créer un portfolio ou une page de vente en quelques heures seulement.",
+        "Picto 1": "mdi:image",
+        "Titre  2": "L'application perso",
+        "Texte 2": "Créer un outil sur-mesure pour suivre son budget ou ses tâches quotidiennes.",
+        "Picto 2": "mdi:account-cowboy-hat",
+        "Titre 3": "L'outil interne",
+        "Texte 3": "Concevoir un mini-CRM ou un tableau de bord adapté aux processus exacts de son équipe.",
+        "Picto 3": "mdi:city-variant",
+        "Titre  4": "Le MVP ou SaaS",
+        "Texte 4": "Lancer un produit viable seul sur le marché pour valider une idée auprès des utilisateurs.",
+        "Picto 4": "mdi:podium-gold",
+        "Titre 5": "L'automatisation",
+        "Texte 5": "Relier des services entre eux et supprimer définitivement les tâches répétitives.",
+        "Picto 5": "mdi:flowchart"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Ce qui reste difficile",
+        "Intro": "Le prototype initial sort souvent très vite. En revanche, bâtir un produit fiable et sécurisé exige une vraie méthode.",
+        "Titre A": "ACCÈS",
+        "Titre B": "COMPLEXE",
+        "Item 1": "Objectif",
+        "Texte A Item 1": "Sortir un prototype fonctionnel rapidement",
+        "Texte B1": "Garantir la sécurité et la fiabilité du code",
+        "Item 2": "Donnée",
+        "Texte A Item 2": "Données locales ou maquettes simples",
+        "Texte B2": "Données sensibles et RGPD à respecter",
+        "Item 3": "Public",
+        "Texte A Item 3": "Usage individuel ou restreint",
+        "Texte B3": "Montée en charge et utilisateurs multiples",
+        "Item 4": "Besoin",
+        "Texte A Item 4": "Zéro compétence technique requise",
+        "Texte B4": "Rigueur et méthode de travail"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Viser juste pour commencer",
+        "Intro": "Un premier projet doit être simple, utile et tenable rapidement.",
+        "Titre 2": "Règles de réussite",
+        "Texte 1": "Choisir un besoin réel et très restreint.",
+        "Texte 2": "Préférer l'utile au spectaculaire.",
+        "Texte 3": "Viser un périmètre faisable en un week-end.",
+        "Texte 4": "Se concentrer sur le résultat concret.",
+        "Texte 5": "Éviter de chercher la perfection du code.",
+        "Picto 2": "mdi:check-decagram"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     },
     {
       "template": "VIBECODING - FIN",
       "content": {
         "Titre": "Ce qu'il faut retenir",
-        "Intro": "Le développement classique écrit le code à la main avec un contrôle total. Le no-code assemble des blocs visuels avec rapidité mais des limites. Le Vibe Coding fait écrire l'IA tout en gardant la main sur le code source. Chaque approche répond à un besoin différent, et on les combine souvent dans un même projet selon les contraintes.",
-        "Titre Bulle": "EN BREF",
-        "Texte Bulle": "Le no-code assemble, le dev classique écrit, le Vibe Coding fait écrire — en gardant la main. On choisit selon le projet, pas selon la mode. Maintenant qu'on sait situer le Vibe Coding, on va découvrir ses outils !"
-      }
+        "Intro": "Le Vibe Coding rend accessible la création de cinq grandes familles de projets, du simple site vitrine au petit SaaS. La clé du succès pour un premier projet réside uniquement dans le choix d'un périmètre réaliste et maîtrisé. Dans la prochaine leçon, on verra comment intégrer concrètement ces nouvelles compétences dans son travail au quotidien pour maximiser son efficacité.",
+        "Titre Bulle": "En BREF",
+        "Texte Bulle": "On commence toujours par un projet simple et utile pour valider ses compétences avant de monter en complexité. C'est la meilleure méthode pour progresser rapidement et obtenir des résultats concrets dès les premiers jours !"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     }
   ]
 }

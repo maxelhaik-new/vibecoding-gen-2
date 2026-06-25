@@ -1,0 +1,233 @@
+      {/* 3. RIGHT SIDEBAR: Script Orchestrator & Live Terminal */}
+      <aside style={{
+        width: '380px',
+        height: 'calc(100vh - 24px)',
+        margin: '12px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '12px'
+      }}>
+        {/* Field Validation Panel */}
+        <section className="glass-panel" style={{ padding: '16px' }}>
+          <h3 style={{ fontSize: '14px', fontWeight: 700, marginBottom: '12px', borderBottom: '1px solid var(--border-color)', paddingBottom: '6px' }}>
+            🎯 Validation du Champ
+          </h3>
+          {focusedFieldInfo ? (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <span style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 600 }}>Slide {focusedFieldInfo.slideIndex + 1}</span>
+                <span style={{ fontSize: '12px', color: 'var(--accent-blue)', fontWeight: 600 }}>{focusedFieldInfo.fieldKey}</span>
+              </div>
+              
+              {focusedFieldInfo.rule ? (() => {
+                const len = focusedFieldInfo.value.length;
+                const min = focusedFieldInfo.rule.min_lenght;
+                const max = focusedFieldInfo.rule.max_lenght;
+                const isTooShort = len < min;
+                const isTooLong = len > max;
+                const isInvalid = isTooShort || isTooLong;
+                
+                return (
+                  <div style={{ 
+                    marginTop: '8px',
+                    padding: '12px',
+                    borderRadius: '6px',
+                    background: isInvalid ? 'rgba(239, 68, 68, 0.1)' : 'rgba(34, 197, 94, 0.1)',
+                    border: `1px solid ${isInvalid ? 'rgba(239, 68, 68, 0.3)' : 'rgba(34, 197, 94, 0.3)'}`,
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    transition: 'all 0.2s ease'
+                  }}>
+                    <span style={{ fontSize: '13px', color: isInvalid ? 'var(--accent-red)' : 'var(--accent-green)', fontWeight: 700 }}>
+                      {len} caractères
+                    </span>
+                    <span style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>
+                      Requis : {min} - {max}
+                    </span>
+                  </div>
+                );
+              })() : (
+                <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Aucune règle spécifique.</div>
+              )}
+            </div>
+          ) : (
+            <div style={{ fontSize: '12px', color: 'var(--text-muted)', fontStyle: 'italic', padding: '8px 0' }}>
+              Sélectionnez un champ texte sur une slide pour voir ses contraintes.
+            </div>
+          )}
+        </section>
+
+        {/* Pipeline Control Box */}
+        <section className="glass-panel" style={{ padding: '16px' }}>
+          <h3 style={{ fontSize: '14px', fontWeight: 700, marginBottom: '12px', borderBottom: '1px solid var(--border-color)', paddingBottom: '6px' }}>
+            ⚡ Lanceur de Pipeline
+          </h3>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '16px' }}>
+            {/* Custom Model selector */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <label style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>Modèle IA (Optionnel) :</label>
+              <select
+                value={selectedModel}
+                onChange={(e) => setSelectedModel(e.target.value)}
+                style={{
+                  padding: '6px 10px',
+                  background: 'var(--bg-tertiary)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: '6px',
+                  color: 'var(--text-primary)',
+                  fontSize: '12px',
+                  outline: 'none'
+                }}
+              >
+                <option value="">Par défaut (défini dans .env)</option>
+                <option value="gemini-pro-latest">Gemini Pro Latest</option>
+                <option value="gemini-3.5-flash">Gemini 3.5 Flash</option>
+                <option value="claude-sonnet-4-6">Claude Sonnet 4.6</option>
+                <option value="claude-opus-4-8">Claude Opus 4.8</option>
+              </select>
+            </div>
+
+            {/* Checkbox for image generation */}
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: 'var(--text-secondary)', cursor: 'pointer' }}>
+              <input
+                type="checkbox"
+                checked={generateImage}
+                onChange={(e) => setGenerateImage(e.target.checked)}
+                style={{ cursor: 'pointer' }}
+              />
+              Générer les illustrations (Midjourney/Banana)
+            </label>
+          </div>
+
+          {/* Execution triggers */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+            <button
+              onClick={() => runPipeline('decoupe')}
+              disabled={!!runningPhase || !selectedSlug}
+              style={{
+                padding: '10px',
+                background: runningPhase === 'decoupe' ? 'rgba(59, 130, 246, 0.15)' : 'var(--bg-tertiary)',
+                color: 'var(--text-primary)',
+                border: '1px solid var(--border-color)',
+                borderRadius: '6px',
+                fontSize: '12px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'background 0.2s'
+              }}
+            >
+              1. Découpage
+            </button>
+            
+            <button
+              onClick={() => runPipeline('ecris')}
+              disabled={!!runningPhase || !selectedSlug}
+              style={{
+                padding: '10px',
+                background: runningPhase === 'ecris' ? 'rgba(59, 130, 246, 0.15)' : 'var(--bg-tertiary)',
+                color: 'var(--text-primary)',
+                border: '1px solid var(--border-color)',
+                borderRadius: '6px',
+                fontSize: '12px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'background 0.2s'
+              }}
+            >
+              2. Rédaction
+            </button>
+
+            <button
+              onClick={() => runPipeline('genere')}
+              disabled={!!runningPhase || !selectedSlug}
+              style={{
+                padding: '10px',
+                background: runningPhase === 'genere' ? 'rgba(59, 130, 246, 0.15)' : 'var(--bg-tertiary)',
+                color: 'var(--text-primary)',
+                border: '1px solid var(--border-color)',
+                borderRadius: '6px',
+                fontSize: '12px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'background 0.2s'
+              }}
+            >
+              3. Images Gen
+            </button>
+
+            <button
+              onClick={() => runPipeline('all')}
+              disabled={!!runningPhase || !selectedSlug}
+              style={{
+                padding: '10px',
+                background: runningPhase === 'all' ? 'var(--accent-blue)' : 'rgba(59, 130, 246, 0.08)',
+                color: runningPhase === 'all' ? 'white' : 'var(--text-primary)',
+                border: '1px solid var(--accent-blue)',
+                borderRadius: '6px',
+                fontSize: '12px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'background 0.2s'
+              }}
+            >
+              Tout exécuter
+            </button>
+          </div>
+        </section>
+
+        {/* Live Terminal console logs box */}
+        <section className="glass-panel" style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', padding: '16px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px', borderBottom: '1px solid var(--border-color)', paddingBottom: '6px' }}>
+            <h3 style={{ fontSize: '13px', fontWeight: 700 }}>
+              🖥️ Console d'Exécution
+            </h3>
+            
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '10px', color: 'var(--text-muted)', cursor: 'pointer' }}>
+                <input
+                  type="checkbox"
+                  checked={logAutoScroll}
+                  onChange={(e) => setLogAutoScroll(e.target.checked)}
+                />
+                Scroll
+              </label>
+              <button
+                onClick={() => setLogs('')}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: 'var(--text-muted)',
+                  fontSize: '10px',
+                  cursor: 'pointer',
+                  fontWeight: 600
+                }}
+              >
+                Effacer
+              </button>
+            </div>
+          </div>
+
+          <pre
+            ref={logConsoleRef}
+            style={{
+              flex: 1,
+              background: 'var(--bg-tertiary)',
+              border: '1px solid var(--border-color)',
+              padding: '12px',
+              borderRadius: '6px',
+              color: 'var(--text-primary)',
+              fontFamily: 'monospace',
+              fontSize: '11px',
+              lineHeight: '1.4',
+              overflowY: 'auto',
+              whiteSpace: 'pre-wrap',
+              wordBreak: 'break-all'
+            }}
+          >
+            {logs || 'En attente de lancement...'}
+          </pre>
+        </section>
+      </aside>
+

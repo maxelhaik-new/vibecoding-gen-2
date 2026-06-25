@@ -1,12 +1,12 @@
-# Leçon M1C2L1 : Les objectifs du chapitre : être prêt à commencer
+# Leçon M1C2L1 : Les objectifs du chapitre : la place du Vibe Coding dans l'écosystème
 
-## 1. Introduction au chapitre 2
-Ce chapitre prépare l'apprenant à entrer dans la formation de Vibe Coding en lui donnant le vocabulaire indispensable, en l'aidant à configurer son environnement de travail et ses accès, et en lui transmettant l'état d'esprit et les méthodes pour apprendre efficacement.
+## 1. Introduction au chapitre 3
+Ce chapitre explore la place du Vibe Coding dans l'écosystème du développement en le comparant au no-code et au développement classique, et en détaillant les outils existants.
 
-## 2. Les objectifs pédagogiques
-- Acquérir le vocabulaire de base de l'IA.
-- Comprendre le fonctionnement des agents.
-- Préparer son environnement de travail.
-- Estimer le budget de ses outils de code.
-- Adopter la posture du Vibe Coder.
-- Suivre cette formation avec efficacité.
+## 2. Les objectifs pédagogiques du chapitre
+- Définir le Vibe Coding et ses limites.
+- Tracer l'évolution de la technologie.
+- Distinguer le Vibe Coding du no-code.
+- Comparer l'IA au développement classique.
+- Identifier les principaux outils de 2026.
+- Choisir les solutions adaptées aux besoins.

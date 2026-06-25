@@ -599,7 +599,7 @@
       },
       {
         "key": "Texte Bulle",
-        "original_placeholder": "Few-shot excelle pour reproduire un pattern identifiable avec 2-3 exemples  au lieu de longues instructions.",
+        "original_placeholder": "Principe clé : Few-shot excelle pour reproduire un pattern identifiable avec 2-3 exemples  au lieu de longues instructions.",
         "target_lenght": 123,
         "min_lenght": 86,
         "max_lenght": 160
@@ -725,7 +725,7 @@
     "text_layers": [
       {
         "key": "Texte Bulle",
-        "original_placeholder": "Few-shot excelle pour reproduire  un pattern identifiable avec 2-3 exemples  au lieu de longues instructions.",
+        "original_placeholder": "Principe clé : Few-shot excelle pour reproduire  un pattern identifiable avec 2-3 exemples  au lieu de longues instructions.",
         "target_lenght": 124,
         "min_lenght": 86,
         "max_lenght": 162
@@ -801,18 +801,18 @@
         "max_lenght": 29
       },
       {
-        "key": "Intro",
-        "original_placeholder": "Quand utiliser Few-shots ? Les cas d'usage idéaux :",
-        "target_lenght": 51,
-        "min_lenght": 35,
-        "max_lenght": 67
-      },
-      {
         "key": "Titre",
         "original_placeholder": "Prompter des visuels dans ChatGPT",
         "target_lenght": 33,
         "min_lenght": 23,
         "max_lenght": 43
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Pour un candidat qui postule, l’enjeu est important et la tâche complexe. Il doit comprendre les attentes du recruteur.",
+        "target_lenght": 119,
+        "min_lenght": 83,
+        "max_lenght": 155
       }
     ],
     "picto_layers": [
@@ -865,10 +865,10 @@
     "text_layers": [
       {
         "key": "Intro",
-        "original_placeholder": "Lorsque les algorithmes différencient les individus sur des variables sensibles,  ils peuvent porter atteinte aux droits fondamentaux.",
-        "target_lenght": 134,
-        "min_lenght": 93,
-        "max_lenght": 175
+        "original_placeholder": "Lorsque les algorithmes différencient les individus sur des variables sensibles ils peuvent porter atteinte aux droits fondamentaux.",
+        "target_lenght": 132,
+        "min_lenght": 92,
+        "max_lenght": 172
       },
       {
         "key": "Texte Bulle",
@@ -1039,9 +1039,9 @@
       {
         "key": "Titre 3",
         "original_placeholder": "SECONDES",
-        "target_lenght": 14,
+        "target_lenght": 8,
         "min_lenght": 5,
-        "max_lenght": 17
+        "max_lenght": 12
       },
       {
         "key": "Chiffre 3",
@@ -1059,17 +1059,10 @@
       },
       {
         "key": "Titre 2",
-        "original_placeholder": "D'UTILISATEURS",
-        "target_lenght": 14,
-        "min_lenght": 5,
-        "max_lenght": 17
-      },
-      {
-        "key": "Chiffre 2",
-        "original_placeholder": "12Md",
-        "target_lenght": 3,
-        "min_lenght": 1,
-        "max_lenght": 10
+        "original_placeholder": "GPT IMAGE",
+        "target_lenght": 9,
+        "min_lenght": 6,
+        "max_lenght": 14
       },
       {
         "key": "Texte 1",
@@ -1080,17 +1073,10 @@
       },
       {
         "key": "Titre 1",
-        "original_placeholder": "DE DOLLARDS",
-        "target_lenght": 14,
-        "min_lenght": 5,
-        "max_lenght": 17
-      },
-      {
-        "key": "Chiffre 1",
-        "original_placeholder": "30K",
-        "target_lenght": 3,
-        "min_lenght": 1,
-        "max_lenght": 10
+        "original_placeholder": "M D’utilisateurs",
+        "target_lenght": 16,
+        "min_lenght": 11,
+        "max_lenght": 24
       },
       {
         "key": "Titre",
@@ -1473,13 +1459,6 @@
     "description": "Template pour slide de type vibecoding - schema - 3 colonnes.",
     "text_layers": [
       {
-        "key": "Intro",
-        "original_placeholder": "Pour un candidat qui postule, l’enjeu est important et la tâche complexe. Il doit comprendre les attentes du recruteur.",
-        "target_lenght": 119,
-        "min_lenght": 83,
-        "max_lenght": 155
-      },
-      {
         "key": "Titre 5",
         "original_placeholder": "Rédige une fiche de poste, une liste de ses besoins, etc.",
         "target_lenght": 57,
@@ -1527,6 +1506,13 @@
         "target_lenght": 35,
         "min_lenght": 24,
         "max_lenght": 46
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Pour un candidat qui postule, l’enjeu est important et la tâche complexe. Il doit comprendre les attentes du recruteur.",
+        "target_lenght": 119,
+        "min_lenght": 83,
+        "max_lenght": 155
       }
     ],
     "picto_layers": [
@@ -1549,13 +1535,6 @@
     "status": "validé",
     "description": "Template pour slide de type vibecoding - process.",
     "text_layers": [
-      {
-        "key": "Intro",
-        "original_placeholder": "Pour un candidat qui postule, l’enjeu est important et la tâche complexe. Il doit comprendre les attentes du recruteur.",
-        "target_lenght": 119,
-        "min_lenght": 83,
-        "max_lenght": 155
-      },
       {
         "key": "Titre 6",
         "original_placeholder": "TAGS",
@@ -1646,6 +1625,13 @@
         "target_lenght": 21,
         "min_lenght": 14,
         "max_lenght": 32
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Pour un candidat qui postule, l’enjeu est important et la tâche complexe. Il doit comprendre les attentes du recruteur.",
+        "target_lenght": 119,
+        "min_lenght": 83,
+        "max_lenght": 155
       }
     ]
   },
@@ -2073,13 +2059,6 @@
         "max_lenght": 41
       },
       {
-        "key": "Intro",
-        "original_placeholder": "Identifiez vos 3 tâches prioritaires à optimiser",
-        "target_lenght": 48,
-        "min_lenght": 33,
-        "max_lenght": 63
-      },
-      {
         "key": "Titre 1",
         "original_placeholder": "Tâche chronophage",
         "target_lenght": 17,
@@ -2120,6 +2099,13 @@
         "target_lenght": 66,
         "min_lenght": 46,
         "max_lenght": 86
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Pour un candidat qui postule, l’enjeu est important et la tâche complexe. Il doit comprendre les attentes du recruteur.",
+        "target_lenght": 119,
+        "min_lenght": 83,
+        "max_lenght": 155
       }
     ]
   },
@@ -2199,18 +2185,18 @@
         "max_lenght": 42
       },
       {
-        "key": "Intro",
-        "original_placeholder": "Pour un candidat qui postule, l’enjeu est important et la tâche complexe. Il doit comprendre les attentes du recruteur.",
-        "target_lenght": 119,
-        "min_lenght": 83,
-        "max_lenght": 155
-      },
-      {
         "key": "Texte Bulle",
         "original_placeholder": "Cette méthode encourage plutôt à réfléchir à l’intégration de l’IA avant que ses usages soient  Intégrés dans nos usages, ou même rendus publics,  en parcourant dans l’ordre différentes  phases du cadrage.  ",
         "target_lenght": 207,
         "min_lenght": 144,
         "max_lenght": 270
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Pour un candidat qui postule, l’enjeu est important et la tâche complexe. Il doit comprendre les attentes du recruteur.",
+        "target_lenght": 119,
+        "min_lenght": 83,
+        "max_lenght": 155
       }
     ],
     "picto_layers": [
@@ -2315,13 +2301,6 @@
         "target_lenght": 28,
         "min_lenght": 19,
         "max_lenght": 42
-      },
-      {
-        "key": "Intro",
-        "original_placeholder": "L'IA Act s'applique progressivement entre 2024 et 2027, avec des échéances  différentes selon le niveau de risque des systèmes et outils IA :",
-        "target_lenght": 141,
-        "min_lenght": 98,
-        "max_lenght": 184
       },
       {
         "key": "Date 1",
@@ -2434,6 +2413,13 @@
         "target_lenght": 120,
         "min_lenght": 84,
         "max_lenght": 156
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Pour un candidat qui postule, l’enjeu est important et la tâche complexe. Il doit comprendre les attentes du recruteur.",
+        "target_lenght": 119,
+        "min_lenght": 83,
+        "max_lenght": 155
       }
     ]
   },
@@ -2569,7 +2555,7 @@
     "description": "Template pour slide de type vibecoding - veille.",
     "text_layers": [
       {
-        "key": "Focus sur Caude (Anthropic)",
+        "key": "Titre",
         "original_placeholder": "Focus sur Caude (Anthropic) ",
         "target_lenght": 28,
         "min_lenght": 19,
@@ -2660,7 +2646,7 @@
         "max_lenght": 119
       },
       {
-        "key": "Titre 5",
+        "key": "Texte 5",
         "original_placeholder": "Ludo  Salenne",
         "target_lenght": 13,
         "min_lenght": 9,
@@ -2709,6 +2695,192 @@
         "ratio": "1:1",
         "width": 83.0,
         "height": 83.0
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - FICHE RECAP",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - fiche recap.",
+    "text_layers": [
+      {
+        "key": "Respecter la capacité de choix et le contrôle huma",
+        "original_placeholder": "LE RECAP’",
+        "target_lenght": 9,
+        "min_lenght": 6,
+        "max_lenght": 14
+      },
+      {
+        "key": "Respecter la capacité de choix et le contrôle huma",
+        "original_placeholder": "Fonctionnalités vocales",
+        "target_lenght": 23,
+        "min_lenght": 16,
+        "max_lenght": 35
+      },
+      {
+        "key": "Respecter la capacité de choix et le contrôle huma",
+        "original_placeholder": "Activer la voix",
+        "target_lenght": 15,
+        "min_lenght": 10,
+        "max_lenght": 23
+      },
+      {
+        "key": "→ Cliquez sur l'icône 🎤 dans la zone de saisie",
+        "original_placeholder": "→ Cliquez sur l'icône 🎤 dans la zone de saisie",
+        "target_lenght": 46,
+        "min_lenght": 32,
+        "max_lenght": 60
+      },
+      {
+        "key": "→ Autorisez l'accès au microphone (première fois)",
+        "original_placeholder": "→ Autorisez l'accès au microphone (première fois)",
+        "target_lenght": 49,
+        "min_lenght": 34,
+        "max_lenght": 64
+      },
+      {
+        "key": "→ Le bouton devient actif : vous pouvez parler",
+        "original_placeholder": "→ Le bouton devient actif : vous pouvez parler",
+        "target_lenght": 46,
+        "min_lenght": 32,
+        "max_lenght": 60
+      },
+      {
+        "key": "→ Disponible sur app mobile et web",
+        "original_placeholder": "→ Disponible sur app mobile et web",
+        "target_lenght": 34,
+        "min_lenght": 23,
+        "max_lenght": 45
+      },
+      {
+        "key": "Respecter la capacité de choix et le contrôle huma",
+        "original_placeholder": "Parler naturellement",
+        "target_lenght": 20,
+        "min_lenght": 14,
+        "max_lenght": 30
+      },
+      {
+        "key": "→ Cliquez sur l'icône 🎤 dans la zone de saisie",
+        "original_placeholder": "→ Cliquez sur l'icône 🎤 dans la zone de saisie",
+        "target_lenght": 46,
+        "min_lenght": 32,
+        "max_lenght": 60
+      },
+      {
+        "key": "→ Autorisez l'accès au microphone (première fois)",
+        "original_placeholder": "→ Autorisez l'accès au microphone (première fois)",
+        "target_lenght": 49,
+        "min_lenght": 34,
+        "max_lenght": 64
+      },
+      {
+        "key": "→ Le bouton devient actif : vous pouvez parler",
+        "original_placeholder": "→ Le bouton devient actif : vous pouvez parler",
+        "target_lenght": 46,
+        "min_lenght": 32,
+        "max_lenght": 60
+      },
+      {
+        "key": "→ Disponible sur app mobile et web",
+        "original_placeholder": "→ Disponible sur app mobile et web",
+        "target_lenght": 34,
+        "min_lenght": 23,
+        "max_lenght": 45
+      },
+      {
+        "key": "Respecter la capacité de choix et le contrôle huma",
+        "original_placeholder": "Recevoir la réponse",
+        "target_lenght": 19,
+        "min_lenght": 13,
+        "max_lenght": 29
+      },
+      {
+        "key": "→ Cliquez sur l'icône 🎤 dans la zone de saisie",
+        "original_placeholder": "→ Cliquez sur l'icône 🎤 dans la zone de saisie",
+        "target_lenght": 46,
+        "min_lenght": 32,
+        "max_lenght": 60
+      },
+      {
+        "key": "→ Autorisez l'accès au microphone (première fois)",
+        "original_placeholder": "→ Autorisez l'accès au microphone (première fois)",
+        "target_lenght": 49,
+        "min_lenght": 34,
+        "max_lenght": 64
+      },
+      {
+        "key": "→ Le bouton devient actif : vous pouvez parler",
+        "original_placeholder": "→ Le bouton devient actif : vous pouvez parler",
+        "target_lenght": 46,
+        "min_lenght": 32,
+        "max_lenght": 60
+      },
+      {
+        "key": "→ Disponible sur app mobile et web",
+        "original_placeholder": "→ Disponible sur app mobile et web",
+        "target_lenght": 34,
+        "min_lenght": 23,
+        "max_lenght": 45
+      },
+      {
+        "key": "Respecter la capacité de choix et le contrôle huma",
+        "original_placeholder": "Quand l’utiliser ?",
+        "target_lenght": 18,
+        "min_lenght": 12,
+        "max_lenght": 27
+      },
+      {
+        "key": "Respecter la capacité de choix et le contrôle huma",
+        "original_placeholder": "Idéal pour",
+        "target_lenght": 10,
+        "min_lenght": 7,
+        "max_lenght": 15
+      },
+      {
+        "key": "Respecter la capacité de choix et le contrôle huma",
+        "original_placeholder": "Moins adapté pour",
+        "target_lenght": 17,
+        "min_lenght": 11,
+        "max_lenght": 26
+      },
+      {
+        "key": "Respecter la capacité de choix et le contrôle huma",
+        "original_placeholder": "Brainstorming en mobilité • Préparation de réunions • Dictée de textes longs • Situations où taper est compliqué • Réflexion à voix haute",
+        "target_lenght": 137,
+        "min_lenght": 95,
+        "max_lenght": 179
+      },
+      {
+        "key": "Respecter la capacité de choix et le contrôle huma",
+        "original_placeholder": "Requêtes complexes techniques • Chargement de documents • Copier-coller de code • Environnements bruyants",
+        "target_lenght": 105,
+        "min_lenght": 73,
+        "max_lenght": 137
+      },
+      {
+        "key": "Respecter la capacité de choix et le contrôle huma",
+        "original_placeholder": "Relisez la transcription avant la réponse • Vous pouvez alterner vocal et texte",
+        "target_lenght": 79,
+        "min_lenght": 55,
+        "max_lenght": 103
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Logotype"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "mdi:check-circle-outline"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "mdi:cross-circle-outline"
+      },
+      {
+        "key": "Picto 4",
+        "original_placeholder": "mdi:lightbulb-on"
       }
     ]
   },

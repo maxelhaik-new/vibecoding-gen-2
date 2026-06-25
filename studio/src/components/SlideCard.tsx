@@ -43,6 +43,8 @@ interface SlideCardProps {
   onDelete?: () => void;
   isFirst?: boolean;
   isLast?: boolean;
+  isRegenerating?: boolean;
+  onRegenerate?: (instruction: string) => void;
 }
 
 export const SlideCard: React.FC<SlideCardProps> = ({
@@ -55,8 +57,13 @@ export const SlideCard: React.FC<SlideCardProps> = ({
   onDelete,
   isFirst = false,
   isLast = false,
+  isRegenerating = false,
+  onRegenerate,
 }) => {
   const { template, content = {} } = slide;
+  const [copied, setCopied] = React.useState(false);
+  const [showRegenModal, setShowRegenModal] = React.useState(false);
+  const [regenInstruction, setRegenInstruction] = React.useState('');
 
   // Find rules for current template
   const currentRule = templateRules.find(t => t.name === template);
@@ -66,13 +73,6 @@ export const SlideCard: React.FC<SlideCardProps> = ({
       rulesMap[r.key] = r;
     });
   }
-
-
-
-  const handleFieldChange = (key: string, value: string) => {
-    const updatedContent = { ...content, [key]: value };
-    onChange(updatedContent);
-  };
 
   // Derive content: statically select a single fallback key to prevent duplication across multiple fields
   const derivedContent = { ...content };
@@ -92,6 +92,30 @@ export const SlideCard: React.FC<SlideCardProps> = ({
       derivedContent[fallbackKey] = slide.title;
     }
   }
+
+  const handleFieldChange = (key: string, value: string) => {
+    const updatedContent = { ...content, [key]: value };
+    onChange(updatedContent);
+  };
+
+  const handleCopyJson = () => {
+    const slideJson = {
+      template: slide.template,
+      content: derivedContent,
+      image_concept: slide.image_concept || null,
+      image_style: slide.image_style || null,
+      image_ratio: slide.image_ratio || null
+    };
+
+    navigator.clipboard.writeText(JSON.stringify(slideJson, null, 2))
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1500);
+      })
+      .catch(err => {
+        console.error('Erreur lors de la copie :', err);
+      });
+  };
 
   // Dispatch layout component
   const renderLayout = () => {
@@ -321,34 +345,10 @@ export const SlideCard: React.FC<SlideCardProps> = ({
   const parentContext = React.useContext(EditorContext);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '8px',
-        width: '100%',
-        animation: 'fadeIn 0.3s ease-out',
-      }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          padding: '0 8px',
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span
-            style={{
-              fontSize: '12px',
-              fontWeight: 600,
-              color: 'var(--text-secondary)',
-              background: 'var(--bg-tertiary)',
-              padding: '2px 8px',
-              borderRadius: '10px',
-            }}
-          >
+    <div className="slide-card-container">
+      <div className="slide-card-header">
+        <div className="slide-card-header-left">
+          <span className="slide-card-index">
             Slide {index + 1}
           </span>
           
@@ -356,17 +356,7 @@ export const SlideCard: React.FC<SlideCardProps> = ({
             <button
               onClick={onMoveUp}
               disabled={isFirst}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                cursor: isFirst ? 'not-allowed' : 'pointer',
-                color: isFirst ? 'var(--text-muted)' : 'var(--text-secondary)',
-                opacity: isFirst ? 0.3 : 0.7,
-                padding: '2px 6px',
-                fontSize: '10px',
-                borderRadius: '4px',
-                transition: 'opacity 0.15s',
-              }}
+              className="slide-card-btn"
               title="Déplacer vers le haut"
             >
               ▲
@@ -374,50 +364,49 @@ export const SlideCard: React.FC<SlideCardProps> = ({
             <button
               onClick={onMoveDown}
               disabled={isLast}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                cursor: isLast ? 'not-allowed' : 'pointer',
-                color: isLast ? 'var(--text-muted)' : 'var(--text-secondary)',
-                opacity: isLast ? 0.3 : 0.7,
-                padding: '2px 6px',
-                fontSize: '10px',
-                borderRadius: '4px',
-                transition: 'opacity 0.15s',
-              }}
+              className="slide-card-btn"
               title="Déplacer vers le bas"
             >
               ▼
             </button>
             <button
               onClick={onDelete}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                cursor: 'pointer',
-                color: 'var(--badge-red-text)',
-                opacity: 0.7,
-                padding: '2px 6px',
-                fontSize: '10px',
-                borderRadius: '4px',
-                transition: 'opacity 0.15s',
-                marginLeft: '4px'
-              }}
+              className="slide-card-btn slide-card-delete-btn"
               title="Supprimer la slide"
             >
               ✕
             </button>
           </div>
         </div>
-        <span
-          style={{
-            fontSize: '11px',
-            color: 'var(--text-muted)',
-            fontFamily: 'monospace',
-          }}
-        >
-          {template}
-        </span>
+        <div className="slide-card-header-right">
+          <span
+            style={{
+              fontSize: '11px',
+              color: 'var(--text-muted)',
+              fontFamily: 'monospace',
+            }}
+          >
+            {template}
+          </span>
+          <button
+            onClick={() => {
+              setRegenInstruction('');
+              setShowRegenModal(true);
+            }}
+            disabled={isRegenerating}
+            className={`slide-card-btn slide-card-regen-btn ${isRegenerating ? 'active' : ''}`}
+            title="Régénérer cette slide avec Claude"
+          >
+            {isRegenerating ? '⚡...' : '🔄'}
+          </button>
+          <button
+            onClick={handleCopyJson}
+            className={`slide-card-btn slide-card-copy-btn ${copied ? 'copied' : ''}`}
+            title="Copier le JSON de cette slide pour le plugin Figma"
+          >
+            {copied ? '✓' : '📋'}
+          </button>
+        </div>
       </div>
 
       {/* 16:9 Frame */}
@@ -432,11 +421,150 @@ export const SlideCard: React.FC<SlideCardProps> = ({
           boxShadow: 'var(--shadow-md)',
           border: '1px solid var(--border-color)',
           containerType: 'size', // Activate container queries on the card
+          opacity: isRegenerating ? 0.6 : 1,
+          pointerEvents: isRegenerating ? 'none' : 'auto',
+          transition: 'all 0.3s ease',
         }}
       >
         <EditorContext.Provider value={{ ...parentContext, slideIndex: index }}>
           {renderLayout()}
         </EditorContext.Provider>
+        {isRegenerating && (
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(255, 255, 255, 0.75)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
+            gap: '12px',
+            zIndex: 10
+          }}>
+            <span style={{ fontSize: '32px' }}>⚡</span>
+            <span style={{ fontSize: '14px', fontWeight: 600, color: '#8b5cf6' }}>
+              Régénération par Claude...
+            </span>
+          </div>
+        )}
+        {showRegenModal && (
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(15, 16, 19, 0.75)',
+            backdropFilter: 'blur(3px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 20,
+            padding: '2cqw'
+          }}>
+            <div className="glass-panel animate-fade-in" style={{
+              width: '90%',
+              background: 'var(--bg-secondary)',
+              padding: '2cqw',
+              borderRadius: '8px',
+              boxShadow: '0 10px 25px -5px rgba(0,0,0,0.3)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1.5cqw'
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ fontSize: '1.6cqw', fontWeight: 700, color: 'var(--text-primary)' }}>
+                  Régénérer avec consigne (Slide {index + 1})
+                </span>
+                <button 
+                  onClick={() => setShowRegenModal(false)}
+                  style={{ background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '1.6cqw', color: 'var(--text-muted)' }}
+                >
+                  ✕
+                </button>
+              </div>
+              
+              <textarea
+                placeholder="Consigne de modification (ex: 'Rendre plus technique', 'Ajouter un exemple', 'Raccourcir')..."
+                value={regenInstruction}
+                onChange={(e) => setRegenInstruction(e.target.value)}
+                style={{
+                  width: '100%',
+                  height: '10cqh',
+                  padding: '1cqw',
+                  borderRadius: '6px',
+                  border: '1px solid var(--border-color)',
+                  background: 'var(--bg-tertiary)',
+                  color: 'var(--text-primary)',
+                  fontSize: '1.4cqw',
+                  fontFamily: 'inherit',
+                  resize: 'none',
+                  outline: 'none'
+                }}
+                autoFocus
+              />
+              
+              {/* Presets */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8cqw' }}>
+                {[
+                  { label: 'Raccourcir', text: 'Raccourcir les textes pour respecter strictement les limites et être plus punchy.' },
+                  { label: 'Plus d\'exemples', text: 'Ajouter des exemples concrets de Vibe Coding ou d\'outils.' },
+                  { label: 'Ton plus expert', text: 'Adopter un ton extrêmement technique, expert et axé engineering.' },
+                  { label: 'Ajouter un Warning', text: 'Ajouter une mise en garde ou un piège classique à éviter.' }
+                ].map((preset) => (
+                  <button
+                    key={preset.label}
+                    onClick={() => setRegenInstruction(preset.text)}
+                    style={{
+                      background: 'var(--bg-tertiary)',
+                      border: '1px solid var(--border-color)',
+                      borderRadius: '12px',
+                      padding: '3px 10px',
+                      fontSize: '1.2cqw',
+                      cursor: 'pointer',
+                      color: 'var(--text-secondary)',
+                      transition: 'all 0.15s ease'
+                    }}
+                  >
+                    💡 {preset.label}
+                  </button>
+                ))}
+              </div>
+              
+              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '1cqw', marginTop: '0.5cqh' }}>
+                <button
+                  onClick={() => setShowRegenModal(false)}
+                  style={{
+                    background: 'transparent',
+                    border: '1px solid var(--border-color)',
+                    borderRadius: '6px',
+                    padding: '4px 12px',
+                    fontSize: '1.3cqw',
+                    cursor: 'pointer',
+                    color: 'var(--text-secondary)'
+                  }}
+                >
+                  Annuler
+                </button>
+                <button
+                  onClick={() => {
+                    setShowRegenModal(false);
+                    if (onRegenerate) onRegenerate(regenInstruction);
+                  }}
+                  style={{
+                    background: 'var(--accent-blue)',
+                    border: 'none',
+                    borderRadius: '6px',
+                    padding: '4px 16px',
+                    fontSize: '1.3cqw',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    color: '#fff'
+                  }}
+                >
+                  Régénérer
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

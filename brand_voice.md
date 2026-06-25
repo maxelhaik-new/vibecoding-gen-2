@@ -125,32 +125,33 @@ Flèche `→` + impératif 2e personne du pluriel.
 
 ---
 
-### Template `VIBECODING - INTRO` — Règles spécifiques
+### Template `VIBECODING - INTRO` — Règles spécifiques et de formulation
 
-Ce template a 4 champs distincts avec chacun sa logique propre.
+Ce template comporte 8 champs dans le JSON (`Titre`, `Intro`, `Titre 1/2/3`, `Texte 1/2/3`) avec chacun sa logique propre.
 
-**`Titre principal`** : Peut être nominal, une question directe, ou une exclamation dynamique.
+**`Titre`** (Titre principal) : Peut être nominal, une question directe, ou une exclamation dynamique.
 - ✅ *"Introduction"*, *"Introduction à l'IA Act"* (neutre)
 - ✅ *"De quoi parlons-nous ?"*, *"Prenons les commandes !"* (dynamique)
 - ✅ *"La notion d'éthique"*, *"Définir la créativité"* (thématique)
 
-**`Texte d'accroche`** (bloc large, 1-2 phrases) : Pose le cadre de la leçon. Autorisé à dépasser 15 mots — c'est le seul champ qui accepte un paragraphe dense.
+**`Intro`** (Texte d'accroche, 1-2 phrases) : Pose le cadre de la leçon. Il doit impérativement se terminer par une invitation à démarrer (ex : avec un verbe de mouvement comme *"Voyons..."*, *"Découvrons..."*, *"Faisons le point..."*, *"Faisons le tour..."*).
 Structures typées :
-- Affirmation + retournement : *"L'IA peut sembler impartiale... mais elle hérite en réalité des biais humains."*
 - Constat factuel + invitation : *"Midjourney s'est imposé comme leader mondial depuis 2022. Voyons pourquoi."*
-- Question rhétorique intégrée : *"On pourrait croire que les données individuelles ne sont pas conservées. Qu'en est-il réellement ?"*
-- Continuité depuis la leçon précédente : *"On l'a vu, l'IA hérite des biais humains. Voyons comment les limiter !"*
+- Affirmation + retournement + invitation : *"L'IA peut sembler impartiale... mais elle hérite en réalité des biais humains. Voyons comment les limiter !"*
+- Question rhétorique intégrée + invitation : *"On pourrait croire que les données individuelles ne sont pas conservées. Qu'en est-il réellement ? Faisons le point."*
 
-**`Titre de bloc`** (court, 50px) : 2-5 mots, nominal ou question courte.
+**`Titre 1`, `Titre 2`, `Titre 3`** (Titre de bloc, court) : 2-5 mots, nominal ou question courte.
 - ✅ *"Quelques avantages"*, *"L'outil face à la concurrence"*, *"L'IA dans tout ça ?"*
-- ✅ *"On peut agir dessus !"*, *"C'est un dialogue !"* (dynamisme accepté)
 
-**`Sous-titre de bloc`** (36px) : 1 phrase qui annonce ce qui va être vu. Utilise des formes invitantes à la 1re personne du pluriel — **exception au bannissement du "nous"**.
-- ✅ *"Voyons les limites graphiques et les fonctionnalités manquantes."*
-- ✅ *"Découvrons comment interagir avec l'outil."*
-- ✅ *"Apprenons à repérer les usages qui nous exposent juridiquement."*
-- ✅ *"Quelles sont les erreurs liées aux textes les plus probables ?"* (question directe aussi acceptée)
-- ❌ *"Dans ce bloc, nous allons voir les limites de l'outil."* (trop scolaire)
+**`Texte 1`, `Texte 2`, `Texte 3`** (Sous-titre de bloc, 1 phrase) : Annonce ce qui va être vu dans la section correspondante de la leçon. Chaque texte doit **strictement débuter par** l'une des formulations suivantes :
+- `Voyons...` (ex : *"Voyons les limites graphiques de l'outil."*)
+- `Zoom sur...` (ex : *"Zoom sur quelques astuces pour y pallier."*)
+- `Focus sur...` (ex : *"Focus sur le processus de création."*)
+- `Découvrons...` (ex : *"Découvrons comment configurer son espace."*)
+- `Apprenons à...` (ex : *"Apprenons à repérer les usages à risques."*)
+
+⚠️ **Règle de curiosité (Non-Spoil)** : Ces textes ne doivent **jamais lister ou nommer précisément** les exemples ou réponses qui seront révélés dans les slides suivantes (ex: ne pas écrire *"Voyons trois projets réels — app médicale, curation de données, micro-SaaS"* mais plutôt *"Voyons trois projets réels lancés par des non-développeurs et qui se sont démarqués par leur originalité."*). Le texte doit introduire le sujet général et ouvrir comme une question ou susciter l'intérêt sans donner les détails à l'avance.
+*Note pour les agents : Si une slide d'introduction existe déjà dans Figma pour la leçon cible, elle doit être totalement ignorée lors de la lecture du contexte afin de ne pas reproduire un mauvais brouillon existant.*
 
 ### Templates à Haute Densité (`VIBECODING - 6 BLOCS` / `5 BLOCS`)
 *   **Quand l'utiliser** : Idéal pour les slides de vulgarisation de notions multiples, les listes d'outils, les paramètres précis ou les biais d'apprentissage.

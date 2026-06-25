@@ -1,0 +1,169 @@
+{
+  "lessonTitle": "Panorama des outils de Vibe Coding en 2026",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Panorama des outils de Vibe Coding en 2026"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Un écosystème jeune et en mouvement",
+        "Intro": "Les outils de Vibe Coding se multiplient depuis 2024. Cette leçon présente les quatre grandes familles, passe en revue les acteurs majeurs un par un, et donne les critères pour s'y retrouver sans avoir à tout apprendre.",
+        "Titre 1": "Familles d'outils",
+        "Texte 1": "Classer les outils en quatre catégories logiques : assistants intégrés, IDE agentiques, agents en terminal et plateformes web.",
+        "Titre 2": "Acteurs principaux",
+        "Texte 2": "Découvrir GitHub Copilot, Cursor, Windsurf, Claude Code, Google Antigravity et les plateformes tout-en-un comme Lovable.",
+        "Titre 3": "Critères de choix",
+        "Texte 3": "Comprendre comment choisir selon le besoin, la prise en main, le budget et le modèle d'IA sous-jacent."
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "content": {
+        "Titre": "Les quatre familles d'outils",
+        "Intro": "L'écosystème semble complexe, mais tout se range en quatre catégories simples. Chacune correspond à un mode d'interaction différent :",
+        "Picto 1": "mdi:code-tags",
+        "Titre 1": "Assistants intégrés à l'éditeur",
+        "Texte 1": "Un module qui s'ajoute à l'éditeur existant pour proposer de l'autocomplétion intelligente et un chat contextuel. Exemple : GitHub Copilot.",
+        "Picto 2": "mdi:application-brackets-outline",
+        "Titre 2": "IDE agentiques (forks de VS Code)",
+        "Texte 2": "Des éditeurs de code complets, souvent basés sur VS Code, avec un agent IA intégré nativement. Exemples : Cursor, Windsurf, Antigravity.",
+        "Picto 3": "mdi:console-line",
+        "Titre 3": "Agents en terminal (CLI)",
+        "Texte 3": "Pas d'interface graphique : on dialogue dans le terminal, l'agent agit directement sur les fichiers du projet. Exemple : Claude Code.",
+        "Picto 4": "mdi:web",
+        "Titre 4": "Plateformes web tout-en-un",
+        "Texte 4": "Du prompt à l'application en ligne, sans rien installer sur sa machine. Idéal pour prototyper vite. Exemples : Lovable, Bolt, v0, Replit."
+      }
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": {
+        "Titre": "Focus sur GitHub Copilot",
+        "Intro": "Le pionnier de l'assistance IA au code, lancé en 2021 par GitHub. L'outil le plus répandu chez les développeurs professionnels.",
+        "Chiffre 2": "2021",
+        "Titre 2": "année de lancement (premier copilote IA grand public)",
+        "Chiffre 3": "77M",
+        "Titre 3": "de développeurs sur GitHub (base potentielle)",
+        "Titre 4": "Un assistant, pas un agent autonome",
+        "Texte 4": "Copilot complète le code en temps réel et répond aux questions via un chat intégré. Il s'installe comme extension dans VS Code ou JetBrains. Le problème ? Il assiste ligne par ligne, sans vision globale du projet — il ne planifie pas, ne crée pas de fichiers seul.",
+        "Texte Bulle": "Gratuit (limité) · Pro 10$/mois · Business 19$/mois · Entreprise 39$/mois ·",
+        "Source": "Source : GitHub 2025"
+      }
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": {
+        "Titre": "Focus sur Cursor",
+        "Intro": "L'IDE de référence du Vibe Coding, fork de VS Code. Célèbre pour son Composer qui permet de dialoguer avec le projet entier.",
+        "Chiffre 2": "2023",
+        "Titre 2": "année de lancement (premier IDE agentique populaire)",
+        "Chiffre 3": "Multi",
+        "Titre 3": "modèles supportés (Claude, GPT, Gemini, etc.)",
+        "Titre 4": "L'éditeur qui a popularisé le Vibe Coding",
+        "Texte 4": "Cursor propose un Composer pour l'édition multi-fichiers et un chat contextuel relié au projet entier. On décrit une fonctionnalité, l'agent la construit dans les bons fichiers. C'est l'outil cité par Karpathy dans son post fondateur.",
+        "Texte Bulle": "Hobby : gratuit (limité) · Pro : 20$/mois (500 requêtes rapides) · Business : 40$/mois (usage intensif) ·",
+        "Source": "Source : Cursor 2025"
+      }
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": {
+        "Titre": "Focus sur Windsurf",
+        "Intro": "IDE agentique concurrent de Cursor. Son agent « Cascade » enchaîne les actions de manière autonome dans une interface épurée.",
+        "Chiffre 2": "2024",
+        "Titre 2": "année de lancement (ex-Codeium, renommé Windsurf)",
+        "Chiffre 3": "Auto",
+        "Titre 3": "mode agent : Cascade planifie et exécute seul les tâches",
+        "Titre 4": "L'alternative agentique accessible",
+        "Texte 4": "Windsurf se distingue par son expérience fluide et son agent Cascade capable d'enchaîner plusieurs actions sans intervention. Interface épurée, bonne prise en main pour les débutants. La limite ? Un écosystème de plugins moins mature que Cursor.",
+        "Texte Bulle": "Free : limité · Pro : 15$/mois · Team : 35$/mois · Usage du modèle inclus dans l'abonnement ·",
+        "Source": "Source : Windsurf 2025"
+      }
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": {
+        "Titre": "Focus sur Claude Code",
+        "Intro": "Agent en terminal créé par Anthropic. Pas d'interface graphique : on parle, il agit directement sur le projet. Puissant pour l'autonomie.",
+        "Chiffre 2": "Fév.",
+        "Titre 2": "2025 : aperçu, puis version complète en mai 2025",
+        "Chiffre 3": "200K",
+        "Titre 3": "tokens de contexte (projets volumineux)",
+        "Titre 4": "L'approche terminale pour les projets complexes",
+        "Texte 4": "Claude Code fonctionne dans le terminal : on décrit la tâche, l'agent planifie, modifie les fichiers et lance les tests. Idéal pour les gros projets ou les refactorisations lourdes. L'absence d'interface graphique peut dérouter les débutants.",
+        "Texte Bulle": "Accès via abonnement Claude Pro (22€/mois) ou API à l'usage · Fonctionne dans n'importe quel terminal ·",
+        "Source": "Source : Anthropic 2025"
+      }
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": {
+        "Titre": "Focus sur Google Antigravity ⭐",
+        "Intro": "IDE « agent-first » lancé en novembre 2025, motorisé par Gemini 3. C'est l'outil principal du Module 4 de cette formation.",
+        "Chiffre 2": "Nov.",
+        "Titre 2": "2025 : lancement de l'IDE agent-first par Google",
+        "Chiffre 3": "Multi",
+        "Titre 3": "agents en parallèle via l'Agent Manager intégré",
+        "Titre 4": "L'orchestrateur d'agents de la formation",
+        "Texte 4": "Antigravity se distingue par son Agent Manager qui permet de lancer plusieurs agents en parallèle sur un même projet. Chaque agent travaille sur sa tâche, on supervise l'ensemble. Conçu dès le départ pour le travail agentique, pas adapté après coup.",
+        "Texte Bulle": "Abonnement Gemini Advanced (22€/mois) · Inclut l'accès à l'IDE et aux modèles Gemini 3 · Outil du Module 4 ·",
+        "Source": "Source : Google 2025"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "content": {
+        "Titre": "Les plateformes web tout-en-un",
+        "Intro": "Du prompt à l'application en ligne, sans rien installer. Parfait pour prototyper et tester une idée en quelques minutes :",
+        "Picto 1": "mdi:heart-outline",
+        "Titre 1": "Lovable : du prompt au MVP",
+        "Texte 1": "On décrit l'application souhaitée, Lovable génère le code et le déploie instantanément. Interface très guidée, idéale pour les non-techniques.",
+        "Picto 2": "mdi:lightning-bolt",
+        "Titre 2": "Bolt : prototypage éclair",
+        "Texte 2": "Génération rapide d'applications web complètes dans le navigateur. Bon rapport entre vitesse de génération et qualité du code produit.",
+        "Picto 3": "mdi:palette-outline",
+        "Titre 3": "v0 par Vercel : UI en premier",
+        "Texte 3": "Spécialisé dans la génération d'interfaces React et Next.js. On décrit le composant visuel, v0 produit le code correspondant.",
+        "Picto 4": "mdi:laptop",
+        "Titre 4": "Replit : tout dans le navigateur",
+        "Texte 4": "Environnement de développement complet en ligne avec agent IA intégré. On code, on teste et on déploie sans quitter le navigateur."
+      }
+    },
+    {
+      "template": "VIBECODING - 5 BLOCS - VARIATION",
+      "content": {
+        "Titre": "Comment s'y retrouver ?",
+        "Intro": "Comment faire son choix parmi tous ces outils :",
+        "Texte Bulle": "Les outils changent, la logique reste. Inutile de tous les apprendre — on maîtrise la méthode, on s'adapte aux outils.",
+        "Picto 1": "mdi:target",
+        "Titre 1": "Le besoin du projet",
+        "Texte 1": "Prototype jetable ou app durable ? Outil interne ou produit public ? Le besoin dicte la catégorie d'outil adaptée.",
+        "Picto 2": "mdi:school-outline",
+        "Titre 2": "La prise en main",
+        "Texte 2": "Les plateformes web sont les plus accessibles. Les IDE agentiques demandent un temps d'adaptation. Le terminal, de l'aisance.",
+        "Picto 3": "mdi:currency-eur",
+        "Titre 3": "Le budget mensuel",
+        "Texte 3": "De gratuit (limité) à 40€/mois selon l'outil et l'usage. Le vrai coût, c'est souvent le modèle d'IA sous-jacent.",
+        "Picto 4": "mdi:brain",
+        "Titre 4": "Le modèle d'IA utilisé",
+        "Texte 4": "Souvent le facteur le plus décisif. Un bon modèle dans un outil moyen surpasse un outil premium avec un modèle faible.",
+        "Picto 5": "mdi:update",
+        "Titre 5": "La veille, pas la course",
+        "Texte 5": "Garder un œil sur les nouveautés sans changer d'outil à chaque sortie. La stabilité compte autant que la performance."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "On a passé en revue les principaux outils et leurs quatre familles : assistants intégrés, IDE agentiques, agents en terminal et plateformes web. Tous suivent la même logique — décrire, générer, itérer. Les outils changent, la logique reste. Inutile de tous les apprendre : on maîtrise la méthode, on s'adapte à l'outil. Un chapitre entier sera consacré à la veille.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Les outils changent, la logique reste : décrire, générer, itérer. On a découvert l'écosystème — dans le Module 4, on pratiquera avec Google Antigravity. Le prochain chapitre abordera la veille technologique pour rester à jour !"
+      }
+    }
+  ]
+}

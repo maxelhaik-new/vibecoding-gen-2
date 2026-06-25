@@ -245,6 +245,12 @@
 | M2C6L5 | 5 min | Écrire des prompts sûrs : la checklist avant envoi |  |
 | M2C6L6 | 6 min | Cas d'étude : repérer une fuite de données dans un prompt |  |
 
+### Chapitre 7 — Être prêt avant de débuter la formation
+
+| Code leçon | Durée | Titre | Code leçon originale |
+| --- | --- | --- | --- |
+| M2C7L1 | 1 min | Les objectifs du chapitre : être prêt à commencer | M1C2L1 |
+
 ## MODULE 3 — Maîtriser les briques techniques essentielles
 
 <aside>

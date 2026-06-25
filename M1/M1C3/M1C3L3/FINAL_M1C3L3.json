@@ -1,117 +1,126 @@
 {
-  "lessonTitle": "Histoire et développement récent",
+  "lessonTitle": "M1C3L3 — Pour qui le Vibe Coding change la donne ?",
   "slides": [
     {
       "template": "VIBECODING - COVER",
       "content": {
-        "Titre": "Histoire et développement récent du Vibe Coding"
-      }
+        "Titre": "Pour qui le Vibe Coding change la donne ?"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     },
     {
       "template": "VIBECODING - INTRO",
       "content": {
-        "Titre": "Un voyage dans le temps en accéléré",
-        "Intro": "Le Vibe Coding n'est pas apparu de nulle part. En cinq ans, on est passé de l'autocomplétion basique à des agents autonomes qui codent des projets entiers. Cette leçon retrace la chronologie, les moments-clés et les raisons qui font que tout converge maintenant.",
-        "Titre 1": "Les briques fondatrices",
-        "Texte 1": "Des Transformers de 2017 aux premiers copilotes de 2021 : les innovations techniques qui ont rendu possible la compréhension du code.",
-        "Titre 2": "L'accélération 2022-2025",
-        "Texte 2": "ChatGPT, les IDE agentiques, le saut de qualité des modèles et la naissance officielle du terme par Andrej Karpathy.",
-        "Titre 3": "Pourquoi maintenant ?",
-        "Texte 3": "La convergence de quatre facteurs : modèles fiables, grand contexte, capacités agentiques et interfaces accessibles à tous."
-      }
-    },
-    {
-      "template": "VIBECODING - VIDE",
-      "content": {
-        "Titre": "Avant : coder à la main",
-        "Intro": "Pendant des décennies, créer un logiciel signifiait écrire chaque ligne soi-même. Chercher ses erreurs sur Stack Overflow, apprendre des langages pendant des années avant de produire quoi que ce soit. Le point de départ qu'on est en train de quitter."
-      }
-    },
-    {
-      "template": "VIBECODING - CHRONOLOGIE",
-      "content": {
-        "Titre": "La montée en puissance de l'IA",
-        "Intro": "Du premier modèle capable de comprendre le langage aux agents autonomes d'aujourd'hui, voici les cinq étapes qui ont tout changé :",
-        "Date 1": "2017",
-        "Titre 1": "Les Transformers",
-        "Texte 1": "L'architecture « Attention is all you need » permet aux modèles de comprendre le langage — et le code.",
-        "Date 2": "2021",
-        "Titre 2": "Premiers copilotes",
-        "Texte 2": "OpenAI Codex puis GitHub Copilot : l'autocomplétion intelligente arrive dans l'éditeur.",
-        "Date 3": "Fin 2022",
-        "Titre 3": "ChatGPT",
-        "Texte 3": "Le grand public génère du code en conversation. La phase « copier-coller depuis le chat ».",
-        "Date 4": "2023-2024",
-        "Titre 4": "L'IA dans l'IDE",
-        "Texte 4": "Cursor, Copilot Chat. La boucle « décrire → générer → tester » se fait en un seul endroit.",
-        "Date 5": "Fin 2024",
-        "Titre 5": "Saut de qualité",
-        "Texte 5": "Claude 3.5 Sonnet rend le code assez fiable pour qu'on lui fasse confiance. Le vrai déclencheur.",
-        "Texte Bulle": "En cinq ans, l'IA est passée d'un outil d'autocomplétion à un agent autonome capable de planifier, coder et tester un projet entier."
-      }
-    },
-    {
-      "template": "VIBECODING - USE CASE",
-      "content": {
-        "Titre": "Le moment fondateur",
-        "Intro": "3 FÉVRIER 2025 — ANDREJ KARPATHY",
-        "Texte 1": "Andrej Karpathy — cofondateur d'OpenAI, ancien directeur IA de Tesla — publie un post qui nomme le phénomène : « Vibe Coding ». Sa formule : se laisser porter par les vibes, oublier que le code existe. Possible, selon lui, parce que les modèles sont « devenus trop bons ». Il raconte coder à la voix, valider les résultats sans lire le code source, et se sentir comme un chef de produit supervisant des agents autonomes. Le terme se propage en quelques heures.",
-        "Texte Bulle": "En bref : un expert mondial de l'IA donne un nom à une pratique émergente. Le signal est clair — si le cofondateur d'OpenAI ne lit plus le code qu'il produit, c'est qu'une rupture est en cours.",
-        "Source": "Source : X.com"
-      }
+        "Titre": "Les profils transformés en 2026",
+        "Intro": "En 2026, le Vibe Coding ne transforme pas tous les métiers de la même façon. Certains profils basculent structurellement : la valeur ne réside plus dans la syntaxe, mais dans la maîtrise du métier.",
+        "Titre 1": "L'architecte non tech",
+        "Texte 1": "Profils marketing, vente ou gestion qui pilotent l'IA pour créer des solutions sans coder.",
+        "Titre 2": "Freelance & solopreneur",
+        "Texte 2": "La dépendance technique freinait tout. Le Vibe Coding supprime le besoin d'un dev pour tester une idée dès le premier jour.",
+        "Titre 3": "RevOps, PM & Designers",
+        "Texte 3": "Équipes opérationnelles et concepteurs autonomes : zéro ticket DSI, des prototypes testables directement."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     },
     {
       "template": "VIBECODING - CONCEPT",
       "content": {
-        "Titre": "Le passage au mode agentique",
-        "Mot": "Qu'est-ce qu'un agent ?",
-        "Definition": "Contrairement à un simple chat qui génère du texte à copier-coller, un agent IA planifie des actions, lit et écrit des fichiers locaux, exécute des commandes et corrige ses propres erreurs dans une boucle d'exécution autonome.",
-        "Bulle": "L'humain ne code plus : il valide les plans et supervise les actions."
-      }
+        "Titre": "L'architecte non technique",
+        "Mot": "Un nouveau profil hybride",
+        "Definition": "La frontière entre profils métier et développeurs s'efface. Comprendre le problème du client suffit pour piloter l'IA et fabriquer la solution — sans mémoriser de syntaxe. La maîtrise métier devient l'avantage décisif.",
+        "Bulle": "Comme un architecte dessine sans poser les briques : concevoir sans coder."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     },
     {
-      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "template": "VIBECODING - USE CASE",
       "content": {
-        "Titre": "2025 : l'année des agents",
-        "Intro": "Après le post de Karpathy, l'écosystème accélère. L'IA passe d'assistant à agent autonome en quelques mois :",
-        "Picto 1": "mdi:console",
-        "Titre 1": "Claude Code par Anthropic (fév.)",
-        "Texte 1": "Agent en terminal qui planifie, code et teste sans interface graphique. Pensé pour les tâches autonomes et les gros projets de production.",
-        "Picto 2": "mdi:robot-outline",
-        "Titre 2": "Codex et les agents OpenAI",
-        "Texte 2": "OpenAI lance ses propres agents de code capables de raisonner sur des bases de code entières et d'enchaîner les actions.",
-        "Picto 3": "mdi:application-outline",
-        "Titre 3": "IDE agentiques : Windsurf",
-        "Texte 3": "Les éditeurs de code se transforment en orchestrateurs d'agents. L'agent « Cascade » enchaîne les actions dans un IDE fluide.",
-        "Picto 4": "mdi:rocket-launch-outline",
-        "Titre 4": "Google Antigravity (nov. 2025)",
-        "Texte 4": "IDE « agent-first » motorisé par Gemini 3 avec un Agent Manager pour orchestrer plusieurs agents en parallèle sur un projet."
-      }
+        "Titre": "Le freelance en solo complet",
+        "Intro": "FREELANCE & SOLOPRENEUR",
+        "Texte 1": "Pour un travailleur indépendant, la dépendance technique a toujours été le principal facteur de ralentissement — ou d'échec financier. Le Vibe Coding change radicalement la donne : un freelance peut désormais assumer seul l'intégralité de la chaîne de production d'un service numérique. Le problème ? Recruter ou s'associer avec un développeur coûte du temps et du budget. Désormais, ce budget se déplace vers l'acquisition de clients, et les phases de validation commerciale s'accélèrent sans attendre un tiers technique.",
+        "Texte Bulle": "EN BREF : les plateformes de recrutement intègrent désormais Cursor, v0 et Bolt comme compétences clés pour des postes de chefs de projet — preuve que le marché valorise déjà ce profil hybride.",
+        "Source": "LinkedIn Jobs, 2026"
+      },
+      "image_concept": "A lone craftsman at a minimal wooden desk, surrounded by floating digital blueprints and glowing code fragments, assembling a complete product by hand — no team, no factory, just focused mastery",
+      "image_style": "editorial",
+      "image_ratio": "2:3"
     },
     {
-      "template": "VIBECODING - CHIFFRES",
+      "template": "VIBECODING - 3 BLOCS - PHOTO",
       "content": {
-        "Titre": "L’adoption de l’IA en chiffres",
-        "Intro": "L’adoption des outils de Vibe Coding et d’assistance IA connait une accélération fulgurante. Les chiffres parlent d’eux-mêmes :",
-        "Chiffre 1": "84%",
-        "Titre 1": "DES DÉVELOPPEURS",
-        "Texte 1": "Utilisent ou prévoient d’utiliser l’IA, contre seulement 15% un an plus tôt.",
-        "Chiffre 2": "25%",
-        "Titre 2": "STARTUPS",
-        "Texte 2": "De la promo Winter 2025 du Y Combinator ont un code généré à 95% par l’IA.",
-        "Chiffre 3": "20M  ",
-        "Titre 3": "COPILOT",
-        "Texte 3": "Utilisent GitHub Copilot en juillet 2025, déployé dans 90% du Fortune 100."
-      }
+        "Titre": "RevOps, Marketing & Opérations",
+        "Intro": "Les équipes opérationnelles souffrent du goulet d'étranglement DSI : la moindre modification d'outil prend des mois. Le Vibe Coding leur donne une autonomie totale.",
+        "Titre 1": "Le goulet DSI",
+        "Texte 1": "Chaque demande de modification d'outil interne génère un ticket, une file d'attente, un délai. Les équipes growth attendent des mois pour tester une simple hypothèse commerciale sur leurs flux.",
+        "Titre 2": "Autonomie totale",
+        "Titre 3": "EXPÉRIMENTATION",
+        "Texte 3": "Formuler son besoin en langage naturel et adapter ses outils internes sans dépendre d'un cycle de développement.",
+        "Titre Bulle": "En 2026, les plateformes de Vibe Coding métier sont adoptées majoritairement par des équipes non techniques : marketing, ventes et gestion de flux.",
+        "Source": "Image : profil Growth Marketer en autonomie opérationnelle"
+      },
+      "image_concept": "A marketing professional at a standing desk, confidently adjusting a glowing dashboard of operational flows and metrics with their hands — no IT department in sight, pure autonomy",
+      "image_style": "grainy-editorial",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO - ALT",
+      "content": {
+        "Titre": "Les Product Managers & Designers",
+        "Intro": "Pour les concepteurs, le Vibe Coding supprime la couche de traduction intermédiaire. Fini les cahiers des charges figés — place aux prototypes testables.",
+        "Titre 1": "LA TRADUCTION AUTOMATIQUE SUPPRIMÉE",
+        "Texte 1": "Plus besoin de longs cahiers des charges ni de maquettes statiques à intégrer par un développeur externe.",
+        "Picto 1": "mdi:file-document-remove-outline",
+        "Titre 2": "L'intention exprimée directement",
+        "Texte 2": "Designers et PMs expriment leur intention directement en prototypes dynamiques — sans intermédiaire, sans perte de sens.",
+        "Picto 2": "mdi:gesture-tap-button",
+        "Titre 3": "Un rôle d'orchestrateur central",
+        "Texte 3": "Fini les specs : on orchestre des expériences testables directement, réduisant le cycle de feedback de semaines à heures.",
+        "Picto 3": "mdi:sitemap-outline",
+        "Source": "Image : designer orchestrant un prototype dynamique en temps réel"
+      },
+      "image_concept": "A designer sitting cross-legged on a studio floor, surrounded by floating interactive wireframes and live prototype screens that respond to their gestures — no handoff, no waiting, pure creative control",
+      "image_style": "constructivist",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "4 profils transformés par le Vibe Coding",
+        "Intro": "En 2026, quatre profils basculent structurellement : la compétence technique cède la place à l'expertise métier comme principal facteur de valeur.",
+        "Titre 1": "L'ARCHITECTE NON TECHNIQUE DU PROJET",
+        "Texte 1": "Profils métier (marketing, vente, gestion) qui pilotent l'IA pour fabriquer des solutions : la logique métier remplace la syntaxe comme compétence centrale.",
+        "Picto 1": "mdi:account-hard-hat-outline",
+        "Titre 2": "LE FREELANCE & SOLOPRENEUR",
+        "Texte 2": "Assumer seul la chaîne de production : le budget sous-traitance se déplace vers l'acquisition client, la validation commerciale s'accélère.",
+        "Picto 2": "mdi:account-cowboy-hat",
+        "Titre 3": "LES PROFILS REVOPS & MARKETING",
+        "Texte 3": "Autonomie totale sur les flux internes : plus de ticket DSI, l'expert métier adapte ses outils à son rythme.",
+        "Picto 3": "mdi:chart-timeline-variant-shimmer",
+        "Titre 4": "LES PRODUCT MANAGERS & DESIGNERS",
+        "Texte 4": "Prototypes dynamiques directement testables sans cahier des charges figé : le rôle bascule de transmetteur de specs à orchestrateur d'expériences utilisateurs.",
+        "Picto 4": "mdi:palette-outline"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     },
     {
       "template": "VIBECODING - FIN",
       "content": {
-        "Titre": "Ce qu'il faut retenir",
-        "Intro": "En cinq ans, on est passé des premiers copilotes à ChatGPT, puis à des modèles assez fiables pour qu'on leur fasse confiance, et enfin aux agents autonomes de 2025. Andrej Karpathy a donné un nom au phénomène en février 2025. Le Vibe Coding n'est pas une mode passagère, mais l'aboutissement logique d'une évolution technique commencée en 2017.",
+        "Titre": "La valeur bascule vers le métier",
+        "Intro": "Le Vibe Coding ne remplace pas les développeurs — il déplace la frontière de la valeur. En 2026, les enquêtes sectorielles le confirment : produire du code brut perd en valeur relative au profit de l'architecture, de la compréhension client et de la gouvernance des systèmes. Quatre profils en bénéficient structurellement : architecte non technique, freelance solo, équipes RevOps, concepteurs produit. Pour chacun, maîtriser le problème métier devient l'avantage décisif — bien plus que la syntaxe.",
         "Titre Bulle": "EN BREF",
-        "Texte Bulle": "Le Vibe Coding est le fruit de cinq ans d'innovation, pas un effet de mode. Maintenant qu'on sait d'où il vient, on va le situer face aux autres façons de créer une application. C'est la prochaine leçon !"
-      }
+        "Texte Bulle": "Les offres d'emploi pour chefs de projet et analystes d'opérations intègrent désormais Cursor, v0 et Bolt comme compétences requises — signal fort que le marché a déjà intégré ce basculement. La prochaine leçon explore les outils concrets de ces nouveaux profils."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     }
   ]
 }

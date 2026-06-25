@@ -1,45 +1,116 @@
 {
-  "lessonTitle": "Aux origines du terme : Andrej Karpathy",
+  "lessonTitle": "Histoire et développement récent",
   "slides": [
     {
       "template": "VIBECODING - COVER",
       "content": {
-        "Titre": "Aux origines du terme : Andrej Karpathy"
+        "Titre": "Histoire et développement récent du Vibe Coding"
       }
     },
     {
-      "template": "VIBECODING - DEFINITION",
+      "template": "VIBECODING - INTRO",
       "content": {
-        "Titre": "L'origine du terme",
-        "Mot": "Vibe Coding",
-        "Definition": "Ce terme désigne une nouvelle approche du développement logiciel où l'humain ne rédige plus directement de lignes de code. À la place, on guide des agents d'intelligence artificielle autonomes en exprimant clairement ses intentions en langage naturel. Le rôle du développeur évolue ainsi vers celui de superviseur, de concepteur ou de chef de produit.",
-        "Bulle": "Popularisé par Andrej Karpathy, ancien directeur de l'IA chez Tesla et cofondateur d'OpenAI, lors d'un post marquant sur X. Il y décrit sa propre transition vers cette méthode de création fluide."
+        "Titre": "Un voyage dans le temps en accéléré",
+        "Intro": "Le Vibe Coding n'est pas apparu de nulle part. En cinq ans, on est passé de l'autocomplétion basique à des agents autonomes qui codent des projets entiers. Cette leçon retrace la chronologie, les moments-clés et les raisons qui font que tout converge maintenant.",
+        "Titre 1": "Les briques fondatrices",
+        "Texte 1": "Des Transformers de 2017 aux premiers copilotes de 2021 : les innovations techniques qui ont rendu possible la compréhension du code.",
+        "Titre 2": "L'accélération 2022-2025",
+        "Texte 2": "ChatGPT, les IDE agentiques, le saut de qualité des modèles et la naissance officielle du terme par Andrej Karpathy.",
+        "Titre 3": "Pourquoi maintenant ?",
+        "Texte 3": "La convergence de quatre facteurs : modèles fiables, grand contexte, capacités agentiques et interfaces accessibles à tous."
+      }
+    },
+    {
+      "template": "VIBECODING - VIDE",
+      "content": {
+        "Titre": "Avant : coder à la main",
+        "Intro": "Pendant des décennies, créer un logiciel signifiait écrire chaque ligne soi-même. Chercher ses erreurs sur Stack Overflow, apprendre des langages pendant des années avant de produire quoi que ce soit. Le point de départ qu'on est en train de quitter."
+      }
+    },
+    {
+      "template": "VIBECODING - CHRONOLOGIE",
+      "content": {
+        "Titre": "La montée en puissance de l'IA",
+        "Intro": "Du premier modèle capable de comprendre le langage aux agents autonomes d'aujourd'hui, voici les cinq étapes qui ont tout changé :",
+        "Date 1": "2017",
+        "Titre 1": "Les Transformers",
+        "Texte 1": "L'architecture « Attention is all you need » permet aux modèles de comprendre le langage — et le code.",
+        "Date 2": "2021",
+        "Titre 2": "Premiers copilotes",
+        "Texte 2": "OpenAI Codex puis GitHub Copilot : l'autocomplétion intelligente arrive dans l'éditeur.",
+        "Date 3": "Fin 2022",
+        "Titre 3": "ChatGPT",
+        "Texte 3": "Le grand public génère du code en conversation. La phase « copier-coller depuis le chat ».",
+        "Date 4": "2023-2024",
+        "Titre 4": "L'IA dans l'IDE",
+        "Texte 4": "Cursor, Copilot Chat. La boucle « décrire → générer → tester » se fait en un seul endroit.",
+        "Date 5": "Fin 2024",
+        "Titre 5": "Saut de qualité",
+        "Texte 5": "Claude 3.5 Sonnet rend le code assez fiable pour qu'on lui fasse confiance. Le vrai déclencheur.",
+        "Texte Bulle": "En cinq ans, l'IA est passée d'un outil d'autocomplétion à un agent autonome capable de planifier, coder et tester un projet entier."
       }
     },
     {
       "template": "VIBECODING - USE CASE",
       "content": {
-        "Titre": "Le constat de Karpathy",
-        "Intro": "L'EXPÉRIENCE DE L'EXPERT",
-        "Texte 1": "Andrej Karpathy a partagé une expérience marquante : concevoir des projets entiers sans toucher au code. En guidant simplement l'IA, il s'est senti comme un chef de produit supervisant des agents autonomes. Le problème ? On ne tape plus de lignes de code, on oriente des intentions. L'agent IA écrit l'intégralité du programme pendant que l'humain valide la direction globale. C'est une rupture majeure dans l'ingénierie logicielle.",
-        "Texte Bulle": "En bref : on passe d'un travail d'écriture technique à un rôle de direction artistique et fonctionnelle. On ne code plus, on insuffle une direction, on valide des comportements et on ajuste les vibes du projet.",
-        "Source": "Source : An abstract portrait of a modern thinker contemplating conne - Illustration générée par IA - Maxime Elhaik",
-        "image": "http://localhost:8080/assets/vibe_m1c2l3_slide_3.png"
+        "Titre": "Le moment fondateur",
+        "Intro": "3 FÉVRIER 2025 — ANDREJ KARPATHY",
+        "Texte 1": "Andrej Karpathy — cofondateur d'OpenAI, ancien directeur IA de Tesla — publie un post qui nomme le phénomène : « Vibe Coding ». Sa formule : se laisser porter par les vibes, oublier que le code existe. Possible, selon lui, parce que les modèles sont « devenus trop bons ». Il raconte coder à la voix, valider les résultats sans lire le code source, et se sentir comme un chef de produit supervisant des agents autonomes. Le terme se propage en quelques heures.",
+        "Texte Bulle": "En bref : un expert mondial de l'IA donne un nom à une pratique émergente. Le signal est clair — si le cofondateur d'OpenAI ne lit plus le code qu'il produit, c'est qu'une rupture est en cours.",
+        "Source": "Source : X.com"
       }
     },
     {
-      "template": "VIBECODING - 3 BLOCS - PHOTO",
+      "template": "VIBECODING - CONCEPT",
       "content": {
-        "Titre": "Le futur du développement",
-        "Intro": "Cette métaphore des vibes redéfinit l'ingénierie logicielle. L'important n'est plus la syntaxe, mais la clarté de la vision globale.",
-        "Titre 1": "La vision",
-        "Texte 1": "Exprimer clairement ses idées et ses besoins fonctionnels. L'humain assure la cohérence globale et l'architecture du projet.",
-        "Titre 2": "La supervision",
-        "Titre Bulle": "Le développeur de demain orchestre des agents autonomes au lieu de s'épuiser sur des détails de syntaxe.",
-        "Titre 3": "L'orchestration",
-        "Texte 3": "Guider des agents autonomes pour concrétiser la vision. On ajuste les résultats de manière itérative et fluide.",
-        "Source": "Source : An abstract portrait of a modern thinker contemplating glowi - Illustration générée par IA - Maxime Elhaik",
-        "image": "http://localhost:8080/assets/vibe_m1c2l3_slide_4.png"
+        "Titre": "Le passage au mode agentique",
+        "Mot": "Qu'est-ce qu'un agent ?",
+        "Definition": "Contrairement à un simple chat qui génère du texte à copier-coller, un agent IA planifie des actions, lit et écrit des fichiers locaux, exécute des commandes et corrige ses propres erreurs dans une boucle d'exécution autonome.",
+        "Bulle": "L'humain ne code plus : il valide les plans et supervise les actions."
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "content": {
+        "Titre": "2025 : l'année des agents",
+        "Intro": "Après le post de Karpathy, l'écosystème accélère. L'IA passe d'assistant à agent autonome en quelques mois :",
+        "Picto 1": "mdi:console",
+        "Titre 1": "Claude Code par Anthropic (fév.)",
+        "Texte 1": "Agent en terminal qui planifie, code et teste sans interface graphique. Pensé pour les tâches autonomes et les gros projets de production.",
+        "Picto 2": "mdi:robot-outline",
+        "Titre 2": "Codex et les agents OpenAI",
+        "Texte 2": "OpenAI lance ses propres agents de code capables de raisonner sur des bases de code entières et d'enchaîner les actions.",
+        "Picto 3": "mdi:application-outline",
+        "Titre 3": "IDE agentiques : Windsurf",
+        "Texte 3": "Les éditeurs de code se transforment en orchestrateurs d'agents. L'agent « Cascade » enchaîne les actions dans un IDE fluide.",
+        "Picto 4": "mdi:rocket-launch-outline",
+        "Titre 4": "Google Antigravity (nov. 2025)",
+        "Texte 4": "IDE « agent-first » motorisé par Gemini 3 avec un Agent Manager pour orchestrer plusieurs agents en parallèle sur un projet."
+      }
+    },
+    {
+      "template": "VIBECODING - CHIFFRES",
+      "content": {
+        "Titre": "L’adoption de l’IA en chiffres",
+        "Intro": "L’adoption des outils de Vibe Coding et d’assistance IA connait une accélération fulgurante. Les chiffres parlent d’eux-mêmes :",
+        "Chiffre 1": "84%",
+        "Titre 1": "DES DÉVELOPPEURS",
+        "Texte 1": "Utilisent ou prévoient d’utiliser l’IA, contre seulement 15% un an plus tôt.",
+        "Chiffre 2": "25%",
+        "Titre 2": "STARTUPS",
+        "Texte 2": "De la promo Winter 2025 du Y Combinator ont un code généré à 95% par l’IA.",
+        "Chiffre 3": "20M  ",
+        "Titre 3": "COPILOT",
+        "Texte 3": "Utilisent GitHub Copilot en juillet 2025, déployé dans 90% du Fortune 100."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "En cinq ans, on est passé des premiers copilotes à ChatGPT, puis à des modèles assez fiables pour qu'on leur fasse confiance, et enfin aux agents autonomes de 2025. Andrej Karpathy a donné un nom au phénomène en février 2025. Le Vibe Coding n'est pas une mode passagère, mais l'aboutissement logique d'une évolution technique commencée en 2017.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Le Vibe Coding est le fruit de cinq ans d'innovation, pas un effet de mode. Maintenant qu'on sait d'où il vient, on va le situer face aux autres façons de créer une application. C'est la prochaine leçon !"
       }
     }
   ]

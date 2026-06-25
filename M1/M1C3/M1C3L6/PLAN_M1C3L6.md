@@ -1,56 +1,51 @@
-# Plan M1C3L6
-🎯 Objectif pédagogique
-Distinguer les forces, les faiblesses et la complémentarité des 6 outils leaders du Vibe Coding en 2026 afin de sélectionner la stack de développement "AI-first" adaptée à son projet sans compétences initiales en programmation.
+## 🎬 M1C3L5 -- En finir avec le mythe du remplacement du developpeur
 
-📖 Contenu de la leçon
-En 2026, le Vibe Coding n'est plus une simple tendance de "bricolage" technique, c'est un écosystème logiciel mature structuré autour de plateformes ultra-spécialisées. Pour le non-développeur, l'enjeu n'est plus de savoir si l'IA peut coder, mais quel outil est capable de matérialiser son intention de la manière la plus stable et la moins coûteuse possible.
+<aside>
+📐
 
-On classe le panorama des outils de 2026 en trois grandes catégories :
-- Les IDE natifs IA (Environnements locaux) : Ils remplacent le traditionnel éditeur de code. Ils s'installent sur l'ordinateur et manipulent directement les fichiers locaux.
-- Les bacs à sable full-stack (Dans le navigateur) : Ils ne nécessitent aucune installation technique. Tout le code, le serveur et la base de données tournent directement dans un onglet Google Chrome.
-- Les spécialistes de l'interface et du prototypage rapide : Ils excellent dans la création visuelle instantanée et le design de composants prêts à l'emploi.
+**Complexite** : moyenne - **Cible** : 8 slides - **Objectif** : a la fin, on sort de la peur du remplacement avec une vision claire de son role dans un monde ou l'IA code.
 
-Comprendre ce panorama permet d'éviter l'erreur majeure du débutant : utiliser un outil généraliste (comme l'interface web classique de ChatGPT) pour gérer un projet logiciel complexe, ce qui mène inévitablement à la perte du contexte et à l'effondrement de l'application.
+</aside>
 
-🛠️ Le Guide des 6 Outils Majeurs en 2026
+<aside>
+🎯
 
-1. Cursor
-- Nature de l'outil : Éditeur de code de bureau (IDE), basé sur un fork de VS Code.
-- Fonctionnement en Vibe Coding : Cursor s'est imposé comme la référence de l'industrie. Grâce à son mode Composer (raccourci Cmd+I), l'utilisateur ne dicte pas ses consignes ligne par ligne, mais décrit une fonctionnalité globale. L'IA se déploie alors de manière multi-fichiers : elle peut modifier simultanément le backend, changer l'interface frontend et mettre à jour les routes de l'application en une seule passe.
-- Pour qui ? Les professionnels du digital et les profils techniques/non-techniques qui souhaitent garder un contrôle total sur leur code source en local.
+**Angle** : desamorcer la peur avec des faits, pas des slogans. Le code basique devient une commodite, mais la valeur se deplace -- elle ne disparait pas. Clot le chapitre M1C3 sur une morale positive et actionnable.
 
-2. Windsurf (par Codeium)
-- Nature de l'outil : IDE de bureau concurrent direct de Cursor, propulsé par l'architecture agentique Cascade.
-- Fonctionnement en Vibe Coding : Là où Cursor collabore, Windsurf s'exécute de manière semi-autonome. Son agent intégré peut prendre l'initiative de lancer le terminal, d'exécuter des scripts de test pour vérifier s'il a fait une erreur, de lire les logs du système et de s'auto-corriger en boucle fermée sans intervention humaine. C'est l'incarnation pure de l'esprit "Vibe" : on donne l'objectif, l'agent gère la tuyauterie.
-- Pour qui ? Idéal lorsque l'on fait face à des bugs complexes ou que l'on souhaite automatiser les phases de débogage fastidieuses.
+</aside>
 
-3. v0.dev (par Vercel)
-- Nature de l'outil : Générateur d'interfaces utilisateur (Frontend) basé sur le cloud.
-- Fonctionnement en Vibe Coding : v0 est le roi incontesté du design génératif. En lui fournissant une simple description textuelle ou la capture d'écran d'un site existant, il génère en quelques secondes une interface moderne, responsive, utilisant les standards du marché (React, Tailwind CSS, et composants Shadcn). Il permet de copier-coller le code visuel directement dans son projet principal.
-- Pour qui ? Les non-développeurs bloqués par l'aspect esthétique de leur application et les chefs de projet web pour le prototypage rapide (Mockups).
+### 🧱 Slides pre-redigees
 
-4. Bolt.new (par StackBlitz)
-- Nature de l'outil : Environnement de développement full-stack 100% en ligne.
-- Fonctionnement en Vibe Coding : Bolt.new utilise la technologie des WebContainers, ce qui signifie qu'il fait tourner un serveur Node.js complet directement à l'intérieur de votre navigateur internet. Vous tapez votre idée (ex: « Crée-moi un clone d'AirBnB pour des locations de bureaux »), l'outil installe les packages, configure la base de données, génère l'interface et vous affiche l'application fonctionnelle sur le côté droit de l'écran avec un lien de déploiement en un clic.
-- Pour qui ? Le non-développeur absolu qui redoute d'installer des outils techniques sur sa machine et souhaite voir son idée prendre vie en moins de 3 minutes.
+| # | Intention | Titre propose | Message cle | Contenu pre-redige (a epurer) |
+| --- | --- | --- | --- | --- |
+| 1 | **Couverture de lecon.** Poser le sujet qui preoccupe : l'IA va-t-elle remplacer les developpeurs ? Affronter franchement la peur plutot que de la contourner. | **En finir avec le mythe du remplacement** | La question que tout le monde evite de poser. | Titre de la lecon. Sous-titre possible : Des faits, pas des slogans. |
+| 2 | **Accroche directe.** Poser la peur sans la minimiser. Credibilise immediatement le discours en ne fuyant pas la question difficile. | **L'IA va-t-elle nous remplacer ?** | On affronte la question au lieu de la fuir. | L'IA va-t-elle nous remplacer ? Voici ce que disent les faits -- pas les slogans reassurants ni les catastrophismes. On regarde en face. |
+| 3 | **Lucidite.** Admettre ce que l'IA fait vraiment bien : le code basique et repetitif. Installe la credibilite pour la suite -- on ne minimise pas. | **Ce qui devient une commodite** | Le code basique se banalise. Les fiches de poste evoluent. | Ecrire du code basique, de la documentation, des tests unitaires simples -- l'IA le fait vite et bien. Ce ne sont pas les developpeurs qui disparaissent : ce sont certaines taches qui se banalisent. |
+| 4 | **Chiffres de marche.** Poser la realite de l'impact sur l'emploi junior sans catastrophisme. Donne une base factuelle a la discussion -- ni minimisation, ni alarmisme. | **Ce que dit le marche** | L'entree de gamme se contracte. Ce n'est pas une rumeur, c'est mesurable. | Embauche des juniors (22-25 ans) : -20 % entre fin 2022 et mi-2025. 40 a 70 % du travail d'entree de gamme serait absorbe par l'IA. Ce n'est pas une tendance a ignorer. *Source : Keyhole Software, 2026.* |
+| 5 | **Decomposition en 4 blocs.** Montrer que la valeur se deplace, elle ne disparait pas. Chaque bloc = un domaine ou l'humain reste decisif et difficile a remplacer. | **Ou va la valeur** | La valeur ne disparait pas -- elle se deplace vers ce que l'IA ne peut pas faire seule. | Bloc 1 -- Expertise metier : comprendre le domaine, pas juste le code. Bloc 2 -- Architecture : concevoir les systemes, pas seulement les ecrire. Bloc 3 -- Debogage des cas complexes : l'IA rate souvent les cas limites. Bloc 4 -- Revue strategique : logique, securite, decisions d'impact. |
+| 6 | **Principe fondateur.** La regle d'OpenClassrooms s'applique directement a l'apprenant : ne livrer que ce qu'on est capable d'evaluer. Protege contre le vibe coding sans comprehension. | **La regle d'or** | Ne jamais livrer ce qu'on ne saurait pas evaluer, corriger ou remettre en question. | Principe cle : peu importe la qualite apparente du resultat genere, si on ne peut pas le verifier, on ne le livre pas. Cette regle s'applique a tous les niveaux -- junior comme senior. *Source : OpenClassrooms.* |
+| 7 | **Projection personnelle.** Donner a l'apprenant le cadre positif : ce que la formation construit -- du jugement, pas juste du code. Transforme la peur en orientation. | **Ce que ca change pour nous** | Le Vibe Coding deplace l'effort vers la comprehension et le jugement. | L'effort se deplace : moins taper du code, plus comprendre ce qui est produit, detecter les erreurs, orienter les choix. C'est exactement ce que cette formation entraine. La competence technique reste -- elle s'eleve. |
+| 8 | **Synthese memorisable.** Clot le chapitre M1C3 sur une morale claire et actionnable. Transition vers le module suivant. | **En bref** | Le Vibe Coding ne remplace pas la competence -- il la redefinie. | EN BREF : le Vibe Coding ne remplace pas la competence, il la redefinie. La valeur se deplace vers le jugement, l'expertise metier et la capacite a evaluer ce qu'on produit. C'est ce que la suite de la formation construit. |
 
-5. Lovable.dev (connu historiquement sous l'évolution de GPT Engineer)
-- Nature de l'outil : Plateforme SaaS "Prompt-to-Product" orientée MVP (Produit Minimum Viable).
-- Fonctionnement en Vibe Coding : Lovable est configuré pour éliminer toute friction business. Il ne génère pas seulement du code informatique ; il connecte nativement et visuellement l'application créée à des outils tiers essentiels comme Supabase (pour la gestion des utilisateurs et des vraies bases de données). Il permet de faire évoluer une application complexe par de simples itérations textuelles en langage naturel en masquant toute la complexité sous-jacente.
-- Pour qui ? Les entrepreneurs et les équipes marketing qui ont besoin de lancer une application web connectée et exploitable par de vrais clients à moindre coût.
+<aside>
+🧾
 
-6. Claude Code (par Anthropic)
-- Nature de l'outil : Agent IA natif accessible directement en ligne de commande (CLI) dans le terminal.
-- Fonctionnement en Vibe Coding : Lancé comme un outil de rupture, Claude Code n'a pas d'interface graphique. Il vit dans le terminal de l'ordinateur. C'est un agent chirurgical : on l'invoque dans un dossier de projet en lui disant par exemple « Trouve pourquoi le bouton de paiement échoue et corrige-le ». Il scanne l'architecture, lit les fichiers, applique la correction de syntaxe exacte et s'arrête. Ses capacités de raisonnement logique dépassent souvent celles des extensions graphiques classiques.
-- Pour qui ? Les professionnels du digital qui gèrent déjà de gros projets existants et veulent un assistant d'élite ultra-rapide au cœur de leur système.
+Ce qu'on peut dire en resume : On a confronte le mythe aux faits : le code basique devient une commodite, l'embauche junior se contracte, mais la valeur ne disparait pas -- elle se deplace vers le metier, l'architecture, le debogage et le jugement. La regle d'or : ne jamais livrer ce qu'on ne sait pas evaluer. La morale : le Vibe Coding ne remplace pas la competence, il la redefinie. La valeur se deplace vers ce qu'on est capable de penser, pas juste de generer.
 
-7. Antigravity
-- Nature de l'outil : Plateforme en ligne spécialisée dans la mise en ligne (l'hébergement) et la gestion automatique des applications.
-- Création & Origine : Cet outil a été créé pour résoudre le "blocage final" des non-développeurs. Souvent, un utilisateur réussit à créer une application sur son ordinateur grâce à Cursor, mais se retrouve incapable de la publier sur Internet car il ne sait pas ce qu'est un serveur. Son nom fait référence à une célèbre blague d'informaticiens (la commande import antigravity en Python) qui permettait de s'affranchir virtuellement des lois de la physique pour faire voler son programme sans effort technique.
-- Fonctionnement en Vibe Coding : L'outil se connecte au dossier qui contient votre application. Son IA analyse l'intégralité des fichiers pour comprendre de quoi le logiciel a besoin pour fonctionner (quel type de base de données installer, quelle puissance attribuer). Il configure ensuite l'espace d'hébergement sur Internet à votre place. Si l'application bugge une fois en ligne, vous dialoguez avec l'outil par texte pour que l'IA inspecte le serveur et répare la panne d'elle-même.
-- Sa différence : Contrairement à Cursor ou Windsurf qui vous aident à écrire le code, et à v0 qui crée le design visuel, Antigravity n'intervient qu'une fois le code terminé. Sa seule spécialité est de remplacer le métier d'administrateur système (DevOps) pour que votre application devienne un vrai site web accessible à tous, sans que vous ayez à manipuler des serveurs.
-- Pour qui ? Les créateurs de projets non techniques qui ont une application prête sur leur ordinateur mais ne savent pas comment la rendre accessible au public de manière stable et sécurisée.
+</aside>
 
-📊 Faits & Données clés
-- Parts de marché des IDE IA : En 2025-2026, les éditeurs de code "AI-first" (Cursor et Windsurf en tête) ont capturé plus de 35% de parts de marché chez les créateurs d'applications web face au géant historique VS Code d'origine. — Rapport annuel Stack Overflow Developer Ecosystem, 2025.
-- Vitesse d'exécution des WebContainers : Les outils basés sur le navigateur comme Bolt.new réduisent le temps de configuration initial d'un projet de 100% (zéro installation nécessaire), permettant d'économiser en moyenne 2 à 4 heures de paramétrage technique par projet. — Données techniques StackBlitz & benchmarks éditeurs, 2025.
+---
+
+<aside>
+📚
+
+Sources (2025-2026) : Google Cloud -- Qu'est-ce que le vibe coding ? (fevr. 2026). Replit / Business Insider (2025) -- createurs non-tech, app sante d'un medecin. Forbes (mars 2026) -- solopreneurs, MVP en un week-end. Business Insider (2026) -- independants et outils internes sur-mesure. Keyhole Software -- Vibe Coding Trends 2026 (emploi junior, citizen developers). OpenClassrooms -- regle d'evaluation du code genere. UX Planet -- test de 5 outils (ecart promesse / realite). State of Vibe Coding 2026 -- % d'utilisateurs non-developpeurs (source secondaire).
+
+</aside>
+
+<aside>
+⚖️
+
+Coherence du chapitre : situer dans la societe (L2) vers pour qui (L3) vers ce qu'on peut creer (L4) vers integrer l'IA (L5-L8, reutilisees) vers le mythe du remplacement (L9). Pas de redite avec le M1C3 (definition, histoire, comparaison, panorama outils).
+
+</aside>

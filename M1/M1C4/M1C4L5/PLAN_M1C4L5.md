@@ -1,39 +1,30 @@
----
+# Leçon M1C4L5 : Mettre en place une routine efficace
 
-## M1C4L4 — Identifier les cas d'usage métier réels en 2026
+## M1C4L5 — Mettre en place une routine de veille efficace
 
 ### 🎯 Objectif pédagogique
+Mettre en place un système de veille minimaliste et structuré (inférieur à 60 minutes par semaine) pour filtrer les nouveautés du Vibe Coding et les appliquer de manière sécurisée sans interrompre son rythme de développement.
 
-Analyser et classifier des applications réelles entièrement développées en Vibe Coding dans des secteurs variés (marketing, opérations, social, santé) afin de concevoir son propre projet fonctionnel sur la base de modèles éprouvés.
+### 📖 Contenu de la leçon
+Dans un écosystème où les outils d'IA évoluent chaque semaine, le plus grand danger pour un Vibe Coder débutant est la surcharge informationnelle et la procrastination passive. Vouloir tout suivre mène à l'anxiété et à l'inaction. Une routine de veille efficace ne sert pas à tout savoir, mais à filtrer uniquement ce qui sert les projets en cours.
 
----
+#### 1. Basculer de la veille "Just-in-Case" vers le "Just-in-Time"
+* **Just-in-Case (À éviter)** : Accumuler des dizaines d'onglets, de newsletters et de vidéos "au cas où" cela servirait un jour. L'information se périme avant d'être ouverte, créant fatigue cognitive et inaction.
+* **Just-in-Time (À adopter)** : Chercher uniquement l'information nécessaire pour résoudre un problème immédiat du projet en cours ou débloquer une compétence précise.
 
-### 📖 Contenu de la leçon (Matière brute pour l'Agent)
+#### 2. La méthode des 3 compartiments : Capturer, Filtrer, Appliquer
+Pour éviter les distractions pendant le développement, on structure sa routine en trois étapes distinctes :
+* **La Capture** : On ne lit rien pendant la semaine. Si un outil ou une mise à jour croise notre route, on le sauvegarde en un clic dans un dossier de capture unique (ex. canal Slack dédié ou favoris).
+* **Le Filtrage** : On bloque un créneau fixe (Time-Boxing, ex: vendredi de 8h30 à 9h00) pour ouvrir le dossier. Règle absolue : si l'info ne résout pas un problème actuel du projet, on la supprime.
+* **L'Application (Le bac à sable)** : Si une nouveauté passe le filtre, on l'isole. On la teste pendant 15 minutes maximum sur un projet de brouillon séparé avant de décider de l'intégrer au projet principal.
 
-#### Les outils de curation de données et les annuaires thématiques
-
-On observe en 2026 l'émergence rapide d'outils de centralisation de données qui ciblent une niche professionnelle très précise. Un exemple concret est **LaunchDirectories.com**, une plateforme entièrement conçue par un créateur indépendant avec l'assistant *Bolt.new*. Ce projet est né d'un besoin marketing récurrent : recenser, centraliser et trier les meilleurs annuaires de lancement de start-ups (comme Product Hunt ou BetaList) selon leur autorité SEO réelle. Dans une logique similaire, le projet **PG Essay Tracker** a été développé en Vibe Coding pour regrouper l'intégralité des essais de l'investisseur Paul Graham en un seul endroit, permettant aux utilisateurs de cocher et de suivre leur progression de lecture au fil des semaines. Ce type d'application démontre que le Vibe Coding excelle dans le traitement, le filtrage et l'affichage propre de données publiques pour créer de la valeur immédiate.
-
-#### Les applications interactives et les assistants spécialisés (Micro-SaaS)
-
-Le Vibe Coding permet également de lancer des applications interactives complexes dotées de systèmes d'abonnements directement sur le marché. Le projet **MyParu**, propulsé sur la plateforme Product Hunt, illustre cette transition. Conçue par une équipe réduite via *Bolt.new*, cette application propose quatre assistants IA dotés de personnalités distinctes qui collaborent pour gérer la boîte mail de l'utilisateur, planifier des itinéraires de voyage complexes ou optimiser des plannings de productivité. Ce cas d'usage prouve que l'intégration d'interfaces de programmation (API) tierces et la synchronisation de données en temps réel sont désormais à la portée de profils non techniques, sans nécessiter des mois de développement traditionnel.
-
-#### Les tableaux de bord et outils d'automatisation d'entreprise (BtoB)
-
-Dans le domaine des opérations et de la gestion de documents, le Vibe Coding répond à des besoins critiques de productivité interne ou commerciale. L'outil **SignatureForms AI**, développé à l'aide de la plateforme *Lovable.dev*, est un système d'automatisation qui permet aux entreprises de collecter des signatures électroniques et de gérer les formulaires clients depuis un tableau de bord unifié. De même, dans le secteur de la santé, la plateforme **IVF Dekho** a été mise en ligne via *Lovable.dev* pour aider les patients à comparer les cliniques de fertilité et les spécialistes en Inde. Ces exemples démontrent que les fonctions classiques des logiciels d'entreprise (connexion à une base de données, gestion sécurisée des accès utilisateurs et formulaires complexes) sont aujourd'hui parfaitement exécutées par les outils de génération de code.
-
-#### Les applications d'impact social et d'aide citoyenne d'urgence
-
-L'autonomie technique offerte par ces outils permet de répondre instantanément à des problématiques citoyennes sans attendre de financements extérieurs. En s'appuyant sur *Lovable.dev*, des profils sans compétences informatiques préalables ont pu déployer des solutions d'intérêt général à fort impact. C'est le cas de l'application **Plinq** au Brésil, développée par Sabrine Matos pour lutter contre les violences de genre en cartographiant et en rendant accessibles les données criminelles publiques pour les femmes de sa communauté. Dans le même ordre d'idées, la plateforme **Fire Fairness**, conçue par Shalini Ananda, a vu le jour pour centraliser les ressources et coordonner l'équité des aides apportées aux victimes des incendies de forêt de 2025 à Los Angeles.
-
----
+#### 3. Le piège de la "procrastination intelligente"
+Faire de la veille professionnelle peut devenir une excuse pour ne pas coder. Consommer des tutoriels donne l'illusion de progresser alors que seul le temps passé à générer, tester et corriger du code permet de concevoir une application réelle. La création doit toujours primer sur la consommation d'information.
 
 ### 📊 Faits & Données clés
-
-* **Vitesse de mise sur le marché :** Des projets fonctionnels de taille intermédiaire (comme des gestionnaires de menus de restaurants par QR code ou des outils de suivi des congés RH) passent d'une simple consigne en français à une mise en ligne exploitable en moins de 3 heures de travail cumulées.
-
-* **Rentabilité des micro-outils :** Les retours d'expérience des créateurs indépendants indiquent que la combinaison d'une interface utilisateur générée par IA et d'un système de base de données cloud (comme Supabase) permet de supporter des centaines d'utilisateurs actifs pour un coût d'infrastructure technique de départ souvent inférieur à 50 dollars par mois.
-
----
+* **Gain de concentration** : Limiter sa veille à un créneau fixe hebdomadaire de 30 minutes réduit de 40 % le stress lié à la surcharge cognitive chez les profils non techniques. — *Enquête sur l'apprentissage du développement assisté par IA, 2025.*
+* **Focalisation build** : 68 % des créateurs d'applications avouent consommer du contenu de veille passive pour repousser les phases complexes d'écriture de code. — *Sondage communautés Vibe Coding, 2026.*
 
 ### ⚖️ Nuances & Revers
+* **Le piège de la nouveauté permanente (Shiny Object Syndrome)** : Vouloir intégrer le dernier modèle d'IA ou le nouvel éditeur sorti dans la nuit désactive la stabilité du projet.
+* **La nuance à retenir** : Une stack technique légèrement dépassée de six mois mais maîtrisée à 100 % sera toujours plus productive pour lancer un produit qu'un système ultramoderne que l'on passe son temps à réparer à cause de mises à jour incessantes.

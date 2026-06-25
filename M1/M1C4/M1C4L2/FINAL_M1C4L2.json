@@ -4,7 +4,7 @@
     {
       "template": "VIBECODING - COVER",
       "content": {
-        "Titre": "La place du Vibe Coding dans la société"
+        "Titre": "Vibe Coding & Veille Technologique"
       },
       "image_concept": null,
       "image_style": null,
@@ -13,14 +13,36 @@
     {
       "template": "VIBECODING - INTRO",
       "content": {
-        "Titre": "Ce qu'on va découvrir aujourd'hui",
-        "Intro": "Créer une application était réservé aux experts. Aujourd'hui, le Vibe Coding ouvre cette possibilité à une population de créateurs hors tech. Voyons comment.",
-        "Titre 1": "La fin d'un monopole",
-        "Texte 1": "Voyons comment l'arrivée des IA de code a effondré le ticket d'entrée pour la création de logiciels.",
-        "Titre 2": "Les nouveaux créateurs",
-        "Texte 2": "Zoom sur les profils hors tech qui développent déjà leurs propres outils et font reculer les intermédiaires.",
-        "Titre 3": "Les impacts réels",
-        "Texte 3": "Analyse de la baisse d'embauches chez les développeurs juniors et posture mentale à adopter face à ce séisme."
+        "Titre": "Pourquoi faire de la veille ?",
+        "Intro": "En Vibe Coding, un modèle au sommet en janvier peut être déprécié dès mars. Ne pas suivre ces évolutions expose à des coûts inutiles et des pannes évitables. Faisons le tour des enjeux.",
+        "Titre 1": "Les risques concrets",
+        "Texte 1": "Voyons les quatre catégories de risques auxquels s'expose un Vibe Coder sans veille active sur son stack et ses modèles.",
+        "Titre 2": "L'enjeu financier",
+        "Texte 2": "Focus sur les chiffres réels : comment l'absence de veille se traduit en surcoûts directs et en interruptions de service non planifiées.",
+        "Titre 3": "Veille utile en pratique",
+        "Texte 3": "Apprenons à distinguer une veille ciblée et actionnable d'une paralysie par l'analyse, et à construire une routine efficace."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "content": {
+        "Titre": "Les 4 risques de l'absence de veille",
+        "Intro": "Sans veille active, le Vibe Coder s'expose à quatre catégories de risques bien distincts — techniques, financiers, opérationnels et informationnels.",
+        "Picto 1": "mdi:metronome",
+        "Titre 1": "Obsolescence\ndes techniques",
+        "Texte 1": "Les méthodes de prompting apprises il y a 6 mois sont déjà dépassées : les modes Agent les gèrent nativement sans instructions manuelles.",
+        "Picto 2": "mdi:stop-alert",
+        "Titre 2": "Rupture technique\npar dépréciation",
+        "Texte 2": "Un modèle d'API déprécié coupe l'application sans avertissement. Les frameworks agentiques changent leur syntaxe à chaque version majeure.",
+        "Picto 3": "mdi:robber",
+        "Titre 3": "Surcoût financier\névitable",
+        "Texte 3": "Rester sur un modèle non optimisé peut coûter 10x plus cher qu'un concurrent à jour. Les fenêtres de contexte élargies réduisent aussi le nombre d'appels nécessaires.",
+        "Picto 4": "mdi:format-text-variant-outline",
+        "Titre 4": "Infobésité et\nsources non fiables",
+        "Texte 4": "Les réseaux sociaux amplifient l'effet Wow sans profondeur. Sans sources de confiance, on change d'outil toutes les semaines sans jamais livrer de projet stable."
       },
       "image_concept": null,
       "image_style": null,
@@ -29,24 +51,23 @@
     {
       "template": "VIBECODING - CONCEPT",
       "content": {
-        "Titre": "La barrière historique du code",
-        "Mot": "Hier, un métier d'experts",
-        "Definition": "Pendant des décennies, sortir une application demandait des années de formation, une équipe technique et un budget conséquent. Le code était une barrière d'entrée réelle. Sans diplôme ni équipe, on ne passait pas.",
-        "Bulle": "En 2010, lancer un SaaS coûtait en moyenne 500 000 $."
+        "Titre": "Des cycles en semaines, pas en ans",
+        "Mot": "L'accélération des modèles d'IA",
+        "Definition": "En développement classique, Python ou JavaScript restent stables des années. En Vibe Coding, un modèle au sommet en janvier peut être relégué dès mars par une mise à jour concurrente. Les modes Agent des éditeurs modernes (Cursor, Windsurf) absorbent désormais nativement ce que le prompt engineering manuel gérait laborieusement en 2023.",
+        "Bulle": "75 % des professionnels du digital remplacent au moins un outil IA par trimestre. (Retool State of AI, 2025)"
       },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
-      "template": "VIBECODING - 2 BLOC - EVOLUTION",
+      "template": "VIBECODING - DEFINITION",
       "content": {
-        "Titre": "Ce qui a basculé",
-        "Intro": "Le rapport s'inverse. On formule une intention en langage naturel — l'agent produit la structure, les fichiers, la logique.",
-        "Titre 1": "AVANT — L'expertise comme prérequis",
-        "Texte 1": "Créer un logiciel impliquait de maîtriser un langage de programmation, de gérer une architecture technique et de coordonner une équipe. La compétence était le ticket d'entrée. Sans elle, aucun accès.",
-        "Titre 2": "L'INTENTION D'ABORD",
-        "Texte 2": "On décrit ce qu'on veut en langage naturel. L'agent de code génère la structure, les fichiers, la logique. Le ticket d'entrée s'effondre. La compétence reste utile — mais elle n'est plus le prérequis absolu."
+        "Titre": "Le piège de la dépréciation",
+        "Mot": "Deprecation d'API",
+        "Definition": "La dépréciation désigne l'arrêt programmé d'un modèle ou d'une version d'API par son éditeur. OpenAI et Anthropic maintiennent leurs anciens modèles actifs seulement 6 à 12 mois après une version majeure. Passé ce délai, les serveurs sont coupés définitivement. Pour un Vibe Coder qui a construit un outil interne sans anticiper ces arrêts, l'application cesse de fonctionner du jour au lendemain — sans migration automatique, sans filet de sécurité. Les frameworks agentiques subissent le même sort : leurs mises à jour majeures modifient en profondeur la syntaxe de connexion entre agents.",
+        "Bulle": "Vérifier la date de fin de vie d'un modèle avant de construire dessus. OpenAI publie ses calendriers de dépréciation dans sa documentation officielle.",
+        "Picto 1": "mdi:stop-alert"
       },
       "image_concept": null,
       "image_style": null,
@@ -55,17 +76,17 @@
     {
       "template": "VIBECODING - CHIFFRES",
       "content": {
-        "Titre": "Qui crée du logiciel en 2026 ?",
-        "Intro": "Le profil type de l'utilisateur Vibe Coding n'est plus l'ingénieur. Les données le confirment : la majorité vient d'ailleurs.",
-        "Chiffre 1": "63 %",
-        "Titre 1": "NON-DÉVELOPPEURS",
-        "Texte 1": "Utilisateurs d'outils Vibe Coding sans profil développeur. (State of Vibe Coding, 2026)",
-        "Chiffre 2": "×1 000",
-        "Titre 2": "ÉCART DE COÛT",
-        "Texte 2": "Entre un projet DIY en Vibe Coding (~130 $) et une agence (~130 000 $).",
-        "Chiffre 3": "−20 %",
-        "Titre 3": "EMPLOIS JUNIORS",
-        "Texte 3": "Recul de l'embauche junior depuis 2022 : les postes d'entrée absorbés. (Keyhole Software, 2026)"
+        "Titre": "L'enjeu financier en chiffres",
+        "Intro": "Le coût des LLMs s'est effondré en 18 mois. Ne pas suivre ces évolutions, c'est payer une infrastructure obsolète à un tarif premium pour des performances inférieures.",
+        "Chiffre 1": "÷10",
+        "Titre 1": "COÛT PAR MILLION TOKENS",
+        "Texte 1": "Réduction du coût d'accès aux modèles de pointe entre début 2024 et fin 2025, à performance équivalente. (Rapports sectoriels API, 2025)",
+        "Chiffre 2": "6-12",
+        "Titre 2": "MOIS DE VIE DD",
+        "Texte 2": "Durée moyenne de maintien d'un ancien modèle d'API avant coupure définitive chez OpenAI et Anthropic. (Docs officielles, 2025-2026)",
+        "Chiffre 3": "75%",
+        "Titre 3": "PROS CHANGENT D'OUTIL",
+        "Texte 3": "Des professionnels tech et digital remplacent au moins un outil ou modèle IA par trimestre pour rester compétitifs. (Retool, 2025)"
       },
       "image_concept": null,
       "image_style": null,
@@ -74,48 +95,35 @@
     {
       "template": "VIBECODING - USE CASE",
       "content": {
-        "Titre": "Le médecin qui code son app",
-        "Intro": "DIY VS AGENCE : ÉCART ×1 000",
-        "Texte 1": "Un médecin britannique voulait une app de suivi santé pour ses patients. Devis d'une agence : ~130 000 $. Il décide de la construire lui-même avec des outils de Vibe Coding. Coût final : ~130 $. Le problème ? Aucun — l'app fonctionne, les patients l'utilisent. Ce cas illustre une réalité nouvelle : la compétence technique n'est plus le seul chemin vers un logiciel fonctionnel.",
-        "Texte Bulle": "Ce cas n'est pas isolé. Replit recense des centaines de projets similaires depuis 2024 : des non-développeurs qui construisent des outils réels, pour de vrais usages, à des coûts inaccessibles il y a cinq ans.",
-        "Source": "Replit / B. Insider"
+        "Titre": "Quand l'absence de veille coûte 12 000 $",
+        "Intro": "UNE AGENCE DIGITALE FACE À L'OBSOLESCENCE",
+        "Texte 1": "Une PME spécialisée en création de contenu digital a construit son outil d'automatisation interne sur des scripts figés et un modèle commercial de début 2024. Aucune veille technique sur l'évolution des outils de Vibe Coding n'a été maintenue. Le problème ? En moins de 9 mois, une mise à jour d'API et l'explosion des coûts du modèle non optimisé ont fait planter l'application. Résultat : 4 jours d'interruption de service et une refonte en urgence facturée plus de 12 000 $ pour migrer vers un éditeur agentique moderne.",
+        "Texte Bulle": "Ce cas illustre un principe fondamental : un outil Vibe Coding n'est pas un actif figé. C'est un système vivant qui dépend d'une infrastructure externe en mutation. Sans veille minimale, le coût de l'inaction dépasse toujours le coût de la mise à jour.",
+        "Source": "Low-Code France, 2025"
       },
-      "image_concept": "A British doctor in a white coat sitting at a minimalist wooden desk, looking at a simple health-tracking app on a tablet screen, surrounded by medical charts and a stethoscope — the contrast between the high-tech hospital environment and the DIY simplicity of the app is striking",
+      "image_concept": "A small digital agency office at night, a single glowing computer screen showing a critical error message, stacks of printed code scripts scattered on the desk, a clock on the wall showing 4 days marked off, a receipt pinned to a corkboard reading $12,000",
       "image_style": "grainy-editorial",
       "image_ratio": "2:3"
     },
     {
-      "template": "VIBECODING - 3 COLONNES",
+      "template": "VIBECODING - COMPARAISON",
       "content": {
-        "Titre": "Ces secteurs qui s'y mettent déjà",
-        "Intro": "Santé, RH, terrain : trois domaines éloignés de la tech où des non-développeurs créent déjà leurs propres outils.",
-        "Titre 1": "SANTÉ & MÉDICAL",
-        "Parametre 1": "MÉDECINS",
-        "Violet 1": "Suivi patient sans équipe technique",
-        "Texte 1": "Des praticiens construisent leurs propres apps de suivi patient. Sans équipe, sans budget agence. L'outil colle aux besoins cliniques réels — pas aux contraintes d'un SaaS générique.",
-        "Picto 1": "mdi:stethoscope",
-        "Titre 2": "RESSOURCES RH",
-        "Parametre 2": "Ressources humaines",
-        "Violet 2": "Outils internes sur-mesure",
-        "Texte 2": "Des responsables RH créent leurs propres outils de suivi et d'onboarding. Plus besoin de plier aux limites d'un SaaS. L'outil s'adapte au process, pas l'inverse.",
-        "Picto 2": "mdi:account-group",
-        "Titre 3": "Terrain",
-        "Parametre 3": "INDÉPENDANTS",
-        "Violet 3": "Automatisation du quotidien",
-        "Texte 3": "Un chauffeur automatise sa gestion de courses. Un artisan suit ses devis sans tableur. L'outil est construit pour un usage précis — pas adapté depuis un produit conçu pour tout le monde.",
-        "Picto 3": "mdi:steering"
-      },
-      "image_concept": null,
-      "image_style": null,
-      "image_ratio": null
-    },
-    {
-      "template": "VIBECODING - CONCEPT",
-      "content": {
-        "Titre": "L'impact sur le marché de l'emploi",
-        "Mot": "Le revers déjà visible",
-        "Definition": "L'embauche de développeurs juniors recule de ~20 % entre fin 2022 et mi-2025. Une part du travail d'entrée de gamme est absorbée par les agents de code. C'est déjà mesurable. (Keyhole Software, 2026)",
-        "Bulle": "Surtout impacté : boilerplate, tests unitaires, intégrations simples."
+        "Titre": "Veille utile vs. paralysie par l'analyse",
+        "Intro": "La veille est indispensable — mais elle comporte deux dérives opposées. L'équilibre entre rester informé et continuer à livrer est la vraie compétence à développer.",
+        "Titre A": "VEILLE UTILE",
+        "Titre B": "PARALYSIE FOMO",
+        "Item 1": "Objectif",
+        "Texte A Item 1": "Stabiliser le code, réduire les coûts, anticiper les dépréciations critiques",
+        "Texte B1": "Suivre chaque annonce, changer d'outil à chaque vidéo YouTube virale",
+        "Item 2": "Rythme",
+        "Texte A Item 2": "Revue hebdomadaire ciblée sur sources techniques documentées",
+        "Texte B2": "Flux continu de newsletters, podcasts et threads sans filtre critique",
+        "Item 3": "Résultat",
+        "Texte A Item 3": "Projet livré, stable, sur modèle fiable",
+        "Texte B3": "Stack reconstruite toutes les 2 semaines, rien de livré",
+        "Item 4": "Posture",
+        "Texte A Item 4": "La veille soutient l'action et la décision",
+        "Texte B4": "La veille remplace la pratique réelle"
       },
       "image_concept": null,
       "image_style": null,
@@ -124,16 +132,15 @@
     {
       "template": "VIBECODING - CHECKLIST",
       "content": {
-        "Titre": "Adopter la bonne posture mentale",
-        "Intro": "Créer du logiciel devient accessible. Mais accessible ne veut pas dire sans compétence.",
-        "Nom Checklist": "La bonne lecture du phénomène",
-        "Texte Intro": "Le Vibe Coding abaisse le ticket d'entrée, sans supprimer la compétence. Comme le tableur n'a pas remplacé le comptable. Garder cette nuance évite deux erreurs : surestimer ce qu'on fait seul, ou sous-estimer ce que ça rend possible.",
-        "Picto 1": "mdi:check-decagram",
-        "Texte 1": "Voir le Vibe Coding comme un abaissement de barrière",
-        "Texte 2": "Distinguer ce qu'on peut faire seul ou avec un expert",
-        "Texte 3": "Valider chaque résultat généré par l'agent",
-        "Texte 4": "Rester propriétaire de chaque décision finale",
-        "Texte 5": "Accepter que la compétence change de forme"
+        "Titre": "Ce que la veille change concrètement",
+        "Nom Checklist": "Checklist de veille active",
+        "Intro": "Une veille ciblée protège le projet — et le budget.",
+        "Texte Intro": "La veille en Vibe Coding n'est pas une lecture passive de newsletters. C'est une pratique active qui consiste à vérifier les dates de dépréciation, comparer les coûts de tokens, tester les nouvelles fenêtres de contexte et valider que son stack reste fonctionnel. Un projet stable sur un modèle vieux de 6 mois vaut mieux qu'un projet jamais livré sur le modèle sorti hier.",
+        "Texte 1": "Vérifier le calendrier de dépréciation du modèle utilisé.",
+        "Texte 2": "Comparer le coût par million de tokens chaque trimestre.",
+        "Texte 3": "Tester les nouvelles fenêtres de contexte sur son projet réel.",
+        "Texte 4": "Identifier une source technique fiable, pas un fil social.",
+        "Texte 5": "Livrer d'abord, optimiser ensuite — pas l'inverse."
       },
       "image_concept": null,
       "image_style": null,
@@ -143,9 +150,9 @@
       "template": "VIBECODING - FIN",
       "content": {
         "Titre": "Ce qu'il faut retenir",
-        "Intro": "Le Vibe Coding déborde largement la tech : 63 % de ses utilisateurs ne sont pas développeurs. Des médecins, des responsables RH, des indépendants créent déjà leurs propres outils — à des coûts inaccessibles il y a cinq ans. La bascule est réelle, mesurable, et elle a des effets sur l'emploi junior. Créer un logiciel devient une compétence courante. Pas « tout le monde ingénieur » — une barrière qui tombe.",
-        "Titre Bulle": "EN BREF",
-        "Texte Bulle": "Le Vibe Coding fait sortir la création de logiciel du cercle des ingénieurs. La suite : pour qui, précisément, ça change la donne ? On va identifier les profils qui ont le plus à gagner — et ceux pour qui ça reste limité."
+        "Intro": "Le Vibe Coding repose sur une infrastructure externe qui évolue en semaines. Les modèles se déprécie en 6 à 12 mois, les coûts de tokens ont été divisés par 10 en 18 mois, et les frameworks agentiques changent leur syntaxe à chaque version majeure. Ignorer ces cycles, c'est accepter de payer plus cher pour un outil qui finira par planter. La veille n'est pas une option intellectuelle — c'est une condition de survie opérationnelle pour tout projet Vibe Coding en production. On ne cherche pas à tout savoir : on surveille ce qui rend le code plus stable, plus rapide et moins coûteux.",
+        "Titre Bulle": "En bref",
+        "Texte Bulle": "Dans la prochaine leçon, on passe à la pratique : quelles sources suivre, à quelle fréquence, et comment structurer une veille qui soutient l'action sans la remplacer. La méthode concrète arrive !"
       },
       "image_concept": null,
       "image_style": null,

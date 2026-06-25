@@ -4,20 +4,20 @@
     {
       "template": "VIBECODING - COVER CHAP",
       "content": {
-        "Titre": "Être prêt à commencer la formation"
+        "Titre": "Découvrir l'écosystème du Vibe Coding"
       }
     },
     {
       "template": "VIBECODING - OBJECTIF CHAP",
       "content": {
         "Titre": "Objectifs du chapitre",
-        "Intro": "Ce chapitre prépare l'entrée dans la formation. On y acquiert le vocabulaire de base, configure l'environnement de travail et adopte la posture idéale du Vibe Coder.",
-        "Titre 1": "Acquérir le vocabulaire de base de l'IA",
-        "Titre 2": "Comprendre le fonctionnement des agents",
-        "Titre 3": "Préparer son environnement de travail",
-        "Titre 4": "Estimer le budget de ses outils de code",
-        "Titre 5": "Adopter la posture du Vibe Coder",
-        "Titre 6": "Suivre cette formation avec efficacité"
+        "Intro": "Ce chapitre détaille les fondations du Vibe Coding. On y définit le concept, son histoire récente, sa place face aux autres méthodes et les outils disponibles en 2026.",
+        "Titre 1": "Définir le Vibe Coding et ses limites",
+        "Titre 2": "Tracer l'évolution de la technologie",
+        "Titre 3": "Distinguer le Vibe Coding du no-code",
+        "Titre 4": "Comparer l'IA au développement classique",
+        "Titre 5": "Identifier les principaux outils de 2026",
+        "Titre 6": "Choisir les solutions adaptées aux besoins"
       }
     }
   ]

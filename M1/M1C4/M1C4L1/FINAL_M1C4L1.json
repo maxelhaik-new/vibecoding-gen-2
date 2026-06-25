@@ -4,21 +4,27 @@
     {
       "template": "VIBECODING - COVER CHAP",
       "content": {
-        "Titre": "Le Vibe Coding en contexte professionnel"
-      }
+        "Titre": "L'importance de la veille technologique"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     },
     {
       "template": "VIBECODING - OBJECTIF CHAP",
       "content": {
-        "Titre": "Objectifs du chapitre",
-        "Intro": "Ce chapitre explore la place du Vibe Coding en contexte professionnel. On y analyse son impact sociétal, les profils concernés, les créations possibles et l'avenir des métiers.",
-        "Titre 1": "Comprendre l'impact sociétal de l'IA",
-        "Titre 2": "Identifier les profils les plus impactés",
-        "Titre 3": "Découvrir les types de projets à créer",
-        "Titre 4": "Mesurer la rentabilité des outils de code",
-        "Titre 5": "Intégrer ces nouvelles méthodes de travail",
-        "Titre 6": "Analyser l'évolution du rôle de développeur"
-      }
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Comprendre pourquoi la veille est une condition de survie pour tout Vibe Coder — et mettre en place une routine concrète et durable.",
+        "Titre 1": "Saisir les risques d'une absence de veille",
+        "Titre 2": "Identifier les signaux d'obsolescence rapide",
+        "Titre 3": "Sélectionner des sources techniques fiables",
+        "Titre 4": "Construire un portefeuille de veille équilibré",
+        "Titre 5": "Mettre en place une routine hebdomadaire",
+        "Titre 6": "Tester les nouveautés sans casser son projet"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     }
   ]
 }

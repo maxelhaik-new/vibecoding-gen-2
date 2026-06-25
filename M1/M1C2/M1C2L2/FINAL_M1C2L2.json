@@ -1,87 +1,100 @@
 {
-  "lessonTitle": "Leçon M1C2L2 : Définir le Vibe Coding",
+  "lessonTitle": "Définir le Vibe Coding",
   "slides": [
     {
       "template": "VIBECODING - COVER",
       "content": {
-        "Titre": "Définir le Vibe Coding : coder par l'intention"
-      },
-      "image_concept": null,
-      "image_style": null,
-      "image_ratio": null
+        "Titre": "Définir le Vibe Coding"
+      }
     },
     {
       "template": "VIBECODING - INTRO",
       "content": {
-        "Titre": "Qu'est-ce que le Vibe Coding ?",
-        "Intro": "Écrire du code sans taper une seule ligne de syntaxe : c'est exactement ce que rend possible le Vibe Coding. On décrit son intention en langage naturel, un agent IA exécute. Le rôle du développeur bascule vers la supervision et l'architecture.",
-        "Titre 1": "Vibe Coding, c'est quoi ?",
-        "Texte 1": "Une pratique où l'on interagit avec un agent IA en langage naturel pour modifier un projet, sans écrire de HTML, CSS, Python ou JavaScript directement.",
-        "Titre 2": "Le nouveau rôle du dev",
-        "Texte 2": "On passe d'exécutant syntaxique à superviseur : on définit l'intention, on valide les propositions de l'agent et on oriente les choix architecturaux du projet.",
-        "Titre 3": "Les bénéfices clés",
-        "Texte 3": "Vitesse d'exécution décuplée, zéro erreur de syntaxe simple, focus total sur la conception et l'expérience utilisateur plutôt que sur le débogage ligne par ligne."
-      },
-      "image_concept": null,
-      "image_style": null,
-      "image_ratio": null
+        "Titre": "Ce qu'on va poser dans cette leçon",
+        "Intro": "Le Vibe Coding, on en entend parler partout. Mais concrètement, ça veut dire quoi ? Cette leçon pose la définition, montre la répartition des rôles entre l'humain et l'IA, et casse deux idées reçues tenaces.",
+        "Titre 1": "Définition concrète",
+        "Texte 1": "Comprendre ce que signifie réellement le terme : décrire son intention en langage naturel et laisser l'IA produire le code.",
+        "Titre 2": "Répartition des rôles",
+        "Texte 2": "Identifier ce que fait l'humain (intention, choix, validation) et ce que fait l'IA (génération technique du code).",
+        "Titre 3": "Idées reçues à casser",
+        "Texte 3": "Savoir expliquer pourquoi le Vibe Coding n'est ni de la magie, ni un pilote automatique livré à lui-même."
+      }
     },
     {
       "template": "VIBECODING - DEFINITION",
       "content": {
-        "Titre": "Vibe Coding",
+        "Titre": "La définition en une phrase",
         "Mot": "Vibe Coding",
-        "Definition": "Pratique de développement où l'humain n'écrit plus de syntaxe de code (HTML, CSS, Python, JS). On décrit son intention en langage naturel à un agent IA, qui exécute directement les modifications dans le projet. Le terme a été popularisé par Andrej Karpathy en février 2025 dans un post X devenu viral, où il décrit « se laisser porter par la vibe » plutôt que de contrôler chaque ligne de code.",
-        "Bulle": "Le Vibe Coding ne supprime pas la compétence technique : il la déplace. Comprendre l'architecture, valider la logique et détecter les erreurs de l'agent restent des compétences indispensables pour obtenir un résultat fiable.",
-        "Picto 1": "mdi:code-braces-box"
-      },
-      "image_concept": null,
-      "image_style": null,
-      "image_ratio": null
+        "Definition": "Approche de création logicielle où l'humain décrit son intention en langage naturel — et l'IA génère le code correspondant. On dialogue, on itère, on valide. L'IA exécute la production technique. Le mot « vibe » traduit l'idée de se laisser porter par le flux créatif : on guide la direction, on ne tape plus chaque ligne soi-même. La question n'est plus « comment l'écrire ? » mais « qu'est-ce qu'on veut obtenir ? ».",
+        "Bulle": "Le Vibe Coding remplace l'écriture ligne par ligne par un dialogue structuré entre l'humain et l'agent d'IA. On code par l'intention, pas par la syntaxe."
+      }
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Le changement de posture",
+        "Intro": "On passe d'un rôle d'exécutant technique à un rôle de chef d'orchestre. Deux postures, deux façons de créer un logiciel :",
+        "Titre A": "AVANT",
+        "Titre B": "MAINTENANT",
+        "Item 1": "Approche",
+        "Item 2": "Rôle",
+        "Item 3": "Focus",
+        "Item 4": "Vitesse",
+        "Texte A Item 1": "Écrire chaque ligne de code à la main",
+        "Texte A Item 2": "Exécutant technique, développeur classique",
+        "Texte A Item 3": "La syntaxe, les bugs, les détails bas-niveau",
+        "Texte A Item 4": "Lent : des heures pour un écran simple",
+        "Texte B1": "Décrire l'intention, laisser l'IA produire",
+        "Texte B2": "Chef d'orchestre, superviseur de l'agent IA",
+        "Texte B3": "Le résultat voulu, la vision produit globale",
+        "Texte B4": "Rapide : un prototype en quelques minutes"
+      }
     },
     {
       "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
       "content": {
-        "Titre": "On passe d'un rôle d'exécutant technique à un rôle de superviseur et d'architecte. L'activité se concentre désormais sur le pilotage stratégique et la validation des propositions de l'IA.",
-        "Titre 1": "INTENTION",
-        "Texte 1": "On définit le plan avant d'agir : objectif fonctionnel, contraintes techniques, périmètre du projet. L'agent n'a pas de vision globale — c'est au développeur de la poser clairement dès le départ pour éviter les dérives.",
-        "Titre 2": "VALIDATION",
-        "Texte 2": "Chaque proposition de l'agent est relue, testée et approuvée avant intégration. On ne merge pas aveuglément : on vérifie la logique, les effets de bord et la cohérence avec l'architecture existante du projet.",
-        "Titre 3": "COHÉRENCE",
-        "Texte 3": "On oriente les choix techniques sur la durée : nommage, structure des fichiers, dépendances, dette technique. L'agent optimise localement — c'est le superviseur qui garantit la cohérence globale du projet sur le long terme."
-      },
-      "image_concept": null,
-      "image_style": null,
-      "image_ratio": null
+        "Titre": "Qui fait quoi dans le Vibe Coding ?",
+        "Intro": "Le Vibe Coding ne signifie pas « laisser l'IA décider ». Les rôles sont répartis clairement entre l'humain et l'agent d'intelligence artificielle :",
+        "Picto 1": "mdi:account-outline",
+        "Titre 1": "L'humain",
+        "Texte 1": "Définir l'intention du projet, prendre les décisions fonctionnelles et valider chaque résultat produit par l'IA. On garde le contrôle sur la direction, les choix d'architecture et la qualité finale du livrable. Sans vision claire, pas de bon résultat.",
+        "Picto 2": "mdi:robot-outline",
+        "Titre 2": "L'agent IA",
+        "Texte 2": "Générer le code source, proposer des solutions techniques et exécuter les modifications demandées. L'IA transforme la description en langage naturel en fichiers exploitables. Le problème ? Elle ne devine jamais l'intention toute seule.",
+        "Picto 3": "mdi:handshake-outline",
+        "Titre 3": "Le dialogue",
+        "Texte 3": "Itérer en boucle courte entre description et résultat. On décrit, l'IA génère, on ajuste. Plus la description est précise, meilleur est le code produit. C'est cette boucle « décrire → générer → valider » qui fait la force du Vibe Coding."
+      }
     },
     {
-      "template": "VIBECODING - 3 BLOCS - PHOTO",
+      "template": "VIBECODING - COMPARAISON",
       "content": {
-        "Titre": "Les bénéfices du Vibe Coding",
-        "Intro": "Passer au Vibe Coding ne change pas que la façon d'écrire du code — ça redistribue l'énergie vers ce qui crée vraiment de la valeur : concevoir, tester, itérer.",
-        "Titre 1": "Vitesse",
-        "Texte 1": "L'agent génère en secondes ce qui prenait des heures. On itère sur des fonctionnalités complètes sans bloquer sur la syntaxe — le rythme de développement s'accélère radicalement dès les premières sessions.",
-        "Titre 2": "Zéro syntaxe",
-        "Titre 3": "Focus conception",
-        "Texte 3": "Sans débogage syntaxique, l'attention se reporte sur l'expérience utilisateur, l'architecture et la logique métier — les dimensions qui différencient un bon produit d'un simple prototype fonctionnel.",
-        "Titre Bulle": "Les erreurs de virgule, de parenthèse ou d'indentation disparaissent du quotidien. L'agent gère la syntaxe — on se concentre sur ce que le code doit accomplir, pas sur comment l'écrire correctement.",
-        "Source": "Illustration : concept généré pour la leçon M1C2L2 — Vibe Coding"
-      },
-      "image_concept": "A conductor in a dark concert hall, raising a baton toward a swirling holographic orchestra made entirely of glowing lines of code — HTML tags, Python functions, CSS rules — floating and arranging themselves in mid-air like musical notes responding to each gesture",
-      "image_style": "woodcut",
-      "image_ratio": "2:3"
+        "Titre": "Ni magie, ni pilote automatique",
+        "Intro": "Deux idées reçues circulent sur le Vibe Coding. Remettons les pendules à l'heure pour bien cadrer les attentes :",
+        "Titre A": "IDÉE REÇUE",
+        "Titre B": "RÉALITÉ",
+        "Item 1": "Accès",
+        "Item 2": "Autonomie",
+        "Item 3": "Compétence",
+        "Item 4": "Résultat",
+        "Texte A Item 1": "Réservé aux développeurs confirmés",
+        "Texte A Item 2": "L'IA fait tout sans intervention humaine",
+        "Texte A Item 3": "Aucune connaissance technique nécessaire",
+        "Texte A Item 4": "Le code est parfait dès la première passe",
+        "Texte B1": "Accessible à toute personne sachant décrire",
+        "Texte B2": "L'humain guide, valide et corrige en continu",
+        "Texte B3": "Comprendre les bases aide à mieux orienter",
+        "Texte B4": "On itère toujours pour affiner le résultat"
+      }
     },
     {
       "template": "VIBECODING - FIN",
       "content": {
         "Titre": "Ce qu'il faut retenir",
-        "Intro": "Le Vibe Coding redéfinit le développement : on ne tape plus de syntaxe, on pilote un agent IA en langage naturel. Le développeur devient superviseur — il définit l'intention, valide les propositions et maintient la cohérence globale du projet. Résultat : une vitesse d'exécution décuplée, zéro erreur de syntaxe simple, et un focus total sur la conception et l'expérience utilisateur. Ce n'est pas la fin du métier de développeur — c'est une élévation de son niveau d'intervention.",
+        "Intro": "Le Vibe Coding, c'est décrire son intention en langage naturel et laisser l'IA écrire le code. L'humain garde l'intention, les choix et la validation. L'IA produit la partie technique. Ce n'est ni de la magie, ni un pilote automatique : sans description claire, pas de bon résultat. On code désormais par l'intention, plus par la syntaxe.",
         "Titre Bulle": "EN BREF",
-        "Texte Bulle": "EN BREF : le Vibe Coding ne rend pas la compétence technique obsolète — il la rend plus stratégique. Dans les prochaines leçons, on verra quels outils concrètement permettent de pratiquer le Vibe Coding et comment configurer son premier environnement de travail."
-      },
-      "image_concept": null,
-      "image_style": null,
-      "image_ratio": null
+        "Texte Bulle": "Le Vibe Coding, c'est coder par l'intention, pas par la syntaxe. On a posé la définition — reste à comprendre d'où ça vient. C'est l'objet de la leçon suivante !"
+      }
     }
   ]
 }

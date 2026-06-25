@@ -1,0 +1,144 @@
+{
+  "lessonTitle": "M1C4L6",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "La cartographie des sources de veille"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Ce qu’on va découvrir dans la leçon",
+        "Intro": "Pour réussir en Vibe Coding, il faut savoir filtrer le bruit et la hype de l’IA. Découvrons ensemble les 24 sources de confiance incontournables en 2026 pour bâtir une veille technique solide, structurée et pratique.",
+        "Titre 1": "L'actualité synthétique",
+        "Texte 1": "Les newsletters francophones et internationales pour décrypter les nouveautés sans subir de dispersion cognitive.",
+        "Titre 2": "Le retour d'expérience",
+        "Texte 2": "Les podcasts et les vidéos YouTube pour analyser le fonctionnement concret des agents de code et les architectures.",
+        "Titre 3": "L'entraide collective",
+        "Texte 3": "Les communautés Discord et les plateformes de test pour résoudre vos bugs et configurer vos outils au quotidien."
+      }
+    },
+    {
+      "template": "VIBECODING - VEILLE",
+      "content": {
+        "Focus sur Caude (Anthropic)": "✉️ Newsletters — Actualités",
+        "Titre 1": "Lettre Brief IA",
+        "Violet 1": "Synthèse mondiale quotidienne de l'actualité de l'intelligence artificielle",
+        "Texte 1": "Décrypte l'actualité en 5 minutes pour suivre les annonces majeures des laboratoires sans jargon complexe.",
+        "Titre 2": "Génération IA",
+        "Violet 2": "Analyse critique hebdomadaire des usages réels de l'IA et de la productivité",
+        "Texte 2": "Partage des retours d'expérience pragmatiques pour aiguiser le sens critique face aux promesses des outils.",
+        "Titre 3": "Yassine Chabli",
+        "Violet 3": "Tutoriels d'intégration d'agents autonomes et de productivité pratique",
+        "Texte 3": "Fournit des guides détaillés sur l'agentic reasoning avec des briques de prompts directement réutilisables.",
+        "Titre 4": "Hypernews IA",
+        "Violet 4": "Décryptage hebdomadaire technique basé sur la recherche et les sources primaires",
+        "Texte 4": "Analyse les publications de recherche de premier plan et l'amélioration récursive autonome des modèles.",
+        "Titre 5": "Le portail ActuIA",
+        "Violet 5": "Analyses sectorielles, recherche scientifique et dossiers de fond en Europe",
+        "Texte 5": "Assure un suivi rigoureux des initiatives de recherche institutionnelle et industrielle au niveau européen.",
+        "Titre 6": "The Rundown AI",
+        "Violet 6": "Newsletter anglophone quotidienne sur les outils et mises à jour de modèles",
+        "Texte 6": "Résume les lancements majeurs et les nouveaux outils de développement pour anticiper les vagues technologiques."
+      }
+    },
+    {
+      "template": "VIBECODING - VEILLE",
+      "content": {
+        "Focus sur Caude (Anthropic)": "🎧 Podcasts — Stratégie & fond",
+        "Titre 1": "Comptoir IA",
+        "Violet 1": "Retours d'expérience approfondis et cas d'usage réels d'experts du secteur",
+        "Texte 1": "Aborde les cas d'usage concrets de collaboration homme-machine et d'orchestration d'agents complexes.",
+        "Titre 2": "Génération IA",
+        "Violet 2": "Suivi de l'actualité des technologies génératives et évolution des métiers",
+        "Texte 2": "Analyse les compétences requises pour les futurs ingénieurs logiciels et l'évolution des outils d'assistance.",
+        "Titre 3": "Data Driven 101",
+        "Violet 3": "Analyses factuelles des projets IA, des coûts réels et de la gestion de bugs",
+        "Texte 3": "Donne la parole aux professionnels confrontés au déploiement de solutions, sans discours promotionnel.",
+        "Titre 4": "Double Slash",
+        "Violet 4": "Développement web moderne et impact de l'IA sur le quotidien des codeurs",
+        "Texte 4": "Associe la veille sur les frameworks à des retours terrain sur la surcharge d'information et la dépendance.",
+        "Titre 5": "Underscore_",
+        "Violet 5": "Talk-show de vulgarisation dynamique sur la cybersécurité et l'actualité tech",
+        "Texte 5": "Idéal pour acquérir une culture générale solide tout en découvrant les protocoles modernes comme le MCP.",
+        "Titre 6": "Latent Space",
+        "Violet 6": "Plongées techniques dans l'ingénierie de l'IA et l'infrastructure des LLM",
+        "Texte 6": "Véritable bible technique traitant du fine-tuning, de l'architecture des modèles de langage et de la recherche."
+      }
+    },
+    {
+      "template": "VIBECODING - VEILLE",
+      "content": {
+        "Focus sur Caude (Anthropic)": "📺 YouTube — Démo & Pratique",
+        "Titre 1": "Monsieur IA",
+        "Violet 1": "Tutoriels d'outils de Vibe Coding et d'applications no-code grand public",
+        "Texte 1": "Propose des démonstrations méthodiques rendant l'onboarding très accessible aux profils non techniques.",
+        "Titre 2": "Chaîne IA Mania",
+        "Violet 2": "Études de cas applicatives complètes et guides de prompt engineering pratiques",
+        "Texte 2": "Montre comment créer des applications ou des jeux vidéo rétro sans écrire une seule ligne de code classique.",
+        "Titre 3": "MachineLearnia",
+        "Violet 3": "Mathématiques de l'IA, programmation Python et bases des algorithmes",
+        "Texte 3": "Aide à comprendre les structures sous-jacentes pour ne pas subir passivement les propositions des agents.",
+        "Titre 4": "Défend Intel.",
+        "Violet 4": "Vulgarisation claire du fonctionnement de l'IA et enjeux de cybersécurité",
+        "Texte 4": "Explique le fonctionnement théorique des transformers et analyse les failles de sécurité des assistants.",
+        "Titre 5": "Apprendre à coder",
+        "Violet 5": "Cursus de programmation structurés par langage informatique traditionnel",
+        "Texte 5": "Essentiel pour acquérir la structure mentale logique nécessaire pour contrôler le code généré par l'IA.",
+        "Titre 6": "Andrej Karpathy",
+        "Violet 6": "Création pas-à-pas de réseaux de neurones et apprentissage du deep learning",
+        "Texte 6": "Une ressource d'apprentissage d'exception pour lier l'intuition du Vibe Coding à la rigueur académique."
+      }
+    },
+    {
+      "template": "VIBECODING - VEILLE",
+      "content": {
+        "Focus sur Caude (Anthropic)": "🌐 Communautés — Entraide",
+        "Titre 1": "No-Code France",
+        "Violet 1": "Serveur Discord d'entraide et d'échange sur les technologies d'agents",
+        "Texte 1": "Idéal pour soumettre ses premières erreurs de build ou obtenir des retours avisés sur la conception.",
+        "Titre 2": "L'asso CeSIA",
+        "Violet 2": "Communauté technique axée sur les vulnérabilités et la sécurité de l'IA",
+        "Texte 2": "Espace indispensable pour comprendre les failles de la génération de code et apprendre à s'en protéger.",
+        "Titre 3": "OpenClassrooms",
+        "Violet 3": "Formation en ligne structurée et certifiante à l'usage des agents IA",
+        "Texte 3": "Enseigne la formulation de consignes claires et le maintien de la responsabilité face à l'automate.",
+        "Titre 4": "Vibe Coding Hub",
+        "Violet 4": "Portail documentaire sur les standards de Vibe Coding et protocoles MCP",
+        "Texte 4": "Détaille la configuration des serveurs MCP sécurisés et la rédaction de consignes d'agents (AGENTS.md).",
+        "Titre 5": "Google AI Studio",
+        "Violet 5": "Playground gratuit d'expérimentation, de test et de déploiement cloud",
+        "Texte 5": "Permet de tester en direct et de déployer instantanément des prototypes via un dialogue naturel.",
+        "Titre 6": "Tokscale Vibers",
+        "Violet 6": "Dépôt open-source et Discord d'astuces d'optimisation d'agents de terminal",
+        "Texte 6": "Réunit les concepteurs d'outils optimisés pour analyser les architectures d'agents de terminal complexes."
+      }
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO - ALT",
+      "content": {
+        "Titre": "Directives de veille 2026",
+        "Intro": "L'abondance de ressources de formation et d'outils automatisés impose au développeur débutant de structurer sa veille autour de trois axes de production réels :",
+        "Titre 1": "Le contrôle logique et rigoureux",
+        "Texte 1": "Ne jamais accepter aveuglément le code suggéré par l'IA. Utilisez votre veille pour apprendre à structurer des plans d'implémentation et des intentions claires.",
+        "Titre 2": "La sécurité des dépendances",
+        "Texte 2": "L'accélération du Vibe Coding impose d'isoler les exécutions dans des bacs à sable et d'auditer systématiquement les packages tiers installés par les agents.",
+        "Titre 3": "L'orchestration d'agents",
+        "Texte 3": "Le développeur évolue vers la supervision d'employés virtuels collaborant via des protocoles d'échange sécurisés comme le standard MCP.",
+        "Source": "Source : Directives méthodologiques - Illustration IA - Maxime Elhaik",
+        "image": "http://localhost:8080/assets/directives_veille.png"
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu’il faut retenir",
+        "Intro": "La veille technologique en Vibe Coding est un outil indispensable pour passer d'une posture de consommateur passif à celle de superviseur d'agents d'IA. En combinant la lecture des newsletters quotidiennes pour l'actualité, l'écoute des podcasts stratégiques pour la culture d'ingénierie, et la pratique collective sur Discord, vous construirez un socle solide pour coder en toute sécurité.",
+        "Titre Bulle": "En BREF",
+        "Texte Bulle": "Ne laissez pas la veille remplacer la pratique. L'apprentissage par le projet et le contrôle rigoureux du code produit restent les clés fondamentales de votre autonomie technique."
+      }
+    }
+  ]
+}

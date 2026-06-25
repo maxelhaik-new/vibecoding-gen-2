@@ -5,6 +5,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { spawn } from 'child_process';
 import dotenv from 'dotenv';
+import { executeAgentLoop } from './agent_handler.js';
 
 // Load .env from workspace root
 const __filename = fileURLToPath(import.meta.url);
@@ -426,6 +427,242 @@ app.get('/api/run-pipeline', (req, res) => {
   req.on('close', () => {
     clearInterval(keepAlive);
     pyProcess.kill();
+  });
+});
+
+// 6. GET /api/generate-intro - SSE endpoint to execute local intro generator and stream output
+app.get('/api/generate-intro', (req, res) => {
+  const { lesson, update } = req.query;
+  
+  if (!lesson) {
+    return res.status(400).json({ error: 'Missing parameter: lesson is required.' });
+  }
+  
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive',
+    'Access-Control-Allow-Origin': '*'
+  });
+  
+  const args = [
+    path.join('scripts', 'generate_local_intro.py'),
+    lesson
+  ];
+  
+  if (update === 'true') {
+    args.push('--update');
+  }
+  
+  res.write(`data: [System] Démarrage du générateur de slide d'introduction pour ${lesson.toUpperCase()}...\n\n`);
+  
+  const keepAlive = setInterval(() => {
+    res.write(': keep-alive\n\n');
+  }, 5000);
+  
+  const pyProcess = spawn('python3', args, { 
+    cwd: rootDir,
+    env: { ...process.env, PYTHONWARNINGS: 'ignore' }
+  });
+  
+  pyProcess.stdout.on('data', (data) => {
+    const lines = data.toString().split('\n');
+    for (const line of lines) {
+      if (line.trim()) {
+        res.write(`data: ${line}\n\n`);
+      }
+    }
+  });
+  
+  pyProcess.stderr.on('data', (data) => {
+    const lines = data.toString().split('\n');
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (trimmed) {
+        res.write(`data: [Stderr] ${line}\n\n`);
+      }
+    }
+  });
+  
+  pyProcess.on('close', (code) => {
+    clearInterval(keepAlive);
+    res.write(`data: [System] Process exited with code ${code}\n\n`);
+    res.end();
+  });
+  
+  pyProcess.on('error', (err) => {
+    clearInterval(keepAlive);
+    res.write(`data: [System Error] Failed to start python process: ${err.message}\n\n`);
+    res.end();
+  });
+
+  req.on('close', () => {
+    clearInterval(keepAlive);
+    pyProcess.kill();
+  });
+});
+
+// 6b. GET /api/generate-objectif-l1 - SSE endpoint to execute local L1 generator and stream output
+app.get('/api/generate-objectif-l1', (req, res) => {
+  const { lesson } = req.query;
+  
+  if (!lesson) {
+    return res.status(400).json({ error: 'Missing parameter: lesson is required.' });
+  }
+  
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive',
+    'Access-Control-Allow-Origin': '*'
+  });
+  
+  const args = [
+    path.join('scripts', 'generate_local_objectif_l1.py'),
+    lesson
+  ];
+  
+  res.write(`data: [System] Démarrage du générateur de leçon d'objectifs L1 pour ce chapitre...\n\n`);
+  
+  const keepAlive = setInterval(() => {
+    res.write(': keep-alive\n\n');
+  }, 5000);
+  
+  const pyProcess = spawn('python3', args, { 
+    cwd: rootDir,
+    env: { ...process.env, PYTHONWARNINGS: 'ignore' }
+  });
+  
+  pyProcess.stdout.on('data', (data) => {
+    const lines = data.toString().split('\n');
+    for (const line of lines) {
+      if (line.trim()) {
+        res.write(`data: ${line}\n\n`);
+      }
+    }
+  });
+  
+  pyProcess.stderr.on('data', (data) => {
+    const lines = data.toString().split('\n');
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (trimmed) {
+        res.write(`data: [Stderr] ${line}\n\n`);
+      }
+    }
+  });
+  
+  pyProcess.on('close', (code) => {
+    clearInterval(keepAlive);
+    res.write(`data: [System] Process exited with code ${code}\n\n`);
+    res.end();
+  });
+  
+  pyProcess.on('error', (err) => {
+    clearInterval(keepAlive);
+    res.write(`data: [System Error] Failed to start python process: ${err.message}\n\n`);
+    res.end();
+  });
+
+  req.on('close', () => {
+    clearInterval(keepAlive);
+    pyProcess.kill();
+  });
+});
+
+// 7. GET /api/regenerate-slide - SSE endpoint to execute single slide regeneration
+app.get('/api/regenerate-slide', (req, res) => {
+  const { lesson, slide_index, instruction } = req.query;
+  
+  if (!lesson || slide_index === undefined) {
+    return res.status(400).json({ error: 'Missing parameters: lesson and slide_index are required.' });
+  }
+  
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive',
+    'Access-Control-Allow-Origin': '*'
+  });
+  
+  const args = [
+    path.join('scripts', 'regenerate_single_slide.py'),
+    lesson,
+    slide_index
+  ];
+  
+  if (instruction) {
+    args.push('--instruction', instruction);
+  }
+  
+  res.write(`data: [System] Démarrage de la régénération de la slide ${slide_index} pour ${lesson.toUpperCase()}...\n\n`);
+  
+  const keepAlive = setInterval(() => {
+    res.write(': keep-alive\n\n');
+  }, 5000);
+  
+  const pyProcess = spawn('python3', args, { 
+    cwd: rootDir,
+    env: { ...process.env, PYTHONWARNINGS: 'ignore' }
+  });
+  
+  pyProcess.stdout.on('data', (data) => {
+    const lines = data.toString().split('\n');
+    for (const line of lines) {
+      if (line.trim()) {
+        res.write(`data: ${line}\n\n`);
+      }
+    }
+  });
+  
+  pyProcess.stderr.on('data', (data) => {
+    const lines = data.toString().split('\n');
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (trimmed) {
+        res.write(`data: [Stderr] ${line}\n\n`);
+      }
+    }
+  });
+  
+  pyProcess.on('close', (code) => {
+    clearInterval(keepAlive);
+    res.write(`data: [System] Process exited with code ${code}\n\n`);
+    res.end();
+  });
+  
+  pyProcess.on('error', (err) => {
+    clearInterval(keepAlive);
+    res.write(`data: [System Error] Failed to start python process: ${err.message}\n\n`);
+    res.end();
+  });
+
+  req.on('close', () => {
+    clearInterval(keepAlive);
+    pyProcess.kill();
+  });
+});// 8. POST /api/agent/chat - Workspace Agent interaction
+app.post('/api/agent/chat', async (req, res) => {
+  const { messages, activeLessonSlug } = req.body;
+  if (!messages || !Array.isArray(messages)) {
+    return res.status(400).json({ error: "Missing parameter: messages array is required." });
+  }
+
+  try {
+    const result = await executeAgentLoop(messages, activeLessonSlug, rootDir);
+    if (result.error) {
+      return res.status(500).json({ error: result.error });
+    }
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/agent/config', (req, res) => {
+  res.json({
+    hasKey: !!process.env.GEMINI_API_KEY,
+    model: process.env.GEMINI_MODEL_NAME || process.env.GEMINI_TEXT_MODEL || 'gemini-3.5-flash'
   });
 });
 

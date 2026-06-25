@@ -1,0 +1,24 @@
+{
+  "lessonTitle": "M2C7L1",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Être prêt à commencer la formation"
+      }
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Objectifs du chapitre",
+        "Intro": "Ce chapitre prépare l'entrée dans la formation. On y acquiert le vocabulaire de base, configure l'environnement de travail et adopte la posture idéale du Vibe Coder.",
+        "Titre 1": "Acquérir le vocabulaire de base de l'IA",
+        "Titre 2": "Comprendre le fonctionnement des agents",
+        "Titre 3": "Préparer son environnement de travail",
+        "Titre 4": "Estimer le budget de ses outils de code",
+        "Titre 5": "Adopter la posture du Vibe Coder",
+        "Titre 6": "Suivre cette formation avec efficacité"
+      }
+    }
+  ]
+}
