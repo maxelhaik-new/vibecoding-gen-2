@@ -1,0 +1,64 @@
+{
+  "lessonTitle": "M3C6L4 — Brief 3 : La Matrice de Priorisation Eisenhower",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Brief : La Matrice Eisenhower"
+      }
+    },
+    {
+      "template": "VIBECODING - BRIEF ALT",
+      "content": {
+        "Titre": "La Matrice de Priorisation Eisenhower",
+        "Intro": "LE BRIEF",
+        "Texte 1": "Un chef de projet débordé par les tâches quotidiennes n'arrive plus à distinguer les urgences réelles des activités secondaires, ce qui ralentit l'avancement de son équipe.",
+        "Texte 2": "L'objectif est de créer un tableau de bord visuel divisé en 4 quadrants (Urgent / Important) permettant d'ajouter, classer et filtrer ses tâches en un clic sans aucune brique technique lourde.",
+        "Source": "Source : Image générée par IA - Pinterest"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Les 4 fonctionnalités clés",
+        "Intro": "Découvrons le périmètre fonctionnel à intégrer dans le Prompt Zero.",
+        "Titre 1": "LE QUADRANT 2X2 INTERACTIF",
+        "Texte 1": "Une grille visuelle séparant les tâches : À faire, À planifier, À déléguer et À éliminer.",
+        "Titre 2": "AJOUT ET TRANSFERT RAPIDE",
+        "Texte 2": "Saisie instantanée de cartes et boutons d'action pour déplacer une tâche d'un cadrant à l'autre.",
+        "Titre 3": "FILTRES ET ÉTIQUETTES PROJET",
+        "Texte 3": "Système de catégories par couleurs pour organiser ses missions par thématique ou client.",
+        "Titre 4": "PERSISTANCE DE LA LISTE",
+        "Texte 4": "Sauvegarde automatique des tâches en mémoire locale pour retrouver sa matrice à chaque visite.",
+        "Picto 1": "mdi:view-dashboard-outline",
+        "Picto 2": "mdi:swap-horizontal",
+        "Picto 3": "mdi:tag-multiple-outline",
+        "Picto 4": "mdi:content-save-outline"
+      }
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "La feuille de route de création",
+        "Intro": "Le parcours complet pour transformer ce brief en une application en ligne.",
+        "Titre 1": "Cadrage",
+        "Violet 1 ": "Rédiger le Prompt Zero complet",
+        "Titre 2": "Création",
+        "Violet 2": "Générer l'app dans AI Studio",
+        "Titre 3": "Version",
+        "Violet 3": "Exporter et commiter sur GitHub",
+        "Titre 4": "En ligne",
+        "Violet 4": "Déployer en direct sur Vercel"
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "À vous de jouer sur ce brief !",
+        "Intro": "Ce brief complet rassemble l'ensemble des compétences techniques vues dans le module. En suivant la méthode pas-à-pas, du cadrage du prompt initial jusqu'au déploiement final sur Vercel, on construit un outil concret, fonctionnel et immédiatement partageable pour les utilisateurs.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Dans la leçon suivante, découvrons la mise en pratique globale où vous allez sélectionner votre brief et bâtir votre application de A à Z !"
+      }
+    }
+  ]
+}

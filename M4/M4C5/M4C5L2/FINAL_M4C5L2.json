@@ -1,0 +1,132 @@
+{
+  "lessonTitle": "M4C5L2 — Refactoriser son code avec l'agent",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Refactoriser son code avec l'agent"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Pourquoi refactoriser ?",
+        "Intro": "Un code qui fonctionne n'est pas forcément un bon code. Avec le temps, il s'alourdit, se répète et devient difficile à faire évoluer. La refactorisation règle ce problème sans toucher au résultat final. Faisons le point.",
+        "Titre 1": "Les signaux d'alerte",
+        "Texte 1": "Voyons comment repérer les signes concrets qui indiquent qu'un code a besoin d'être restructuré avant d'aller plus loin.",
+        "Titre 2": "Le prompt qui refactorise",
+        "Texte 2": "Zoom sur la façon de formuler une demande efficace à l'agent pour restructurer du code sans en changer le comportement.",
+        "Titre 3": "Avant / Après en pratique",
+        "Texte 3": "Focus sur un exemple concret de transformation : ce que l'agent modifie, ce qu'il préserve, et pourquoi ça change tout."
+      }
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "Pourquoi bien factoriser ?",
+        "Intro": "Un code mal structuré ralentit tout : les corrections, les ajouts, la collaboration. Trois enjeux concrets à garder en tête.",
+        "Titre 1": "Lisibilité",
+        "Parametre 1": "mdi:book-open-variant",
+        "Violet 1": "Un code qu'on comprend vite",
+        "Texte 1": "Un code lisible se relit en quelques secondes. Chaque fonction fait une seule chose. L'agent comprend mieux le contexte et génère des modifications plus précises et moins risquées.",
+        "Titre 2": "Maintenabilité",
+        "Parametre 2": "mdi:puzzle",
+        "Violet 2": "Un code facile à faire évoluer",
+        "Texte 2": "Corriger un bug dans un code bien structuré prend 5 minutes. Dans un code enchevêtré, la même correction peut casser trois autres fonctionnalités sans qu'on s'en rende compte.",
+        "Titre 3": "Fiabilité",
+        "Parametre 3": "mdi:check-decagram",
+        "Violet 3": "Un code qui ne surprend pas",
+        "Texte 3": "Un code factorisé réduit les effets de bord : chaque bloc est isolé et testable. L'agent peut intervenir sur une partie sans risquer de déstabiliser l'ensemble du projet en cours.",
+        "Picto 1": "mdi:book-open-variant",
+        "Picto 2": "mdi:puzzle",
+        "Picto 3": "mdi:check-decagram"
+      }
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Un peu de vocabulaire",
+        "Mot": "Refactorisation",
+        "Definition": "Restructurer le code existant sans modifier ce qu'il fait. Le résultat visible pour l'utilisateur reste identique — mais le code interne devient plus clair, plus court et plus facile à modifier. C'est comme réorganiser une cuisine : les plats restent les mêmes, mais tout est rangé logiquement. On refactorise avant d'ajouter de nouvelles fonctionnalités, après une phase de développement rapide, ou quand l'agent commence à produire des erreurs difficiles à corriger.",
+        "Bulle": "La refactorisation n'est pas une correction de bug. Le code fonctionne déjà — on le restructure pour qu'il reste fiable à mesure que le projet grandit. C'est un investissement de quelques minutes qui évite des heures de débogage plus tard.",
+        "Picto 1": "mdi:book-open-variant"
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Signes d'un code à refactoriser",
+        "Nom Checklist": "Les signaux !",
+        "Intro": "Repérer le bon moment pour refactoriser évite d'accumuler une dette technique difficile à rembourser.",
+        "Texte Intro": "Ces signaux indiquent que le code a besoin d'être restructuré avant d'ajouter de nouvelles fonctionnalités. Plus on attend, plus la tâche est longue.",
+        "Texte 1": "Le même bloc de code apparaît à plusieurs endroits du projet sans raison.",
+        "Texte 2": "Une fonction dépasse 30 lignes et réalise plusieurs actions distinctes à la fois.",
+        "Texte 3": "L'agent génère des erreurs en cascade dès qu'on modifie une seule partie du code.",
+        "Texte 4": "Les noms de variables sont flous : x, data2, temp — impossible de savoir ce qu'ils contiennent.",
+        "Texte 5": "Ajouter une nouvelle fonctionnalité oblige à modifier plus de trois fichiers différents.",
+        "Picto 1": "mdi:stop-alert"
+      }
+    },
+    {
+      "template": "VIBECODING - PROMPT ALT",
+      "content": {
+        "Titre": "Refactoriser en un seul prompt",
+        "Intro": "Un prompt bien formulé permet à l'agent de restructurer tout un fichier sans toucher au comportement de l'application.",
+        "Texte 1": "Analyse le fichier app.js. Refactorise le code sans modifier son comportement : regroupe les fonctions similaires, supprime les doublons et renomme les variables pour qu'elles soient explicites. Explique chaque modification effectuée.",
+        "Texte 2": "Le fichier app.js a été refactorisé avec succès.",
+        "Texte 3": "app.js",
+        "Texte 4": "// AVANT\nfunction d(u) {\n  let x = u * 86400;\n  let y = Math.floor(x / 3600);\n  return y + 'h';\n}\n\nfunction d2(u) {\n  let x = u * 86400;\n  let mins = Math.floor((x % 3600) / 60);\n  return mins + 'min';\n}\n\n// APRÈS (refactorisé)\nfunction convertirJoursEnSecondes(jours) {\n  return jours * 86400;\n}\n\nfunction formaterHeures(jours) {\n  const totalSecondes = convertirJoursEnSecondes(jours);\n  const heures = Math.floor(totalSecondes / 3600);\n  return heures + 'h';\n}\n\nfunction formaterMinutes(jours) {\n  const totalSecondes = convertirJoursEnSecondes(jours);\n  const minutes = Math.floor((totalSecondes % 3600) / 60);\n  return minutes + 'min';\n}",
+        "Texte Bulle": "On demande à l'agent d'expliquer chaque modification : c'est le meilleur moyen de comprendre ce qu'il a changé et de valider que le comportement est bien préservé."
+      }
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Avant / Après la refactorisation",
+        "Intro": "Le code produit en vibe coding rapide est souvent fonctionnel mais dense. La refactorisation le rend durable et compréhensible.",
+        "Titre A": "AVANT",
+        "Titre B": "APRÈS",
+        "Item 1": "Nommage",
+        "Item 2": "Taille",
+        "Item 3": "Doublons",
+        "Item 4": "Lisibilité",
+        "Texte A Item 1": "Variables nommées x, data2, temp — sens opaque sans contexte",
+        "Texte A Item 2": "Fonctions de 40-60 lignes qui gèrent plusieurs actions à la fois",
+        "Texte A Item 3": "Même logique copiée-collée en 3 endroits du projet",
+        "Texte A Item 4": "L'agent produit des erreurs en cascade à chaque modification",
+        "Texte B1": "Variables explicites : convertirJours, formaterHeures — sens immédiat",
+        "Texte B2": "Fonctions courtes de 5-10 lignes, une seule responsabilité chacune",
+        "Texte B3": "Logique centralisée dans une fonction réutilisable unique",
+        "Texte B4": "L'agent intervient sur un bloc sans risquer de casser les autres"
+      }
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "Refactoriser avec l'agent",
+        "Intro": "Six étapes pour restructurer un fichier proprement, sans perdre de fonctionnalité ni introduire de nouveaux bugs.",
+        "Titre 1": "Identifier",
+        "Violet 1 ": "Repérer le fichier ou la fonction à restructurer en priorité",
+        "Titre 2": "Sauvegarder",
+        "Violet 2": "Faire un commit Git avant toute modification de l'agent",
+        "Titre 3": "Prompter",
+        "Violet 3": "Demander à l'agent de refactoriser sans changer le comportement",
+        "Titre 4": "Relire",
+        "Violet 4": "Vérifier chaque modification proposée avant d'accepter",
+        "Titre 5": "Tester",
+        "Violet 5": "Lancer l'application en local pour valider le résultat",
+        "Titre 6": "Commiter",
+        "Violet 6": "Enregistrer la version refactorisée dans un nouveau commit Git"
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "En résumé",
+        "Intro": "Refactoriser, c'est investir 15 minutes pour éviter des heures de débogage. Un code bien structuré permet à l'agent de travailler avec précision : moins d'erreurs en cascade, des modifications ciblées, un projet qui reste pilotable à mesure qu'il grandit. La méthode est simple — identifier, sauvegarder, prompter, relire, tester, commiter. On applique ce cycle dès qu'un signal d'alerte apparaît, avant d'ajouter de nouvelles fonctionnalités au projet fil rouge.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "La refactorisation n'est pas réservée aux développeurs expérimentés. En vibe coding, c'est l'agent qui fait le gros du travail — à condition de lui donner un contexte clair et de valider chaque étape. Le projet fil rouge sera l'occasion de mettre ce réflexe en pratique dès le départ."
+      }
+    }
+  ]
+}

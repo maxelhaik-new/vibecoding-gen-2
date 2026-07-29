@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Schéma Intégration Native Gemini API - Google AI Studio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1920px;
+      height: 1080px;
+      background-color: #FFFFFF;
+      font-family: 'Basic Sans Alt', 'Basic Alt', sans-serif;
+      color: #18093B;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .slide-container {
+      width: 1920px;
+      height: 1080px;
+      background-color: #FFFFFF;
+      padding: 80px 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 1;
+    }
+    .badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 20px;
+      background-color: #6634D9;
+      width: max-content;
+    }
+    .badge-text {
+      color: #FFFFFF;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .title {
+      color: #18093B;
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 100%;
+      letter-spacing: -0.014em;
+    }
+    .subtitle {
+      color: #555555;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 130%;
+      max-width: 1400px;
+    }
+    .content-body {
+      display: flex;
+      flex-direction: row;
+      gap: 48px;
+      z-index: 1;
+      height: 680px;
+      align-items: stretch;
+    }
+    .schema-card {
+      flex: 1.15;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #F7F7F7;
+      border: 1px solid #E0E0E0;
+      padding: 40px;
+    }
+    .schema-section-google {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      background: #FFFFFF;
+      border: 2px solid #E0E0E0;
+      border-left: 8px solid #6634D9;
+      padding: 40px;
+    }
+    .schema-section-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #6634D9;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .flow-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .node-box {
+      flex: 1;
+      padding: 32px 24px;
+      background: #18093B;
+      color: #FFFFFF;
+      text-align: center;
+    }
+    .node-box-title {
+      font-size: 28px;
+      font-weight: 800;
+    }
+    .node-box-sub {
+      font-size: 18px;
+      color: #D0C4F5;
+      margin-top: 8px;
+    }
+    .connector-line {
+      flex: 0.8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .line-bar {
+      width: 100%;
+      height: 6px;
+      background: #00C896;
+    }
+    .line-label {
+      font-size: 16px;
+      font-weight: 700;
+      color: #00C896;
+      text-transform: uppercase;
+    }
+    .pillars-column {
+      flex: 0.85;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .pillar-card {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 28px 32px;
+      background: #F7F7F7;
+      border-left: 6px solid #6634D9;
+    }
+    .pillar-card-accent {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 28px 32px;
+      background: #6634D9;
+      color: #FFFFFF;
+    }
+    .pillar-card-warning {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 28px 32px;
+      background: #F7F7F7;
+      border-left: 6px solid #FF5A5F;
+    }
+    .pillar-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: #18093B;
+    }
+    .pillar-title-white {
+      font-size: 28px;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+    .pillar-desc {
+      color: #555555;
+      font-size: 22px;
+      line-height: 130%;
+    }
+    .pillar-desc-white {
+      color: #FFFFFF;
+      font-size: 22px;
+      line-height: 130%;
+      opacity: 0.95;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide-container" data-figma-name="Slide Intégration Native Gemini API">
+
+    <!-- Header -->
+    <div class="header" data-figma-name="Header">
+      <div class="badge" data-figma-name="Badge">
+        <span class="badge-text" data-figma-name="Badge Texte">ARCHITECTURE GOOGLE AI STUDIO</span>
+      </div>
+      <h1 class="title" data-figma-name="Titre">L'Appel API Native sur Google AI Studio</h1>
+      <p class="subtitle" data-figma-name="Intro">Une connexion directe au modèle Gemini sans aucune configuration de clé API, confinée à l'écosystème Google.</p>
+    </div>
+
+    <!-- Content -->
+    <div class="content-body" data-figma-name="Corps Content">
+      
+      <!-- Colonne Gauche : Schéma HTML Épuré (Sans le doublon du bas) -->
+      <div class="schema-card" data-figma-name="Schéma HTML">
+        
+        <!-- Bloc Écosystème Google -->
+        <div class="schema-section-google" data-figma-name="Écosystème Google">
+          <span class="schema-section-title" data-figma-name="Titre Écosystème">Écosystème Google AI Studio (Bac à Sable)</span>
+          
+          <div class="flow-row" data-figma-name="Flux Interne">
+            <div class="node-box" data-figma-name="Noeud App Studio">
+              <div class="node-box-title" data-figma-name="Titre App">Application Web</div>
+              <div class="node-box-sub" data-figma-name="Sub App">Google AI Studio</div>
+            </div>
+
+            <div class="connector-line" data-figma-name="Connecteur Interne">
+              <span class="line-label" data-figma-name="Label Connecteur">Flux Direct</span>
+              <div class="line-bar" data-figma-name="Barre Connecteur"></div>
+              <span style="font-size: 15px; color: #555; font-weight: 700;">Zero Key API</span>
+            </div>
+
+            <div class="node-box" style="background: #6634D9;" data-figma-name="Noeud Gemini">
+              <div class="node-box-title" data-figma-name="Titre Gemini">IA Gemini</div>
+              <div class="node-box-sub" style="color: #E2D9FD;" data-figma-name="Sub Gemini">Modèle Natif</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Colonne Droite : Piliers Explicatifs -->
+      <div class="pillars-column" data-figma-name="Colonne Piliers">
+        
+        <!-- Pilier 1 -->
+        <div class="pillar-card" data-figma-name="Pilier Zero Config">
+          <span class="pillar-title" data-figma-name="Titre 1">Zero Clé API en Mode Studio</span>
+          <p class="pillar-desc" data-figma-name="Texte 1">
+            Google AI Studio sait appeler nativement sa propre IA sans exiger de configuration de clés API ni de serveur d'appels intermédiaire.
+          </p>
+        </div>
+
+        <!-- Pilier 2 -->
+        <div class="pillar-card-accent" data-figma-name="Pilier Prototypage">
+          <span class="pillar-title-white" data-figma-name="Titre 2">Prototypage & Validation Instantanés</span>
+          <p class="pillar-desc-white" data-figma-name="Texte 2">
+            Permet de construire et tester une application IA complète directement dans le bac à sable sans aucune lourdeur d'infrastructure.
+          </p>
+        </div>
+
+        <!-- Pilier 3 -->
+        <div class="pillar-card-warning" data-figma-name="Pilier Limite">
+          <span class="pillar-title" style="color: #FF5A5F;" data-figma-name="Titre 3">Limite de Déploiement Externe</span>
+          <p class="pillar-desc" data-figma-name="Texte 3">
+            L'application ne peut pas être exportée telle quelle vers le web externe. Un passage en production autonome exige une réécriture.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

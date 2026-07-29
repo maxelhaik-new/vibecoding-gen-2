@@ -1,0 +1,161 @@
+{
+  "lessonTitle": "M2C2L3 — Définir son persona et son MVP",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Définir son persona et son MVP"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Prioriser son produit de code",
+        "Intro": "Pour coder vite et bien avec l'IA, on doit savoir pour qui on construit et quelle est la version la plus courte possible du produit. Voyons comment cibler son persona et son MVP.",
+        "Titre 1": "Définir le persona",
+        "Texte 1": "Voyons comment identifier l'utilisateur cible pour orienter les choix d'interface et d'expérience.",
+        "Titre 2": "Isoler le MVP",
+        "Texte 2": "Focus sur la définition du produit minimum viable pour réduire le volume de code initial.",
+        "Titre 3": "La règle du scope",
+        "Texte 3": "Découvrons comment le focus sur le MVP empêche l'agent IA de dériver vers des fonctions secondaires."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "La notion de MVP ciblé",
+        "Mot": "Le MVP",
+        "Definition": "Le Produit Minimum Viable (MVP) est la version la plus simple de votre logiciel qui résout le problème principal de l'utilisateur. Dans le Vibe Coding, limiter le MVP est une obligation technique : moins il y a de code à écrire au départ, plus les fichiers restent légers, ce qui permet à l'IA de conserver une vision claire et sans bug de la codebase.",
+        "Bulle": "Coder uniquement la brique principale permet de tester l'application en conditions réelles en quelques heures, avant de laisser l'IA complexifier la structure.",
+        "Picto 1": "mdi:rocket-launch-outline"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 2 BLOCS",
+      "content": {
+        "Titre": "Définir sa cible",
+        "Intro": "On aligne l'utilisateur cible avec la fonctionnalité unique pour maximiser l'efficacité du prompt.",
+        "Titre 1": "Le Persona Cible",
+        "Picto 1": "mdi:account-badge-outline",
+        "Texte 1": "Identifier qui va utiliser le logiciel au quotidien",
+        "Texte 2": "Comprendre ses contraintes de temps et d'outils",
+        "Texte 3": "Adapter la complexité des interfaces à son niveau",
+        "Titre 2": "Isoler le MVP",
+        "Picto 2": "mdi:slash-forward",
+        "Texte 4": "Identifier l'unique action indispensable au flux",
+        "Texte 5": "Retirer toutes les fonctions de confort (nice-to-have)",
+        "Texte 6": "Valider que le résultat est testable immédiatement"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Méthode des 4 filtres Persona",
+        "Intro": "Renseigner quatre critères clés dans votre prompt permet à l'IA d'ajuster seule l'interface utilisateur :",
+        "Titre 1": "Identifier le profil et le métier",
+        "Texte 1": "Préciser l'âge et le rôle professionnel pour guider la taille des éléments et les contrastes.",
+        "Titre 2": "Déterminer le support physique utilisé",
+        "Texte 2": "Imposer un usage mobile-first ou desktop exclusif pour structurer la disposition des menus.",
+        "Titre 3": "Mesurer l'aisance technique de la cible",
+        "Texte 3": "Déterminer le niveau de compétence pour adapter la terminologie et la complexité des formulaires.",
+        "Titre 4": "Formuler le besoin urgent de l'utilisateur",
+        "Texte 4": "Isoler la tâche principale que le persona cible doit accomplir impérativement dès l'ouverture du logiciel.",
+        "Picto 1": "mdi:account-box-outline",
+        "Picto 2": "mdi:cellphone-link",
+        "Picto 3": "mdi:school-outline",
+        "Picto 4": "mdi:lightning-bolt-outline"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Le cas du commercial nomade",
+        "Intro": "CAS PRATIQUE : CRM MOBILE-FIRST",
+        "Texte 1": "Imaginons que vous souhaitiez concevoir un mini-CRM. Le persona est un commercial en déplacement permanent. En renseignant ce profil, l'IA va générer une interface mobile-first avec de grands boutons faciles à presser sur écran tactile, un mode sombre pour réduire la fatigue oculaire en voiture, et un accès rapide à un bouton d'appel direct. Le MVP se limite à l'action d'enregistrer un contact avec une note en moins de trois clics après un rendez-vous.",
+        "Texte Bulle": "En guidant le design par le profil nomade et en limitant le code à l'enregistrement de notes, l'IA produit une application mobile fluide utilisable sur le terrain en une heure.",
+        "Source": "PRODUIT MOBILE"
+      },
+      "image_concept": "Mobile CRM app with big buttons and dark UI, dashboard view on smartphone",
+      "image_style": "modern minimalistic UI mockup",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Le cas du générateur de devis",
+        "Intro": "CAS PRATIQUE : ARTISAN SUR DESKTOP",
+        "Texte 1": "Concevons maintenant un outil de devis. Le persona est un artisan du bâtiment qui utilise un vieil ordinateur de bureau en fin de journée. L'IA, guidée par cette cible, va opter pour une interface de type tableau avec de forts contrastes de lecture, de grands formulaires pour éviter les erreurs de saisie numérique, et un bouton d'impression PDF très visible. Le MVP se limite exclusivement à la saisie de lignes de prix et à la génération du PDF, sans base de données clients.",
+        "Texte Bulle": "L'IA élimine d'elle-même les fioritures graphiques inutiles pour se concentrer sur l'affichage de grands tableaux de données clairs et la génération de PDF conformes.",
+        "Source": "PRODUIT DESKTOP"
+      },
+      "image_concept": "Desktop invoice generator app interface showing clean tables on computer screen",
+      "image_style": "flat vector software design",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "Le parcours vers le MVP",
+        "Intro": "Du profil utilisateur jusqu'au lancement de la première brique de code opérationnelle.",
+        "Titre 1": "PROFIL",
+        "Violet 1 ": "Définir le persona et ses contraintes",
+        "Titre 2": "PAIN ",
+        "Violet 2": "Isoler sa douleur métier principale",
+        "Titre 3": "CORE ",
+        "Violet 3": "Lister l'unique fonction de réponse",
+        "Titre 4": "ÉLAGUER",
+        "Violet 4": "Retirer tout ce qui n'est pas vital",
+        "Titre 5": "DRAFT",
+        "Violet 5": "Écrire les critères du MVP",
+        "Titre 6": "PROMPT",
+        "Violet 6": "Lancer le codage de la brique de base"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - EXERCICE",
+      "content": {
+        "Titre": "À vous de jouer : Persona & MVP",
+        "Intro": "Un exercice concret pour dessiner le profil de votre client cible et isoler la proposition de valeur centrale de votre application.",
+        "Titre 1": "Le profil client",
+        "Texte 1": "Identifiez l'utilisateur principal et décrivez ses besoins réels en trois points.",
+        "Titre 2": "L'unique problème",
+        "Texte 2": "Sélectionnez le problème le plus douloureux et urgent à résoudre pour lui.",
+        "Titre 3": "La solution MVP",
+        "Texte 3": "Décrivez la fonctionnalité minimale indispensable pour y répondre sans fioriture."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Définir un persona et un MVP stricts n'est pas seulement une méthode de gestion de produit, c'est une nécessité technique absolue pour guider l'IA. En limitant le périmètre fonctionnel du premier jet logiciel, on réduit la quantité de fichiers générés. L'agent de code peut ainsi travailler sur une base simple et solide, facilitant les itérations futures.",
+        "Titre Bulle": "En Bref",
+        "Texte Bulle": "EN BREF : après avoir défini l'utilisateur et le périmètre minimal (MVP), l'étape suivante consiste à découper les fonctionnalités de l'application en petites User Stories simples et actionnables."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

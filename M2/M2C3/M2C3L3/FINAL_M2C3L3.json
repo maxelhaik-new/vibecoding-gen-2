@@ -1,0 +1,137 @@
+{
+  "lessonTitle": "M2C3L3 — Introduction au Prompting Vibe Coding",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Introduction au Prompting Vibe Coding"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Ce que cette leçon change",
+        "Intro": "Prompter une IA généraliste et prompter un outil de code, ce n'est pas le même geste. Une imprécision dans un post LinkedIn donne un résultat moyen. La même imprécision dans un projet code peut tout faire planter. Faisons le point sur cette nouvelle posture.",
+        "Titre 1": "Le changement de cap",
+        "Texte 1": "Voyons pourquoi le code est systémique et pourquoi chaque mot d'un prompt engage bien plus qu'un simple résultat textuel.",
+        "Titre 2": "La mémoire de l'IA",
+        "Texte 2": "Zoom sur la limite fondamentale qui oblige à structurer chaque prompt avec rigueur, dès le premier message.",
+        "Titre 3": "La posture du superviseur",
+        "Texte 3": "Découvrons comment diriger l'IA brique par brique pour garder le contrôle total sur le projet généré."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Prompt classique vs Prompt Vibe Coding",
+        "Intro": "La différence n'est pas dans la façon de s'exprimer. Elle est dans les conséquences d'une imprécision sur l'ensemble du projet.",
+        "Titre A": "CLASSIQUE",
+        "Titre B": "VIBE CODING",
+        "Item 1": "Résultat",
+        "Item 2": "Erreur",
+        "Item 3": "Portée",
+        "Item 4": "Enjeu",
+        "Texte A Item 1": "Texte, résumé, post — résultat isolé et indépendant",
+        "Texte A Item 2": "Résultat moyen mais utilisable, facilement corrigé",
+        "Texte A Item 3": "Un seul output, sans dépendances",
+        "Texte A Item 4": "Qualité et pertinence du contenu produit",
+        "Texte B1": "Code interconnecté — chaque ligne dépend des précédentes",
+        "Texte B2": "Crash à la ligne 500 à cause d'une imprécision ligne 1",
+        "Texte B3": "Systémique — une erreur se propage partout",
+        "Texte B4": "Stabilité de toute l'application"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT - IMAGE",
+      "content": {
+        "Titre": "Le Développeur Junior Amnésique",
+        "Intro": "L'IA code vite et bien — mais elle ignore tout du contexte métier et oublie au fil de la conversation.",
+        "Mot": "La fenêtre de contexte",
+        "Definition": "Plus le chat s'allonge, plus l'IA oublie les règles posées au début. Elle ignore le secteur, les contraintes, les choix validés. Sans rigueur à chaque prompt, l'IA réinvente les règles du projet — comme un développeur junior brillant qui perd ses notes entre chaque réunion.",
+        "Titre 1": "Contexte",
+        "Texte 1": "L'IA ignore le secteur et les contraintes métier : tout se pose dans le prompt.",
+        "Picto 1": "mdi:briefcase-remove",
+        "Titre 2": "Mémoire",
+        "Texte 2": "Les règles du début du chat s'effacent progressivement. Un prompt long sans rappel = dérive garantie.",
+        "Picto 2": "mdi:brain-off",
+        "Source": "Source : Vibe Coding - Illustration générée par IA - Maxime Elhaik"
+      },
+      "image_concept": "A young office worker in a suit sitting at a glowing computer, surrounded by floating sticky notes and documents that are dissolving into thin air behind him — he looks focused but the context around him is visibly fading, metaphor for short-term memory loss in a professional setting",
+      "image_style": "grainy-editorial",
+      "image_ratio": "1:1"
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Le Mythe du Prompt Magique",
+        "Intro": "LE CAS DU PROMPT ONE-SHOT",
+        "Texte 1": "Un débutant tape « Code-moi le prochain Airbnb en React » dans un seul message. L'IA génère des centaines de lignes qui semblent complètes. Le problème ? Les composants sont inventés, des fichiers entiers manquent, les dépendances sont incohérentes. Le projet plante dès la première exécution. Le Vibe Coding n'est pas une commande magique : c'est une succession de micro-prompts précis, testés un par un. Un seul prompt géant garantit un projet bancal.",
+        "Texte Bulle": "L'itération n'est pas un signe de faiblesse — c'est la méthode. Les meilleurs projets Vibe Coding sont construits avec des dizaines de prompts courts et ciblés, pas un seul bloc monolithique envoyé en espérant un miracle.",
+        "Source": "Source : Vibe Coding"
+      },
+      "image_concept": "A magician on stage pulling an enormous tangled ball of wires and broken circuit boards out of a top hat instead of a rabbit — the audience looks confused and disappointed, metaphor for the illusion of a single all-powerful prompt that produces chaos instead of magic",
+      "image_style": "offset-screenprint",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO",
+      "content": {
+        "Titre": "Le nouveau rôle : Superviseur",
+        "Intro": "En Vibe Coding, on n'écrit plus le code. On le dirige. Trois actions se répètent en boucle à chaque étape du projet.",
+        "Titre 1": "LIRE LE CODE",
+        "Texte 1": "Comprendre ce que l'IA a généré, même sans tout maîtriser techniquement. Repérer les incohérences avant de valider et de passer à la suite.",
+        "Titre 2": "TESTER L'OUTIL",
+        "Titre Bulle": "Lancer l'application et observer le résultat visuel. Est-ce que ça ressemble à ce qu'on avait en tête ? La « vibe » est-elle là ?",
+        "Titre 3": "CORRIGER LE CODE",
+        "Texte 3": "Donner une instruction chirurgicale pour ajuster un point précis — jamais réécrire depuis zéro. Un prompt ciblé vaut mieux qu'un reset complet.",
+        "Source": "Source : Vibe Coding - Illustration générée par IA - Maxime Elhaik"
+      },
+      "image_concept": "An architect in a hard hat standing in front of a large construction blueprint pinned to a wall, pointing at specific sections with a red marker while workers in the background follow instructions — metaphor for directing and supervising without doing the manual labor",
+      "image_style": "constructivist",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "La règle d'or : Baby Steps",
+        "Intro": "Construire brique par brique. Ne jamais demander une page entière d'un coup. Chaque étape est testée avant de passer à la suivante.",
+        "Titre 1": "Fond & layout",
+        "Violet 1 ": "Définir le fond et la structure",
+        "Titre 2": "Header",
+        "Violet 2": "Ajouter le header avec logo et nav",
+        "Titre 3": "Items",
+        "Violet 3": "Ajouter boutons et blocs interactifs",
+        "Titre 4": "Test visuel",
+        "Violet 4": "Lancer l'app et vérifier le rendu",
+        "Titre 5": "Valid",
+        "Violet 5": "Valider et passer au suivant",
+        "Titre 6": "ITÉRER",
+        "Violet 6": "Itérer jusqu'à la version stable"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Le prompting en Vibe Coding repose sur trois piliers : la précision (chaque mot engage le projet entier), l'itération (brique par brique, jamais tout d'un coup) et la supervision (lire, tester, corriger en boucle). Cette posture n'est pas naturelle au départ — mais elle devient un réflexe. Des fondations rigoureuses rendent les prompts quotidiens plus courts, plus efficaces et moins risqués.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "L'état d'esprit est posé. La prochaine étape : choisir les outils sur lesquels faire travailler cette IA. C'est l'objet de la leçon suivante — la Golden Stack — où on sélectionne l'ensemble technique adapté à chaque type de projet Vibe Coding."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

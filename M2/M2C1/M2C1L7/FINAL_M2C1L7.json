@@ -1,0 +1,136 @@
+{
+  "lessonTitle": "M2C1L7 — Panorama des modèles IA pour le code",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Panorama des modèles IA pour le code"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Les grands moteurs du Vibe Coding",
+        "Intro": "Il ne s'agit pas de choisir un éditeur, mais de comprendre la logique des modèles sous-jacents. Voyons comment les forces de chaque famille orientent nos choix de développement.",
+        "Titre 1": "L'écosystème propriétaire",
+        "Texte 1": "Voyons l'opposition et les spécificités des trois leaders du marché que sont Anthropic, Google et OpenAI.",
+        "Titre 2": "Modèles rapides vs lourds",
+        "Texte 2": "Focus sur la distinction stratégique entre l'autocomplétion instantanée et le raisonnement complexe.",
+        "Titre 3": "Critères de sélection",
+        "Texte 3": "Découvrons comment sélectionner le bon moteur en fonction du budget de jetons et de la tâche à accomplir."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "L'écosystème de modèles Claude",
+        "Intro": "Anthropic s'est imposé comme la référence pour le code grâce à sa logique de raisonnement et son respect des consignes.",
+        "Titre A": "RAPIDE",
+        "Titre B": "AVANCÉ",
+        "Item 1": "MODÈLE",
+        "Texte A Item 1": "Haiku (modèle léger et ultra-rapide)",
+        "Texte B1": "Sonnet / Opus (modèles de raisonnement)",
+        "Item 2": "FORCE",
+        "Texte A Item 2": "Suggestions inline et autocomplétion rapide",
+        "Texte B2": "Architecture globale et refactoring lourd",
+        "Item 3": "LATENCE",
+        "Texte A Item 3": "Quasi nulle (inférieure à la seconde)",
+        "Texte B3": "Plus élevée (quelques secondes de calcul)",
+        "Item 4": "COÛT",
+        "Texte A Item 4": "Coût minimal pour les requêtes continues",
+        "Texte B4": "Investissement justifié pour la logique"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "L'écosystème de modèles Gemini",
+        "Intro": "Les modèles de Google se distinguent par leur capacité d'ingestion de contexte et leur vitesse d'exécution native.",
+        "Titre A": "RAPIDE",
+        "Titre B": "AVANCÉ",
+        "Item 1": "MODÈLE",
+        "Texte A Item 1": "Flash (modèle agile à très haute vitesse)",
+        "Texte B1": "Pro (modèle profond à contexte géant)",
+        "Item 2": "FORCE",
+        "Texte A Item 2": "Traitement de flux et rédactions rapides",
+        "Texte B2": "Analyse globale de bases de code entières",
+        "Item 3": "CONTEXTE",
+        "Texte A Item 3": "Capacité large standard pour le quotidien",
+        "Texte B3": "Fenêtre immense allant jusqu'à 2M tokens",
+        "Item 4": "USAGE",
+        "Texte A Item 4": "Explications de code et petites fonctions",
+        "Texte B4": "Migrations de projets et audits complets"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "L'écosystème GPT et o-series d'OpenAI",
+        "Intro": "OpenAI propose des moteurs alliant rapidité et raisonnement pur par étapes pour dénouer les problèmes de code.",
+        "Titre A": "RAPIDE",
+        "Titre B": "AVANCÉ",
+        "Item 1": "MODÈLE",
+        "Texte A Item 1": "Mini (modèle compact pour l'écriture direct)",
+        "Texte B1": "o-series / Pro (raisonnement par étapes)",
+        "Item 2": "FORCE",
+        "Texte A Item 2": "Prototypage immédiat et fonctions unitaires",
+        "Texte B2": "Algorithmes complexes et debug logique",
+        "Item 3": "LOGIQUE",
+        "Texte A Item 3": "Réponses directes et génération rapide",
+        "Texte B3": "Chaîne de pensée interne avant réponse",
+        "Item 4": "USAGE",
+        "Texte A Item 4": "Création de maquettes et scripts de base",
+        "Texte B4": "Correction d'algorithmes complexes"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "Le protocole de sélection",
+        "Intro": "Choisir son modèle de code ne se fait pas au hasard : voici le parcours de décision recommandé.",
+        "Titre 1": "CONFID.",
+        "Violet 1 ": "Évaluer le besoin de sécurité",
+        "Titre 2": "VOLUME",
+        "Violet 2": "Mesurer la taille du projet",
+        "Titre 3": "BUDGET",
+        "Violet 3": "Calculer le coût estimé des APIs",
+        "Titre 4": "MOTEUR",
+        "Violet 4": "Sélectionner la famille de modèles",
+        "Titre 5": "LOCAL  ",
+        "Violet 5": "Déployer en local si nécessaire",
+        "Titre 6": "ROUTAGE",
+        "Violet 6": "Changer de modèle selon la tâche"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Le choix du modèle dicte l'efficacité du Vibe Coding. On privilégiera Claude pour la rigueur logique, GPT pour le prototypage rapide, et Gemini pour les projets volumineux. L'art du Vibe Coding réside dans l'alternance intelligente de ces moteurs : un modèle lourd pour la structure et la conception, et un modèle rapide pour l'écriture quotidienne de notre code.",
+        "Titre Bulle": "En Bref",
+        "Texte Bulle": "EN BREF : ce panorama conclut notre introduction théorique. On passe maintenant à la pratique : installation de l'environnement, configuration des clés d'API et lancement de notre tout premier projet logiciel !"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

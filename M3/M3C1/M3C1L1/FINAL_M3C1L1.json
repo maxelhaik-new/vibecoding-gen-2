@@ -1,0 +1,30 @@
+{
+  "lessonTitle": "M3C1L1 — Les objectifs du chapitre : découvrir Google AI Studio",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Découvrir et utiliser Google AI Studio"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Ce chapitre permet de prendre en main Google AI Studio pour tester et comparer les modèles Gemini. On apprend à concevoir des prototypes rapides et à exporter son travail.",
+        "Titre 1": "Découvrir l'interface de Google AI Studio",
+        "Titre 2": "Comparer les différents modèles de Gemini",
+        "Titre 3": "Ajuster les paramètres de température de l'IA",
+        "Titre 4": "Créer et tester un prototype rapide sans code",
+        "Titre 5": "Exporter le travail sous forme de code propre",
+        "Titre 6": "Intégrer les clés API de manière sécurisée"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

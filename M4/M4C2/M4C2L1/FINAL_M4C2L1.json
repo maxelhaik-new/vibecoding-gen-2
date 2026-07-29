@@ -1,0 +1,25 @@
+{
+  "lessonSlug": "m4c2l1",
+  "lessonTitle": "M4C2L1 — Les objectifs du chapitre : Récupérer et modifier une application en local",
+  "lessonType": "objectif",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Chapitre 2 : Les modes de prompt dans l'IDE"
+      }
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Récupérer un projet depuis GitHub et piloter l'agent à travers les différents modes d'interaction.",
+        "Titre 1": "Récupérer un projet distant depuis GitHub",
+        "Titre 2": "Dialoguer et questionner son agent avec le mode Chat",
+        "Titre 3": "Générer et modifier du code avec le mode Composer",
+        "Titre 4": "Relire et accepter un plan de modification avec le mode Plan",
+        "Titre 5": "Récupérer et modifier votre application sur un cas pratique"
+      }
+    }
+  ]
+}

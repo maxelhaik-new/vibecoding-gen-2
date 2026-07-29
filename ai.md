@@ -75,7 +75,7 @@ Une fois les textes et les sujets d'images validés par l'utilisateur (ou lors d
 1. **Génération automatique des images & Ratios** : Pour chaque slide utilisant un template contenant une image (ex: `VIBECODING - 3 BLOCS - PHOTO`, `VIBECODING - 3 BLOCS - PHOTO - ALT`, `VIBECODING - IMAGE`, `VIBECODING - USE CASE`, `VIBECODING - FOCUS OUTIL`, `PODIUM`, `CHIFFRES - PHOTO`), l'agent doit exécuter le script `scripts/generate_nano_banana.py` avec le concept/sujet (soit validé à l'étape ECRIS, soit déduit du contexte de la slide si absent).
    * **Calcul Automatique du Ratio (Sur-Mesure)** : Récupérer les dimensions exactes du composant d'image cible dans Figma (largeur et hauteur de la forme d'accueil de l'image), ou à défaut utiliser les ratios connus des templates (ex: `3:4` pour le bloc vertical de `VIBECODING - 3 BLOCS - PHOTO`), calculer le ratio le plus proche (ex: `3:4`, `16:9`, `1:1`, `4:3`, `9:16`) et le passer via le paramètre `--aspect-ratio ratio_calcule`.
    * **Appel Type** : `python3 scripts/generate_nano_banana.py --concept "sujet_choisi" --bg none --aspect-ratio ratio_calcule`
-   * *Règle linguistique* : Tout texte devant figurer dans l'image (boutons, interfaces fictives, bouts de code) doit être obligatoirement généré en français.
+   * **Règle d'illustration pour les leçons pratiques (Brief / Projet Fil Rouge)** : Pour les slides de brief des leçons pratiques (`VIBECODING - BRIEF` et `VIBECODING - BRIEF ALT`), l'image doit obligatoirement être générée avec le style photoréaliste (`--style photorealistic`). L'image doit illustrer concrètement le domaine d'activité du projet fil rouge (ex: univers de travail, atelier, cuisine, bureau, logistique) sous forme d'une photographie 35mm professionnelle ultra-réaliste, sans aucun schéma, ni interface d'application.
 2. **Intégration de la clé image** : Récupérer le chemin du fichier image généré et injecter la clé `"image"` dans le contenu de la slide au format `"http://localhost:8080/assets/[nom_du_fichier_genere.png]"`.
 3. **Légende Source** : Pour chaque slide avec image IA, renseigner le champ `"Source"` au format obligatoire :
    `Source : [Sujet court] - Illustration générée par IA - Maxime Elhaik`
@@ -95,7 +95,7 @@ Une fois les textes et les sujets d'images validés par l'utilisateur (ou lors d
       }
     },
     {
-      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "template": "VIBECODING - 3 COLONNES",
       "content": {
         "Titre": "Titre de la slide",
         "Intro": "Texte d'introduction de la slide.",
@@ -145,38 +145,72 @@ Une fois les textes et les sujets d'images validés par l'utilisateur (ou lors d
 
 ## 5. Gestion du Sur-mesure (Génération de slides personnalisées)
 
-Lorsque l'utilisateur souhaite concevoir ou générer une slide sur-mesure en un seul coup :
-1. **Choix du Template** : Indiquer `"template": "VIBECODING - VIDE"` (qui possède déjà un `Titre` et une `Intro`).
-2. **Remplissage Standard** : Remplir le `Titre` et l'`Intro` de manière classique dans `"content"`.
-3. **Éléments sur-mesure (`custom_elements`)** : Déclarer un tableau `"custom_elements"` au même niveau que `"content"`. Le plugin créera ces éléments directement à l'intérieur de la slide instanciée.
-4. **Commandes Supportées dans `custom_elements`** :
-   - `create_node` : Crée un nœud (`node_type: "FRAME" | "TEXT" | "RECTANGLE"`). Propriétés configurables via l'objet `properties` (`x`, `y`, `width`, `height`, `fills`, `strokes`, `characters`). Option de charger une icône avec `icon: "mdi:nom-icone"`.
-   - `delete_node` / `delete_layer` : Supprime un élément par son nom (`selector: "nom_du_calque"`).
-   - `set_property` : Ajuste les propriétés d'un calque existant par son nom (`selector`, `property`, `value`).
-5. **Format du JSON en une seule passe** :
-   ```json
-   {
-     "template": "VIBECODING - VIDE",
-     "content": {
-       "Titre": "Titre sur-mesure",
-       "Intro": "Introduction de la slide"
-     },
-     "custom_elements": [
-       {
-         "action": "create_node",
-         "node_type": "RECTANGLE",
-         "name": "MonBloc",
-         "properties": { "x": 100, "y": 200, "width": 300, "height": 150, "fills": "#6634D9" }
-       },
-       {
-         "action": "create_node",
-         "node_type": "TEXT",
-         "name": "TexteBloc",
-         "properties": { "x": 120, "y": 220, "width": 260, "height": 110, "characters": "Contenu du bloc", "fills": "#FFFFFF" }
-       }
-     ]
-   }
-   ```
+Le plugin supporte **deux modes** de génération sur-mesure :
+
+### 5.1 Mode JSON `custom_elements` (positionnement absolu via template VIDE)
+
+1. **Template** : `"template": "VIBECODING - VIDE"` (possède `Titre` et `Intro`).
+2. **Remplissage** : Remplir `Titre` et `Intro` dans `"content"`.
+3. **`custom_elements`** : Tableau au même niveau que `"content"`. Commandes supportées :
+   - `create_node` : `node_type: "FRAME" | "TEXT" | "RECTANGLE"`, `properties` (`x`, `y`, `width`, `height`, `fills`, `strokes`, `characters`), `icon: "mdi:nom-icone"`.
+   - `delete_node` / `delete_layer` : `selector: "nom_du_calque"`.
+   - `set_property` : `selector`, `property`, `value`.
+
+### 5.2 Mode HTML brut (Auto-Layout Figma via flexbox)
+
+Pour des layouts complexes avec cartes, grilles et typographies riches, générer du **HTML/CSS brut** que le plugin convertit automatiquement en Auto-Layout Figma.
+
+#### Propriétés CSS supportées par le plugin Figma
+
+| Propriété CSS | Mapping Figma | Notes |
+|---|---|---|
+| `display: flex` | `layoutMode` | `flex` ou `block` → Auto-Layout |
+| `flex-direction` | `VERTICAL` / `HORIZONTAL` | |
+| `gap` | `itemSpacing` | Valeur en `px` uniquement |
+| `padding-*` | `paddingTop/Right/Bottom/Left` | |
+| `background-color` | `fills` (SOLID) | Supporte `rgba()` avec opacité |
+| `color` | `fills` sur TextNode | |
+| `font-size` | `fontSize` | Clampé 14–140px |
+| `font-weight` | Style de police | 400→Regular, 600→SemiBold, 700→Bold, 800→ExtraBold, 900→Black |
+| `border-radius` | `cornerRadius` | |
+| `text-align` | `textAlignHorizontal` | `left`, `center`, `right`, `justify` |
+| `flex-grow` | `layoutGrow` | `flex-grow: 1` → la frame prend l'espace disponible |
+| `align-self` | `layoutAlign` | `stretch` ou héritage |
+| `justify-content` | `primaryAxisAlignItems` | `flex-start`, `center`, `flex-end`, `space-between` |
+| `align-items` | `counterAxisAlignItems` | `flex-start`, `center`, `flex-end`, `stretch` |
+| `opacity` | `frame.opacity` | ✅ Valeur 0–1 sur l'élément entier |
+| `overflow: hidden` | `clipsContent` | ✅ Masque les enfants débordants |
+| `border` | `strokes` + `strokeWeight` | ✅ Couleur, épaisseur, `strokeAlign: INSIDE` |
+| `box-shadow` | `effects` (DROP_SHADOW) | ✅ Offset, blur, spread, couleur rgba |
+| `position: absolute` | `layoutPositioning: ABSOLUTE` | ✅ Avec `top`/`left` en px |
+| `line-height` | `txt.lineHeight` | ✅ Valeur en px |
+| `letter-spacing` | `txt.letterSpacing` | ✅ Valeur en px |
+| `text-transform` | `txt.textCase` | ✅ `uppercase`→UPPER, `lowercase`→LOWER, `capitalize`→TITLE |
+| `max-width` | `frame.maxWidth` | ✅ Contrainte de largeur max |
+
+#### Propriétés CSS **NON SUPPORTÉES** (à ne JAMAIS utiliser)
+
+| Propriété | Raison |
+|---|---|
+| `background: linear-gradient(...)` | Seules les couleurs solides sont parsées |
+| `backdrop-filter`, `filter: blur()` | Effets CSS non traduisibles en Figma |
+| `transition`, `animation`, `transform` | Figma est statique |
+| `::before`, `::after` | Pseudo-éléments non traversés par le DOM parser |
+| `display: grid` (complexe) | Traduit en vertical simple ; préférer `display: flex` |
+| `%`, `em`, `rem`, `vh`, `vw` | Utiliser uniquement des valeurs en **`px`** |
+| `width: max-content` / `fit-content` | Utiliser des valeurs fixes ou `flex-grow: 1` |
+
+#### Règles de conception obligatoires pour le HTML sur-mesure
+
+1. **`data-figma-name`** obligatoire sur chaque `<div>` et `<span>` — c'est le nom du calque dans Figma.
+2. **Typographie** : Toujours `font-family: 'Basic Sans Alt', sans-serif`.
+3. **Palette** : Respecter la charte `Design_Charter.css` (`#18093B`, `#6634D9`, `#FFFF77`, `#FFB2B2`).
+4. **Canvas** : Le conteneur racine doit être `width: 1920px; height: 1080px`.
+5. **Valeurs en px** : Toutes les dimensions, gaps, paddings, font-sizes doivent être en **px** explicites.
+6. **Flexbox pur** : Utiliser `display: flex` avec `flex-direction`, `gap`, `padding`. Pas de grid complexe.
+7. **`position: absolute`** : Réservé aux décorations de fond (blobs, formes). Le parent doit avoir `position: relative`.
+8. **Pas de pseudo-éléments** : Tout le contenu visuel doit être dans des balises HTML réelles.
+9. **Pas de `width: max-content`** : Utiliser des largeurs fixes ou `flex-grow: 1`.
 
 ---
 
@@ -194,3 +228,19 @@ Lorsque l'utilisateur souhaite concevoir ou générer une slide sur-mesure en un
 > - `Source : Homme au milieu d'un tourbillon de papier - Illustration générée par IA - Maxime Elhaik`
 >
 > Cette règle s'applique à **toutes** les images générées par IA dans **tous les slides et tous les agents** du projet Wemodo / Vibe Coding, sans exception.
+
+---
+
+## 7. Gestion & Génération du Glossaire Vibe Coding
+
+* **Fichier source unique** : [glossaire_formation_vibe_coding.md](./glossaire_formation_vibe_coding.md) regroupe les 57 termes techniques des Modules 1 à 4.
+* **Formulations V2** : Les définitions doivent rester claires, courtes et adaptées à des adultes débutants, en évitant le jargon abstrait pour définir un autre terme (ex: éviter "arbre hiérarchique" pour le DOM, "moteur V8" pour Node.js). Appliquer la règle de non-tutoiement de [brand_voice.md](./brand_voice.md).
+* **Script de génération de la Cheat Sheet A4** : Si le fichier Markdown du glossaire est modifié ou enrichi, exécuter le script suivant pour mettre à jour la Cheat Sheet HTML multi-pages A4 côte-à-côte :
+  ```bash
+  python3 scripts/build_full_cheatsheet_html.py
+  ```
+* **Charte de la Cheat Sheet A4** :
+  - **Fichier généré** : [glossaire_cheatsheet_complet.html](./glossaire_cheatsheet_complet.html)
+  - **Dimensions** : A4 portrait (210mm x 297mm), 5 mots par page.
+  - **Styles** : Fond blanc pur (`#FFFFFF`), en-têtes couleur Fig (`#18093B`), bordures de cartes subtiles gris clair (`#e2e8f0`), badges de types de mots en jaune sur noir (`#FFFF77` sur `#18093B`), disposition horizontale côte-à-côte des pages à l'écran.
+

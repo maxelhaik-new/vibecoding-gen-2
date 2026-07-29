@@ -1,0 +1,17 @@
+{
+  "lessonSlug": "m4c2l3",
+  "lessonTitle": "M4C2L3 — Le mode Chat : dialoguer et questionner son agent",
+  "lessonType": "logiciel",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Le mode Chat : dialoguer et questionner son agent"
+      }
+    },
+    {
+      "template": "VIBECODING - DEMO",
+      "content": {}
+    }
+  ]
+}

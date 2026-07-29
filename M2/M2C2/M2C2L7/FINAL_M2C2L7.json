@@ -1,0 +1,100 @@
+{
+  "lessonTitle": "M2C2L7",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Cadrer le design du MVP pour lancer rapidement",
+        "Sous-titre": "UX/UI et consignes graphiques pour l'IA"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Donner un cadre visuel à l'IA",
+        "Intro": "L'IA sait coder le CSS mais n'a aucun goût esthétique. Sans directives précises, elle produit des interfaces surchargées ou obsolètes. Voyons comment la brider.",
+        "Titre 1": "La disposition",
+        "Texte 1": "Voyons comment imposer un agencement d'écran standard et stable pour l'IA.",
+        "Titre 2": "La palette de couleurs",
+        "Texte 2": "Focus sur la règle de proportion simple pour bien répartir les teintes de l'interface sans saturer l'écran.",
+        "Titre 3": "Le style des composants",
+        "Texte 3": "Découvrons les contraintes à donner pour le style des boutons et des cartes."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Choisir une structure d'écran",
+        "Mot": "Double colonne",
+        "Definition": "L'agencement de base des zones de l'application. Pour un outil de gestion ou un MVP, on impose une structure classique : une barre latérale étroite à gauche (largeur 250px) pour la navigation et un grand panneau blanc ou gris clair à droite pour le contenu. C'est la structure la plus stable et la mieux maîtrisée par les modèles de code.",
+        "Bulle": "EN BREF : Éviter les structures trop complexes qui perturbent la logique de l'IA. On privilégie des grilles standards pour guider l'éditeur de code efficacement et obtenir un résultat propre dès le premier essai.",
+        "Picto 1": "mdi:flowchart"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Éviter l'effet sapin de Noël",
+        "Mot": "La règle 60-30-10",
+        "Definition": "Une formule simple pour équilibrer les couleurs d'une interface : 60% pour la couleur dominante (ex. un fond gris très clair bg-gray-50), 30% pour la couleur secondaire (ex. des cartes blanches bg-white et du texte sombre), et 10% pour la couleur d'accentuation (ex. des boutons indigo bg-indigo-600). On demande explicitement à l'IA de respecter ce ratio.",
+        "Bulle": "EN BREF : Imposer une unique couleur d'accentuation pour tous les éléments cliquables de l'application. On crée ainsi un repère visuel immédiat : si un élément utilise cette teinte, l'utilisateur sait qu'il peut cliquer.",
+        "Picto 1": "mdi:art"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Préciser le style des boutons et cartes",
+        "Titre Gauche": "SANS DIRECTIVES",
+        "Texte Gauche": "L'IA génère des boutons rectangulaires gris, des bordures noires agressives, des ombres trop lourdes et des polices système basiques.",
+        "Titre Droite": "DIRECTIVES IMPOSÉES",
+        "Texte Droite": "Boutons avec coins arrondis (rounded-lg), effets de survol (hover), cartes avec bordure grise très fine (border-gray-200) et ombres subtiles.",
+        "Picto 1": "mdi:sword-fight"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - EXERCICE",
+      "content": {
+        "Titre": "À nous de jouer ! Premier brief",
+        "Intro": "Exercice pratique pour rédiger les consignes visuelles complètes d'un projet fil rouge ou d'une idée personnelle, prêtes à être envoyées à l'IA.",
+        "Titre 1": "Choisir le layout",
+        "Texte 1": "Définir l'agencement général : opter pour une barre latérale ou une barre supérieure.",
+        "Titre 2": "Définir l'accent",
+        "Texte 2": "Sélectionner une couleur d'accentuation en Tailwind (ex: blue-600, emerald-500).",
+        "Titre 3": "Rédiger le paragraphe",
+        "Texte 3": "Décrire précisément le style attendu pour les boutons et les cartes.",
+        "Picto 1": "mdi:account-cowboy-hat"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Texte principal": "Le design d'un MVP ne demande pas de maquette graphique complexe. Il suffit de donner 3 règles simples à l'IA : un layout classique, une seule couleur d'accentuation, et un style de composant épuré via Tailwind. C'est l'assurance d'obtenir une interface propre, ergonomique et sans bug d'affichage.",
+        "Texte Bulle": "EN BREF : Le cahier des charges technique et graphique est désormais complet et validé. Dans le prochain chapitre, on passe enfin à l'action : découvrons comment assembler tous ces éléments pour rédiger, structurer et envoyer le tout premier prompt.",
+        "Picto 1": "mdi:text-short"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

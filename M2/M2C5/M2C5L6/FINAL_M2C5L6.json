@@ -1,0 +1,87 @@
+{
+  "lessonTitle": "M2C5L6",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Vérifier le code généré"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "L'IA génère, on valide",
+        "Intro": "Le code généré par l'IA peut contenir des failles, des erreurs ou des éléments inexistants. On ne peut pas l'exécuter en aveugle. Voyons les risques et les bons réflexes à avoir dès le départ.",
+        "Titre 1": "Paquets fantômes",
+        "Texte 1": "Voyons comment une bibliothèque inventée par l'IA peut devenir un vecteur d'attaque.",
+        "Titre 2": "Failles dans le code",
+        "Texte 2": "Découvrons pourquoi l'IA reproduit des erreurs de sécurité sans même les détecter.",
+        "Titre 3": "Hallucinations pratiques",
+        "Texte 3": "Apprenons à repérer ce que l'IA invente et qui casse silencieusement un projet."
+      }
+    },
+    {
+      "template": "VIBECODING - CYCLE",
+      "content": {
+        "Titre": "Le cycle du paquet fantôme",
+        "Intro": "Ce cycle se brise à une seule condition : chercher le paquet sur npm.com ou pypi.org avant de copier la commande. Si le paquet n'existe pas, ne pas l'installer.",
+        "Titre 1": "INVENTER",
+        "Texte 1": "L'IA suggère un paquet fictif avec un nom plausible dans le code généré.",
+        "Titre 2": "REPÉRER",
+        "Texte 2": "Le pirate scanne les suggestions IA et identifie les noms de paquets inexistants.",
+        "Titre 3": "PUBLIER",
+        "Texte 3": "Un faux paquet portant ce nom est mis en ligne sur npm ou PyPI.",
+        "Titre 4": "INFECTER",
+        "Texte 4": "Le code malveillant s'exécute en silence dès l'installation du paquet.",
+        "Texte 5": "→ Vérifier avant d'installer"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Les failles du code généré",
+        "Intro": "Sans instruction de sécurité explicite, l'IA génère du code qui fonctionne, mais qui expose l'application à des attaques. Ce sont des erreurs classiques, bien connues des pirates.",
+        "Titre 1": "INJECTION SQL",
+        "Texte 1": "L'IA concatène directement les données dans une requête. Un attaquant peut modifier la base entière.",
+        "Titre 2": "MOT DE PASSE EN CLAIR",
+        "Texte 2": "Sans consigne, l'IA stocke les mots de passe sans chiffrement. La base peut être lue par n'importe qui.",
+        "Titre 3": "CLÉS API DANS LE CODE",
+        "Texte 3": "Elle place les clés secrètes directement dans les fichiers partagés sur GitHub, les exposant publiquement.",
+        "Titre 4": "ACCÈS NON PROTÉGÉ",
+        "Texte 4": "Elle génère des routes accessibles sans authentification, laissant les données de tout utilisateur visibles."
+      }
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Les hallucinations en Vibe Coding",
+        "Mot": "Hallucination IA",
+        "Definition": "Une hallucination, c'est quand l'IA affirme quelque chose de faux avec une totale confiance. En Vibe Coding, ça prend des formes très concrètes : une fonction qui n'existe pas dans la bibliothèque, une propriété CSS inventée, une API avec une syntaxe incorrecte. Le code produit semble juste, il ne génère aucune erreur de syntaxe, mais il ne fait tout simplement rien — ou pire, plante au moment inattendu.",
+        "Bulle": "Règle : si une fonction ou une librairie suggérée semble inconnue, la chercher sur internet avant de l'utiliser."
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "La posture du Vibe Coder responsable",
+        "Intro": "L'IA délègue l'écriture, l'humain garde la responsabilité de ce qui s'exécute.",
+        "Texte Intro": "Générer du code vite ne signifie pas le déployer sans réfléchir. La posture du Vibe Coder, c'est celle d'un chef de projet qui relit le travail de son équipe avant de le livrer. Ces cinq réflexes sont à appliquer systématiquement, dès le premier projet.",
+        "Nom Checklist": "Avant d'exécuter du code IA",
+        "Texte 1": "Vérifier l'existence de chaque bibliothèque avant l'installation.",
+        "Texte 2": "Demander à l'IA de sécuriser le code : « utilise des requêtes préparées ».",
+        "Texte 3": "Ne jamais coller une clé API directement dans le code partagé.",
+        "Texte 4": "Relire les accès aux données : tout doit être protégé par une authentification.",
+        "Texte 5": "Tester les fonctions suggérées dans la documentation officielle."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Le Vibe Coder délègue l'écriture du code à l'IA, mais reste le seul responsable de ce qui s'exécute. Un code qui semble fonctionner peut contenir une faille silencieuse ou appeler une librairie qui n'existe pas. La bonne nouvelle : la grande majorité de ces risques disparaît avec une seule habitude — indiquer explicitement à l'IA ses exigences de sécurité dans le prompt, et vérifier systématiquement ce qu'on n'a pas écrit soi-même.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Ce chapitre sur la sécurité est maintenant complet. On a vu comment protéger nos données, filtrer le contexte donné à l'IA et vérifier le code reçu. Place à la pratique : il est temps d'ouvrir l'IDE pour notre premier projet !"
+      }
+    }
+  ]
+}

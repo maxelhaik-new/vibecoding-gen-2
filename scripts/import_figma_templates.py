@@ -15,11 +15,8 @@ import math
 from pathlib import Path
 from typing import Optional, Union, List, Dict
 
-try:
-    import requests
-except ImportError:
-    print("[Erreur] 'requests' manquant. Lancez : pip3 install requests")
-    sys.exit(1)
+import urllib.request
+import urllib.error
 
 try:
     from dotenv import load_dotenv
@@ -29,9 +26,9 @@ else:
     load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
 
 # ─── Configuration ─────────────────────────────────────────────────────────────
-FIGMA_TOKEN = "REMOVED_SECRET"
-FILE_KEY    = "X29iTl53DAreMnpHDehsTx"
-SECTION_ID  = "236:11789"
+FIGMA_TOKEN = os.environ.get("FIGMA_TOKEN", "REMOVED_SECRET")
+FILE_KEY    = os.environ.get("FIGMA_FILE_KEY", "X29iTl53DAreMnpHDehsTx")
+SECTION_ID  = os.environ.get("FIGMA_SECTION_ID", "236:11789")
 TEMPLATES_PATH = Path(__file__).parent.parent / "templates.json"
 
 HEADERS = {"X-Figma-Token": FIGMA_TOKEN}
@@ -43,9 +40,10 @@ def figma_nodes(node_ids: List[str], depth: int = 10) -> Dict:
     """Fetch multiple nodes in a single API call."""
     ids = ",".join(node_ids)
     url = f"{BASE_URL}/files/{FILE_KEY}/nodes?ids={ids}&depth={depth}"
-    r = requests.get(url, headers=HEADERS, timeout=30)
-    r.raise_for_status()
-    return r.json().get("nodes", {})
+    req = urllib.request.Request(url, headers=HEADERS)
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        data = json.loads(resp.read().decode("utf-8"))
+        return data.get("nodes", {})
 
 
 def calc_limits(text: str) -> Dict:

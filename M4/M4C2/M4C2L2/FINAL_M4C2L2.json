@@ -1,0 +1,17 @@
+{
+  "lessonSlug": "m4c2l2",
+  "lessonTitle": "M4C2L2 — Récupérer un projet distant depuis GitHub",
+  "lessonType": "logiciel",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Récupérer un projet distant depuis GitHub"
+      }
+    },
+    {
+      "template": "VIBECODING - DEMO",
+      "content": {}
+    }
+  ]
+}

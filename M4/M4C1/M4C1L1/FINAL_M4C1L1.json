@@ -1,0 +1,25 @@
+{
+  "lessonSlug": "m4c1l1",
+  "lessonTitle": "M4C1L1 — Les objectifs du chapitre : découvrir Antigravity",
+  "lessonType": "objectif",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Chapitre 1 : Découvrir les bases d'Antigravity"
+      }
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Découvrir la philosophie d'un IDE agentique local, installer Antigravity et prendre en main l'interface et le terminal.",
+        "Titre 1": "Pourquoi utiliser un IDE agentique local ?",
+        "Titre 2": "Découvrir Antigravity et ses spécificités",
+        "Titre 3": "Installer et paramétrer son environnement Antigravity",
+        "Titre 4": "Découvrir l'interface et les fonctionnalités principales",
+        "Titre 5": "Comprendre et utiliser le terminal avec Antigravity"
+      }
+    }
+  ]
+}

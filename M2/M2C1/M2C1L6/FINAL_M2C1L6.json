@@ -1,0 +1,106 @@
+{
+  "lessonTitle": "M2C1L6 — Comprendre le principe des agents IA",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Comprendre le principe des agents IA"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Introduction au principe agentique",
+        "Intro": "Les agents IA ne se contentent plus de répondre par du texte : ils agissent de manière autonome dans leur environnement. Voyons comment cette autonomie change la création de logiciel.",
+        "Titre 1": "Les composants clés",
+        "Texte 1": "Voyons les quatre piliers qui permettent à une IA d'interagir et d'agir de façon autonome.",
+        "Titre 2": "Agents et sous-agents",
+        "Texte 2": "Focus sur la hiérarchie et la répartition des tâches pour déléguer les travaux complexes.",
+        "Titre 3": "La boucle de feedback",
+        "Texte 3": "Découvrons le processus autonome où l'IA teste et corrige ses propres erreurs en boucle."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Qu'est-ce qu'un agent ?",
+        "Mot": "Un agent de code",
+        "Definition": "Un système informatique autonome combinant un modèle de langage (LLM) avec des outils (terminal, fichiers) et une boucle de feedback. Contrairement à un simple chatbot, l'agent reçoit un objectif global, planifie ses étapes, exécute des actions réelles sur l'ordinateur, et s'auto-corrige en analysant le résultat jusqu'à la réussite de la tâche.",
+        "Bulle": "En 2026, des outils comme Claude Code ou Cursor s'appuient sur cette boucle fermée pour résoudre des bugs complexes sur des dépôts de fichiers entiers sans aucune intervention humaine.",
+        "Picto 1": "mdi:robot"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Les quatre piliers d'un agent",
+        "Intro": "Pour agir de façon autonome, un agent de code repose sur la combinaison de quatre briques système interconnectées.",
+        "Titre 1": "Planifier des objectifs globaux",
+        "Texte 1": "Décomposer une demande complexe en une liste de tâches ordonnées et valider chaque étape avant de continuer.",
+        "Titre 2": "Conserver la mémoire du projet",
+        "Texte 2": "Retenir l'historique des modifications, les tentatives infructueuses et l'état des fichiers en cours d'édition.",
+        "Titre 3": "Accéder aux outils de la machine",
+        "Texte 3": "Interagir directement avec le système d'exploitation pour lire des fichiers, exécuter des commandes ou lancer des tests.",
+        "Titre 4": "S'auto-corriger en boucle fermée",
+        "Texte 4": "Analyser le résultat d'une commande (comme un message d'erreur dans le terminal) pour adapter les actions suivantes.",
+        "Picto 1": "mdi:chart-gantt",
+        "Picto 2": "mdi:database",
+        "Picto 3": "mdi:tools",
+        "Picto 4": "mdi:refresh"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - VIDE",
+      "content": {
+        "Titre": "La hiérarchie des sous-agents",
+        "Intro": "Face à une tâche complexe, un agent principal (Orchestrateur) peut déléguer des sous-tâches à des agents spécialisés (Exécuteurs)."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - SCHEMA - 3 COLONNES",
+      "content": {
+        "Titre": "La boucle fermée en action",
+        "Intro": "Voici comment un agent de code résout un bug de façon autonome, depuis la détection jusqu'à la validation finale.",
+        "Titre 1": "ANALYSER LE BUG ET INSPECTER LE PROJET",
+        "Violet 1": "Lecture du message d'erreur et du code",
+        "Picto 1": "mdi:magnify-scan",
+        "Titre 3": "GÉNÉRER ET EXÉCUTER LA MODIFICATION",
+        "Violet 3": "Écriture du correctif et lancement des tests",
+        "Picto 3": "mdi:code-braces",
+        "Titre 5": "CORRIGER EN BOUCLE JUSQU'AU SUCCÈS",
+        "Violet 5": "Analyse du résultat et merge si validé",
+        "Picto 5": "mdi:refresh-auto"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Les agents IA marquent le passage d'une IA assistante à un collaborateur autonome. En combinant la planification logique, la délégation à des sous-agents et l'auto-correction en boucle fermée, ils résolvent des tâches complexes sans supervision constante. Ce mode d'action redéfinit notre rôle : on passe de l'écriture manuelle du code à la supervision des objectifs.",
+        "Titre Bulle": "En Bref",
+        "Texte Bulle": "EN BREF : maintenant que les concepts fondamentaux des modèles de code et des agents sont assimilés, on passe à la pratique dans le chapitre suivant. On installe nos outils et on configure notre premier projet pour vibe coder !"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

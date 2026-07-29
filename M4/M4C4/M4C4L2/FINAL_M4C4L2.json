@@ -1,0 +1,17 @@
+{
+  "lessonSlug": "m4c4l2",
+  "lessonTitle": "M4C4L2 — Lancer l'application web",
+  "lessonType": "logiciel",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Lancer l'application web"
+      }
+    },
+    {
+      "template": "VIBECODING - DEMO",
+      "content": {}
+    }
+  ]
+}

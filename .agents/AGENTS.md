@@ -29,6 +29,28 @@
 ## 5. Gestion des timers de tâche de fond (Wait timers)
 - **Règle** : L'agent ne doit pas programmer de longs délais d'attente (supérieurs à 10 ou 15 secondes) lorsqu'il attend la complétion d'un script ou d'une commande système en tâche de fond.
 - **Application** :
-  - Configurez des timers de `10` secondes maximum via l'outil `schedule` pour inspecter et relancer plus fréquemment le statut de la tâche, permettant une boucle d'itération rapide avec l'utilisateur.
+## 6. Cohérence des transitions de fin de leçon (En Bref)
+- **Règle** : Lors de la rédaction de la diapositive de synthèse finale (template `VIBECODING - FIN`), l'encart `EN BREF` (`Texte Bulle` dans le JSON) doit obligatoirement faire une transition ou référence explicite vers la leçon suivante de la structure, ou vers le chapitre suivant s'il s'agit de la dernière leçon du chapitre.
+- **Application** :
+  - Consulter systématiquement le plan de formation global [plan-formation-vibe-coding.md](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/plan-formation-vibe-coding.md) pour identifier précisément l'intitulé ou la thématique de la leçon ou du chapitre suivant avant d'écrire cette section.
+
+## 7. Lecture systématique des règles de rédaction (Génération IA directe)
+- **Règle** : Lorsqu'il vous est demandé de rédiger, créer ou générer une leçon ou un contenu directement dans le chat (sans recourir au pipeline Python ou à l'API), vous devez obligatoirement prendre connaissance des règles de style pédagogique.
+- **Application** :
+  - Lisez systématiquement le fichier complet [brand_voice.md](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/brand_voice.md) via l'outil approprié (`view_file`) avant de générer le moindre texte. Ne vous fiez pas uniquement à votre mémoire de contexte pour le ton de voix.
+
+## 8. Pas de numérotation manuelle dans les items à pastilles graphiques
+- **Règle** : Pour les templates comportant déjà des éléments graphiques de numérotation (comme `VIBECODING - EXERCICE PRATIQUE` avec les pastilles `Numero 1` / `01`, `02`, `03`..., `VIBECODING - PROCESS` ou `VIBECODING - EXERCICE`), l'agent ne doit **jamais** inclure de numérotation textuelle (ex: '1.', '2.', '3.') au début des chaînes de texte (`Question 1`, `Question 2`, `Texte 2`, etc.).
+- **Application** :
+  - Rédiger directement le texte de la consigne ou de la question (ex: `"Exporter le projet depuis AI Studio..."` au lieu de `"1. Exporter le projet..."`).
+
+## 9. Icône d'application sur-mesure pour le template USER STORIES
+- **Règle** : Pour les slides basées sur le template `VIBECODING - USER STORIES`, l'agent doit toujours spécifier une icône sur-mesure adaptée au sujet du projet (`Picto 1` ou icône Iconify correspondante) pour alimenter le bloc de l'application à gauche.
+- **Application** :
+## 10. Style photoréaliste obligatoire pour les images des leçons pratiques (Brief)
+- **Règle** : Lors de la création d'une leçon pratique ou d'un projet fil rouge (templates `VIBECODING - BRIEF` et `VIBECODING - BRIEF ALT`), l'image d'illustration doit obligatoirement être générée avec le style photoréaliste (`--style photorealistic`). Elle doit illustrer le domaine d'activité concret du brief (ex: atelier, bureau, cuisine, logistique, santé), sans aucun schéma, ni interface d'application ou capture d'écran.
+- **Application** :
+  - Identifier le domaine métier du projet fil rouge.
+  - Exécuter la génération d'image systématiquement avec le paramètre `--style photorealistic`.
 
 

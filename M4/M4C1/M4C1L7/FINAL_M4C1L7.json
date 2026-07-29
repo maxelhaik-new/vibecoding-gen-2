@@ -1,0 +1,17 @@
+{
+  "lessonSlug": "m4c1l7",
+  "lessonTitle": "M4C1L7 — Réaliser des actions sur le terminal avec Antigravity",
+  "lessonType": "logiciel",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Réaliser des actions sur le terminal avec Antigravity"
+      }
+    },
+    {
+      "template": "VIBECODING - DEMO",
+      "content": {}
+    }
+  ]
+}

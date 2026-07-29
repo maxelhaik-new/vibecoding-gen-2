@@ -1,0 +1,17 @@
+{
+  "lessonSlug": "m4c2l4",
+  "lessonTitle": "M4C2L4 — Le mode Composer : générer et modifier du code",
+  "lessonType": "logiciel",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Le mode Composer : générer et modifier du code"
+      }
+    },
+    {
+      "template": "VIBECODING - DEMO",
+      "content": {}
+    }
+  ]
+}

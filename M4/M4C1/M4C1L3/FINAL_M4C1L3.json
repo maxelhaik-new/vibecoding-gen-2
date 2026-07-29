@@ -1,0 +1,167 @@
+{
+  "lessonTitle": "M4C1L3 — Découvrir Antigravity et ses spécificités",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Découvrir Antigravity et ses spécificités"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Pourquoi Antigravity ?",
+        "Intro": "Les IDE agentiques se multiplient, mais tous ne se valent pas. Antigravity n'est pas un simple éditeur de code amélioré — c'est un environnement conçu nativement pour orchestrer des agents autonomes. Faisons le point sur ce qui le distingue vraiment.",
+        "Titre 1": "La genèse de l'outil",
+        "Texte 1": "Voyons quel problème fondamental Antigravity résout et pourquoi son architecture diffère des assistants classiques.",
+        "Titre 2": "Face aux concurrents",
+        "Texte 2": "Zoom sur le positionnement d'Antigravity dans un marché où plusieurs outils agentiques se disputent la même audience.",
+        "Titre 3": "Le choix du cours",
+        "Texte 3": "Découvrons pourquoi cet environnement est l'outil central retenu pour maîtriser le Vibe Coding dans cette formation."
+      }
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "L'origine d'Antigravity",
+        "Mot": "Un IDE pensé pour l'autonomie",
+        "Definition": "Antigravity a été conçu dès le départ comme un environnement agentique natif — pas comme un éditeur de code avec un chat greffé dessus. Son rôle n'est pas de suggérer la prochaine ligne : c'est d'orchestrer des agents capables de planifier une tâche, d'exécuter les fichiers nécessaires et de vérifier le résultat sans intervention manuelle.",
+        "Bulle": "Là où un assistant complète une ligne, Antigravity pilote un plan entier."
+      }
+    },
+    {
+      "template": "VIBECODING - 5 BLOCS",
+      "content": {
+        "Titre": "Le paysage des IDE agentiques",
+        "Intro": "5 acteurs locaux structurent le marché agentique.",
+        "Titre 1": "CURSOR",
+        "Texte 1": "Pionnier basé sur VS Code : autocomplétion rapide et chat contextuel. Idéal pour les développeurs déjà à l'aise avec l'éditeur.",
+        "Picto 1": "mdi:code-braces-box",
+        "Titre  2": "WINDSURF",
+        "Texte 2": "Axé sur les flux de travail continus et la collaboration fluide entre l'agent et l'éditeur en temps réel.",
+        "Picto 2": "mdi:flowchart",
+        "Titre 3": "CLAUDE CODE",
+        "Texte 3": "Agent terminal d'Anthropic : pilote des tâches complexes en ligne de commande, sans interface graphique dédiée.",
+        "Picto 3": "mdi:console-line",
+        "Titre  4": "CODEX CLI",
+        "Texte 4": "Agent local d'OpenAI : exécute des instructions en langage naturel directement dans le terminal du projet.",
+        "Picto 4": "mdi:robot-outline",
+        "Titre 5": "ANTIGRAVITY",
+        "Texte 5": "IDE agentique nouvelle génération : gestion native multi-agents, autonomie avancée et intégration profonde du terminal.",
+        "Picto 5": "mdi:dinosaur-pixel",
+        "Texte Bulle": "EN BREF : Chaque outil a sa philosophie. Antigravity est le seul conçu nativement pour orchestrer plusieurs agents en parallèle sur un même projet."
+      }
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Antigravity vs les autres IDE",
+        "Intro": "Même catégorie, philosophies opposées : voici ce qui sépare concrètement Antigravity des autres solutions agentiques.",
+        "Titre A": "AUTRES IDE",
+        "Titre B": "ANTIGRAVITY",
+        "Item 1": "ARCHITECTURE",
+        "Item 2": "AUTONOMIE",
+        "Item 3": "VALIDATION",
+        "Item 4": "POSTURE",
+        "Texte A Item 1": "Assistant de chat greffé sur un éditeur",
+        "Texte A Item 2": "Édition assistée nécessitant une revue fréquente",
+        "Texte A Item 3": "Tests manuels par le développeur dans son navigateur",
+        "Texte A Item 4": "Copilote d'aide au codage au quotidien",
+        "Texte B1": "Système multi-agents spécialisés en parallèle",
+        "Texte B2": "Exécution autonome de workflows de bout en bout",
+        "Texte B3": "Browser Agent & Terminal auto-correcteur intégrés",
+        "Texte B4": "Vibe Coding par intention et supervision haute"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Les 4 exclusivités d'Antigravity",
+        "Intro": "Voici les innovations technologiques majeures absentes des IDE classiques qui font la réussite d'Antigravity.",
+        "Picto 1": "mdi:web",
+        "Titre 1": "Browser Agents",
+        "Texte 1": "Des agents intégrés capables d'ouvrir un navigateur réel en arrière-plan, de naviguer, de tester l'interface et de valider visuellement que l'application se comporte exactement comme prévu.",
+        "Picto 2": "mdi:account-group-outline",
+        "Titre 2": "Multi-agents spécialisés",
+        "Texte 2": "Fini l'assistant unique qui gère tout. Antigravity orchestre plusieurs agents spécialisés (frontend, backend, tests) qui collaborent et résolvent les tâches en parallèle.",
+        "Picto 3": "mdi:console-network-outline",
+        "Titre 3": "Terminal auto-correcteur",
+        "Texte 3": "L'agent surveille en continu la sortie de vos commandes. Si une erreur ou un plantage survient, il analyse la trace de bug et applique directement le correctif sans intervention.",
+        "Picto 4": "mdi:shield-check-outline",
+        "Titre 4": "Sandbox sécurisée",
+        "Texte 4": "Tous les tests, installations de paquets et lancements de serveurs s'exécutent dans un bac à sable isolé pour garantir la sécurité et la propreté de votre machine hôte."
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Zoom sur les fonctions d'Antigravity",
+        "Intro": "Découvrez en détail comment ses fonctionnalités agentiques natives propulsent l'automatisation à l'extrême.",
+        "Picto 1": "mdi:web-sync",
+        "Titre 1": "Le Browser Agent",
+        "Texte 1": "Il ne fait pas que coder : il ouvre un navigateur headless, interagit avec le DOM, prend des captures d'écran et valide le comportement UI/UX réel de vos composants.",
+        "Picto 2": "mdi:heart-flash",
+        "Titre 2": "Self-Healing Terminal",
+        "Texte 2": "Quand une commande de test échoue, l'agent prend le relais, analyse l'erreur de compilation ou de dépendances, et tente de la corriger de façon 100% autonome.",
+        "Picto 3": "mdi:transit-connection-variant",
+        "Titre 3": "Protocoles MCP intégrés",
+        "Texte 3": "Grâce au Model Context Protocol, vos agents communiquent nativement avec des services et outils externes de votre choix (SaaS, bases de données, APIs tierces).",
+        "Picto 4": "mdi:database-search",
+        "Titre 4": "Auto-Indexation contextuelle",
+        "Texte 4": "Un moteur d'indexation vectorielle local repère instantanément les parties du projet liées à votre consigne, réduisant le bruit et le coût en tokens."
+      }
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "L'interface d'Antigravity",
+        "Intro": "L'espace de travail s'articule autour de trois zones synchronisées pour piloter les agents de bout en bout.",
+        "Titre 1": "Chat Agent",
+        "Parametre 1": "COMMANDE",
+        "Violet 1": "Exprimer ses intentions",
+        "Texte 1": "Le centre de pilotage : on y formule les intentions en langage naturel, on consulte les plans d'action générés par l'agent et on valide chaque étape avant exécution.",
+        "Picto 1": "mdi:message-text-outline",
+        "Titre 2": "Éditeur de code",
+        "Parametre 2": "SYNTHÈSE",
+        "Violet 2": "Visualiser les modifications",
+        "Texte 2": "Zone où le code est généré et mis à jour en temps réel. Les diffs sont affichés clairement : on voit exactement ce que l'agent a modifié, ajouté ou supprimé dans chaque fichier.",
+        "Picto 2": "mdi:code-braces-box",
+        "Titre 3": "Terminal",
+        "Parametre 3": "EXÉCUTION",
+        "Violet 3": "Surveiller et exécuter",
+        "Texte 3": "Le moteur d'exécution intégré : les agents lancent les serveurs, installent les dépendances et analysent les erreurs directement ici. Aucun terminal externe n'est nécessaire.",
+        "Picto 3": "mdi:mixer-settings"
+      }
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "Le fonctionnement au quotidien",
+        "Intro": "Transformer une idée en application suit toujours la même boucle en six étapes dans Antigravity.",
+        "Titre 1": "INTENTION",
+        "Violet 1 ": "Décrire le besoin en langage naturel",
+        "Titre 2": "ANALYSE",
+        "Violet 2": "L'agent construit un plan pas à pas",
+        "Titre 3": "ACTION",
+        "Violet 3": "Création et modification des fichiers",
+        "Titre 4": "TEST",
+        "Violet 4": "Commandes terminal pour vérifier",
+        "Titre 5": "REVUE",
+        "Violet 5": "Inspection et validation des résultats",
+        "Titre 6": "ITÉRATION",
+        "Violet 6": "Ajout de nouvelles fonctionnalités"
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Antigravity se distingue par une architecture multi-agents native : là où les autres IDE greffent un chat sur un éditeur existant, Antigravity orchestre des agents spécialisés capables de planifier et d'exécuter des tâches complexes de bout en bout. Trois zones synchronisées — Chat, Éditeur, Terminal — forment le cadre de travail idéal pour pratiquer le Vibe Coding par intention et supervision, sans écrire de code ligne à ligne.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "L'outil est posé, le paysage est clair. Dans la leçon suivante, on passe à la pratique : installer et configurer Antigravity sur notre machine pour lancer notre premier projet agentique."
+      }
+    }
+  ],
+  "lessonType": "theorique",
+  "lessonSlug": "m4c1l3"
+}

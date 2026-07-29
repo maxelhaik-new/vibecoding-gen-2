@@ -1,0 +1,85 @@
+{
+  "lessonTitle": "M2C3L4",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "La Golden Stack Front-End 2026"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Pourquoi imposer ses outils à l'IA ?",
+        "Intro": "Si on laisse l'IA choisir les technologies d'un projet, elle risque d'utiliser du vieux code ou d'assembler des outils incompatibles. Pour le Vibe Coding, il faut imposer un standard ultra-précis.",
+        "Titre 1": "Le poids de l'entraînement",
+        "Texte 1": "Comprendre pourquoi la popularité d'un outil définit la qualité du code généré.",
+        "Titre 2": "L'écosystème de base",
+        "Texte 2": "Découvrir la fondation logique idéale (React, Vite, TypeScript) maîtrisée par les LLM.",
+        "Titre 3": "L'écosystème visuel",
+        "Texte 3": "Explorer les outils d'interface (Tailwind, Shadcn) qui permettent à l'IA de concevoir du beau."
+      }
+    },
+    {
+      "template": "VIBECODING - CONCEPT - IMAGE",
+      "content": {
+        "Titre": "Le poids de la popularité",
+        "Mot": "La règle d'or",
+        "Definition": "L'IA génère du code de qualité uniquement sur les technologies qu'elle a le plus \"lues\" pendant son entraînement. Si on utilise un framework rare ou trop récent, elle inventera une syntaxe inexistante. En imposant une stack très populaire, on s'assure qu'elle puise dans des millions d'exemples valides.",
+        "Intro": "On ne choisit pas l'outil que l'on préfère, on choisit l'outil que l'IA maîtrise le mieux.",
+        "Source": "L'impact des données d'entraînement sur la qualité du code généré",
+        "Titre 1": "OUTIL RARE",
+        "Texte 1": "Moins de données d'entraînement : l'IA hallucine des fonctions et le code plante.",
+        "Titre 2": "STANDARD",
+        "Texte 2": "Une base de données gigantesque : l'IA recrache des schémas éprouvés sans erreur.",
+        "Picto 1": "mdi:alert-outline",
+        "Picto 2": "mdi:check-decagram-outline"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "La Golden Stack technique 2026",
+        "Intro": "Voici les quatre piliers incontournables pour un projet Vibe Coding fluide. Ils règlent les problèmes classiques de contexte et de longueur de code.",
+        "Titre 1": "React & Next.js (La fondation)",
+        "Texte 1": "La base solide et standardisée. C'est le socle absolu que tous les modèles d'IA maîtrisent à la perfection.",
+        "Titre 2": "Tailwind CSS v4 (L'interface)",
+        "Texte 2": "Crucial pour que l'agent style l'interface \"inline\". Cela évite qu'il ne crée et perde le contexte dans de multiples fichiers .css.",
+        "Titre 3": "Lucide React (L'iconographie)",
+        "Texte 3": "Imposez cette librairie standard. Cela évite absolument que l'IA ne génère des SVG bruts interminables qui polluent la lecture du code.",
+        "Titre 4": "Shadcn UI (Les composants prêts)",
+        "Texte 4": "La bibliothèque incontournable. L'IA s'en sert pour assembler rapidement des boutons et des menus sans avoir à réinventer la roue visuelle."
+      }
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Standard vs Outil Exotique",
+        "Intro": "Choisir un outil méconnu ou trop récent est le meilleur moyen de faire trébucher un LLM. L'écart de performance est radical.",
+        "Titre A": "STANDARD",
+        "Titre B": "EXOTIQUE",
+        "Item 1": "Apprentissage",
+        "Item 2": "Outils",
+        "Item 3": "Style",
+        "Item 4": "Erreurs",
+        "Texte A Item 1": "L'IA a lu des millions de tutoriels à ce sujet.",
+        "Texte A Item 2": "Des composants logiques et facilement réutilisables.",
+        "Texte A Item 3": "Style directement intégré au code",
+        "Texte A Item 4": "Correction quasi-instantanée en cas de bug",
+        "Texte B1": "Documentation trop rare dans ses bases d'entraînement.",
+        "Texte B2": "L'IA invente des syntaxes qui n'existent pas.",
+        "Texte B3": "Gestion des fichiers CSS totalement chaotique",
+        "Texte B4": "Le modèle tourne en rond sans trouver de solution"
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "La règle absolue du Vibe Coding est de s'appuyer sur la popularité des outils plutôt que sur ses préférences personnelles. L'association React, Tailwind et Shadcn forme la « Golden Stack ». Elle garantit que l'agent générera du code stable, esthétique et sans erreur d'importation. On impose toujours cette stack pour s'assurer une base saine avant la moindre ligne de code.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "La stack technique est choisie. Le cahier des charges est prêt. L'étape suivante consiste à tout regrouper dans un Prompt Zéro solide, le seul véritable garde-fou avant de lancer la machine."
+      }
+    }
+  ]
+}

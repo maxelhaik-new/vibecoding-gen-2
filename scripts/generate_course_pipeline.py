@@ -47,14 +47,15 @@ class SlideField(BaseModel):
 
 class Slide(BaseModel):
     template: str = Field(description="The exact name of the Figma template from templates.json, e.g., 'VIBECODING - COVER'")
-    content: List[SlideField] = Field(description="List of text fields and pictograms in the template.")
-    image_concept: Optional[str] = Field(None, description="Detailed metaphorical concept in English for the image generator, if the template includes an image. Should be visual and descriptive.")
-    image_style: Optional[str] = Field(None, description="The style to use for generating the image, e.g. 'woodcut', 'editorial', 'constructivist', 'chiaroscuro', 'grainy-editorial', 'pedagogical', 'offset-screenprint'.")
-    image_ratio: Optional[str] = Field(None, description="The aspect ratio of the image, e.g., '1:1', '16:9', '2:3', '3:4', '4:3', etc. chosen based on the template requirements.")
+    content: Union[List[SlideField], Dict[str, Any], str] = Field(description="Text fields and pictograms dictionary or list.")
+    image_concept: Optional[str] = Field(None, description="Detailed metaphorical concept in English for the image generator, if the template includes an image.")
+    image_style: Optional[str] = Field(None, description="The style to use for generating the image.")
+    image_ratio: Optional[str] = Field(None, description="The aspect ratio of the image.")
 
 class Lesson(BaseModel):
     lessonTitle: str = Field(description="The overall title of the lesson")
-    slides: List[Slide]
+    slides: Union[List[Slide], List[Dict[str, Any]], str]
+
 
 # Model for Phase 1: DECOUPE (Structure-only)
 class DecoupedSlide(BaseModel):
@@ -447,7 +448,9 @@ def validate_and_correct_lesson_lengths(client: genai.Client, lesson: Lesson, ex
     any_corrections_made = False
     
     for slide_idx, slide in enumerate(lesson.slides):
-        template_name = slide.template
+        if not isinstance(slide, (dict, object)) or isinstance(slide, str):
+            continue
+        template_name = getattr(slide, 'template', None) or (slide.get('template') if isinstance(slide, dict) else None)
         template_def = templates_by_name.get(template_name)
         if not template_def:
             continue
@@ -455,10 +458,19 @@ def validate_and_correct_lesson_lengths(client: genai.Client, lesson: Lesson, ex
         # Get expected text layers from template definition
         text_layers = {layer["key"]: layer for layer in template_def.get("text_layers", [])}
         
+        slide_content = slide.content if hasattr(slide, 'content') else slide.get('content', {})
+        if isinstance(slide_content, list):
+            # Convert list of field objects to dict if needed
+            content_dict = {}
+            for item in slide_content:
+                k = item.key if hasattr(item, 'key') else item.get('key')
+                v = item.value if hasattr(item, 'value') else item.get('value')
+                if k: content_dict[k] = v
+            slide_content = content_dict
+
         # Check text fields in slide content
-        for field in slide.content:
-            key = field.key
-            value = field.value
+        for field_key, value in slide_content.items():
+            key = field_key
             
             if key in text_layers:
                 layer_def = text_layers[key]
@@ -630,7 +642,14 @@ def run_phase_ecris(client: genai.Client, model: str, outline: str, structure: D
             prompt=prompt_with_templates,
             schema_class=Lesson
         )
-        return Lesson.model_validate_json(json_text)
+        try:
+            return Lesson.model_validate_json(json_text)
+        except Exception:
+            data = json.loads(json_text)
+            if isinstance(data.get("slides"), str):
+                data["slides"] = json.loads(data["slides"])
+            return Lesson.model_validate(data)
+
 
     config = types.GenerateContentConfig(
         response_mime_type="application/json",
@@ -804,31 +823,45 @@ def generate_lesson_workflow(client: genai.Client, model_decoupe: str, model_ecr
         # Helper to merge old image metadata and paths back to protect them
         def safe_merge_slides(old_list, new_list):
             for i, new_s in enumerate(new_list):
-                if i < len(old_list):
+                if isinstance(new_s, str):
+                    try:
+                        new_s = json.loads(new_s)
+                        new_list[i] = new_s
+                    except Exception:
+                        continue
+                if isinstance(new_s, dict) and i < len(old_list):
                     old_s = old_list[i]
-                    # Preserve custom generator fields if present in old and not generated in new
-                    if old_s.get("image_concept") and not new_s.get("image_concept"):
-                        new_s["image_concept"] = old_s["image_concept"]
-                    if old_s.get("image_style") and not new_s.get("image_style"):
-                        new_s["image_style"] = old_s["image_style"]
-                    if old_s.get("image_ratio") and not new_s.get("image_ratio"):
-                        new_s["image_ratio"] = old_s["image_ratio"]
-                    
-                    # Convert content representations to dict for comparison
-                    old_c = get_content_as_dict(old_s.get("content", {}))
-                    new_c = new_s.get("content", {})
-                    if isinstance(new_c, dict):
-                        # Preserve "image" field or asset URL key
-                        for k, v in old_c.items():
-                            if k.lower() in ["image", "image_url"]:
-                                new_c[k] = v
+                    if isinstance(old_s, dict):
+                        if old_s.get("image_concept") and not new_s.get("image_concept"):
+                            new_s["image_concept"] = old_s["image_concept"]
+                        if old_s.get("image_style") and not new_s.get("image_style"):
+                            new_s["image_style"] = old_s["image_style"]
+                        if old_s.get("image_ratio") and not new_s.get("image_ratio"):
+                            new_s["image_ratio"] = old_s["image_ratio"]
+                        
+                        old_c = get_content_as_dict(old_s.get("content", {}))
+                        new_c = new_s.get("content", {})
+                        if isinstance(new_c, dict):
+                            for k, v in old_c.items():
+                                if k.lower() in ["image", "image_url"]:
+                                    new_c[k] = v
         
         # Normalize serialized content to dictionary format for immediate draft writing
         import copy
         draft_data = copy.deepcopy(new_lesson_data)
-        for s in draft_data.get("slides", []):
-            if "content" in s:
-                s["content"] = get_content_as_dict(s["content"])
+        slides_list = draft_data.get("slides", [])
+        if isinstance(slides_list, str):
+            try:
+                slides_list = json.loads(slides_list)
+                draft_data["slides"] = slides_list
+            except Exception:
+                pass
+
+        if isinstance(slides_list, list):
+            for s in slides_list:
+                if isinstance(s, dict) and "content" in s:
+                    s["content"] = get_content_as_dict(s["content"])
+
         
         # Merge existing metadata into draft
         safe_merge_slides(old_slides, draft_data.get("slides", []))
@@ -842,14 +875,21 @@ def generate_lesson_workflow(client: genai.Client, model_decoupe: str, model_ecr
         if not no_correct:
             lesson_obj = validate_and_correct_lesson_lengths(client, lesson_obj, extracted, model_ecris)
             corrected_data = lesson_obj.model_dump()
+            if isinstance(corrected_data.get("slides"), str):
+                try:
+                    corrected_data["slides"] = json.loads(corrected_data["slides"])
+                except Exception as e:
+                    print(f"  [Warning] Failed to parse stringified slides in corrected_data: {e}")
             
             # Normalize and write corrected data
-            for s in corrected_data.get("slides", []):
-                if "content" in s:
-                    s["content"] = get_content_as_dict(s["content"])
-            
-            # Merge existing metadata into corrected final JSON
-            safe_merge_slides(old_slides, corrected_data.get("slides", []))
+            slides_arr = corrected_data.get("slides", [])
+            if isinstance(slides_arr, list):
+                for s in slides_arr:
+                    if isinstance(s, dict) and "content" in s:
+                        s["content"] = get_content_as_dict(s["content"])
+                
+                # Merge existing metadata into corrected final JSON
+                safe_merge_slides(old_slides, slides_arr)
             
             with open(final_file, "w", encoding="utf-8") as f:
                 json.dump(corrected_data, f, indent=2, ensure_ascii=False)
@@ -860,12 +900,11 @@ def generate_lesson_workflow(client: genai.Client, model_decoupe: str, model_ecr
 
     # 3. GENERE Phase
     if phase == "genere" or phase == "all":
-        if phase == "genere":
-            if not final_file.exists():
-                print(f"[Error] Final file not found for generating phase at: {final_file}. Run 'ecris' first.")
-                sys.exit(1)
-            with open(final_file, "r", encoding="utf-8") as f:
-                lesson_data = json.load(f)
+        if not final_file.exists():
+            print(f"[Error] Final file not found for generating phase at: {final_file}. Run 'ecris' first.")
+            sys.exit(1)
+        with open(final_file, "r", encoding="utf-8") as f:
+            lesson_data = json.load(f)
         
         # Normalize slides content from file to dict
         for s in lesson_data.get("slides", []):

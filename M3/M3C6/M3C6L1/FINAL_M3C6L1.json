@@ -1,0 +1,23 @@
+{
+  "lessonTitle": "M3C6L1 — Les objectifs du chapitre : Projets de A à Z",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Projets de A à Z : du brief au déploiement"
+      }
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Ce chapitre conclut le Module 3 en vous proposant de piloter la création complète d'une application métier depuis l'analyse du brief jusqu'à sa publication en ligne.",
+        "Titre 1": "Analyser un brief métier et définir le besoin",
+        "Titre 2": "Rédiger un Prompt Zero structuré et complet",
+        "Titre 3": "Générer et itérer sur Google AI Studio",
+        "Titre 4": "Versionner le code source sur un dépôt GitHub",
+        "Titre 5": "Déployer et publier l'application sur Vercel"
+      }
+    }
+  ]
+}

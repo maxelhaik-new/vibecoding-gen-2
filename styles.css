@@ -1,0 +1,492 @@
+/* ==========================================================================
+   VIBECODING - STYLES CSS DES TEMPLATES SLIDES (VIBE SLICER)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VIBECODING - EXERCICE PRATIQUE
+   -------------------------------------------------------------------------- */
+.template-exercice-pratique {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  left: 3877px;
+  top: 15949px;
+  background: #FFFFFF;
+}
+
+.template-exercice-pratique .titre {
+  position: absolute;
+  width: 621px;
+  left: calc(50% - 621px/2 - 549.5px);
+  top: 9.26%;
+  bottom: 85.28%;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 90px;
+  line-height: 100%;
+  letter-spacing: -0.014em;
+  color: #18093B;
+}
+
+.template-exercice-pratique .camera {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.template-exercice-pratique .camera-vector {
+  position: absolute;
+  width: 351.48px;
+  height: 351.6px;
+  right: -0.48px;
+  bottom: 0.4px;
+  background: #FFBABB;
+}
+
+.template-exercice-pratique .camera-rectangle {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  right: 75px;
+  bottom: 75px;
+  background: #7F7F7F;
+  border-radius: 167.5px;
+}
+
+.template-exercice-pratique .bloc-1 {
+  position: absolute;
+  width: 1420px;
+  height: 206px;
+  left: 100px;
+  top: 359px;
+}
+
+.template-exercice-pratique .bloc-1-bg {
+  position: absolute;
+  width: 1420px;
+  height: 179px;
+  left: 100px;
+  top: 386px;
+  background: #6634D9;
+}
+
+.template-exercice-pratique .texte-1 {
+  position: absolute;
+  width: 1283px;
+  height: 83px;
+  left: 143px;
+  top: 444px;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 100%;
+  color: #FFFFFF;
+}
+
+.template-exercice-pratique .titre-1-container {
+  position: absolute;
+  width: 309px;
+  height: 54px;
+  left: 111px;
+  top: 359px;
+}
+
+.template-exercice-pratique .titre-1 {
+  position: absolute;
+  left: 7.66%;
+  right: 80%;
+  top: 34.81%;
+  bottom: 63.33%;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -0.03em;
+  color: #FFFF77;
+}
+
+.template-exercice-pratique .exercice-label {
+  position: absolute;
+  width: 246px;
+  height: 36px;
+  left: 100px;
+  top: 624px;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 100%;
+  color: #6634D9;
+}
+
+.template-exercice-pratique .question-item {
+  position: absolute;
+  height: 63px;
+  left: 100px;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 37px;
+  color: #000000;
+}
+
+.template-exercice-pratique .question-1 { top: 692px; width: 470px; left: 189px; }
+.template-exercice-pratique .question-2 { top: 768px; width: 590px; left: 189px; }
+.template-exercice-pratique .question-3 { top: 844px; width: 735px; left: 189px; }
+.template-exercice-pratique .question-4 { top: 920px; width: 787px; left: 189px; }
+
+.template-exercice-pratique .numero-badge {
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 42px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #FFFF77;
+}
+
+/* --------------------------------------------------------------------------
+   2. VIBECODING - BRIEF ALT
+   -------------------------------------------------------------------------- */
+.template-brief-alt {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  left: 1838px;
+  top: 17267px;
+  background: #FFFFFF;
+}
+
+.template-brief-alt .titre {
+  position: absolute;
+  width: 1604px;
+  height: 59px;
+  left: calc(50% - 1604px/2 - 58px);
+  top: calc(50% - 59px/2 - 410.5px);
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 90px;
+  line-height: 100%;
+  letter-spacing: -0.014em;
+  color: #18093B;
+}
+
+.template-brief-alt .bloc-intro {
+  position: absolute;
+  width: 419px;
+  height: 107px;
+  left: 836px;
+  top: 235px;
+  background: #18093B;
+}
+
+.template-brief-alt .intro {
+  position: absolute;
+  width: 233px;
+  height: 40px;
+  left: 875px;
+  top: 269px;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #FFFF77;
+}
+
+.template-brief-alt .texte-1 {
+  position: absolute;
+  width: 1015px;
+  height: 192px;
+  left: 836px;
+  top: 399px;
+  font-family: 'Basic Sans Alt';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 119%;
+  color: #6634D9;
+}
+
+.template-brief-alt .texte-2 {
+  position: absolute;
+  width: 725px;
+  height: 240px;
+  left: 836px;
+  top: 629px;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 119%;
+  color: #18093B;
+}
+
+.template-brief-alt .bloc-image {
+  position: absolute;
+  width: 664px;
+  height: 790px;
+  left: 100px;
+  top: 234px;
+}
+
+.template-brief-alt .source {
+  position: absolute;
+  width: 364px;
+  height: 20px;
+  left: 100px;
+  top: 1004px;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  color: #FFB2B2;
+}
+
+.template-brief-alt .image-bg {
+  position: absolute;
+  width: 664px;
+  height: 746px;
+  left: 100px;
+  top: 234px;
+  background: #EFE8FF;
+  box-shadow: -10px 10px 0px #FCB3AD;
+}
+
+/* --------------------------------------------------------------------------
+   3. VIBECODING - USER STORIES
+   -------------------------------------------------------------------------- */
+.template-user-stories {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 100px;
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  left: 8156px;
+  top: 15969px;
+  background: #FFFFFF;
+}
+
+.template-user-stories .titre {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  width: 1720px;
+  height: 100px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.template-user-stories .titre-text {
+  width: 627px;
+  height: 100px;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 90px;
+  line-height: 100px;
+  letter-spacing: -1.4px;
+  color: #18093B;
+}
+
+.template-user-stories .bloc-intro {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 30px 0px 0px;
+  gap: 30px;
+  width: 1720px;
+  height: 95px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.template-user-stories .intro-text {
+  width: 1553px;
+  height: 52px;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 52px;
+  color: #18093B;
+}
+
+.template-user-stories .user-story-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30px 40px;
+  gap: 30px;
+  width: 972px;
+  height: 186px;
+  background: #F3F0FF;
+}
+
+.template-user-stories .story-number-badge {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  width: 60px;
+  height: 60px;
+  background: #6634D9;
+  border-radius: 30px;
+  color: #FFFFFF;
+  font-family: 'Basic Sans Alt';
+  font-weight: 900;
+  font-size: 32px;
+}
+
+.template-user-stories .story-text {
+  width: 802px;
+  height: 84px;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 42px;
+  color: #18093B;
+}
+
+/* --------------------------------------------------------------------------
+   4. VIBECODING - PERSONA & MVP
+   -------------------------------------------------------------------------- */
+.template-persona-mvp {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  left: 6088px;
+  top: 15949px;
+  background: #FFFFFF;
+}
+
+.template-persona-mvp .titre {
+  position: absolute;
+  width: 1720px;
+  height: 59px;
+  left: calc(50% - 1720px/2);
+  top: calc(50% - 59px/2 - 410.5px);
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 90px;
+  line-height: 100px;
+  letter-spacing: -1.4px;
+  color: #18093B;
+}
+
+.template-persona-mvp .intro {
+  position: absolute;
+  width: 1530px;
+  height: 92px;
+  left: 98px;
+  top: 234px;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  color: #18093B;
+}
+
+.template-persona-mvp .persona-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0px;
+  position: absolute;
+  width: 498px;
+  height: 606px;
+  left: 100px;
+  top: 374px;
+  background: #18093B;
+  border-radius: 40px;
+}
+
+.template-persona-mvp .persona-prenom {
+  width: 138px;
+  height: 72px;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 72px;
+  text-align: center;
+  color: #FFFF77;
+}
+
+.template-persona-mvp .persona-metier {
+  width: 378px;
+  height: 42px;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: #FFB2B2;
+}
+
+.template-persona-mvp .persona-badge-title {
+  position: absolute;
+  width: 213px;
+  height: 47px;
+  left: 142px;
+  top: -19px;
+  background: #FFFF77;
+  border-radius: 100px;
+  font-family: 'Basic Sans Alt';
+  font-weight: 900;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #18093B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.template-persona-mvp .mvp-title {
+  position: absolute;
+  width: 634px;
+  height: 48px;
+  left: 714px;
+  top: 389px;
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 48px;
+  text-transform: uppercase;
+  color: #18093B;
+}
+
+.template-persona-mvp .mvp-item-text {
+  font-family: 'Basic Sans Alt';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 43px;
+  color: #18093B;
+}
+
+.template-persona-mvp .texte-1 { position: absolute; width: 834px; height: 86px; left: 736px; top: 472px; }
+.template-persona-mvp .texte-2 { position: absolute; width: 731px; height: 129px; left: 736px; top: 604px; }
+.template-persona-mvp .texte-3 { position: absolute; width: 687px; height: 154px; left: 736px; top: 788px; }

@@ -1,0 +1,167 @@
+{
+  "lessonTitle": "M4C1L2 — Pourquoi utiliser un IDE agentique local ?",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Pourquoi utiliser un IDE agentique local ?"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Ce qu'on va comprendre ici",
+        "Intro": "Coder dans un navigateur, c'est pratique — mais ça plafonne vite. L'IDE agentique représente un saut qualitatif majeur pour tout Vibe Coder qui veut construire de vraies applications. Faisons le point sur ce que ça change concrètement.",
+        "Titre 1": "L'IDE agentique",
+        "Texte 1": "Voyons ce qu'est réellement un IDE agentique et pourquoi il se distingue des éditeurs de code classiques.",
+        "Titre 2": "Les limites du web",
+        "Texte 2": "Zoom sur ce que les outils en ligne ne permettent pas de faire — et pourquoi ça bloque les projets ambitieux.",
+        "Titre 3": "Travailler en local",
+        "Texte 3": "Découvrons pourquoi développer en local dans un vrai IDE est indispensable pour aller au bout d'un projet."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Un peu de vocabulaire",
+        "Mot": "IDE agentique",
+        "Definition": "Un éditeur de code installé sur l'ordinateur, capable de piloter un agent IA directement dans l'environnement de travail. Concrètement : on décrit ce qu'on veut construire en langage naturel, et l'agent lit les fichiers du projet, écrit du code, lance des commandes et corrige les erreurs — sans quitter l'éditeur. Cursor est l'exemple le plus répandu en 2025 : il intègre Claude ou GPT-4o comme moteur agentique dans un éditeur basé sur VS Code.",
+        "Bulle": "Le mot « agentique » vient de « agent » : un programme qui agit de façon autonome pour atteindre un objectif. Ici, l'agent ne répond pas juste à une question — il exécute une séquence d'actions dans le projet réel.",
+        "Picto 1": "mdi:book-open-variant"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "Les limites des outils web",
+        "Intro": "Google AI Studio, ChatGPT ou Bolt.new sont utiles pour prototyper vite. Mais trois murs apparaissent dès que le projet grandit.",
+        "Titre 1": "Isolation",
+        "Parametre 1": "Limite n°1",
+        "Violet 1": "Pas d'accès aux fichiers locaux",
+        "Texte 1": "L'outil web ne voit pas le projet sur l'ordinateur. On copie-colle du code manuellement entre le navigateur et les fichiers — une source d'erreurs constante dès que le projet dépasse 3 fichiers.",
+        "Titre 2": "Contexte",
+        "Parametre 2": "Limite n°2",
+        "Violet 2": "Mémoire de session limitée",
+        "Texte 2": "Chaque nouvelle conversation repart de zéro. L'IA ignore l'historique du projet, les choix d'architecture passés et les fichiers déjà créés — on réexplique tout à chaque session.",
+        "Titre 3": "Exécution",
+        "Parametre 3": "Limite n°3",
+        "Violet 3": "Impossible de lancer le code",
+        "Texte 3": "Un outil web génère du code, mais ne peut pas l'exécuter, installer des dépendances ou lire les messages d'erreur du terminal. Le débogage reste entièrement manuel, ce qui ralentit considérablement le cycle de développement.",
+        "Picto 1": "mdi:island",
+        "Picto 2": "mdi:brain",
+        "Picto 3": "mdi:stop-alert"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "En ligne vs. en local",
+        "Intro": "Même IA, résultats très différents. Ce qui change, c'est l'environnement dans lequel l'agent opère — et ça change tout.",
+        "Titre A": "EN LIGNE",
+        "Titre B": "EN LOCAL",
+        "Item 1": "Accès fichiers",
+        "Texte A Item 1": "Aucun accès — on colle le code à la main",
+        "Texte B1": "Lecture et écriture directe dans tous les fichiers du projet",
+        "Item 2": "MÉMOIRE",
+        "Texte A Item 2": "Repart de zéro à chaque session",
+        "Texte B2": "Contexte persistant sur tout le projet ouvert",
+        "Item 3": "EXÉCUTION",
+        "Texte A Item 3": "Génère du code, ne l'exécute pas",
+        "Texte B3": "Lance le code, lit les erreurs, corrige en boucle",
+        "Item 4": "DÉPLOIEMENT",
+        "Texte A Item 4": "Impossible depuis l'interface web",
+        "Texte B4": "Connexion directe à Git, Vercel, Railway"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Ce que l'IDE agentique débloque",
+        "Intro": "Quatre capacités concrètes absentes des outils web — et qui font la différence sur un vrai projet.",
+        "Titre 1": "Lecture complète\ndu projet",
+        "Texte 1": "L'agent parcourt tous les fichiers ouverts pour comprendre l'architecture existante avant d'écrire la moindre ligne — pas de code hors-contexte.",
+        "Picto 1": "mdi:folder-open-outline",
+        "Titre 2": "Boucle\nerreur-correction",
+        "Texte 2": "L'agent lit le message d'erreur du terminal, identifie la cause et propose un correctif — sans copier-coller manuel entre deux fenêtres.",
+        "Picto 2": "mdi:autorenew",
+        "Titre 3": "Commandes\nautomatisées",
+        "Texte 3": "Installer une dépendance, créer un dossier, lancer un serveur local : l'agent exécute ces commandes dans le terminal intégré à la demande.",
+        "Picto 3": "mdi:console-line",
+        "Titre 4": "Connexion\naux outils réels",
+        "Texte 4": "Git, Vercel, bases de données cloud : l'IDE agentique s'intègre directement à l'écosystème de déploiement — le projet passe en production sans changer d'outil.",
+        "Picto 4": "mdi:transit-connection-variant"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - DECOUPAGE",
+      "content": {
+        "Titre": "Anatomie d'un IDE agentique",
+        "Intro": "Un IDE agentique comme Cursor se compose de quatre zones distinctes qui travaillent ensemble. L'éditeur central affiche le code, le panneau agent reçoit les instructions en langage naturel, le terminal exécute les commandes, et l'explorateur de fichiers donne à l'agent une vue complète du projet.",
+        "Violet 1": "Composants",
+        "Texte 1": "Cursor (IDE) :",
+        "Texte 1 - Ligne 2": "éditeur + agent IA",
+        "Titre 2": "Panneau Agent",
+        "Titre 3": "Terminal",
+        "Titre 4": "Fichiers",
+        "Titre 5": "Modèle IA (LLM)",
+        "Violet 2": "Rôle de chaque zone",
+        "Titre Bulle": "Pourquoi c'est différent",
+        "Texte Bulle": "Dans un outil web, l'IA et le code vivent dans deux fenêtres séparées. Dans un IDE agentique, ils partagent le même espace — l'agent voit ce qu'on voit, modifie ce qu'on modifie, et exécute dans le même terminal."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT - IMAGE",
+      "content": {
+        "Titre": "Pourquoi coder en local ?",
+        "Mot": "L'atelier du Vibe Coder",
+        "Intro": "Le local, c'est là où le projet existe vraiment.",
+        "Definition": "Un outil web génère des fragments de code. Un IDE agentique local construit un projet entier : fichiers organisés, dépendances installées, serveur lancé, erreurs corrigées en boucle. C'est la différence entre esquisser une idée sur un post-it et assembler un produit dans un vrai atelier. Pour le Vibe Coder, travailler en local signifie que chaque instruction en langage naturel se traduit en action réelle sur le projet — pas en suggestion à copier-coller.",
+        "Titre 1": "Contrôle",
+        "Texte 1": "Tous les fichiers sont sur la machine — on versionne, on sauvegarde, on revient en arrière avec Git.",
+        "Titre 2": "Continuité",
+        "Texte 2": "Le projet persiste entre les sessions. L'agent retrouve le contexte complet à chaque ouverture.",
+        "Picto 1": "mdi:wrench-outline",
+        "Picto 2": "mdi:history",
+        "Source": "Source : IDE agentique local - Illustration générée par IA - Maxime Elhaik"
+      },
+      "image_concept": "A craftsman's wooden workbench seen from above, covered with neatly organized blueprints, hand tools, small mechanical components and a glowing screen embedded in the surface — symbolizing a complete, self-contained creative workspace where thinking and making happen in the same place",
+      "image_style": "constructivist",
+      "image_ratio": "1:1"
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Un IDE agentique n'est pas un simple éditeur de code amélioré. C'est un environnement où un agent IA lit l'intégralité du projet, exécute des commandes dans le terminal, corrige les erreurs en boucle et se connecte aux outils de déploiement — le tout sans quitter l'éditeur. Les outils web comme Google AI Studio ou Bolt.new restent utiles pour explorer une idée rapidement. Mais dès qu'un projet dépasse le stade du prototype jetable, l'IDE agentique local devient l'environnement de travail incontournable du Vibe Coder.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "La vraie rupture n'est pas dans le modèle IA utilisé — Claude ou GPT-4o fonctionnent dans les deux cas. Elle est dans l'environnement : un agent qui opère sur des fichiers réels, dans un terminal réel, produit un résultat réel. C'est ce saut-là qu'on va mettre en pratique dans les prochaines leçons."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ],
+  "lessonType": "theorique",
+  "lessonSlug": "m4c1l2"
+}

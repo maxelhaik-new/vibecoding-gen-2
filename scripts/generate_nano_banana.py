@@ -53,8 +53,8 @@ def main():
                         help="Concept à illustrer (ex: sécurité, rapidité)")
     parser.add_argument("--bg",           choices=["fig", "pink", "none"], default="fig",
                         help="Arrière-plan : fig (#18093B), pink (#FFB2B2) ou none (couleur libre déterminée par le prompt/modèle)")
-    parser.add_argument("--style",        choices=["woodcut", "editorial", "constructivist", "chiaroscuro", "grainy-editorial", "pedagogical", "offset-screenprint"], default="chiaroscuro",
-                        help="Style artistique : woodcut (gravure), editorial (vectoriel texturé), constructivist (mid-century constructiviste), chiaroscuro (grain minimaliste) ou grainy-editorial (éditorial granuleux vectoriel)")
+    parser.add_argument("--style",        choices=["woodcut", "editorial", "constructivist", "chiaroscuro", "grainy-editorial", "pedagogical", "offset-screenprint", "photorealistic"], default="chiaroscuro",
+                        help="Style artistique : woodcut, editorial, constructivist, chiaroscuro, grainy-editorial, pedagogical, offset-screenprint, photorealistic")
     parser.add_argument("--output",
                         help="Fichier de sortie (défaut : assets/vibe_[concept].png)")
     parser.add_argument("--aspect-ratio", default=default_ratio,

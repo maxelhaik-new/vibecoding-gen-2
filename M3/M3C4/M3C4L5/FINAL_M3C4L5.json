@@ -1,0 +1,167 @@
+{
+  "lessonTitle": "M3C4L5",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Faire évoluer et soigner son dépôt"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Faire évoluer le projet",
+        "Intro": "Notre application est sur GitHub, mais elle doit continuer à vivre et à se structurer. Comment publier des mises à jour proprement et organiser nos fichiers ? Découvrons la gestion de projet en mode Build.",
+        "Titre 1": "La mise à jour en ligne",
+        "Texte 1": "Voyons comment re-prompter et envoyer les nouvelles versions sur GitHub en un clic depuis AI Studio.",
+        "Titre 2": "Le rythme des commits",
+        "Texte 2": "Zoom sur la bonne fréquence de sauvegarde et l'écriture de messages descriptifs et compréhensibles.",
+        "Titre 3": "L'organisation du dépôt",
+        "Texte 3": "Découvrons comment structurer le README pour guider l'IA et choisir la bonne visibilité de nos fichiers."
+      }
+    },
+    {
+      "template": "VIBECODING - CONCEPT - IMAGE",
+      "content": {
+        "Titre": "L'état de notre projet",
+        "Mot": "Le flux unidirectionnel",
+        "Definition": "L'application créée au chapitre précédent est déjà connectée à GitHub et poussée dans sa première version (v1). Google AI Studio pousse le code directement vers la plateforme en ligne, mais ce flux d'informations fonctionne dans un seul sens.",
+        "Intro": "Rappel de la structure actuelle : notre application locale est liée à notre dépôt cloud.",
+        "Titre 1": "AI Studio",
+        "Texte 1": "L'outil cloud où on conçoit l'interface et génère le code de l'application.",
+        "Titre 2": "GitHub",
+        "Texte 2": "La plateforme en ligne où l'historique de notre code est stocké en sécurité.",
+        "Source": "Source : Google AI Studio - Illustration générée par IA - Maxime Elhaik"
+      }
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": {
+        "Titre": "Modifier l'application",
+        "Intro": "Faire évoluer le projet dans Google AI Studio est aussi simple que de dicter une amélioration dans le chat.",
+        "Titre 4": "La régénération du code par l'IA",
+        "Texte 4": "On demande par exemple à l'IA d'ajouter un mode sombre dans le mode Build. Gemini réécrit les fichiers nécessaires et on teste instantanément le résultat dans la preview intégrée.",
+        "Chiffre 2": "Vers. 2",
+        "Titre 2": "Nouvelle version stable",
+        "Chiffre 3": "1 clic",
+        "Titre 3": "pour tester dans la preview",
+        "Texte Bulle": "Le mode Build modifie le code en direct. L'interface s'ajuste à nos demandes textuelles sans codage manuel.",
+        "Source": "Source : Google AI Studio - Capture d'écran - Maxime Elhaik"
+      }
+    },
+    {
+      "template": "VIBECODING - CYCLE",
+      "content": {
+        "Titre": "Le flux de publication",
+        "Intro": "Découvrons les étapes pour pousser une mise à jour sur GitHub depuis Google AI Studio.",
+        "Texte 5": "Flux unidirectionnel et direct",
+        "Titre 1": "HISTORIQUE",
+        "Texte 1": "Ouvrir l'onglet Version History en haut à droite du mode Build.",
+        "Titre 2": "ENREGISTRER",
+        "Texte 2": "L'IA prépare les fichiers modifiés pour la sauvegarde (commit).",
+        "Titre 3": "PUBLIER",
+        "Texte 3": "Envoyer les changements vers le dépôt distant en ligne (push).",
+        "Titre 4": "VÉRIFIER",
+        "Texte 4": "Le nouveau commit apparaît directement dans l'historique sur GitHub."
+      }
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "Trois règles pour nos commits",
+        "Intro": "Adopter de bonnes habitudes de sauvegarde permet de garder un historique propre et exploitable par l'IA.",
+        "Titre 1": "Le rythme",
+        "Parametre 1": "Fréquence",
+        "Violet 1": "Sauvegarder à chaque étape stable",
+        "Texte 1": "On commite dès qu'une fonctionnalité simple fonctionne. On préfère plusieurs petites versions claires à une seule énorme mise à jour mensuelle.",
+        "Titre 2": "La clarté",
+        "Parametre 2": "Messages",
+        "Violet 2": "Décrire précisément le changement",
+        "Texte 2": "Chaque message doit résumer l'action (ex: 'Ajout du mode sombre'). On bannit les termes flous comme 'maj', 'fix' ou 'truc' qui polluent l'historique.",
+        "Titre 3": "Le réflexe",
+        "Parametre 3": "Une idée",
+        "Violet 3": "Associer un commit à un seul sujet",
+        "Texte 3": "Un commit doit correspondre à une seule modification logique. Cela simplifie la vie des futurs agents de code comme Antigravity pour comprendre le projet.",
+        "Picto 1": "mdi:pulse",
+        "Picto 2": "mdi:text-box-search-outline",
+        "Picto 3": "mdi:robot"
+      }
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Choisir la visibilité",
+        "Titre A": "PUBLIC",
+        "Titre B": "PRIVÉ",
+        "Item 1": "Méthode",
+        "Item 2": "Accès",
+        "Item 3": "Usage",
+        "Item 4": "Sécurité",
+        "Texte A Item 1": "Code source visible par tout le monde sur Internet",
+        "Texte A Item 2": "Tout utilisateur peut consulter et cloner le projet",
+        "Texte A Item 3": "Idéal pour partager et créer un portfolio",
+        "Texte A Item 4": "Ne jamais publier de clés API dans les fichiers",
+        "Texte B1": "Dépôt accessible uniquement aux personnes choisies",
+        "Texte B2": "Accès réservé au créateur et aux collaborateurs",
+        "Texte B3": "Parfait pour un projet client ou personnel",
+        "Texte B4": "Secrets à isoler en dehors du code"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Le README orienté agent",
+        "Intro": "Un fichier README bien rédigé est indispensable. Il sert de carte d'identité du projet pour les humains et de guide pour les agents de code.",
+        "Titre 1": "LA DESCRIPTION RAPIDE DU PROJET",
+        "Texte 1": "Expliquer en deux lignes simples ce que fait l'application et à quel besoin elle répond concrètement.",
+        "Titre 2": "LA STACK TECHNIQUE DU PROJET",
+        "Texte 2": "Détailler la liste des outils, des bibliothèques et des services tiers utilisés pour faire tourner le site.",
+        "Titre 3": "LANCEMENT DE L'APPLICATION",
+        "Texte 3": "Donner les instructions précises pour cloner, installer les dépendances et démarrer le serveur local.",
+        "Titre 4": "CONVENTIONS ET DÉCISIONS CLÉS",
+        "Texte 4": "Lister les choix d'architecture ou les contraintes importantes à respecter pour guider l'agent de code.",
+        "Picto 1": "mdi:text-card",
+        "Picto 2": "mdi:layers-triple",
+        "Picto 3": "mdi:play-circle-outline",
+        "Picto 4": "mdi:book-open-page-variant"
+      }
+    },
+    {
+      "template": "VIBECODING - CONCEPT - IMAGE",
+      "content": {
+        "Titre": "Le dépôt comme carrefour",
+        "Mot": "La plaque tournante",
+        "Definition": "Le dépôt GitHub n'est pas seulement un espace de stockage en ligne. C'est le carrefour central du projet. Il synchronise l'environnement de création dans le cloud avec l'hébergeur de production et l'IDE de développement local. Bien soigner son dépôt simplifie l'usage de tous les outils.",
+        "Intro": "GitHub est le connecteur universel entre la conception, le déploiement et le code local.",
+        "Titre 1": "Vercel",
+        "Texte 1": "Le service cloud qui récupère le code de GitHub pour le déployer automatiquement en production.",
+        "Titre 2": "Antigravity",
+        "Texte 2": "L'éditeur de code local (Module 4) qui clone le dépôt pour y travailler de manière agentique.",
+        "Source": "Source : GitHub - Illustration générée par IA - Maxime Elhaik"
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Les 3 réflexes pour notre dépôt",
+        "Intro": "Trois réflexes pour réussir.",
+        "Texte Intro": "Soigner la publication et la structure du dépôt Git est un investissement. Cela garantit un travail sans perte de données et prépare l'intégration des outils de déploiement et de développement local.",
+        "Nom Checklist": "Réflexes à adopter",
+        "Texte 1": "Une modification = une version publiée.",
+        "Texte 2": "Un commit clair décrivant chaque changement.",
+        "Texte 3": "Un choix de visibilité conscient et assumé.",
+        "Texte 4": "Un README orienté agent pour guider l'IA.",
+        "Texte 5": "Zéro donnée sensible publiée dans le code."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Faire évoluer son dépôt Git depuis le mode Build de Google AI Studio est simple et visuel. En publiant des versions claires à chaque étape stable et en soignant le README, on prépare notre projet pour la suite. Ce dépôt bien tenu devient la plaque tournante idéale vers laquelle brancher tous les outils de production.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Dans la prochaine leçon, on passe concrètement à l'action. Mettons en pratique ces concepts en connectant notre application à GitHub pour réaliser notre premier export sécurisé !"
+      }
+    }
+  ]
+}

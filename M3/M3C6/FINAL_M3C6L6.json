@@ -1,0 +1,133 @@
+{
+  "lessonTitle": "M3C6L6 — Brief 10 : L'Organisateur de Repas & Liste de Courses Intelligente",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Brief : L'Organisateur de Repas & Liste de Courses"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Du Plan Repas à la Liste Automatique",
+        "Intro": "Planifier ses repas sur papier et rédiger manuellement sa liste de courses prend du temps et génère du gaspillage alimentaire. Voyons comment concevoir une application épurée qui automatise ce processus !",
+        "Titre 1": "Cadrage du projet",
+        "Texte 1": "Voyons le cas d'usage et la problématique concrète des utilisateurs au quotidien.",
+        "Titre 2": "Fonctionnalités du MVP",
+        "Texte 2": "Focus sur les modules clés à intégrer sans brique serveur complexe.",
+        "Titre 3": "Guide de déploiement",
+        "Texte 3": "Découvrons les étapes pour générer et publier l'outil en ligne."
+      }
+    },
+    {
+      "template": "VIBECODING - BRIEF ALT",
+      "content": {
+        "Titre": "L'Organisateur de Repas & Liste de Courses",
+        "Intro": "LE BRIEF",
+        "Texte 1": "Dans de nombreux foyers, la préparation des repas et la rédaction de la liste de courses restent désorganisées, entraînant des achats en double et des aliments jetés.",
+        "Texte 2": "L'objectif est de créer une application web fluide permettant d'associer des recettes à chaque jour de la semaine et d'extraire automatiquement une liste de courses triée par rayon.",
+        "Source": "Source : Brief Projet 10 — Vibe Coding 2026"
+      }
+    },
+    {
+      "template": "VIBECODING - PERSONA & MVP",
+      "content": {
+        "Titre": "Persona et périmètre du MVP",
+        "Intro": "Identifier la cible utilisateur et fixer les limites fonctionnelles strictes pour assurer la réussite du premier prompt.",
+        "Prenom": "Camille",
+        "Métier": "Responsable Marketing & Parent",
+        "Age": "34 ans",
+        "Spécificité": "Organisation familiale",
+        "Goût": "Recherche la Simplicité",
+        "Texte 1": "Planning hebdomadaire interactif : Attribution de recettes aux jours de la semaine de façon intuitive.",
+        "Texte 2": "Agrégation automatique des ingrédients : Calcul des quantités cumulées et classement par rayon (Légumes, Épicerie, Crèmerie).",
+        "Texte 3": "Sauvegarde locale sans compte : Conservation des repas et de la liste directement dans la mémoire du navigateur."
+      }
+    },
+    {
+      "template": "VIBECODING - USER STORIES",
+      "content": {
+        "Les User Stories": "Les User Stories du projet",
+        "Traduire la vision produit en petites étapes testa": "Traduire le besoin de Camille en fonctionnalités précises pour alimenter le Prompt Zero.",
+        "Titre App": "MealPlanner",
+        "Description MVP": "Offrir un organisateur de repas fluide qui regroupe les ingrédients en une liste de courses prête à l'emploi.",
+        "User Story 1": "En tant qu'utilisateur, je veux sélectionner des recettes pour les jours de la semaine afin d'organiser mon menu hebdomadaire.",
+        "User Story 2": "En tant que cuisinier, je veux générer la liste de courses consolidée afin de voir tous les ingrédients regroupés par rayon.",
+        "User Story 3": "En tant qu'acheteur, je veux cocher les articles achetés dans ma liste afin de suivre mes courses en magasin.",
+        "Picto 1": "mdi:silverware-fork-knife"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Architecture technique sans brique complexe",
+        "Intro": "Ce projet se réalise à 100% avec des technologies web natives accessibles dans Google AI Studio.",
+        "Titre 1": "STRUCTURE EN MODULES JS",
+        "Texte 1": "Gestion des recettes et calcul des quantités cumulées via un simple script client.",
+        "Titre 2": "CLASSEMENT AUTOMATIQUE PAR RAYON",
+        "Texte 2": "Tri logique des ingrédients dans des catégories prédéfinies sans aucune base de données cloud.",
+        "Titre 3": "INTERFACE ADAPTATIVE ET TACTILE",
+        "Texte 3": "Mise en page épurée utilisable aussi bien sur ordinateur que sur smartphone lors des courses.",
+        "Titre 4": "PERSISTANCE DANS LE NAVIGATEUR",
+        "Texte 4": "Utilisation du stockage local pour retrouver son menu et sa liste cochée à chaque ouverture.",
+        "Picto 1": "mdi:code-braces",
+        "Picto 2": "mdi:format-list-checks",
+        "Picto 3": "mdi:responsive",
+        "Picto 4": "mdi:content-save-outline"
+      }
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "La feuille de route de création",
+        "Intro": "Le parcours méthodique pour transformer ce brief en une application publiée en ligne.",
+        "Titre 1": "Cadrage",
+        "Violet 1 ": "Rédiger le Prompt Zero complet à partir du périmètre fonctionnel",
+        "Titre 2": "Génération",
+        "Violet 2": "Générer et ajuster l'application dans Google AI Studio",
+        "Titre 3": "Versionning",
+        "Violet 3": "Sauvegarder le code propre sur un dépôt GitHub",
+        "Titre 4": "Mise en ligne",
+        "Violet 4": "Déployer le projet sur Vercel et vérifier l'accès public"
+      }
+    },
+    {
+      "template": "VIBECODING - EXERCICE PRATIQUE",
+      "content": {
+        "Titre": "Ce qu’il faut faire",
+        "EXERCICE": "EXERCICE",
+        "Intro": "Appliquer la méthode pas-à-pas pour construire et publier l'organisateur de repas.",
+        "Titre 1": "Consignes de réalisation",
+        "Texte 1": "Suivre les 4 étapes principales du processus pour valider la création de l'outil.",
+        "Question 1": "Rédiger un Prompt Zero structuré détaillant la grille de repas et la logique de regroupement des ingrédients.",
+        "Question 2": "Générer l'interface dans Google AI Studio et tester l'ajout de recettes ainsi que l'incrémentation des quantités.",
+        "Question 3": "Créer un dépôt GitHub et commiter le code source généré.",
+        "Question 4": "Connecter le dépôt à Vercel et publier l'application en ligne."
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Checklist de validation du projet",
+        "Intro": "Contrôler la qualité et les fonctionnalités de l'application en ligne.",
+        "Texte Intro": "Avant de finaliser le projet, vérifier chacun des points suivants sur l'application déployée.",
+        "Nom Checklist": "Critères de réussite",
+        "Texte 1": "L'attribution des repas sur la semaine fonctionne sans bogue d'affichage.",
+        "Texte 2": "La liste de courses regroupe et somme correctement les ingrédients identiques.",
+        "Texte 3": "Les articles peuvent être cochés et découchés de manière fluide.",
+        "Texte 4": "La liste et le menu restent enregistrés après un rafraîchissement de la page.",
+        "Texte 5": "L'application est déployée sur Vercel et parfaitement lisible sur écran mobile."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "À vous de jouer sur ce brief !",
+        "Intro": "Ce brief valide l'ensemble des acquis du module : structuration d'un besoin, cadrage d'un prompt sans brique serveur inutile, versionning sur GitHub et déploiement continu sur Vercel.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Dans la leçon suivante M3C6L5, passons à l'action globale : choisissez votre brief préféré parmi les projets présentés et publiez votre première application !"
+      }
+    }
+  ]
+}

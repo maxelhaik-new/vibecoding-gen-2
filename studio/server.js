@@ -17,6 +17,36 @@ dotenv.config({ path: path.join(rootDir, '.env') });
 const app = express();
 const PORT = process.env.STUDIO_PORT || 4000;
 
+// Active SSE clients for file updates
+let updateClients = [];
+
+// Watch root directory for JSON and MD files (excluding noise)
+try {
+  fs.watch(rootDir, { recursive: true }, (eventType, filename) => {
+    if (!filename) return;
+    // Exclude directories we don't care about
+    if (
+      filename.includes('.git') ||
+      filename.includes('node_modules') ||
+      filename.startsWith('studio') ||
+      filename.includes('dist/')
+    ) {
+      return;
+    }
+    if (filename.endsWith('.json') || filename.endsWith('.md')) {
+      console.log(`[Watcher] File change detected: ${filename} (${eventType})`);
+      // Send reload notification to all clients
+      const message = JSON.stringify({ file: filename, event: eventType });
+      updateClients.forEach(client => {
+        client.write(`data: ${message}\n\n`);
+      });
+    }
+  });
+  console.log(`[Watcher] Watching JSON/MD changes in ${rootDir}`);
+} catch (err) {
+  console.error('[Watcher Error] Failed to initialize directory watcher:', err);
+}
+
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 
@@ -109,19 +139,49 @@ app.get('/api/lessons', (req, res) => {
             status = 'plan_only';
           }
           
+          let lessonType = 'theorique';
+
           if (hasFinal) {
             try {
               const data = JSON.parse(fs.readFileSync(paths.final, 'utf-8'));
               lessonTitle = data.lessonTitle || lessonTitle;
-              const slides = data.slides || [];
+              if (data.lessonType) {
+                lessonType = data.lessonType;
+              } else if (slug.endsWith('l1') || (lessonTitle && lessonTitle.toLowerCase().includes('objectifs'))) {
+                lessonType = 'objectif';
+              } else if (lessonTitle && (lessonTitle.toLowerCase().includes('à vous de jouer') || lessonTitle.toLowerCase().includes('exercice'))) {
+                lessonType = 'exercice';
+              } else if (lessonTitle && (lessonTitle.toLowerCase().includes('projet') || lessonTitle.toLowerCase().includes('brief'))) {
+                lessonType = 'hybride';
+              } else if (lessonTitle && (
+                lessonTitle.toLowerCase().includes('installer') ||
+                lessonTitle.toLowerCase().includes('interface') ||
+                lessonTitle.toLowerCase().includes('git') ||
+                lessonTitle.toLowerCase().includes('mode') ||
+                lessonTitle.toLowerCase().includes('terminal') ||
+                lessonTitle.toLowerCase().includes('lancer') ||
+                lessonTitle.toLowerCase().includes('déboguer') ||
+                lessonTitle.toLowerCase().includes('refactoriser') ||
+                lessonTitle.toLowerCase().includes('browser')
+              )) {
+                lessonType = 'logiciel';
+              }
+
+              let slides = data.slides || [];
+              if (typeof slides === 'string') {
+                try { slides = JSON.parse(slides); } catch (e) { slides = []; }
+              }
+              if (!Array.isArray(slides)) {
+                slides = [];
+              }
               slideCount = slides.length;
               
               if (slides.length > 0) {
-                // If first non-cover slide has content fields, it is 'written'
-                const contentSlides = slides.filter(s => s.template !== 'VIBECODING - COVER' && s.template !== 'VIBECODING - COVER CHAP');
+                // If first non-cover slide is DEMO or has content fields, it is 'written'
+                const contentSlides = slides.filter(s => s && s.template !== 'VIBECODING - COVER' && s.template !== 'VIBECODING - COVER CHAP');
                 const testSlide = contentSlides[0];
                 
-                if (testSlide && testSlide.content && Object.keys(testSlide.content).length > 0) {
+                if (testSlide && (testSlide.template === 'VIBECODING - DEMO' || (testSlide.content && Object.keys(testSlide.content).length > 0))) {
                   // Check if images are generated for slides needing image
                   const needsImage = slides.some(s => {
                     const tName = (s.template || '').toUpperCase();
@@ -150,7 +210,8 @@ app.get('/api/lessons', (req, res) => {
             hasPlan,
             hasFinal,
             status,
-            slideCount
+            slideCount,
+            type: lessonType
           });
         }
         return; // No need to scan inside a lesson folder
@@ -217,6 +278,13 @@ app.get('/api/lesson/:slug', (req, res) => {
     if (fs.existsSync(paths.final)) {
       try {
         finalContent = JSON.parse(fs.readFileSync(paths.final, 'utf-8'));
+        if (finalContent && typeof finalContent.slides === 'string') {
+          try {
+            finalContent.slides = JSON.parse(finalContent.slides);
+          } catch (e) {
+            console.error(`Error inner-parsing slides for ${slug}:`, e);
+          }
+        }
         // Normalize slide content array representation to dictionary format for frontend layouts compatibility
         if (finalContent && Array.isArray(finalContent.slides)) {
           finalContent.slides.forEach(s => {
@@ -315,6 +383,11 @@ app.post('/api/lesson/:slug', (req, res) => {
     }
     
     if (final !== undefined) {
+      if (final && typeof final.slides === 'string') {
+        try {
+          final.slides = JSON.parse(final.slides);
+        } catch (e) {}
+      }
       fs.writeFileSync(paths.final, JSON.stringify(final, null, 2), 'utf-8');
     }
     
@@ -643,13 +716,13 @@ app.get('/api/regenerate-slide', (req, res) => {
   });
 });// 8. POST /api/agent/chat - Workspace Agent interaction
 app.post('/api/agent/chat', async (req, res) => {
-  const { messages, activeLessonSlug } = req.body;
+  const { messages, activeLessonSlug, model } = req.body;
   if (!messages || !Array.isArray(messages)) {
     return res.status(400).json({ error: "Missing parameter: messages array is required." });
   }
 
   try {
-    const result = await executeAgentLoop(messages, activeLessonSlug, rootDir);
+    const result = await executeAgentLoop(messages, activeLessonSlug, rootDir, model);
     if (result.error) {
       return res.status(500).json({ error: result.error });
     }
@@ -660,11 +733,59 @@ app.post('/api/agent/chat', async (req, res) => {
 });
 
 app.get('/api/agent/config', (req, res) => {
+  const geminiTextModel = process.env.GEMINI_TEXT_MODEL || process.env.GEMINI_MODEL_NAME || 'gemini-3.5-flash';
+  const claudeModel = process.env.CLAUDE_MODEL || 'claude-sonnet-4-6';
+  const imageModel = process.env.IMAGE_MODEL || 'gemini-3.1-flash-image';
+
+  const chatProvider = (process.env.CHAT_AGENT_PROVIDER || 'GEMINI').toUpperCase();
+  const defaultChatModel = chatProvider === 'CLAUDE' ? claudeModel : geminiTextModel;
+
+  const rawModels = [
+    { id: defaultChatModel, label: `CHAT_AGENT (${chatProvider}: ${defaultChatModel})` },
+    { id: geminiTextModel, label: `GEMINI_TEXT_MODEL (${geminiTextModel})` },
+    { id: claudeModel, label: `CLAUDE_MODEL (${claudeModel})` },
+    { id: 'gemini-3.5-flash', label: 'Gemini 3.5 Flash' },
+    { id: 'gemini-3.1-pro', label: 'Gemini 3.1 Pro' },
+    { id: 'claude-sonnet-4-6', label: 'Claude Sonnet 4.6' },
+    { id: 'claude-opus-4-8', label: 'Claude Opus 4.8' }
+  ];
+
+  const uniqueModels = Array.from(new Map(rawModels.map(m => [m.id, m])).values());
+
   res.json({
     hasKey: !!process.env.GEMINI_API_KEY,
-    model: process.env.GEMINI_MODEL_NAME || process.env.GEMINI_TEXT_MODEL || 'gemini-3.5-flash'
+    model: defaultChatModel,
+    chatProvider: chatProvider,
+    geminiModel: geminiTextModel,
+    claudeModel: claudeModel,
+    imageModel: imageModel,
+    availableModels: uniqueModels
   });
 });
+
+app.get('/api/updates-stream', (req, res) => {
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive',
+    'Access-Control-Allow-Origin': '*'
+  });
+
+  // Keep connection alive
+  const keepAlive = setInterval(() => {
+    res.write(': keepalive\n\n');
+  }, 30000);
+
+  updateClients.push(res);
+  console.log(`[Watcher] Client connected to update stream. Total clients: ${updateClients.length}`);
+
+  req.on('close', () => {
+    clearInterval(keepAlive);
+    updateClients = updateClients.filter(c => c !== res);
+    console.log(`[Watcher] Client disconnected. Total clients: ${updateClients.length}`);
+  });
+});
+
 
 if (fs.existsSync(distPath)) {
   app.get('*', (req, res) => {

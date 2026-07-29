@@ -1,0 +1,24 @@
+{
+  "lessonSlug": "m4c4l1",
+  "lessonTitle": "M4C4L1 — Les objectifs du chapitre : construire le front-end",
+  "lessonType": "objectif",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Chapitre 4 : Construire le projet fil rouge (Partie 1 : Front-end)"
+      }
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Lancer l'application web et développer l'interface utilisateur de votre projet avec Antigravity.",
+        "Titre 1": "Lancer le serveur de développement de l'application web",
+        "Titre 2": "Déboguer visuellement l'interface avec l'IDE",
+        "Titre 3": "Ajouter et intégrer les fonctionnalités principales",
+        "Titre 4": "Enrichir et personnaliser l'interface sur un cas pratique"
+      }
+    }
+  ]
+}

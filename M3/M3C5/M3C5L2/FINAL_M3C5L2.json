@@ -1,0 +1,124 @@
+{
+  "lessonTitle": "M3C5L2 — Comprendre le déploiement : du repo à l'app en production",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Comprendre le déploiement : du repo à la prod"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Comprendre la mise en ligne",
+        "Intro": "Écrire du code est une première étape, mais rendre l'application accessible au monde entier en est une autre. Comment passer d'un dépôt GitHub à un site web en ligne sans gérer de serveur ? Découvrons le déploiement continu avec Vercel.",
+        "Titre 1": "Le concept de déploiement",
+        "Texte 1": "Voyons comment transformer du code source en un site web accessible en ligne via une URL publique.",
+        "Titre 2": "Le rôle de Vercel",
+        "Texte 2": "Focus sur cette plateforme cloud qui héberge nos projets web automatiquement et sans configuration complexe.",
+        "Titre 3": "Le déploiement continu",
+        "Texte 3": "Découvrons le fonctionnement des webhooks pour mettre à jour le site en direct à chaque nouveau commit."
+      }
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Deux approches du déploiement",
+        "Titre A": "MANUEL",
+        "Titre B": "AUTOMATISÉ",
+        "Item 1": "Processus",
+        "Item 2": "Réseau",
+        "Item 3": "Vitesse",
+        "Item 4": "Risque",
+        "Texte A Item 1": "Transfert manuel des fichiers par serveur FTP",
+        "Texte A Item 2": "Configuration lourde des serveurs distants",
+        "Texte A Item 3": "Mise en ligne lente en plusieurs heures",
+        "Texte A Item 4": "Erreurs fréquentes lors de l'envoi de fichiers",
+        "Texte B1": "Synchronisation automatique depuis le dépôt GitHub",
+        "Texte B2": "Infrastructures cloud gérées sans configuration",
+        "Texte B3": "Mise à jour en quelques secondes",
+        "Texte B4": "Déploiement fiable sans coupure"
+      }
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Définir le déploiement",
+        "Mot": "Le déploiement",
+        "Definition": "Le déploiement web est le processus qui rend une application accessible sur Internet depuis un serveur distant. Il prend le code source stocké sur un dépôt et le transforme en un site web fonctionnel, doté d'une adresse URL publique. Ce mécanisme garantit la disponibilité du projet pour tous les utilisateurs.",
+        "Bulle": "EN BREF : C'est le passage de notre ordinateur local vers le web public. Sans déploiement, l'application reste un simple dossier de code invisible pour le monde extérieur.",
+        "Picto 1": "mdi:rocket-launch-outline"
+      }
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "L'usine de déploiement continu",
+        "Intro": "Découvrons l'automatisation en 3 étapes clés qui remplace le travail manuel d'autrefois.",
+        "Titre 1": "Récupérer",
+        "Parametre 1": "Étape 1",
+        "Violet 1": "Cloner les fichiers du projet",
+        "Texte 1": "Le serveur de déploiement se connecte directement au dépôt distant GitHub pour télécharger la toute dernière version du code source.",
+        "Titre 2": "Construire",
+        "Parametre 2": "Étape 2",
+        "Violet 2": "Transformer et préparer le code",
+        "Texte 2": "Le code brut du projet est assemblé et préparé automatiquement pour devenir parfaitement lisible et rapide pour les navigateurs web.",
+        "Titre 3": "Héberger",
+        "Parametre 3": "Étape 3",
+        "Violet 3": "Mettre en ligne sur le web",
+        "Texte 3": "Les fichiers prêts sont placés sur des serveurs publics mondiaux et une adresse URL sécurisée est activée pour les visiteurs.",
+        "Picto 1": "mdi:download-box-outline",
+        "Picto 2": "mdi:cogs",
+        "Picto 3": "mdi:web"
+      }
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": {
+        "Titre": "Focus sur la plateforme Vercel",
+        "Intro": "Une plateforme cloud moderne conçue pour héberger et publier nos applications web sans gérer d'infrastructure.",
+        "Titre 4": "Hébergement automatique et liens de preview",
+        "Texte 4": "Vercel connecte notre compte GitHub, génère le certificat de sécurité SSL et fournit une URL publique instantanée pour chaque branche de travail.",
+        "Chiffre 2": "En 2015",
+        "Titre 2": "Lancement de Vercel par Rauch",
+        "Chiffre 3": "100K+",
+        "Titre 3": "déploiements quotidiens sur le cloud",
+        "Texte Bulle": "Vercel gère le serveur, le SSL et le réseau mondial. On se concentre uniquement sur la création de notre application.",
+        "Source": "Source : Vercel - Illustration générée par IA - Maxime Elhaik"
+      }
+    },
+    {
+      "template": "VIBECODING - CONCEPT - IMAGE",
+      "content": {
+        "Titre": "La magie du déploiement continu",
+        "Mot": "Le rôle du Webhook",
+        "Definition": "Un Webhook est une alerte automatique envoyée par GitHub à Vercel dès qu'un nouveau commit est poussé en ligne. Vercel intercepte cette notification, récupère le code frais et reconstruit le site instantanément. Ce flux continu élimine toute manipulation manuelle lors des mises à jour.",
+        "Intro": "Chaque push sur GitHub déclenche une mise à jour automatique du site en production.",
+        "Titre 1": "1. GitHub Push",
+        "Texte 1": "On sauvegarde les modifications de code sur notre dépôt distant GitHub.",
+        "Titre 2": "2. Webhook",
+        "Texte 2": "GitHub prévient immédiatement les serveurs de Vercel.",
+        "Source": "Source : Webhook - Illustration générée par IA - Maxime Elhaik"
+      }
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Le cas de la mise à jour flash",
+        "Intro": "DU COMMIT À LA PROD EN 10 SECONDES",
+        "Texte 1": "Imaginons une retouche de texte urgente sur notre application web. On effectue la modification puis on pousse le commit sur GitHub. Immédiatement, Vercel capte le changement grâce au webhook, reconstruit l'application et met à jour le serveur de production en quelques secondes. Aucun besoin de se connecter à un serveur distant ou de transférer des fichiers : la nouvelle version est en ligne pour nos utilisateurs.",
+        "Texte Bulle": "Le déploiement continu accélère nos cycles de création. Chaque modification validée passe immédiatement en production sans créer de friction technique.",
+        "Source": "Source : Vercel - Illustration générée par IA - Maxime Elhaik"
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Le déploiement continu est un pilier du Vibe Coding moderne. Grâce à la connexion entre GitHub et Vercel, la mise en ligne devient automatique et transparente. On ne perd plus de temps avec la gestion des serveurs : chaque sauvegarde sur GitHub met à jour l'application en production en toute sécurité.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Dans la prochaine leçon, on passe à l'action. Découvrons comment créer notre compte sur Vercel et connecter notre premier dépôt GitHub pour lancer un déploiement automatique !"
+      }
+    }
+  ]
+}

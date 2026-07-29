@@ -4,18 +4,45 @@
     {
       "template": "VIBECODING - COVER",
       "content": {
-        "Titre": "En finir avec le mythe du remplacement"
+        "Titre": "En finir avec le mythe de la fin du développeur"
       },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
-      "template": "VIBECODING - CONCEPT",
+      "template": "VIBECODING - INTRO",
       "content": {
-        "Titre": "La commodité du code basique",
-        "Intro": "L'IA écrit le code simple plus vite que n'importe qui. Autant l'admettre.",
-        "Texte 1": "Écrire des fonctions standards ou des scripts d'entrée de gamme ne constitue plus une valeur ajoutée. L'effort se déplace désormais vers la conception et la validation."
+        "Titre": "Une extinction annoncée... vraiment ?",
+        "Intro": "L’IA signe-t’elle la fin des développeurs ? En réalité, les données macro-économiques racontent une tout autre histoire. Faisons le point sur ce glissement de rôle.",
+        "Titre 1": "Un rôle qui évolue",
+        "Texte 1": "Voyons comment le développeur trouve sa place dans cette nouvelle manière de coder. ",
+        "Titre 2": "La demande en hausse",
+        "Texte 2": "Focus sur les indicateurs officiels qui montrent une croissance continue des postes techniques.",
+        "Titre 3": "Le piège du tout-IA",
+        "Texte 3": "Zoom sur les entreprises qui ont tenté de remplacer leurs équipes par des agents autonomes."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - LARGE TEXT",
+      "content": {
+        "Titre": "Le dev reste indispensable",
+        "Intro": "L'IA abaisse le coût de production du code — ce qui multiplie les projets. Le besoin d'orchestration et de supervision humaine explose en conséquence.",
+        "Titre 1": "Archi",
+        "Texte 1": "L'IA génère des blocs isolés. C'est le développeur qui pense le système global, l'intégration des services et la scalabilité sur le long terme.",
+        "Picto 1": "mdi:sitemap",
+        "Titre 2": "Sécurité",
+        "Texte 2": "Garantir la confidentialité des données et la robustesse face aux failles reste une responsabilité qui ne se délègue pas entièrement à un modèle génératif.",
+        "Picto 2": "mdi:shield-lock",
+        "Titre 3": "Expertise métier",
+        "Texte 3": "Un code fonctionnel n'a de valeur que s'il répond au bon besoin. Le développeur fait le pont entre la logique métier de l'entreprise et la machine.",
+        "Picto 3": "mdi:domain",
+        "Titre 4": "Supervision",
+        "Texte 4": "Les agents autonomes peinent sur les cas limites et les incidents de production. Un humain reste le filtre entre prototype généré et système fiable en production.",
+        "Picto 4": "mdi:account-supervisor-circle"
       },
       "image_concept": null,
       "image_style": null,
@@ -24,79 +51,42 @@
     {
       "template": "VIBECODING - CHIFFRES",
       "content": {
-        "Titre": "Ce que révèlent les chiffres",
-        "Intro": "Le marché s'ajuste rapidement à l'arrivée de l'IA. Les données montrent une contraction réelle mais ciblée des recrutements.",
-        "Chiffre 1": "40-70",
-        "Titre 1": "TRAVAIL ABSORBÉ",
-        "Texte 1": "La part estimée des tâches d'entrée de gamme désormais prises en charge par les outils d'IA.",
-        "Chiffre 2": "2025",
-        "Titre 2": "RECUL JUNIOR",
-        "Texte 2": "La baisse constatée des embauches de développeurs juniors sur le marché mondial.",
-        "Chiffre 3": " -20%",
-        "Titre 3": "BAISSE",
-        "Texte 3": "Le recul de l'emploi des profils débutants entre fin 2022 et mi-2025."
+        "Titre": "Les devs ont de l'avenir : les chiffres",
+        "Intro": "WEF, BLS et GitHub publient des données convergentes : l'automatisation crée plus d'emplois techniques qu'elle n'en détruit.",
+        "Chiffre 1": "+17 %",
+        "Titre 1": "CROISSANCE DE L'EMPLOI",
+        "Texte 1": "Croissance projetée pour les développeurs logiciels d'ici 2030. (BLS / WEF, 2025)",
+        "Chiffre 2": "+78 M",
+        "Titre 2": "POSTES CRÉÉS",
+        "Texte 2": "Déplace 92 M d'emplois, mais crée 170 M de postes tech d'ici 2030. (WEF, 2025)",
+        "Chiffre 3": "180 M",
+        "Titre 3": "SUR GITHUB",
+        "Texte 3": "Record historique : +36 millions de développeurs actifs en un an. (GitHub Octoverse, 2025)"
       },
       "image_concept": null,
       "image_style": null,
       "image_ratio": null
     },
     {
-      "template": "VIBECODING - 4 BLOCS - TITLE 2 LINES",
+      "template": "VIBECODING - USE CASE",
       "content": {
-        "Titre": "Où se déplace la vraie valeur",
-        "Intro": "Si coder devient simple, concevoir reste complexe. La valeur humaine se concentre sur les aspects stratégiques.",
-        "Titre 1": "Expertise métier et besoins",
-        "Texte 1": "Traduire les besoins réels des utilisateurs en fonctionnalités concrètes, une subtilité qui échappe encore aux modèles.",
-        "Picto 1": "mdi:briefcase-outline",
-        "Titre 2": "Architecture et conception",
-        "Texte 2": "Structurer des systèmes robustes, évolutifs et sécurisés que l'IA se contentera ensuite d'implémenter brique par brique.",
-        "Picto 2": "mdi:vector-arrange-vertical",
-        "Titre 3": "Débogage des cas complexes",
-        "Texte 3": "Résoudre les bugs subtils et les comportements imprévus là où l'IA tourne en boucle sans trouver de solution.",
-        "Picto 3": "mdi:bug-play-outline",
-        "Titre 4": "Revue de code et de sécurité",
-        "Texte 4": "Évaluer la qualité, la sécurité et la pertinence du code généré avant de l'intégrer définitivement en production.",
-        "Picto 4": "mdi:shield-check-outline"
+        "Titre": "Le piège du tout-IA",
+        "Intro": "LICENCIEMENTS IA : LE RETOUR",
+        "Texte 1": "Depuis 2024, plusieurs entreprises ont réduit leurs équipes techniques pour déployer des agents IA autonomes à la place. Le résultat ? 80 % d'entre elles rapportent un ROI nul sur ces initiatives. (Gartner, mai 2026) Les agents autonomes peinent à gérer les cas limites, les incidents de production et les arbitrages d'architecture. Sans développeurs humains pour superviser, les systèmes ne sont pas rentables. ",
+        "Texte Bulle": "Un agent IA peut générer du code fonctionnel en quelques secondes — mais qui décide si ce code est sûr, maintenable et aligné avec la logique métier ?",
+        "Source": "Source : Gartner 2026"
       },
-      "image_concept": null,
-      "image_style": null,
-      "image_ratio": null
-    },
-    {
-      "template": "VIBECODING - DEFINITION",
-      "content": {
-        "Mot": "La règle d'or",
-        "Definition": "Ne jamais demander à l'IA un résultat qu'on ne serait pas capable d'évaluer, de corriger ou de remettre en question soi-même.",
-        "Bulle": "L'esprit critique reste le seul garde-fou contre les hallucinations."
-      },
-      "image_concept": null,
-      "image_style": null,
-      "image_ratio": null
-    },
-    {
-      "template": "VIBECODING - CHECKLIST",
-      "content": {
-        "Titre": "Ce que cela change pour nous tous",
-        "Intro": "L'effort se déplace du clavier vers le jugement et la compréhension.",
-        "Titre 2": "Les nouvelles priorités",
-        "Texte 1": "Comprendre la logique globale du code généré.",
-        "Texte 2": "Valider la sécurité des données manipulées.",
-        "Texte 3": "Tester rigoureusement les cas limites.",
-        "Texte 4": "Savoir corriger manuellement les erreurs.",
-        "Texte 5": "Garder le contrôle sur l'architecture.",
-        "Picto 2": "mdi:check-decagram"
-      },
-      "image_concept": null,
-      "image_style": null,
-      "image_ratio": null
+      "image_concept": "A corporate office where rows of empty desks and chairs face a single glowing server rack — a lone human engineer stands in the background, arms crossed, watching error messages cascade across a giant screen. The atmosphere is tense, industrial, slightly dystopian.",
+      "image_style": "grainy-editorial",
+      "image_ratio": "2:3"
     },
     {
       "template": "VIBECODING - FIN",
       "content": {
         "Titre": "Ce qu'il faut retenir",
-        "Intro": "On a confronté le mythe aux faits : le code basique devient une commodité et l'embauche junior se contracte, mais la valeur ne disparaît pas. Elle se déplace vers le métier, l'architecture, le débogage et le jugement. La règle d'or reste absolue : ne jamais livrer ce qu'on ne sait pas évaluer. Le Vibe Coding ne remplace pas la compétence, il la redéfinit. C'est précisément ce que l'on va construire ensemble.",
-        "Titre Bulle": "En bref",
-        "Texte Bulle": "Le développeur de demain n'est pas un simple exécutant de code, mais un chef d'orchestre capable de guider, valider et corriger l'intelligence artificielle pour créer des applications fiables et performantes."
+        "Intro": "Le Vibe Coding ne détruit pas le métier de développeur. On passe de l'exécution syntaxique à l'orchestration de systèmes. La demande globale continue de croître et les entreprises qui ont tenté de supprimer leurs équipes techniques pour des agents autonomes se sont heurtés à un mur. La maîtrise humaine reste donc le filtre entre prototype et production fiable.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "La vraie question n'est pas « l'IA va-t-elle remplacer les développeurs ? » mais « quels développeurs sauront orchestrer l'IA ? ». Ceux qui maîtrisent l'architecture, la sécurité et la gouvernance des données sont les profils les plus recherchés du marché en 2026."
       },
       "image_concept": null,
       "image_style": null,

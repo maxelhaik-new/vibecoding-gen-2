@@ -1,0 +1,97 @@
+{
+  "lessonTitle": "M2C5L3 — Bannir les clés API et secrets de ses prompts",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Clés API & secrets : prompter sans fuite"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Protéger ses clés d'accès",
+        "Intro": "Une clé API, c'est le double des clés de sa maison numérique : elle donne accès direct à ses comptes et services payants. Collée dans un prompt , elle peut être exploitée en quelques secondes. Faisons le point sur les bons réflexes.",
+        "Titre 1": "Le risque des clés API",
+        "Texte 1": "Voyons comment une clé exposée par inadvertance peut générer des factures de plusieurs milliers d'euros en quelques heures.",
+        "Titre 2": "La méthode locale",
+        "Texte 2": "Zoom sur les fichiers d'environnement locaux pour stocker ses secrets sans jamais les faire transiter dans le chat.",
+        "Titre 3": "Les règles de partage",
+        "Texte 3": "Apprenons à transmettre du code à l'agent en masquant automatiquement toute variable sensible avant l'envoi."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Protéger ses mot de passe",
+        "Mot": "Clé API",
+        "Definition": "Une clé API est une chaîne secrète qui authentifie notre application auprès d'un service tiers — Base de donnée, modèle d'IA, application de design... L'agent IA en a besoin pour connecter le code aux services, mais il ne doit jamais la lire directement dans un prompt.",
+        "Bulle": "Une clé volée = solde vidé ou milliers de requêtes à nos frais."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "Trois étapes pour masquer ses secrets",
+        "Intro": "La gestion sécurisée des secrets s'installe dès le premier jour du projet. Trois habitudes suffisent à éviter 95 % des fuites.",
+        "Titre 1": "Fichier local",
+        "Parametre 1": "Fichier .env",
+        "Violet 1": "Stocker les secrets dans un fichier isolé",
+        "Texte 1": "Créer un fichier .env à la racine du projet au format KEY=VALUE. L'agent ne lit jamais ce fichier — il sait uniquement qu'il existe et comment y faire référence dans le code généré.",
+        "Picto 1": "mdi:file-code-outline",
+        "Titre 2": "Chargement code",
+        "Parametre 2": "process.env",
+        "Violet 2": "Lire les clés de manière indirecte dans le code",
+        "Texte 2": "Utiliser process.env (JS) ou os.environ (Python) pour charger les secrets en mémoire au lancement. Le code référence le nom de la variable, jamais sa valeur réelle. L'IA génère ce code sans connaître la clé.",
+        "Picto 2": "mdi:variable",
+        "Titre 3": "Exclusion Git",
+        "Parametre 3": ".gitignore",
+        "Violet 3": "Bannir le fichier .env des dépôts publics",
+        "Texte 3": "Ajouter la ligne .env dans son fichier .gitignore. Cela bloque l'envoi accidentel des clés sur GitHub lors d'une mise en ligne. Règle d'or de tout développeur — sans exception.",
+        "Picto 3": "mdi:git"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Checklist de gestion des secrets",
+        "Intro": "Sécuriser ses clés API et jetons d'accès pour protéger ses projets.",
+        "Texte Intro": "Un oubli est vite arrivé. Ces réflexes doivent être passés en revue avant tout envoi de prompt contenant du code, et avant chaque mise en ligne sur GitHub. Une seule clé exposée peut suffire à compromettre l'ensemble du projet.",
+        "Nom Checklist": "Réflexes de sécurité",
+        "Texte 1": "Vérifier l'absence de clé en dur dans le code.",
+        "Texte 2": "Contrôler que .gitignore contient bien la ligne .env.",
+        "Texte 3": "Remplacer ses vraies clés par de faux exemples.",
+        "Texte 4": "Créer un fichier .env.example sans valeurs réelles",
+        "Texte 5": "Révoquer toute clé exposée en ligne immédiatement.",
+        "Picto 1": "mdi:key-shield-outline"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Les prompts envoyés à un agent IA sont sauvegardés et analysés par les éditeurs. Coller une clé d'accès dans la boîte de dialogue, c'est la laisser visible à des tiers. La règle est simple : l'agent écrit le code qui appelle la variable — on injecte la valeur localement, dans le fichier .env, jamais dans le chat. L'IA conçoit la plomberie, on détient seul la clé.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "La prochaine leçon va plus loin : comment transmettre la logique de son application à l'agent pour qu'il la corrige, sans jamais lui envoyer les données réelles de ses utilisateurs ? Une question de séparation stricte entre code et données."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

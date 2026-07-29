@@ -1,0 +1,17 @@
+{
+  "lessonSlug": "m4c1l5",
+  "lessonTitle": "M4C1L5 — Découvrir l'interface et les fonctionnalités principales",
+  "lessonType": "logiciel",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Découvrir l'interface et les fonctionnalités principales"
+      }
+    },
+    {
+      "template": "VIBECODING - DEMO",
+      "content": {}
+    }
+  ]
+}

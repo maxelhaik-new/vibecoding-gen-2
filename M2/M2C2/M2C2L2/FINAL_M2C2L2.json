@@ -1,0 +1,178 @@
+{
+  "lessonTitle": "M2C2L2 — Identifier des projets pour le Vibe Coding",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Identifier des projets de Vibe Coding"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Sélectionner son projet IA",
+        "Intro": "Tous les projets logiciels ne se prêtent pas au Vibe Coding. Certaines architectures nécessitent un cadrage complexe, tandis que d'autres s'adaptent parfaitement. Voyons comment trier.",
+        "Titre 1": "Les bons candidats",
+        "Texte 1": "Voyons quels types d'applications et de scripts tirent le meilleur parti de la génération de code.",
+        "Titre 2": "Les faux amis",
+        "Texte 2": "Focus sur les fausses bonnes idées, comme les systèmes hautement sécurisés ou trop interconnectés.",
+        "Titre 3": "La grille de filtres",
+        "Texte 3": "Découvrons une grille d'évaluation simple pour mesurer l'éligibilité technique d'un projet."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT - IMAGE",
+      "content": {
+        "Titre": "Les scripts d'automatisation",
+        "Mot": "Automatisation",
+        "Definition": "Des programmes légers sans interface graphique, conçus en Python ou Javascript. Ils tournent en arrière-plan pour accomplir des tâches répétitives ou connecter des services. C'est le point de départ idéal, ultra-robuste et sans risque de bug d'affichage.",
+        "Intro": "Des scripts autonomes pour connecter vos outils et traiter vos fichiers.",
+        "Source": "Source : Vibe Coding 2026 - Scripts autonomes - Maxime Elhaik",
+        "Titre 1": "Veille Concurrentielle",
+        "Texte 1": "Script Python qui extrait automatiquement les nouveaux prix d'un concurrent et vous alerte sur Slack.",
+        "Titre 2": "Qualification de Leads",
+        "Texte 2": "Automatisation qui enrichit les données des prospects entrants et met à jour votre base de données.",
+        "Picto 1": "mdi:magnify",
+        "Picto 2": "mdi:flowchart"
+      },
+      "image_concept": "Data connection and sync script terminal output",
+      "image_style": "minimalist abstract 3D render",
+      "image_ratio": "1:1"
+    },
+    {
+      "template": "VIBECODING - CONCEPT - IMAGE",
+      "content": {
+        "Titre": "Les prototypes rapides",
+        "Mot": "Prototypage",
+        "Definition": "Des maquettes d'applications interactives créées pour valider un concept produit ou faire des démonstrations clients. Le but n'est pas d'avoir un code parfait, mais de matérialiser l'idée en un temps record en profitant de la capacité de l'IA à créer à partir de zéro.",
+        "Intro": "Valider une idée produit en quelques heures grâce à une interface interactive temporaire.",
+        "Source": "Source : Vibe Coding 2026 - Prototypes rapides - Maxime Elhaik",
+        "Titre 1": "Maquette Interactive",
+        "Texte 1": "Prototype web cliquable conçu pour faire tester un nouveau parcours utilisateur avant le vrai développement.",
+        "Titre 2": "Démonstrateur B2B",
+        "Texte 2": "Outil jetable développé en une journée pour illustrer concrètement un concept lors d'un rendez-vous client.",
+        "Picto 1": "mdi:footprints",
+        "Picto 2": "mdi:city-variant"
+      },
+      "image_concept": "A dynamic smartphone interface showcasing quick swipe actions",
+      "image_style": "minimalist abstract 3D render",
+      "image_ratio": "1:1"
+    },
+    {
+      "template": "VIBECODING - CONCEPT - IMAGE",
+      "content": {
+        "Titre": "Le modèle du Micro-SaaS",
+        "Mot": "Micro-SaaS",
+        "Definition": "Une application web hébergée qui résout un unique problème métier bien précis pour une cible étroite, comme la facturation. Ce périmètre d'action ultra-restreint est parfait pour le Vibe Coding car il limite la taille du code et évite à l'IA de saturer son contexte.",
+        "Intro": "Une application web payante à fonctionnalité unique, facile à développer et à maintenir.",
+        "Source": "Source : Vibe Coding 2026 - Micro-SaaS ciblés - Maxime Elhaik",
+        "Titre 1": "Générateur de Contrats",
+        "Texte 1": "Plateforme web payante permettant aux freelances de générer des contrats PDF à partir d'un formulaire.",
+        "Titre 2": "Scoreur de Profils",
+        "Texte 2": "Outil en ligne analysant un profil LinkedIn pour attribuer un score de performance et des recommandations.",
+        "Picto 1": "mdi:script-text",
+        "Picto 2": "mdi:podium-gold"
+      },
+      "image_concept": "A single modular tool floating on a browser window",
+      "image_style": "minimalist abstract 3D render",
+      "image_ratio": "1:1"
+    },
+    {
+      "template": "VIBECODING - CONCEPT - IMAGE",
+      "content": {
+        "Titre": "Les utilitaires métiers",
+        "Mot": "Utilitaires",
+        "Definition": "Des applications internes conçues pour structurer le travail d'une équipe (tableaux de bord, CRM de suivi). La tolérance à l'erreur d'interface y est élevée car l'outil est réservé à un usage privé, ce qui facilite grandement le déploiement immédiat de la base de code de l'IA.",
+        "Intro": "Des outils internes sur-mesure pour supprimer les fichiers Excel manuels et complexes.",
+        "Source": "Source : Vibe Coding 2026 - Outils internes - Maxime Elhaik",
+        "Titre 1": "Planning d'Équipe",
+        "Texte 1": "Tableau de bord sur-mesure pour visualiser les congés et remplacer un fichier Excel devenu trop complexe.",
+        "Titre 2": "Tracker de Matériel",
+        "Texte 2": "Application mobile interne permettant aux techniciens sur le terrain de faire l'inventaire des équipements.",
+        "Picto 1": "mdi:people-group",
+        "Picto 2": "mdi:check-all"
+      },
+      "image_concept": "Clean internal dashboard panels and metrics chart",
+      "image_style": "minimalist abstract 3D render",
+      "image_ratio": "1:1"
+    },
+    {
+      "template": "VIBECODING - CONCEPT - IMAGE",
+      "content": {
+        "Titre": "Les landing pages animées",
+        "Mot": "Sites vitrines",
+        "Definition": "Des pages uniques à fort impact visuel, intégrant des animations CSS ou des effets 3D légers. Sans base de données complexe ou logique de serveurs lourde, ces sites se codent sans risque de crash structurel majeur, faisant d'eux de superbes candidats pour le Vibe Coding.",
+        "Intro": "Créer des sites vitrines modernes avec des interactions dynamiques fluides.",
+        "Source": "Source : Vibe Coding 2026 - Landing pages - Maxime Elhaik",
+        "Titre 1": "Lancement de Produit",
+        "Texte 1": "Site vitrine one-page dynamique avec effets au défilement (parallax) pour maximiser les pré-commandes.",
+        "Titre 2": "Portfolio d'Agence",
+        "Texte 2": "Galerie web interactive mettant en valeur les réalisations visuelles d'une agence avec des transitions fluides.",
+        "Picto 1": "mdi:magic",
+        "Picto 2": "mdi:art"
+      },
+      "image_concept": "Stunning web page UI layout with vibrant animated elements",
+      "image_style": "minimalist abstract 3D render",
+      "image_ratio": "1:1"
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "Les projets à éviter pour l'instant",
+        "Intro": "Trois catégories de projets présentent un risque d'échec élevé avec le Vibe Coding, même pour des cas simples.",
+        "Titre 1": "JEUX 3D",
+        "Violet 1": "Moteurs physiques et rendu temps réel",
+        "Parametre 1": "Risque ++",
+        "Texte 1": "Les moteurs physiques et les rendus graphiques en temps réel sont impossibles à déboguer uniquement par texte. L'IA sature rapidement face à la complexité des boucles de jeu.",
+        "Picto 1": "mdi:dinosaur-pixel",
+        "Titre 2": "SÉCURITÉ CRITIQUE",
+        "Violet 2": "Applications bancaires et médicales lourdes",
+        "Parametre 2": "Risque ++",
+        "Texte 2": "Les apps bancaires ou de santé exigent un audit humain ligne par ligne et une couverture de tests exhaustive — deux contraintes incompatibles avec la génération automatique de code.",
+        "Picto 2": "mdi:shield-unlocked",
+        "Titre 3": "CODE LEGACY",
+        "Violet 3": "Bases de code anciennes sans tests unitaires",
+        "Parametre 3": "Risque ++",
+        "Texte 3": "Modifier une base de code massive sans couverture de tests unitaires provoque des régressions en cascade. L'IA ne peut pas anticiper les effets de bord sur du code non documenté.",
+        "Picto 3": "mdi:stop-alert"
+      },
+      "image_concept": "Warning sign or barrier representing coding limitations",
+      "image_style": "conceptual dark graphic illustration",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - EXERCICE",
+      "content": {
+        "Titre": "Exercice : Choisissez votre projet",
+        "Titre 1": "Votre idée brute",
+        "Texte 1": "Décrivez en une phrase le problème simple que vous souhaitez automatiser ou résoudre.",
+        "Titre 2": "Le filtre d'éligibilité",
+        "Texte 2": "Vérifiez que votre projet ne fait pas partie des cas complexes à éviter pour débuter.",
+        "Titre 3": "L'unique livrable visé",
+        "Texte 3": "Formulez le résultat attendu à la fin (ex: générer un PDF ou synchroniser deux outils).",
+        "Bulle": "À vous de jouer : partagez votre idée de projet sur le canal Discord de la formation pour obtenir un retour personnalisé."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Identifier le bon projet permet de maximiser le taux de réussite. En ciblant des applications autonomes, des langages standards et des architectures simples, on limite les risques d'erreur logicielle. L'approche Vibe Coding excelle sur le prototypage et les micro-services, laissant les systèmes legacy lourds et cryptographiques à des approches de développement mais aussi de maintenance plus traditionnelles.",
+        "Titre Bulle": "En Bref",
+        "Texte Bulle": "EN BREF : une fois le projet validé comme éligible, l'étape suivante consiste à définir précisément son persona et son MVP pour délimiter le périmètre de développement."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

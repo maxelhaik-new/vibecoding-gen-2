@@ -10,7 +10,7 @@ interface LayoutProps {
 
 export const IntroLayout: React.FC<LayoutProps> = ({ content, onChange, rules }) => {
   return (
-    <div style={{ width: '100%', height: '100%', position: 'relative', overflow: 'hidden', backgroundColor: '#FFFFFF' }}>
+    <div style={{ width: '100%', height: '100%', position: 'relative', overflow: 'hidden', backgroundColor: 'var(--slide-bg)' }}>
       {/* Blanc */}
       <div
         style={{

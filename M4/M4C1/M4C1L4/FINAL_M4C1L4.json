@@ -1,0 +1,17 @@
+{
+  "lessonSlug": "m4c1l4",
+  "lessonTitle": "M4C1L4 — Installer et paramétrer son environnement Antigravity",
+  "lessonType": "logiciel",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Installer et paramétrer son environnement Antigravity"
+      }
+    },
+    {
+      "template": "VIBECODING - DEMO",
+      "content": {}
+    }
+  ]
+}

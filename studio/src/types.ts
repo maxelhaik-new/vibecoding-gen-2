@@ -45,4 +45,5 @@ export interface LessonSummary {
   hasFinal: boolean;
   status: 'no_plan' | 'plan_only' | 'sliced' | 'written' | 'completed' | 'error';
   slideCount: number;
+  type?: string;
 }

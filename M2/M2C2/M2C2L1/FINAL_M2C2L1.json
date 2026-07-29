@@ -1,0 +1,24 @@
+{
+  "lessonTitle": "M2C2L1 — Les objectifs du chapitre : cadrer un projet de Vibe Coding",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Cadrer un projet de Vibe Coding"
+      }
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Ce chapitre détaille les étapes pour cadrer son projet. On y apprend à évaluer son éligibilité, à cibler son MVP, à le découper en stories, à rédiger son cahier des charges et à choisir la bonne stack.",
+        "Titre 1": "Identifier des projets pour le Vibe Coding",
+        "Titre 2": "Définir son persona et son MVP",
+        "Titre 3": "Découper un projet en user stories simples",
+        "Titre 4": "Du besoin métier au cahier des charges minimal",
+        "Titre 5": "Les technologies clés pour son cahier des charges",
+        "Titre 6": ""
+      }
+    }
+  ]
+}

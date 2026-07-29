@@ -1,0 +1,100 @@
+{
+  "lessonTitle": "M2C5L4 — Partager sa logique sans donner ses données",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Partager sa logique sans livrer ses données"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Résoudre un bug sans fuites",
+        "Intro": "Pour déboguer, l'agent a besoin de comprendre la structure des données — pas les vrais noms ou emails de nos utilisateurs. Coller une vraie liste de clients dans le chat, c'est une faille de sécurité immédiate. Voyons comment partager la logique sans exposer les données.",
+        "Titre 1": "Structure vs. données",
+        "Texte 1": "Voyons comment extraire la logique d'un code sans y joindre la moindre information personnelle ou confidentielle.",
+        "Titre 2": "Les techniques de masque",
+        "Texte 2": "Zoom sur les méthodes concrètes pour remplacer les vraies valeurs par des données fictives avant tout envoi.",
+        "Titre 3": "Les réflexes de prompt",
+        "Texte 3": "Apprenons à construire des prompts à partir de schémas vides, sans jamais inclure de données réelles."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Schéma vs. données réelles",
+        "Mot": "Le schéma de données",
+        "Definition": "Un schéma décrit l'organisation des données : « un utilisateur a un nom, un email, un âge ». C'est cette structure que l'agent utilise pour coder — les vraies valeurs n'apportent rien et exposent des données privées.",
+        "Bulle": "Pour réparer un tuyau, le plombier a besoin des plans — pas de l'eau qui y coule."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Anonymiser vs. Pseudonymiser",
+        "Intro": "Deux techniques permettent de nettoyer un prompt avant envoi. Le choix dépend du niveau de sécurité et du besoin de réversibilité.",
+        "Titre A": "ANONYMER",
+        "Titre B": "PSEUDONYMER",
+        "Item 1": "Principe",
+        "Item 2": "Méthod",
+        "Item 3": "Retour",
+        "Item 4": "Usage",
+        "Texte A Item 1": "Remplacer l'information par une généralité abstraite",
+        "Texte A Item 2": "« Un utilisateur », « Client A », « Compte #42 »",
+        "Texte A Item 3": "Impossible — modification irréversible",
+        "Texte A Item 4": "Idéal pour analyser des logs ou isoler un bug",
+        "Texte B1": "Remplacer l'identifiant réel par un code factice cohérent",
+        "Texte B2": "Fausses données réalistes : nom, email fictifs",
+        "Texte B3": "Via une table de correspondance dédiée",
+        "Texte B4": "Tester des scénarios complexes"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "Nettoyage de prompt",
+        "Intro": "Avant d'envoyer un extrait de base de données à l'agent, on suit six étapes pour éliminer toute donnée sensible.",
+        "Titre 1": "Repérer",
+        "Violet 1 ": "Identifier les informations nominatives",
+        "Titre 2": "Éditer",
+        "Violet 2": "Remplacer noms et emails par des alias",
+        "Titre 3": "Agréger",
+        "Violet 3": "Transformer les valeurs exactes en tranches",
+        "Titre 4": "Tronquer",
+        "Violet 4": "Supprimer les colonnes inutiles au bug",
+        "Titre 5": "Tester",
+        "Violet 5": "Relire le prompt nettoyé",
+        "Titre 6": "Envoyer",
+        "Violet 6": "Soumettre le cas simplifié à l'agent"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Le développeur est le filtre",
+        "Intro": "L'agent IA n'a aucune conscience de la confidentialité des données qu'on lui envoie. C'est à nous de jouer le rôle de filtre avant chaque envoi. On prend l'habitude de ne fournir que des schémas, des mock data ou des exemples génériques. En bref : on partage l'architecture du problème — jamais la vie privée de ses utilisateurs.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "La leçon suivante rassemble ces réflexes sous forme de checklist : un protocole court à appliquer avant chaque prompt pour garantir un Vibe Coding sécurisé de bout en bout. Un seul oubli peut suffire à exposer des données réelles — la checklist est là pour éviter ça."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

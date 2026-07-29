@@ -362,9 +362,137 @@
         // Réinitialise le mode après traitement
         pasteMode = 'generate';
       } catch (err) {
-        console.error(err);
-        showStatus('JSON invalide', 'error');
+        // Détection de contenu HTML/CSS sur-mesure si le parsing JSON échoue
+        const trimmed = jsonText.trim();
+        if (trimmed.startsWith('<') || trimmed.includes('</') || trimmed.includes('<div') || trimmed.includes('<style') || trimmed.includes('<!DOCTYPE')) {
+          showStatus('Génération sur-mesure HTML -> Figma...', '');
+          try {
+            const spec = parseHTMLToFigmaSpec(trimmed);
+            parent.postMessage({ pluginMessage: { type: 'build-custom-slide', data: spec } }, '*');
+          } catch (htmlErr) {
+            console.error("Erreur de parsing HTML:", htmlErr);
+            showStatus('Échec de création de la slide HTML', 'error');
+          }
+        } else {
+          console.error(err);
+          showStatus('JSON ou HTML invalide', 'error');
+        }
       }
+    }
+
+    function parseHTMLToFigmaSpec(htmlStr) {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlStr, 'text/html');
+
+      // Récupère les balises style et les injecte temporairement dans l'iframe
+      const styles = doc.querySelectorAll('style');
+      const injectedStyles = [];
+      styles.forEach(s => {
+        const styleEl = document.createElement('style');
+        styleEl.textContent = s.textContent;
+        document.head.appendChild(styleEl);
+        injectedStyles.push(styleEl);
+      });
+
+      const container = document.createElement('div');
+      container.style.position = 'fixed';
+      container.style.left = '-9999px';
+      container.style.top = '-9999px';
+      container.style.width = '1920px';
+      container.style.height = '1080px';
+
+      const bodyContent = doc.body ? doc.body.innerHTML : htmlStr;
+      container.innerHTML = bodyContent;
+      document.body.appendChild(container);
+
+      function elementToSpec(el) {
+        if (el.nodeType === Node.TEXT_NODE) {
+          const txt = el.textContent.trim();
+          if (!txt) return null;
+          const parentName = el.parentElement ? (el.parentElement.getAttribute('data-figma-name') || el.parentElement.id) : null;
+          return { type: 'TEXT', text: txt, figmaName: parentName };
+        }
+        if (el.nodeType !== Node.ELEMENT_NODE) return null;
+
+        const tag = el.tagName.toLowerCase();
+        if (tag === 'style' || tag === 'script' || tag === 'link' || tag === 'meta') return null;
+
+        const comp = window.getComputedStyle(el);
+        if (comp.display === 'none' || comp.visibility === 'hidden') return null;
+
+        const children = [];
+        for (const c of el.childNodes) {
+          const childSpec = elementToSpec(c);
+          if (childSpec) children.push(childSpec);
+        }
+
+        const customName = el.getAttribute('data-figma-name') || el.id || el.className;
+
+        return {
+          type: 'FRAME',
+          tagName: tag,
+          figmaName: customName || tag,
+          className: el.className || '',
+          styles: {
+            display: comp.display,
+            flexDirection: comp.flexDirection,
+            justifyContent: comp.justifyContent,
+            alignItems: comp.alignItems,
+            gap: comp.gap,
+            paddingTop: parseFloat(comp.paddingTop) || 0,
+            paddingRight: parseFloat(comp.paddingRight) || 0,
+            paddingBottom: parseFloat(comp.paddingBottom) || 0,
+            paddingLeft: parseFloat(comp.paddingLeft) || 0,
+            backgroundColor: comp.backgroundColor,
+            color: comp.color,
+            fontSize: parseFloat(comp.fontSize) || 16,
+            fontWeight: comp.fontWeight,
+            borderRadius: parseFloat(comp.borderRadius) || 0,
+            width: el.offsetWidth,
+            height: el.offsetHeight,
+            flexGrow: parseFloat(comp.flexGrow) || 0,
+            flexShrink: parseFloat(comp.flexShrink) || 1,
+            alignSelf: comp.alignSelf,
+            textAlign: comp.textAlign,
+            flexWrap: comp.flexWrap,
+            // --- Propriétés étendues pour le rendu Figma ---
+            position: comp.position,
+            top: parseFloat(comp.top) || 0,
+            left: parseFloat(comp.left) || 0,
+            opacity: parseFloat(comp.opacity),
+            overflow: comp.overflow,
+            lineHeight: comp.lineHeight,
+            letterSpacing: comp.letterSpacing,
+            textTransform: comp.textTransform,
+            borderWidth: parseFloat(comp.borderTopWidth) || 0,
+            borderColor: comp.borderTopColor,
+            borderStyle: comp.borderTopStyle,
+            boxShadow: comp.boxShadow,
+            maxWidth: parseFloat(comp.maxWidth) || 0,
+            minWidth: parseFloat(comp.minWidth) || 0,
+            backgroundImage: comp.backgroundImage,
+            gridTemplateColumns: comp.gridTemplateColumns
+          },
+          children: children
+        };
+      }
+
+      let root = null;
+      for (const child of container.children) {
+        const tag = child.tagName.toLowerCase();
+        if (tag !== 'style' && tag !== 'script' && tag !== 'link' && tag !== 'meta') {
+          root = child;
+          break;
+        }
+      }
+      if (!root) root = container;
+
+      const result = elementToSpec(root);
+
+      document.body.removeChild(container);
+      injectedStyles.forEach(s => document.head.removeChild(s));
+
+      return result;
     }
 
     // Clic sur le bouton d'envoi : on focus la zone cachée et on invite à faire Cmd+V

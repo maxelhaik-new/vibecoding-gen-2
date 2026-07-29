@@ -1,0 +1,172 @@
+{
+  "lessonTitle": "M2C4L10",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Responsabilité légale du Vibe Coder"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "L'IA fait, on reste responsable",
+        "Intro": "Le Vibe Coding permet de déployer une application complète sans écrire une seule ligne à la main. Mais la loi ne connaît pas les agents IA : si l'application cause un préjudice, c'est le Vibe Coder qui répond. Failles, données volées, non-conformité — faisons le point sur ce que ça implique concrètement.",
+        "Titre 1": "La responsabilité légale",
+        "Texte 1": "Voyons pourquoi on est seul responsable devant la loi, même quand c'est l'agent qui a tout généré.",
+        "Titre 2": "Les règles RGPD et IA Act",
+        "Texte 2": "Zoom sur les obligations concrètes à intégrer dans chaque application déployée en Europe.",
+        "Titre 3": "Avant de mettre en ligne",
+        "Texte 3": "Découvrons le protocole de vérification à suivre systématiquement avant de pousser une app en production."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "L'IA n'est pas un sujet de droit",
+        "Mot": "On est seul responsable devant la loi",
+        "Definition": "En cas de fuite de données, de bug qui bloque des utilisateurs ou de piratage, aucun recours contre l'agent IA n'est possible. Il n'existe pas légalement. Le développeur qui met l'application en ligne endosse seul la responsabilité civile et pénale — qu'il ait ou non écrit le code.",
+        "Bulle": "Signer un contrat client sans avoir audité son code, c'est s'exposer sans filet de protection."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "Trois failles que l'agent oublie souvent",
+        "Intro": "Le code IA fonctionne souvent à l'écran — mais il peut contenir des failles silencieuses. Voici les trois plus fréquentes.",
+        "Titre 1": "Données volées",
+        "Parametre 1": "FAILLE #1",
+        "Violet 1": "Entrées non filtrées côté serveur",
+        "Texte 1": "Quand l'agent ne vérifie pas ce que l'utilisateur tape dans un formulaire, un attaquant peut injecter des commandes qui lisent ou suppriment toute la base de données. L'agent oublie régulièrement cette vérification si on ne la demande pas.",
+        "Titre 2": "Données exposées",
+        "Parametre 2": "FAILLE #2",
+        "Violet 2": "Accès croisé aux données dans Supabase",
+        "Texte 2": "Sans activer la protection par ligne dans Supabase (appelée Row Level Security), chaque utilisateur peut lire les données des autres. L'application fonctionne normalement à l'écran — mais toutes les données sont accessibles à qui sait chercher.",
+        "Titre 3": "Code malveillant injecté",
+        "Parametre 3": "FAILLE #3",
+        "Violet 3": "Scripts indésirables dans les pages",
+        "Texte 3": "Sans protection contre le Cross-Site Scripting, un attaquant peut glisser un bout de code dans une page vue par d'autres utilisateurs. Conséquence concrète : vol de session, redirection frauduleuse ou prise de contrôle de compte.",
+        "Picto 1": "mdi:database-alert-outline",
+        "Picto 2": "mdi:lock-open-outline",
+        "Picto 3": "mdi:bug-outline"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO - ALT",
+      "content": {
+        "Titre": "Les trois règles RGPD incontournables",
+        "Intro": "Toute application qui collecte des données en Europe tombe sous le RGPD. Trois obligations techniques sont non négociables dès la conception.",
+        "Titre 1": "Droits des utilisateurs intégrés",
+        "Texte 1": "Suppression de compte et export des données doivent être accessibles sans intervention manuelle de l'éditeur dès la conception.",
+        "Picto 1": "mdi:account-check-outline",
+        "Titre 2": "Hébergement strictement en Europe",
+        "Texte 2": "Stocker les bases sur des serveurs EU (Supabase, Scaleway, Railway). Activer le chiffrement des données au repos et en transit.",
+        "Picto 2": "mdi:server-security",
+        "Titre 3": "Collecte limitée au strict nécessaire",
+        "Texte 3": "Chaque colonne en trop dans la base est un risque juridique supplémentaire en cas de fuite ou de contrôle CNIL.",
+        "Picto 3": "mdi:database-minus-outline",
+        "Source": "Source : Conformité RGPD - Illustration générée par IA - Maxime Elhaik"
+      },
+      "image_concept": "A clean architectural diagram showing a European server rack with a shield icon, a minimalist data flow between user and database, and a lock symbol — representing RGPD compliance in a modern tech stack",
+      "image_style": "pedagogical",
+      "image_ratio": "portrait"
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "L'IA Act : trois obligations",
+        "Intro": "Intégrer un agent IA dans une application déclenche trois obligations concrètes sous l'IA Act, en vigueur depuis août 2024.",
+        "Titre 1": "Transparence",
+        "Parametre 1": "RÈGLE #1",
+        "Violet 1": "Mention obligatoire sur tout contenu IA",
+        "Texte 1": "Signaler à l'utilisateur qu'il interagit avec un agent IA. La mention « Généré par IA » est obligatoire sur tout contenu produit automatiquement, sous peine de sanction dès août 2025.",
+        "Picto 1": "mdi:eye-check-outline",
+        "Titre 2": "Risque élevé",
+        "Parametre 2": "RÈGLE #2",
+        "Violet 2": "Certification avant tout déploiement",
+        "Texte 2": "Un outil de recrutement automatisé entre dans la catégorie haut risque. Sans certification préalable, les amendes peuvent atteindre 30 millions d'euros ou 6 % du chiffre d'affaires mondial.",
+        "Picto 2": "mdi:alert-decagram-outline",
+        "Titre 3": "Garde-fous",
+        "Parametre 3": "RÈGLE #3",
+        "Violet 3": "Blocage des détournements de l'agent",
+        "Texte 3": "Bloquer les détournements de l'agent embarqué : génération de contenus illicites, contournement de modération ou injection d'instructions malveillantes dans les instructions système.",
+        "Picto 3": "mdi:shield-alert-outline"
+      },
+      "image_concept": "A giant mechanical scale of justice with one side holding a glowing neural network chip and the other side holding a European flag shield — symbolizing the balance between AI innovation and regulatory compliance",
+      "image_style": "chiaroscuro",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - CHRONOLOGIE",
+      "content": {
+        "Titre": "Le calendrier de l'IA Act",
+        "Intro": "L'IA Act européen encadre progressivement la création d'applications. Voici les échéances clés à respecter pour rester dans la légalité.",
+        "Date 1": "Août 2024",
+        "Titre 1": "Entrée en vigueur",
+        "Texte 1": "Publication officielle de la loi européenne sur l'IA, marquant le départ des règles.",
+        "Date 2": "Février 2025",
+        "Titre 2": "Pratiques interdites",
+        "Texte 2": "Bannissement des applications manipulatrices ou de surveillance de masse.",
+        "Date 3": "Août 2025",
+        "Titre 3": "Alerte obligatoire",
+        "Texte 3": "Obligation d'informer l'utilisateur qu'il échange avec une IA ou lit un texte généré.",
+        "Date 4": "Août 2026",
+        "Titre 4": "Systèmes surveillés",
+        "Texte 4": "Certification obligatoire pour les applications de recrutement ou d'éducation.",
+        "Date 5": "Courant 2027",
+        "Titre 5": "Contrôles et amendes",
+        "Texte 5": "Application totale des sanctions financières pour toutes les applications non conformes.",
+        "Texte Bulle": "Règle : en Vibe Coding, on anticipe ces étapes. Mieux vaut étiqueter ses agents et sécuriser ses bases dès aujourd'hui."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "6 étapes avant de mettre en ligne",
+        "Intro": "Avant de pousser en production, on suit une séquence en six étapes. Chaque étape passée à la trappe est une faille potentielle en ligne.",
+        "Titre 1": "Tests fonctionnels",
+        "Violet 1 ": "Valider le comportement attendu",
+        "Titre 2": "Accès",
+        "Violet 2": "Vérifier les droits Supabase (RLS)",
+        "Titre 3": "Dépôts",
+        "Violet 3": "Scanner les bibliothèques avec npm audit",
+        "Titre 4": "Revue RGPD",
+        "Violet 4": "Droits, chiffrement, hébergement EU",
+        "Titre 5": "Check IA",
+        "Violet 5": "Vérifier mentions IA et niveau risque",
+        "Titre 6": "Audit",
+        "Violet 6": "Relecture par agent spécialisé sécurité"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Du prompteur au pilote responsable",
+        "Intro": "Le Vibe Coder n'est pas un exécutant de prompts. C'est le pilote d'un produit réel, avec de vrais utilisateurs et de vraies obligations légales. La conformité RGPD, la sécurité du backend et le respect de l'IA Act ne sont pas des cases à cocher en fin de projet — ce sont des contraintes de conception à intégrer dès le premier sprint. Un code qui fonctionne n'est pas un code qui est prêt à être déployé. On vérifie les droits d'accès, on scanne les bibliothèques, on audite les données collectées, et on déploie.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Ce chapitre clôt le volet éthique et juridique de la formation. La suite entre dans le concret : architecture de stack, connexion aux API et déploiement continu. Le cadre légal posé ici reste le fil conducteur de chaque décision technique à venir."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

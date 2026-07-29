@@ -1,0 +1,25 @@
+{
+  "lessonSlug": "m4c5l1",
+  "lessonTitle": "M4C5L1 — Les objectifs du chapitre : itérations & Git local",
+  "lessonType": "objectif",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Chapitre 5 : Construire le projet fil rouge (Partie 2 : Itérations & Git local)"
+      }
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Affiner la qualité du code, résoudre les erreurs et gérer le versioning Git directement depuis Antigravity.",
+        "Titre 1": "Refactoriser son code avec l'aide de l'agent",
+        "Titre 2": "Gérer et corriger les erreurs de manière efficace",
+        "Titre 3": "Utiliser Git depuis l'IDE (commits et branches)",
+        "Titre 4": "Résoudre des conflits de version simples avec l'IA",
+        "Titre 5": "Déléguer des tests web avec le Browser Subagent"
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "lessonSlug": "m4c2l6",
+  "lessonTitle": "M4C2L6 — À vous de jouer : Récupérez et modifiez votre application !",
+  "lessonType": "exercice",
+  "slides": [
+    {
+      "template": "VIBECODING - EXERCICE PRATIQUE",
+      "content": {
+        "Titre": "Ce qu’il faut faire",
+        "EXERCICE": "EXERCICE",
+        "Intro": "À nous de jouer en appliquant les différentes étapes vues dans ce chapitre !",
+        "Titre 1": "Tâches à réaliser",
+        "Texte 1": "Cloner un projet exemple depuis GitHub, l'explorer en mode Chat puis générer et valider une itération avec le mode Composer et le mode Plan.",
+        "Question 1": "Cloner le projet d'exemple distant depuis GitHub dans l'environnement local Antigravity.",
+        "Question 2": "Interroger l'agent en mode Chat pour comprendre l'architecture du projet.",
+        "Question 3": "Formuler une demande de modification en mode Composer et valider le plan en mode Plan."
+      }
+    },
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "À nous de jouer : récupérer et modifier une application !"
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Checklist de validation",
+        "Intro": "Valider la prise en main des modes de prompt et la modification de l'application.",
+        "Texte Intro": "Une manipulation maîtrisée garantit la stabilité du code et l'efficacité des itérations. Voici la liste des points de contrôle.",
+        "Nom Checklist": "La Checklist",
+        "Texte 1": "Le dépôt GitHub exemple est cloné dans l'environnement Antigravity.",
+        "Texte 2": "L'agent répond de manière pertinente sur le code du projet en mode Chat.",
+        "Texte 3": "La demande de modification est formulée clairement dans le mode Composer.",
+        "Texte 4": "Le plan de modification est relu et validé en mode Plan avant l'application.",
+        "Texte 5": "L'application modifiée s'exécute correctement en local."
+      }
+    }
+  ]
+}

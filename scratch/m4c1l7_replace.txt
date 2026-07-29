@@ -1,0 +1,2 @@
+| M4C1L6 | 5 min | Récupérer un projet avec git clone |  |
+| M4C1L7 | 5 min | Comprendre le terminal & les commandes clés du Vibe Coder |  |

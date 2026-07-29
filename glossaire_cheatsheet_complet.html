@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibe Coding — Glossaire Officiel complet (Format A4)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800;900&display=swap');
+
+    :root {
+      /* Palette officielle Vibe Coding */
+      --color-brand-purple: #6634D9;
+      --color-brand-fig: #18093B;
+      --color-brand-sunny: #FFFF77;
+      --color-brand-pink: #FFB2B2;
+      --color-pink-20: #FCF1F0;
+      --color-border-subtle: #e2e8f0;
+      --color-bg-white: #FFFFFF;
+      --font-main: 'Basic Sans Alt', 'Basic Sans', 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: #cbd5e1;
+      color: var(--color-brand-fig);
+      padding: 1.5rem 0;
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: auto;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    .screen-actions {
+      position: sticky;
+      left: 1.5rem;
+      width: fit-content;
+      margin: 0 0 1.5rem 1.5rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      background: var(--color-brand-fig);
+      color: #FFFFFF;
+      padding: 0.8rem 1.5rem;
+      border-radius: 0px;
+      box-shadow: 4px 4px 0px var(--color-brand-purple);
+      z-index: 100;
+    }
+
+    .screen-actions span {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--color-brand-sunny);
+    }
+
+    .btn-print {
+      background: var(--color-brand-purple);
+      color: var(--color-brand-sunny);
+      border: 2px solid var(--color-brand-sunny);
+      padding: 0.5rem 1.2rem;
+      font-family: var(--font-main);
+      font-weight: 800;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .pages-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      padding: 0 1.5rem 2rem 1.5rem;
+      min-width: max-content;
+    }
+
+    .a4-page {
+      width: 210mm;
+      height: 297mm;
+      background: var(--color-bg-white);
+      border: none;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      padding: 14mm 14mm 10mm 14mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      page-break-after: always;
+      break-after: page;
+    }
+
+    .page-main-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    header {
+      background: var(--color-brand-fig);
+      border: 2px solid var(--color-brand-fig);
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.1rem;
+      color: #FFFFFF;
+    }
+
+    header.compact {
+      padding: 0.7rem 1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.2rem;
+    }
+
+    .badge-header {
+      background: var(--color-brand-sunny);
+      color: var(--color-brand-fig);
+      font-weight: 900;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border: 1px solid var(--color-brand-fig);
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 1.7rem;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      text-transform: uppercase;
+    }
+
+    header.compact h1 {
+      font-size: 1.25rem;
+    }
+
+    .header-sub {
+      margin-top: 0.25rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-brand-sunny);
+    }
+
+    .glossary-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .term-item {
+      background: var(--color-bg-white);
+      border: 1px solid var(--color-border-subtle);
+      padding: 0.9rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .term-item:nth-child(even) {
+      background: var(--color-pink-20);
+    }
+
+    .term-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .term-name {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--color-brand-fig);
+      letter-spacing: -0.01em;
+    }
+
+    .type-tag {
+      background: #18093B;
+      color: #FFFF77;
+      font-weight: 800;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border: 1px solid #18093B;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .term-definition {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-brand-fig);
+      line-height: 1.42;
+    }
+
+    .term-footer {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.2rem;
+      padding-top: 0.35rem;
+      border-top: 1px dashed #cbd5e1;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .ref-code {
+      background: var(--color-brand-purple);
+      color: #FFFFFF;
+      padding: 0.1rem 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+
+    .ref-title {
+      color: var(--color-brand-fig);
+      font-weight: 700;
+    }
+
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 0.5rem;
+      border-top: 2px solid var(--color-brand-fig);
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--color-brand-fig);
+    }
+
+    .page-number {
+      background: var(--color-brand-fig);
+      color: var(--color-brand-sunny);
+      padding: 0.15rem 0.6rem;
+    }
+
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+        overflow-x: visible;
+      }
+      .screen-actions {
+        display: none;
+      }
+      .pages-wrapper {
+        display: block;
+        padding: 0;
+      }
+      .a4-page {
+        margin: 0;
+        box-shadow: none;
+        width: 210mm;
+        height: 297mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="screen-actions">
+    <span>📄 Glossaire Complet — 57 termes ({total_pages} pages A4)</span>
+    <button class="btn-print" onclick="window.print()">Imprimer / PDF</button>
+  </div>
+
+  <div class="pages-wrapper">
+
+    <!-- PAGE 1 -->
+    <div class="a4-page">
+      <div class="page-main-content">
+        <header class="">
+          <div class="header-top">
+            <span class="badge-header">Formation Vibe Coding</span>
+            <span style="font-weight: 800; font-size: 0.8rem;">Modules 1 à 4</span>
+          </div>
+          <h1>Glossaire Officiel </h1>
+          <div class="header-sub">Fiche A4 — Page 1 / 12</div>
+        </header>
+
+        <div class="glossary-list">
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">AGENTS.md</div>
+              <span class="type-tag">Fichier de contexte / Méthode</span>
+            </div>
+            <div class="term-definition">
+              Fichier texte situé à la racine d'un projet, regroupant les consignes, les technologies autorisées et les règles de travail strictes à faire respecter par l'agent IA.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C3L1</span>
+              <span class="ref-title">La gestion des agents IA dans un IDE local</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Antigravity</div>
+              <span class="type-tag">IDE / Agent SOTA</span>
+            </div>
+            <div class="term-definition">
+              Éditeur de code intelligent sur ordinateur permettant de piloter des assistants IA autonomes et d'exécuter des séquences de travail avancées.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C1L1</span>
+              <span class="ref-title">Découvrir les bases d'Antigravity</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">API (Application Programming Interface)</div>
+              <span class="type-tag">Architecture</span>
+            </div>
+            <div class="term-definition">
+              Passerelle et ensemble de règles permettant à deux applications ou services informatiques de communiquer et d'échanger des informations automatiquement.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C4L4</span>
+              <span class="ref-title">Connecter l'interface Front-end au serveur local</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Bac à sable (sandboxing)</div>
+              <span class="type-tag">Sécurité / IDE</span>
+            </div>
+            <div class="term-definition">
+              Zone d'exécution isolée et sécurisée qui limite les accès réseau et ordinateur d'une IA afin d'éviter toute commande dangereuse.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C4L5</span>
+              <span class="ref-title">Mettre en place une routine de veille efficace</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Back-end</div>
+              <span class="type-tag">Architecture</span>
+            </div>
+            <div class="term-definition">
+              Coulisses et partie serveur d'une application, chargées du traitement des données, des règles internes et des échanges avec la base de données.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C3L1</span>
+              <span class="ref-title">Différencier le Front-end et le Back-end</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>VIBE CODING — GLOSSAIRE OFFICIEL</span>
+        <span class="page-number">PAGE 1 / 12</span>
+      </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="a4-page">
+      <div class="page-main-content">
+        <header class="compact">
+          <div class="header-top">
+            <span class="badge-header">Formation Vibe Coding</span>
+            <span style="font-weight: 800; font-size: 0.8rem;">Modules 1 à 4</span>
+          </div>
+          <h1>Glossaire Officiel  (Suite)</h1>
+          <div class="header-sub">Fiche A4 — Page 2 / 12</div>
+        </header>
+
+        <div class="glossary-list">
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Bolt.new</div>
+              <span class="type-tag">Outil / Plateforme</span>
+            </div>
+            <div class="term-definition">
+              Outil de création d'applications web utilisable dans le navigateur, permettant de générer et tester un projet complet directement en ligne.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M2C3L1</span>
+              <span class="ref-title">Prise en main de Bolt.new</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Branche Git</div>
+              <span class="type-tag">Concept Git</span>
+            </div>
+            <div class="term-definition">
+              Copie parallèle du projet permettant de développer et tester une nouveauté en toute sécurité sans modifier la version principale.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C4L7</span>
+              <span class="ref-title">Maîtriser Git local (Commits & Branches)</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Browser agent</div>
+              <span class="type-tag">Outil IA</span>
+            </div>
+            <div class="term-definition">
+              Assistant IA capable de naviguer seul sur le web, d'interagir avec les éléments d'une page et de vérifier le fonctionnement d'une interface.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C3L6</span>
+              <span class="ref-title">Comprendre et utiliser un Browser Agent</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Claude 3.5 Sonnet</div>
+              <span class="type-tag">Modèle IA</span>
+            </div>
+            <div class="term-definition">
+              Modèle d'intelligence artificielle développé par Anthropic, très performant pour la rédaction de code et la résolution de problèmes complexes.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M3C2L1</span>
+              <span class="ref-title">Prise en main de Cursor pour le mobile</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Commit</div>
+              <span class="type-tag">Concept Git</span>
+            </div>
+            <div class="term-definition">
+              Sauvegarde horodatée de l'état du code source à un instant précis, accompagnée d'un message expliquant le changement effectué.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C1L8</span>
+              <span class="ref-title">Réaliser ses premiers commits avec l'agent</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>VIBE CODING — GLOSSAIRE OFFICIEL</span>
+        <span class="page-number">PAGE 2 / 12</span>
+      </div>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="a4-page">
+      <div class="page-main-content">
+        <header class="compact">
+          <div class="header-top">
+            <span class="badge-header">Formation Vibe Coding</span>
+            <span style="font-weight: 800; font-size: 0.8rem;">Modules 1 à 4</span>
+          </div>
+          <h1>Glossaire Officiel  (Suite)</h1>
+          <div class="header-sub">Fiche A4 — Page 3 / 12</div>
+        </header>
+
+        <div class="glossary-list">
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Composant UI</div>
+              <span class="type-tag">Concept web</span>
+            </div>
+            <div class="term-definition">
+              Élément visuel autonome et réutilisable dans une interface (ex. : bouton, carte d'information, formulaire).
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M2C2L3</span>
+              <span class="ref-title">Modifier et affiner le design en langage naturel</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Contexte (context window)</div>
+              <span class="type-tag">Concept IA</span>
+            </div>
+            <div class="term-definition">
+              Quantité maximale de mémoire (mesurée en tokens) qu'une IA peut lire et conserver en tête au cours d'une même session.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C2L3</span>
+              <span class="ref-title">Gérer le contexte et la mémoire de l'agent</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Cross-platform</div>
+              <span class="type-tag">Architecture</span>
+            </div>
+            <div class="term-definition">
+              Capacité d'un même projet de code à fonctionner sans réécriture sur plusieurs systèmes (iOS, Android, web).
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M3C1L1</span>
+              <span class="ref-title">Introduction à la création d'applications mobiles</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">CSS (Cascading Style Sheets)</div>
+              <span class="type-tag">Langage</span>
+            </div>
+            <div class="term-definition">
+              Langage responsable du style visuel des pages web, gérant les couleurs, la typographie et la disposition des éléments.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C3L3</span>
+              <span class="ref-title">Les bases du CSS</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Cursor</div>
+              <span class="type-tag">IDE / Outil</span>
+            </div>
+            <div class="term-definition">
+              Logiciel d'édition de code sur ordinateur qui intègre directement des assistants IA pour créer, corriger et faire évoluer des projets.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M3C2L1</span>
+              <span class="ref-title">Prise en main de Cursor pour le mobile</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>VIBE CODING — GLOSSAIRE OFFICIEL</span>
+        <span class="page-number">PAGE 3 / 12</span>
+      </div>
+    </div>
+
+    <!-- PAGE 4 -->
+    <div class="a4-page">
+      <div class="page-main-content">
+        <header class="compact">
+          <div class="header-top">
+            <span class="badge-header">Formation Vibe Coding</span>
+            <span style="font-weight: 800; font-size: 0.8rem;">Modules 1 à 4</span>
+          </div>
+          <h1>Glossaire Officiel  (Suite)</h1>
+          <div class="header-sub">Fiche A4 — Page 4 / 12</div>
+        </header>
+
+        <div class="glossary-list">
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">DOM (Document Object Model)</div>
+              <span class="type-tag">Concept web</span>
+            </div>
+            <div class="term-definition">
+              Structure organisée d'une page web que le langage JavaScript peut lire et modifier en temps réel (textes, boutons, affichage).
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C3L4</span>
+              <span class="ref-title">Les bases du JavaScript</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Dépôt Git (repository)</div>
+              <span class="type-tag">Concept Git</span>
+            </div>
+            <div class="term-definition">
+              Dossier de projet suivi par Git, qui conserve la totalité des fichiers, de l'historique des sauvegardes et des branches.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C1L4</span>
+              <span class="ref-title">Découvrir l'écosystème Git et GitHub</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Endpoint</div>
+              <span class="type-tag">Architecture / Web</span>
+            </div>
+            <div class="term-definition">
+              Adresse web spécifique d'une API permettant à une application d'envoyer ou de demander une donnée précise au serveur.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C4L4</span>
+              <span class="ref-title">Connecter l'interface Front-end au serveur local</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">.env (.env.local)</div>
+              <span class="type-tag">Sécurité / Configuration</span>
+            </div>
+            <div class="term-definition">
+              Fichier texte confidentiel servant à stocker les clés d'accès (API) et les réglages secrets à l'écart du code public.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C4L5</span>
+              <span class="ref-title">Isoler ses secrets et variables locales dans .env.local</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Expo</div>
+              <span class="type-tag">Outil / Framework</span>
+            </div>
+            <div class="term-definition">
+              Ensemble d'outils simplifiant la création, le test et la publication d'applications mobiles développées avec React Native.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M3C1L2</span>
+              <span class="ref-title">Découvrir l'écosystème Expo & React Native</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>VIBE CODING — GLOSSAIRE OFFICIEL</span>
+        <span class="page-number">PAGE 4 / 12</span>
+      </div>
+    </div>
+
+    <!-- PAGE 5 -->
+    <div class="a4-page">
+      <div class="page-main-content">
+        <header class="compact">
+          <div class="header-top">
+            <span class="badge-header">Formation Vibe Coding</span>
+            <span style="font-weight: 800; font-size: 0.8rem;">Modules 1 à 4</span>
+          </div>
+          <h1>Glossaire Officiel  (Suite)</h1>
+          <div class="header-sub">Fiche A4 — Page 5 / 12</div>
+        </header>
+
+        <div class="glossary-list">
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Express.js</div>
+              <span class="type-tag">Framework backend</span>
+            </div>
+            <div class="term-definition">
+              Outil côté serveur pour Node.js facilitant la création de passerelles (API) et la gestion des chemins de navigation web.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C4L3</span>
+              <span class="ref-title">Générer son premier serveur local (Node.js/Express)</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Front-end</div>
+              <span class="type-tag">Architecture</span>
+            </div>
+            <div class="term-definition">
+              Interface visuelle et partie écran d'une application, directement visible et manipulable par l'utilisateur.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C3L1</span>
+              <span class="ref-title">Différencier le Front-end et le Back-end</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Git</div>
+              <span class="type-tag">Outil / VCS</span>
+            </div>
+            <div class="term-definition">
+              Outil de suivi de version qui enregistre chaque évolution du code et permet d'annuler ou de comparer les modifications.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C1L8</span>
+              <span class="ref-title">Sauvegarder son travail avec Git</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">GitHub</div>
+              <span class="type-tag">Plateforme / Cloud</span>
+            </div>
+            <div class="term-definition">
+              Service en ligne permettant d'héberger des projets Git sur internet, de les sauvegarder à distance et de travailler à plusieurs.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C1L8</span>
+              <span class="ref-title">Sauvegarder son travail avec Git</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">.gitignore</div>
+              <span class="type-tag">Fichier de config Git</span>
+            </div>
+            <div class="term-definition">
+              Fichier indiquant à Git les documents temporaires, clés confidentielles ou dossiers lourds à ne jamais inclure dans les sauvegardes.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M2C5L3</span>
+              <span class="ref-title">Bannir les clés API et secrets de ses prompts</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>VIBE CODING — GLOSSAIRE OFFICIEL</span>
+        <span class="page-number">PAGE 5 / 12</span>
+      </div>
+    </div>
+
+    <!-- PAGE 6 -->
+    <div class="a4-page">
+      <div class="page-main-content">
+        <header class="compact">
+          <div class="header-top">
+            <span class="badge-header">Formation Vibe Coding</span>
+            <span style="font-weight: 800; font-size: 0.8rem;">Modules 1 à 4</span>
+          </div>
+          <h1>Glossaire Officiel  (Suite)</h1>
+          <div class="header-sub">Fiche A4 — Page 6 / 12</div>
+        </header>
+
+        <div class="glossary-list">
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Hallucination IA</div>
+              <span class="type-tag">Concept IA / Risque</span>
+            </div>
+            <div class="term-definition">
+              Situation où une IA invente des réponses, des lignes de code ou des noms d'outils inexacts tout en paraissant certaine d'elle-même.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C2L5</span>
+              <span class="ref-title">Identifier les pièges et limites de l'IA</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">HTML (HyperText Markup Language)</div>
+              <span class="type-tag">Langage</span>
+            </div>
+            <div class="term-definition">
+              Langage de base définissant la structure et le contenu d'une page web (titres, textes, images, liens).
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C3L2</span>
+              <span class="ref-title">Les bases du HTML</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">HTTP / HTTPS</div>
+              <span class="type-tag">Protocole web</span>
+            </div>
+            <div class="term-definition">
+              Règles de communication du web régissant l'échange d'informations entre le navigateur et le serveur (version HTTPS sécurisée et chiffrée).
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C3L5</span>
+              <span class="ref-title">Comprendre le réseau et les requêtes web</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">IA générative (LLM)</div>
+              <span class="type-tag">Concept IA</span>
+            </div>
+            <div class="term-definition">
+              Intelligence artificielle entraînée sur de vastes volumes de données, capable de comprendre et de produire du texte ou du code sur demande.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C1L3</span>
+              <span class="ref-title">Comprendre le rôle de l'IA dans la création de logiciels</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">IDE agentique</div>
+              <span class="type-tag">Concept / Outil</span>
+            </div>
+            <div class="term-definition">
+              Logiciel de création de code où l'IA peut lire le projet, créer des fichiers et exécuter elle-même des commandes système.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C1L2</span>
+              <span class="ref-title">Pourquoi utiliser un IDE agentique local ?</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>VIBE CODING — GLOSSAIRE OFFICIEL</span>
+        <span class="page-number">PAGE 6 / 12</span>
+      </div>
+    </div>
+
+    <!-- PAGE 7 -->
+    <div class="a4-page">
+      <div class="page-main-content">
+        <header class="compact">
+          <div class="header-top">
+            <span class="badge-header">Formation Vibe Coding</span>
+            <span style="font-weight: 800; font-size: 0.8rem;">Modules 1 à 4</span>
+          </div>
+          <h1>Glossaire Officiel  (Suite)</h1>
+          <div class="header-sub">Fiche A4 — Page 7 / 12</div>
+        </header>
+
+        <div class="glossary-list">
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Injection SQL</div>
+              <span class="type-tag">Sécurité web</span>
+            </div>
+            <div class="term-definition">
+              Faille de sécurité consistant à piéger un formulaire en y saisissant du code malveillant pour pirater la base de données.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M2C5L6</span>
+              <span class="ref-title">La chaîne de confiance et la sécurité</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">JavaScript (JS)</div>
+              <span class="type-tag">Langage</span>
+            </div>
+            <div class="term-definition">
+              Langage de programmation rendant les pages web interactives et capables de réagir aux actions (clics, animations, calculs).
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C3L4</span>
+              <span class="ref-title">Les bases du JavaScript</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">JSON (JavaScript Object Notation)</div>
+              <span class="type-tag">Format de données</span>
+            </div>
+            <div class="term-definition">
+              Format texte standardisé permettant d'échanger des données lisibles sous la forme de clés et de valeurs (ex. : `nom: "Jean"`).
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C3L4</span>
+              <span class="ref-title">Les bases du JavaScript</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Layout / flexbox</div>
+              <span class="type-tag">Concept web / Mobile</span>
+            </div>
+            <div class="term-definition">
+              Système de disposition en CSS facilitant l'alignement, le centrage et l'espacement des éléments sur un écran.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M3C3L1</span>
+              <span class="ref-title">Concevoir l'interface mobile</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Localhost & port réseau</div>
+              <span class="type-tag">Réseau local</span>
+            </div>
+            <div class="term-definition">
+              Adresse de son propre ordinateur (localhost) et numéro de porte virtuelle (port) servant à tester une application avant sa mise en ligne.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C4L6</span>
+              <span class="ref-title">Comprendre et utiliser le terminal</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>VIBE CODING — GLOSSAIRE OFFICIEL</span>
+        <span class="page-number">PAGE 7 / 12</span>
+      </div>
+    </div>
+
+    <!-- PAGE 8 -->
+    <div class="a4-page">
+      <div class="page-main-content">
+        <header class="compact">
+          <div class="header-top">
+            <span class="badge-header">Formation Vibe Coding</span>
+            <span style="font-weight: 800; font-size: 0.8rem;">Modules 1 à 4</span>
+          </div>
+          <h1>Glossaire Officiel  (Suite)</h1>
+          <div class="header-sub">Fiche A4 — Page 8 / 12</div>
+        </header>
+
+        <div class="glossary-list">
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Logs d'erreur</div>
+              <span class="type-tag">Débogage</span>
+            </div>
+            <div class="term-definition">
+              Journal enregistrant au fur et à mesure les événements, avertissements et dysfonctionnements survenus dans une application.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C4L6</span>
+              <span class="ref-title">Déboguer la chaîne Front-Back et lire les logs</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Lovable</div>
+              <span class="type-tag">Outil / Plateforme</span>
+            </div>
+            <div class="term-definition">
+              Outil en ligne de Vibe Coding qui permet de générer et modifier des applications web complètes en discutant en français.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M2C2L1</span>
+              <span class="ref-title">Prise en main de Lovable</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Mode chat</div>
+              <span class="type-tag">Mode IDE</span>
+            </div>
+            <div class="term-definition">
+              Mode de discussion où l'on pose des questions à l'IA ou demande une explication sans modifier directement les fichiers.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C2L3</span>
+              <span class="ref-title">Le mode Chat</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Mode composer</div>
+              <span class="type-tag">Mode IDE</span>
+            </div>
+            <div class="term-definition">
+              Mode de travail où l'agent IA agit directement sur le projet en créant ou modifiant lui-même les fichiers de code.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C2L4</span>
+              <span class="ref-title">Le mode Composer</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Mode plan</div>
+              <span class="type-tag">Mode IDE</span>
+            </div>
+            <div class="term-definition">
+              Mode de cadrage dans lequel l'agent IA établit une feuille de route étape par étape avant d'entamer la création du code.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C2L6</span>
+              <span class="ref-title">Le mode Plan</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>VIBE CODING — GLOSSAIRE OFFICIEL</span>
+        <span class="page-number">PAGE 8 / 12</span>
+      </div>
+    </div>
+
+    <!-- PAGE 9 -->
+    <div class="a4-page">
+      <div class="page-main-content">
+        <header class="compact">
+          <div class="header-top">
+            <span class="badge-header">Formation Vibe Coding</span>
+            <span style="font-weight: 800; font-size: 0.8rem;">Modules 1 à 4</span>
+          </div>
+          <h1>Glossaire Officiel  (Suite)</h1>
+          <div class="header-sub">Fiche A4 — Page 9 / 12</div>
+        </header>
+
+        <div class="glossary-list">
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">No-code / low-code</div>
+              <span class="type-tag">Méthode</span>
+            </div>
+            <div class="term-definition">
+              Méthodes de création d'applications reposant sur des outils visuels qui réduisent ou éliminent le besoin de coder à la main.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M2C1L1</span>
+              <span class="ref-title">Comparatif des plateformes de Vibe Coding Web</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Node.js</div>
+              <span class="type-tag">Environnement d'exécution</span>
+            </div>
+            <div class="term-definition">
+              Outil permettant d'exécuter du code JavaScript en coulisses sur un serveur ou un ordinateur, en dehors d'un simple navigateur web.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C4L3</span>
+              <span class="ref-title">Générer son premier serveur local (Node.js/Express)</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Prompt engineering</div>
+              <span class="type-tag">Méthode</span>
+            </div>
+            <div class="term-definition">
+              Art de concevoir et d'affiner des instructions claires pour guider précisément les réponses d'une intelligence artificielle.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C2L1</span>
+              <span class="ref-title">Découvrir l'art du Prompt Engineering</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Prompt zero</div>
+              <span class="type-tag">Méthode prompting</span>
+            </div>
+            <div class="term-definition">
+              Instruction de départ définissant l'objectif, les technologies retenues et les règles fondamentales avant de démarrer la création d'un projet.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M2C3L4</span>
+              <span class="ref-title">Découvrir le Prompt Zero</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Prompting</div>
+              <span class="type-tag">Méthode</span>
+            </div>
+            <div class="term-definition">
+              Action de formuler des consignes écrites pour demander un résultat précis à une intelligence artificielle.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C1L2</span>
+              <span class="ref-title">Qu'est-ce que le Vibe Coding ?</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>VIBE CODING — GLOSSAIRE OFFICIEL</span>
+        <span class="page-number">PAGE 9 / 12</span>
+      </div>
+    </div>
+
+    <!-- PAGE 10 -->
+    <div class="a4-page">
+      <div class="page-main-content">
+        <header class="compact">
+          <div class="header-top">
+            <span class="badge-header">Formation Vibe Coding</span>
+            <span style="font-weight: 800; font-size: 0.8rem;">Modules 1 à 4</span>
+          </div>
+          <h1>Glossaire Officiel  (Suite)</h1>
+          <div class="header-sub">Fiche A4 — Page 10 / 12</div>
+        </header>
+
+        <div class="glossary-list">
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">RAG (Retrieval-Augmented Generation)</div>
+              <span class="type-tag">Concept IA</span>
+            </div>
+            <div class="term-definition">
+              Méthode fournissant automatiquement des documents ou du code réel à l'IA avant qu'elle ne réponde, afin de garantir des informations exactes.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C4L3</span>
+              <span class="ref-title">L'injection de contexte et la documentation</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">React</div>
+              <span class="type-tag">Framework / Bibliothèque</span>
+            </div>
+            <div class="term-definition">
+              Outil populaire créé par Meta pour construire des interfaces web dynamiques en les découpant en éléments réutilisables.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M2C2L2</span>
+              <span class="ref-title">Générer sa première application web avec Lovable</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">React Native</div>
+              <span class="type-tag">Framework</span>
+            </div>
+            <div class="term-definition">
+              Outil créé par Meta permettant de fabriquer des applications mobiles pour iPhone (iOS) et Android en utilisant du code JavaScript.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M3C1L1</span>
+              <span class="ref-title">Introduction à la création d'applications mobiles</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Refactorisation (refactoring)</div>
+              <span class="type-tag">Méthode de code</span>
+            </div>
+            <div class="term-definition">
+              Réorganisation et nettoyage du code source pour le rendre plus lisible et mieux structuré, sans en changer le fonctionnement visuel.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C5L2</span>
+              <span class="ref-title">Refactoriser son code avec l'agent</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Responsive design</div>
+              <span class="type-tag">Méthode / Design</span>
+            </div>
+            <div class="term-definition">
+              Technique d'aménagement visuel permettant à un site de s'adapter automatiquement à la taille des écrans (smartphone, tablette, ordinateur).
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M2C2L3</span>
+              <span class="ref-title">Modifier et affiner le design</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>VIBE CODING — GLOSSAIRE OFFICIEL</span>
+        <span class="page-number">PAGE 10 / 12</span>
+      </div>
+    </div>
+
+    <!-- PAGE 11 -->
+    <div class="a4-page">
+      <div class="page-main-content">
+        <header class="compact">
+          <div class="header-top">
+            <span class="badge-header">Formation Vibe Coding</span>
+            <span style="font-weight: 800; font-size: 0.8rem;">Modules 1 à 4</span>
+          </div>
+          <h1>Glossaire Officiel  (Suite)</h1>
+          <div class="header-sub">Fiche A4 — Page 11 / 12</div>
+        </header>
+
+        <div class="glossary-list">
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">SKILL (compétence agent)</div>
+              <span class="type-tag">Extension IA</span>
+            </div>
+            <div class="term-definition">
+              Module complémentaire ou guide d'instructions ajoutant une capacité spécialisée à un agent IA pour une mission donnée.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C3L8</span>
+              <span class="ref-title">Comprendre et utiliser des SKILLS</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Sous-agent (subagent)</div>
+              <span class="type-tag">Concept IA</span>
+            </div>
+            <div class="term-definition">
+              Second assistant IA démarré en arrière-plan pour accomplir une mission précise sans interrompre le travail principal.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C3L4</span>
+              <span class="ref-title">Les sous-agents et la parallélisation de tâches</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Tailwind CSS</div>
+              <span class="type-tag">Framework CSS</span>
+            </div>
+            <div class="term-definition">
+              Outil de mise en forme permettant d'appliquer rapidement du style sur des éléments web grâce à des étiquettes prêtes à l'emploi.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M2C2L2</span>
+              <span class="ref-title">Générer sa première application web me avec Lovable</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Terminal / CLI</div>
+              <span class="type-tag">Outil / Interface</span>
+            </div>
+            <div class="term-definition">
+              Fenêtre textuelle permettant de donner des ordres directs à son ordinateur ou à ses outils en tapant des lignes de commande.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M4C1L6</span>
+              <span class="ref-title">Comprendre le terminal & les commandes clés</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Token</div>
+              <span class="type-tag">Concept IA / Métrique</span>
+            </div>
+            <div class="term-definition">
+              Morceau de texte de quelques lettres servant d'unité de compte pour la mémoire d'une IA (1 000 tokens représentent environ 750 mots).
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C2L3</span>
+              <span class="ref-title">Gérer le contexte et la mémoire de l'agent</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>VIBE CODING — GLOSSAIRE OFFICIEL</span>
+        <span class="page-number">PAGE 11 / 12</span>
+      </div>
+    </div>
+
+    <!-- PAGE 12 -->
+    <div class="a4-page">
+      <div class="page-main-content">
+        <header class="compact">
+          <div class="header-top">
+            <span class="badge-header">Formation Vibe Coding</span>
+            <span style="font-weight: 800; font-size: 0.8rem;">Modules 1 à 4</span>
+          </div>
+          <h1>Glossaire Officiel  (Suite)</h1>
+          <div class="header-sub">Fiche A4 — Page 12 / 12</div>
+        </header>
+
+        <div class="glossary-list">
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">v0 (by Vercel)</div>
+              <span class="type-tag">Outil / Plateforme</span>
+            </div>
+            <div class="term-definition">
+              Outil web d'IA conçu par Vercel, capable de générer instantanément le code visuel d'interfaces web à partir d'une simple description.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M2C4L1</span>
+              <span class="ref-title">Prise en main de v0 by Vercel</span>
+            </div>
+          </div>
+
+          <div class="term-item">
+            <div class="term-header">
+              <div class="term-name">Vibe coding</div>
+              <span class="type-tag">Méthode / Philosophie</span>
+            </div>
+            <div class="term-definition">
+              Manière de créer des logiciels en pilotant des agents IA en langage naturel (français courant), sans avoir à rédiger le code à la main.
+            </div>
+            <div class="term-footer">
+              <span class="ref-code">M1C1L2</span>
+              <span class="ref-title">Qu'est-ce que le Vibe Coding ?</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>VIBE CODING — GLOSSAIRE OFFICIEL</span>
+        <span class="page-number">PAGE 12 / 12</span>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

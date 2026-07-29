@@ -1,0 +1,64 @@
+{
+  "lessonTitle": "M3C6L3 — Brief 2 : Le Générateur de Devis & Calculateur Carbone",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Brief : Le Générateur de Devis & Carbone"
+      }
+    },
+    {
+      "template": "VIBECODING - BRIEF ALT",
+      "content": {
+        "Titre": "Le Générateur de Devis & Calculateur Carbone",
+        "Intro": "LE BRIEF",
+        "Texte 1": "Un consultant indépendant perd un temps précieux à calculer manuellement ses tarifs et l'impact écologique de ses prestations sur des feuilles de calcul dispersées.",
+        "Texte 2": "L'objectif est de concevoir un formulaire multi-étapes interactif pour estimer le coût d'une prestation, calculer l'empreinte carbone associée et générer un récapitulatif prêt à imprimer.",
+        "Source": "Source : Image générée par IA - Pinterest"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Les 4 fonctionnalités clés",
+        "Intro": "Découvrons le périmètre fonctionnel à intégrer dans le Prompt Zero.",
+        "Titre 1": "FORMULAIRE MULTI-ÉTAPES",
+        "Texte 1": "Une interface guidée permettant de saisir les besoins du client et d'ajouter des options sur-mesure.",
+        "Titre 2": "CALCUL DU TARIF DYNAMIQUE",
+        "Texte 2": "Mise à jour en temps réel du coût total de la prestation selon les choix sélectionnés.",
+        "Titre 3": "JAUGE D'EMPREINTE CARBONE",
+        "Texte 3": "Indicateur visuel évaluant l'impact environnemental estimé du projet en équivalent CO2.",
+        "Titre 4": "RÉCAPITULATIF PRÊT À IMPRIMER",
+        "Texte 4": "Synthèse propre et mise en page lisible avec bouton d'impression directe du devis.",
+        "Picto 1": "mdi:form-select",
+        "Picto 2": "mdi:calculator-variant-outline",
+        "Picto 3": "mdi:leaf",
+        "Picto 4": "mdi:printer"
+      }
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "La feuille de route de création",
+        "Intro": "Le parcours complet pour transformer ce brief en une application en ligne.",
+        "Titre 1": "Cadrage",
+        "Violet 1 ": "Rédiger le Prompt Zero complet",
+        "Titre 2": "Création",
+        "Violet 2": "Générer l'app dans AI Studio",
+        "Titre 3": "Version",
+        "Violet 3": "Exporter et commiter sur GitHub",
+        "Titre 4": "En ligne",
+        "Violet 4": "Déployer en direct sur Vercel"
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "À vous de jouer sur ce brief !",
+        "Intro": "Ce brief complet rassemble l'ensemble des compétences techniques vues dans le module. En suivant la méthode pas-à-pas, du cadrage du prompt initial jusqu'au déploiement final sur Vercel, on construit un outil concret, fonctionnel et immédiatement partageable pour les utilisateurs.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Dans la leçon suivante, découvrons le troisième brief alternatif dédié à la création d'une matrice de priorisation interactive !"
+      }
+    }
+  ]
+}

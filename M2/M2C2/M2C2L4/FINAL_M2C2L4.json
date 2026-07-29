@@ -1,0 +1,116 @@
+{
+  "lessonTitle": "M2C2L4 — Découper un projet en user stories",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Découper un projet en user stories"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "L'art du découpage de tâches",
+        "Intro": "Donner un objectif trop large à une IA mène droit à l'échec. Apprenons à diviser un projet en briques fonctionnelles simples (User Stories) pour guider le code pas-à-pas.",
+        "Titre 1": "Prévenir l'échec",
+        "Texte 1": "Pourquoi vouloir coder toute l'application d'un coup est la pire erreur en Vibe Coding.",
+        "Titre 2": "Exprimer son besoin",
+        "Texte 2": "La formule universelle pour rédiger une consigne compréhensible et précise pour l'IA.",
+        "Titre 3": "Cas pratiques",
+        "Texte 3": "Application de la formule sur nos deux exemples clés : le mini CRM et la landing page."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "L'erreur fatale : Tout coder d'un coup",
+        "Mot": "Saturation",
+        "Definition": "Demander à l'IA de coder un logiciel complet en un seul prompt provoque une surcharge immédiate de sa fenêtre de contexte. L'agent va oublier des fichiers, mélanger le design et la base de données, et générer des bugs impossibles à isoler. La seule prévention efficace est le découpage séquentiel.",
+        "Bulle": "Le principe fondamental du Vibe Coding : On ne code jamais une application entière, on fait coder une succession de petites 'User Stories' atomiques."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 2 BLOCS",
+      "content": {
+        "Titre": "La formule de la User Story",
+        "Intro": "Pour que l'IA comprenne exactement ce que vous attendez d'une fonctionnalité, exprimez votre besoin avec cette structure narrative standardisée.",
+        "Titre 1": "La Syntaxe Métier",
+        "Picto 1": "mdi:compass",
+        "Texte 1": "En tant que [Persona] : rappelle à l'IA pour qui elle code l'interface.",
+        "Texte 2": "Je veux [Action] : définit précisément l'élément et le code à générer.",
+        "Texte 3": "Afin de [Objectif] : donne du contexte métier pour des choix techniques pertinents.",
+        "Titre 2": "Les Critères de Succès",
+        "Picto 2": "mdi:check-all",
+        "Texte 4": "Il faut toujours ajouter comment tester que la fonction marche.",
+        "Texte 5": "Exemple : 'Le bouton de soumission devient gris après le premier clic'.",
+        "Texte 6": "Cela donne à l'IA une condition de validation claire pour s'auto-corriger."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "User Story : Le Mini CRM",
+        "Intro": "CAS PRATIQUE : LE COMMERCIAL NOMADE",
+        "Texte 1": "Pour le projet de CRM mobile de notre commercial, au lieu de demander 'Code-moi le CRM', on rédige une story ultra-précise : « En tant que commercial nomade, je veux pouvoir cliquer sur un gros bouton '+' sur l'écran d'accueil afin d'ouvrir le formulaire d'ajout de client. »\nOn y ajoute les critères pour l'IA :\n- Le bouton '+' est toujours visible en bas (sticky).\n- Le clic ouvre une modale en plein écran.\n- Le clavier du téléphone s'ouvre automatiquement.",
+        "Texte Bulle": "Grâce à cette story, l'IA ne va coder que le bouton et la modale, garantissant un composant visuel parfait et sans bug avant de passer au système de sauvegarde.",
+        "Source": "PROJET CRM"
+      },
+      "image_concept": "A smartphone displaying a large floating action button on a dashboard",
+      "image_style": "modern minimalistic UI mockup",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "User Story : La Landing Page",
+        "Intro": "CAS PRATIQUE : LA CONVERSION",
+        "Texte 1": "Pour notre projet de Landing Page, au lieu de demander 'Fais une page de vente', on rédige : « En tant que visiteur (Sarah), je veux voir un formulaire d'inscription sous le titre principal afin de m'inscrire sans avoir à scroller. »\nOn y ajoute les critères pour l'IA :\n- Le formulaire contient uniquement le champ 'Email' et un bouton d'envoi.\n- Un message de succès vert s'affiche après la validation.\n- Le champ email doit vérifier que le format est correct (ex: test@test.com).",
+        "Texte Bulle": "En isolant cette demande, l'IA va parfaitement gérer le design du formulaire, la vérification de l'email et les messages d'état de succès sans se perdre dans le reste du site.",
+        "Source": "PROJET LANDING PAGE"
+      },
+      "image_concept": "A clean landing page header with an email signup form",
+      "image_style": "modern minimalistic web UI",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - EXERCICE",
+      "content": {
+        "Titre": "À vous de jouer : User Stories",
+        "Intro": "Apprenez à découper votre MVP en fonctionnalités simples et digestes pour guider l'IA pas-à-pas dans son développement.",
+        "Titre 1": "La formule magique",
+        "Texte 1": "Rédigez vos fonctions sous la forme : 'En tant que... je veux... afin de...'.",
+        "Titre 2": "Les critères clés",
+        "Texte 2": "Ajoutez pour chaque story les critères visuels pour valider le comportement.",
+        "Titre 3": "L'atomicité",
+        "Texte 3": "Assurez-vous qu'une story ne traite qu'une seule action utilisateur simple."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Découper votre projet en User Stories est la meilleure prévention contre l'échec et les bugs en cascade. En forçant l'IA à se concentrer sur l'exécution d'une seule action à la fois, avec son persona, son but et ses critères de validation concrets, vous gardez le contrôle total sur le code généré étape par étape.",
+        "Titre Bulle": "En Bref",
+        "Texte Bulle": "EN BREF : une fois toutes les User Stories de votre MVP rédigées selon cette formule, l'étape suivante consiste à les compiler dans un cahier des charges minimal qui servira de plan de construction global à l'IA."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

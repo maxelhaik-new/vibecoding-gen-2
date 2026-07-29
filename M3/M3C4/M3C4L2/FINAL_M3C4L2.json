@@ -1,0 +1,146 @@
+{
+  "lessonTitle": "M3C4L2",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Comprendre le versioning et son intérêt"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Découvrir le contrôle de version",
+        "Intro": "Écrire du code est un processus itératif où chaque modification peut tout casser. Comment conserver un historique fiable sans dupliquer nos fichiers ? Découvrons le fonctionnement et les bénéfices du versioning.",
+        "Titre 1": "Le suivi historique",
+        "Texte 1": "Voyons comment enregistrer chaque étape clé du code pour pouvoir y revenir à tout moment.",
+        "Titre 2": "Le travail collaboratif",
+        "Texte 2": "Focus sur la fusion de plusieurs modifications en parallèle sur un même fichier sans conflit.",
+        "Titre 3": "La sécurité du code",
+        "Texte 3": "Découvrons comment isoler les nouvelles idées dans des espaces sécurisés avant de les publier."
+      }
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Deux approches du suivi",
+        "Titre A": "MANUEL",
+        "Titre B": "MODERNE",
+        "Item 1": "Organisation",
+        "Item 2": "Suivi",
+        "Item 3": "Espace",
+        "Item 4": "Risque",
+        "Texte A Item 1": "Copie et renommage manuel des dossiers de code",
+        "Texte A Item 2": "Confusion entre les versions v1, v2 et final",
+        "Texte A Item 3": "Duplication de fichiers sur le disque",
+        "Texte A Item 4": "Perte définitive en cas d'erreur ou d'oubli",
+        "Texte B1": "Suivi automatique dans un dossier de projet unique",
+        "Texte B2": "Liste chronologique et datée des modifications",
+        "Texte B3": "Fichiers légers contenant les deltas",
+        "Texte B4": "Retour arrière possible en un clic"
+      }
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Définir le versioning",
+        "Mot": "Le versioning",
+        "Definition": "Un système de contrôle de version enregistre les changements des fichiers au fil du temps. On retrouve des versions passées, compare les modifications et travaille en équipe sans conflit. Git est aujourd'hui le standard mondial pour réaliser ce suivi historique du code.",
+        "Bulle": "EN BREF : C'est comme une machine à remonter le temps pour notre projet de code. On avance sans crainte car chaque état stable est sauvegardé et restaurable.",
+        "Picto 1": "mdi:git"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Le glossaire du versioning",
+        "Intro": "Maîtriser ces 4 concepts de base permet de comprendre le fonctionnement de Git au quotidien.",
+        "Titre 1": "LE DÉPÔT DE CODE (REPOSITORY)",
+        "Texte 1": "Dossier de projet contenant les fichiers et l'historique complet de leurs modifications sous Git.",
+        "Titre 2": "LE COMMIT DE CODE (SAUVEGARDE)",
+        "Texte 2": "Instant-clé enregistré dans l'historique, décrivant les changements apportés avec un message explicatif.",
+        "Titre 3": "LA BRANCHE DE TRAVAIL (BRANCH)",
+        "Texte 3": "Ligne temporelle parallèle pour développer des nouveautés sans polluer le code stable principal.",
+        "Titre 4": "L'ACTION DE PUSH (ENVOI EN LIGNE)",
+        "Texte 4": "Commande permettant d'envoyer les commits locaux vers le dépôt en ligne sur GitHub pour les partager et les déployer.",
+        "Picto 1": "mdi:folder-git",
+        "Picto 2": "mdi:source-commit",
+        "Picto 3": "mdi:source-branch",
+        "Picto 4": "mdi:cloud-upload"
+      }
+    },
+    {
+      "template": "VIBECODING - DECOUPAGE",
+      "content": {
+        "Titre": "Anatomie d'un commit Git",
+        "Intro": "Un commit n'est pas une simple copie de fichiers. C'est un ensemble contenant l'identité de l'auteur, un message descriptif et la liste des lignes modifiées.",
+        "Titre Bulle": "Le rôle de l'identifiant",
+        "Texte Bulle": "Chaque commit possède une clé de sécurité unique (SHA-1) garantissant la stabilité de l'historique. Il est impossible de modifier le passé du code sans casser cette signature numérique.",
+        "Violet 1": "Identité",
+        "Texte 1": "Historique Git :",
+        "Texte 1 - Ligne 2": "identifiant unique SHA-1,",
+        "Violet 2": "Changements",
+        "Titre 2": "auteur et date,",
+        "Titre 3": "message court",
+        "Titre 4": "diff +-",
+        "Titre 5": "lignes modifiées"
+      }
+    },
+    {
+      "template": "VIBECODING - FOCUS OUTIL",
+      "content": {
+        "Titre": "Focus sur Git et GitHub",
+        "Intro": "Deux outils complémentaires mais distincts pour versionner et héberger notre code en toute sécurité.",
+        "Titre 4": "Versionner en local, partager en ligne",
+        "Texte 4": "Git suit les modifications des fichiers sur la machine de façon locale. GitHub héberge ce suivi dans le cloud pour simplifier le partage.",
+        "Chiffre 2": "En 2005",
+        "Titre 2": "Création de Git par Linus Torvalds",
+        "Chiffre 3": "100M+",
+        "Titre 3": "développeurs actifs sur GitHub",
+        "Texte Bulle": "Git : outil local gratuit. GitHub : plateforme cloud avec plan gratuit illimité pour nos dépôts.",
+        "Source": "Source : Git - Illustration générée par IA - Maxime Elhaik"
+      }
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "Les 3 règles d'or de Git",
+        "Intro": "Adopter ces réflexes au quotidien permet de maintenir un historique de code exploitable sans stress.",
+        "Titre 1": "Fréquence",
+        "Parametre 1": "Sauvegardes",
+        "Violet 1": "Enregistrer de petites étapes",
+        "Texte 1": "On ne doit pas attendre la fin de la journée pour faire une sauvegarde. On commite dès qu'une sous-tâche est terminée et stable pour un retour arrière précis.",
+        "Titre 2": "Description",
+        "Parametre 2": "Explications",
+        "Violet 2": "Expliquer le pourquoi et le quoi",
+        "Texte 2": "Chaque message doit décrire précisément le but de la modification de code. On évite les mots vides comme 'bug' ou 'update' qui rendent l'historique illisible.",
+        "Titre 3": "Isolement",
+        "Parametre 3": "Branches",
+        "Violet 3": "Travailler dans un espace dédié",
+        "Texte 3": "On ne travaille jamais directement sur le code stable en production. On crée une branche temporaire pour tester les idées avant la fusion.",
+        "Picto 1": "mdi:history",
+        "Picto 2": "mdi:text-box-search-outline",
+        "Picto 3": "mdi:source-branch"
+      }
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Le cas du bug en production",
+        "Intro": "REVENIR EN ARRIÈRE EN 1 CLIC",
+        "Texte 1": "Une nouvelle fonctionnalité est ajoutée sur un site de e-commerce. Quelques heures après, un bug bloquant apparaît sur le panier d'achat. Sans versioning, il faudrait fouiller des milliers de lignes pour trouver l'erreur. Avec Git, on tape une seule commande pour restaurer l'état stable précédent. Le site fonctionne à nouveau le temps de corriger la modification défaillante.",
+        "Texte Bulle": "Le versioning sécurise l'application face aux imprévus de production. On expérimente des idées audacieuses en toute confiance, sachant que le retour à l'état stable est garanti.",
+        "Source": "Source : Git - Illustration générée par IA - Maxime Elhaik"
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Le versioning est indispensable pour le développement moderne de logiciels. Il transforme le code fragile en un historique solide et sécurisé. Grâce à Git, on élimine la peur des erreurs et simplifie la collaboration. On gère ses projets de Vibe Coding sereinement sans risque de perte.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Dans la prochaine leçon, on passe concrètement à la pratique. Découvrons comment initialiser notre premier dépôt Git local. On fera nos premiers commits et enverra le code en ligne !"
+      }
+    }
+  ]
+}

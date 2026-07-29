@@ -1,0 +1,135 @@
+{
+  "lessonTitle": "M2C4L9",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "À qui appartient le code généré ?"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "L'IA ne signe pas — mais on reste responsable",
+        "Intro": "En 2026, aucun tribunal ne reconnaît de droits d'auteur à une IA. Pourtant, le code qu'elle génère peut reproduire du code protégé sans le signaler. Entre code sans propriétaire, licences restrictives et risque de plagiat involontaire, le cadre légal est plus piégeux qu'il n'y paraît. Faisons le point.",
+        "Titre 1": "Statut juridique",
+        "Texte 1": "Voyons ce que les tribunaux disent en 2026 sur la propriété du code généré par un agent IA.",
+        "Titre 2": "Licences et risques",
+        "Texte 2": "Zoom sur les types de licences open source et les pièges à éviter pour ne pas bloquer son projet.",
+        "Titre 3": "Protéger son travail",
+        "Texte 3": "Apprenons à filtrer le code généré et à documenter sa propre contribution pour garder ses droits."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Code IA = code sans propriétaire",
+        "Mot": "Le vide juridique par défaut",
+        "Definition": "Le droit d'auteur protège les œuvres créées par un être humain. Les tribunaux américain (affaire Thaler v. Vidal, 2023) et européens refusent d'attribuer des droits à une IA. Le code généré tombe donc dans le domaine public — sauf si un humain y apporte une contribution créative réelle et documentée.",
+        "Bulle": "Code sans propriétaire ≠ code sans risque. Il peut reproduire du code d'autrui sous licence restrictive."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Quand l'agent copie sans le dire",
+        "Intro": "Les modèles IA ont appris sur des milliards de lignes de code public — et peuvent en reproduire des extraits exacts sans citer la source.",
+        "Titre 1": "COPIE EXACTE NON SIGNALÉE",
+        "Texte 1": "Un agent peut reproduire mot pour mot un algorithme sous licence restrictive, mémorisé pendant l'entraînement sur GitHub.",
+        "Picto 1": "mdi:content-copy",
+        "Titre 2": "SOURCE JAMAIS CITÉE",
+        "Texte 2": "L'IA ne mentionne jamais l'origine du code produit. On intègre du code potentiellement protégé sans le savoir.",
+        "Picto 2": "mdi:eye-off-outline",
+        "Titre 3": "FONCTIONS COMPLEXES PLUS À RISQUE",
+        "Texte 3": "Tri, chiffrement, traitement de fichiers : plus la fonction est spécialisée, plus le risque de reproduction est élevé.",
+        "Picto 3": "mdi:alert-outline",
+        "Titre 4": "RESPONSABILITÉ PORTÉE PAR LE DÉVELOPPEUR",
+        "Texte 4": "C'est celui qui intègre le code qui répond des licences — pas l'outil. L'ignorance ne constitue pas une défense légale recevable.",
+        "Picto 4": "mdi:account-hard-hat-outline"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT - IMAGE",
+      "content": {
+        "Titre": "Le piège des licences open source",
+        "Mot": "Le code contaminé",
+        "Intro": "L'IA génère du code rapidement, mais elle s'inspire de projets existants soumis à des conditions strictes.",
+        "Definition": "Lorsqu'on demande une fonction à l'agent, il peut la recopier d'un dépôt sous licence GPL. Cette licence « virale » exige de publier gratuitement le code source de tout projet qui l'intègre. Pour un produit commercial, c'est un risque majeur.",
+        "Titre 1": "Le danger",
+        "Texte 1": "Devoir rendre tout le code du projet public si une fonction GPL y a été insérée.",
+        "Picto 1": "mdi:alert-outline",
+        "Titre 2": "La parade",
+        "Texte 2": "Ajouter à chaque prompt la consigne : « Bannis GPL et utilise uniquement MIT/Apache ».",
+        "Picto 2": "mdi:comment-text-outline",
+        "Source": "Source : Licences open source - Illustration générée par IA - Maxime Elhaik"
+      },
+      "image_concept": "A glowing computer screen showing a yellow warning sign, with strings of code transforming into metallic chains, clean editorial studio lighting",
+      "image_style": "grainy-editorial",
+      "image_ratio": "1:1"
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "La philosophie du Vibe Coder responsable",
+        "Intro": "Générer vite ne dispense pas de valider.",
+        "Texte Intro": "En Vibe Coding, la vitesse est un avantage — la négligence, un risque légal réel. Quelques principes de base suffisent à garder le contrôle sur ce qu'on déploie et à rester propriétaire de son travail.",
+        "Nom Checklist": "Réflexes essentiels",
+        "Texte 1": "Toujours relire le code avant de l'intégrer.",
+        "Texte 2": "Rester l'auteur des choix d'architecture.",
+        "Texte 3": "Ne jamais déployer sans comprendre la logique.",
+        "Texte 4": "Tracer sa propre contribution au projet.",
+        "Texte 5": "Garder le code source confidentiel par défaut.",
+        "Picto 1": "mdi:eye-check-outline",
+        "Picto 2": "mdi:brain",
+        "Picto 3": "mdi:rocket-launch-outline",
+        "Picto 4": "mdi:pencil-ruler",
+        "Picto 5": "mdi:lock-outline"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO",
+      "content": {
+        "Titre": "Peut-on protéger son algorithme ?",
+        "Intro": "Un algorithme généré par IA n'est pas brevetable tel quel. Trois leviers permettent de sécuriser son projet malgré ce vide.",
+        "Titre 1": "Inventeur",
+        "Texte 1": "En Europe et aux États-Unis, tout dépôt de brevet exige un inventeur humain identifié. Sans nom physique dans le dossier, le brevet est rejeté — systématiquement depuis 2023 (affaire Thaler v. Vidal).",
+        "Titre 2": "Traçabilité",
+        "Texte 2": "Documenter chaque choix d'architecture, de logique ou de refactoring dans un journal de bord daté. C'est cette trace qui prouve la contribution humaine en cas de litige.",
+        "Titre 3": "Secret industriel",
+        "Texte 3": "Garder le code source confidentiel évite les obligations des licences virales et bloque toute revendication externe sur le projet.",
+        "Titre Bulle": "Règle : sans contribution humaine documentée, le code IA tombe dans le domaine public. Un journal de bord daté suffit à établir la paternité créative avant tout dépôt.",
+        "Source": "Source : Propriété intellectuelle et IA - Illustration générée par IA - Maxime Elhaik"
+      },
+      "image_concept": "A human hand signing a legal document at a desk, with a digital code interface visible in the background — symbolizing the requirement of a human author in intellectual property law",
+      "image_style": "editorial",
+      "image_ratio": "portrait"
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Rester gardien du code qu'on déploie",
+        "Intro": "Le code généré par une IA n'appartient à personne par défaut — mais ses risques légaux appartiennent entièrement au Vibe Coder qui l'intègre. Deux outils simples réduisent l'essentiel du risque : activer l'option anti-copie de son IDE (Cursor ou Copilot), et scanner les licences à chaque modification avec Snyk ou FOSSA. Pour le reste, décomposer les fonctions complexes en petites étapes et documenter sa propre contribution : c'est ce qui permet de revendiquer ses droits si le besoin se présente.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "La prochaine leçon complète ce tableau : au-delà des licences, que se passe-t-il quand son application cause un vrai préjudice ? Fuite de données, faille de sécurité, non-conformité RGPD — la responsabilité légale du Vibe Coder est plus large qu'on ne le pense."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

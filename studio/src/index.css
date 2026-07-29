@@ -46,6 +46,13 @@
   
   --bg-activity-bar: #eaebeb;
   --bg-status-bar: #e4e4e7;
+
+  /* Slide Canvas Theme Variables */
+  --slide-bg: #ffffff;
+  --slide-text: #18181b;
+  --slide-subcard-bg: #f8fafc;
+  --slide-subcard-border: #e2e8f0;
+  --slide-input-bg: rgba(0, 0, 0, 0.015);
 }
 
 [data-theme='dark'] {
@@ -83,6 +90,13 @@
 
   --bg-activity-bar: #14161a;
   --bg-status-bar: #121318;
+
+  /* Slide Canvas Theme Variables - Dark Mode */
+  --slide-bg: #141519;
+  --slide-text: #f4f4f5;
+  --slide-subcard-bg: #1e2028;
+  --slide-subcard-border: #2d303e;
+  --slide-input-bg: rgba(255, 255, 255, 0.04);
 }
 
 * {

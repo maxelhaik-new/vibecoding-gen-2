@@ -1,0 +1,30 @@
+{
+  "lessonTitle": "M2C4L1",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Éthique, IA Act & RGPD appliqués au code"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Ce chapitre aborde les principes de l'éthique, de la réglementation et de la conformité de l'IA. Vous apprendrez à générer du code inclusif, accessible et juridiquement sûr.",
+        "Titre 1": "Appréhender la place centrale de l'éthique",
+        "Titre 2": "Maîtriser les 4 piliers éthiques de l'IA",
+        "Titre 3": "Décoder les exigences de l'IA Act européen",
+        "Titre 4": "Identifier et limiter les biais algorithmiques",
+        "Titre 5": "Créer des interfaces inclusives et accessibles",
+        "Titre 6": "Responsabiliser le codeur et sécuriser les PI"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

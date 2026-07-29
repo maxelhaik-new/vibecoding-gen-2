@@ -1,0 +1,133 @@
+{
+  "lessonTitle": "M3C6L7 — Brief : Le Kanban Gamifié PixelQuest",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Brief : Le Kanban Gamifié PixelQuest"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "De la To-Do List au Jeu de Rôle",
+        "Intro": "Les listes de tâches traditionnelles manquent souvent de stimulation visuelle et favorisent la procrastination. Voyons comment transformer la gestion quotidienne en un jeu de rôle rétro captivant !",
+        "Titre 1": "Cadrage de l'application",
+        "Texte 1": "Voyons le cas d'usage et la problématique d'organisation de notre persona.",
+        "Titre 2": "Mécaniques du MVP",
+        "Texte 2": "Focus sur la boucle de jeu : XP, pièces d'or et boutique virtuelle.",
+        "Titre 3": "Déploiement en ligne",
+        "Texte 3": "Découvrons les étapes pour générer et publier l'outil avec l'IA."
+      }
+    },
+    {
+      "template": "VIBECODING - BRIEF ALT",
+      "content": {
+        "Titre": "Le Kanban Gamifié PixelQuest",
+        "Intro": "LE BRIEF",
+        "Texte 1": "De nombreux utilisateurs abandonnent rapidement leurs outils de gestion de tâches par manque de motivation et d'engagement visuel au quotidien.",
+        "Texte 2": "L'objectif est de concevoir un tableau de tâches style rétro 16-bit où chaque action validée fait gagner de l'expérience et de l'or pour faire évoluer son avatar.",
+        "Source": "Source : Brief Projet PixelQuest — Vibe Coding 2026"
+      }
+    },
+    {
+      "template": "VIBECODING - PERSONA & MVP",
+      "content": {
+        "Titre": "Persona et périmètre du MVP",
+        "Intro": "Identifier la cible utilisateur et définir le périmètre fonctionnel minimal pour réussir la génération.",
+        "Prenom": "Léo",
+        "Métier": "Développeur Junior & Étudiant",
+        "Age": "24 ans",
+        "Spécificité": "Télétravailleur & Gamer",
+        "Goût": "Adepte de Rétro-Gaming",
+        "Texte 1": "Gamification stimulante : Attribution automatique de points d'expérience et d'or selon la difficulté de la tâche.",
+        "Texte 2": "Récompense visuelle immédiate : Animations néons et modale de passage de niveau lors de la validation d'une mission.",
+        "Texte 3": "Boutique d'équipements : Achat de titres et d'accessoires virtuels pour personnaliser son profil de joueur."
+      }
+    },
+    {
+      "template": "VIBECODING - USER STORIES",
+      "content": {
+        "Les User Stories": "Les User Stories du projet",
+        "Traduire la vision produit en petites étapes testa": "Traduire le besoin de Léo en fonctionnalités précises et testables à intégrer dans le Prompt Zero.",
+        "Titre App": "PixelQuest",
+        "Description MVP": "Transformer la gestion des tâches quotidiennes en un jeu de rôle rétro stimulant et gratifiant.",
+        "User Story 1": "En tant qu'utilisateur, je veux créer des tâches avec un niveau de difficulté afin d'adapter les gains d'XP et d'or à l'effort réel.",
+        "User Story 2": "En tant que joueur, je veux valider une tâche complétée afin de voir ma barre d'XP se remplir et déclencher une animation de récompense.",
+        "User Story 3": "En tant qu'aventurier, je veux dépenser mon or dans la boutique afin d'équiper mon avatar avec de nouveaux objets.",
+        "Picto 1": "mdi:sword-cross"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Architecture technique sans brique complexe",
+        "Intro": "Ce projet s'appuie à 100% sur des technologies web natives accessibles dans Google AI Studio.",
+        "Titre 1": "MOTEUR DE JAUGE XP ET NIVEAUX",
+        "Texte 1": "Calcul dynamique du franchissement de palier et mise à jour de la barre de progression en script client.",
+        "Titre 2": "SYSTÈME DE BOUTIQUE VIRTUELLE",
+        "Texte 2": "Déduction automatique des pièces d'or et déverrouillage des équipements dans l'interface.",
+        "Titre 3": "STYLE VISUEL ARCADE RÉTRO",
+        "Texte 3": "Habillage graphique avec polices pixelisées et animations d'éléments au survol.",
+        "Titre 4": "PERSISTANCE DANS LE NAVIGATEUR",
+        "Texte 4": "Sauvegarde locale continue de la progression et de l'inventaire sans création de compte.",
+        "Picto 1": "mdi:trophy-outline",
+        "Picto 2": "mdi:store-outline",
+        "Picto 3": "mdi:palette-outline",
+        "Picto 4": "mdi:content-save-outline"
+      }
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "La feuille de route de création",
+        "Intro": "Le parcours méthodique pour transformer ce brief en une application publiée en ligne.",
+        "Titre 1": "Cadrage",
+        "Violet 1 ": "Rédiger le Prompt Zero complet à partir du périmètre fonctionnel",
+        "Titre 2": "Génération",
+        "Violet 2": "Générer et ajuster l'application dans Google AI Studio",
+        "Titre 3": "Versionning",
+        "Violet 3": "Sauvegarder le code propre sur un dépôt GitHub",
+        "Titre 4": "Mise en ligne",
+        "Violet 4": "Déployer le projet sur Vercel et vérifier l'accès public"
+      }
+    },
+    {
+      "template": "VIBECODING - EXERCICE PRATIQUE",
+      "content": {
+        "Titre": "Ce qu’il faut faire",
+        "EXERCICE": "EXERCICE",
+        "Intro": "Appliquer la méthode pas-à-pas pour construire et publier le Kanban gamifié.",
+        "Titre 1": "Consignes de réalisation",
+        "Texte 1": "Suivre les 4 étapes principales du processus pour valider la création de l'outil.",
+        "Question 1": "Rédiger un Prompt Zero structuré intégrant le système d'XP, la boutique d'objets et le stockage local.",
+        "Question 2": "Générer l'interface dans Google AI Studio et tester l'incrémentation des pièces d'or lors des validations.",
+        "Question 3": "Créer un dépôt GitHub et commiter le code source généré.",
+        "Question 4": "Connecter le dépôt à Vercel et publier l'application en ligne."
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Checklist de validation du projet",
+        "Intro": "Contrôler la qualité et les fonctionnalités de l'application en ligne.",
+        "Texte Intro": "Avant de finaliser le projet, vérifier chacun des points suivants sur l'application déployée.",
+        "Nom Checklist": "Critères de réussite",
+        "Texte 1": "L'ajout et la suppression des tâches s'effectuent sans bogue.",
+        "Texte 2": "La barre d'XP se remplit et déclenche la modale lors d'un passage de niveau.",
+        "Texte 3": "L'achat d'équipements déduit correctement l'or et débloque les objets.",
+        "Texte 4": "Les données de niveau et d'inventaire restent enregistrées au rechargement.",
+        "Texte 5": "L'application est déployée sur Vercel et parfaitement fluide."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "À vous de jouer sur ce brief !",
+        "Intro": "Ce brief valide l'ensemble des compétences du module : cadrage de fonctionnalités gamifiées, génération dans Google AI Studio, versionning sur GitHub et déploiement continu sur Vercel.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Dans la leçon suivante M3C6L5, passons à l'action globale : choisissez votre brief préféré parmi les projets présentés et publiez votre première application !"
+      }
+    }
+  ]
+}

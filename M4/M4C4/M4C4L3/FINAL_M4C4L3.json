@@ -1,0 +1,17 @@
+{
+  "lessonSlug": "m4c4l3",
+  "lessonTitle": "M4C4L3 — Déboguer visuellement avec Antigravity",
+  "lessonType": "logiciel",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Déboguer visuellement avec Antigravity"
+      }
+    },
+    {
+      "template": "VIBECODING - DEMO",
+      "content": {}
+    }
+  ]
+}

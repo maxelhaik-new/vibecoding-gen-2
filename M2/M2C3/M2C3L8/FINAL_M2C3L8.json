@@ -1,0 +1,135 @@
+{
+  "lessonTitle": "M2C3L8",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Le process itératif en Vibe Coding",
+        "Sous-titre": "Apprendre à dialoguer et corriger l'agent"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Comment itérer pour mieux réussir ?",
+        "Intro": "Le Vibe Coding n'est pas un processus linéaire à étape unique. On n'obtient jamais le résultat final du premier coup. Il faut itérer et ajuster le code en continu. Découvrons comment structurer ces cycles.",
+        "Titre 1": "Le principe du dialogue",
+        "Texte 1": "Voyons comment échanger avec l'agent de manière fluide, comme on le ferait avec un collègue développeur.",
+        "Titre 2": "Les types de retours",
+        "Texte 2": "Focus sur la différence fondamentale entre retours vagues et retours précis.",
+        "Titre 3": "L'art de la correction",
+        "Texte 3": "Découvrons comment guider l'IA pas à pas vers la bonne solution technique sans jamais perdre le fil du projet."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "La boucle d'itération",
+        "Mot": "Boucle d'itération",
+        "Definition": "Cycle répété de génération, de test, de feedback et de correction entre le créateur et l'IA. Au lieu de générer de grands blocs de code d'un coup, on avance par micro-ajustements successifs. On demande une modification ciblée, on teste immédiatement le résultat dans l'éditeur, puis on ajuste le prompt. Cette boucle rapide permet de repérer et corriger les erreurs au fur et à mesure.",
+        "Bulle": "EN BREF : Tester chaque modification immédiatement évite d'accumuler des bugs. En validant le code à chaque étape, on isole l'erreur dès son apparition au lieu de perdre du temps à chercher l'origine d'un blocage global.",
+        "Picto 1": "mdi:book-open-variant"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CYCLE",
+      "content": {
+        "Titre": "Les 4 réflexes clés en Vibe Coding",
+        "Intro": "Pour structurer efficacement son travail, on doit activer ces quatre réflexes systématiquement.",
+        "Titre 1": "UN SEUL PROMPT",
+        "Texte 1": "Découper chaque demande en étapes simples. Ne jamais tout demander à la fois.",
+        "Picto 1": "mdi:123",
+        "Titre 2": "VOIR LE RENDU",
+        "Texte 2": "Tester l'interface à chaque génération pour repérer les bugs.",
+        "Picto 2": "mdi:image",
+        "Titre 3": "DÉCRIRE LE BUG",
+        "Texte 3": "Nommer l'élément, décrire précisément le problème et éviter les retours vagues.",
+        "Picto 3": "mdi:format-text-variant-outline",
+        "Titre 4": "SAUVEGARDER",
+        "Texte 4": "Sécuriser ce qui fonctionne et cibler la portée de chaque nouvelle modification.",
+        "Picto 4": "mdi:check-all"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "Corriger le code en 4 étapes",
+        "Titre 1": "CONSTATER",
+        "Texte 1": "Repérer le comportement inattendu ou l'erreur de console.",
+        "Picto 1": "mdi:stop-alert",
+        "Titre 2": "CIBLER",
+        "Texte 2": "Identifier le fichier et la fonction concernés.",
+        "Picto 2": "mdi:microscope",
+        "Titre 3": "PROMPT",
+        "Texte 3": "Rédiger un feedback précis avec le message d'erreur exact.",
+        "Picto 3": "mdi:code-braces-box",
+        "Titre 4": "VALIDER",
+        "Texte 4": "Tester la correction avant de passer à l'étape suivante.",
+        "Picto 4": "mdi:check-all"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Faire un feedback constructif à l'IA",
+        "Intro": "Le feedback constructif donne des directions claires à l'IA, même lorsqu'elles sont correctives.",
+        "Titre A": "À ÉVITER",
+        "Titre B": "CONSTRUCTIF",
+        "Item 1": "STYLE GRAPH",
+        "Texte A Item 1": "Le bouton est moche, change la couleur ou le style.",
+        "Texte B1": "Applique la classe Tailwind bg-indigo-600 sur le bouton.",
+        "Item 2": "ERREUR",
+        "Texte A Item 2": "Ça ne marche pas du tout, répare le code.",
+        "Texte B2": "Copier l'erreur console : TypeError dans TodoList.tsx.",
+        "Item 3": "LOGIQUE",
+        "Texte A Item 3": "La liste ne s'actualise pas.",
+        "Texte B3": "Vérifier si deleteTask vide le localStorage.",
+        "Item 4": "RETOUR",
+        "Texte A Item 4": "C'est trop lent et mal codé, recommence.",
+        "Texte B4": "Remplace le fetch par du React Query."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Transmettre un bug à l'agent",
+        "Intro": "EXEMPLE DE PROMPT DE DÉBOGAGE",
+        "Texte 1": "On formule un retour précis en fournissant le contexte exact et l'erreur brute. Exemple de prompt : L'application plante au clic sur Supprimer. Voici l'erreur de la console : Uncaught TypeError: Cannot read properties of undefined (reading id) dans TodoList.tsx à la ligne 42. Corriger la fonction pour résoudre ce bug. Indiquer le fichier et la ligne exacte permet à l'éditeur de code de cibler et corriger le problème sans perdre de temps.",
+        "Texte Bulle": "EN BREF : Copier-coller le message d'erreur brut dans l'éditeur fait gagner un temps précieux. Au lieu de deviner, l'IA cible immédiatement la ligne de code fautive et propose le correctif adapté sans perdre de temps.",
+        "Source": "Image : M. Elhaik"
+      },
+      "image_concept": "A close-up of a glowing neon computer screen showing a detailed software error log, with a digital magnifying glass highlighting a specific line of code. The background is dark and technical.",
+      "image_style": "grainy-editorial",
+      "image_ratio": "16:9"
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Texte principal": "L'itération est le cœur du Vibe Coding. Réussir son projet demande de savoir faire des retours précis et structurés à l'IA, plutôt que de rejeter en bloc les erreurs. En guidant l'agent avec des logs de console et des descriptions de bugs ciblées, on parvient rapidement à une application robuste et fonctionnelle.",
+        "Texte Bulle": "EN BREF : La boucle d'itération est maîtrisée. Prochaine étape : adopter le réflexe de la correction continue. En nettoyant le code au fur et à mesure, on évite d'accumuler de la dette technique et on garde une base saine, prête à évoluer sans blocage."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "lessonSlug": "m4c5l5",
+  "lessonTitle": "M4C5L5 — Résoudre des conflits simples avec l'IA",
+  "lessonType": "logiciel",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Résoudre des conflits simples avec l'IA"
+      }
+    },
+    {
+      "template": "VIBECODING - DEMO",
+      "content": {}
+    }
+  ]
+}

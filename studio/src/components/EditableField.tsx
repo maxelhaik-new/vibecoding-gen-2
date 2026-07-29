@@ -49,10 +49,10 @@ export const EditableField: React.FC<EditableFieldProps> = ({
     : '1px transparent';
 
   const backgroundStyle = isInvalid
-    ? 'rgba(239, 68, 68, 0.1)' // Light red highlight
+    ? 'rgba(239, 68, 68, 0.15)'
     : isFocused
-    ? 'rgba(0, 0, 0, 0.04)'
-    : 'rgba(0, 0, 0, 0.01)';
+    ? 'rgba(59, 130, 246, 0.12)'
+    : 'var(--slide-input-bg, transparent)';
 
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
 

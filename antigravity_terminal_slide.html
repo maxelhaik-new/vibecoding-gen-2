@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide — Terminal Antigravity IDE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #08090c;
+      --term-bg: rgba(15, 17, 23, 0.95);
+      --term-header: #141721;
+      --term-border: rgba(255, 255, 255, 0.12);
+      
+      --color-prompt-user: #38bdf8;
+      --color-prompt-host: #818cf8;
+      --color-prompt-dir: #f472b6;
+      --color-cmd: #f3f4f6;
+      
+      --color-info: #60a5fa;
+      --color-success: #34d399;
+      --color-warning: #fbbf24;
+      --color-accent: #a855f7;
+      --color-dim: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(15, 17, 23, 0.5) 0%, #08090c 100%);
+      display: flex;
+      align-items: center;
+      justify: center;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+    }
+
+    /* 16:9 Slide Aspect Ratio Container (1920x1080 canvas) */
+    .slide-wrapper {
+      width: 1920px;
+      height: 1080px;
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Custom Terminal Window */
+    .terminal-window {
+      width: 100%;
+      height: 100%;
+      background: var(--term-bg);
+      border: 1px solid var(--term-border);
+      border-radius: 16px;
+      box-shadow: 
+        0 30px 60px -12px rgba(0, 0, 0, 0.85),
+        0 0 0 1px rgba(255, 255, 255, 0.05),
+        0 0 40px rgba(168, 85, 247, 0.1);
+      backdrop-filter: blur(24px);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Terminal Header Bar */
+    .terminal-header {
+      height: 54px;
+      background: var(--term-header);
+      border-bottom: 1px solid var(--term-border);
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+
+    .mac-buttons {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .mac-btn {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+    }
+
+    .mac-close { background: #ff5f56; border: 1px solid #e0443e; }
+    .mac-min { background: #ffbd2e; border: 1px solid #dea123; }
+    .mac-max { background: #27c93f; border: 1px solid #1aab29; }
+
+    /* Tabs */
+    .tabs-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: 24px;
+      flex: 1;
+    }
+
+    .tab {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      border-radius: 8px 8px 0 0;
+      font-size: 13px;
+      font-weight: 500;
+      color: #9ca3af;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+    }
+
+    .tab.active {
+      background: rgba(255, 255, 255, 0.08);
+      color: #f3f4f6;
+      border-color: rgba(255, 255, 255, 0.12);
+      border-bottom-color: transparent;
+    }
+
+    .tab-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 8px #34d399;
+    }
+
+    /* Badges Right */
+    .header-badges {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .badge-purple {
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+
+    .badge-blue {
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    /* Terminal Body Content */
+    .terminal-body {
+      flex: 1;
+      padding: 28px 36px;
+      font-family: 'Fira Code', monospace;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #e5e7eb;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* System Banner */
+    .system-banner {
+      background: rgba(56, 189, 248, 0.05);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 10px;
+      padding: 14px 20px;
+      font-size: 14px;
+      color: #93c5fd;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .banner-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+
+    /* Command Line Prompts */
+    .cmd-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .prompt-line {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .prompt-user { color: var(--color-prompt-user); font-weight: 600; }
+    .prompt-at { color: var(--color-dim); }
+    .prompt-host { color: var(--color-prompt-host); font-weight: 600; }
+    .prompt-dir { color: var(--color-prompt-dir); font-weight: 500; }
+    .prompt-branch { color: var(--color-warning); font-size: 14px; }
+    .prompt-char { color: #f43f5e; font-weight: 700; }
+    .cmd-text { color: var(--color-cmd); font-weight: 600; }
+
+    /* Output Stream */
+    .output-stream {
+      padding-left: 20px;
+      border-left: 2px solid rgba(255, 255, 255, 0.08);
+      margin-left: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 15px;
+    }
+
+    .log-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .log-time { color: var(--color-dim); font-size: 13px; }
+    .tag-info { color: var(--color-info); font-weight: 600; }
+    .tag-success { color: var(--color-success); font-weight: 600; }
+    .tag-accent { color: var(--color-accent); font-weight: 600; }
+    .log-text { color: #d1d5db; }
+    .log-highlight { color: #fef08a; font-weight: 500; }
+
+    /* Interactive Cursor */
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 20px;
+      background: #38bdf8;
+      vertical-align: middle;
+      animation: blink 1s infinite;
+      box-shadow: 0 0 10px #38bdf8;
+      border-radius: 1px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide-wrapper">
+    <div class="terminal-window">
+      
+      <!-- Terminal Header Bar -->
+      <div class="terminal-header">
+        <div class="mac-buttons">
+          <div class="mac-btn mac-close"></div>
+          <div class="mac-btn mac-min"></div>
+          <div class="mac-btn mac-max"></div>
+        </div>
+
+        <div class="tabs-container">
+          <div class="tab active">
+            <div class="tab-status-dot"></div>
+            <span>zsh — antigravity-sandbox</span>
+          </div>
+          <div class="tab">
+            <span>🤖 subagent-runner (m4c1l3)</span>
+          </div>
+          <div class="tab">
+            <span>📜 pipeline.log</span>
+          </div>
+        </div>
+
+        <div class="header-badges">
+          <span class="badge badge-purple">⚡ ANTIGRAVITY v2.4</span>
+          <span class="badge badge-blue">🔒 SANDBOX ACTIVE</span>
+        </div>
+      </div>
+
+      <!-- Terminal Body / Execution Log -->
+      <div class="terminal-body">
+        
+        <!-- System Banner -->
+        <div class="system-banner">
+          <div class="banner-title">
+            <span>🚀 ANTIGRAVITY AGENTIC TERMINAL</span>
+            <span style="color: #64748b;">|</span>
+            <span style="color: #cbd5e1; font-weight: 400;">Workspace: /Users/maxime/VIBE CODING GENERATION</span>
+          </div>
+          <div style="font-size: 13px; color: #34d399;">● Connected to Claude 3.5 Sonnet API</div>
+        </div>
+
+        <!-- Command 1 -->
+        <div class="cmd-block">
+          <div class="prompt-line">
+            <span class="prompt-user">vibe-coder</span>
+            <span class="prompt-at">@</span>
+            <span class="prompt-host">antigravity-ide</span>
+            <span class="prompt-dir">~/VIBE CODING GENERATION</span>
+            <span class="prompt-branch">(git:main)</span>
+            <span class="prompt-char">❯</span>
+            <span class="cmd-text">python3 scripts/generate_course_pipeline.py m4c1l3 --phase ecris</span>
+          </div>
+
+          <div class="output-stream">
+            <div class="log-row">
+              <span class="log-time">[17:08:12]</span>
+              <span class="tag-info">INFO</span>
+              <span class="log-text">Orchestrating pipeline for lesson: <span class="log-highlight">M4C1L3 (Antigravity vs Éditeur Classique)</span></span>
+            </div>
+            <div class="log-row">
+              <span class="log-time">[17:08:13]</span>
+              <span class="tag-info">INFO</span>
+              <span class="log-text">Provider target: <span class="tag-accent">CLAUDE</span> (Model: <span class="log-highlight">claude-sonnet-4-6</span>)</span>
+            </div>
+            <div class="log-row">
+              <span class="log-time">[17:08:15]</span>
+              <span class="tag-success">SUCCESS</span>
+              <span class="log-text">Slide 1/8 generated: <span style="color: #a7f3d0;">VIBECODING - COVER</span></span>
+            </div>
+            <div class="log-row">
+              <span class="log-time">[17:08:17]</span>
+              <span class="tag-success">SUCCESS</span>
+              <span class="log-text">Slide 2/8 generated: <span style="color: #a7f3d0;">VIBECODING - INTRO</span></span>
+            </div>
+            <div class="log-row">
+              <span class="log-time">[17:08:19]</span>
+              <span class="tag-success">SUCCESS</span>
+              <span class="log-text">Slide 3/8 generated: <span style="color: #a7f3d0;">VIBECODING - 5 BLOCS</span> (Positionnement Antigravity)</span>
+            </div>
+            <div class="log-row">
+              <span class="log-time">[17:08:21]</span>
+              <span class="tag-success">SUCCESS</span>
+              <span class="log-text">Slide 4/8 generated: <span style="color: #a7f3d0;">VIBECODING - COMPARAISON</span> (Ecosystème IDEs 2026)</span>
+            </div>
+            <div class="log-row">
+              <span class="log-time">[17:08:23]</span>
+              <span class="tag-success">SUCCESS</span>
+              <span class="log-text">Slide 5/8 generated: <span style="color: #a7f3d0;">VIBECODING - PROCESS</span> (3 Piliers: Chat • Editor • Terminal)</span>
+            </div>
+            <div class="log-row">
+              <span class="log-time">[17:08:25]</span>
+              <span class="tag-accent">DONE</span>
+              <span class="log-text">Output validated & saved: <span style="color: #fef08a; text-decoration: underline;">M4/M4C1/M4C1L3/FINAL_M4C1L3.json</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Command 2 -->
+        <div class="cmd-block" style="margin-top: 10px;">
+          <div class="prompt-line">
+            <span class="prompt-user">vibe-coder</span>
+            <span class="prompt-at">@</span>
+            <span class="prompt-host">antigravity-ide</span>
+            <span class="prompt-dir">~/VIBE CODING GENERATION</span>
+            <span class="prompt-branch">(git:main)</span>
+            <span class="prompt-char">❯</span>
+            <span class="cmd-text">git status --short</span>
+          </div>
+
+          <div class="output-stream">
+            <div class="log-row">
+              <span style="color: #34d399; font-weight: 600;"> M </span>
+              <span style="color: #9ca3af;">M4/M4C1/M4C1L3/FINAL_M4C1L3.json</span>
+            </div>
+            <div class="log-row">
+              <span style="color: #34d399; font-weight: 600;"> M </span>
+              <span style="color: #9ca3af;">M4/M4C1/M4C1L3/PLAN_M4C1L3.md</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Input Prompt Line -->
+        <div class="prompt-line" style="margin-top: 14px;">
+          <span class="prompt-user">vibe-coder</span>
+          <span class="prompt-at">@</span>
+          <span class="prompt-host">antigravity-ide</span>
+          <span class="prompt-dir">~/VIBE CODING GENERATION</span>
+          <span class="prompt-branch">(git:main)</span>
+          <span class="prompt-char">❯</span>
+          <span class="cmd-text" style="color: #60a5fa;">antigravity run --agent-mode composer</span>
+          <span class="cursor"></span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

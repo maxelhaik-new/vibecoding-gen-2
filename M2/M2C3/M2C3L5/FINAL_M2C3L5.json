@@ -1,0 +1,137 @@
+{
+  "lessonTitle": "M2C3L5",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Construire son premier prompt"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Ce que l'IA attend vraiment",
+        "Intro": "Avant d'ouvrir l'IDE, il y a un travail de préparation. Le premier prompt donne à l'agent sa direction pour tout le projet. Un prompt flou produit un code flou. Voyons comment le construire.",
+        "Titre 1": "Le cahier des charges",
+        "Texte 1": "Voyons comment définir le besoin métier, l'utilisateur idéal et les fonctionnalités essentielles.",
+        "Titre 2": "La stack technique",
+        "Texte 2": "Découvrons pourquoi imposer les outils est vital pour éviter les mauvaises surprises de l'IA.",
+        "Titre 3": "Les contraintes additionnelles",
+        "Texte 3": "Apprenons à ajouter les règles de design, de sécurité ou de code existant pour parfaire la requête."
+      }
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "Le prompt en 3 étapes",
+        "Intro": "On ne part pas d'une page blanche. On part de notre cahier des charges du chapitre précédent pour le transformer en instruction directe pour l'agent.",
+        "Titre 1": "CAHIER",
+        "Violet 1 ": "Décrire le projet, l'utilisateur et les actions clés",
+        "Titre 2": "STACK",
+        "Violet 2": "Nommer les outils, langages et base de données",
+        "Titre 3": "RÈGLES",
+        "Violet 3": "Ajouter les contraintes visuelles et de sécurité",
+        "Titre 4": "PROMPT",
+        "Violet 4": "Assembler les 3 blocs en une instruction complète",
+        "Titre 5": "AGENT",
+        "Violet 5": "Envoyer et laisser l'IA générer la première version",
+        "Titre 6": "RELIRE",
+        "Violet 6": "Contrôler le résultat avant toute exécution"
+      }
+    },
+    {
+      "template": "VIBECODING - 2 BLOCS",
+      "content": {
+        "Titre": "Où placer son contexte ?",
+        "Intro": "Faut-il tout écrire dans le chat ou utiliser un fichier de règles ? Chaque emplacement a son rôle.",
+        "Titre 1": "Le fichier de règles",
+        "Texte 1": "C'est la mémoire à long terme du projet. Idéal pour la stack et le design.",
+        "Texte 2": "Il est relu automatiquement par l'agent à chaque fois.",
+        "Texte 3": "On n'a plus besoin de le répéter dans le chat.",
+        "Titre 2": "L'amorce dans le chat",
+        "Texte 4": "C'est l'ordre de mission immédiat pour lancer la session.",
+        "Texte 5": "Idéal pour assigner un rôle (ex: Tu es un expert React).",
+        "Texte 6": "On y décrit la tâche précise à accomplir tout de suite."
+      }
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Le cahier des charges",
+        "Intro": "EXEMPLE CONCRET",
+        "Source": "Projet : Gestionnaire de tâches",
+        "Texte 1": "Imaginons un chef de projet freelance qui veut une application simple pour gérer ses tâches. Le persona : un indépendant qui jongle entre 5 clients simultanément, travaille depuis son téléphone et veut voir ses priorités d'un coup d'œil. Le MVP : une seule fonctionnalité centrale — créer, cocher et supprimer des tâches. Les user stories : « En tant qu'utilisateur, je peux ajouter une tâche avec une description courte. Je peux la marquer comme faite. Je peux la supprimer. Je peux voir toutes mes tâches dans une liste claire ». C'est tout. Pas de partage, pas de calendrier. Le périmètre est délibérément réduit pour que l'IA reste concentrée.",
+        "Texte Bulle": "Le problème du débutant : vouloir tout mettre dans le premier prompt. Partage entre équipes, notifications push, synchronisation cloud, tableau de bord analytique... L'IA va tout générer, mais rien ne fonctionnera vraiment. Un MVP veut dire une seule chose bien faite. On ajoute les fonctionnalités ensuite, brique par brique."
+      }
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Stack : imposer ou laisser choisir ?",
+        "Intro": "Laisser l'IA choisir ses propres outils semble pratique. En réalité, elle pioche souvent dans des technologies obsolètes ou incompatibles avec ce qu'on a déjà installé.",
+        "Titre A": "SANS STACK",
+        "Titre B": "AVEC STACK",
+        "Item 1": "Résultat",
+        "Item 2": "Risque",
+        "Item 3": "Coût",
+        "Item 4": "Contrôle",
+        "Texte A Item 1": "Code en jQuery ou PHP selon l'humeur du modèle",
+        "Texte A Item 2": "Incompatible avec l'environnement déjà en place",
+        "Texte A Item 3": "Refaire entièrement si le choix est inadapté",
+        "Texte A Item 4": "Zéro maîtrise sur l'architecture générée",
+        "Texte B1": "Code cohérent avec les outils choisis et installés",
+        "Texte B2": "Aucune surprise : l'environnement est imposé",
+        "Texte B3": "On part sur une base stable dès le premier essai",
+        "Texte B4": "L'agent respecte les conventions du projet"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Les contraintes additionnelles",
+        "Intro": "Le cahier des charges et la stack suffisent souvent. Mais ces quatre types de contraintes, quand on en a besoin, font une différence significative sur la qualité du résultat.",
+        "Titre 1": "DESIGN SYSTEM",
+        "Texte 1": "Imposer la couleur principale, le style des boutons, la typographie ou le mode sombre garantit une interface cohérente.",
+        "Titre 2": "RÈGLE DE SÉCURITÉ",
+        "Texte 2": "Interdire les bibliothèques non vérifiées, exiger le chiffrement des mots de passe, imposer les variables d'environnement.",
+        "Titre 3": "EXEMPLE DE CODE",
+        "Texte 3": "Fournir 10 lignes d'un composant existant est plus puissant que n'importe quelle description : l'IA reproduit exactement le style.",
+        "Titre 4": "LANGUE & COMMENTAIRES",
+        "Texte 4": "Imposer la langue des commentaires dans le code et le niveau de détail de la documentation produite par l'agent."
+      }
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Le prompt complet assemblé",
+        "Intro": "RÉSULTAT FINAL",
+        "Source": "App : Gestionnaire de tâches",
+        "Texte 1": "Voici ce que donne l'assemblage des 3 blocs sur notre exemple de gestionnaire de tâches. Bloc 1 — Le besoin : « Crée une application web de gestion de tâches pour un freelance. L'utilisateur peut ajouter une tâche avec un texte court, la marquer comme terminée et la supprimer. La liste des tâches est visible dès l'ouverture. » Bloc 2 — La stack : « Utilise React pour l'interface, Tailwind CSS pour le style. Stocke les données localement dans le navigateur (localStorage). N'utilise aucune base de données externe ni aucune bibliothèque supplémentaire. » Bloc 3 — Les contraintes : « Interface en mode sombre. Boutons avec coins très arrondis. Tâches terminées barrées et grisées. Commentaires en français dans le code. »",
+        "Texte Bulle": "Ce prompt fait environ 80 mots. C'est suffisant pour lancer un premier projet propre. L'objectif n'est pas d'écrire un roman, mais d'être précis sur les trois points qui comptent : ce que fait l'app, avec quels outils, et avec quelles règles de style. Tout le reste se règle dans les prompts suivants, au fil des itérations."
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Avant d'envoyer son prompt initial",
+        "Intro": "Un prompt relu en 30 secondes évite souvent 2 heures de corrections.",
+        "Texte Intro": "Ce n'est pas une liste de contraintes rigides. C'est une habitude à prendre pour éviter les allers-retours inutiles. Un agent mal cadré au départ peut partir dans une direction difficile à corriger sans tout recommencer.",
+        "Nom Checklist": "Les 5 questions à se poser",
+        "Texte 1": "L'utilisateur final et ses actions clés sont décrits.",
+        "Texte 2": "La stack technique est nommée précisément.",
+        "Texte 3": "Le périmètre est limité : une seule fonctionnalité centrale.",
+        "Texte 4": "Les contraintes de style ou de sécurité sont listées.",
+        "Texte 5": "Le prompt ne dépasse pas les besoins du MVP initial."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Un bon prompt initial ne cherche pas à tout décrire — il cherche à donner trois informations précises : ce que fait l'application, dans quel environnement technique, et avec quelles règles à respecter. Ce triptyque suffit pour que l'agent génère une première version stable. La clé, c'est la réduction du périmètre : un MVP bien défini produit du code fonctionnel là où une demande trop large produit un prototype qui ne fonctionne pas vraiment.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Le premier prompt est en place. Mais en Vibe Coding, une seule requête ne fait jamais tout le travail. Dans la leçon suivante : comment découper une fonctionnalité complexe en petits prompts atomiques pour avancer sans perdre le contrôle."
+      }
+    }
+  ]
+}

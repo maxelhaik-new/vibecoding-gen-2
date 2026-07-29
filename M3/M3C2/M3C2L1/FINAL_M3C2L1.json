@@ -1,0 +1,30 @@
+{
+  "lessonTitle": "M3C2L1 — Les objectifs du chapitre : itération agentique & plan mode",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Itérer avec l'agent et pratiquer le plan mode"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Ce chapitre apprend à structurer le dialogue avec l'IA. On découvre comment lui demander des corrections pas à pas, éviter les bugs et valider chaque modification.",
+        "Titre 1": "Comprendre la logique d'itération avec l'agent",
+        "Titre 2": "Formuler des instructions claires et précises",
+        "Titre 3": "Découvrir le principe du plan before execute",
+        "Titre 4": "Utiliser le plan mode pour guider la génération",
+        "Titre 5": "Mener des revues de code structurées par étapes",
+        "Titre 6": "Corriger une session de code qui commence à déraper"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

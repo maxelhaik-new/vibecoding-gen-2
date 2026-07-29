@@ -1,0 +1,31 @@
+{
+  "lessonTitle": "M3C5L6 — À vous de jouer : mettre votre app en ligne",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "À vous de jouer : déployer votre application"
+      }
+    },
+    {
+      "template": "VIBECODING - EXERCICE PRATIQUE",
+      "content": {
+        "Titre": "Ce qu’il faut faire",
+        "EXERCICE": "EXERCICE",
+        "Intro": "À vous de jouer en appliquant les différentes étapes vues dans ce chapitre.",
+        "Titre 1": "Tâches à réaliser",
+        "Texte 1": "Réalisez la mise en ligne complète de votre projet depuis son dépôt GitHub jusqu'à l'URL de production.",
+        "Question 1": "Créez ou ouvrez votre compte Vercel relié à GitHub.",
+        "Question 2": "Importez le dépôt GitHub du projet choisi.",
+        "Question 3": "Configurez le projet et cliquez sur Deploy.",
+        "Question 4": "Vérifiez la mise à jour automatique sur l'URL publique après un nouveau commit."
+      }
+    },
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "(Solution)"
+      }
+    }
+  ]
+}

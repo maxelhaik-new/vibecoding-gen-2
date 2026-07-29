@@ -1,0 +1,44 @@
+{
+  "lessonTitle": "M3C4L7 — À vous de jouer : versionner votre app",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "À vous de jouer : versionner votre application"
+      }
+    },
+    {
+      "template": "VIBECODING - EXERCICE PRATIQUE",
+      "content": {
+        "Titre": "Ce qu’il faut faire",
+        "EXERCICE": "EXERCICE",
+        "Intro": "À vous de jouer en appliquant les différentes étapes vues dans ce chapitre.",
+        "Titre 1": "Tâches à réaliser",
+        "Texte 1": "Réalisez le suivi de version complet de votre projet depuis Google AI Studio jusqu'à votre dépôt distant GitHub.",
+        "Question 1": "Exportez votre projet depuis Google AI Studio vers un nouveau dépôt GitHub.",
+        "Question 2": "Effectuez une modification de code dans AI Studio et publiez une nouvelle version (commit & push).",
+        "Question 3": "Réglez la visibilité de votre dépôt (Public ou Privé) et rédigez un README orienté agent."
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Checklist de validation du dépôt",
+        "Intro": "Valider le versionning de son projet sur GitHub.",
+        "Texte Intro": "Un dépôt bien tenu garantit la sécurité de votre code et prépare l'intégration des outils de déploiement et d'édition. Voici la liste des points de contrôle.",
+        "Nom Checklist": "Critères de réussite",
+        "Texte 1": "Le dépôt GitHub est créé et le code est exporté.",
+        "Texte 2": "Une nouvelle version est publiée par commit & push.",
+        "Texte 3": "Le message de commit est explicite et descriptif.",
+        "Texte 4": "Le README présente le projet et la stack technique.",
+        "Texte 5": "Aucune donnée ni clé API sensible n'est publiée."
+      }
+    },
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "(Solution)"
+      }
+    }
+  ]
+}

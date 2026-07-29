@@ -46,15 +46,29 @@ function normalize(str) {
     .replace(/[^a-z0-9]/g, "");        // Supprime tout ce qui n'est pas alphanumérique
 }
 
-// Convertit une couleur Hexadécimale (#RRGGBB) en format Figma (RGB de 0 à 1)
+// Convertit une couleur Hexadécimale (#RRGGBB) ou un nom de type/couleur en format Figma (RGB de 0 à 1)
 function hexToFigmaColor(hexStr) {
-  if (!hexStr || typeof hexStr !== 'string') return { r: 0, g: 0, b: 0 };
-  const hex = hexStr.replace('#', '');
-  const r = parseInt(hex.substring(0, 2), 16) / 255;
-  const g = parseInt(hex.substring(2, 4), 16) / 255;
-  const b = parseInt(hex.substring(4, 6), 16) / 255;
+  if (!hexStr || typeof hexStr !== 'string') return { r: 0.95, g: 0.95, b: 0.96 };
+  
+  const norm = normalize(hexStr);
+  if (norm.includes("theorique") || norm.includes("gris")) return { r: 0.886, g: 0.894, b: 0.914 }; // #E2E4E9
+  if (norm.includes("logiciel") || norm.includes("violet")) return { r: 0.768, g: 0.710, b: 0.992 }; // #C4B5FD
+  if (norm.includes("hybride") || norm.includes("rose")) return { r: 1.0, g: 0.710, b: 0.910 };      // #FFB5E8
+  if (norm.includes("caspratique") || norm.includes("pratique") || norm.includes("bleu")) return { r: 0.627, g: 0.823, b: 1.0 }; // #A0D2FF
+
+  const hex = hexStr.replace('#', '').trim();
+  if (hex.length < 6) return { r: 0.95, g: 0.95, b: 0.96 };
+
+  let r = parseInt(hex.substring(0, 2), 16) / 255;
+  let g = parseInt(hex.substring(2, 4), 16) / 255;
+  let b = parseInt(hex.substring(4, 6), 16) / 255;
+
+  if (isNaN(r) || isNaN(g) || isNaN(b)) {
+    return { r: 0.95, g: 0.95, b: 0.96 };
+  }
   return { r, g, b };
 }
+
 
 // Convertit une couleur Figma (RGB de 0 à 1) en format Hexadécimal (#RRGGBB)
 function figmaColorToHex(color) {
@@ -1339,6 +1353,287 @@ function performRenameTemplate(selection) {
   return renamedCount;
 }
 
+// Fonction récursive de création de nœuds Figma à partir d'une spécification HTML/CSS
+async function buildFigmaNodeFromSpec(spec) {
+  if (!spec) return null;
+
+  function parseCSSColor(cssColorStr) {
+    if (!cssColorStr || cssColorStr === 'transparent' || cssColorStr === 'rgba(0, 0, 0, 0)') return null;
+    const match = cssColorStr.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
+    if (match) {
+      const opacity = match[4] !== undefined ? parseFloat(match[4]) : 1;
+      if (opacity <= 0.01) return null;
+      return {
+        color: {
+          r: parseInt(match[1]) / 255,
+          g: parseInt(match[2]) / 255,
+          b: parseInt(match[3]) / 255
+        },
+        opacity: opacity
+      };
+    }
+    return null;
+  }
+
+  async function getFigmaFont(fontWeight) {
+    const weightNum = parseInt(fontWeight) || 400;
+    let styleName = "Regular";
+    if (weightNum >= 900) styleName = "Black";
+    else if (weightNum >= 800) styleName = "ExtraBold";
+    else if (weightNum >= 700) styleName = "Bold";
+    else if (weightNum >= 600) styleName = "SemiBold";
+    else if (weightNum >= 500) styleName = "Medium";
+
+    const fontFamilies = ["Basic Sans Alt", "Basic Sans", "Inter"];
+    for (const family of fontFamilies) {
+      try {
+        const font = { family, style: styleName };
+        await figma.loadFontAsync(font);
+        return font;
+      } catch (e) {
+        try {
+          const fontFallback = { family, style: "Regular" };
+          await figma.loadFontAsync(fontFallback);
+          return fontFallback;
+        } catch (e2) {}
+      }
+    }
+    await figma.loadFontAsync({ family: "Inter", style: "Regular" });
+    return { family: "Inter", style: "Regular" };
+  }
+
+  const frame = figma.createFrame();
+  frame.name = spec.figmaName || spec.className || spec.tagName || "Custom Element";
+
+  const w = spec.styles && spec.styles.width > 0 ? spec.styles.width : 1920;
+  const h = spec.styles && spec.styles.height > 0 ? spec.styles.height : 1080;
+  frame.resize(Math.max(10, Math.round(w)), Math.max(10, Math.round(h)));
+
+  const isRootSlide = (w >= 1920 && h >= 1080) || (spec.styles && (spec.styles.width === 1920 || spec.styles.height === 1080));
+
+  if (spec.styles && (spec.styles.display === 'flex' || spec.styles.display === 'block' || spec.styles.display === 'grid')) {
+    let isVertical = (spec.styles.flexDirection === 'column');
+    if (spec.styles.display === 'grid') {
+      const cols = spec.styles.gridTemplateColumns;
+      const colCount = (cols && cols !== 'none') ? cols.trim().split(/\s+/).length : 1;
+      isVertical = (colCount <= 1);
+    }
+    frame.layoutMode = isVertical ? 'VERTICAL' : 'HORIZONTAL';
+    if (spec.styles.paddingTop) frame.paddingTop = Math.round(spec.styles.paddingTop);
+    if (spec.styles.paddingRight) frame.paddingRight = Math.round(spec.styles.paddingRight);
+    if (spec.styles.paddingBottom) frame.paddingBottom = Math.round(spec.styles.paddingBottom);
+    if (spec.styles.paddingLeft) frame.paddingLeft = Math.round(spec.styles.paddingLeft);
+    if (spec.styles.gap && !isNaN(spec.styles.gap)) frame.itemSpacing = Math.round(spec.styles.gap);
+
+    // justify-content → primaryAxisAlignItems
+    if (spec.styles.justifyContent) {
+      const jcMap = { 'flex-start': 'MIN', 'start': 'MIN', 'center': 'CENTER', 'flex-end': 'MAX', 'end': 'MAX', 'space-between': 'SPACE_BETWEEN' };
+      if (jcMap[spec.styles.justifyContent]) frame.primaryAxisAlignItems = jcMap[spec.styles.justifyContent];
+    }
+
+    // align-items → counterAxisAlignItems
+    if (spec.styles.alignItems) {
+      const aiMap = { 'flex-start': 'MIN', 'start': 'MIN', 'center': 'CENTER', 'flex-end': 'MAX', 'end': 'MAX', 'baseline': 'BASELINE' };
+      if (aiMap[spec.styles.alignItems]) frame.counterAxisAlignItems = aiMap[spec.styles.alignItems];
+    }
+
+    if (isRootSlide) {
+      frame.primaryAxisSizingMode = 'FIXED';
+      frame.counterAxisSizingMode = 'FIXED';
+      frame.resize(1920, 1080);
+    } else {
+      frame.primaryAxisSizingMode = 'AUTO';
+      frame.counterAxisSizingMode = 'AUTO';
+    }
+  }
+
+  // Parsing des Arrières-plans (Solid & Gradients)
+  let bgApplied = false;
+  if (spec.styles && spec.styles.backgroundImage && spec.styles.backgroundImage.includes('gradient')) {
+    const colorMatches = spec.styles.backgroundImage.match(/(?:rgba?\(.*?\)|#[0-9a-fA-F]{3,8})/g);
+    if (colorMatches && colorMatches.length >= 2) {
+      const stops = colorMatches.map((cStr, idx) => {
+        const cParsed = parseCSSColor(cStr) || { color: { r: 0.1, g: 0.05, b: 0.2 }, opacity: 1 };
+        return {
+          color: { r: cParsed.color.r, g: cParsed.color.g, b: cParsed.color.b, a: cParsed.opacity },
+          position: idx / (colorMatches.length - 1)
+        };
+      });
+      frame.fills = [{
+        type: 'GRADIENT_LINEAR',
+        gradientTransform: [[1, 0, 0], [0, 1, 0]],
+        gradientStops: stops
+      }];
+      bgApplied = true;
+    }
+  }
+
+  if (!bgApplied) {
+    if (spec.styles && spec.styles.backgroundColor) {
+      const bg = parseCSSColor(spec.styles.backgroundColor);
+      if (bg) {
+        frame.fills = [{ type: 'SOLID', color: bg.color, opacity: bg.opacity }];
+      } else {
+        frame.fills = [];
+      }
+    } else {
+      frame.fills = [];
+    }
+  }
+
+  if (spec.styles && spec.styles.borderRadius) {
+    frame.cornerRadius = Math.round(spec.styles.borderRadius);
+  }
+
+  // --- Propriétés étendues ---
+
+  // Opacity de l'élément
+  if (spec.styles && spec.styles.opacity !== undefined && spec.styles.opacity < 1) {
+    frame.opacity = Math.max(0, spec.styles.opacity);
+  }
+
+  // Overflow hidden → clipsContent
+  if (spec.styles && spec.styles.overflow === 'hidden') {
+    frame.clipsContent = true;
+  }
+
+  // Bordures → strokes
+  if (spec.styles && spec.styles.borderWidth > 0 && spec.styles.borderStyle !== 'none') {
+    const borderColor = parseCSSColor(spec.styles.borderColor);
+    if (borderColor) {
+      frame.strokes = [{ type: 'SOLID', color: borderColor.color, opacity: borderColor.opacity }];
+      frame.strokeWeight = Math.round(spec.styles.borderWidth);
+      frame.strokeAlign = 'INSIDE';
+    }
+  }
+
+  // Box-shadow → DROP_SHADOW
+  if (spec.styles && spec.styles.boxShadow && spec.styles.boxShadow !== 'none') {
+    const colorMatch = spec.styles.boxShadow.match(/rgba?\([^)]+\)/);
+    const numsMatch = spec.styles.boxShadow.match(/(-?[\d.]+)px\s+(-?[\d.]+)px\s+([\d.]+)px(?:\s+([\d.]+)px)?/);
+    if (numsMatch) {
+      const shadowColor = colorMatch ? parseCSSColor(colorMatch[0]) : { color: { r: 0, g: 0, b: 0 }, opacity: 0.25 };
+      if (shadowColor) {
+        const dropShadowObj = {
+          type: 'DROP_SHADOW',
+          color: { r: shadowColor.color.r, g: shadowColor.color.g, b: shadowColor.color.b, a: shadowColor.opacity },
+          offset: { x: parseFloat(numsMatch[1]) || 0, y: parseFloat(numsMatch[2]) || 0 },
+          radius: parseFloat(numsMatch[3]) || 0,
+          blendMode: 'NORMAL',
+          visible: true
+        };
+        const spreadVal = parseFloat(numsMatch[4]);
+        if (!isNaN(spreadVal) && spreadVal !== 0) {
+          dropShadowObj.spread = spreadVal;
+        }
+        frame.effects = [dropShadowObj];
+      }
+    }
+  }
+
+  // Max-width constraint
+  if (spec.styles && spec.styles.maxWidth > 0 && spec.styles.maxWidth < 9999) {
+    frame.maxWidth = Math.round(spec.styles.maxWidth);
+  }
+
+  if (spec.children && spec.children.length > 0) {
+    for (const childSpec of spec.children) {
+      if (childSpec.type === 'TEXT') {
+        if (childSpec.text) {
+          const txt = figma.createText();
+          const fontObj = await getFigmaFont(spec.styles ? spec.styles.fontWeight : 400);
+          txt.fontName = fontObj;
+          txt.name = childSpec.figmaName || "Texte";
+          txt.characters = childSpec.text;
+          if (spec.styles && spec.styles.fontSize) txt.fontSize = Math.min(140, Math.max(14, Math.round(spec.styles.fontSize)));
+          if (spec.styles && spec.styles.color) {
+            const c = parseCSSColor(spec.styles.color);
+            if (c) txt.fills = [{ type: 'SOLID', color: c.color, opacity: c.opacity }];
+          }
+          if (spec.styles && spec.styles.textAlign) {
+             if (spec.styles.textAlign === 'center') txt.textAlignHorizontal = 'CENTER';
+             else if (spec.styles.textAlign === 'right') txt.textAlignHorizontal = 'RIGHT';
+             else if (spec.styles.textAlign === 'justify') txt.textAlignHorizontal = 'JUSTIFIED';
+             else txt.textAlignHorizontal = 'LEFT';
+          }
+
+          // Line-height
+          if (spec.styles && spec.styles.lineHeight && spec.styles.lineHeight !== 'normal') {
+            const lh = parseFloat(spec.styles.lineHeight);
+            if (!isNaN(lh) && lh > 0) {
+              txt.lineHeight = { value: lh, unit: 'PIXELS' };
+            }
+          }
+
+          // Letter-spacing
+          if (spec.styles && spec.styles.letterSpacing && spec.styles.letterSpacing !== 'normal') {
+            const ls = parseFloat(spec.styles.letterSpacing);
+            if (!isNaN(ls)) {
+              txt.letterSpacing = { value: ls, unit: 'PIXELS' };
+            }
+          }
+
+          // Text-transform → textCase
+          if (spec.styles && spec.styles.textTransform) {
+            const tcMap = { 'uppercase': 'UPPER', 'lowercase': 'LOWER', 'capitalize': 'TITLE' };
+            if (tcMap[spec.styles.textTransform]) {
+              txt.textCase = tcMap[spec.styles.textTransform];
+            }
+          }
+
+          // Ajoute D'ABORD le texte au conteneur avant d'appliquer le STRETCH et HEIGHT auto
+          frame.appendChild(txt);
+
+          if (frame.layoutMode !== 'NONE') {
+            if (frame.layoutMode === 'HORIZONTAL') {
+              txt.layoutAlign = 'INHERIT';
+              txt.textAutoResize = 'WIDTH_AND_HEIGHT'; // Hug contents horizontally
+            } else {
+              txt.layoutAlign = 'STRETCH';
+              txt.textAutoResize = 'HEIGHT';
+            }
+          }
+        }
+      } else {
+        const childFrame = await buildFigmaNodeFromSpec(childSpec);
+        if (childFrame) {
+          frame.appendChild(childFrame);
+          
+          // Position absolute → overlay dans le conteneur parent (uniquement si le parent est en Auto Layout)
+          if (childSpec.styles && childSpec.styles.position === 'absolute' && frame.layoutMode !== 'NONE') {
+            childFrame.layoutPositioning = 'ABSOLUTE';
+            childFrame.x = childSpec.styles.left || 0;
+            childFrame.y = childSpec.styles.top || 0;
+            if (childSpec.styles.width > 0 && childSpec.styles.height > 0) {
+              childFrame.resize(Math.max(1, Math.round(childSpec.styles.width)), Math.max(1, Math.round(childSpec.styles.height)));
+            }
+          } else if (childSpec.styles) {
+            if (frame.layoutMode === 'HORIZONTAL') {
+              childFrame.layoutGrow = childSpec.styles.flexGrow > 0 ? 1 : 0;
+              // Fix: si le parent a alignItems stretch ou non défini, stretch l'enfant
+              const shouldStretchH = childSpec.styles.alignSelf === 'stretch' || (!childSpec.styles.alignSelf && spec.styles && (spec.styles.alignItems === 'stretch' || (!spec.styles.alignItems || spec.styles.alignItems === 'normal')));
+              childFrame.layoutAlign = shouldStretchH ? 'STRETCH' : 'INHERIT';
+            } else if (frame.layoutMode === 'VERTICAL') {
+              childFrame.layoutGrow = childSpec.styles.flexGrow > 0 ? 1 : 0;
+              // Block elements typically stretch in vertical flex unless aligned otherwise
+              const shouldStretch = childSpec.styles.alignSelf === 'stretch' || (!childSpec.styles.alignSelf && spec.styles && spec.styles.alignItems !== 'center' && spec.styles.alignItems !== 'flex-start' && spec.styles.alignItems !== 'flex-end');
+              childFrame.layoutAlign = shouldStretch ? 'STRETCH' : 'INHERIT';
+            }
+          } else {
+            if (frame.layoutMode === 'HORIZONTAL') {
+              childFrame.layoutGrow = 0;
+            } else if (frame.layoutMode === 'VERTICAL') {
+              childFrame.layoutAlign = 'STRETCH';
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return frame;
+}
+
 // Écoute les messages provenant de l'interface utilisateur (ui.html)
 figma.ui.onmessage = async (msg) => {
   if (msg.type === 'resize-window') {
@@ -1350,6 +1645,32 @@ figma.ui.onmessage = async (msg) => {
     if (assetsResolve) {
       assetsResolve(msg.results);
       assetsResolve = null;
+    }
+    return;
+  }
+
+  // --- Construction de Slide sur-mesure depuis du HTML/CSS ---
+  if (msg.type === 'build-custom-slide') {
+    try {
+      const spec = msg.data;
+      if (!spec) {
+        figma.ui.postMessage({ type: 'error', message: 'Spécification HTML invalide.' });
+        return;
+      }
+
+      await figma.loadFontAsync({ family: "Inter", style: "Regular" });
+      await figma.loadFontAsync({ family: "Inter", style: "Bold" });
+
+      const slideFrame = await buildFigmaNodeFromSpec(spec);
+      if (slideFrame) {
+        slideFrame.x = figma.viewport.center.x - 960;
+        slideFrame.y = figma.viewport.center.y - 540;
+        figma.currentPage.selection = [slideFrame];
+        figma.ui.postMessage({ type: 'success', message: 'Slide sur-mesure construite avec succès !' });
+      }
+    } catch (err) {
+      console.error("Erreur de construction sur-mesure:", err);
+      figma.ui.postMessage({ type: 'error', message: 'Erreur lors de la construction de la slide : ' + (err.message || err) });
     }
     return;
   }
@@ -1559,6 +1880,71 @@ figma.ui.onmessage = async (msg) => {
   if (msg.type === 'generate-slides') {
     try {
       let data = msg.data;
+
+      // Mode d'importation directe d'images (sans slides ni templates)
+      let standaloneImages = [];
+      if (data) {
+        if (data.images && Array.isArray(data.images)) {
+          standaloneImages = data.images;
+        } else if (Array.isArray(data) && data.length > 0 && (typeof data[0] === 'string' && data[0].startsWith('http'))) {
+          standaloneImages = data;
+        } else if (Array.isArray(data) && data.length > 0 && data[0] && typeof data[0] === 'object' && (data[0].url || data[0].image || data[0].src)) {
+          standaloneImages = data;
+        } else if (data && typeof data === 'object' && (data.url || data.image) && !data.template && !data.slides && !data.lessons) {
+          standaloneImages = [data];
+        }
+      }
+
+      if (standaloneImages.length > 0) {
+        const fetchTasks = [];
+        const createdRects = [];
+        let currentX = figma.viewport.center.x - ((standaloneImages.length * 2020) / 2);
+        let currentY = figma.viewport.center.y - 540;
+
+        for (let idx = 0; idx < standaloneImages.length; idx++) {
+          const item = standaloneImages[idx];
+          const imgUrl = typeof item === 'string' ? item : (item.url || item.image || item.src);
+          const imgName = (typeof item === 'object' && item.name) ? item.name : `Image ${idx + 1}`;
+
+          const rect = figma.createRectangle();
+          rect.name = imgName;
+          rect.resize(1920, 1080);
+          rect.x = currentX + idx * 2020;
+          rect.y = currentY;
+          rect.fills = [{ type: 'SOLID', color: hexToFigmaColor("#E2E8F0") }];
+          figma.currentPage.appendChild(rect);
+          createdRects.push(rect);
+
+          fetchTasks.push({
+            id: rect.id,
+            name: imgName,
+            url: imgUrl,
+            type: 'image'
+          });
+        }
+
+        if (fetchTasks.length > 0) {
+          figma.ui.postMessage({ type: 'fetch-assets', tasks: fetchTasks });
+          const results = await new Promise((resolve) => { assetsResolve = resolve; });
+          for (const result of results) {
+            const node = figma.getNodeById(result.id);
+            if (node && result.type === 'image' && result.data) {
+              try {
+                const image = figma.createImage(new Uint8Array(result.data));
+                node.fills = [{ type: 'IMAGE', scaleMode: 'FILL', imageHash: image.hash }];
+              } catch (e) {
+                console.error("Erreur de chargement d'image standalone :", e);
+              }
+            }
+          }
+        }
+        if (createdRects.length > 0) {
+          figma.currentPage.selection = createdRects;
+        }
+        figma.ui.postMessage({ type: 'success', message: `${standaloneImages.length} image(s) insérée(s) directement sur le canvas.` });
+        return;
+      }
+
       let lessons = [];
       if (data) {
         if (Array.isArray(data)) {
@@ -1614,10 +2000,22 @@ figma.ui.onmessage = async (msg) => {
       }
     }
 
-    // Position de départ horizontale et verticale centrée
-    let currentX = figma.viewport.center.x - (totalWidth / 2);
-    // Hauteur totale : 500 (top) + 1080 (slides) + 250 (gap) + 200 (séparateur) + 8640 (bottom) = 10670px
-    let currentY = figma.viewport.center.y - (10670 / 2);
+    // Position de départ toujours centrée sur le viewer actuel de l'utilisateur (figma.viewport.center)
+    const isSingleSlideOverall = (flatSlidesData.length === 1);
+    let currentX = 0;
+    let currentY = 0;
+
+    if (isSingleSlideOverall) {
+      currentX = figma.viewport.center.x - 960;
+      currentY = figma.viewport.center.y - 540;
+    } else {
+      currentX = figma.viewport.center.x - (totalWidth / 2);
+      // Les slides dans un cadre de leçon sont positionnées à y = 500 et font 1080px de haut.
+      // Le centre vertical des slides dans le cadre est donc y = 500 + 540 = 1040px.
+      // Aligner ce centre avec figma.viewport.center.y place les slides exactement au centre du viewer.
+      currentY = figma.viewport.center.y - 1040;
+    }
+    const startX = currentX;
 
     const createdInstances = [];
     const lessonFrames = [];
@@ -1639,10 +2037,14 @@ figma.ui.onmessage = async (msg) => {
         lessonFrame.resize(lessonWidth, 10670);
         lessonFrame.x = currentX;
         lessonFrame.y = currentY;
-        lessonFrame.fills = [{ type: 'SOLID', color: hexToFigmaColor("#F2F3F6") }]; // Couleur de fond gris clair
+        const bgColorHex = lesson.backgroundColor || lesson.color || lesson.fillColor || "#F2F3F6";
+        lessonFrame.fills = [{ type: 'SOLID', color: hexToFigmaColor(bgColorHex) }]; // Couleur de fond personnalisée ou gris clair par défaut
         figma.currentPage.appendChild(lessonFrame);
         lessonFrames.push(lessonFrame);
       }
+
+      // ... (slides loop) ...
+
 
       // Boucle sur chaque slide définie dans la leçon
       for (let i = 0; i < slides.length; i++) {
@@ -2054,8 +2456,14 @@ figma.ui.onmessage = async (msg) => {
         lessonFrame.appendChild(separator);
       }
 
-      // Décalage horizontal pour positionner la leçon suivante côte à côte
-      currentX += lessonWidth + 500;
+      // Décalage pour la leçon suivante (retour à la ligne si nouveau chapitre ou newRow)
+      const nextLesson = lessons[lessonIndex + 1];
+      if (nextLesson && (nextLesson.newRow || (nextLesson.chapter && nextLesson.chapter !== lesson.chapter))) {
+        currentX = startX;
+        currentY += 11500; // Nouvelle ligne sous le chapitre précédent
+      } else {
+        currentX += lessonWidth + 500;
+      }
     }
 
     // 4. Récupération et application asynchrone des assets (icônes uniquement)
@@ -2192,8 +2600,11 @@ figma.ui.onmessage = async (msg) => {
       }
     }
 
-    // Sélectionne les cadres des leçons générées
-    figma.currentPage.selection = lessonFrames;
+    // Sélectionne et centre la vue du viewer sur les éléments générés
+    const selectTargets = lessonFrames.length > 0 ? lessonFrames : createdInstances;
+    if (selectTargets.length > 0) {
+      figma.currentPage.selection = selectTargets;
+    }
 
     figma.ui.postMessage({
       type: 'success',

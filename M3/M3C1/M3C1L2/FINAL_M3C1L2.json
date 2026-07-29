@@ -1,0 +1,168 @@
+{
+  "lessonTitle": "M3C1L2 — Présentation de Google AI Studio et des modèles Gemini",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Découvrir Google AI Studio et les modèles Gemini",
+        "Sous-titre": "L'atelier de prototypage rapide du Vibe Coder"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "L'atelier de prototypage de Google",
+        "Intro": "Avant de coder dans son éditeur, on a besoin d'un espace pour tester les modèles de manière brute. Google AI Studio est le laboratoire idéal du Vibe Coder pour valider ses idées.",
+        "Titre 1": "Découvrir le playground de test",
+        "Texte 1": "Découvrir comment cet outil gratuit permet de tester des prompts complexes sans aucune interface intermédiaire.",
+        "Titre 2": "Choisir les modèles de Gemini",
+        "Texte 2": "Sélectionner le modèle le plus adapté à la tâche de code, entre la vitesse de Flash et la puissance de Pro.",
+        "Titre 3": "Les variables de contrôle",
+        "Texte 3": "Ajuster précisément la température de génération pour forcer l'IA à produire un code logique et structuré."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "Pourquoi commencer par AI Studio ?",
+        "Intro": "Avant d'ouvrir un IDE local, il faut absolument comprendre comment l'IA répond à un prompt. Google AI Studio est la salle d'entraînement idéale pour cela.",
+        "Titre 1": "En navigateur",
+        "Parametre 1": "Zéro install.",
+        "Violet 1": "Première prise en main sans friction",
+        "Texte 1": "Aucune installation requise sur sa machine. On ouvre simplement un onglet web, et on commence à prompter en direct. C'est l'assurance d'avoir zéro friction pour une première prise en main rapide de l'IA.",
+        "Picto 1": "mdi:web",
+        "Titre 2": "Gratuit pour démarrer",
+        "Parametre 2": "Zéro coût",
+        "Violet 2": "Tester et se tromper librement",
+        "Texte 2": "L'accès de base à l'API et à l'interface ne nécessite aucune carte bancaire. On peut explorer les modèles de Google, tester les paramètres et se tromper librement sans risquer le moindre coût financier.",
+        "Picto 2": "mdi:currency-usd-off",
+        "Titre 3": "Résultats immédiats",
+        "Parametre 3": "Boucle rapide",
+        "Violet 3": "Comprendre les réactions de l'IA",
+        "Texte 3": "On saisit un prompt de test et on observe la réponse. La boucle de rétroaction immédiate aide à comprendre la réaction du modèle de code avant d'ouvrir un éditeur local et d'installer l'ensemble des dépendances.",
+        "Picto 3": "mdi:flash-outline"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO - ALT",
+      "content": {
+        "Titre": "L'interface de Google AI Studio",
+        "Intro": "Trois zones à identifier avant de commencer. Comprendre la structure de l'interface évite 80% des erreurs classiques de débutant.",
+        "Source": "Image : Aperçu de l'interface de test officielle Google AI Studio.",
+        "Titre 1": "A : Navigation et historique",
+        "Texte 1": "Accéder à la liste des conversations passées, créer un nouveau projet de test et gérer les réglages de son compte personnel.",
+        "Picto 1": "mdi:menu",
+        "Titre 2": "B : La zone de conversation",
+        "Texte 2": "Visualiser l'affichage des messages échangés : le prompt envoyé à gauche et la réponse générée en temps réel par le modèle.",
+        "Picto 2": "mdi:forum",
+        "Titre 3": "C : Zone de saisie du prompt",
+        "Texte 3": "Saisir son prompt de test. On peut y joindre facilement des fichiers de code, des images ou des URL en pièces jointes.",
+        "Picto 3": "mdi:keyboard"
+      },
+      "image_concept": "A clean screenshot of the Google AI Studio interface, displaying the dark left sidebar with project history, the main central chat area, and the right settings panel. The design is modern, neat, and minimalist.",
+      "image_style": "editorial-minimal",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - SCHEMA - 3 COLONNES",
+      "content": {
+        "Titre": "Ce qu'AI Studio n'est pas",
+        "Intro": "Clarifier les confusions fréquentes avant la prise en main. Trois idées reçues à corriger.",
+        "Titre 1": "Ce n'est pas Un IDE\n\nOn ne peut pas déployer une application depuis AI Studio. Il faut exporter le code vers un éditeur.",
+        "Violet 1": "C'est Un terrain de test\n\nIdéal pour générer, tester et valider du code avant de le coller dans son projet.",
+        "Picto 1": "mdi:close-circle",
+        "Picto 4": "mdi:check-circle",
+        "Titre 3": "Ce n'est pas Gemini.google.com\n\nL'assistant grand public est fait pour la conversation générale. AI Studio est l'interface pour les développeurs.",
+        "Violet 4": "C'est L'interface pro de Gemini\n\nOn a accès aux paramètres avancés, aux modèles bruts et à l'API directement.",
+        "Picto 2": "mdi:close-circle",
+        "Picto 5": "mdi:check-circle",
+        "Titre 5": "Ce n'est pas Un outil de production\n\nLes projets créés dans AI Studio ne sont pas hébergés. C'est un espace d'exploration, pas de livraison.",
+        "Violet 5": "C'est Un bac à sable\n\nSe tromper ici ne coûte rien. C'est fait pour ça — expérimenter sans conséquence.",
+        "Picto 3": "mdi:close-circle",
+        "Picto 6": "mdi:check-circle"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Choisir le bon modèle Gemini",
+        "Intro": "On sélectionne son modèle dans le menu latéral droit selon la complexité du code.",
+        "Titre A": "FLASH",
+        "Titre B": "PRO-MODEL",
+        "Item 1": "VITESSE",
+        "Texte A Item 1": "Génération instantanée en quelques millisecondes seulement.",
+        "Texte B1": "Temps de réponse plus long, nécessitant quelques secondes.",
+        "Item 2": "CODING",
+        "Texte A Item 2": "Idéal pour écrire des fonctions simples ou du style CSS.",
+        "Texte B2": "Excellent pour la logique complexe et le débogage de bugs.",
+        "Item 3": "CONTEXTE",
+        "Texte A Item 3": "Adapté pour analyser des fichiers isolés.",
+        "Texte B3": "Fenêtre de contexte géante de deux millions.",
+        "Item 4": "USAGE",
+        "Texte A Item 4": "Pour faire du prototypage et des scripts rapides.",
+        "Texte B4": "Analyse complète de projets entiers."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Configurer ses sessions de test",
+        "Intro": "Quatre paramètres clés permettent d'ajuster le comportement du modèle dans Google AI Studio.",
+        "Titre 1": "INSTRUCTIONS SYSTÈME",
+        "Texte 1": "Définir le rôle et le comportement général de l'IA (ex: 'Tu es un expert React').",
+        "Picto 1": "mdi:cog",
+        "Titre 2": "TEMPÉRATURE",
+        "Texte 2": "Contrôler la créativité. Une valeur basse (ex: 0.2) garantit un code logique et prévisible.",
+        "Picto 2": "mdi:thermometer",
+        "Titre 3": "FILTRES DE SÉCURITÉ",
+        "Texte 3": "Désactiver ou réduire les blocages pour éviter que l'IA refuse de générer certains codes.",
+        "Picto 3": "mdi:shield-alert",
+        "Titre 4": "EXPORT DE CODE",
+        "Texte 4": "Récupérer instantanément le prompt formaté sous forme de code Python, JavaScript ou cURL.",
+        "Picto 4": "mdi:code-tags"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Exporter ses prompts en un clic",
+        "Intro": "DU PROTOTYPE AU CODE",
+        "Source": "Source : Google AI Studio",
+        "Texte 1": "Une fois que le prompt fonctionne dans l'interface d'AI Studio, on clique sur le bouton 'Get Code'. L'outil génère instantanément le code nécessaire pour intégrer cette requête dans son propre projet web (en Python, Node.js ou via une simple requête API). Cela évite de réécrire la logique de connexion et assure une transition fluide entre la phase de test et la production.",
+        "Texte Bulle": "EN BREF : L'export automatique de code permet d'intégrer des fonctions d'IA dans ses applications sans avoir besoin de connaissances approfondies en développement d'API."
+      },
+      "image_concept": "A close-up of a glowing digital button labeled Get Code inside a clean dark code editor interface. Code lines are faintly visible in the background, creating a high-tech developer workspace feel.",
+      "image_style": "editorial-minimal",
+      "image_ratio": "16:9"
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Texte principal": "Google AI Studio est le laboratoire de test du Vibe Coder. Il permet de valider ses prompts en direct avec Gemini Flash ou Pro avant de les coder. En jouant sur les instructions système et la température, on prend le contrôle total du modèle. L'exportation de code en un clic assure ensuite la liaison avec son projet local.",
+        "Texte Bulle": "EN BREF : Avec l'outil de prototypage en main, on est prêt pour la suite. Dans la leçon suivante : comment créer son tout premier projet et faire son premier appel API dans AI Studio."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

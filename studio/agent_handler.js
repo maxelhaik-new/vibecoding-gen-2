@@ -2,18 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import { spawnSync } from 'child_process';
 
-const getGeminiApiUrl = () => {
-  const model = process.env.GEMINI_MODEL_NAME || process.env.GEMINI_TEXT_MODEL || 'gemini-3.5-flash';
-  return `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
-};
-
 // System prompt instructing the agent on its behavior
 const SYSTEM_PROMPT = `You are Vibe Workspace Agent, an expert AI coding and writing assistant built directly into the Vibe Studio application.
 You can read/write files, search, list directories, and execute course generation python pipelines.
 You are running on a local workspace containing educational lessons, brand voice guidelines, and slicing templates.
 
 Your goal is to help the user manage, slice, write, and verify educational lessons.
-Always behave professionally, write clean files, and explain what actions you are performing.
+Always behave professionally, write clean files, and explain what actions you are performing in French.
 
 Key guidelines:
 1. Respect the rules in brand_voice.md and ai.md if writing content.
@@ -21,7 +16,7 @@ Key guidelines:
 3. Keep logs and responses concise.
 `;
 
-const tools = [
+const geminiTools = [
   {
     functionDeclarations: [
       {
@@ -72,7 +67,7 @@ const tools = [
       },
       {
         name: "regenerate_slide",
-        description: "Régénérer une slide unique d'une leçon avec Claude en fournissant une consigne.",
+        description: "Régénérer une slide unique d'une leçon en fournissant une consigne.",
         parameters: {
           type: "OBJECT",
           properties: {
@@ -98,12 +93,65 @@ const tools = [
   }
 ];
 
+const claudeTools = [
+  {
+    name: "list_directory",
+    description: "Lister le contenu d'un dossier du workspace.",
+    input_schema: {
+      type: "object",
+      properties: { dirPath: { type: "string", description: "Le chemin relatif du dossier" } },
+      required: ["dirPath"]
+    }
+  },
+  {
+    name: "read_file",
+    description: "Lire le contenu textuel d'un fichier du workspace.",
+    input_schema: {
+      type: "object",
+      properties: { filePath: { type: "string", description: "Le chemin relatif du fichier" } },
+      required: ["filePath"]
+    }
+  },
+  {
+    name: "write_file",
+    description: "Créer ou écraser un fichier textuel dans le workspace.",
+    input_schema: {
+      type: "object",
+      properties: {
+        filePath: { type: "string", description: "Le chemin relatif du fichier" },
+        content: { type: "string", description: "Le contenu complet" }
+      },
+      required: ["filePath", "content"]
+    }
+  },
+  {
+    name: "run_pipeline",
+    description: "Exécuter le pipeline Python de génération pour une leçon.",
+    input_schema: {
+      type: "object",
+      properties: {
+        lesson: { type: "string", description: "Le slug de la leçon" },
+        phase: { type: "string", description: "La phase (decoupe, ecris, genere)" }
+      },
+      required: ["lesson", "phase"]
+    }
+  },
+  {
+    name: "search_in_files",
+    description: "Rechercher du texte dans tous les fichiers du workspace.",
+    input_schema: {
+      type: "object",
+      properties: { query: { type: "string", description: "Le texte recherché" } },
+      required: ["query"]
+    }
+  }
+];
+
 function isSafePath(filePath, rootDir) {
   const resolved = path.resolve(rootDir, filePath);
   return resolved.startsWith(rootDir);
 }
 
-// Implement functions locally
 function listDirectoryLocal(dirPath, rootDir) {
   const safePath = path.join(rootDir, dirPath);
   if (!isSafePath(safePath, rootDir)) {
@@ -215,13 +263,11 @@ function searchInFilesLocal(query, rootDir) {
         ) continue;
         scan(p);
       } else {
-        // Only scan text-like extensions
         const ext = path.extname(file.name).toLowerCase();
         if (['.md', '.json', '.txt', '.js', '.ts', '.tsx', '.py', '.css'].includes(ext)) {
           try {
             const content = fs.readFileSync(p, 'utf-8');
             if (content.toLowerCase().includes(queryLower)) {
-              // Find matching line snippets
               const lines = content.split('\n');
               const snippets = [];
               lines.forEach((line, idx) => {
@@ -231,7 +277,7 @@ function searchInFilesLocal(query, rootDir) {
               });
               results.push({
                 filePath: path.relative(rootDir, p),
-                matches: snippets.slice(0, 5) // Cap matches per file
+                matches: snippets.slice(0, 5)
               });
             }
           } catch (e) {
@@ -244,61 +290,133 @@ function searchInFilesLocal(query, rootDir) {
 
   try {
     scan(rootDir);
-    return { results: results.slice(0, 20) }; // Cap total matching files
+    return { results: results.slice(0, 20) };
   } catch (e) {
     return { error: e.message };
   }
 }
 
-// Main execution loop
-export async function executeAgentLoop(clientMessages, activeLessonSlug, rootDir) {
+function executeTool(name, args, rootDir) {
+  switch (name) {
+    case 'list_directory': return listDirectoryLocal(args.dirPath || '.', rootDir);
+    case 'read_file': return readFileLocal(args.filePath, rootDir);
+    case 'write_file': return writeFileLocal(args.filePath, args.content, rootDir);
+    case 'run_pipeline': return runPipelineLocal(args.lesson, args.phase, rootDir);
+    case 'regenerate_slide': return regenerateSlideLocal(args.lesson, args.slideIndex, args.instruction, rootDir);
+    case 'search_in_files': return searchInFilesLocal(args.query, rootDir);
+    default: return { error: `Outil inconnu : ${name}` };
+  }
+}
+
+// ── Claude Execution Loop ──
+async function executeClaudeLoop(clientMessages, activeLessonSlug, rootDir, modelName) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    return { error: "ANTHROPIC_API_KEY non configurée dans .env" };
+  }
+
+  const fullSystemPrompt = `${SYSTEM_PROMPT}\n\nIMPORTANT: Vous êtes Vibe Workspace Agent fonctionnant sur le modèle Claude (${modelName}).\nWORKSPACE_ROOT: ${rootDir}\nACTIVE_LESSON_SLUG: ${activeLessonSlug || 'Aucune leçon sélectionnée'}`;
+
+  const messages = clientMessages.filter(m => m.role !== 'system').map(m => {
+    if (m.role === 'assistant') {
+      return { role: 'assistant', content: m.content || (m.parts ? m.parts.map(p => p.text).join('\n') : '') };
+    }
+    return { role: 'user', content: m.content || (m.parts ? m.parts.map(p => p.text).join('\n') : '') };
+  });
+
+  const response = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      model: modelName,
+      max_tokens: 4096,
+      system: fullSystemPrompt,
+      messages: messages,
+      tools: claudeTools
+    })
+  });
+
+  if (!response.ok) {
+    const errText = await response.text();
+    throw new Error(`Claude API error (${response.status}): ${errText}`);
+  }
+
+  const data = await response.json();
+  const toolUseBlocks = (data.content || []).filter(c => c.type === 'tool_use');
+
+  if (toolUseBlocks.length > 0) {
+    const toolResults = [];
+    for (const call of toolUseBlocks) {
+      console.log(`[AI Agent - Claude] Executing tool: ${call.name} with args:`, call.input);
+      const output = executeTool(call.name, call.input || {}, rootDir);
+      toolResults.push({
+        type: 'tool_result',
+        tool_use_id: call.id,
+        content: JSON.stringify(output)
+      });
+    }
+
+    const assistantText = (data.content || []).filter(c => c.type === 'text').map(c => c.text).join('\n');
+    const nextHistory = [
+      ...clientMessages,
+      { role: 'assistant', content: assistantText || 'Analyse en cours...' },
+      { role: 'user', content: toolResults }
+    ];
+
+    return executeClaudeLoop(nextHistory, activeLessonSlug, rootDir, modelName);
+  }
+
+  const textBlock = (data.content || []).find(c => c.type === 'text');
+  return {
+    content: textBlock ? textBlock.text : "Opération terminée par l'agent.",
+    history: clientMessages
+  };
+}
+
+// ── Gemini Execution Loop ──
+async function executeGeminiLoop(clientMessages, activeLessonSlug, rootDir, modelName) {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return { error: "GEMINI_API_KEY non configurée dans .env" };
   }
 
-  // Format messages for Gemini API
-  // Convert standard role/content format to Gemini contents format
+  const fullUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+  const fullSystemPrompt = `${SYSTEM_PROMPT}\n\nIMPORTANT: Vous êtes Vibe Workspace Agent fonctionnant sur le modèle Google Gemini (${modelName}). Quand l'utilisateur vous demande qui vous êtes, indiquez clairement que vous êtes Vibe Workspace Agent sur le moteur Gemini (${modelName}).\nWORKSPACE_ROOT: ${rootDir}\nACTIVE_LESSON_SLUG: ${activeLessonSlug || 'Aucune leçon sélectionnée'}`;
+
   const contents = clientMessages.map(m => {
     if (m.role === 'tool') {
       return {
-        role: 'user', // Gemini expects tool responses to have role user or tool depending on API version, but actually v1beta wants role 'tool' or custom structure
-        parts: m.parts || [{ text: m.content }]
+        role: 'user',
+        parts: m.parts || [{ text: typeof m.content === 'string' ? m.content : JSON.stringify(m.content) }]
       };
     }
     return {
       role: m.role === 'assistant' ? 'model' : 'user',
-      parts: m.parts || [{ text: m.content }]
+      parts: m.parts || [{ text: typeof m.content === 'string' ? m.content : JSON.stringify(m.content) }]
     };
   });
 
-  const fullUrl = `${getGeminiApiUrl()}?key=${apiKey}`;
-
-  // Custom system prompt with active lesson context
-  const fullSystemPrompt = `${SYSTEM_PROMPT}\n\nWORKSPACE_ROOT: ${rootDir}\nACTIVE_LESSON_SLUG: ${activeLessonSlug || 'Aucune leçon sélectionnée'}`;
-
-  const modelName = process.env.GEMINI_MODEL_NAME || process.env.GEMINI_TEXT_MODEL || 'gemini-3.5-flash';
   const thinkingLevelEnv = process.env.GEMINI_THINKING_LEVEL || 'low';
-
-  const generationConfig = {
-    thinkingConfig: {
-      thinkingLevel: thinkingLevelEnv.toUpperCase() // API expects UPPERCASE: 'LOW', 'MEDIUM', etc.
-    }
-  };
-
   const requestBody = {
     contents: contents,
     systemInstruction: {
       parts: [{ text: fullSystemPrompt }]
     },
-    tools: tools,
-    generationConfig: generationConfig
+    tools: geminiTools,
+    generationConfig: {
+      thinkingConfig: {
+        thinkingLevel: thinkingLevelEnv.toUpperCase()
+      }
+    }
   };
 
-  try {
-    let response;
-    let delay = 2000; // Exponential backoff initial delay (2s)
-    const maxRetries = 3;
+  let response;
+  let delay = 2000;
+  const maxRetries = 3;
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
@@ -317,103 +435,73 @@ export async function executeAgentLoop(clientMessages, activeLessonSlug, rootDir
           continue;
         }
       }
-
       break;
     } catch (e) {
       console.warn(`[AI Agent] Network error (attempt ${attempt}): ${e.message}`);
-      if (attempt === maxRetries) {
-        throw e;
-      }
+      if (attempt === maxRetries) throw e;
       await new Promise(resolve => setTimeout(resolve, delay));
       delay *= 2;
     }
   }
 
   if (!response || !response.ok) {
-    const errText = response ? await response.text() : "No response from server";
-    throw new Error(`Gemini API error: ${response ? response.status : 'network_error'} - ${errText}`);
+    const errText = response ? await response.text() : "No response";
+    throw new Error(`Gemini API error (${response ? response.status : 'network'}): ${errText}`);
   }
 
-    const data = await response.json();
-    const candidate = data.candidates && data.candidates[0];
-    if (!candidate || !candidate.content) {
-      throw new Error("Réponse vide de Gemini");
+  const data = await response.json();
+  const candidate = data.candidates && data.candidates[0];
+  if (!candidate || !candidate.content) {
+    throw new Error("Réponse vide de Gemini");
+  }
+
+  const parts = candidate.content.parts || [];
+  const functionCalls = parts.filter(p => p.functionCall);
+
+  if (functionCalls.length > 0) {
+    const toolOutputs = [];
+    for (const callObj of functionCalls) {
+      const call = callObj.functionCall;
+      console.log(`[AI Agent - Gemini] Executing tool: ${call.name} with args:`, call.args);
+      const output = executeTool(call.name, call.args || {}, rootDir);
+      toolOutputs.push({
+        functionResponse: {
+          name: call.name,
+          response: output
+        }
+      });
     }
 
-    const responseContent = candidate.content;
-    const parts = responseContent.parts || [];
+    const nextHistory = [
+      ...clientMessages,
+      { role: 'assistant', parts: parts },
+      { role: 'tool', parts: toolOutputs }
+    ];
+    return executeGeminiLoop(nextHistory, activeLessonSlug, rootDir, modelName);
+  }
 
-    // Check if the model requested function calls
-    const functionCalls = parts.filter(p => p.functionCall);
+  const textContent = parts.filter(p => p.text && p.text.trim().length > 0).map(p => p.text).join('\n\n');
+  return {
+    content: textContent || "Opération effectuée avec succès.",
+    history: clientMessages
+  };
+}
 
-    if (functionCalls.length > 0) {
-      const toolOutputs = [];
-      const logs = [];
+// ── Main Entrypoint for executeAgentLoop ──
+export async function executeAgentLoop(clientMessages, activeLessonSlug, rootDir, modelOverride) {
+  const chatProvider = (process.env.CHAT_AGENT_PROVIDER || 'GEMINI').toUpperCase();
+  const defaultModel = chatProvider === 'CLAUDE'
+    ? (process.env.CLAUDE_MODEL || 'claude-sonnet-4-6')
+    : (process.env.GEMINI_TEXT_MODEL || process.env.GEMINI_MODEL_NAME || 'gemini-3.5-flash');
 
-      for (const callObj of functionCalls) {
-        const call = callObj.functionCall;
-        const name = call.name;
-        const args = call.args;
+  const modelName = modelOverride || defaultModel;
 
-        console.log(`[AI Agent] Executing tool: ${name} with args:`, args);
-        logs.push(`[Exécution outil] ${name}`);
-
-        let output = {};
-        switch (name) {
-          case 'list_directory':
-            output = listDirectoryLocal(args.dirPath || '.', rootDir);
-            break;
-          case 'read_file':
-            output = readFileLocal(args.filePath, rootDir);
-            break;
-          case 'write_file':
-            output = writeFileLocal(args.filePath, args.content, rootDir);
-            break;
-          case 'run_pipeline':
-            output = runPipelineLocal(args.lesson, args.phase, rootDir);
-            break;
-          case 'regenerate_slide':
-            output = regenerateSlideLocal(args.lesson, args.slideIndex, args.instruction, rootDir);
-            break;
-          case 'search_in_files':
-            output = searchInFilesLocal(args.query, rootDir);
-            break;
-          default:
-            output = { error: `Outil inconnu : ${name}` };
-        }
-
-        toolOutputs.push({
-          functionResponse: {
-            name: name,
-            response: output
-          }
-        });
-      }
-
-      // Add the model's tool calls message and the tool responses message back to history, then recurse
-      const nextHistory = [
-        ...clientMessages,
-        {
-          role: 'assistant',
-          parts: parts
-        },
-        {
-          role: 'tool',
-          parts: toolOutputs
-        }
-      ];
-
-      // Recursively call the loop to allow multi-step tool calls
-      return executeAgentLoop(nextHistory, activeLessonSlug, rootDir);
+  try {
+    if (modelName.toLowerCase().startsWith('claude-')) {
+      return await executeClaudeLoop(clientMessages, activeLessonSlug, rootDir, modelName);
+    } else {
+      return await executeGeminiLoop(clientMessages, activeLessonSlug, rootDir, modelName);
     }
-
-    // Return the final text content of the agent
-    const textPart = parts.find(p => p.text);
-    return {
-      content: textPart ? textPart.text : "Aucun texte généré par l'agent.",
-      history: clientMessages
-    };
-
   } catch (e) {
     console.error("[AI Agent] Error in executeAgentLoop:", e);
     return { error: `Erreur interne de l'agent : ${e.message}` };

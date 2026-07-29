@@ -1,0 +1,67 @@
+{
+  "lessonTitle": "M2C5L5",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "L'hygiène du contexte en Vibe Coding"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "De quoi parlons-nous ?",
+        "Intro": "En Vibe Coding, on donne souvent tout le code à lire à l'IA. Mais que risque-t-on si on ne filtre pas ce contexte ? Découvrons les bonnes pratiques.",
+        "Titre 1": "Le copier-coller",
+        "Texte 1": "Voyons pourquoi partager l'intégralité d'un projet ou d'une erreur peut s'avérer dangereux.",
+        "Titre 2": "Base de données",
+        "Texte 2": "Découvrons comment faire comprendre la structure de nos données sans fuiter la production.",
+        "Titre 3": "La minimisation",
+        "Texte 3": "Apprenons à isoler un problème pour ne fournir à l'IA que ce qui est strictement nécessaire."
+      }
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO",
+      "content": {
+        "Titre": "Le piège du copier-coller",
+        "Intro": "Quand le code plante, le premier réflexe est de tout envoyer à l'IA. C'est la principale source de fuite de données.",
+        "Titre 1": "Logs d'erreur",
+        "Texte 1": "Les messages d'erreur bruts contiennent très souvent des tokens secrets ou des emails clients qu'il faut absolument masquer.",
+        "Titre 2": "Fichiers clés",
+        "Texte 2": "Envoyer un fichier de configuration entier expose les mots de passe. Il faut supprimer les valeurs sensibles avant.",
+        "Titre 3": "Code critique",
+        "Texte 3": "Partager l'intégralité d'un algorithme secret n'est pas toujours requis pour corriger un simple bouton.",
+        "Source": "Source : Nettoyage de code - Illustration générée par IA - Maxime Elhaik",
+        "image": "http://localhost:8080/assets/vibe_un_écran_d'ordinateur_affichant_des_lignes_de_code_où_certains_mots-clés_comme_password_ou_token_sont_raturés_brutalement_au_marqueur_noir.png"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Protéger sa base de données",
+        "Intro": "L'IA a besoin de connaître la structure de la base pour générer le bon code, mais jamais de son contenu réel.",
+        "Titre 1": "Ne jamais fournir un dump de prod",
+        "Texte 1": "Il ne faut jamais exporter les données réelles des utilisateurs vers la fenêtre de discussion de l'IA.",
+        "Picto 1": "mdi:database-off-outline",
+        "Titre 2": "Partager uniquement le schéma",
+        "Texte 2": "Fournissez uniquement la structure des tables et le nom des colonnes pour qu'elle comprenne le format.",
+        "Picto 2": "mdi:file-tree-outline",
+        "Titre 3": "Générer des fausses données",
+        "Texte 3": "Créez des profils fictifs si l'IA a besoin d'exemples concrets pour visualiser le résultat attendu.",
+        "Picto 3": "mdi:account-group-outline",
+        "Titre 4": "Créer un fichier d'exemple précis",
+        "Texte 4": "Un faux fichier de base de données peut être spécialement conçu pour le contexte de l'agent IA.",
+        "Picto 4": "mdi:file-document-outline"
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "En Vibe Coding, l'hygiène du contexte est primordiale. Il faut filtrer les logs d'erreur, utiliser des fausses données et isoler le code utile avant de l'envoyer. L'objectif est d'obtenir une aide de l'IA tout en gardant les informations les plus sensibles en sécurité absolue sur la machine.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Nous avons vu comment filtrer ce qui sort de notre ordinateur vers l'IA. Mais que faire de ce qui rentre ? Le code généré par l'IA est-il toujours digne de confiance ?"
+      }
+    }
+  ]
+}

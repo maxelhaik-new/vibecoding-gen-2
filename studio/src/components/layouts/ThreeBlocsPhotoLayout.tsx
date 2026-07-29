@@ -21,7 +21,7 @@ export const ThreeBlocsPhotoLayout: React.FC<LayoutProps> = ({
   const showImage = imageUrl && imageUrl.startsWith('http');
 
   return (
-    <div style={{ width: '100%', height: '100%', position: 'relative', overflow: 'hidden', backgroundColor: '#FFFFFF' }}>
+    <div style={{ width: '100%', height: '100%', position: 'relative', overflow: 'hidden', backgroundColor: 'var(--slide-bg)' }}>
       {/* Title Text */}
       <div
         style={{

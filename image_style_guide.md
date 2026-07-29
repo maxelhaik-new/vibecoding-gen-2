@@ -96,6 +96,15 @@ Deux styles visuels sont supportés et sélectionnables. Le script choisira la b
     ```text-style-offset-screenprint
     A minimalist flat design vector illustration on a pure white background, featuring elegant, ultra-fine dark navy (#18093B) line work with a consistent thin pen weight. The illustration shows [SUJET AVEC MÉTAPHORE VISUELLE]. The characters are highly stylized with simple, clean facial features (small dot eyes, minimal line nose, small smile) and solid dark navy hair. The illustration remains mostly open white space, with no direct color fills. Instead, multiple separate, solid, flat color blocks of pink feeling (#FFB2B2), purple thinking (#6634D9), and sunny yellow (#FFFF77) are applied as misaligned, offset geometric patches behind the line art (e.g. behind a laptop, an arm, or a screen element), creating a sophisticated, retro-modern layered screen-print effect. Zero gradients, zero complex shading. The overall composition is clean, professional, and minimalist, tailored for a presentation slide.
     ```
+### Style 8 : Photoréalisme Professionnel (Ultra-Realistic Photography)
+*   **Description** : Photographie haute résolution ultra-réaliste, prise de vue 35mm professionnelle, éclairage naturel cinématique, détails authentiques sans aucun graphisme vectoriel ni schéma.
+*   **Structure du Prompt** :
+    ```text-style-photorealistic
+    An ultra-realistic, professional editorial 35mm photograph of [SUJET AVEC MÉTAPHORE VISUELLE]. 
+    Authentic real-world scene with natural cinematic lighting, rich textures, and true-to-life color depth. 
+    High-end commercial photography style with shallow depth of field, sharp focus, and exquisite details. 
+    Zero vector graphics, zero illustrations, zero diagrams, zero text overlays.
+    ```
 ---
 
 ## 4. Outils de Génération Locaux

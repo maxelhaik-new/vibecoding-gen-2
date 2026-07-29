@@ -394,17 +394,35 @@ const renderMarkdownMessage = (text: string) => {
 
 export const App: React.FC = () => {
   const [lessons, setLessons] = useState<LessonSummary[]>([]);
-  const [selectedSlug, setSelectedSlug] = useState<string>('');
+  const [selectedSlug, setSelectedSlug] = useState<string>(() => localStorage.getItem('vibe_selectedSlug') || '');
   const [lessonData, setLessonData] = useState<{ plan: string; final: LessonData | null } | null>(null);
   const [templates, setTemplates] = useState<TemplateRule[]>([]);
-  const [activeTab, setActiveTab] = useState<'visual' | 'decoupage' | 'plan' | 'json'>('visual');
-  const [planMode, setPlanMode] = useState<'edit' | 'preview' | 'split'>('preview');
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [htmlPreviewCode, setHtmlPreviewCode] = useState<string>(localStorage.getItem('vibe_htmlPreviewCode') || '');
+  const htmlIframeRef = useRef<HTMLIFrameElement>(null);
+  const [activeTab, setActiveTab] = useState<'visual' | 'decoupage' | 'plan' | 'json' | 'html'>(() => {
+    return (localStorage.getItem('vibe_activeTab') as any) || 'visual';
+  });
+  const [planMode, setPlanMode] = useState<'edit' | 'preview' | 'split'>(() => {
+    return (localStorage.getItem('vibe_planMode') as any) || 'preview';
+  });
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    return (localStorage.getItem('vibe_theme') as any) || 'light';
+  });
 
-  const [leftSidebarCollapsed, setLeftSidebarCollapsed] = useState<boolean>(false);
-  const [rightSidebarCollapsed, setRightSidebarCollapsed] = useState<boolean>(false);
-  const [activeTabSidebar, setActiveTabSidebar] = useState<'tools' | 'console' | 'agent'>('tools');
-  const [activeMobilePane, setActiveMobilePane] = useState<'lessons' | 'editor' | 'tools' | 'agent'>('editor');
+  const [leftSidebarCollapsed, setLeftSidebarCollapsed] = useState<boolean>(() => {
+    const saved = localStorage.getItem('vibe_leftSidebarCollapsed');
+    return saved !== null ? saved === 'true' : false;
+  });
+  const [rightSidebarCollapsed, setRightSidebarCollapsed] = useState<boolean>(() => {
+    const saved = localStorage.getItem('vibe_rightSidebarCollapsed');
+    return saved !== null ? saved === 'true' : false;
+  });
+  const [activeTabSidebar, setActiveTabSidebar] = useState<'tools' | 'console' | 'agent'>(() => {
+    return (localStorage.getItem('vibe_activeTabSidebar') as any) || 'tools';
+  });
+  const [activeMobilePane, setActiveMobilePane] = useState<'lessons' | 'editor' | 'tools' | 'agent'>(() => {
+    return (localStorage.getItem('vibe_activeMobilePane') as any) || 'editor';
+  });
 
   // Chat Agent States
   const [chatMessages, setChatMessages] = useState<Array<{ role: 'user' | 'assistant' | 'tool'; content: string; parts?: any[] }>>([
@@ -412,14 +430,27 @@ export const App: React.FC = () => {
   ]);
   const [chatInput, setChatInput] = useState('');
   const [isChatLoading, setIsChatLoading] = useState(false);
-  const [agentConfig, setAgentConfig] = useState<{ hasKey: boolean; model: string } | null>(null);
+  const [agentConfig, setAgentConfig] = useState<{ hasKey: boolean; model: string; availableModels?: Array<{ id: string; label: string }> } | null>(null);
+  const [selectedAgentModel, setSelectedAgentModel] = useState<string>(() => {
+    return localStorage.getItem('vibe_agentModel') || '';
+  });
 
   useEffect(() => {
     fetch('/api/agent/config')
       .then(res => res.json())
-      .then(data => setAgentConfig(data))
+      .then(data => {
+        setAgentConfig(data);
+        if (!localStorage.getItem('vibe_agentModel') && data?.model) {
+          setSelectedAgentModel(data.model);
+        }
+      })
       .catch(console.error);
   }, []);
+
+  const handleAgentModelChange = (model: string) => {
+    setSelectedAgentModel(model);
+    localStorage.setItem('vibe_agentModel', model);
+  };
 
   const [focusedFieldInfo, setFocusedFieldInfo] = useState<{
     slideIndex: number;
@@ -433,17 +464,29 @@ export const App: React.FC = () => {
   }, [theme]);
   
   // Pipeline settings
-  const [selectedModel, setSelectedModel] = useState<string>('');
-  const [generateImage, setGenerateImage] = useState<boolean>(false);
+  const [selectedModel, setSelectedModel] = useState<string>(() => {
+    return localStorage.getItem('vibe_selectedModel') || '';
+  });
+  const [generateImage, setGenerateImage] = useState<boolean>(() => {
+    const saved = localStorage.getItem('vibe_generateImage');
+    return saved !== null ? saved === 'true' : false;
+  });
   const [runningPhase, setRunningPhase] = useState<string | null>(null);
+  const [regeneratingSlides, setRegeneratingSlides] = useState<Record<number, boolean>>({});
   const [logs, setLogs] = useState<string>('');
   const [logAutoScroll, setLogAutoScroll] = useState<boolean>(true);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
 
   // Collapsible tree navigation states for UX/UI arborescence
-  const [expandedModules, setExpandedModules] = useState<Record<number, boolean>>({ 1: true });
-  const [expandedChapters, setExpandedChapters] = useState<Record<string, boolean>>({});
+  const [expandedModules, setExpandedModules] = useState<Record<number, boolean>>(() => {
+    const saved = localStorage.getItem('vibe_expandedModules');
+    return saved ? JSON.parse(saved) : { 1: true };
+  });
+  const [expandedChapters, setExpandedChapters] = useState<Record<string, boolean>>(() => {
+    const saved = localStorage.getItem('vibe_expandedChapters');
+    return saved ? JSON.parse(saved) : {};
+  });
 
   // Helper to parse lesson slug like "m1c3l4"
   const parseLessonSlug = (slug: string) => {
@@ -468,6 +511,57 @@ export const App: React.FC = () => {
       }
     }
   }, [selectedSlug]);
+
+  // Local persistence effects
+  useEffect(() => {
+    if (selectedSlug) {
+      localStorage.setItem('vibe_selectedSlug', selectedSlug);
+    }
+  }, [selectedSlug]);
+
+  useEffect(() => {
+    localStorage.setItem('vibe_activeTab', activeTab);
+  }, [activeTab]);
+
+  useEffect(() => {
+    localStorage.setItem('vibe_planMode', planMode);
+  }, [planMode]);
+
+  useEffect(() => {
+    localStorage.setItem('vibe_theme', theme);
+  }, [theme]);
+
+  useEffect(() => {
+    localStorage.setItem('vibe_leftSidebarCollapsed', String(leftSidebarCollapsed));
+  }, [leftSidebarCollapsed]);
+
+  useEffect(() => {
+    localStorage.setItem('vibe_rightSidebarCollapsed', String(rightSidebarCollapsed));
+  }, [rightSidebarCollapsed]);
+
+  useEffect(() => {
+    localStorage.setItem('vibe_activeTabSidebar', activeTabSidebar);
+  }, [activeTabSidebar]);
+
+  useEffect(() => {
+    localStorage.setItem('vibe_activeMobilePane', activeMobilePane);
+  }, [activeMobilePane]);
+
+  useEffect(() => {
+    localStorage.setItem('vibe_selectedModel', selectedModel);
+  }, [selectedModel]);
+
+  useEffect(() => {
+    localStorage.setItem('vibe_generateImage', String(generateImage));
+  }, [generateImage]);
+
+  useEffect(() => {
+    localStorage.setItem('vibe_expandedModules', JSON.stringify(expandedModules));
+  }, [expandedModules]);
+
+  useEffect(() => {
+    localStorage.setItem('vibe_expandedChapters', JSON.stringify(expandedChapters));
+  }, [expandedChapters]);
 
   // Create new lesson state
   const [showCreateModal, setShowCreateModal] = useState<boolean>(false);
@@ -538,8 +632,8 @@ export const App: React.FC = () => {
     }
   };
 
-  const handleMoveSlide = (idx: number, direction: 'up' | 'down') => {
-    if (!lessonData || !lessonData.final) return;
+  const handleMoveSlide = async (idx: number, direction: 'up' | 'down') => {
+    if (!lessonData || !lessonData.final || !selectedSlug) return;
     const slides = [...lessonData.final.slides];
     const targetIdx = direction === 'up' ? idx - 1 : idx + 1;
     if (targetIdx < 0 || targetIdx >= slides.length) return;
@@ -549,35 +643,113 @@ export const App: React.FC = () => {
     slides[idx] = slides[targetIdx];
     slides[targetIdx] = temp;
     
-    setLessonData({
+    const updatedLessonData = {
       ...lessonData,
       final: { ...lessonData.final, slides },
-    });
+    };
+    setLessonData(updatedLessonData);
+
+    setSaveStatus('saving');
+    try {
+      const res = await fetch(`/api/lesson/${selectedSlug}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plan: updatedLessonData.plan,
+          final: updatedLessonData.final,
+        }),
+      });
+      if (res.ok) {
+        lastSavedDataRef.current = {
+          plan: updatedLessonData.plan,
+          final: updatedLessonData.final
+        };
+        setSaveStatus('saved');
+      } else {
+        setSaveStatus('error');
+      }
+    } catch (e) {
+      console.error('Error saving moved slide:', e);
+      setSaveStatus('error');
+    }
   };
 
-  const handleDeleteSlide = (idx: number) => {
-    if (!lessonData || !lessonData.final) return;
-    if (!window.confirm('Êtes-vous sûr de vouloir supprimer cette slide ?')) return;
+  const handleDeleteSlide = async (idx: number) => {
+    if (!lessonData || !lessonData.final || !selectedSlug) return;
     const slides = [...lessonData.final.slides];
     slides.splice(idx, 1);
     
-    setLessonData({
+    const updatedLessonData = {
       ...lessonData,
       final: { ...lessonData.final, slides },
-    });
+    };
+    setLessonData(updatedLessonData);
+
+    setSaveStatus('saving');
+    try {
+      const res = await fetch(`/api/lesson/${selectedSlug}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plan: updatedLessonData.plan,
+          final: updatedLessonData.final,
+        }),
+      });
+      if (res.ok) {
+        lastSavedDataRef.current = {
+          plan: updatedLessonData.plan,
+          final: updatedLessonData.final
+        };
+        setSaveStatus('saved');
+      } else {
+        setSaveStatus('error');
+      }
+    } catch (e) {
+      console.error('Error saving deleted slide:', e);
+      setSaveStatus('error');
+    }
   };
 
-  const handleTemplateChange = (idx: number, newTemplate: string) => {
-    if (!lessonData || !lessonData.final) return;
+  const handleTemplateChange = async (idx: number, newTemplate: string) => {
+    if (!lessonData || !lessonData.final || !selectedSlug) return;
     const slides = [...lessonData.final.slides];
     slides[idx] = {
       ...slides[idx],
       template: newTemplate
     };
-    setLessonData({
+    const updatedLessonData = {
       ...lessonData,
       final: { ...lessonData.final, slides }
-    });
+    };
+    setLessonData(updatedLessonData);
+
+    setSaveStatus('saving');
+    try {
+      const res = await fetch(`/api/lesson/${selectedSlug}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plan: updatedLessonData.plan,
+          final: updatedLessonData.final,
+        }),
+      });
+      if (res.ok) {
+        lastSavedDataRef.current = {
+          plan: updatedLessonData.plan,
+          final: updatedLessonData.final
+        };
+        setSaveStatus('saved');
+        
+        // Trigger single slide regeneration to rewrite for the new template
+        const instruction = `Réécrire entièrement cette slide pour s'adapter parfaitement au nouveau template "${newTemplate}". Adapter le contenu existant aux contraintes et aux champs du nouveau template.`;
+        handleRegenerateSlide(idx, instruction);
+      } else {
+        setSaveStatus('error');
+      }
+    } catch (e) {
+      console.error('Error saving before template change rewrite:', e);
+      setSaveStatus('error');
+    }
   };
 
   // Fetch all lessons summaries
@@ -587,8 +759,11 @@ export const App: React.FC = () => {
       if (res.ok) {
         const data = await res.json();
         setLessons(data);
-        if (data.length > 0 && !selectedSlug) {
-          setSelectedSlug(data[0].slug);
+        if (data.length > 0) {
+          const hasStoredSlug = data.some((l: any) => l.slug === selectedSlug);
+          if (!selectedSlug || !hasStoredSlug) {
+            setSelectedSlug(data[0].slug);
+          }
         }
       }
     } catch (e) {
@@ -641,6 +816,30 @@ export const App: React.FC = () => {
     }
   }, [selectedSlug]);
 
+  // Watch for external file modifications
+  useEffect(() => {
+    const eventSource = new EventSource('/api/updates-stream');
+    eventSource.onmessage = (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        console.log('[Watcher] File change notification received:', data);
+        fetchLessons();
+        if (selectedSlug) {
+          fetchLessonData(selectedSlug);
+        }
+      } catch (e) {
+        console.error('Failed to parse update event data:', e);
+      }
+    };
+    eventSource.onerror = (e) => {
+      console.warn('[Watcher] EventSource update connection failed or closed. Reconnecting...', e);
+    };
+    return () => {
+      eventSource.close();
+    };
+  }, [selectedSlug]);
+
+
   const handleSendChatMessage = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     if (!chatInput.trim() || isChatLoading) return;
@@ -657,7 +856,8 @@ export const App: React.FC = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: updatedMessages,
-          activeLessonSlug: selectedSlug
+          activeLessonSlug: selectedSlug,
+          model: selectedAgentModel || undefined
         })
       });
 
@@ -742,9 +942,26 @@ export const App: React.FC = () => {
     setRunningPhase(phase);
     setLogs(`[System] Démarrage du pipeline pour ${selectedSlug.toUpperCase()} (Phase: ${phase})...\n`);
     
+    // Find intro slide index to show loading overlay on it
+    let introIndex = -1;
+    if (phase === 'intro' && lessonData?.final?.slides) {
+      introIndex = lessonData.final.slides.findIndex(
+        (s) => s.template?.toUpperCase() === 'VIBECODING - INTRO'
+      );
+      if (introIndex !== -1) {
+        setRegeneratingSlides((prev) => ({ ...prev, [introIndex]: true }));
+      }
+    }
+
     let url = `/api/run-pipeline?lesson=${selectedSlug}&phase=${phase}`;
-    if (selectedModel) url += `&model=${encodeURIComponent(selectedModel)}`;
-    if (generateImage) url += `&image=true`;
+    if (phase === 'intro') {
+      url = `/api/generate-intro?lesson=${selectedSlug}&update=true`;
+    } else if (phase === 'objectif-l1') {
+      url = `/api/generate-objectif-l1?lesson=${selectedSlug}`;
+    } else {
+      if (selectedModel) url += `&model=${encodeURIComponent(selectedModel)}`;
+      if (generateImage) url += `&image=true`;
+    }
 
     const eventSource = new EventSource(url);
 
@@ -755,6 +972,9 @@ export const App: React.FC = () => {
       if (event.data.includes('[System] Process exited')) {
         eventSource.close();
         setRunningPhase(null);
+        if (introIndex !== -1) {
+          setRegeneratingSlides((prev) => ({ ...prev, [introIndex]: false }));
+        }
         fetchLessons(); // Refresh list stats
         fetchLessonData(selectedSlug); // Reload modifications
       }
@@ -765,6 +985,35 @@ export const App: React.FC = () => {
       setLogs((prev) => prev + '[System Error] Connexion SSE interrompue avec le serveur.\n');
       eventSource.close();
       setRunningPhase(null);
+      if (introIndex !== -1) {
+        setRegeneratingSlides((prev) => ({ ...prev, [introIndex]: false }));
+      }
+    };
+  };
+
+  const handleRegenerateSlide = (slideIndex: number, instruction: string) => {
+    if (!selectedSlug) return;
+    setRegeneratingSlides(prev => ({ ...prev, [slideIndex]: true }));
+    setLogs(prev => prev + `[System] Régénération de la slide ${slideIndex} pour ${selectedSlug.toUpperCase()}...\n`);
+
+    const url = `/api/regenerate-slide?lesson=${selectedSlug}&slide_index=${slideIndex}&instruction=${encodeURIComponent(instruction)}`;
+    const eventSource = new EventSource(url);
+
+    eventSource.onmessage = (event) => {
+      setLogs((prev) => prev + event.data + '\n');
+
+      if (event.data.includes('[System] Process exited')) {
+        eventSource.close();
+        setRegeneratingSlides(prev => ({ ...prev, [slideIndex]: false }));
+        fetchLessonData(selectedSlug); // Reload modifications
+      }
+    };
+
+    eventSource.onerror = (e) => {
+      console.error('EventSource error:', e);
+      setLogs((prev) => prev + '[System Error] Connexion SSE interrompue avec le serveur.\n');
+      eventSource.close();
+      setRegeneratingSlides(prev => ({ ...prev, [slideIndex]: false }));
     };
   };
 
@@ -815,6 +1064,67 @@ export const App: React.FC = () => {
         fontWeight: 600,
         whiteSpace: 'nowrap',
         border: '1px solid rgba(0,0,0,0.03)'
+      }}>
+        {text}
+      </span>
+    );
+  };
+
+  // Helper for lesson type badge styling
+  const getTypeBadge = (type?: string) => {
+    if (!type) return null;
+    let text = type.toUpperCase();
+    let bg = 'rgba(156, 163, 175, 0.15)';
+    let color = '#4B5563';
+    let borderColor = 'rgba(156, 163, 175, 0.3)';
+
+    switch (type.toLowerCase()) {
+      case 'logiciel':
+        bg = 'rgba(59, 130, 246, 0.15)';
+        color = '#2563EB';
+        borderColor = 'rgba(59, 130, 246, 0.3)';
+        text = 'LOGICIEL';
+        break;
+      case 'theorique':
+        bg = 'rgba(245, 158, 11, 0.15)';
+        color = '#D97706';
+        borderColor = 'rgba(245, 158, 11, 0.3)';
+        text = 'THÉORIE';
+        break;
+      case 'exercice':
+      case 'pratique':
+        bg = 'rgba(16, 185, 129, 0.15)';
+        color = '#059669';
+        borderColor = 'rgba(16, 185, 129, 0.3)';
+        text = 'PRATIQUE';
+        break;
+      case 'hybride':
+      case 'projet':
+        bg = 'rgba(236, 72, 153, 0.15)';
+        color = '#DB2777';
+        borderColor = 'rgba(236, 72, 153, 0.3)';
+        text = 'HYBRIDE';
+        break;
+      case 'objectif':
+      case 'l1':
+        bg = 'rgba(139, 92, 246, 0.15)';
+        color = '#7C3AED';
+        borderColor = 'rgba(139, 92, 246, 0.3)';
+        text = 'OBJECTIF';
+        break;
+    }
+
+    return (
+      <span style={{
+        background: bg,
+        color: color,
+        padding: '1px 6px',
+        borderRadius: '4px',
+        fontSize: '9px',
+        fontWeight: 700,
+        whiteSpace: 'nowrap',
+        border: `1px solid ${borderColor}`,
+        letterSpacing: '0.3px'
       }}>
         {text}
       </span>
@@ -1106,9 +1416,12 @@ export const App: React.FC = () => {
                                       transition: 'all 0.15s ease'
                                     }}
                                   >
-                                    <span style={{ fontWeight: selectedSlug === l.slug ? 700 : 500, fontFamily: 'monospace' }}>
-                                      {l.slug.toUpperCase()}
-                                    </span>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                      <span style={{ fontWeight: selectedSlug === l.slug ? 700 : 500, fontFamily: 'monospace' }}>
+                                        {l.slug.toUpperCase()}
+                                      </span>
+                                      {getTypeBadge(l.type)}
+                                    </div>
                                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                                       {l.slideCount > 0 && (
                                         <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>
@@ -1265,6 +1578,21 @@ export const App: React.FC = () => {
               >
                 JSON Brut
               </button>
+              <button
+                onClick={() => setActiveTab('html')}
+                style={{
+                  padding: '4px 12px',
+                  background: activeTab === 'html' ? 'var(--bg-primary)' : 'transparent',
+                  border: 'none',
+                  color: activeTab === 'html' ? 'var(--accent-cyan)' : 'var(--text-secondary)',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  borderRadius: '4px',
+                  cursor: 'pointer'
+                }}
+              >
+                🌐 HTML
+              </button>
             </div>
 
             <button
@@ -1311,12 +1639,15 @@ export const App: React.FC = () => {
                     {lessonData.final && lessonData.final.slides && lessonData.final.slides.length > 0 ? (
                       lessonData.final.slides.map((slide, idx) => (
                         <SlideCard
-                          key={idx}
+                          key={`slide-${idx}-${slide.template}-${(slide.title || '').slice(0, 15)}`}
                           index={idx}
                           slide={slide}
                           templateRules={templates}
                           isFirst={idx === 0}
                           isLast={idx === (lessonData.final?.slides?.length || 1) - 1}
+                          isRegenerating={!!regeneratingSlides[idx]}
+                          onRegenerate={(instruction) => handleRegenerateSlide(idx, instruction)}
+                          onTemplateChange={(newTemplate) => handleTemplateChange(idx, newTemplate)}
                           onMoveUp={() => handleMoveSlide(idx, 'up')}
                           onMoveDown={() => handleMoveSlide(idx, 'down')}
                           onDelete={() => handleDeleteSlide(idx)}
@@ -1563,6 +1894,148 @@ export const App: React.FC = () => {
                 </div>
               )}
 
+              {/* Tab: HTML Preview */}
+              {activeTab === 'html' && (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', height: 'calc(100vh - 130px)' }}>
+                  {/* Code input area */}
+                  <div className="glass-panel" style={{ padding: '12px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text-secondary)' }}>📝 Collez votre code HTML ici</span>
+                      <div style={{ display: 'flex', gap: '8px' }}>
+                        <button
+                          onClick={() => {
+                            if (htmlIframeRef.current) {
+                              const doc = htmlIframeRef.current.contentDocument;
+                              if (doc) {
+                                doc.open();
+                                doc.write(htmlPreviewCode);
+                                doc.close();
+                              }
+                            }
+                            localStorage.setItem('vibe_htmlPreviewCode', htmlPreviewCode);
+                          }}
+                          style={{
+                            padding: '4px 16px',
+                            background: 'var(--accent-cyan)',
+                            border: 'none',
+                            borderRadius: '6px',
+                            color: '#000',
+                            fontSize: '12px',
+                            fontWeight: 700,
+                            cursor: 'pointer'
+                          }}
+                        >
+                          ▶ Prévisualiser
+                        </button>
+                        <button
+                          onClick={() => { setHtmlPreviewCode(''); localStorage.removeItem('vibe_htmlPreviewCode'); }}
+                          style={{
+                            padding: '4px 12px',
+                            background: 'var(--bg-tertiary)',
+                            border: '1px solid var(--border-color)',
+                            borderRadius: '6px',
+                            color: 'var(--text-secondary)',
+                            fontSize: '12px',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          Effacer
+                        </button>
+                      </div>
+                    </div>
+                    <textarea
+                      value={htmlPreviewCode}
+                      onChange={(e) => setHtmlPreviewCode(e.target.value)}
+                      placeholder="<div style='width:1920px; height:1080px; ...'>\n  Votre slide HTML ici\n</div>"
+                      spellCheck={false}
+                      style={{
+                        width: '100%',
+                        height: '160px',
+                        background: 'var(--bg-primary)',
+                        color: 'var(--text-primary)',
+                        border: '1px solid var(--border-color)',
+                        borderRadius: '6px',
+                        padding: '12px',
+                        fontFamily: 'monospace',
+                        fontSize: '12px',
+                        lineHeight: '1.5',
+                        resize: 'vertical',
+                        outline: 'none'
+                      }}
+                    />
+                  </div>
+
+                  {/* Preview area — 16:9 iframe scaled to fit */}
+                  <div className="glass-panel" style={{ flex: 1, padding: '16px', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '8px' }}>👁️ Aperçu (1920×1080)</span>
+                    <div 
+                      ref={(el) => {
+                        if (!el) return;
+                        const updateScale = () => {
+                          const w = el.clientWidth;
+                          const h = el.clientHeight;
+                          const scaleX = w / 1920;
+                          const scaleY = h / 1080;
+                          const scale = Math.min(scaleX, scaleY);
+                          const iframe = el.querySelector('iframe');
+                          if (iframe) {
+                            iframe.style.transform = `scale(${scale})`;
+                          }
+                          // Center the iframe
+                          const wrapper = el.querySelector('[data-iframe-wrapper]') as HTMLElement;
+                          if (wrapper) {
+                            wrapper.style.width = `${1920 * scale}px`;
+                            wrapper.style.height = `${1080 * scale}px`;
+                          }
+                        };
+                        const ro = new ResizeObserver(updateScale);
+                        ro.observe(el);
+                        updateScale();
+                      }}
+                      style={{
+                        flex: 1,
+                        position: 'relative',
+                        background: '#e0e0e0',
+                        borderRadius: '8px',
+                        overflow: 'hidden',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}>
+                      <div data-iframe-wrapper style={{ position: 'relative', overflow: 'hidden' }}>
+                        <iframe
+                          ref={htmlIframeRef}
+                          sandbox="allow-same-origin"
+                          style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '1920px',
+                            height: '1080px',
+                            border: 'none',
+                            transformOrigin: 'top left',
+                            background: '#FFFFFF'
+                          }}
+                        />
+                      </div>
+                      {!htmlPreviewCode && (
+                        <div style={{
+                          position: 'absolute',
+                          top: 0, left: 0, right: 0, bottom: 0,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'var(--text-secondary)',
+                          fontSize: '14px'
+                        }}>
+                          Collez du code HTML et cliquez "Prévisualiser"
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Tab 3: Raw JSON Structure Editor */}
               {activeTab === 'json' && (
                 <div className="glass-panel" style={{ height: 'calc(100vh - 130px)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
@@ -1754,11 +2227,19 @@ export const App: React.FC = () => {
                         outline: 'none'
                       }}
                     >
-                      <option value="">Par défaut (défini dans .env)</option>
-                      <option value="gemini-pro-latest">Gemini Pro Latest</option>
-                      <option value="gemini-3.5-flash">Gemini 3.5 Flash</option>
-                      <option value="claude-sonnet-4-6">Claude Sonnet 4.6</option>
-                      <option value="claude-opus-4-8">Claude Opus 4.8</option>
+                      <option value="">Par défaut (.env)</option>
+                      {agentConfig?.availableModels ? (
+                        agentConfig.availableModels.map(m => (
+                          <option key={m.id} value={m.id}>{m.label}</option>
+                        ))
+                      ) : (
+                        <>
+                          <option value="gemini-3.5-flash">Gemini 3.5 Flash</option>
+                          <option value="gemini-3.1-pro">Gemini 3.1 Pro</option>
+                          <option value="claude-sonnet-4-6">Claude Sonnet 4.6</option>
+                          <option value="claude-opus-4-8">Claude Opus 4.8</option>
+                        </>
+                      )}
                     </select>
                   </div>
                   
@@ -1957,9 +2438,35 @@ export const App: React.FC = () => {
               {/* Agent Status and Clear */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px', borderBottom: '1px solid var(--border-color)', paddingBottom: '6px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ fontSize: '10px', color: 'var(--badge-green-text)', background: 'var(--badge-green-bg)', padding: '2px 6px', borderRadius: '4px', fontWeight: 600 }}>
-                    {agentConfig?.model || 'Gemini 3.5 Flash'}
-                  </span>
+                  <span style={{ fontSize: '10px', color: 'var(--text-secondary)', fontWeight: 600 }}>🤖 Modèle :</span>
+                  <select
+                    value={selectedAgentModel}
+                    onChange={(e) => handleAgentModelChange(e.target.value)}
+                    style={{
+                      fontSize: '11px',
+                      color: 'var(--badge-green-text)',
+                      background: 'var(--badge-green-bg)',
+                      border: '1px solid var(--border-color)',
+                      padding: '2px 6px',
+                      borderRadius: '4px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      outline: 'none'
+                    }}
+                  >
+                    {agentConfig?.availableModels ? (
+                      agentConfig.availableModels.map(m => (
+                        <option key={m.id} value={m.id}>{m.label}</option>
+                      ))
+                    ) : (
+                      <>
+                        <option value="gemini-3.5-flash">Gemini 3.5 Flash</option>
+                        <option value="gemini-3.1-pro">Gemini 3.1 Pro</option>
+                        <option value="claude-sonnet-4-6">Claude Sonnet 4.6</option>
+                        <option value="claude-opus-4-8">Claude Opus 4.8</option>
+                      </>
+                    )}
+                  </select>
                 </div>
                 <button
                   onClick={() => setChatMessages([

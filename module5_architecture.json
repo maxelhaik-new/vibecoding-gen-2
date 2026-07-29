@@ -1,0 +1,115 @@
+{
+  "module_id": "M5",
+  "module_title": "Full-Stack, Sécurité & Déploiement : Réussir son Projet Certifiant",
+  "module_subtitle": "Construire, sécuriser et déployer une application métier complète en Vibe Coding",
+  "pedagogical_approach": "Projet Fil Rouge Géant (1 seule application métier développée de A à Z par l'apprenant piloté par l'IA)",
+  "total_chapters": 7,
+  "total_lessons": 31,
+  "estimated_duration_minutes": 154,
+  "certification_mapping": {
+    "C1": "Cadrer un produit numérique (Chapitre 1)",
+    "C2": "Générer et itérer un prototype fonctionnel (Chapitre 2)",
+    "C3": "Configurer un environnement de développement local & Git (Chapitre 7)",
+    "C4": "Interfacer le produit avec des services externes (Chapitres 3, 4, 6)",
+    "C5": "Déployer le produit sur un environnement de production (Chapitres 4, 5, 7)",
+    "C6": "Maintenir une veille et responsabilité (Chapitre 1, 5, 7)",
+    "CE5.3.5_CRITICAL": "Sécurité RLS (Row Level Security) sur PostgreSQL/Supabase (Chapitre 5)"
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "chapter_code": "M5C1",
+      "chapter_title": "Cadrer son projet certifiant & Définir le produit",
+      "airtable_chap_name": "Chapitre 1 : Projet final certifiant 🏆",
+      "certification_criteria": ["C1", "CE1.1", "CE1.2", "CE1.3", "CE1.4"],
+      "lessons": [
+        {"lesson_code": "M5C1L1", "title": "Les objectifs du chapitre : Cadrer son projet certifiant & Définir le produit", "duration": "1 min", "type": "📺 Leçon ", "objective": "Présentation des objectifs du chapitre 1."},
+        {"lesson_code": "M5C1L2", "title": "Découvrir le projet fil rouge & les exigences de la certification", "duration": "2 min", "type": "📺 Leçon ", "objective": "Présenter les modalités des épreuves et la démarche fil rouge."},
+        {"lesson_code": "M5C1L3", "title": "Choisir et cadrer son application métier (Dossier de cadrage)", "duration": "6 min", "type": "📺 Leçon ", "objective": "Formaliser les besoins, contraintes et le parcours utilisateur (C1)."},
+        {"lesson_code": "M5C1L4", "title": "Structurer les règles contextuelles de son projet (AGENTS.md)", "duration": "6 min", "type": "📺 Leçon ", "objective": "Définir le cadre technique et les règles d'instructions pour l'agent (CE1.3)."}
+      ]
+    },
+    {
+      "chapter_number": 2,
+      "chapter_code": "M5C2",
+      "chapter_title": "Générer l'Interface Utilisateur (Front-end & UX) avec l'IA",
+      "airtable_chap_name": "Chapitre 2 : Concevoir le backend & l'architecture",
+      "certification_criteria": ["C2", "CE2.1", "CE2.2", "CE3.3"],
+      "lessons": [
+        {"lesson_code": "M5C2L1", "title": "Les objectifs du chapitre : Générer l'Interface Utilisateur (Front-end & UX)", "duration": "1 min", "type": "📺 Leçon ", "objective": "Présentation des objectifs du chapitre 2."},
+        {"lesson_code": "M5C2L2", "title": "Générer la structure et le design system de l'application", "duration": "6 min", "type": "⚙️ Logiciel", "objective": "Prompter l'agent pour créer le layout, la charte graphique et le responsive."},
+        {"lesson_code": "M5C2L3", "title": "Créer les composants UI métier (Tableaux, Formulaires, Cartes)", "duration": "7 min", "type": "⚙️ Logiciel", "objective": "Générer l'ensemble des écrans et vues du parcours utilisateur (CE3.3)."},
+        {"lesson_code": "M5C2L4", "title": "Itérer sur l'ergonomie visuelle et corriger les bugs de style", "duration": "7 min", "type": "⚙️ Logiciel", "objective": "Ajuster le design et résoudre les défauts visuels avec l'agent (CE2.1)."},
+        {"lesson_code": "M5C2L5", "title": "Rendre l'interface dynamique et réactive en Front-end", "duration": "6 min", "type": "⚙️ Logiciel", "objective": "Gérer les états d'affichage avant l'intégration du backend."}
+      ]
+    },
+    {
+      "chapter_number": 3,
+      "chapter_code": "M5C3",
+      "chapter_title": "Connecter la base de données Cloud (Supabase BaaS)",
+      "airtable_chap_name": "Chapitre 3 : Gérer l'authentification des utilisateurs",
+      "certification_criteria": ["CE4.1", "CE4.2"],
+      "lessons": [
+        {"lesson_code": "M5C3L1", "title": "Les objectifs du chapitre : Connecter la base de données Cloud (Supabase BaaS)", "duration": "1 min", "type": "📺 Leçon ", "objective": "Présentation des objectifs du chapitre 3."},
+        {"lesson_code": "M5C3L2", "title": "Front-end vs Back-end : pourquoi le navigateur ne suffit plus ?", "duration": "4 min", "type": "📺 Leçon ", "objective": "Comprendre la nécessité de la persistance de données serveur."},
+        {"lesson_code": "M5C3L3", "title": "Créer et configurer son projet Supabase", "duration": "5 min", "type": "⚙️ Logiciel", "objective": "Inscription Supabase, création du projet & récupération des clés API."},
+        {"lesson_code": "M5C3L4", "title": "Structurer les tables SQL du projet fil rouge avec l'agent IA", "duration": "7 min", "type": "⚙️ Logiciel", "objective": "Générer et exécuter le script SQL de modélisation des données."},
+        {"lesson_code": "M5C3L5", "title": "Connecter les formulaires Front-end à la base de données", "duration": "7 min", "type": "⚙️ Logiciel", "objective": "Faire persister les actions utilisateur (Create, Read, Update, Delete)."}
+      ]
+    },
+    {
+      "chapter_number": 4,
+      "chapter_code": "M5C4",
+      "chapter_title": "Authentification & Espace Membre Privé",
+      "airtable_chap_name": "Chapitre 4 : La sécurité (RLS) par la faille",
+      "certification_criteria": ["CE5.3.3", "CE4.1"],
+      "lessons": [
+        {"lesson_code": "M5C4L1", "title": "Les objectifs du chapitre : Authentification & Espace Membre Privé", "duration": "1 min", "type": "📺 Leçon ", "objective": "Présentation des objectifs du chapitre 4."},
+        {"lesson_code": "M5C4L2", "title": "Comprendre la gestion de session et l'identité utilisateur", "duration": "5 min", "type": "📺 Leçon ", "objective": "Analyser comment Supabase Auth sécurise l'identité utilisateur."},
+        {"lesson_code": "M5C4L3", "title": "Connecter la page de connexion & inscription avec l'agent IA", "duration": "6 min", "type": "⚙️ Logiciel", "objective": "Mettre en place l'authentification (Email / Magic Link ou OAuth)."},
+        {"lesson_code": "M5C4L4", "title": "Protéger les routes privées et le dashboard de l'application", "duration": "6 min", "type": "⚙️ Logiciel", "objective": "Restreindre l'accès aux seules personnes authentifiées (CE5.3.3)."},
+        {"lesson_code": "M5C4L5", "title": "Lier les données créées dans le Front-end à l'ID utilisateur", "duration": "6 min", "type": "⚙️ Logiciel", "objective": "Associer chaque entrée BDD au jeton auth.uid() de l'utilisateur."}
+      ]
+    },
+    {
+      "chapter_number": 5,
+      "chapter_code": "M5C5",
+      "chapter_title": "Sécuriser les données par la faille (Row Level Security - RLS)",
+      "airtable_chap_name": "Chapitre 5 : Connecter le monde extérieur (API, MCP & variables d'environnement)",
+      "certification_criteria": ["CE5.3.4", "CE5.3.5"],
+      "lessons": [
+        {"lesson_code": "M5C5L1", "title": "Les objectifs du chapitre : Sécuriser les données par la faille (RLS)", "duration": "1 min", "type": "📺 Leçon ", "objective": "Présentation du critère éliminatoire CE5.3.5 de la certification."},
+        {"lesson_code": "M5C5L2", "title": "Démontrer la faille : accéder aux données d'un autre utilisateur", "duration": "5 min", "type": "⚙️ Logiciel", "objective": "Constater le risque de fuite de données avant l'activation du RLS."},
+        {"lesson_code": "M5C5L3", "title": "Générer et appliquer les règles RLS SQL avec l'agent IA", "duration": "8 min", "type": "⚙️ Logiciel", "objective": "Rédiger les politiques CREATE POLICY pour cloisonner par auth.uid()."},
+        {"lesson_code": "M5C5L4", "title": "Auditer et valider l'étanchéité totale de l'application dans l'UI", "duration": "6 min", "type": "📝 Cas Pratique", "objective": "Tester dans le navigateur que chaque compte ne voit que ses données."}
+      ]
+    },
+    {
+      "chapter_number": 6,
+      "chapter_code": "M5C6",
+      "chapter_title": "Connecter le monde extérieur (API & Secrets)",
+      "airtable_chap_name": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS",
+      "certification_criteria": ["CE4.1", "CE5.3.2"],
+      "lessons": [
+        {"lesson_code": "M5C6L1", "title": "Les objectifs du chapitre : Connecter le monde extérieur (API & Secrets)", "duration": "1 min", "type": "📺 Leçon ", "objective": "Présentation des objectifs du chapitre 6."},
+        {"lesson_code": "M5C6L2", "title": "Qu'est-ce qu'une API REST et comment l'interroger avec l'IA ?", "duration": "5 min", "type": "📺 Leçon ", "objective": "Comprendre le fonctionnement des requêtes HTTP et des réponses JSON."},
+        {"lesson_code": "M5C6L3", "title": "Sécuriser ses clés API & secrets dans le fichier .env.local", "duration": "6 min", "type": "⚙️ Logiciel", "objective": "Isoler les variables d'environnement et vérifier qu'elles ne fuient pas."},
+        {"lesson_code": "M5C6L4", "title": "Brancher un service tiers au projet fil rouge (Stripe, Resend, API métier)", "duration": "7 min", "type": "⚙️ Logiciel", "objective": "Connecter une API externe au projet et valider les échanges de données."}
+      ]
+    },
+    {
+      "chapter_number": 7,
+      "chapter_code": "M5C7",
+      "chapter_title": "Déploiement en production & Réussir son projet certifiant 🏆",
+      "airtable_chap_name": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier",
+      "certification_criteria": ["C3", "C5", "CE5.1", "C6"],
+      "lessons": [
+        {"lesson_code": "M5C7L1", "title": "Les objectifs du chapitre : Déploiement en production & Réussir son projet certifiant", "duration": "1 min", "type": "📺 Leçon ", "objective": "Présentation des objectifs du chapitre 7."},
+        {"lesson_code": "M5C7L2", "title": "Déployer en production sur Vercel avec HTTPS", "duration": "7 min", "type": "⚙️ Logiciel", "objective": "Mettre l'application en ligne sur une URL publique accessible (CE5.1)."},
+        {"lesson_code": "M5C7L3", "title": "Publier le dépôt GitHub propre avec un README détaillé", "duration": "7 min", "type": "📺 Leçon ", "objective": "Versionner le code, structurer le dépôt et rédiger la documentation (C3)."},
+        {"lesson_code": "M5C7L4", "title": "Enregistrer la vidéo de démonstration du projet fil rouge", "duration": "7 min", "type": "📝 Cas Pratique", "objective": "Enregistrer le walkthrough produit pour l'Épreuve 1 de la certification."},
+        {"lesson_code": "M5C7L5", "title": "Auto-évaluation sur la grille certifiante & Préparation au QCM", "duration": "5 min", "type": "📺 Leçon ", "objective": "Vérification finale de la grille d'évaluation et conseils pour l'Épreuve 2."}
+      ]
+    }
+  ]
+}

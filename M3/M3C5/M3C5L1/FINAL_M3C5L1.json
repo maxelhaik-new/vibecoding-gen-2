@@ -1,0 +1,29 @@
+{
+  "lessonTitle": "M3C5L1 — Les objectifs du chapitre : Déployer avec Vercel",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Déployer son application en ligne avec Vercel"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Ce chapitre enseigne la mise en ligne automatique d'une application web depuis GitHub vers Vercel, la gestion des configurations et la mise en production.",
+        "Titre 1": "Comprendre le flux du déploiement continu",
+        "Titre 2": "Créer son compte Vercel et lier GitHub",
+        "Titre 3": "Déployer le projet en ligne en un clic",
+        "Titre 4": "Connecter un nom de domaine personnalisé",
+        "Titre 5": "Mettre son application web en production"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

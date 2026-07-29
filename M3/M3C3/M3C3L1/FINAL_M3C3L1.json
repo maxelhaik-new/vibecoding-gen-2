@@ -1,0 +1,30 @@
+{
+  "lessonTitle": "M3C3L1 — Les objectifs du chapitre : maîtriser le terminal",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Maîtriser le terminal pour le code"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Ce chapitre enseigne les bases indispensables du terminal pour exécuter des scripts de code en local. On y découvre comment installer l'environnement et lancer des commandes.",
+        "Titre 1": "Comprendre l'utilité du terminal local",
+        "Titre 2": "Installer l'environnement de développement",
+        "Titre 3": "Maîtriser les commandes système essentielles",
+        "Titre 4": "Naviguer et gérer ses dossiers locaux en CLI",
+        "Titre 5": "Lancer des serveurs et exécuter des scripts",
+        "Titre 6": "Résoudre les erreurs de terminal courantes"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

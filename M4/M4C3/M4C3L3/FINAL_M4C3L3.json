@@ -1,0 +1,109 @@
+{
+  "lessonTitle": "M4C3L3 — Le rôle des instructions système à l'échelle du projet",
+  "lessonType": "theorique",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Le rôle d'AGENTS.md dans Antigravity"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "La mémoire centrale du projet",
+        "Intro": "Le prompt zéro lance la session. Le fichier AGENTS.md, lui, conserve la mémoire du projet dans le temps. Découvrons comment ce document simple garantit la cohérence de l'agent à chaque échange.",
+        "Titre 1": "La mémoire du projet",
+        "Texte 1": "Voyons comment conserver la mémoire des règles et des choix techniques d'un projet sans répétition.",
+        "Titre 2": "Les consignes essentielles",
+        "Texte 2": "Zoom sur les 6 catégories de consignes indispensables pour cadrer les actions de l'agent au quotidien.",
+        "Titre 3": "Un document évolutif",
+        "Texte 3": "Découvrons comment faire évoluer ce fichier au fil du temps et le faire mettre à jour directement par l'IA."
+      }
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Définition d'AGENTS.md",
+        "Mot": "La mémoire du projet",
+        "Definition": "Le fichier AGENTS.md est un document texte placé à la racine du workspace d'Antigravity. Il rassemble les règles de code, le style visuel et l'architecture de l'application. Antigravity lit ce fichier et l'injecte automatiquement en instruction système à chaque démarrage d'agent. Résultat ? L'agent conserve la mémoire exacte des choix établis, sans qu'on ait besoin de tout ré-expliquer à chaque nouveau prompt.",
+        "Bulle": "C'est le règlement intérieur du projet. L'agent le consulte systématiquement avant d'exécuter la moindre modification dans le code.",
+        "Picto 1": "mdi:file-document-outline"
+      }
+    },
+    {
+      "template": "VIBECODING - 6 BLOCS",
+      "content": {
+        "Titre": "Que contient AGENTS.md ?",
+        "Intro": "On y rassemble 6 catégories de consignes claires pour guider l'agent dans toutes ses interventions sur le code.",
+        "Titre 1": "ARCHITECTURE",
+        "Texte 1": "On y décrit l'organisation des dossiers et la structure globale des fichiers du projet.",
+        "Picto 1": "mdi:folder-network-outline",
+        "Titre 2": "CONVENTIONS",
+        "Texte 2": "On fixe le style de code, le nommage des variables et le découpage des fonctions.",
+        "Picto 2": "mdi:code-braces",
+        "Titre 3": "DESIGN & UI",
+        "Texte 3": "On définit les couleurs, la typographie et les composants visuels à utiliser.",
+        "Picto 3": "mdi:palette-outline",
+        "Titre 4": "COMMANDES",
+        "Texte 4": "On indique les commandes exactes pour démarrer, construire et tester l'application.",
+        "Picto 4": "mdi:console-line",
+        "Titre 5": "SÉCURITÉ",
+        "Texte 5": "On rappelle les règles de protection des données sensibles et des clés d'accès.",
+        "Picto 5": "mdi:shield-lock-outline",
+        "Titre 6": "INTERDICTIONS",
+        "Texte 6": "On liste les actions proscrites, comme la suppression de tests ou de commentaires.",
+        "Picto 6": "mdi:cancel",
+        "Texte Bulle": "La clé ? Rester concis. Un fichier clair et bien structuré donne de bien meilleurs résultats qu'un document trop long."
+      }
+    },
+    {
+      "template": "VIBECODING - CYCLE",
+      "content": {
+        "Titre": "Le cycle de vie d'AGENTS.md",
+        "Intro": "Ce document n'est pas figé dans le marbre. Il évolue naturellement au fil des étapes de développement.",
+        "Titre 1": "CRÉATION",
+        "Texte 1": "On pose les règles initiales et les choix d'organisation au lancement du projet.",
+        "Titre 2": "ENRICHISSEMENT",
+        "Texte 2": "On complète le fichier à chaque fois qu'un choix de design ou de code est validé.",
+        "Titre 3": "CORRECTION",
+        "Texte 3": "On consigne les erreurs résolues pour éviter que l'agent ne les reproduise.",
+        "Titre 4": "NETTOYAGE",
+        "Texte 4": "On retire les consignes devenues inutiles pour garder un document fluide et lisible.",
+        "Texte 5": "DOCUMENTATION EVOLUTIVE"
+      }
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Déléguer la tenue d'AGENTS.md",
+        "Mot": "Faire rédiger les règles par l'IA",
+        "Definition": "Pas besoin de tout modifier à la main ! Dès qu'un bug est corrigé ou qu'une convention est validée dans le chat, on demande directement à l'agent : 'Ajoute cette règle dans le fichier AGENTS.md'. L'agent met à jour la documentation du projet de façon autonome. C'est le moyen le plus simple d'enrichir la mémoire du projet sans effort d'écriture supplémentaire.",
+        "Bulle": "Demander à l'agent d'inscrire lui-même une consigne après un arbitrage garantit une continuité parfaite sur la durée."
+      }
+    },
+    {
+      "template": "VIBECODING - EXERCICE PRATIQUE",
+      "content": {
+        "EXERCICE": "EXERCICE PRATIQUE",
+        "Titre": "Préparer le cadrage d'AGENTS.md",
+        "Intro": "Définir les consignes principales à inscrire dans le fichier AGENTS.md du projet fil rouge avant la mise en pratique.",
+        "Titre 1": "Les étapes de préparation du fichier",
+        "Texte 1": "On identifie les règles de code, le style visuel et les interdictions clés à communiquer à l'agent Antigravity.",
+        "Question 1": "Lister 3 règles d'architecture et de nommage imposées au projet.",
+        "Question 2": "Définir les choix visuels et les composants d'interface prioritaires.",
+        "Question 3": "Indiquer 2 interdictions strictes pour éviter la suppression de code.",
+        "Question 4": "Formuler la consigne de mise à jour automatique à transmettre à l'agent."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Le fichier AGENTS.md constitue la mémoire permanente du projet dans Antigravity. En y inscrivant l'architecture, les conventions, le style et les règles de sécurité, on garantit que chaque agent travaille dans le respect absolu des choix établis. Fichier vivant et évolutif, AGENTS.md peut être mis à jour manuellement ou directement par l'agent IA à la suite d'un arbitrage. C'est le pilier de la cohérence sur la durée.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Dans la prochaine leçon, nous passerons à l'action en créant et en configurant le fichier AGENTS.md du projet fil rouge."
+      }
+    }
+  ]
+}

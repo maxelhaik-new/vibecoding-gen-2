@@ -1,0 +1,13 @@
+{
+  "lessonSlug": "m4c1l6",
+  "lessonTitle": "M4C1L6 — Comprendre le terminal & les commandes clés du Vibe Coder",
+  "lessonType": "theorique",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Comprendre le terminal & les commandes clés du Vibe Coder"
+      }
+    }
+  ]
+}

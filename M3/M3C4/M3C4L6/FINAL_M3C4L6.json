@@ -1,0 +1,73 @@
+{
+  "lessonTitle": "M3C4L6",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Sécuriser et exporter son projet de code"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Exporter son projet avec l'IA",
+        "Intro": "Le mode Build de Google AI Studio simplifie l'envoi de notre code vers GitHub en masquant la complexité technique. Comment assurer la sécurité de nos données sans terminal ? Découvrons les bonnes pratiques d'exportation.",
+        "Titre 1": "L'automatisation Git",
+        "Texte 1": "Voyons comment la plateforme gère la création et le nettoyage automatique du fichier .gitignore sous le capot.",
+        "Titre 2": "Le contrôle par prompt",
+        "Texte 2": "Focus sur l'utilisation d'instructions textuelles simples pour ordonner à l'IA de masquer nos clés privées.",
+        "Titre 3": "L'explorateur visuel",
+        "Texte 3": "Découvrons comment vérifier le contenu de nos fichiers sensibles directement depuis le panneau latéral de l'outil."
+      }
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Deux méthodes de contrôle",
+        "Titre A": "LE PROMPT",
+        "Titre B": "LE PANNEAU",
+        "Item 1": "Méthode",
+        "Item 2": "Usage",
+        "Item 3": "Avantage",
+        "Item 4": "Limites",
+        "Texte A Item 1": "Dicter les consignes de sécurité directement à l'IA",
+        "Texte A Item 2": "Idéal pour masquer une clé API dans un fichier .env",
+        "Texte A Item 3": "Modifications faites d'elles-mêmes par l'IA",
+        "Texte A Item 4": "Nécessite de bien formuler sa demande à l'IA",
+        "Texte B1": "Inspecter les fichiers depuis l'arborescence visuelle",
+        "Texte B2": "Utile pour lire le contenu du .gitignore généré",
+        "Texte B3": "Contrôle visuel direct sur chaque fichier",
+        "Texte B4": "Pas d'édition de code dans le panneau"
+      }
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Le .gitignore automatique",
+        "Mot": "Le .gitignore",
+        "Definition": "Dans le mode Build de Google AI Studio, le fichier .gitignore est généré et configuré de manière totalement invisible pour l'apprenant. Il exclut automatiquement les fichiers temporaires et les dépendances lourdes comme node_modules avant l'exportation vers GitHub. La plateforme assure ainsi la propreté du dossier en arrière-plan sans intervention manuelle.",
+        "Bulle": "EN BREF : Inutile d'écrire des règles d'exclusion à la main dans un fichier texte. L'IA se charge d'écarter les éléments inutiles pour garder un dépôt propre et léger.",
+        "Picto 1": "mdi:shield-check"
+      }
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Le cas de la clé API exposée",
+        "Intro": "SÉCURISER L'EXPORT PAR LE PROMPT",
+        "Texte 1": "Avant de cliquer sur le bouton 'Exporter vers GitHub', on doit s'assurer que notre clé privée Google AI Studio n'est pas écrite en dur dans le code HTML ou JavaScript. Dans le chat du mode Build, on envoie cette consigne : 'Isole ma clé API dans un fichier .env séparé et configure le .gitignore'. L'IA s'exécute immédiatement, crée le fichier .env et met à jour les règles d'exclusion de Git. Le push se fait alors en toute sécurité.",
+        "Texte Bulle": "Le versioning sécurise l'application face aux imprévus de production. On expérimente des idées audacieuses en toute confiance, sachant que le retour à l'état stable est garanti.",
+        "Source": "Source : Git - Illustration générée par IA - Maxime Elhaik"
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Dans le mode Build de Google AI Studio, l'exportation vers GitHub est simplifiée et sécurisée par l'IA. Elle automatise la création du fichier .gitignore pour exclure les dépendances lourdes. On utilise le prompt pour isoler nos clés privées dans un fichier .env et le panneau visuel pour vérifier notre arborescence. C'est la méthode idéale pour débuter sereinement le versioning.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Dans la prochaine leçon, c'est à nous de jouer ! Mettons en pratique ces connaissances en connectant notre propre application à GitHub pour faire notre premier export sécurisé."
+      }
+    }
+  ]
+}

@@ -30,6 +30,12 @@ import Schema3ColonnesLayout from './layouts/Schema3ColonnesLayout';
 import VideLayout from './layouts/VideLayout';
 import ImageLayout from './layouts/ImageLayout';
 import Layout4BlocsLayout from './layouts/Layout4BlocsLayout';
+import DecoupageLayout from './layouts/DecoupageLayout';
+import ConceptImageLayout from './layouts/ConceptImageLayout';
+import BriefAltLayout from './layouts/BriefAltLayout';
+import PersonaMvpLayout from './layouts/PersonaMvpLayout';
+import UserStoriesLayout from './layouts/UserStoriesLayout';
+import ExercicePratiqueLayout from './layouts/ExercicePratiqueLayout';
 import { EditableField } from './EditableField';
 import { EditorContext } from './EditorContext';
 
@@ -45,6 +51,7 @@ interface SlideCardProps {
   isLast?: boolean;
   isRegenerating?: boolean;
   onRegenerate?: (instruction: string) => void;
+  onTemplateChange?: (newTemplate: string) => void;
 }
 
 export const SlideCard: React.FC<SlideCardProps> = ({
@@ -59,6 +66,7 @@ export const SlideCard: React.FC<SlideCardProps> = ({
   isLast = false,
   isRegenerating = false,
   onRegenerate,
+  onTemplateChange,
 }) => {
   const { template, content = {} } = slide;
   const [copied, setCopied] = React.useState(false);
@@ -218,6 +226,32 @@ export const SlideCard: React.FC<SlideCardProps> = ({
       case 'VIBECODING - 4 BLOCS':
         return <Layout4BlocsLayout content={derivedContent} onChange={handleFieldChange} rules={rulesMap} />;
         
+      case 'VIBECODING - DECOUPAGE':
+        return <DecoupageLayout content={derivedContent} onChange={handleFieldChange} rules={rulesMap} />;
+        
+      case 'VIBECODING - CONCEPT - IMAGE':
+        return (
+          <ConceptImageLayout
+            content={derivedContent}
+            onChange={handleFieldChange}
+            rules={rulesMap}
+            imageConcept={slide.image_concept}
+            imageStyle={slide.image_style}
+          />
+        );
+        
+      case 'VIBECODING - BRIEF ALT':
+        return <BriefAltLayout content={derivedContent} onChange={handleFieldChange} rules={rulesMap} />;
+        
+      case 'VIBECODING - PERSONA & MVP':
+        return <PersonaMvpLayout content={derivedContent} onChange={handleFieldChange} rules={rulesMap} />;
+        
+      case 'VIBECODING - USER STORIES':
+        return <UserStoriesLayout content={derivedContent} onChange={handleFieldChange} rules={rulesMap} />;
+        
+      case 'VIBECODING - EXERCICE PRATIQUE':
+        return <ExercicePratiqueLayout content={derivedContent} onChange={handleFieldChange} rules={rulesMap} />;
+
       default:
         // Generic Editor Fallback
         return renderGenericFallback();
@@ -344,6 +378,24 @@ export const SlideCard: React.FC<SlideCardProps> = ({
   // We rely on the EditorContext provided from App.tsx. SlideCard just adds its own index to the context.
   const parentContext = React.useContext(EditorContext);
 
+  const [confirmingDelete, setConfirmingDelete] = React.useState(false);
+  const confirmTimerRef = React.useRef<any>(null);
+
+  const handleDeleteClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (!confirmingDelete) {
+      setConfirmingDelete(true);
+      if (confirmTimerRef.current) clearTimeout(confirmTimerRef.current);
+      confirmTimerRef.current = setTimeout(() => {
+        setConfirmingDelete(false);
+      }, 3500);
+    } else {
+      if (confirmTimerRef.current) clearTimeout(confirmTimerRef.current);
+      setConfirmingDelete(false);
+      if (onDelete) onDelete();
+    }
+  };
+
   return (
     <div className="slide-card-container">
       <div className="slide-card-header">
@@ -370,24 +422,46 @@ export const SlideCard: React.FC<SlideCardProps> = ({
               ▼
             </button>
             <button
-              onClick={onDelete}
-              className="slide-card-btn slide-card-delete-btn"
-              title="Supprimer la slide"
+              onClick={handleDeleteClick}
+              className={`slide-card-btn slide-card-delete-btn ${confirmingDelete ? 'confirming' : ''}`}
+              title={confirmingDelete ? "Cliquer à nouveau pour confirmer la suppression" : "Supprimer la slide"}
+              style={{
+                background: confirmingDelete ? 'rgba(239, 68, 68, 0.15)' : undefined,
+                color: confirmingDelete ? '#ef4444' : undefined,
+                borderColor: confirmingDelete ? '#ef4444' : undefined,
+                fontWeight: confirmingDelete ? 600 : undefined,
+                fontSize: confirmingDelete ? '11px' : undefined,
+                padding: confirmingDelete ? '2px 8px' : undefined,
+              }}
             >
-              ✕
+              {confirmingDelete ? '⚠️ Supprimer ?' : '✕'}
             </button>
           </div>
         </div>
         <div className="slide-card-header-right">
-          <span
+          <select
+            value={template}
+            onChange={(e) => onTemplateChange && onTemplateChange(e.target.value)}
             style={{
+              background: 'var(--bg-tertiary)',
+              border: '1px solid var(--border-color)',
+              borderRadius: '4px',
+              color: 'var(--text-secondary)',
               fontSize: '11px',
-              color: 'var(--text-muted)',
               fontFamily: 'monospace',
+              padding: '2px 4px',
+              outline: 'none',
+              cursor: 'pointer',
+              maxWidth: '220px',
             }}
+            title="Changer le gabarit de la slide"
           >
-            {template}
-          </span>
+            {templateRules.map((rule) => (
+              <option key={rule.name} value={rule.name}>
+                {rule.name}
+              </option>
+            ))}
+          </select>
           <button
             onClick={() => {
               setRegenInstruction('');
@@ -414,7 +488,7 @@ export const SlideCard: React.FC<SlideCardProps> = ({
         style={{
           width: '100%',
           aspectRatio: '16/9',
-          backgroundColor: '#ffffff', // Clean white background instead of figma PNG image underlay
+          backgroundColor: 'var(--slide-bg)', // Adapts to Light/Dark mode
           borderRadius: '8px',
           position: 'relative',
           overflow: 'hidden',

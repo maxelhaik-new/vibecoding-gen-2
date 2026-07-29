@@ -1,0 +1,30 @@
+{
+  "lessonTitle": "M2C5L1",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Sécurité et prompts sûrs avec l'IA"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Ce chapitre détaille les risques de sécurité et de confidentialité lors de l'interaction avec les IA. On apprendra à protéger ses données sensibles et à sécuriser ses prompts.",
+        "Titre 1": "Comprendre la protection des données et l'IA",
+        "Titre 2": "Sécuriser le traitement des données sensibles",
+        "Titre 3": "Protéger ses secrets et ses clés API de l'IA",
+        "Titre 4": "Appliquer une checklist de sécurité des prompts",
+        "Titre 5": "Détecter et corriger une fuite de données",
+        "Titre 6": "Adopter les bonnes pratiques de sécurité"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

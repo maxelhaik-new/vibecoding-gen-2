@@ -1,0 +1,113 @@
+{
+  "lessonTitle": "M2C2L5 — Du besoin métier au cahier des charges minimal",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Du besoin métier au cahier des charges"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Formaliser ses exigences",
+        "Intro": "Avant d'écrire la moindre ligne de code ou de prompt, vous devez regrouper vos réflexions dans un document de synthèse : le cahier des charges. C'est l'outil ultime pour fixer le cap et éviter les dérives.",
+        "Titre 1": "La compilation",
+        "Texte 1": "Compiler les personas, les user stories et le MVP dans un cadre unique pour éviter les oublis.",
+        "Titre 2": "Le format machine",
+        "Texte 2": "Structurer vos idées dans un langage clair que l'IA pourra assimiler et lire plus tard.",
+        "Titre 3": "Les 3 composants",
+        "Texte 3": "Découvrir les 3 rubriques indispensables à intégrer dans votre document pour verrouiller le projet."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Pourquoi un cahier des charges ?",
+        "Mot": "Alignement",
+        "Definition": "Le cahier des charges en Vibe Coding n'est pas un document administratif de 100 pages. C'est une feuille de route fonctionnelle claire qui sert de référence absolue. Il garantit que l'IA comprend l'intention de l'application et respecte le périmètre sans inventer de fausses solutions.",
+        "Bulle": "Sans ce cadre, l'IA va improviser le comportement de votre application à la moindre ambiguïté."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO",
+      "content": {
+        "Titre": "Cadrage : les 3 piliers",
+        "Intro": "Le cahier des charges fonctionnel regroupe vos réflexions en trois rubriques clés pour figer vos besoins métiers.",
+        "Titre 1": "1. Le Persona",
+        "Texte 1": "Identifier l'utilisateur final du produit, ses contraintes réelles et son niveau de compétence technique.",
+        "Titre 2": "2. Le Périmètre",
+        "Titre Bulle": "Isoler l'unique problème à résoudre et définir la fonctionnalité minimale indispensable pour y répondre (MVP).",
+        "Titre 3": "3. Découpage",
+        "Texte 3": "Traduire le périmètre en une liste d'User Stories atomiques et de critères de succès précis pour guider le code.",
+        "Source": "Cahier des charges fonctionnel - Document de cadrage et de synthèse"
+      },
+      "image_concept": "A clean notebook next to a pen on a designer desk, flat lay illustration",
+      "image_style": "modern minimalistic UI mockup",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Le cas du Mini CRM",
+        "Intro": "EXEMPLE DE CADRAGE",
+        "Texte 1": "Pour notre mini CRM, le cahier des charges regroupe :\n1. Cible : Commercial nomade pressé.\n2. MVP : Un bouton sticky d'ajout de contact et une vue liste.\n3. Comportement : Cliquer sur le bouton '+' ouvre une modale de saisie rapide.\nCe document permet de figer l'ensemble des besoins métiers du projet avant de concevoir l'architecture technique.",
+        "Texte Bulle": "En posant ce cadre théorique, on s'assure que le projet reste minimaliste et axé sur l'usage mobile du commercial.",
+        "Source": "CADRAGE CRM"
+      },
+      "image_concept": "A clean dashboard layout on a phone screen, showing a structured list of contacts",
+      "image_style": "modern minimalistic UI mockup",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Le cas de la Landing Page",
+        "Intro": "EXEMPLE DE CADRAGE",
+        "Texte 1": "Pour la Landing Page, le cahier des charges rassemble :\n1. Cible : Visiteur cherchant à s'inscrire rapidement (Sarah).\n2. MVP : Un titre d'accroche et un formulaire d'inscription visible immédiatement.\n3. Comportement : Saisir un e-mail valide et soumettre affiche un message de succès.\nCe document fige l'affichage écran et les étapes fonctionnelles clés.",
+        "Texte Bulle": "Ce cadrage simple évite que l'IA ne génère une page trop lourde ou des animations complexes qui réduiraient le taux de conversion.",
+        "Source": "CADRAGE LANDING PAGE"
+      },
+      "image_concept": "A desktop web page mockup showing a clean landing page layout with a big call to action",
+      "image_style": "modern minimalistic web UI",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - EXERCICE",
+      "content": {
+        "Titre": "À vous de jouer : Cadrer le projet",
+        "Intro": "Rassemblez toutes vos analyses précédentes dans une fiche de synthèse pour former le cahier des charges fonctionnel de votre projet.",
+        "Titre 1": "Regrouper le tout",
+        "Texte 1": "Réunissez la fiche Persona, la définition du MVP et vos User Stories sur un seul document.",
+        "Titre 2": "Vérifier la cohérence",
+        "Texte 2": "Assurez-vous que chaque User Story répond directement à un besoin de votre Persona.",
+        "Titre 3": "Figer le périmètre",
+        "Texte 3": "Validez que vous n'avez ajouté aucune fonctionnalité superflue en dehors de votre MVP."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Le cahier des charges fonctionnel est la boussole de votre développement. Il ne s'agit pas de technique ni de code à ce stade, mais de formalisation. En regroupant votre vision, vos stories et le périmètre de votre MVP, vous créez le socle de confiance qui guidera la future création du code.",
+        "Titre Bulle": "En Bref",
+        "Texte Bulle": "EN BREF : le cahier des charges théorique est prêt. Avant de voir comment le traduire en prompts, nous devons faire un dernier choix de cadrage crucial : définir et verrouiller la stack technique."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

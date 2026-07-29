@@ -562,11 +562,11 @@
       },
       {
         "key": "Picto 4",
-        "original_placeholder": "mdi:controller-variant-outline"
+        "original_placeholder": "mdi:format-text"
       },
       {
         "key": "Picto 4",
-        "original_placeholder": "Picto 4"
+        "original_placeholder": "Picto 1"
       },
       {
         "key": "Picto 2",
@@ -575,6 +575,133 @@
       {
         "key": "Picto 2",
         "original_placeholder": "Picto 2"
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - 4 BLOCS - PHOTO",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - 4 blocs - photo.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "Ses principales limites graphiques",
+        "target_lenght": 34,
+        "min_lenght": 23,
+        "max_lenght": 45
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Pour un candidat qui postule, l’enjeu est important et la tâche complexe. Il doit comprendre les attentes du recruteur.",
+        "target_lenght": 119,
+        "min_lenght": 83,
+        "max_lenght": 155
+      },
+      {
+        "key": "Titre 1",
+        "original_placeholder": "Production",
+        "target_lenght": 10,
+        "min_lenght": 7,
+        "max_lenght": 15
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
+        "target_lenght": 93,
+        "min_lenght": 65,
+        "max_lenght": 121
+      },
+      {
+        "key": "Titre  2",
+        "original_placeholder": "Production",
+        "target_lenght": 10,
+        "min_lenght": 7,
+        "max_lenght": 15
+      },
+      {
+        "key": "Texte 2",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
+        "target_lenght": 93,
+        "min_lenght": 65,
+        "max_lenght": 121
+      },
+      {
+        "key": "Titre 3",
+        "original_placeholder": "Production",
+        "target_lenght": 10,
+        "min_lenght": 7,
+        "max_lenght": 15
+      },
+      {
+        "key": "Texte 3",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
+        "target_lenght": 93,
+        "min_lenght": 65,
+        "max_lenght": 121
+      },
+      {
+        "key": "Titre  4",
+        "original_placeholder": "Production",
+        "target_lenght": 10,
+        "min_lenght": 7,
+        "max_lenght": 15
+      },
+      {
+        "key": "Texte 4",
+        "original_placeholder": "Posts réseaux sociaux, fiches produits, descriptions,  emails récurrents avec style identique",
+        "target_lenght": 93,
+        "min_lenght": 65,
+        "max_lenght": 121
+      },
+      {
+        "key": "Source",
+        "original_placeholder": "Source : source SourceSource : source SourceSource : source SourceSource :",
+        "target_lenght": 74,
+        "min_lenght": 51,
+        "max_lenght": 97
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:format-text"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Picto 1"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "mdi:format-text"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "Picto 2"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "mdi:format-text"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "Picto 3"
+      },
+      {
+        "key": "Picto 4",
+        "original_placeholder": "mdi:format-text"
+      },
+      {
+        "key": "Picto 4",
+        "original_placeholder": "Picto 4"
+      }
+    ],
+    "image_layers": [
+      {
+        "key": "image",
+        "original_placeholder": "Bloc Image",
+        "ratio": "1:1",
+        "width": 604.0,
+        "height": 668.0
       }
     ]
   },
@@ -1210,98 +1337,6 @@
         "target_lenght": 119,
         "min_lenght": 83,
         "max_lenght": 155
-      }
-    ]
-  },
-  {
-    "name": "VIBECODING - CHECKLIST",
-    "status": "validé",
-    "description": "Template pour slide de type vibecoding - checklist.",
-    "text_layers": [
-      {
-        "key": "Texte Intro",
-        "original_placeholder": "Une stratégie qui n'est pas passée  par le filtre de votre esprit critique  est une stratégie morte-née.  L'IA génère du volume et la création rapide, vous devez rester maître des choix en connaissant les riques.",
-        "target_lenght": 212,
-        "min_lenght": 148,
-        "max_lenght": 276
-      },
-      {
-        "key": "Intro",
-        "original_placeholder": "L'IA est un assistant \nde création,  pas un conseiller stratégique.",
-        "target_lenght": 67,
-        "min_lenght": 46,
-        "max_lenght": 88
-      },
-      {
-        "key": "Titre",
-        "original_placeholder": "La posture à adopter pour la stratégie",
-        "target_lenght": 38,
-        "min_lenght": 26,
-        "max_lenght": 50
-      },
-      {
-        "key": "Texte 5",
-        "original_placeholder": "Vérifier chaque chiffre cité par l'outil.",
-        "target_lenght": 41,
-        "min_lenght": 28,
-        "max_lenght": 54
-      },
-      {
-        "key": "Texte 4",
-        "original_placeholder": "Vérifier chaque chiffre cité par l'outil.",
-        "target_lenght": 41,
-        "min_lenght": 28,
-        "max_lenght": 54
-      },
-      {
-        "key": "Texte 3",
-        "original_placeholder": "Vérifier chaque chiffre cité par l'outil.",
-        "target_lenght": 41,
-        "min_lenght": 28,
-        "max_lenght": 54
-      },
-      {
-        "key": "Texte 2",
-        "original_placeholder": "Vérifier chaque chiffre cité par l'outil.",
-        "target_lenght": 41,
-        "min_lenght": 28,
-        "max_lenght": 54
-      },
-      {
-        "key": "Texte 1",
-        "original_placeholder": "Vérifier chaque chiffre cité par l'outil.",
-        "target_lenght": 41,
-        "min_lenght": 28,
-        "max_lenght": 54
-      },
-      {
-        "key": "Nom Checklist",
-        "original_placeholder": "Checklist de validation",
-        "target_lenght": 23,
-        "min_lenght": 16,
-        "max_lenght": 35
-      }
-    ],
-    "picto_layers": [
-      {
-        "key": "Picto 1",
-        "original_placeholder": "mdi:check-decagram"
-      },
-      {
-        "key": "Picto 1",
-        "original_placeholder": "mdi:check-decagram"
-      },
-      {
-        "key": "Picto 1",
-        "original_placeholder": "mdi:check-decagram"
-      },
-      {
-        "key": "Picto 1",
-        "original_placeholder": "mdi:check-decagram"
-      },
-      {
-        "key": "Picto 1",
-        "original_placeholder": "mdi:check-decagram"
       }
     ]
   },
@@ -2424,9 +2459,9 @@
     ]
   },
   {
-    "name": "DECOUPAGE",
+    "name": "VIBECODING - DECOUPAGE",
     "status": "validé",
-    "description": "Template pour slide de type decoupage.",
+    "description": "Template pour slide de type vibecoding - decoupage.",
     "text_layers": [
       {
         "key": "Violet 2",
@@ -2881,6 +2916,859 @@
       {
         "key": "Picto 4",
         "original_placeholder": "mdi:lightbulb-on"
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - 2 BLOCS",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - 2 blocs.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "Choisir son modèle",
+        "target_lenght": 18,
+        "min_lenght": 12,
+        "max_lenght": 27
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Lorsque l’on code, il est essentiel d’évaluer et choisir le modèle selon le besoin technique à chaque étape",
+        "target_lenght": 107,
+        "min_lenght": 74,
+        "max_lenght": 140
+      },
+      {
+        "key": "Titre 1",
+        "original_placeholder": "Taille du Contexte",
+        "target_lenght": 18,
+        "min_lenght": 12,
+        "max_lenght": 27
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "Essentiel pour fournir la documentation et l'architecture entière",
+        "target_lenght": 65,
+        "min_lenght": 45,
+        "max_lenght": 85
+      },
+      {
+        "key": "Texte 2",
+        "original_placeholder": "Permet de réaliser des revues de code sur de grands dépôts",
+        "target_lenght": 58,
+        "min_lenght": 40,
+        "max_lenght": 76
+      },
+      {
+        "key": "Texte 3",
+        "original_placeholder": "Critère dominé par les grands modèles généralistes",
+        "target_lenght": 50,
+        "min_lenght": 35,
+        "max_lenght": 65
+      },
+      {
+        "key": "Titre 2",
+        "original_placeholder": "Vitesse (Latence)",
+        "target_lenght": 17,
+        "min_lenght": 11,
+        "max_lenght": 26
+      },
+      {
+        "key": "Texte 4",
+        "original_placeholder": "Indispensable pour l'écriture de code en temps réel",
+        "target_lenght": 51,
+        "min_lenght": 35,
+        "max_lenght": 67
+      },
+      {
+        "key": "Texte 5",
+        "original_placeholder": "Privilégier les modèles compacts (Flash, Haiku) ou locaux",
+        "target_lenght": 57,
+        "min_lenght": 39,
+        "max_lenght": 75
+      },
+      {
+        "key": "Texte 6",
+        "original_placeholder": "Optimise les coûts d'inférence lors de requêtes massives",
+        "target_lenght": 56,
+        "min_lenght": 39,
+        "max_lenght": 73
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "BlockIcon"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "BlockIcon"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "Icon"
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - CONCEPT - IMAGE",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - concept - image.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "Zoom sur un cas d’utilisation",
+        "target_lenght": 29,
+        "min_lenght": 20,
+        "max_lenght": 44
+      },
+      {
+        "key": "Definition",
+        "original_placeholder": "Des logiciels sur-mesure créés pour les équipes internes (tableaux de bord, CRM simplifiés). La tolérance aux erreurs d'interface y est plus élevée que sur un produit public, facilitant grandement l'adoption et le déploiement rapide du code.",
+        "target_lenght": 241,
+        "min_lenght": 168,
+        "max_lenght": 314
+      },
+      {
+        "key": "Mot",
+        "original_placeholder": "Les applis gestion",
+        "target_lenght": 18,
+        "min_lenght": 12,
+        "max_lenght": 27
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Ces applis sont excellent moyen de supprimer les fichiers Excel manuels et lourds.",
+        "target_lenght": 82,
+        "min_lenght": 57,
+        "max_lenght": 107
+      },
+      {
+        "key": "Source",
+        "original_placeholder": "Source : formation Vibe Coding - veille technologique et écosystème en 2026",
+        "target_lenght": 75,
+        "min_lenght": 52,
+        "max_lenght": 98
+      },
+      {
+        "key": "Titre 2",
+        "original_placeholder": "Feature 2",
+        "target_lenght": 9,
+        "min_lenght": 6,
+        "max_lenght": 14
+      },
+      {
+        "key": "Texte 2",
+        "original_placeholder": "Mettre ici la description de la feature possible, avec des exemples concrets.",
+        "target_lenght": 77,
+        "min_lenght": 53,
+        "max_lenght": 101
+      },
+      {
+        "key": "Titre 1",
+        "original_placeholder": "Feature 1",
+        "target_lenght": 9,
+        "min_lenght": 6,
+        "max_lenght": 14
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "Mettre ici la description de la feature possible, avec des exemples concrets.",
+        "target_lenght": 77,
+        "min_lenght": 53,
+        "max_lenght": 101
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 2",
+        "original_placeholder": "mdi:baby-carriage"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "Picto 2"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:baby-carriage"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Picto 1"
+      }
+    ],
+    "image_layers": [
+      {
+        "key": "image",
+        "original_placeholder": "Image Fond",
+        "ratio": "1:1",
+        "width": 713.0,
+        "height": 717.0
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - EXERCICE PRATIQUE",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - exercice pratique.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "À vous de jouer !",
+        "target_lenght": 17,
+        "min_lenght": 11,
+        "max_lenght": 26
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "“Crée une présentation sur le happiness management pour notre équipe”",
+        "target_lenght": 69,
+        "min_lenght": 48,
+        "max_lenght": 90
+      },
+      {
+        "key": "Titre 1",
+        "original_placeholder": "Prompt à analyser",
+        "target_lenght": 17,
+        "min_lenght": 11,
+        "max_lenght": 26
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Évaluez ce prompt avec la grille 5 critères (notez /20)",
+        "target_lenght": 55,
+        "min_lenght": 38,
+        "max_lenght": 72
+      },
+      {
+        "key": "EXERCICE",
+        "original_placeholder": "EXERCICE",
+        "target_lenght": 8,
+        "min_lenght": 5,
+        "max_lenght": 12
+      },
+      {
+        "key": "Question 4",
+        "original_placeholder": "Donner le contenu final sous forme de texte.",
+        "target_lenght": 44,
+        "min_lenght": 30,
+        "max_lenght": 58
+      },
+      {
+        "key": "Question 3",
+        "original_placeholder": "Réécrivez le prompt pour atteindre 18/20",
+        "target_lenght": 40,
+        "min_lenght": 28,
+        "max_lenght": 52
+      },
+      {
+        "key": "Question 2",
+        "original_placeholder": "Quelle note donnez-vous sur 20 ?",
+        "target_lenght": 32,
+        "min_lenght": 22,
+        "max_lenght": 42
+      },
+      {
+        "key": "Question 1",
+        "original_placeholder": "Quels critères manquent ?",
+        "target_lenght": 25,
+        "min_lenght": 17,
+        "max_lenght": 38
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - BRIEF",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - brief.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "Présentation du projet Fil rouge ",
+        "target_lenght": 33,
+        "min_lenght": 23,
+        "max_lenght": 43
+      },
+      {
+        "key": "Confidentialité et gestion des données avec ChatGP",
+        "original_placeholder": "Configurons l’outil !",
+        "target_lenght": 21,
+        "min_lenght": 14,
+        "max_lenght": 32
+      },
+      {
+        "key": "Comprendre comment ChatGPT traite vos données est ",
+        "original_placeholder": "Des fonctions et paramètres existent das ChatGPT  pour protéger nos informations, à condition  de les connaître et de les configurer correctement",
+        "target_lenght": 145,
+        "min_lenght": 101,
+        "max_lenght": 189
+      },
+      {
+        "key": "Text",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "La Clinique",
+        "target_lenght": 11,
+        "min_lenght": 7,
+        "max_lenght": 17
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "Le centre de réparation de vélos “La Clinique” lance un service  de réparation de vélos à domicile. L'entreprise intervient directement chez les particuliers ou au bureau, sur rendez-vous. Le service cible des cyclistes urbains qui manquent de temps mais attendent fiabilité, transparence et simplicité. L'objectif est de construire une communication claire et pédagogique afin de se démarquer dès le lancement et installer une relation de confiance avec les premiers clients.",
+        "target_lenght": 476,
+        "min_lenght": 333,
+        "max_lenght": 619
+      },
+      {
+        "key": "Texte Bulle",
+        "original_placeholder": "Pour  chaque leçon, on précisera le livrable attendu, les étapes de réalisation et quelques conseils. À nous de jouer !",
+        "target_lenght": 119,
+        "min_lenght": 83,
+        "max_lenght": 155
+      },
+      {
+        "key": "Titre Bulle",
+        "original_placeholder": "Travaillons étape par étape !",
+        "target_lenght": 29,
+        "min_lenght": 20,
+        "max_lenght": 44
+      },
+      {
+        "key": "Source",
+        "original_placeholder": "Source : Image générée par IA - Pinterest",
+        "target_lenght": 41,
+        "min_lenght": 28,
+        "max_lenght": 54
+      }
+    ],
+    "image_layers": [
+      {
+        "key": "image",
+        "original_placeholder": "Bloc Image",
+        "ratio": "2:3",
+        "width": 542.0,
+        "height": 790.0
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - PROMPT",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - prompt.",
+    "text_layers": [
+      {
+        "key": "Exemple de prompt structuré",
+        "original_placeholder": "Exemple de prompt structuré",
+        "target_lenght": 27,
+        "min_lenght": 18,
+        "max_lenght": 41
+      },
+      {
+        "key": "Bloquer 15-30 min par jour ou 1h par semaine dans ",
+        "original_placeholder": "avec une trame ROCIF",
+        "target_lenght": 20,
+        "min_lenght": 14,
+        "max_lenght": 30
+      },
+      {
+        "key": "CONTEXTE : Je suis formateur en marketing pour PME",
+        "original_placeholder": "Rôle : Tu es un analyste marketing senior spécialisé  en e-commerce. \n\nObjectif : Créer une synthèse claire et exploitable  des tendances d'achat pour présentation direction. \n\nContexte : J'ai les données brutes de ventes Q4  et je dois préparer une présentation pour la direction.\n \nInstructions : Analyse les données et identifie : \n-1) Les 3 produits les plus performants, \n2) Les segments clients les plus actifs, \n3) Les tendances saisonnières, \n4) Les opportunités Q1. \n\nFormat : Rapport PowerPoint 5 slides max (slide 1 synthèse, slides 2-4 détails, slide 5 recommandations avec budget).",
+        "target_lenght": 594,
+        "min_lenght": 415,
+        "max_lenght": 773
+      },
+      {
+        "key": "CONTEXTE : Je suis formateur en marketing pour PME",
+        "original_placeholder": "Voici votre analyse Q4 structurée en 5 slides PowerPoint : \n\nSlide 1 - Synthèse : Croissance +23% vs Q3, portée par 3 catégories clés. \n\nSlide 2 - Top produits : 1) Électronique (+45%), 2) Mode (+32%), 3) Maison (+18%). Slide 3 - Segments clients : Millennials 35-44 ans représentent 42% du CA. Slide 4 - Tendances : Pic Black Friday +67%, reprise post-fêtes en janvier. Slide 5 - Opportunités Q1 : Focus électronique, budget marketing recommandé 150K€.",
+        "target_lenght": 453,
+        "min_lenght": 317,
+        "max_lenght": 589
+      },
+      {
+        "key": "TRAME ROCIF",
+        "original_placeholder": "TRAME ROCIF",
+        "target_lenght": 11,
+        "min_lenght": 7,
+        "max_lenght": 17
+      },
+      {
+        "key": "Ce prompt contient les 4 piliers essentiels qui ga",
+        "original_placeholder": "Une trame ROCIF structurée en 5 partie. On donne ici le rôle de l’IA (analyste marketing), les objectifs (une synthèse claire), le contexte (présentation à préparer), les tâches à effectuer  et le format (rapport powerpoint). ",
+        "target_lenght": 226,
+        "min_lenght": 158,
+        "max_lenght": 294
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:comment-user"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "mdi:robot-outline"
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - BRIEF ALT",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - brief alt.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "Le Chrono-Pomodoro & Tracker d'Énergie",
+        "target_lenght": 38,
+        "min_lenght": 26,
+        "max_lenght": 50
+      },
+      {
+        "key": "Confidentialité et gestion des données avec ChatGP",
+        "original_placeholder": "Configurons l’outil !",
+        "target_lenght": 21,
+        "min_lenght": 14,
+        "max_lenght": 32
+      },
+      {
+        "key": "Comprendre comment ChatGPT traite vos données est ",
+        "original_placeholder": "Des fonctions et paramètres existent das ChatGPT  pour protéger nos informations, à condition  de les connaître et de les configurer correctement",
+        "target_lenght": 145,
+        "min_lenght": 101,
+        "max_lenght": 189
+      },
+      {
+        "key": "Text",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "LE BRIEF",
+        "target_lenght": 8,
+        "min_lenght": 5,
+        "max_lenght": 12
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "En travail à distance, les équipes perdent leur rythme de concentration et oublient de faire des pauses régulières. Les outils actuels sont trop complexes ou remplis de fenêtres inutiles.",
+        "target_lenght": 187,
+        "min_lenght": 130,
+        "max_lenght": 244
+      },
+      {
+        "key": "Texte 2",
+        "original_placeholder": "L'objectif est de concevoir un minuteur Pomodoro visuel, simple et stimulant pour rythmer les sessions de travail et suivre l'énergie de l'équipe sans aucune brique technique lourde.",
+        "target_lenght": 182,
+        "min_lenght": 127,
+        "max_lenght": 237
+      },
+      {
+        "key": "Source",
+        "original_placeholder": "Source : Image générée par IA - Pinterest",
+        "target_lenght": 41,
+        "min_lenght": 28,
+        "max_lenght": 54
+      }
+    ],
+    "image_layers": [
+      {
+        "key": "image",
+        "original_placeholder": "Bloc Image",
+        "ratio": "3:4",
+        "width": 664.0,
+        "height": 790.0
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - USER STORIES",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - user stories.",
+    "text_layers": [
+      {
+        "key": "Les User Stories",
+        "original_placeholder": "Les User Stories ",
+        "target_lenght": 17,
+        "min_lenght": 11,
+        "max_lenght": 26
+      },
+      {
+        "key": "Traduire la vision produit en petites étapes testa",
+        "original_placeholder": "Traduire la vision produit en petites étapes testables : les User Stories",
+        "target_lenght": 73,
+        "min_lenght": 51,
+        "max_lenght": 95
+      },
+      {
+        "key": "Titre App",
+        "original_placeholder": "La Landing Page",
+        "target_lenght": 15,
+        "min_lenght": 10,
+        "max_lenght": 23
+      },
+      {
+        "key": "Description MVP",
+        "original_placeholder": "Valider l'intérêt de l’audience avec une page esthétique permettant de capturer des emails (liste d’attente).",
+        "target_lenght": 109,
+        "min_lenght": 76,
+        "max_lenght": 142
+      },
+      {
+        "key": "User Story",
+        "original_placeholder": "User Story",
+        "target_lenght": 10,
+        "min_lenght": 7,
+        "max_lenght": 15
+      },
+      {
+        "key": "User Story 1",
+        "original_placeholder": "Construire la Section d’Intro avec une typographie massive et un titre accrocheur pour capter l'attention.",
+        "target_lenght": 106,
+        "min_lenght": 74,
+        "max_lenght": 138
+      },
+      {
+        "key": "User Story",
+        "original_placeholder": "User Story",
+        "target_lenght": 10,
+        "min_lenght": 7,
+        "max_lenght": 15
+      },
+      {
+        "key": "User Story 2",
+        "original_placeholder": "Intégrer le formulaire d'inscription central (Waitlist) avec un bouton d'action très contrasté.",
+        "target_lenght": 95,
+        "min_lenght": 66,
+        "max_lenght": 124
+      },
+      {
+        "key": "User Story",
+        "original_placeholder": "User Story",
+        "target_lenght": 10,
+        "min_lenght": 7,
+        "max_lenght": 15
+      },
+      {
+        "key": "User Story 3",
+        "original_placeholder": "Ajouter des animations fluides à l'apparition  des éléments pour créer un effet \"Waouh\".",
+        "target_lenght": 88,
+        "min_lenght": 61,
+        "max_lenght": 115
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon:margin"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon"
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - PERSONA & MVP",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - persona & mvp.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "Le persona et le périmètre de l’app",
+        "target_lenght": 35,
+        "min_lenght": 24,
+        "max_lenght": 46
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "On peut définir le persona de cette application et même identifier un MVP pertinent et ciblé pour ce projet.",
+        "target_lenght": 108,
+        "min_lenght": 75,
+        "max_lenght": 141
+      },
+      {
+        "key": "Prenom",
+        "original_placeholder": "Sarah",
+        "target_lenght": 5,
+        "min_lenght": 5,
+        "max_lenght": 8
+      },
+      {
+        "key": "Métier",
+        "original_placeholder": "Solopreneur / Créatrice",
+        "target_lenght": 23,
+        "min_lenght": 16,
+        "max_lenght": 35
+      },
+      {
+        "key": "Age",
+        "original_placeholder": "28 ans",
+        "target_lenght": 6,
+        "min_lenght": 5,
+        "max_lenght": 9
+      },
+      {
+        "key": "Spécificité",
+        "original_placeholder": "Digital Nomad ",
+        "target_lenght": 14,
+        "min_lenght": 9,
+        "max_lenght": 21
+      },
+      {
+        "key": "Goût",
+        "original_placeholder": "Sensible au design",
+        "target_lenght": 18,
+        "min_lenght": 12,
+        "max_lenght": 27
+      },
+      {
+        "key": "Le Persona",
+        "original_placeholder": "Le Persona",
+        "target_lenght": 10,
+        "min_lenght": 7,
+        "max_lenght": 15
+      },
+      {
+        "key": "LE MVP (ce qu’on veut à minima)",
+        "original_placeholder": "LE MVP (ce qu’on veut à minima)",
+        "target_lenght": 31,
+        "min_lenght": 21,
+        "max_lenght": 41
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "Une seule page : Un \"Hero header\" fort, 3 bénéfices clés, et le formulaire d'inscription.",
+        "target_lenght": 89,
+        "min_lenght": 62,
+        "max_lenght": 116
+      },
+      {
+        "key": "Texte 2",
+        "original_placeholder": "Sans Backend Complexe : Les emails sont juste expédiés vers un webhook ou un service tiers simple.",
+        "target_lenght": 98,
+        "min_lenght": 68,
+        "max_lenght": 128
+      },
+      {
+        "key": "Texte 3",
+        "original_placeholder": "Pas de superflu : Pas d'espace membre, pas de blog, pas de pages annexes pour l'instant.",
+        "target_lenght": 88,
+        "min_lenght": 61,
+        "max_lenght": 115
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon"
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - DEMO",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - demo.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "Demo",
+        "target_lenght": 4,
+        "min_lenght": 5,
+        "max_lenght": 6
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - CHECKLIST",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - checklist.",
+    "text_layers": [
+      {
+        "key": "Texte Intro",
+        "original_placeholder": "Une manipulation maîtrisée garantit la stabilité du code et l'efficacité des itérations. Voici la liste des points de contrôle.",
+        "target_lenght": 127,
+        "min_lenght": 88,
+        "max_lenght": 166
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Valider la prise en main des modes de prompt et la modification de l'application.",
+        "target_lenght": 81,
+        "min_lenght": 56,
+        "max_lenght": 106
+      },
+      {
+        "key": "Titre",
+        "original_placeholder": "Checklist de validation",
+        "target_lenght": 23,
+        "min_lenght": 16,
+        "max_lenght": 35
+      },
+      {
+        "key": "Texte 5",
+        "original_placeholder": "L'application modifiée s'exécute correctement en local.",
+        "target_lenght": 55,
+        "min_lenght": 38,
+        "max_lenght": 72
+      },
+      {
+        "key": "Texte 4",
+        "original_placeholder": "Le plan de modification est relu et validé en mode Plan avant l'application.",
+        "target_lenght": 76,
+        "min_lenght": 53,
+        "max_lenght": 99
+      },
+      {
+        "key": "Texte 3",
+        "original_placeholder": "La demande de modification est formulée clairement dans le mode Composer.",
+        "target_lenght": 73,
+        "min_lenght": 51,
+        "max_lenght": 95
+      },
+      {
+        "key": "Texte 2",
+        "original_placeholder": "L'agent répond de manière pertinente sur le code du projet en mode Chat.",
+        "target_lenght": 72,
+        "min_lenght": 50,
+        "max_lenght": 94
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "Le dépôt GitHub exemple est cloné dans l'environnement Antigravity.",
+        "target_lenght": 67,
+        "min_lenght": 46,
+        "max_lenght": 88
+      },
+      {
+        "key": "Nom Checklist",
+        "original_placeholder": "La Checklist !",
+        "target_lenght": 14,
+        "min_lenght": 9,
+        "max_lenght": 21
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:check-decagram"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:check-decagram"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:check-decagram"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:check-decagram"
+      },
+      {
+        "key": "Picto 1",
+        "original_placeholder": "mdi:check-decagram"
+      }
+    ]
+  },
+  {
+    "name": "VIBECODING - PROMPT ALT",
+    "status": "validé",
+    "description": "Template pour slide de type vibecoding - prompt alt.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "Les agents IA peuvent nous aider",
+        "target_lenght": 32,
+        "min_lenght": 22,
+        "max_lenght": 42
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "À partir de notre cahier des charges, configure le fichier AGENTS.md avec la stack imposée, l'architecture des dossiers et les règles de nommage.",
+        "target_lenght": 145,
+        "min_lenght": 101,
+        "max_lenght": 189
+      },
+      {
+        "key": "Texte 2",
+        "original_placeholder": "Le fichier AGENTS.md a été mis à jour. ",
+        "target_lenght": 39,
+        "min_lenght": 27,
+        "max_lenght": 51
+      },
+      {
+        "key": "Texte 3",
+        "original_placeholder": "AGENTS.md",
+        "target_lenght": 9,
+        "min_lenght": 6,
+        "max_lenght": 14
+      },
+      {
+        "key": "Texte 4",
+        "original_placeholder": "# Instructions Système — Project Pomodoro Focus \n## 📂 Architecture des Fichiers\n- `index.html` : Point d'entrée de l'application.\n- `style.css` : Feuille de style globale et variables de thème.\n- `app.js` : Logique du minuteur et gestion des événements DOM.\n- `assets/` : Dossier contenant les effets sonores (.mp3).  ## 🎨 Conventions de Code & Style UI\n- **Variables CSS** :\n  - `--bg-dark: #0F172A`\n  - `--work-green: #10B981`\n  - `--break-blue: #3B82F6`\n- **Nommage** : `camelCase` pour les variables et fonctions JS, `kebab-case` pour les classes CSS.\n- **Animations** : Préférer `transform` et `opacity` pour des transitions fluides à 60 fps.",
+        "target_lenght": 647,
+        "min_lenght": 452,
+        "max_lenght": 842
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Le fichier AGENTS.md rassemble des consignes claires pour guider l'agent dans toutes ses interventions sur le code.",
+        "target_lenght": 115,
+        "min_lenght": 80,
+        "max_lenght": 150
+      },
+      {
+        "key": "Texte Bulle",
+        "original_placeholder": "On demande a un agent IA de nous aider a constituer le fichier AGENT.md pour pérenniser certaines règles",
+        "target_lenght": 104,
+        "min_lenght": 72,
+        "max_lenght": 136
+      },
+      {
+        "key": "Texte Bulle",
+        "original_placeholder": "L’agent créé ou modifie le fichier et nous donne un lien et un aperçu dans le chat.",
+        "target_lenght": 83,
+        "min_lenght": 58,
+        "max_lenght": 108
       }
     ]
   },

@@ -1,0 +1,17 @@
+{
+  "lessonSlug": "m4c5l4",
+  "lessonTitle": "M4C5L4 — Utiliser Git depuis l'IDE (commits, branches)",
+  "lessonType": "logiciel",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Utiliser Git depuis l'IDE (commits, branches)"
+      }
+    },
+    {
+      "template": "VIBECODING - DEMO",
+      "content": {}
+    }
+  ]
+}

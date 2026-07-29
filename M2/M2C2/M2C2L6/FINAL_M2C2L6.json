@@ -1,0 +1,108 @@
+{
+  "lessonTitle": "M2C2L6 — Les technologies clés pour son cahier des charges",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Les technologies du cahier des charges"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Comprendre sa stack technique",
+        "Intro": "Imposer une stack technique à l'IA évite qu'elle ne fasse des choix erratiques ou instables. Découvrons les technologies minimales à connaître et à mentionner dans votre cahier des charges.",
+        "Titre 1": "React pour la logique",
+        "Texte 1": "Comprendre pourquoi ce framework est le standard absolu pour structurer des applications web.",
+        "Titre 2": "Tailwind pour le style",
+        "Texte 2": "Découvrir comment ce système de classes facilite la mise en page rapide de vos écrans.",
+        "Titre 3": "SQLite pour les données",
+        "Texte 3": "Savoir pourquoi une base de données simple stockée dans un fichier local est idéale pour démarrer."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "React : le squelette dynamique",
+        "Mot": "React.js",
+        "Definition": "Une bibliothèque JavaScript open-source développée par Meta pour créer des interfaces utilisateur interactives. Dans le Vibe Coding, React est le standard recommandé car il divise l'écran en composants réutilisables (boutons, formulaires, cartes), ce qui permet à l'IA d'isoler et de modifier chaque élément séparément sans casser le reste du site.",
+        "Bulle": "React est le langage de structure le plus documenté au monde, ce qui permet à l'IA d'avoir un taux de succès de génération proche de 100 %.",
+        "Picto 1": "mdi:react"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Tailwind : le design rapide",
+        "Mot": "Tailwind CSS",
+        "Definition": "Un framework CSS utilitaire qui permet d'appliquer du style graphique directement dans le code HTML à l'aide de classes prédéfinies (ex: `bg-blue-500` pour un fond bleu). C'est le système de design préféré de l'IA car il évite la création de fichiers de style séparés, limitant ainsi la dispersion de la mémoire du modèle.",
+        "Bulle": "Avec Tailwind, tous les styles d'une page sont écrits au même endroit. L'IA peut ajuster les marges et les couleurs instantanément sans se tromper.",
+        "Picto 1": "mdi:tailwind"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Choisir sa base de données",
+        "Intro": "Le stockage des données est crucial. Pour démarrer, on oppose la simplicité locale aux architectures cloud complexes.",
+        "Titre A": "SQLITE",
+        "Titre B": "POSTGRES",
+        "Item 1": "STOCKAGE",
+        "Texte A Item 1": "Stocké dans un simple fichier local dans le dossier",
+        "Texte B1": "Nécessite un serveur hébergé dans le cloud externe",
+        "Item 2": "SETUP",
+        "Texte A Item 2": "Configuration instantanée sans aucun compte externe",
+        "Texte B2": "Création de comptes, clés API et droits d'accès",
+        "Item 3": "DEPLOY",
+        "Texte A Item 3": "Déploiement ultra-simple avec l'application",
+        "Texte B3": "Scalabilité complexe et coûts d'hébergement",
+        "Item 4": "USAGE",
+        "Texte A Item 4": "Idéal pour valider un MVP et stocker des datas",
+        "Texte B4": "Recommandé pour des millions de connexions"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - EXERCICE",
+      "content": {
+        "Titre": "À vous de jouer : Le Grand Cadrage",
+        "Intro": "Mettez en pratique l'ensemble de la méthodologie sur un projet concret donné pour valider vos compétences de cadrage.",
+        "Titre 1": "Choisir le projet",
+        "Texte 1": "Sélectionnez l'un des cas d'étude proposés ou lancez-vous sur votre propre idée.",
+        "Titre 2": "Remplir les étapes",
+        "Texte 2": "Déterminez le persona, le MVP, et divisez le tout en 5 User Stories précises.",
+        "Titre 3": "Livrable final",
+        "Texte 3": "Rédigez la spécification technique complète prête à être transmise à l'IA."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Connaître ces trois briques technologiques de base (React, Tailwind CSS et SQLite) vous donne le pouvoir de contrôler le code généré par l'IA. En imposant cette stack standard dans votre fichier de spécification, vous vous assurez que l'agent de code produit des structures fiables, faciles à tester en local et prêtes à être déployées sans friction.",
+        "Titre Bulle": "En Bref",
+        "Texte Bulle": "EN BREF : avec une stack technique sélectionnée et un cahier des charges minimal rédigé, la phase théorique est terminée. Le prochain module vous emmène dans la configuration pratique de Cursor !"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

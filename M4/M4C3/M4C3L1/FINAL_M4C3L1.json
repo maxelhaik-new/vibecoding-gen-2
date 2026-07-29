@@ -1,0 +1,24 @@
+{
+  "lessonSlug": "m4c3l1",
+  "lessonTitle": "M4C3L1 — Les objectifs du chapitre : AGENTS.md, le cerveau du projet",
+  "lessonType": "objectif",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Chapitre 3 : Le cerveau du projet : AGENTS.md"
+      }
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Structurer les règles, le contexte et la gouvernance d'un projet avec AGENTS.md et l'Agent Manager.",
+        "Titre 1": "Comprendre l'Agent Manager parallèle et ses avantages",
+        "Titre 2": "Comprendre le rôle des instructions système à l'échelle du projet",
+        "Titre 3": "Créer le fichier de contexte du projet fil rouge",
+        "Titre 4": "Itérer et affiner son AGENTS.md au fil du projet"
+      }
+    }
+  ]
+}

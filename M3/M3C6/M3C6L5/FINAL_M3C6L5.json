@@ -1,0 +1,62 @@
+{
+  "lessonTitle": "M3C6L5 — À vous de jouer : Bâtir et publier votre projet",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "À vous de jouer : bâtir et publier votre projet"
+      }
+    },
+    {
+      "template": "VIBECODING - BRIEF ALT",
+      "content": {
+        "Titre": "Choix du projet fil rouge",
+        "Intro": "VOTRE MISSION",
+        "Texte 1": "Sélectionnez l'un des 3 briefs présentés dans ce chapitre (Chrono-Pomodoro, Générateur de Devis ou Matrice Eisenhower) selon vos préférences.",
+        "Texte 2": "L'objectif est d'exécuter l'intégralité de la chaîne de création : du Prompt Zero sur AI Studio au déploiement final en production sur Vercel.",
+        "Source": "Source : Image générée par IA - Pinterest"
+      }
+    },
+    {
+      "template": "VIBECODING - EXERCICE",
+      "content": {
+        "Titre": "À vous de jouer !",
+        "Intro": "Réalisez le projet pas-à-pas en suivant les 3 grandes étapes de création.",
+        "Titre 1": "Cadrez le Prompt Zero",
+        "Texte 1": "Rédigez la description détaillée des fonctionnalités et de l'interface à partir du brief.",
+        "Titre 2": "Générez et versionnez",
+        "Texte 2": "Créez l'application dans AI Studio puis exportez le code sur votre dépôt GitHub.",
+        "Titre 3": "Déployez sur Vercel",
+        "Texte 3": "Mettez le site en ligne et vérifiez la mise à jour automatique sur l'URL publique."
+      }
+    },
+    {
+      "template": "VIBECODING - EXERCICE PRATIQUE",
+      "content": {
+        "Titre": "Ce qu’il faut faire",
+        "EXERCICE": "EXERCICE",
+        "Intro": "À vous de jouer en appliquant les différentes étapes vues dans ce chapitre.",
+        "Titre 1": "Tâches à réaliser",
+        "Texte 1": "Réaliser l'application complète depuis le cadrage du prompt jusqu'à la mise en ligne Vercel.",
+        "Question 1": "Sélectionner le brief et rédiger le Prompt Zero détaillé.",
+        "Question 2": "Générer et tester l'application dans Google AI Studio.",
+        "Question 3": "Exporter le code vers un dépôt distant GitHub.",
+        "Question 4": "Déployer le site en production avec Vercel."
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Checklist de validation du projet",
+        "Intro": "Valider la création complète de son application.",
+        "Texte Intro": "Une application réussie se vérifie en testant les fonctionnalités en direct sur le web public. Voici la liste des points de contrôle.",
+        "Nom Checklist": "Critères de réussite",
+        "Texte 1": "Le Prompt Zero couvre l'ensemble du besoin métier.",
+        "Texte 2": "L'application est fonctionnelle sur AI Studio.",
+        "Texte 3": "Le code source est versionné sur GitHub.",
+        "Texte 4": "Le site est déployé et accessible sur Vercel.",
+        "Texte 5": "Aucune erreur ne bloque la navigation web."
+      }
+    }
+  ]
+}

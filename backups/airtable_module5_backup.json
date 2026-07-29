@@ -1,0 +1,527 @@
+{
+  "base_id": "appt360zhTgDY1t4B",
+  "table": "📟 Vibecoding",
+  "count": 37,
+  "records": [
+    {
+      "id": "rec1NNGhQsflcnmGw",
+      "createdTime": "2026-06-18T14:47:55.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 5,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Préparer ses livrables certifiants (dépôt GitHub, README & vidéo de démonstration)",
+        "Chapitre": "Chapitre 1 : Projet final certifiant 🏆"
+      }
+    },
+    {
+      "id": "rec2cJnKJGs1fX7yv",
+      "createdTime": "2026-06-17T12:26:08.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📝 Cas Pratique",
+        "N° leçons": 6,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "À vous de jouer : Construisez le backend de votre app !",
+        "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+      }
+    },
+    {
+      "id": "rec396l9XsaJlqmLc",
+      "createdTime": "2026-06-18T14:47:00.000Z",
+      "fields": {
+        "isWritten": 1,
+        "État": "🎥 À retourner",
+        "N° leçons": 4,
+        "PHASE": "MVP",
+        "isWritten_check": true,
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Brancher MCP servers et APIs externes (Stripe, Sentry, Supabase)",
+        "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+      }
+    },
+    {
+      "id": "rec3SOJw4q1bs2gcX",
+      "createdTime": "2026-06-18T14:45:48.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "⚙️ Logiciel",
+        "N° leçons": 3,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Construire le CRUD complet",
+        "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+      }
+    },
+    {
+      "id": "rec3V6SzMOotWkEyP",
+      "createdTime": "2026-06-18T14:43:54.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "⚙️ Logiciel",
+        "N° leçons": 4,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Implémenter le RLS en SQL avec l'IA",
+        "Chapitre": "Chapitre 4 : La sécurité (RLS) par la faille"
+      }
+    },
+    {
+      "id": "rec5qVQuGkUshHbxY",
+      "createdTime": "2026-06-17T12:26:16.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "⚙️ Logiciel",
+        "N° leçons": 5,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Créer et structurer ses tables",
+        "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+      }
+    },
+    {
+      "id": "rec7SjUcpjuCmh3Ze",
+      "createdTime": "2026-06-18T14:47:39.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 3,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Générer et sécuriser son application de A à Z",
+        "Chapitre": "Chapitre 1 : Projet final certifiant 🏆"
+      }
+    },
+    {
+      "id": "rec9QtojTrvzd73lC",
+      "createdTime": "2026-06-18T14:47:19.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 1,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Les objectifs du chapitre : Créer une application complète & Réussir son projet certifiant",
+        "Chapitre": "Chapitre 1 : Projet final certifiant 🏆"
+      }
+    },
+    {
+      "id": "rec9VqnXZ8MNzi2Je",
+      "createdTime": "2026-06-18T14:44:01.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "⚙️ Logiciel",
+        "N° leçons": 5,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Vérifier et tester ses règles de sécurité",
+        "Chapitre": "Chapitre 4 : La sécurité (RLS) par la faille"
+      }
+    },
+    {
+      "id": "recAq6odgAsZw5tzI",
+      "createdTime": "2026-06-18T14:45:42.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 2,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Cadrer et concevoir son application",
+        "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+      }
+    },
+    {
+      "id": "recBzMuYAECesXN21",
+      "createdTime": "2026-06-18T14:46:04.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "⚙️ Logiciel",
+        "N° leçons": 5,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Déployer l'application sur Vercel",
+        "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+      }
+    },
+    {
+      "id": "recCInUCktdxEMl45",
+      "createdTime": "2026-06-18T14:47:47.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 4,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Déployer en production sur Vercel",
+        "Chapitre": "Chapitre 1 : Projet final certifiant 🏆"
+      }
+    },
+    {
+      "id": "recFWGOFBi4sZordt",
+      "createdTime": "2026-06-18T14:46:54.000Z",
+      "fields": {
+        "isWritten": 1,
+        "État": "🎥 À retourner",
+        "N° leçons": 3,
+        "PHASE": "MVP",
+        "isWritten_check": true,
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Construire l'outil (devis, suivi de candidatures, mini-CRM)",
+        "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+      }
+    },
+    {
+      "id": "recJilKoRIHeJQuNd",
+      "createdTime": "2026-06-17T12:24:57.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 3,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Pourquoi utiliser un BaaS (Backend as a Service)",
+        "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+      }
+    },
+    {
+      "id": "recK5pVXl4l23Cp1x",
+      "createdTime": "2026-06-18T14:44:42.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 3,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Comprendre les MCP Servers",
+        "Chapitre": "Chapitre 5 : Connecter le monde extérieur (API, MCP & variables d'environnement)"
+      }
+    },
+    {
+      "id": "recMjHMYMFxGPI51H",
+      "createdTime": "2026-06-17T12:27:22.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 1,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Les objectifs du chapitre : l'authentification utilisateur",
+        "Chapitre": "Chapitre 3 : Gérer l'authentification des utilisateurs"
+      }
+    },
+    {
+      "id": "recN32dlWy3LRXY5y",
+      "createdTime": "2026-06-18T14:47:33.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 2,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Choisir et cadrer son application métier (dossier de cadrage) test",
+        "Chapitre": "Chapitre 1 : Projet final certifiant 🏆"
+      }
+    },
+    {
+      "id": "recOeI4ayQaEcYRAz",
+      "createdTime": "2026-06-17T12:24:17.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 1,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Les objectifs du chapitre : backend & architecture",
+        "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+      }
+    },
+    {
+      "id": "recRJJ11UmzYnIjQL",
+      "createdTime": "2026-06-18T14:43:49.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "⚙️ Logiciel",
+        "N° leçons": 3,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Démontrer la faille : accéder aux données d'un autre utilisateur",
+        "Chapitre": "Chapitre 4 : La sécurité (RLS) par la faille"
+      }
+    },
+    {
+      "id": "recU6aD5Q1xujacTs",
+      "createdTime": "2026-06-18T14:42:46.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "⚙️ Logiciel",
+        "N° leçons": 3,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Mettre en place les Magic Links",
+        "Chapitre": "Chapitre 3 : Gérer l'authentification des utilisateurs"
+      }
+    },
+    {
+      "id": "recUINxvO61Mtr85Y",
+      "createdTime": "2026-06-18T14:45:55.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "⚙️ Logiciel",
+        "N° leçons": 4,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Intégrer l'authentification et le RLS par utilisateur",
+        "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+      }
+    },
+    {
+      "id": "recURZ08Q9o3TWgMD",
+      "createdTime": "2026-06-18T14:44:21.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 1,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Les objectifs du chapitre : connecter le monde extérieur",
+        "Chapitre": "Chapitre 5 : Connecter le monde extérieur (API, MCP & variables d'environnement)"
+      }
+    },
+    {
+      "id": "recVMS2n1fjjmaFR3",
+      "createdTime": "2026-06-17T12:24:50.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 2,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Distinguer front-end et back-end",
+        "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+      }
+    },
+    {
+      "id": "recW2fpO9dlqynTPW",
+      "createdTime": "2026-06-18T14:47:06.000Z",
+      "fields": {
+        "isWritten": 1,
+        "État": "🎥 À retourner",
+        "N° leçons": 5,
+        "PHASE": "MVP",
+        "isWritten_check": true,
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Tester et fiabiliser son outil",
+        "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+      }
+    },
+    {
+      "id": "recWGVADb4H15JCUG",
+      "createdTime": "2026-06-18T14:42:23.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 2,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Comprendre les sessions et la gestion d'utilisateurs",
+        "Chapitre": "Chapitre 3 : Gérer l'authentification des utilisateurs"
+      }
+    },
+    {
+      "id": "recY26EoUAoI9uG3u",
+      "createdTime": "2026-06-18T14:43:40.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 2,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Comprendre l'importance critique du Row Level Security",
+        "Chapitre": "Chapitre 4 : La sécurité (RLS) par la faille"
+      }
+    },
+    {
+      "id": "recfSIpvaH5DX72Fe",
+      "createdTime": "2026-06-17T08:41:08.000Z",
+      "fields": {
+        "isWritten": 1,
+        "État": "✍️ Fichée",
+        "Type": "📺 Leçon ",
+        "N° leçons": 5,
+        "PHASE": "MVP",
+        "isWritten_check": true,
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Clés API & secrets : le principe de sécurisation",
+        "Chapitre": "Chapitre 5 : Connecter le monde extérieur (API, MCP & variables d'environnement)"
+      }
+    },
+    {
+      "id": "rechDgMixJR0t7y1a",
+      "createdTime": "2026-06-18T14:42:53.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "⚙️ Logiciel",
+        "N° leçons": 4,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Ajouter l'OAuth (connexion Google/GitHub)",
+        "Chapitre": "Chapitre 3 : Gérer l'authentification des utilisateurs"
+      }
+    },
+    {
+      "id": "reciYoUfh6ervGob5",
+      "createdTime": "2026-06-18T14:44:59.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "⚙️ Logiciel",
+        "N° leçons": 4,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Brancher un service externe au projet (Stripe, MCP…)",
+        "Chapitre": "Chapitre 5 : Connecter le monde extérieur (API, MCP & variables d'environnement)"
+      }
+    },
+    {
+      "id": "recjCu2YL9Sb5opyh",
+      "createdTime": "2026-06-18T14:43:23.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 1,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Les objectifs du chapitre : la sécurité par la faille",
+        "Chapitre": "Chapitre 4 : La sécurité (RLS) par la faille"
+      }
+    },
+    {
+      "id": "recn72rD50f37HJaJ",
+      "createdTime": "2026-06-18T14:43:01.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📝 Cas Pratique",
+        "N° leçons": 5,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "À vous de jouer : Sécurisez l'accès à votre app !",
+        "Chapitre": "Chapitre 3 : Gérer l'authentification des utilisateurs"
+      }
+    },
+    {
+      "id": "recqoQ8YZjRStv9qN",
+      "createdTime": "2026-06-18T14:46:21.000Z",
+      "fields": {
+        "isWritten": 1,
+        "État": "🎥 À retourner",
+        "N° leçons": 1,
+        "PHASE": "MVP",
+        "Commentaires / Problèmes": "Chapitre a supprimer, doublon [@Benjamin Kerlirzin](https://airtable.com/appt360zhTgDY1t4B/menVwh8m84FdFM8CX/usrnAqT1H9YIJerOS?recordId=recqoQ8YZjRStv9qN&fieldId=fldSvgbPGDJnzsqJL)\n",
+        "isWritten_check": true,
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Les objectifs du chapitre : projet guidé outil interne",
+        "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+      }
+    },
+    {
+      "id": "recquaeeBRwxBMRt9",
+      "createdTime": "2026-06-18T14:44:48.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "⚙️ Logiciel",
+        "N° leçons": 6,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Gérer ses variables d'environnement dans l'IDE",
+        "Chapitre": "Chapitre 5 : Connecter le monde extérieur (API, MCP & variables d'environnement)"
+      }
+    },
+    {
+      "id": "recqwczEUbjMxXtfm",
+      "createdTime": "2026-06-18T14:45:26.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 1,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Les objectifs du chapitre : projet guidé CRUD",
+        "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+      }
+    },
+    {
+      "id": "recrBKOCdzKxY1dEY",
+      "createdTime": "2026-06-18T14:46:42.000Z",
+      "fields": {
+        "isWritten": 1,
+        "État": "🎥 À retourner",
+        "N° leçons": 2,
+        "PHASE": "MVP",
+        "isWritten_check": true,
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Choisir et cadrer une tâche métier à automatiser",
+        "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+      }
+    },
+    {
+      "id": "rect384FGbnqvD6cN",
+      "createdTime": "2026-06-18T14:44:35.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "📺 Leçon ",
+        "N° leçons": 2,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Qu'est-ce qu'une API ?",
+        "Chapitre": "Chapitre 5 : Connecter le monde extérieur (API, MCP & variables d'environnement)"
+      }
+    },
+    {
+      "id": "recvetyO0PpklbFBg",
+      "createdTime": "2026-06-17T12:25:04.000Z",
+      "fields": {
+        "isWritten": 0,
+        "État": "⏳ À ficher",
+        "Type": "⚙️ Logiciel",
+        "N° leçons": 4,
+        "PHASE": "MVP",
+        "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+        "Nom de la leçon": "Créer et connecter un projet Supabase à son projet",
+        "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+      }
+    }
+  ]
+}

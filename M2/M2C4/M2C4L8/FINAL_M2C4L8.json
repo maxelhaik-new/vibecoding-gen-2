@@ -1,0 +1,155 @@
+{
+  "lessonTitle": "M2C4L8",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Rendre son app accessible à tous"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "L'agent code pour les valides — pas pour tous",
+        "Intro": "Par défaut, Cursor ou Claude génèrent du code lisible à l'écran — mais invisible pour les personnes qui utilisent un lecteur d'écran ou naviguent au clavier. En France, la loi RGAA impose l'accessibilité aux sites publics et à de nombreux services privés. Voyons comment corriger ça dès le départ.",
+        "Titre 1": "Le problème par défaut",
+        "Texte 1": "Voyons pourquoi le code généré par l'IA est souvent inutilisable pour les personnes en situation de handicap.",
+        "Titre 2": "Les règles à connaître",
+        "Texte 2": "Zoom sur les trois réflexes concrets à intégrer dans ses prompts pour générer un code accessible.",
+        "Titre 3": "Corriger avec l'outil",
+        "Texte 3": "Découvrons comment utiliser un outil de diagnostic pour repérer et corriger les problèmes en boucle avec l'agent."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Le code IA : lisible, pas accessible",
+        "Mot": "Le problème par défaut",
+        "Definition": "Un lecteur d'écran, c'est le logiciel qu'utilise une personne non-voyante pour naviguer. Il lit la structure du code — pas ce qu'on voit à l'écran. Quand l'agent génère des boîtes cliquables sans préciser leur rôle, le lecteur d'écran ne sait pas quoi annoncer. Résultat : l'interface est muette.",
+        "Bulle": "Un bouton qui ressemble à un bouton mais qui n'en est pas un : invisible pour les technologies d'assistance."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "Trois réflexes à ancrer dans ses prompts",
+        "Intro": "On n'attend pas la fin du projet pour corriger l'accessibilité. Ces trois règles s'intègrent dans chaque prompt dès le début.",
+        "Titre 1": "Vrais boutons",
+        "Parametre 1": "<button>",
+        "Violet 1": "Utiliser les balises HTML prévues à cet effet",
+        "Texte 1": "Demander à l'agent d'utiliser la balise button pour chaque action déclenchée, et la balise a pour chaque lien. Une simple boîte cliquable n'est ni annoncée ni atteignable au clavier — l'agent en génère par défaut si on ne précise pas.",
+        "Titre 2": "Structure lisible",
+        "Parametre 2": "HTML natif",
+        "Violet 2": "Organiser la page avec des balises de zone",
+        "Texte 2": "Préciser dans le prompt : « utilise header, nav, main et footer pour structurer la page ». Ces balises permettent au lecteur d'écran de sauter d'une zone à l'autre, comme une table des matières invisible. Sans elles, la page est un bloc indistinct.",
+        "Titre 3": "Focus visible",
+        "Parametre 3": ":focus CSS",
+        "Violet 3": "Rendre le focus clavier toujours visible",
+        "Texte 3": "Quand on navigue sans souris, la touche Tab déplace un curseur invisible entre les éléments. L'agent supprime souvent cet indicateur visuel. Règle : ne jamais écrire outline: none sans proposer une alternative visible. À préciser dans chaque prompt de départ.",
+        "Picto 1": "mdi:cursor-default-click-outline",
+        "Picto 2": "mdi:view-split-horizontal",
+        "Picto 3": "mdi:keyboard-tab"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO",
+      "content": {
+        "Titre": "Décrire les images et les boutons",
+        "Intro": "Un lecteur d'écran ne voit pas les images. Il lit ce qu'on lui a écrit à côté. Trois règles pour rendre chaque élément visuel lisible par tous.",
+        "Titre 1": "Texte alternatif",
+        "Texte 1": "Toute image informative doit avoir un texte alternatif qui décrit ce qu'elle montre. Une image décorative doit avoir alt=\"\" pour être ignorée. L'agent écrit souvent alt=\"image\" par défaut — à corriger dans le prompt.",
+        "Titre 2": "Étiquettes ARIA",
+        "Texte 2": "Quand un bouton n'a pas de texte visible (icône seule), on ajoute aria-label pour l'annoncer à voix haute. Un menu qui s'ouvre et se ferme doit indiquer son état avec aria-expanded. L'agent peut ajouter ces attributs sur instruction.",
+        "Titre 3": "Priorité au natif",
+        "Texte 3": "Un vrai bouton HTML n'a pas besoin d'étiquette ARIA supplémentaire. Ajouter des attributs sur un élément déjà accessible crée des conflits de lecture.",
+        "Titre Bulle": "Les étiquettes ARIA complètent le HTML — elles ne le remplacent pas. Un composant bien construit en HTML5 n'en a presque pas besoin.",
+        "Source": "Source : Accessibilité web - Illustration générée par IA - Maxime Elhaik"
+      },
+      "image_concept": "A close-up of a human hand gently touching a Braille panel embedded in a glowing digital screen, warm light emanating from each raised dot, symbolizing the bridge between tactile language and digital accessibility",
+      "image_style": "chiaroscuro",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO - ALT",
+      "content": {
+        "Titre": "Couleurs et tailles : trois règles CSS",
+        "Intro": "Une personne malvoyante ou daltonienne doit pouvoir lire l'interface sans effort. Trois points CSS à vérifier dans chaque feuille de style générée par l'agent.",
+        "Titre 1": "CONTRASTE TEXTE / FOND OBLIGATOIRE",
+        "Texte 1": "Le texte doit être au minimum 4,5 fois plus contrasté que son fond (règle WCAG AA). L'outil Chrome Lighthouse signale automatiquement les paires de couleurs non conformes dans le rapport d'accessibilité.",
+        "Picto 1": "mdi:contrast-circle",
+        "Titre 2": "Pas de sens porté uniquement par la couleur",
+        "Texte 2": "Un message d'erreur rouge sans texte ni icône est invisible pour un daltonien. Règle : toujours doubler la couleur d'un libellé ou d'une icône pour transmettre le sens.",
+        "Picto 2": "mdi:palette-outline",
+        "Titre 3": "Tailles de police flexibles en CSS",
+        "Texte 3": "Utiliser rem ou em plutôt que px pour la taille du texte. Ces unités s'adaptent au zoom du navigateur configuré par l'utilisateur. L'agent utilise px par défaut — à corriger dès le prompt.",
+        "Picto 3": "mdi:format-size",
+        "Source": "Source : Contrastes CSS accessibles - Illustration générée par IA - Maxime Elhaik"
+      },
+      "image_concept": "A magnifying glass hovering over a vivid color spectrum gradient, with a sharp dividing line between a high-contrast black-and-white zone and a blurry low-contrast pastel zone, representing the threshold between accessible and inaccessible visual design",
+      "image_style": "constructivist",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "Corriger son code avec l'agent",
+        "Intro": "Chrome intègre un outil de diagnostic gratuit appelé Lighthouse. En 30 secondes, il liste tous les problèmes d'accessibilité — on soumet ce rapport à l'agent pour les corriger.",
+        "Titre 1": "Ouvrir Chrome",
+        "Violet 1 ": "F12 > onglet Lighthouse",
+        "Titre 2": "Lancer",
+        "Violet 2": "Clic sur Analyze page load",
+        "Titre 3": "Lire",
+        "Violet 3": "Repérer les erreurs en rouge",
+        "Titre 4": "Copier",
+        "Violet 4": "Sélectionner le rapport complet",
+        "Titre 5": "Coller",
+        "Violet 5": "Prompt : « Corrige ces erreurs RGAA »",
+        "Titre 6": "Itérer",
+        "Violet 6": "Relancer jusqu'à score 90 ou zéro erreur"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - EXERCICE PRATIQUE",
+      "content": {
+        "EXERCICE": "EXERCICE",
+        "Titre": "À nous de jouer !",
+        "Intro": "Tester l'accessibilité de son projet avec Lighthouse",
+        "Titre 1": "Prompt de correction",
+        "Texte 1": "\"Corrige les erreurs Lighthouse suivantes en respectant le RGAA.\"",
+        "Texte 2": "Les boutons ont-ils tous un texte ou label ?",
+        "Texte 3": "Les images ont-elles toutes un alt pertinent ?",
+        "Texte 4": "Le score Lighthouse Accessibility dépasse-t-il 90 ?"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Accessible dès le premier prompt",
+        "Intro": "Corriger l'accessibilité en fin de projet coûte trois fois plus cher que de l'intégrer dès le départ — c'est la règle des 1-10-100 appliquée au code. La bonne nouvelle : on n'a pas besoin de tout connaître. Il suffit d'ajouter cinq lignes dans son fichier AGENTS.md pour forcer l'agent à les respecter à chaque génération. Utiliser de vrais boutons HTML, structurer avec header/nav/main/footer, écrire des alt descriptifs, viser un contraste de 4,5:1 et garder le :focus visible : ces cinq règles couvrent 80 % des cas.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "La prochaine leçon change de registre et aborde une question que peu de Vibe Coders anticipent : à qui appartient le code que l'IA génère ? Droits d'auteur, licences, domaine public — les réponses sont moins évidentes qu'elles n'y paraissent."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

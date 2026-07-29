@@ -1,0 +1,136 @@
+{
+  "lessonTitle": "M2C1L8",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Les familles de modèles IA pour le code"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Pourquoi pas un seul modèle ?",
+        "Intro": "En 2026, le marché de l'IA pour le code est divisé en familles distinctes — chacune avec sa propre architecture, ses données d'entraînement et ses spécialités. Choisir son modèle, c'est choisir le bon outil pour la bonne tâche. Faisons le tour des grandes familles.",
+        "Titre 1": "Les leaders propriétaires",
+        "Texte 1": "Voyons les trois grandes familles propriétaires qui dominent les benchmarks de code en 2026 et ce qui les différencie concrètement.",
+        "Titre 2": "L'alternative open-weights",
+        "Texte 2": "Zoom sur les modèles exécutables localement, leurs avantages en confidentialité et les acteurs qui s'imposent face aux géants américains.",
+        "Titre 3": "Choisir le bon modèle",
+        "Texte 3": "Apprenons à sélectionner le modèle adapté selon le type de tâche, le niveau de confidentialité requis et les contraintes de coût."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - PODIUM",
+      "content": {
+        "Titre": "Les leaders propriétaires en 2026",
+        "Intro": "OpenAI, Anthropic et Google dominent les benchmarks de code — trois architectures, trois spécialités distinctes.",
+        "Rang 1": "1ère place",
+        "Violet 1": "Claude (Anthropic)",
+        "Texte 1": "Référence sur SWE-bench (vrais bugs réels). Comprend la structure multi-fichiers d'un projet entier. Idéal pour le Vibe Coding de bout en bout.",
+        "Picto 1": "mdi:code-braces",
+        "Rang 2": "2ème place",
+        "Violet 2": "GPT / Série O",
+        "Texte 2": "GPT domine l'orchestration agentique. La série O (o3, o4) calcule plusieurs hypothèses avant d'écrire la première ligne — imbattable sur les algorithmes complexes.",
+        "Picto 2": "mdi:brain",
+        "Rang 3": "3ème place",
+        "Violet 3": "Gemini (Google)",
+        "Texte 3": "Fenêtre de contexte massive : documentation complète ingérée en une requête. Traitement natif image, vidéo, audio — idéal pour convertir une maquette en code.",
+        "Picto 3": "mdi:image-multiple",
+        "Titre Bulle": "Mentions honorables :",
+        "Texte Bulle": "Grok (xAI) · Mistral Large · Command R+"
+      },
+      "image_concept": "Three distinct architectural towers rising from a circuit board landscape — one sleek obsidian spire (Anthropic), one golden lattice structure (OpenAI), one translucent glass prism refracting light into a spectrum (Google) — each casting a different colored shadow on the ground below, symbolizing three competing philosophies of intelligence",
+      "image_style": "constructivist",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - PODIUM",
+      "content": {
+        "Titre": "Les leaders de l'open-weights en 2026",
+        "Intro": "Ces modèles s'exécutent localement — le code source ne quitte jamais les serveurs de l'entreprise.",
+        "Rang 1": "1ère place",
+        "Violet 1": "Meta Llama",
+        "Texte 1": "Modèles généralistes open-weights les plus adoptés. Communauté massive, mises à jour fréquentes, performances comparables aux modèles propriétaires sur les tâches de code.",
+        "Picto 1": "mdi:account-group",
+        "Rang 2": "2ème place",
+        "Violet 2": "DeepSeek (R1)",
+        "Texte 2": "Modèles chinois optimisés pour le code, aux performances comparables aux leaders américains pour une fraction du coût énergétique. Idéal pour les déploiements à grande échelle.",
+        "Picto 2": "mdi:lightning-bolt",
+        "Rang 3": "3ème place",
+        "Violet 3": "Alibaba Qwen",
+        "Texte 3": "Très robuste sur les tâches de programmation et nativement multilingue. Avantage décisif pour les projets internationaux ou les bases de code commentées en plusieurs langues simultanément.",
+        "Picto 3": "mdi:translate",
+        "Titre Bulle": "Mentions honorables :",
+        "Texte Bulle": "Mistral (France) · Phi-4 (Microsoft) · Falcon (UAE)"
+      },
+      "image_concept": "A glowing server rack in a dimly lit basement office, with a padlock icon projected in light on the wall above it, symbolizing local execution and data sovereignty",
+      "image_style": "chiaroscuro",
+      "image_ratio": "1:1"
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "Les modèles \"Thinking\"",
+        "Intro": "Les modèles Thinking ajoutent une phase de calcul interne avant de répondre — un avantage décisif sur le code complexe.",
+        "Titre 1": "Requête",
+        "Violet 1 ": "Recevoir la demande de l'utilisateur",
+        "Titre 2": "Draft",
+        "Violet 2": "Écrire un brouillon interne caché",
+        "Titre 3": "Vérif.",
+        "Violet 3": "Contrôler la logique et les erreurs",
+        "Titre 4": "Correction",
+        "Violet 4": "Corriger avant toute sortie visible",
+        "Titre 5": "Rendu",
+        "Violet 5": "Livrer le code final validé",
+        "Titre 6": "Rendu",
+        "Violet 6": "Moins d'hallucinations sur tâches dures"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Comment choisir son modèle ?",
+        "Intro": "Chaque famille excelle sur un axe précis. Voici la grille de décision pour ne pas se tromper selon la nature du projet et ses contraintes.",
+        "Titre A": "CLAUDE",
+        "Titre B": "GPT / O",
+        "Item 1": "Point fort",
+        "Item 2": "Limite",
+        "Item 3": "Usage",
+        "Item 4": "Coûts",
+        "Texte A Item 1": "Qualité du code, compréhension multi-fichiers",
+        "Texte A Item 2": "Propriétaire — données dans le cloud Anthropic",
+        "Texte A Item 3": "Vibe Coding complet, debug complexe",
+        "Texte A Item 4": "Moyen à élevé selon le modèle",
+        "Texte B1": "Raisonnement pur, orchestration agentique",
+        "Texte B2": "Série O très coûteuse à l'usage intensif",
+        "Texte B3": "Agents autonomes, back-end algorithmique",
+        "Texte B4": "Élevé sur la série O (o3, o4)"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "La hiérarchie des modèles change tous les trimestres. Le leader de janvier n'est souvent plus celui de juin. En 2026, l'enjeu n'est plus de trouver le \"meilleur\" modèle absolu — c'est de formuler son besoin pour basculer d'un modèle à l'autre en un clic. Claude excelle sur le code multi-fichiers, la série O d'OpenAI sur le raisonnement, Gemini sur les contextes massifs. On choisit selon la tâche, pas par habitude.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "EN BREF : S'enfermer sur un seul modèle est le piège classique du débutant en Vibe Coding. Les prochaines leçons montrent comment configurer plusieurs modèles dans un même IDE pour switcher selon le contexte — sans changer de workflow."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

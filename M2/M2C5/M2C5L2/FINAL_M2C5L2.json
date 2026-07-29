@@ -1,0 +1,96 @@
+{
+  "lessonTitle": "M2C5L2 — Où vont nos données ? Configurer la confidentialité",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Confidentialité : où vont nos données ?"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Le parcours de nos prompts",
+        "Intro": "Envoyer un prompt à ChatGPT, Claude ou Cursor, c'est envoyer des données sur des serveurs externes. Ces données sont-elles conservées ? Servent-elles à entraîner les prochains modèles ? Faisons le point sur les règles qui s'appliquent.",
+        "Titre 1": "Le trajet des données",
+        "Texte 1": "Voyons comment nos requêtes et notre code transitent vers les infrastructures des fournisseurs d'IA, et ce qu'il s'y passe réellement.",
+        "Titre 2": "Risque d'entraînement",
+        "Texte 2": "Zoom sur le risque concret de voir son code propriétaire réutilisé pour entraîner un futur modèle accessible à tous.",
+        "Titre 3": "Configurer l'opt-out",
+        "Texte 3": "Apprenons à activer les bons réglages dans nos outils quotidiens pour bloquer l'utilisation de nos données à des fins d'entraînement."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "Stockage et entraînement des IA",
+        "Mot": "Le stockage par défaut",
+        "Definition": "ChatGPT et Claude (versions gratuites et Pro) conservent les échanges pour entraîner leurs modèles. Du code confidentiel collé dans le chat peut réapparaître dans les suggestions d'autres utilisateurs.",
+        "Bulle": "Un code propriétaire collé dans le chat gratuit devient potentiellement public."
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Interface web vs. API & Enterprise",
+        "Intro": "Les règles de confidentialité changent radicalement selon la façon dont on accède aux modèles d'IA. Deux régimes, deux niveaux de risque.",
+        "Titre A": "WEB PRO",
+        "Titre B": "API / CLOUD",
+        "Item 1": "Entraînement",
+        "Item 2": "Stock",
+        "Item 3": "Risque",
+        "Item 4": "Action",
+        "Texte A Item 1": "Activé par défaut pour améliorer les modèles futurs",
+        "Texte A Item 2": "Historique conservé dans le compte utilisateur",
+        "Texte A Item 3": "Moyen — dépend des options activées",
+        "Texte A Item 4": "Désactiver l'option d'entraînement dans les réglages",
+        "Texte B1": "Interdit par contrat dans les conditions d'utilisation API",
+        "Texte B2": "Aucun historique conservé côté fournisseur",
+        "Texte B3": "Faible — données isolées et sécurisées",
+        "Texte B4": "Clé API ou abonnement Enterprise"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Configurer la confidentialité de ses outils",
+        "Intro": "Bloquer l'entraînement des modèles sur son code source.",
+        "Texte Intro": "Quelques clics dans les réglages suffisent à sanctuariser son code. Ces réglages doivent être appliqués avant de prompter sur un projet réel — pas après. Un oubli en début de projet peut exposer des mois de travail propriétaire à l'ensemble des utilisateurs du modèle.",
+        "Nom Checklist": "Réglages indispensables",
+        "Texte 1": "Désactiver « Chat History & Training » sur ChatGPT.",
+        "Texte 2": "Soumettre une demande d'opt-out sur Claude.",
+        "Texte 3": "Activer le « Privacy Mode » dans Cursor.",
+        "Texte 4": "Utiliser l'API plutôt que l'interface web classique.",
+        "Texte 5": "Privilégier des modèles hébergés localement si besoin.",
+        "Picto 1": "mdi:shield-lock-outline"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Verrouiller sa boîte de chat",
+        "Intro": "En Vibe Coding, la confidentialité n'est pas une option. On ne commence jamais un projet sans avoir configuré ses outils en mode privé. Les abonnements Enterprise et les accès par API garantissent par contrat qu'aucun modèle ne s'entraînera sur nos prompts. Pour le chat grand public, deux minutes suffisent : désactiver l'historique, désactiver l'entraînement. En bref, c'est le développeur qui choisit qui accède à son code — pas le fournisseur.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "La prochaine leçon aborde le point le plus critique de la sécurité : la gestion des clés secrètes. Comment connecter son application à des API externes sans jamais laisser traîner ses clés d'accès dans ses prompts ou son dépôt Git ?"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
+    }
+  ]
+}

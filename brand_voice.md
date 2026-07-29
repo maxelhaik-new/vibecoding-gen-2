@@ -9,10 +9,11 @@
 **Chaque phrase doit apporter une information que le titre seul ne donne pas.**
 Si on peut inférer le contenu d'un bloc depuis son titre, la phrase est à réécrire.
 
-**Toute affirmation générale doit être ancrée dans un fait précis.**
-Un chiffre, une date, un cas réel, une source. Pas de généralisation flottante.
-- ❌ *"Le Vibe Coding change le rapport au logiciel."*
-- ✅ *"63 % des utilisateurs d'outils de Vibe Coding ne sont pas développeurs. (Replit, 2025)"*
+**Toute affirmation générale doit être immédiatement illustrée par un exemple simple ou une action concrète.**
+Évitez de chercher à placer absolument des chiffres ou des statistiques. Privilégiez l'explication par la fonction.
+- ❌ *"Le Vibe Coding change le rapport au logiciel."* (Théorique et flou)
+- ✅ *"Un utilisateur de Vibe Coding génère son application en discutant, sans écrire de code manuellement."* (Action concrète)
+- ✅ *"Git ne lit jamais ce fichier, il sait juste y faire référence."* (Explication fonctionnelle simple, idéale pour l'action)
 
 **Interdiction absolue des formules méta sur l'IA.** Ces phrases ne disent rien de concret :
 - ❌ *"L'humain pilote, l'IA exécute."*
@@ -27,6 +28,10 @@ La `Bulle` / `Texte Bulle` doit apporter un angle différent, un principe action
 **Aucun exemple ne peut apparaître deux fois dans la même leçon.**
 Si un cas est développé dans une slide FOCUS OUTIL, il ne peut pas être repris dans la slide suivante.
 
+**Priorité au Pragmatique et à l'Action (La règle "Figma Make")**
+Le texte doit être une recette d'action. Les concepts techniques doivent être découpés en étapes logiques.
+Toujours expliquer LE POURQUOI en une phrase très simple, puis LE COMMENT de façon directe.
+
 ---
 
 ## 2. TON DE VOIX
@@ -37,12 +42,12 @@ Le contenu doit sembler écrit par un formateur expert, direct et vivant.
 - **Expressions de complicité** : *« En réalité, ... »*, *« À nous de jouer ! »*
 - **Ponctuation vivante** : points d'exclamation ponctuels, tirets, pas de virgules en cascade.
 
-### B. Interdiction de l'adresse directe
-- **Interdit** : *"vous"*, *"tu"*, verbes conjugués à ces personnes.
-- **Obligatoire** : pronom *"on"* ou infinitif.
-  - ❌ *"Vous configurez le projet."* → ✅ *"On configure le projet."*
-  - ❌ *"Choisissez un modèle."* → ✅ *"Choisir un modèle adapté."*
-- **Exception** : les conseils derrière flèche (`→`) utilisent l'impératif 2e personne du pluriel.
+### B. L'interdiction du "Vous" (Généralisation et neutralité)
+Le "vous / votre / vos" est **strictement interdit** dans l'intégralité du contenu. Il donne un ton professoral, scolaire ou moralisateur qui ne correspond pas au style Vibe Coding.
+- **Utiliser le "ON"** : C'est le pronom universel par excellence. *"On obtient le résultat"* au lieu de *"Vous obtenez le résultat"*. *"Nos clés API"* au lieu de *"Vos clés API"*.
+- **Privilégier l'infinitif et le passif** : *"Stocker les secrets"* au lieu de *"Vous devez stocker les secrets"*. *"Le fichier est généré"* au lieu de *"Vous générez le fichier"*.
+- **Généraliser le propos** : Parler du "développeur", de "l'application", du "projet" de manière neutre.
+- **Tolérance zéro** : Toute occurrence de "vous", "votre", "vos" ou "tu", "ton", "tes" doit être impérativement reformulée.
 
 ### C. Concision chirurgicale
 - Une idée par phrase. **Maximum 15 mots** par phrase dans les blocs courants.
@@ -50,7 +55,8 @@ Le contenu doit sembler écrit par un formateur expert, direct et vivant.
 
 ---
 
-## 3. EXPRESSIONS RECOMMANDÉES
+## 3. EXPRESSIONS SUGGÉRÉES (Optionnelles)
+Ces expressions sont utiles pour fluidifier la lecture, mais **ne doivent pas être forcées** à chaque slide. Si la slide est une simple liste d'actions (1, 2, 3), allez droit au but.
 
 | Expression | Usage | Exemple |
 | :--- | :--- | :--- |
@@ -64,11 +70,13 @@ Le contenu doit sembler écrit par un formateur expert, direct et vivant.
 
 ---
 
-## 4. BLACKLIST — Tournures interdites
+## 4. BLACKLIST — Tournures et mots interdits
+
+### A. Tournures interdites
 
 | Interdit | Remplacement | Exemple corrigé |
 | :--- | :--- | :--- |
-| **Vous / Tu** (hors flèche) | **On** / Infinitif | *« On configure le serveur. »* |
+| **Tournure scolaire** | **Action directe** | *« Configurez votre serveur. »* |
 | **Il est crucial / essentiel de...** | **Règle :** / Infinitif direct | *« Règle : valider le schéma avant envoi. »* |
 | **L'humain pilote, l'IA exécute** | Décrire l'action concrète dans le contexte | *« Cursor génère les tests, on valide avant merge. »* |
 | **L'IA augmente / démultiplie** | Chiffrer le gain ou nommer l'action précise | *« Le script réduit le temps de rendu de 50 %. »* |
@@ -81,6 +89,24 @@ Le contenu doit sembler écrit par un formateur expert, direct et vivant.
 | **Tout au long de ce cours...** | Aller directement au concept | *« Cursor interprète le contexte à partir de... »* |
 | **Explorez / Apprenez / Découvrez** (hors flèche) | Infinitifs | *« Explorer les modes de prompt. »* |
 | **L'IA comme copilote / assistant** | Nommer l'outil et son action précise | *« Claude génère la structure, on affine. »* |
+
+### B. Le Jargon technique : Vrais mots + Explication simple
+
+**Règle d'or** : Ne fuyez pas les vrais termes techniques (`.env`, `API`, `repository`), ils sont nécessaires. MAIS vous devez les expliquer immédiatement de façon fonctionnelle avec des mots de tous les jours. 
+- ❌ **La fuite abstraite** : *"Utiliser le fichier de configuration sécurisé pour le système."*
+- ✅ **Le mot juste + l'explication** : *"Fichier .env : Stocker les secrets dans un fichier isolé. La vraie clé n'est jamais écrite en dur."*
+
+Si un mot est purement jargonneux et n'a pas de valeur éducative directe pour l'action, utilisez les remplacements suivants :
+
+| Mot jargonneux | Remplacement recommandé | Exemple corrigé / Alternative |
+| :--- | :--- | :--- |
+| **sprint** | Cycle de travail, phase de développement, étape | *« Durant cette phase de développement... »* |
+| **pipe** | Enchaînement, flux, liaison, pipeline | *« Connecter les outils pour créer un flux continu. »* |
+| **supabase** | Base de données cloud, outil de stockage | *« Les données sont stockées dans la base de données cloud. »* |
+| **cursor** | L'éditeur de code, l'application de code, l'outil de développement | *« On ouvre le projet dans l'éditeur de code. »* |
+| **stack** | Outils, technologies, ensemble technique | *« Choisir l'ensemble d'outils adaptés au projet. »* |
+| **backend** | Partie serveur, logique interne, coulisses | *« La logique interne de l'application traite la demande. »* |
+| **frontend** | Interface utilisateur, partie visible, écran | *« L'interface utilisateur affiche les résultats. »* |
 
 ---
 
@@ -216,7 +242,7 @@ Avant d'écrire, lire les contraintes dans `templates.json` pour chaque champ :
 
 - [ ] Chaque phrase apporte une info que le titre seul ne donnait pas
 - [ ] Au moins un fait concret (chiffre, cas, date, source) par slide substantielle
-- [ ] Aucune formule de la blacklist n'est présente
+- [ ] Aucune formule ou mot technique banni de la blacklist n'est présent (sprint, pipe, supabase, cursor, stack, backend, frontend)
 - [ ] La bulle apporte un angle différent du texte principal
 - [ ] Aucun exemple identique dans deux slides de la même leçon
 - [ ] Aucune adresse directe (vous/tu) hors flèche conseil

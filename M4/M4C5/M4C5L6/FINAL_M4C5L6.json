@@ -1,0 +1,156 @@
+{
+  "lessonTitle": "M4C5L6 — Étendre les capacités de son agent avec les SKILLS",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Étendre son agent avec les SKILLS"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Au programme de cette leçon",
+        "Intro": "Un agent sans Skill, c'est un développeur sans spécialité : il sait coder, mais ignore les règles métier. Les Skills changent ça radicalement. Découvrons comment les identifier, les installer et les activer.",
+        "Titre 1": "Skill : définition",
+        "Texte 1": "Voyons ce qu'est concrètement un Skill et en quoi il diffère des capacités natives de l'agent — fichiers, terminal et génération de code.",
+        "Titre 2": "Trouver & installer",
+        "Texte 2": "Découvrons où dénicher des Skills de qualité et comment les activer dans Antigravity en quelques étapes simples.",
+        "Titre 3": "Bonnes pratiques",
+        "Texte 3": "Apprenons à vérifier les consignes d'un Skill avant activation et à garder la main sur les actions générées par l'agent."
+      }
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "C'est quoi un Skill ?",
+        "Mot": "SKILL",
+        "Definition": "Un Skill est un module de compétences métier pré-configuré. Il regroupe trois éléments : des workflows (enchaînements de tâches), des connaissances sectorielles (règles RGPD, conventions UI, standards SEO) et des consignes précises. Une fois activé, l'agent applique ce cadre automatiquement à chaque requête. Sans Skill, l'agent répond en généraliste. Avec un Skill RGPD, il audite un formulaire selon les articles 13 et 14 du règlement européen — sans qu'on ait à tout ré-expliquer.",
+        "Bulle": "Un Skill ne modifie pas le modèle IA sous-jacent. Il agit comme un brief permanent injecté dans chaque échange — l'équivalent d'un cahier des charges toujours ouvert sur le bureau de l'agent.",
+        "Picto 1": "mdi:puzzle"
+      }
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Natif vs Skill",
+        "Intro": "L'agent dispose d'outils natifs dès l'installation. Les Skills viennent en couche supérieure pour lui donner un savoir-faire métier ciblé.",
+        "Titre A": "NATIF",
+        "Titre B": "SKILL",
+        "Item 1": "Définition",
+        "Texte A Item 1": "Capacités intégrées à l'agent dès l'installation",
+        "Texte B1": "Module métier ajouté manuellement pour une expertise ciblée",
+        "Item 2": "PORTÉE",
+        "Texte A Item 2": "Généraliste : lire, écrire, exécuter du code",
+        "Texte B2": "Spécialisée : RGPD, UI/UX, SEO, sécurité...",
+        "Item 3": "FORMAT",
+        "Texte A Item 3": "Outils système (terminal, fichiers)",
+        "Texte B3": "Workflows + consignes + connaissances",
+        "Item 4": "USAGE",
+        "Texte A Item 4": "Toujours actif, sans configuration",
+        "Texte B4": "Activé à la demande, par projet"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "4 familles de Skills incontournables",
+        "Intro": "Des Skills couvrent déjà les domaines les plus demandés en Vibe Coding. En voici quatre familles concrètes et directement activables.",
+        "Titre 1": "DESIGN MOBILE & UI/UX",
+        "Texte 1": "Skills comme Tailwind UI Master ou Mobile UX System : l'agent génère des composants accessibles et cohérents avec les guidelines iOS/Android.",
+        "Picto 1": "mdi:art",
+        "Titre 2": "CONFORMITÉ & AUDIT RGPD",
+        "Texte 2": "Skills RGPD Compliance Audit ou Legal Advisor : l'agent vérifie formulaires et mentions légales selon les articles 13 et 14 du règlement européen.",
+        "Picto 2": "mdi:court-hammer",
+        "Titre 3": "CODE REVIEW & SÉCURITÉ",
+        "Texte 3": "Skills Security Hardening ou Clean Code Refactoring : détection de failles OWASP, refactoring propre et revue de code structurée avant chaque merge.",
+        "Picto 3": "mdi:shield-unlocked",
+        "Titre 4": "SEO & RÉDACTION TECHNIQUE",
+        "Texte 4": "Skill Technical SEO Auditor : l'agent analyse balises, structure de liens et Core Web Vitals pour produire un rapport d'audit actionnable en un prompt.",
+        "Picto 4": "mdi:magnify"
+      }
+    },
+    {
+      "template": "VIBECODING - VEILLE",
+      "content": {
+        "Titre": "Où trouver des Skills ?",
+        "Titre 1": "Cursor Directory",
+        "Violet 1": "Référence communautaire de consignes .mdc et .cursorrules",
+        "Texte 1": "Copier-coller direct de Skills UI, clean code, accessibilité — zéro configuration technique requise.",
+        "Titre 2": "Vibe Coding FR",
+        "Violet 2": "Base de Skills validées et testées par la communauté Vibe Coding",
+        "Texte 2": "Dépôts et retours d'expérience réels : chaque Skill partagée a été testée en production par des membres actifs.",
+        "Titre 3": "Claude Prompt Library",
+        "Violet 3": "Bibliothèque officielle Anthropic de consignes métier certifiées",
+        "Texte 3": "Audit juridique, refactoring, analyse technique : consignes rédigées et validées directement par Anthropic.",
+        "Titre 4": "",
+        "Violet 4": "",
+        "Texte 4": "",
+        "Texte 5": "",
+        "Violet 5": "",
+        "Titre 6": "",
+        "Violet 6": "",
+        "Texte 6": ""
+      },
+      "image_concept": "A glowing treasure map unfolding on a wooden desk, with multiple marked locations labeled with skill icons, a magnifying glass hovering over one spot, warm candlelight atmosphere",
+      "image_style": "editorial",
+      "image_ratio": "1:1"
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "Installer un Skill",
+        "Intro": "Activer un Skill dans Antigravity prend moins de 3 minutes. Le processus est identique pour tous les modules disponibles.",
+        "Titre 1": "Trouver",
+        "Violet 1 ": "Localiser le Skill dans le Hub ou sur GitHub",
+        "Titre 2": "Copier",
+        "Violet 2": "Copier le contenu brut du fichier de consignes",
+        "Titre 3": "Créer",
+        "Violet 3": "Créer un fichier .mdc dans le dossier .cursor/rules",
+        "Titre 4": "Coller",
+        "Violet 4": "Coller les consignes et sauvegarder le fichier",
+        "Titre 5": "Activer",
+        "Violet 5": "Relancer l'agent — le Skill est actif immédiatement",
+        "Titre 6": "Tester",
+        "Violet 6": "Envoyer un prompt métier pour vérifier l'application du Skill"
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Bonnes pratiques & Sécurité",
+        "Intro": "Activer un Skill sans le lire, c'est exécuter du code inconnu. Ces points de contrôle évitent les mauvaises surprises.",
+        "Nom Checklist": "La Checklist !",
+        "Texte Intro": "Un Skill mal configuré peut générer du code non conforme ou des actions non souhaitées. Voici les cinq réflexes à adopter avant et après chaque activation.",
+        "Texte 1": "Lire intégralement les consignes du Skill avant activation — repérer toute instruction ambiguë ou trop permissive.",
+        "Texte 2": "Vérifier la date de dernière mise à jour du Skill sur GitHub — un module non maintenu depuis 6 mois est à risque.",
+        "Texte 3": "Tester le Skill sur un projet sandbox isolé avant de l'appliquer à un projet en production.",
+        "Texte 4": "Relire chaque action générée par l'agent après activation — ne jamais accepter un diff sans vérification humaine.",
+        "Texte 5": "Désactiver les Skills inutilisés entre les projets pour éviter les conflits de consignes entre modules actifs."
+      }
+    },
+    {
+      "template": "VIBECODING - EXERCICE PRATIQUE",
+      "content": {
+        "Titre": "À nous de jouer !",
+        "Intro": "Installer et tester un premier Skill sur un projet réel en moins de 10 minutes.",
+        "Titre 1": "Skill à activer",
+        "Texte 1": "Choisir un Skill SEO ou RGPD depuis le Hub Antigravity ou GitHub",
+        "EXERCICE": "EXERCICE",
+        "Question 1": "Quel Skill a été choisi et pourquoi ce domaine métier ?",
+        "Question 2": "Les consignes du Skill ont-elles été lues avant activation ?",
+        "Question 3": "Envoyer un prompt métier et observer la différence de réponse avec et sans Skill.",
+        "Question 4": "Identifier une consigne du Skill qui a influencé la réponse de l'agent."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Un agent sans Skill reste un généraliste. Avec un Skill RGPD, il audite selon les articles 13 et 14. Avec un Skill SEO, il produit un rapport Core Web Vitals structuré. La différence n'est pas dans le modèle IA — elle est dans les consignes qu'on lui donne. Les Skills sont ces consignes, pré-packagées, testées et réutilisables d'un projet à l'autre. On les trouve sur GitHub, dans le Hub Antigravity ou on les rédige soi-même. L'installation prend moins de 3 minutes. La seule règle : toujours lire avant d'activer.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "La prochaine leçon va plus loin : on verra comment créer ses propres Skills sur-mesure à partir de zéro, en partant des règles métier d'un projet réel. Un Skill maison, c'est un avantage concurrentiel que personne d'autre n'a dans son agent."
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "lessonSlug": "m4c4l4",
+  "lessonTitle": "M4C4L4 — Ajouter les fonctionnalités principales",
+  "lessonType": "logiciel",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Ajouter les fonctionnalités principales"
+      }
+    },
+    {
+      "template": "VIBECODING - DEMO",
+      "content": {}
+    }
+  ]
+}

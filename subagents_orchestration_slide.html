@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide — Orchestration des Sous-Agents</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-slide: #FFFFFF;
+      --purple-brand: #6634D9;
+      --purple-dark: #18093B;
+      --card-bg: #F8FAFC;
+      --card-border: #E2E8F0;
+      --text-dark: #18181B;
+      --text-muted: #475569;
+      
+      --accent-green: #16A34A;
+      --accent-blue: #2563EB;
+      --accent-amber: #D97706;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: #E2E8F0;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: var(--text-dark);
+    }
+
+    /* 16:9 Presentation Canvas (1920x1080) */
+    .slide-container {
+      width: 1920px;
+      height: 1080px;
+      background: var(--bg-slide);
+      padding: 70px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Header Section */
+    .slide-header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .header-tag {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--purple-brand);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .slide-title {
+      font-family: 'Outfit', 'Inter', sans-serif;
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--purple-dark);
+      line-height: 1.1;
+    }
+
+    /* Split 50% / 50% */
+    .split-layout {
+      display: flex;
+      gap: 80px;
+      height: 760px;
+      align-items: center;
+    }
+
+    /* Left Column (50% width) - Text 30px+ */
+    .left-col {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      justify-content: center;
+    }
+
+    .points-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .point-item {
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--text-dark);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .point-icon {
+      font-size: 34px;
+      flex-shrink: 0;
+    }
+
+    .en-bref-card {
+      background: #F1F5F9;
+      border-left: 8px solid var(--purple-brand);
+      border-radius: 12px;
+      padding: 28px 32px;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--purple-dark);
+    }
+
+    .en-bref-tag {
+      font-weight: 900;
+      color: var(--purple-brand);
+    }
+
+    /* Right Column (50% width) - Simplified Clean Diagram */
+    .right-col {
+      width: 50%;
+      height: 100%;
+      background: var(--card-bg);
+      border: 2px solid var(--card-border);
+      border-radius: 24px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    /* Main Orchestrator Node (Top) */
+    .main-agent-box {
+      background: var(--purple-brand);
+      color: #FFFFFF;
+      border-radius: 18px;
+      padding: 24px 40px;
+      font-size: 34px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 10px 25px rgba(102, 52, 217, 0.3);
+      z-index: 2;
+    }
+
+    /* Connector Lines (SVG) */
+    .connector-svg {
+      width: 100%;
+      height: 160px;
+      z-index: 1;
+    }
+
+    /* Subagent Nodes (Bottom Row) */
+    .subagents-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .subagent-node {
+      background: #FFFFFF;
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .subagent-label {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--purple-dark);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .status-badge {
+      font-size: 26px;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 20px;
+    }
+
+    .badge-green {
+      background: #DCFCE7;
+      color: var(--accent-green);
+    }
+
+    .badge-blue {
+      background: #DBEAFE;
+      color: var(--accent-blue);
+    }
+
+    .badge-amber {
+      background: #FEF3C7;
+      color: var(--accent-amber);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide-container">
+    
+    <!-- Header -->
+    <div class="slide-header">
+      <div class="header-tag">M4C3L2 • ARCHITECTURE MULTI-AGENTS</div>
+      <h1 class="slide-title">L'Orchestration des Sous-Agents</h1>
+    </div>
+
+    <!-- 50% / 50% Split Layout -->
+    <div class="split-layout">
+      
+      <!-- Left Column (50% Width, Text 30px Min) -->
+      <div class="left-col">
+        
+        <ul class="points-list">
+          <li class="point-item">
+            <span class="point-icon">⚡</span>
+            <div><strong>Parallélisation :</strong> L'agent principal lance plusieurs sous-agents en même temps.</div>
+          </li>
+          <li class="point-item">
+            <span class="point-icon">🎯</span>
+            <div><strong>Spécialisation :</strong> Chaque sous-agent a un rôle précis (recherche, code UI, tests).</div>
+          </li>
+          <li class="point-item">
+            <span class="point-icon">🛡️</span>
+            <div><strong>Contexte propre :</strong> L'agent principal ne conserve que le résultat final.</div>
+          </li>
+        </ul>
+
+        <div class="en-bref-card">
+          <span class="en-bref-tag">EN BREF :</span> L'agent principal délègue les tâches lourdes et assemble la solution.
+        </div>
+
+      </div>
+
+      <!-- Right Column (50% Width, Simple Clean Schema) -->
+      <div class="right-col">
+        
+        <!-- Main Agent Box -->
+        <div class="main-agent-box">
+          <span>🧠</span> AGENT PRINCIPAL
+        </div>
+
+        <!-- Clean Connector Lines -->
+        <svg class="connector-svg" viewBox="0 0 400 160" preserveAspectRatio="none">
+          <line x1="200" y1="0" x2="70" y2="160" stroke="#6634D9" stroke-width="4" stroke-dasharray="8,8" />
+          <line x1="200" y1="0" x2="200" y2="160" stroke="#6634D9" stroke-width="4" />
+          <line x1="200" y1="0" x2="330" y2="160" stroke="#6634D9" stroke-width="4" stroke-dasharray="8,8" />
+        </svg>
+
+        <!-- 3 Simple Subagent Nodes -->
+        <div class="subagents-container">
+          
+          <div class="subagent-node">
+            <div class="subagent-label">
+              <span>🌐</span> Subagent Recherche
+            </div>
+            <span class="status-badge badge-green">OK</span>
+          </div>
+
+          <div class="subagent-node" style="border-color: #3B82F6;">
+            <div class="subagent-label">
+              <span>💻</span> Subagent Code UI
+            </div>
+            <span class="status-badge badge-blue">EN COURS</span>
+          </div>
+
+          <div class="subagent-node">
+            <div class="subagent-label">
+              <span>🧪</span> Subagent Tests
+            </div>
+            <span class="status-badge badge-amber">ATTENTE</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

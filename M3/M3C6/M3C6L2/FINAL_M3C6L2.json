@@ -1,0 +1,91 @@
+{
+  "lessonTitle": "M3C6L2 — Brief 1 : Le Chrono-Pomodoro & Tracker d'Énergie",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Brief : Le Chrono-Pomodoro d'Équipe"
+      }
+    },
+    {
+      "template": "VIBECODING - BRIEF ALT",
+      "content": {
+        "Titre": "Le Chrono-Pomodoro & Tracker d'Énergie",
+        "Intro": "LE BRIEF",
+        "Texte 1": "En travail à distance, les équipes perdent leur rythme de concentration et oublient de faire des pauses régulières. Les outils actuels sont trop complexes ou remplis de fenêtres inutiles.",
+        "Texte 2": "L'objectif est de concevoir un minuteur Pomodoro visuel, simple et stimulant pour rythmer les sessions de travail et suivre l'énergie de l'équipe sans aucune brique technique lourde.",
+        "Source": "Source : Image générée par IA - Pinterest"
+      }
+    },
+    {
+      "template": "VIBECODING - PERSONA & MVP",
+      "content": {
+        "Titre": "Persona et périmètre du MVP",
+        "Intro": "Identifier précisément la cible utilisateur et définir le périmètre minimal pour garantir le succès du premier prompt.",
+        "Prenom": "Thomas",
+        "Métier": "Développeur & Freelance",
+        "Age": "30 ans",
+        "Spécificité": "Télétravailleur",
+        "Goût": "Adepte du Minimalisme",
+        "Texte 1": "Minuteur visuel 25/5 : Alternance automatique entre sessions de concentration intense et courtes pauses de récupération.",
+        "Texte 2": "Compteur de victoires : Visualisation immédiate du nombre de cycles réussis pour entretenir la motivation au fil de la journée.",
+        "Texte 3": "Prise en main instantanée : Interface épurée et réactive, accessible directement depuis le navigateur sans création de compte."
+      }
+    },
+    {
+      "template": "VIBECODING - USER STORIES",
+      "content": {
+        "Les User Stories": "Les User Stories du projet",
+        "Traduire la vision produit en petites étapes testa": "Traduire le besoin de Thomas en fonctionnalités concrètes et testables à intégrer dans le Prompt Zero.",
+        "Titre App": "Chrono-Pomodoro",
+        "Description MVP": "Offrir une expérience de concentration fluide, motivante et sans aucune friction technique.",
+        "User Story 1": "En tant que télétravailleur, je veux lancer un minuteur visuel de 25 minutes afin de travailler en concentration intense.",
+        "User Story 2": "En tant qu'utilisateur, je veux recevoir une alerte visuelle et sonore à la fin du chrono afin de débuter ma pause de 5 minutes.",
+        "User Story 3": "En tant que membre d'équipe, je veux voir mon compteur de sessions réussies s'incrémenter afin de mesurer ma productivité."
+      }
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "La feuille de route de création",
+        "Intro": "Le parcours méthodique pour transformer ce brief en une application publiée en ligne.",
+        "Titre 1": "Cadrage",
+        "Violet 1 ": "Rédiger le Prompt Zero complet à partir des User Stories",
+        "Titre 2": "Création",
+        "Violet 2": "Générer et tester l'application dans Google AI Studio",
+        "Titre 3": "Versionning",
+        "Violet 3": "Exporter le code source vers un dépôt GitHub",
+        "Titre 4": "Mise en ligne",
+        "Violet 4": "Déployer le projet en production avec Vercel"
+      }
+    },
+    {
+      "template": "VIBECODING - EXERCICE PRATIQUE",
+      "content": {
+        "Titre": "Ce qu’il faut faire",
+        "EXERCICE": "EXERCICE",
+        "Intro": "À vous de jouer en appliquant la chaîne complète de création vue dans ce chapitre.",
+        "Titre 1": "Tâches à réaliser",
+        "Texte 1": "Exécutez l'ensemble des étapes, du cadrage du prompt initial jusqu'à la publication en production.",
+        "Question 1": "Rédigez le Prompt Zero détaillé à partir du brief, du persona et des user stories.",
+        "Question 2": "Générez et affinez l'application dans Google AI Studio jusqu'à obtenir un résultat fonctionnel.",
+        "Question 3": "Exportez le code source propre sur un dépôt GitHub distant.",
+        "Question 4": "Déployez l'application en ligne sur Vercel et vérifiez l'accès public."
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Checklist de validation du projet",
+        "Intro": "Valider la création complète de son application en ligne.",
+        "Texte Intro": "Une application réussie se vérifie en testant les fonctionnalités en direct sur le web public. Voici les critères de contrôle.",
+        "Nom Checklist": "Critères de réussite",
+        "Texte 1": "Le minuteur alterne correctement entre 25 minutes d'effort et 5 minutes de pause.",
+        "Texte 2": "Le compteur de sessions réussies s'incrémente automatiquement.",
+        "Texte 3": "Le code source de l'application est correctement versionné sur GitHub.",
+        "Texte 4": "L'application est déployée avec succès et accessible publiquement sur Vercel.",
+        "Texte 5": "L'interface est fluide et aucune erreur ne bloque la navigation."
+      }
+    }
+  ]
+}
