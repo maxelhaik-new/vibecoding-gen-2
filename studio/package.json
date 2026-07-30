@@ -8,6 +8,8 @@
     "dev:backend": "node server.js",
     "dev:vercel": "npx vercel dev",
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "db:pull": "node pull_from_supabase.js",
+    "db:push": "node migrate_to_supabase.js",
     "share": "npm run build && concurrently \"npm run dev:backend\" \"npx cloudflared tunnel --url http://localhost:4000\"",
     "build": "tsc && vite build"
   },
