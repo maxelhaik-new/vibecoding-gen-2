@@ -34,7 +34,7 @@ export default async function handler(req, res) {
   };
 
   if (!slug) {
-    return sendError('Le paramètre lesson ou slug est requis (ex: ?lesson=m4c5l2)');
+    return sendError('Le paramètre lesson ou slug est requis (ex: ?lesson=m4c5l3)');
   }
 
   try {
@@ -57,25 +57,40 @@ export default async function handler(req, res) {
       res.write(`data: [Pipeline] Démarrage de la phase ${phase} pour ${cleanSlug}...\n\n`);
     }
 
-    // Load strict reference rules dynamically from files
     const referenceRules = getReferenceRules();
+
+    const validTemplatesList = `
+TEMPLATES DE SLIDES OFFICIELS VIBECODING EXCLUSIFS (N'INVENTE AUCUN AUTRE NOM) :
+- "VIBECODING - COVER CHAP" (Titre)
+- "VIBECODING - COVER" (Titre, SousTitre)
+- "VIBECODING - INTRO" (Titre, Intro, Titre 1, Texte 1, Titre 2, Texte 2)
+- "VIBECODING - OBJECTIF CHAP" (Titre, Intro, Titre 1..6)
+- "VIBECODING - PROCESS" (Titre, Etape 1..4, Description 1..4)
+- "VIBECODING - CONCEPT" (Titre, Intro, Concept 1..3)
+- "VIBECODING - DEFINITION" (Titre, MotCle, Definition)
+- "VIBECODING - COMPARISON" (Titre, OptionA, OptionB, AvantagesA, AvantagesB)
+- "VIBECODING - EXERCICE" (Titre, Consigne, Question 1..3)
+- "VIBECODING - FOCUS OUTIL" (Titre, Description, Avantage 1..3)
+- "VIBECODING - FIN" (Titre, EnBref, Transition)
+`;
 
     let phaseInstruction = '';
     if (phase === 'decoupe') {
       phaseInstruction = `OBJECTIF DE LA PHASE DECOUPE :
-Analyse le plan Markdown fourni et découpe-le en une séquence logique de 5 à 9 slides.
-Sélectionne les templates visuels appropriés parmi le catalogue (ex: VIBECODING - COVER, VIBECODING - INTRO, VIBECODING - PROCESS, VIBECODING - CONCEPT, VIBECODING - DEFINITION, VIBECODING - FIN).
-Pour chaque slide, fournis au minimum les clés "Titre" et les textes de structure.`;
+Analyse le plan Markdown et génère 5 à 9 slides.
+Utilise EXCLUSIVEMENT les noms de templates officiels ci-dessus. N'invente PAS de noms comme "TITRE_PRINCIPAL" ou "POINTS_CLES".`;
     } else {
       phaseInstruction = `OBJECTIF DE LA PHASE ECRIS (RÉDACTION COMPLÈTE) :
-Rédige intégralement l'ensemble des slides du cours (6 à 10 slides) d'après le plan Markdown fourni.
-Applique rigoureusement les règles de ton de voix brand_voice (ex: tutoiement, langage direct, pas de jargon non expliqué, accroche percutante).
-Assure-toi que la dernière slide soit impérativement le template VIBECODING - FIN avec un encart EN BREF faisant la transition vers la suite.`;
+Rédige intégralement l'ensemble des slides du cours (6 à 10 slides).
+Utilise EXCLUSIVEMENT les noms de templates officiels ci-dessus.
+La dernière slide doit obligatoirement être "VIBECODING - FIN".`;
     }
 
     const systemPrompt = `Tu es l'expert Vibe Slicer. Tu prends un plan de cours Markdown et tu génères un objet JSON valide de slides de cours selon les règles ci-dessous.
 
 ${referenceRules}
+
+${validTemplatesList}
 
 ${phaseInstruction}
 
@@ -86,7 +101,7 @@ Le JSON doit impérativement respecter la structure exacte ci-dessous :
   "lessonType": "${lesson.type}",
   "slides": [
     {
-      "template": "NOM_DU_TEMPLATE_VALIDE",
+      "template": "NOM_EXACT_DU_TEMPLATE_OFFICIEL",
       "content": {
         "Titre": "..."
       }
@@ -105,7 +120,7 @@ Renvoie EXCLUSIVEMENT le JSON valide brut, sans aucun texte d'introduction ni ba
         contents: `${systemPrompt}\n\nVoici le plan Markdown de la leçon :\n${lesson.plan}`,
         config: {
           responseMimeType: 'application/json',
-          temperature: 0.2
+          temperature: 0.1
         }
       });
       generatedJsonText = response.text;
@@ -119,14 +134,13 @@ Renvoie EXCLUSIVEMENT le JSON valide brut, sans aucun texte d'introduction ni ba
           { role: 'user', content: `Voici le plan Markdown de la leçon :\n${lesson.plan}` }
         ],
         response_format: { type: 'json_object' },
-        temperature: 0.2
+        temperature: 0.1
       });
       generatedJsonText = completion.choices[0].message.content;
     } else {
-      return sendError('Aucune clé d\'API IA (GEMINI_API_KEY ou OPENAI_API_KEY) n\'est configurée dans Vercel. Rendez-vous dans Vercel > Settings > Environment Variables pour l\'ajouter.');
+      return sendError('Aucune clé d\'API IA (GEMINI_API_KEY ou OPENAI_API_KEY) n\'est configurée dans Vercel.');
     }
 
-    // Clean potential markdown blocks
     let cleanJson = generatedJsonText.trim();
     if (cleanJson.startsWith('```json')) {
       cleanJson = cleanJson.replace(/^```json/, '').replace(/```$/, '').trim();
