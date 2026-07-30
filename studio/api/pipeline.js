@@ -1,6 +1,7 @@
 import { GoogleGenAI } from '@google/genai';
 import OpenAI from 'openai';
 import { supabase } from './_supabase.js';
+import { getReferenceRules } from './_rules.js';
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -15,7 +16,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { slug, phase, model } = req.body || {};
+  const { slug, phase } = req.body || {};
   if (!slug || !phase) {
     return res.status(400).json({ error: 'Slug et phase sont requis (ex: phase: "decoupe" ou "ecris")' });
   }
@@ -36,15 +37,22 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'La leçon n\'a pas encore de plan MD sur lequel effectuer la découpe ou rédaction.' });
     }
 
-    const systemPrompt = `Tu es l'expert Vibe Slicer. Tu prends un plan de cours Markdown et tu génères un objet JSON valide de slides de cours selon les templates VibeCoding.
-Le JSON doit impérativement avoir la structure suivante :
+    // Load strict reference rules dynamically from files
+    const referenceRules = getReferenceRules();
+
+    const systemPrompt = `Tu es l'expert Vibe Slicer. Tu prends un plan de cours Markdown et tu génères un objet JSON valide de slides de cours selon les règles pédagogiques et techniques ci-dessous.
+
+${referenceRules}
+
+INSTRUCTION DE STRUCTURE :
+Le JSON doit impérativement respecter la structure exacte ci-dessous :
 {
   "lessonTitle": "${lesson.title}",
   "lessonType": "${lesson.type}",
   "slides": [
     {
-      "template": "VIBECODING - COVER",
-      "content": { "Titre": "..." }
+      "template": "NOM_DU_TEMPLATE_VALIDE",
+      "content": { ... }
     }
   ]
 }
