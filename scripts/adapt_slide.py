@@ -328,7 +328,7 @@ def main():
     parser.add_argument("--node-id", required=True, help="ID du nœud de la slide ou section dans Figma (ex: 484:3989)")
     args = parser.parse_args()
 
-    token = "REMOVED_SECRET"
+    token = os.environ.get("FIGMA_TOKEN", "")
     file_key = "X29iTl53DAreMnpHDehsTx"
 
     adapter = SlideAdapter(token, file_key)

@@ -1,3 +1,4 @@
+import os
 #!/usr/bin/env python3
 import sys
 import json
@@ -6,7 +7,7 @@ import urllib.parse
 
 # Configuration
 FILE_KEY = "X29iTl53DAreMnpHDehsTx"
-TOKEN = "REMOVED_SECRET"
+TOKEN = os.environ.get("FIGMA_TOKEN", "")
 THEORY_PAGE_ID = "426:7791"
 
 def figma_api_request(path: str):

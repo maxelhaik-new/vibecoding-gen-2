@@ -3,7 +3,7 @@ import json
 import os
 
 file_key = "X29iTl53DAreMnpHDehsTx"
-token = "REMOVED_SECRET"
+token = os.environ.get("FIGMA_TOKEN", "")
 
 pages = {
     "Page 1 - M1 M2 (Théorie)": "426:7791",

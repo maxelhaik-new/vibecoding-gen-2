@@ -1,8 +1,9 @@
+import os
 import urllib.request
 import json
 
 file_key = "X29iTl53DAreMnpHDehsTx"
-token = "REMOVED_SECRET"
+token = os.environ.get("FIGMA_TOKEN", "")
 
 url = f"https://api.figma.com/v1/files/{file_key}"
 req = urllib.request.Request(url)

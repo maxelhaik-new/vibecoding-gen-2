@@ -1,9 +1,10 @@
+import os
 import urllib.request
 import json
 
 file_key = "X29iTl53DAreMnpHDehsTx"
 node_id = "137:23738"
-token = "REMOVED_SECRET"
+token = os.environ.get("FIGMA_TOKEN", "")
 
 url = f"https://api.figma.com/v1/files/{file_key}/nodes?ids={node_id}"
 

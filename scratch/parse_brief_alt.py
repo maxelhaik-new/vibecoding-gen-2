@@ -1,9 +1,10 @@
+import os
 import requests
 import json
 import math
 from pathlib import Path
 
-FIGMA_TOKEN = "REMOVED_SECRET"
+FIGMA_TOKEN = os.environ.get("FIGMA_TOKEN", "")
 FILE_KEY    = "X29iTl53DAreMnpHDehsTx"
 NODE_ID     = "1387:6047"
 

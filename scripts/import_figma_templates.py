@@ -26,7 +26,7 @@ else:
     load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
 
 # ─── Configuration ─────────────────────────────────────────────────────────────
-FIGMA_TOKEN = os.environ.get("FIGMA_TOKEN", "REMOVED_SECRET")
+FIGMA_TOKEN = os.environ.get("FIGMA_TOKEN", os.environ.get("FIGMA_TOKEN", ""))
 FILE_KEY    = os.environ.get("FIGMA_FILE_KEY", "X29iTl53DAreMnpHDehsTx")
 SECTION_ID  = os.environ.get("FIGMA_SECTION_ID", "236:11789")
 TEMPLATES_PATH = Path(__file__).parent.parent / "templates.json"

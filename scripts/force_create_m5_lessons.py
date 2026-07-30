@@ -1,9 +1,10 @@
+import os
 import json
 import urllib.request
 import urllib.parse
 import urllib.error
 
-AIRTABLE_API_KEY = "REMOVED_SECRET"
+AIRTABLE_API_KEY = os.environ.get("AIRTABLE_API_KEY", "")
 BASE_ID = "appt360zhTgDY1t4B"
 TABLE_NAME = "📟 Vibecoding"
 
