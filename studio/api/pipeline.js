@@ -1,7 +1,7 @@
 import { GoogleGenAI } from '@google/genai';
 import OpenAI from 'openai';
 import { supabase } from './_supabase.js';
-import { getReferenceRules } from './_rules.js';
+import { getStaticReferenceRules, getExtractedTemplates } from './_rules.js';
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -16,9 +16,9 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { slug, phase } = req.body || {};
-  if (!slug || !phase) {
-    return res.status(400).json({ error: 'Slug et phase sont requis (ex: phase: "decoupe" ou "ecris")' });
+  const { slug, phase = 'decoupe' } = req.body || {};
+  if (!slug) {
+    return res.status(400).json({ error: 'Le paramètre slug est requis (ex: slug: "m4c5l3")' });
   }
 
   try {
@@ -30,33 +30,67 @@ export default async function handler(req, res) {
       .single();
 
     if (error || !lesson) {
-      return res.status(404).json({ error: 'Leçon introuvable' });
+      return res.status(404).json({ error: 'Leçon introuvable dans Supabase' });
     }
 
     if (!lesson.plan) {
       return res.status(400).json({ error: 'La leçon n\'a pas encore de plan MD sur lequel effectuer la découpe ou rédaction.' });
     }
 
-    // Load strict reference rules dynamically from files
-    const referenceRules = getReferenceRules();
+    let templatesContext = '';
+    if (phase === 'decoupe') {
+      const summaryTemplates = getExtractedTemplates(null);
+      templatesContext = `CATALOGUE DES TEMPLATES VALIDES VIBECODING :\n${JSON.stringify(summaryTemplates, null, 2)}`;
+    } else {
+      let neededNames = ['VIBECODING - COVER', 'VIBECODING - INTRO', 'VIBECODING - PROCESS', 'VIBECODING - FIN'];
+      if (lesson.final && Array.isArray(lesson.final.slides)) {
+        neededNames = [...new Set([...neededNames, ...lesson.final.slides.map(s => s.template)])];
+      }
+      const targetedTemplates = getExtractedTemplates(neededNames);
+      templatesContext = `CONTRAINTES STRICTES DES TEMPLATES SÉLECTIONNÉS :\n${JSON.stringify(targetedTemplates, null, 2)}`;
+    }
 
-    const systemPrompt = `Tu es l'expert Vibe Slicer. Tu prends un plan de cours Markdown et tu génères un objet JSON valide de slides de cours selon les règles pédagogiques et techniques ci-dessous.
+    const staticRules = getStaticReferenceRules();
 
-${referenceRules}
+    let phaseInstruction = '';
+    if (phase === 'decoupe') {
+      phaseInstruction = `OBJECTIF DE LA PHASE DECOUPE :
+Analyse le plan Markdown et génère une séquence de 5 à 9 slides.
+Chaque slide doit impérativement comporter :
+- "title" : le titre explicite du sujet traité par la slide
+- "template" : le nom exact d'un template valide parmi le catalogue ci-dessus
+- "content" : un objet contenant au minimum la clé {"Titre": "..."}`;
+    } else {
+      phaseInstruction = `OBJECTIF DE LA PHASE ECRIS (RÉDACTION COMPLÈTE) :
+Rédige intégralement l'ensemble des slides du cours (6 à 10 slides).
+Respecte les limites min/max de caractères fournies pour chaque champ.
+Chaque slide doit avoir un "title", un "template" valide et son dictionnaire "content" complet.
+La dernière slide doit obligatoirement être le template "VIBECODING - FIN".`;
+    }
 
-INSTRUCTION DE STRUCTURE :
-Le JSON doit impérativement respecter la structure exacte ci-dessous :
+    const systemPrompt = `Tu es l'expert Vibe Slicer.
+
+${staticRules}
+
+${templatesContext}
+
+${phaseInstruction}
+
+INSTRUCTION STRICTE DE FORMAT JSON :
 {
   "lessonTitle": "${lesson.title}",
   "lessonType": "${lesson.type}",
   "slides": [
     {
-      "template": "NOM_DU_TEMPLATE_VALIDE",
-      "content": { ... }
+      "title": "Titre explicite de la slide",
+      "template": "NOM_EXACT_DU_TEMPLATE_OFFICIEL",
+      "content": {
+        "Titre": "..."
+      }
     }
   ]
 }
-Renvoie UNIQUEMENT le JSON valide sans explications ni balises markdown.`;
+Renvoie EXCLUSIVEMENT le JSON valide brut.`;
 
     let generatedJsonText = '';
 
@@ -84,14 +118,28 @@ Renvoie UNIQUEMENT le JSON valide sans explications ni balises markdown.`;
       });
       generatedJsonText = completion.choices[0].message.content;
     } else {
-      return res.status(400).json({
-        error: 'Aucune clé d\'API IA (GEMINI_API_KEY ou OPENAI_API_KEY) configurée dans Vercel.'
-      });
+      return res.status(400).json({ error: 'Aucune clé d\'API IA configurée dans Vercel.' });
     }
 
-    const parsedFinal = JSON.parse(generatedJsonText);
+    let cleanJson = generatedJsonText.trim();
+    if (cleanJson.startsWith('```json')) {
+      cleanJson = cleanJson.replace(/^```json/, '').replace(/```$/, '').trim();
+    } else if (cleanJson.startsWith('```')) {
+      cleanJson = cleanJson.replace(/^```/, '').replace(/```$/, '').trim();
+    }
+
+    const parsedFinal = JSON.parse(cleanJson);
+
+    if (parsedFinal.slides && Array.isArray(parsedFinal.slides)) {
+      parsedFinal.slides = parsedFinal.slides.map(s => ({
+        title: s.title || (s.content && (s.content['Titre'] || s.content['Titre 1'])) || 'Slide',
+        template: s.template || 'VIBECODING - COVER CHAP',
+        content: s.content || { Titre: s.title || 'Slide' }
+      }));
+    }
+
     const slideCount = parsedFinal.slides ? parsedFinal.slides.length : 0;
-    const newStatus = slideCount <= 1 ? 'sliced' : 'written';
+    const newStatus = phase === 'decoupe' ? 'sliced' : (slideCount > 1 ? 'written' : 'sliced');
 
     // Update Supabase
     const { data: updated, error: updateErr } = await supabase
