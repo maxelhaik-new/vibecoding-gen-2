@@ -1,7 +1,7 @@
 import { GoogleGenAI } from '@google/genai';
 import OpenAI from 'openai';
 import { supabase } from '../_supabase.js';
-import { getReferenceRules } from '../_rules.js';
+import { getStaticReferenceRules } from '../_rules.js';
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -36,7 +36,7 @@ export default async function handler(req, res) {
   }
 
   // Load strict reference rules dynamically from files
-  const referenceRules = getReferenceRules();
+  const referenceRules = getStaticReferenceRules();
 
   const systemInstruction = `Tu es l'assistant Vibe Slicer. Tu aides l'utilisateur à créer, structurer, découper et rédiger des leçons de cours avec des slides JSON.
 Respecte scrupuleusement l'ensemble des règles de marque, de style et de templates ci-dessous :

@@ -1,14 +1,27 @@
 import fs from 'fs';
 import path from 'path';
 
+const possiblePaths = [
+  path.join(process.cwd(), '..'), // Vercel Root Directory 'studio' or Local Dev
+  process.cwd(),
+  path.join(process.cwd(), 'config') // fallback
+];
+
+function findFile(filename) {
+  for (const p of possiblePaths) {
+    const fullPath = path.join(p, filename);
+    if (fs.existsSync(fullPath)) return fullPath;
+  }
+  return null;
+}
+
 export function getStaticReferenceRules() {
-  const configDir = path.join(process.cwd(), 'config');
   const filesToRead = ['brand_voice.md', 'ai.md', 'icon_mapping.md', 'image_style_guide.md'];
   
   let merged = '';
   for (const filename of filesToRead) {
-    const filePath = path.join(configDir, filename);
-    if (fs.existsSync(filePath)) {
+    const filePath = findFile(filename);
+    if (filePath) {
       merged += `\n=== FILE: ${filename} ===\n` + fs.readFileSync(filePath, 'utf-8');
     }
   }
@@ -16,8 +29,8 @@ export function getStaticReferenceRules() {
 }
 
 export function getExtractedTemplates(templateNames) {
-  const templatesPath = path.join(process.cwd(), 'templates.json');
-  if (!fs.existsSync(templatesPath)) return [];
+  const templatesPath = findFile('templates.json');
+  if (!templatesPath) return [];
 
   try {
     const allTemplates = JSON.parse(fs.readFileSync(templatesPath, 'utf-8'));
