@@ -151,6 +151,13 @@
         "Titre Bulle": "EN BREF",
         "Texte Bulle": "La prochaine leçon va plus loin : on verra comment créer ses propres Skills sur-mesure à partir de zéro, en partant des règles métier d'un projet réel. Un Skill maison, c'est un avantage concurrentiel que personne d'autre n'a dans son agent."
       }
+    },
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "title": "",
+      "content": {
+        "Titre": ""
+      }
     }
   ]
 }

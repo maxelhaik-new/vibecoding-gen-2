@@ -405,7 +405,7 @@ export const App: React.FC = () => {
   const [planMode, setPlanMode] = useState<'edit' | 'preview' | 'split'>(() => {
     return (localStorage.getItem('vibe_planMode') as any) || 'preview';
   });
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+  const [theme, setTheme] = useState<'light' | 'dark' | 'color'>(() => {
     return (localStorage.getItem('vibe_theme') as any) || 'light';
   });
 
@@ -417,8 +417,10 @@ export const App: React.FC = () => {
     const saved = localStorage.getItem('vibe_rightSidebarCollapsed');
     return saved !== null ? saved === 'true' : false;
   });
-  const [activeTabSidebar, setActiveTabSidebar] = useState<'tools' | 'console' | 'agent'>(() => {
-    return (localStorage.getItem('vibe_activeTabSidebar') as any) || 'tools';
+  const [activeTabSidebar, setActiveTabSidebar] = useState<'tools' | 'agent'>(() => {
+    const saved = localStorage.getItem('vibe_activeTabSidebar');
+    // Migrate 'console' -> 'tools'
+    return (saved === 'console' ? 'tools' : saved) as any || 'tools';
   });
   const [activeMobilePane, setActiveMobilePane] = useState<'lessons' | 'editor' | 'tools' | 'agent'>(() => {
     return (localStorage.getItem('vibe_activeMobilePane') as any) || 'editor';
@@ -461,7 +463,9 @@ export const App: React.FC = () => {
   } | null>(null);
 
   useEffect(() => {
+    // CSS defines [data-theme='light'], [data-theme='dark'], [data-theme='color']
     document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('vibe_theme', theme);
   }, [theme]);
   
   // Pipeline settings
@@ -711,6 +715,104 @@ export const App: React.FC = () => {
     }
   };
 
+  const handleAddSlide = async (insertIdx?: number, templateName?: string, title?: string) => {
+    if (!selectedSlug) return;
+    const defaultTemplate = templateName || (templates.length > 0 ? templates[0].name : 'VIBECODING - CONCEPT');
+    const defaultTitle = title || `Nouvelle Slide ${(lessonData?.final?.slides?.length || 0) + 1}`;
+
+    const newSlide = {
+      template: defaultTemplate,
+      title: defaultTitle,
+      content: {
+        Titre: defaultTitle
+      }
+    };
+
+    const currentSlides = lessonData?.final?.slides ? [...lessonData.final.slides] : [];
+    const targetIdx = typeof insertIdx === 'number' ? insertIdx : currentSlides.length;
+    currentSlides.splice(targetIdx, 0, newSlide);
+
+    const updatedFinal = {
+      lessonTitle: lessonData?.final?.lessonTitle || selectedSlug.toUpperCase(),
+      slides: currentSlides
+    };
+
+    const updatedLessonData = {
+      plan: lessonData?.plan || '',
+      final: updatedFinal
+    };
+
+    setLessonData(updatedLessonData);
+    setSaveStatus('saving');
+
+    try {
+      const res = await fetch(`/api/lesson/${selectedSlug}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plan: updatedLessonData.plan,
+          final: updatedLessonData.final,
+        }),
+      });
+      if (res.ok) {
+        lastSavedDataRef.current = {
+          plan: updatedLessonData.plan,
+          final: updatedLessonData.final
+        };
+        setSaveStatus('saved');
+        await fetchLessons();
+      } else {
+        setSaveStatus('error');
+      }
+    } catch (e) {
+      console.error('Error adding slide:', e);
+      setSaveStatus('error');
+    }
+  };
+
+  const handleSlideTitleChange = async (idx: number, newTitle: string) => {
+    if (!lessonData || !lessonData.final || !selectedSlug) return;
+    const slides = [...lessonData.final.slides];
+    slides[idx] = {
+      ...slides[idx],
+      title: newTitle,
+      content: {
+        ...slides[idx].content,
+        Titre: newTitle
+      }
+    };
+
+    const updatedLessonData = {
+      ...lessonData,
+      final: { ...lessonData.final, slides }
+    };
+    setLessonData(updatedLessonData);
+
+    setSaveStatus('saving');
+    try {
+      const res = await fetch(`/api/lesson/${selectedSlug}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plan: updatedLessonData.plan,
+          final: updatedLessonData.final,
+        }),
+      });
+      if (res.ok) {
+        lastSavedDataRef.current = {
+          plan: updatedLessonData.plan,
+          final: updatedLessonData.final
+        };
+        setSaveStatus('saved');
+      } else {
+        setSaveStatus('error');
+      }
+    } catch (e) {
+      console.error('Error saving slide title:', e);
+      setSaveStatus('error');
+    }
+  };
+
   const handleTemplateChange = async (idx: number, newTemplate: string) => {
     if (!lessonData || !lessonData.final || !selectedSlug) return;
     const slides = [...lessonData.final.slides];
@@ -741,14 +843,20 @@ export const App: React.FC = () => {
         };
         setSaveStatus('saved');
         
-        // Trigger single slide regeneration to rewrite for the new template
-        const instruction = `Réécrire entièrement cette slide pour s'adapter parfaitement au nouveau template "${newTemplate}". Adapter le contenu existant aux contraintes et aux champs du nouveau template.`;
-        handleRegenerateSlide(idx, instruction);
+        // Identify current lesson status
+        const currentLessonObj = lessons.find((l) => l.slug === selectedSlug);
+        const isWrittenOrCompleted = currentLessonObj && (currentLessonObj.status === 'written' || currentLessonObj.status === 'completed');
+
+        // Trigger single slide regeneration ONLY if lesson has already been written
+        if (isWrittenOrCompleted) {
+          const instruction = `Réécrire entièrement cette slide pour s'adapter parfaitement au nouveau template "${newTemplate}". Adapter le contenu existant aux contraintes et aux champs du nouveau template.`;
+          handleRegenerateSlide(idx, instruction);
+        }
       } else {
         setSaveStatus('error');
       }
     } catch (e) {
-      console.error('Error saving before template change rewrite:', e);
+      console.error('Error saving before template change:', e);
       setSaveStatus('error');
     }
   };
@@ -1185,20 +1293,7 @@ export const App: React.FC = () => {
         >
           ⚡
         </button>
-        <button
-          className={`activity-btn ${activeTabSidebar === 'console' && !rightSidebarCollapsed ? 'active' : ''}`}
-          onClick={() => {
-            if (activeTabSidebar === 'console' && !rightSidebarCollapsed) {
-              setRightSidebarCollapsed(true);
-            } else {
-              setActiveTabSidebar('console');
-              setRightSidebarCollapsed(false);
-            }
-          }}
-          title="Console d'Exécution (🖥️)"
-        >
-          🖥️
-        </button>
+        {/* Console button removed — now inline in Outils tab */}
         <button
           className={`activity-btn ${activeTabSidebar === 'agent' && !rightSidebarCollapsed ? 'active' : ''}`}
           onClick={() => {
@@ -1492,28 +1587,39 @@ export const App: React.FC = () => {
             </p>
           </div>
 
-          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-            {/* Theme Toggle Button */}
-            <button
-              onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-              style={{
-                background: 'var(--bg-tertiary)',
-                border: '1px solid var(--border-color)',
-                borderRadius: '6px',
-                color: 'var(--text-secondary)',
-                padding: '6px 12px',
-                fontSize: '12px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                transition: 'background 0.15s'
-              }}
-            >
-              {theme === 'light' ? '🌙 Sombre' : '☀️ Clair'}
-            </button>
-            {/* Tab switchers */}
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
+            {/* Theme Segmented Control: Clair / Sombre / Couleur */}
+            <div style={{
+              display: 'flex',
+              background: 'var(--bg-tertiary)',
+              padding: '2px',
+              borderRadius: '6px',
+              border: '1px solid var(--border-color)',
+              flexShrink: 0
+            }}>
+              {(['light', 'dark', 'color'] as const).map((t) => (
+                <button
+                  key={t}
+                  onClick={() => { setTheme(t); localStorage.setItem('vibe_theme', t); }}
+                  title={t === 'light' ? 'Mode Clair' : t === 'dark' ? 'Mode Sombre' : 'Mode Couleur'}
+                  style={{
+                    padding: '4px 8px',
+                    background: theme === t ? 'var(--bg-primary)' : 'transparent',
+                    border: 'none',
+                    borderRadius: '4px',
+                    cursor: 'pointer',
+                    fontSize: '14px',
+                    lineHeight: 1,
+                    opacity: theme === t ? 1 : 0.5,
+                    transition: 'all 0.15s'
+                  }}
+                >
+                  {t === 'light' ? '☀️' : t === 'dark' ? '🌙' : '🎨'}
+                </button>
+              ))}
+            </div>
+
+            {/* Tab switchers — ordre : Plan / Découpage / Slides / JSON + HTML bouton discret */}
             <div style={{
               display: 'flex',
               background: 'var(--bg-tertiary)',
@@ -1522,81 +1628,92 @@ export const App: React.FC = () => {
               border: '1px solid var(--border-color)'
             }}>
               <button
-                onClick={() => setActiveTab('visual')}
-                style={{
-                  padding: '4px 12px',
-                  background: activeTab === 'visual' ? 'var(--bg-primary)' : 'transparent',
-                  border: 'none',
-                  color: activeTab === 'visual' ? 'var(--accent-cyan)' : 'var(--text-secondary)',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  borderRadius: '4px',
-                  cursor: 'pointer'
-                }}
-              >
-                Slides
-              </button>
-              <button
-                onClick={() => setActiveTab('decoupage')}
-                style={{
-                  padding: '4px 12px',
-                  background: activeTab === 'decoupage' ? 'var(--bg-primary)' : 'transparent',
-                  border: 'none',
-                  color: activeTab === 'decoupage' ? 'var(--accent-cyan)' : 'var(--text-secondary)',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  borderRadius: '4px',
-                  cursor: 'pointer'
-                }}
-              >
-                Découpage
-              </button>
-              <button
                 onClick={() => setActiveTab('plan')}
                 style={{
-                  padding: '4px 12px',
+                  padding: '4px 10px',
                   background: activeTab === 'plan' ? 'var(--bg-primary)' : 'transparent',
                   border: 'none',
                   color: activeTab === 'plan' ? 'var(--accent-cyan)' : 'var(--text-secondary)',
                   fontSize: '12px',
                   fontWeight: 600,
                   borderRadius: '4px',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap'
                 }}
               >
-                Plan (MD)
+                <span className="tab-icon">📝</span>
+                <span className="tab-label"> Plan</span>
+              </button>
+              <button
+                onClick={() => setActiveTab('decoupage')}
+                style={{
+                  padding: '4px 10px',
+                  background: activeTab === 'decoupage' ? 'var(--bg-primary)' : 'transparent',
+                  border: 'none',
+                  color: activeTab === 'decoupage' ? 'var(--accent-cyan)' : 'var(--text-secondary)',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                <span className="tab-icon">✂️</span>
+                <span className="tab-label"> Découpage</span>
+              </button>
+              <button
+                onClick={() => setActiveTab('visual')}
+                style={{
+                  padding: '4px 10px',
+                  background: activeTab === 'visual' ? 'var(--bg-primary)' : 'transparent',
+                  border: 'none',
+                  color: activeTab === 'visual' ? 'var(--accent-cyan)' : 'var(--text-secondary)',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                <span className="tab-icon">🖼️</span>
+                <span className="tab-label"> Slides</span>
               </button>
               <button
                 onClick={() => setActiveTab('json')}
                 style={{
-                  padding: '4px 12px',
+                  padding: '4px 10px',
                   background: activeTab === 'json' ? 'var(--bg-primary)' : 'transparent',
                   border: 'none',
                   color: activeTab === 'json' ? 'var(--accent-cyan)' : 'var(--text-secondary)',
                   fontSize: '12px',
                   fontWeight: 600,
                   borderRadius: '4px',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap'
                 }}
               >
-                JSON Brut
-              </button>
-              <button
-                onClick={() => setActiveTab('html')}
-                style={{
-                  padding: '4px 12px',
-                  background: activeTab === 'html' ? 'var(--bg-primary)' : 'transparent',
-                  border: 'none',
-                  color: activeTab === 'html' ? 'var(--accent-cyan)' : 'var(--text-secondary)',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  borderRadius: '4px',
-                  cursor: 'pointer'
-                }}
-              >
-                🌐 HTML
+                <span className="tab-icon">{ '{}'}</span>
+                <span className="tab-label"> JSON</span>
               </button>
             </div>
+            {/* HTML — bouton discret séparé */}
+            <button
+              onClick={() => setActiveTab('html')}
+              title="Aperçu HTML"
+              style={{
+                padding: '5px 8px',
+                background: activeTab === 'html' ? 'var(--accent-cyan)' : 'var(--bg-tertiary)',
+                border: '1px solid var(--border-color)',
+                borderRadius: '6px',
+                color: activeTab === 'html' ? 'white' : 'var(--text-secondary)',
+                fontSize: '13px',
+                cursor: 'pointer',
+                flexShrink: 0,
+                transition: 'all 0.15s'
+              }}
+            >
+              🌐
+            </button>
 
             <button
               onClick={handleCopyJSON}
@@ -1634,11 +1751,30 @@ export const App: React.FC = () => {
                     setFocusedFieldInfo({ slideIndex, fieldKey, value, rule });
                   },
                   onFieldBlur: () => {
-                    // Optional: keep it or clear it. Let's keep it so user can see it after blur,
-                    // but they might want to see the last focused field. We won't clear it.
+                    // Optional: keep it or clear it.
                   }
                 }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', paddingBottom: '40px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '-16px' }}>
+                      <span style={{ fontSize: '13px', color: 'var(--text-secondary)', fontWeight: 600 }}>
+                        {lessonData.final?.slides?.length || 0} slide(s) au total
+                      </span>
+                      <button
+                        onClick={() => handleAddSlide()}
+                        className="glow-btn"
+                        style={{
+                          padding: '6px 14px',
+                          fontSize: '12px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '6px'
+                        }}
+                      >
+                        <span>➕</span>
+                        <span>Ajouter une slide</span>
+                      </button>
+                    </div>
+
                     {lessonData.final && lessonData.final.slides && lessonData.final.slides.length > 0 ? (
                       lessonData.final.slides.map((slide, idx) => (
                         <SlideCard
@@ -1682,45 +1818,97 @@ export const App: React.FC = () => {
               {/* Tab: Decoupage Table */}
               {activeTab === 'decoupage' && (
                 <div className="glass-panel" style={{ padding: '20px', height: 'calc(100vh - 130px)', overflowY: 'auto' }}>
-                  <h3 style={{ marginBottom: '16px', color: 'var(--text-primary)' }}>Tableau de Découpage</h3>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+                    <div>
+                      <h3 style={{ margin: 0, color: 'var(--text-primary)' }}>Tableau de Découpage</h3>
+                      <p style={{ margin: '4px 0 0 0', fontSize: '12px', color: 'var(--text-secondary)' }}>
+                        Structure et gabarits de la leçon. Vous pouvez ajouter, réordonner, renommer et changer les templates ici.
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => handleAddSlide()}
+                      className="glow-btn"
+                      style={{
+                        padding: '6px 14px',
+                        fontSize: '12px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '6px'
+                      }}
+                    >
+                      <span>➕</span>
+                      <span>Ajouter une slide</span>
+                    </button>
+                  </div>
+
                   {lessonData.final && lessonData.final.slides && lessonData.final.slides.length > 0 ? (
                     <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '13px' }}>
                       <thead>
                         <tr style={{ borderBottom: '2px solid var(--border-color)', color: 'var(--text-secondary)' }}>
-                          <th style={{ padding: '12px 8px', width: '50px' }}>N°</th>
+                          <th style={{ padding: '12px 8px', width: '40px' }}>N°</th>
                           <th style={{ padding: '12px 8px' }}>Titre de la slide</th>
-                          <th style={{ padding: '12px 8px' }}>Template utilisé</th>
-                          <th style={{ padding: '12px 8px', width: '120px', textAlign: 'right' }}>Actions</th>
+                          <th style={{ padding: '12px 8px', width: '300px' }}>Template utilisé</th>
+                          <th style={{ padding: '12px 8px', width: '110px', textAlign: 'right' }}>Actions</th>
                         </tr>
                       </thead>
                       <tbody>
                         {lessonData.final.slides.map((slide, idx) => {
-                          const templateList = Object.keys(templates).length > 0 ? Object.keys(templates) : [slide.template];
+                          const templateList = templates.length > 0 
+                            ? templates.filter(t => !t.name.startsWith("PROJET -") || t.name === slide.template) 
+                            : [{ name: slide.template, description: '' }];
+                          const currentTitle = slide.title || slide.content?.['Titre'] || slide.content?.['Titre 1'] || slide.content?.['Intro'] || '';
+                          
                           return (
                             <tr key={idx} style={{ borderBottom: '1px solid var(--border-color)', background: idx % 2 === 0 ? 'transparent' : 'var(--bg-tertiary)' }}>
-                              <td style={{ padding: '12px 8px', color: 'var(--text-muted)' }}>{idx + 1}</td>
-                              <td style={{ padding: '12px 8px', fontWeight: 600, color: 'var(--text-primary)' }}>
-                                {slide.title || slide.content?.['Titre'] || slide.content?.['Titre 1'] || slide.content?.['Intro'] || 'Sans titre'}
+                              <td style={{ padding: '12px 8px', color: 'var(--text-muted)', fontWeight: 600 }}>{idx + 1}</td>
+                              <td style={{ padding: '12px 8px' }}>
+                                <input
+                                  type="text"
+                                  value={currentTitle}
+                                  placeholder="Entrez le titre de la slide..."
+                                  onChange={(e) => handleSlideTitleChange(idx, e.target.value)}
+                                  style={{
+                                    width: '100%',
+                                    padding: '6px 10px',
+                                    borderRadius: '6px',
+                                    border: '1px solid transparent',
+                                    background: 'transparent',
+                                    color: 'var(--text-primary)',
+                                    fontWeight: 600,
+                                    fontSize: '13px',
+                                    outline: 'none',
+                                    transition: 'all 0.15s'
+                                  }}
+                                  onFocus={(e) => {
+                                    e.target.style.background = 'var(--bg-secondary)';
+                                    e.target.style.borderColor = 'var(--border-color)';
+                                  }}
+                                  onBlur={(e) => {
+                                    e.target.style.background = 'transparent';
+                                    e.target.style.borderColor = 'transparent';
+                                  }}
+                                />
                               </td>
                               <td style={{ padding: '12px 8px' }}>
                                 <select
                                   value={slide.template}
                                   onChange={(e) => handleTemplateChange(idx, e.target.value)}
                                   style={{
-                                    padding: '4px 8px',
-                                    borderRadius: '4px',
+                                    width: '100%',
+                                    padding: '6px 10px',
+                                    borderRadius: '6px',
                                     border: '1px solid var(--border-color)',
                                     background: 'var(--bg-secondary)',
                                     color: 'var(--text-primary)',
-                                    fontFamily: 'monospace',
+                                    fontWeight: 600,
                                     fontSize: '12px',
                                     cursor: 'pointer',
                                     outline: 'none'
                                   }}
                                 >
-                                  {templateList.map((tName) => (
-                                    <option key={tName} value={tName}>
-                                      {tName.replace(/^VIBECODING\s*-\s*/i, '')}
+                                  {templateList.map((tRule) => (
+                                    <option key={tRule.name} value={tRule.name}>
+                                      {tRule.name}
                                     </option>
                                   ))}
                                 </select>
@@ -1781,9 +1969,15 @@ export const App: React.FC = () => {
                       </tbody>
                     </table>
                   ) : (
-                    <div style={{ padding: '40px', textAlign: 'center', color: 'var(--text-secondary)' }}>
-                      <p>Aucune slide trouvée dans FINAL.json.</p>
-                      <p style={{ fontSize: '12px', marginTop: '8px' }}>Générez d'abord le découpage depuis le panneau de droite.</p>
+                    <div style={{ textAlign: 'center', padding: '40px', color: 'var(--text-secondary)' }}>
+                      <p style={{ marginBottom: '16px' }}>Aucune slide découpée dans cette leçon.</p>
+                      <button
+                        onClick={() => handleAddSlide()}
+                        className="glow-btn"
+                        style={{ padding: '8px 16px', fontSize: '13px' }}
+                      >
+                        ➕ Créer la première slide
+                      </button>
                     </div>
                   )}
                 </div>
@@ -2101,14 +2295,14 @@ export const App: React.FC = () => {
         {/* Header tabs selector */}
         <div style={{ padding: '12px 16px', borderBottom: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: 'var(--header-toolbar-height)' }}>
           <h3 style={{ fontSize: '13px', fontWeight: 700 }}>
-            {activeTabSidebar === 'agent' ? '🤖 Agent IA Workspace' : (activeTabSidebar === 'tools' ? '⚡ Outils & Validation' : '🖥️ Console')}
+            {activeTabSidebar === 'agent' ? '🤖 Agent IA' : '⚡ Outils'}
           </h3>
           
           <div style={{ display: 'flex', background: 'var(--bg-tertiary)', padding: '2px', borderRadius: '4px', border: '1px solid var(--border-color)' }}>
             <button
               onClick={() => setActiveTabSidebar('tools')}
               style={{
-                padding: '2px 8px',
+                padding: '2px 10px',
                 background: activeTabSidebar === 'tools' ? 'var(--bg-secondary)' : 'transparent',
                 border: 'none',
                 fontSize: '10px',
@@ -2118,27 +2312,12 @@ export const App: React.FC = () => {
                 color: activeTabSidebar === 'tools' ? 'var(--accent-blue)' : 'var(--text-secondary)'
               }}
             >
-              Outils
-            </button>
-            <button
-              onClick={() => setActiveTabSidebar('console')}
-              style={{
-                padding: '2px 8px',
-                background: activeTabSidebar === 'console' ? 'var(--bg-secondary)' : 'transparent',
-                border: 'none',
-                fontSize: '10px',
-                fontWeight: 600,
-                borderRadius: '2px',
-                cursor: 'pointer',
-                color: activeTabSidebar === 'console' ? 'var(--accent-blue)' : 'var(--text-secondary)'
-              }}
-            >
-              Console
+              ⚡ Outils
             </button>
             <button
               onClick={() => setActiveTabSidebar('agent')}
               style={{
-                padding: '2px 8px',
+                padding: '2px 10px',
                 background: activeTabSidebar === 'agent' ? 'var(--bg-secondary)' : 'transparent',
                 border: 'none',
                 fontSize: '10px',
@@ -2148,7 +2327,7 @@ export const App: React.FC = () => {
                 color: activeTabSidebar === 'agent' ? 'var(--accent-blue)' : 'var(--text-secondary)'
               }}
             >
-              Agent
+              🤖 Agent
             </button>
           </div>
         </div>
@@ -2209,25 +2388,36 @@ export const App: React.FC = () => {
               </section>
 
               {/* Script Orchestrator / Pipeline launcher */}
-              <section className="glass-panel" style={{ padding: '16px', background: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: '6px' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: 700, marginBottom: '12px', borderBottom: '1px solid var(--border-color)', paddingBottom: '6px' }}>
-                  ⚡ Lanceur de Pipeline
-                </h3>
+              <section className="glass-panel" style={{ padding: '16px', background: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: '8px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', borderBottom: '1px solid var(--border-color)', paddingBottom: '8px' }}>
+                  <h3 style={{ fontSize: '14px', fontWeight: 700, margin: 0, display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-primary)' }}>
+                    <span>⚡</span>
+                    <span>Pipeline Vibe Slicer</span>
+                  </h3>
+                  {runningPhase && (
+                    <span style={{ fontSize: '11px', color: 'var(--accent-blue)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <span className="spinner" style={{ width: '10px', height: '10px' }}></span>
+                      <span>En cours...</span>
+                    </span>
+                  )}
+                </div>
                 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '14px' }}>
+                {/* Global Settings */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '16px', padding: '10px', background: 'var(--bg-tertiary)', borderRadius: '6px', border: '1px solid var(--border-color)' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                    <label style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>Modèle IA (Optionnel) :</label>
+                    <label style={{ fontSize: '11px', fontWeight: 600, color: 'var(--text-secondary)' }}>Modèle IA :</label>
                     <select
                       value={selectedModel}
                       onChange={(e) => setSelectedModel(e.target.value)}
                       style={{
                         padding: '6px 10px',
-                        background: 'var(--bg-tertiary)',
+                        background: 'var(--bg-secondary)',
                         border: '1px solid var(--border-color)',
                         borderRadius: '6px',
                         color: 'var(--text-primary)',
                         fontSize: '12px',
-                        outline: 'none'
+                        outline: 'none',
+                        fontWeight: 500
                       }}
                     >
                       <option value="">Par défaut (.env)</option>
@@ -2246,113 +2436,171 @@ export const App: React.FC = () => {
                     </select>
                   </div>
                   
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: 'var(--text-secondary)', cursor: 'pointer' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: 'var(--text-primary)', cursor: 'pointer', fontWeight: 500 }}>
                     <input
                       type="checkbox"
                       checked={generateImage}
                       onChange={(e) => setGenerateImage(e.target.checked)}
-                      style={{ cursor: 'pointer' }}
+                      style={{ cursor: 'pointer', accentColor: 'var(--accent-blue)' }}
                     />
                     Générer les illustrations
                   </label>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                  <button
-                    onClick={() => runPipeline('decoupe')}
-                    disabled={!!runningPhase || !selectedSlug}
-                    style={{
-                      padding: '10px',
-                      background: runningPhase === 'decoupe' ? 'rgba(59, 130, 246, 0.15)' : 'var(--bg-tertiary)',
-                      color: 'var(--text-primary)',
-                      border: '1px solid var(--border-color)',
-                      borderRadius: '6px',
-                      fontSize: '12px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      transition: 'background 0.2s'
-                    }}
-                  >
-                    1. Découpage
-                  </button>
+                {/* Main Pipeline Steps */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  
+                  {/* Step 1: Découpage */}
+                  <div style={{
+                    padding: '10px 12px',
+                    borderRadius: '6px',
+                    background: runningPhase === 'decoupe' ? 'rgba(59, 130, 246, 0.12)' : 'var(--bg-tertiary)',
+                    border: '1px solid var(--border-color)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '8px'
+                  }}>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-primary)' }}>1. Découpage</span>
+                      <span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>Structure les slides & templates</span>
+                    </div>
+                    <button
+                      onClick={() => runPipeline('decoupe')}
+                      disabled={!!runningPhase || !selectedSlug}
+                      style={{
+                        padding: '6px 12px',
+                        background: runningPhase === 'decoupe' ? 'var(--accent-blue)' : 'var(--bg-secondary)',
+                        color: runningPhase === 'decoupe' ? '#fff' : 'var(--text-primary)',
+                        border: '1px solid var(--border-color)',
+                        borderRadius: '6px',
+                        fontSize: '11px',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        whiteSpace: 'nowrap'
+                      }}
+                    >
+                      Lancer
+                    </button>
+                  </div>
 
-                  <button
-                    onClick={() => runPipeline('ecris')}
-                    disabled={!!runningPhase || !selectedSlug}
-                    style={{
-                      padding: '10px',
-                      background: runningPhase === 'ecris' ? 'rgba(59, 130, 246, 0.15)' : 'var(--bg-tertiary)',
-                      color: 'var(--text-primary)',
-                      border: '1px solid var(--border-color)',
-                      borderRadius: '6px',
-                      fontSize: '12px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      transition: 'background 0.2s'
-                    }}
-                  >
-                    2. Rédaction
-                  </button>
+                  {/* Step 2: Rédaction */}
+                  <div style={{
+                    padding: '10px 12px',
+                    borderRadius: '6px',
+                    background: runningPhase === 'ecris' ? 'rgba(59, 130, 246, 0.12)' : 'var(--bg-tertiary)',
+                    border: '1px solid var(--border-color)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '8px'
+                  }}>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-primary)' }}>2. Rédaction</span>
+                      <span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>Rédige le contenu pédagogique</span>
+                    </div>
+                    <button
+                      onClick={() => runPipeline('ecris')}
+                      disabled={!!runningPhase || !selectedSlug}
+                      style={{
+                        padding: '6px 12px',
+                        background: runningPhase === 'ecris' ? 'var(--accent-blue)' : 'var(--bg-secondary)',
+                        color: runningPhase === 'ecris' ? '#fff' : 'var(--text-primary)',
+                        border: '1px solid var(--border-color)',
+                        borderRadius: '6px',
+                        fontSize: '11px',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        whiteSpace: 'nowrap'
+                      }}
+                    >
+                      Lancer
+                    </button>
+                  </div>
 
-                  <button
-                    onClick={() => runPipeline('genere')}
-                    disabled={!!runningPhase || !selectedSlug}
-                    style={{
-                      padding: '10px',
-                      background: runningPhase === 'genere' ? 'rgba(59, 130, 246, 0.15)' : 'var(--bg-tertiary)',
-                      color: 'var(--text-primary)',
-                      border: '1px solid var(--border-color)',
-                      borderRadius: '6px',
-                      fontSize: '12px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      transition: 'background 0.2s'
-                    }}
-                  >
-                    3. Images Gen
-                  </button>
+                  {/* Step 3: Images Gen */}
+                  <div style={{
+                    padding: '10px 12px',
+                    borderRadius: '6px',
+                    background: runningPhase === 'genere' ? 'rgba(59, 130, 246, 0.12)' : 'var(--bg-tertiary)',
+                    border: '1px solid var(--border-color)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '8px'
+                  }}>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--text-primary)' }}>3. Images Gen</span>
+                      <span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>Génère visuels & schémas</span>
+                    </div>
+                    <button
+                      onClick={() => runPipeline('genere')}
+                      disabled={!!runningPhase || !selectedSlug}
+                      style={{
+                        padding: '6px 12px',
+                        background: runningPhase === 'genere' ? 'var(--accent-blue)' : 'var(--bg-secondary)',
+                        color: runningPhase === 'genere' ? '#fff' : 'var(--text-primary)',
+                        border: '1px solid var(--border-color)',
+                        borderRadius: '6px',
+                        fontSize: '11px',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        whiteSpace: 'nowrap'
+                      }}
+                    >
+                      Lancer
+                    </button>
+                  </div>
 
+                  {/* Tout Exécuter full width prominent CTA */}
                   <button
                     onClick={() => runPipeline('all')}
                     disabled={!!runningPhase || !selectedSlug}
+                    className="glow-btn"
                     style={{
+                      width: '100%',
                       padding: '10px',
-                      background: runningPhase === 'all' ? 'var(--accent-blue)' : 'rgba(59, 130, 246, 0.08)',
-                      color: runningPhase === 'all' ? 'white' : 'var(--text-primary)',
-                      border: '1px solid var(--accent-blue)',
-                      borderRadius: '6px',
+                      marginTop: '4px',
                       fontSize: '12px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      transition: 'background 0.2s'
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '6px'
                     }}
                   >
-                    Tout exécuter
+                    <span>🚀</span>
+                    <span>Tout exécuter (1 ➔ 2 ➔ 3)</span>
                   </button>
-                </div>
-                
-                <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+
+                  <div style={{ height: '1px', background: 'var(--border-color)', margin: '6px 0' }} />
+
+                  {/* Specialized Actions */}
+                  <span style={{ fontSize: '10px', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    Actions Spéciales
+                  </span>
+
                   <button
                     onClick={() => runPipeline('intro')}
                     disabled={!!runningPhase || !selectedSlug}
                     style={{
                       width: '100%',
-                      padding: '10px',
-                      background: runningPhase === 'intro' ? 'rgba(16, 185, 129, 0.15)' : 'rgba(16, 185, 129, 0.08)',
-                      color: 'var(--text-primary)',
+                      padding: '8px 12px',
+                      background: runningPhase === 'intro' ? 'rgba(16, 185, 129, 0.2)' : 'rgba(16, 185, 129, 0.08)',
+                      color: 'var(--badge-green-text)',
                       border: '1px solid rgba(16, 185, 129, 0.3)',
                       borderRadius: '6px',
-                      fontSize: '12px',
+                      fontSize: '11px',
                       fontWeight: 600,
                       cursor: 'pointer',
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '6px',
-                      transition: 'background 0.2s'
+                      justifyContent: 'flex-start',
+                      gap: '8px',
+                      transition: 'all 0.15s'
                     }}
                   >
-                    ✨ Générer / Corriger l'Intro
+                    <span>✨</span>
+                    <span>Générer / Corriger l'Intro</span>
                   </button>
                   
                   <button
@@ -2360,80 +2608,82 @@ export const App: React.FC = () => {
                     disabled={!!runningPhase || !selectedSlug}
                     style={{
                       width: '100%',
-                      padding: '10px',
-                      background: runningPhase === 'objectif-l1' ? 'rgba(99, 102, 241, 0.15)' : 'rgba(99, 102, 241, 0.08)',
-                      color: 'var(--text-primary)',
+                      padding: '8px 12px',
+                      background: runningPhase === 'objectif-l1' ? 'rgba(99, 102, 241, 0.2)' : 'rgba(99, 102, 241, 0.08)',
+                      color: 'var(--accent-blue)',
                       border: '1px solid rgba(99, 102, 241, 0.3)',
                       borderRadius: '6px',
-                      fontSize: '12px',
+                      fontSize: '11px',
                       fontWeight: 600,
                       cursor: 'pointer',
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '6px',
-                      transition: 'background 0.2s'
+                      justifyContent: 'flex-start',
+                      gap: '8px',
+                      transition: 'all 0.15s'
                     }}
                   >
-                    🎯 Objectif L1 du Chapitre
+                    <span>🎯</span>
+                    <span>Objectif L1 du Chapitre</span>
                   </button>
+
                 </div>
               </section>
-            </>
-          )}
 
-          {activeTabSidebar === 'console' && (
-            <section style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%', minHeight: '300px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px', borderBottom: '1px solid var(--border-color)', paddingBottom: '6px' }}>
-                <h3 style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text-muted)' }}>
-                  Sortie console :
-                </h3>
-                
-                <div style={{ display: 'flex', gap: '8px' }}>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '10px', color: 'var(--text-muted)', cursor: 'pointer' }}>
-                    <input
-                      type="checkbox"
-                      checked={logAutoScroll}
-                      onChange={(e) => setLogAutoScroll(e.target.checked)}
-                    />
-                    Scroll
-                  </label>
-                  <button
-                    onClick={() => setLogs('')}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      color: 'var(--text-muted)',
-                      fontSize: '10px',
-                      cursor: 'pointer',
-                      fontWeight: 600
-                    }}
-                  >
-                    Effacer
-                  </button>
+              {/* Console inline — sous les boutons de pipeline */}
+              <section style={{ display: 'flex', flexDirection: 'column', minHeight: '180px', flex: '0 1 auto' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px', borderBottom: '1px solid var(--border-color)', paddingBottom: '4px' }}>
+                  <h4 style={{ fontSize: '11px', fontWeight: 600, color: 'var(--text-muted)', margin: 0 }}>
+                    🖥️ Console
+                  </h4>
+                  <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                    <label style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '10px', color: 'var(--text-muted)', cursor: 'pointer' }}>
+                      <input
+                        type="checkbox"
+                        checked={logAutoScroll}
+                        onChange={(e) => setLogAutoScroll(e.target.checked)}
+                      />
+                      Scroll
+                    </label>
+                    <button
+                      onClick={() => setLogs('')}
+                      style={{
+                        background: 'none',
+                        border: 'none',
+                        color: 'var(--text-muted)',
+                        fontSize: '10px',
+                        cursor: 'pointer',
+                        fontWeight: 600
+                      }}
+                    >
+                      Effacer
+                    </button>
+                  </div>
                 </div>
-              </div>
-
-              <pre
-                ref={logConsoleRef}
-                style={{
-                  flex: 1,
-                  background: 'var(--bg-tertiary)',
-                  border: '1px solid var(--border-color)',
-                  padding: '12px',
-                  borderRadius: '6px',
-                  color: 'var(--text-primary)',
-                  fontFamily: 'monospace',
-                  fontSize: '11px',
-                  lineHeight: '1.4',
-                  overflowY: 'auto',
-                  whiteSpace: 'pre-wrap',
-                  wordBreak: 'break-all'
-                }}
-              >
-                {logs || 'En attente de lancement...'}
-              </pre>
-            </section>
+                <pre
+                  ref={logConsoleRef}
+                  style={{
+                    flex: 1,
+                    minHeight: '150px',
+                    maxHeight: '300px',
+                    background: 'var(--bg-tertiary)',
+                    border: '1px solid var(--border-color)',
+                    padding: '10px',
+                    borderRadius: '6px',
+                    color: 'var(--text-primary)',
+                    fontFamily: 'monospace',
+                    fontSize: '11px',
+                    lineHeight: '1.4',
+                    overflowY: 'auto',
+                    whiteSpace: 'pre-wrap',
+                    wordBreak: 'break-all',
+                    margin: 0
+                  }}
+                >
+                  {logs || 'En attente de lancement...'}
+                </pre>
+              </section>
+            </>
           )}
 
           {activeTabSidebar === 'agent' && (

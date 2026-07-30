@@ -406,6 +406,7 @@ def run_phase_decoupe(client: genai.Client, model: str, outline: str, cache_name
         "VIBECODING - 2 BLOC - EVOLUTION": "VIBECODING - PROCESS",
         "VIBECODING - 2 BLOCS - EVOLUTION": "VIBECODING - PROCESS",
         "VIBECODING - 3 BLOCS - LARGE TEXT": "VIBECODING - 3 COLONNES",
+        "VIBECODING - PROMPT": "VIBECODING - PROMPT ALT",
     }
     
     for slide in lesson.slides:

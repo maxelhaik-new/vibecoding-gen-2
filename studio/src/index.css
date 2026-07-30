@@ -53,6 +53,21 @@
   --slide-subcard-bg: #f8fafc;
   --slide-subcard-border: #e2e8f0;
   --slide-input-bg: rgba(0, 0, 0, 0.015);
+
+  /* Gabarits Theme Variables - Light/Monochrome Mode */
+  --template-fig: #18181b;
+  --template-purple: #18181b;
+  --template-sunny: #e4e4e7;
+  --template-pink: #f4f4f5;
+  --template-purple-light: #fafafa;
+  --template-coral: #e4e4e7;
+  --template-pink-light: #f4f4f5;
+  --template-coral-light: #f4f4f5;
+  --template-coral-lightest: #fafafa;
+  --template-purple-lightest: #fafafa;
+  --template-magenta: #71717a;
+  --template-white-text: #ffffff;
+  --template-white-bg: #ffffff;
 }
 
 [data-theme='dark'] {
@@ -97,6 +112,80 @@
   --slide-subcard-bg: #1e2028;
   --slide-subcard-border: #2d303e;
   --slide-input-bg: rgba(255, 255, 255, 0.04);
+
+  /* Gabarits Theme Variables - Dark Mode */
+  --template-fig: #f4f4f5;
+  --template-purple: #f4f4f5;
+  --template-sunny: #27272a;
+  --template-pink: #1e2028;
+  --template-purple-light: #141519;
+  --template-coral: #27272a;
+  --template-pink-light: #1e2028;
+  --template-coral-light: #1e2028;
+  --template-coral-lightest: #18191e;
+  --template-purple-lightest: #18191e;
+  --template-magenta: #a1a1aa;
+  --template-white-text: #141519;
+  --template-white-bg: #1e2028;
+}
+
+[data-theme='color'] {
+  /* Color Theme (UI resembles light UI, templates are colored) */
+  --bg-primary: #f4f5f6;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #fafafa;
+  --bg-panel: #ffffff;
+  --border-color: #e4e4e7;
+  --border-focus: #3b82f6;
+  
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #8e8e93;
+  
+  --accent-blue: #3b82f6;
+  --accent-cyan: #0d9488;
+  --accent-gradient: #3b82f6;
+  --accent-red: #ef4444;
+  --accent-green: #22c55e;
+  
+  --badge-green-text: #15803d;
+  --badge-green-bg: #dcfce7;
+  --badge-blue-text: #1d4ed8;
+  --badge-blue-bg: #dbeafe;
+  --badge-yellow-text: #b45309;
+  --badge-yellow-bg: #fef3c7;
+  --badge-red-text: #b91c1c;
+  --badge-red-bg: #fee2e2;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  --shadow-panel: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+  
+  --bg-activity-bar: #eaebeb;
+  --bg-status-bar: #e4e4e7;
+
+  /* Slide Canvas Theme Variables - Color Mode */
+  --slide-bg: #ffffff;
+  --slide-text: #18181b;
+  --slide-subcard-bg: #f8fafc;
+  --slide-subcard-border: #e2e8f0;
+  --slide-input-bg: rgba(0, 0, 0, 0.015);
+
+  /* Original Gabarits Theme Colors */
+  --template-fig: #18093B;
+  --template-purple: #6634D9;
+  --template-sunny: #FFFF77;
+  --template-pink: #FFB2B2;
+  --template-purple-light: #EFE8FF;
+  --template-coral: #FCB3AD;
+  --template-pink-light: #FFBABB;
+  --template-coral-light: #F8DBDA;
+  --template-coral-lightest: #FCF1F0;
+  --template-purple-lightest: #F3F0FF;
+  --template-magenta: #FF5CE8;
+  --template-white-text: #ffffff;
+  --template-white-bg: #ffffff;
 }
 
 * {
@@ -707,4 +796,78 @@ input[type="text"]:focus, select:focus, textarea:focus {
   display: inline-block;
 }
 
+/* Responsive UI helpers */
+@media (max-width: 1100px) {
+  .responsive-text {
+    display: none !important;
+  }
+}
 
+/* Tab label responsive — hide text, show icon only on smaller screens */
+.tab-label {
+  display: inline;
+}
+.tab-icon {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .tab-label {
+    display: none;
+  }
+  .tab-icon {
+    display: inline;
+  }
+}
+
+/* Ensure color theme uses light UI variables (only overrides template/slide vars) */
+[data-theme='color'] {
+  --bg-primary: #f4f5f6;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #fafafa;
+  --bg-panel: #ffffff;
+  --border-color: #e4e4e7;
+  --border-focus: #3b82f6;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #8e8e93;
+  --accent-blue: #3b82f6;
+  --accent-cyan: #0d9488;
+  --accent-gradient: #3b82f6;
+  --accent-red: #ef4444;
+  --accent-green: #22c55e;
+  --badge-green-text: #15803d;
+  --badge-green-bg: #dcfce7;
+  --badge-blue-text: #1d4ed8;
+  --badge-blue-bg: #dbeafe;
+  --badge-yellow-text: #b45309;
+  --badge-yellow-bg: #fef3c7;
+  --badge-red-text: #b91c1c;
+  --badge-red-bg: #fee2e2;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  --shadow-panel: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+  --bg-activity-bar: #eaebeb;
+  --bg-status-bar: #e4e4e7;
+  /* Slide canvas */
+  --slide-bg: #ffffff;
+  --slide-text: #18181b;
+  --slide-subcard-bg: #f8fafc;
+  --slide-subcard-border: #e2e8f0;
+  --slide-input-bg: rgba(0, 0, 0, 0.015);
+  /* Template original colors */
+  --template-fig: #18093B;
+  --template-purple: #6634D9;
+  --template-sunny: #FFFF77;
+  --template-pink: #FFB2B2;
+  --template-purple-light: #EFE8FF;
+  --template-coral: #FCB3AD;
+  --template-pink-light: #FFBABB;
+  --template-coral-light: #F8DBDA;
+  --template-coral-lightest: #FCF1F0;
+  --template-purple-lightest: #F3F0FF;
+  --template-magenta: #FF5CE8;
+  --template-white-text: #ffffff;
+  --template-white-bg: #ffffff;
+}

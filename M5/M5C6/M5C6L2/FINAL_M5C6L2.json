@@ -1,0 +1,134 @@
+{
+  "lessonTitle": "M5C6L2 — Qu'est-ce qu'une API REST et comment l'interroger avec l'IA ?",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "API REST : l'interroger avec l'IA"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Ce qu'on va voir dans cette leçon",
+        "Intro": "Une API REST, c'est la porte d'entrée de presque tous les services du web — météo, paiement, cartographie, réseaux sociaux. Comprendre son fonctionnement, c'est pouvoir connecter n'importe quel service tiers à un projet. Faisons le tour ensemble.",
+        "Titre 1": "Le principe REST",
+        "Texte 1": "Voyons ce qu'est concrètement une API REST et pourquoi ce standard s'est imposé dans tous les projets web modernes.",
+        "Titre 2": "Les méthodes HTTP",
+        "Texte 2": "Zoom sur les quatre actions fondamentales qui permettent de lire, créer, modifier et supprimer des données via une API.",
+        "Titre 3": "L'IA comme guide",
+        "Texte 3": "Apprenons à formuler des consignes précises à l'agent IA pour intégrer une API tierce sans écrire le code manuellement."
+      }
+    },
+    {
+      "template": "VIBECODING - DEFINITION",
+      "content": {
+        "Titre": "Un peu de vocabulaire",
+        "Mot": "API REST",
+        "Definition": "Une API (Application Programming Interface) est un point de contact entre deux logiciels. REST (Representational State Transfer) est le style d'architecture le plus répandu sur le web. Une API REST expose des URLs appelées endpoints. On envoie une requête HTTP à un endpoint — l'API renvoie une réponse, généralement au format JSON. Exemple : envoyer une requête à api.openweathermap.org/data/2.5/weather?q=Paris retourne la météo de Paris en JSON, prête à afficher dans une application.",
+        "Bulle": "REST n'est pas un protocole, c'est un ensemble de conventions. Un service qui les respecte est dit « RESTful ». La quasi-totalité des API publiques (Stripe, Google Maps, Spotify, GitHub) sont RESTful — ce qui rend la logique apprise ici universellement réutilisable.",
+        "Picto 1": "mdi:book-open-variant"
+      }
+    },
+    {
+      "template": "VIBECODING - PROCESS",
+      "content": {
+        "Titre": "Comment fonctionne une API REST ?",
+        "Intro": "Chaque échange avec une API suit toujours le même cycle en six étapes, du déclenchement de la requête à l'affichage du résultat.",
+        "Titre 1": "Requête",
+        "Violet 1 ": "L'application envoie une requête HTTP",
+        "Titre 2": "Endpoint",
+        "Violet 2": "La requête cible une URL précise (endpoint)",
+        "Titre 3": "Auth",
+        "Violet 3": "La clé API identifie et autorise l'accès",
+        "Titre 4": "Traitement",
+        "Violet 4": "Le serveur distant traite la demande",
+        "Titre 5": "Réponse",
+        "Violet 5": "Le serveur renvoie un JSON ou une erreur",
+        "Titre 6": "Rendu",
+        "Violet 6": "L'application affiche ou stocke les données"
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Les méthodes HTTP : GET, POST, PUT, DELETE",
+        "Intro": "Quatre verbes HTTP couvrent la totalité des opérations possibles sur une API REST. Chacun correspond à une intention précise.",
+        "Titre 1": "GET — LIRE UNE RESSOURCE",
+        "Texte 1": "Récupérer des données sans les modifier. Exemple : GET /users/42 retourne le profil de l'utilisateur 42. Aucune donnée n'est altérée côté serveur.",
+        "Picto 1": "mdi:magnify",
+        "Titre 2": "POST — CRÉER UNE RESSOURCE",
+        "Texte 2": "Envoyer de nouvelles données au serveur. Exemple : POST /orders crée une nouvelle commande avec le contenu du panier transmis dans le corps de la requête.",
+        "Picto 2": "mdi:plus-circle-outline",
+        "Titre 3": "PUT — MODIFIER UNE RESSOURCE",
+        "Texte 3": "Remplacer ou mettre à jour une ressource existante. Exemple : PUT /users/42 écrase le profil complet avec les nouvelles valeurs envoyées dans la requête.",
+        "Picto 3": "mdi:pencil-outline",
+        "Titre 4": "DELETE — SUPPRIMER UNE RESSOURCE",
+        "Texte 4": "Supprimer définitivement une ressource côté serveur. Exemple : DELETE /posts/7 efface l'article 7. L'opération est irréversible sans sauvegarde préalable.",
+        "Picto 4": "mdi:trash-can-outline"
+      }
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Connecter une API météo",
+        "Intro": "OPENWEATHERMAP + AGENT IA",
+        "Texte 1": "OpenWeatherMap propose une API REST gratuite jusqu'à 1 000 appels/jour. L'objectif : afficher la météo en temps réel dans une application. On demande à l'agent IA : « Connecte l'API OpenWeatherMap à la page d'accueil. Utilise l'endpoint /weather avec le paramètre q=Paris et ma clé API stockée dans le fichier .env. Affiche la température et la description météo dans le composant WeatherCard. » L'agent génère le fetch, gère les erreurs HTTP et injecte les données dans l'interface — sans écrire une seule ligne manuellement.",
+        "Texte Bulle": "La clé API ne doit jamais apparaître en dur dans le code. L'agent sait lire les variables d'environnement depuis .env — mais encore faut-il le lui préciser explicitement dans la consigne. Un oubli ici expose la clé publiquement sur GitHub.",
+        "Source": "Source : OpenWeatherMap"
+      },
+      "image_concept": "A glowing weather dashboard floating in a stormy sky, with data streams shaped like rain and wind flowing into a smartphone screen, metaphor for live API data feeding an app interface, dramatic lighting",
+      "image_style": "chiaroscuro",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - PROMPT ALT",
+      "content": {
+        "Titre": "Consignes claires à l'IA pour une API",
+        "Intro": "Un prompt vague produit un code fragile. Trois éléments sont indispensables : l'endpoint cible, la méthode HTTP, et l'emplacement de la clé API.",
+        "Texte 1": "Connecte l'API Spotify à la page /search. Utilise la méthode GET sur l'endpoint https://api.spotify.com/v1/search avec le paramètre q={query}&type=track. Récupère le Bearer token depuis la variable d'environnement SPOTIFY_TOKEN. Affiche les 5 premiers résultats dans le composant TrackList.",
+        "Texte 2": "L'agent génère le fetch complet, gère le header Authorization et injecte les résultats dans le composant.",
+        "Texte 3": "Prompt API — Exemple Spotify",
+        "Texte 4": "// Fetch Spotify Search\nconst searchTracks = async (query) => {\n  const res = await fetch(\n    `https://api.spotify.com/v1/search?q=${query}&type=track`,\n    {\n      headers: {\n        Authorization: `Bearer ${process.env.SPOTIFY_TOKEN}`\n      }\n    }\n  );\n  if (!res.ok) throw new Error(`Erreur HTTP : ${res.status}`);\n  const data = await res.json();\n  return data.tracks.items.slice(0, 5);\n};",
+        "Texte Bulle": "Nommer le composant cible dans la consigne évite que l'agent crée un nouveau fichier au lieu de modifier l'existant."
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Erreurs fréquentes avec les API",
+        "Nom Checklist": "Points de contrôle",
+        "Intro": "Valider que chaque point est respecté avant de tester l'intégration en live.",
+        "Texte Intro": "Ces erreurs représentent 80 % des bugs rencontrés lors d'une première intégration d'API. Les identifier en amont évite des heures de débogage inutiles.",
+        "Texte 1": "La clé API est stockée dans le fichier .env, jamais écrite en dur dans le code source.",
+        "Texte 2": "La méthode HTTP utilisée (GET, POST…) correspond bien à l'action décrite dans la documentation de l'API.",
+        "Texte 3": "Le format du corps de requête (JSON, form-data) correspond à ce qu'attend l'endpoint ciblé.",
+        "Texte 4": "Le code HTTP de la réponse est vérifié (200 = succès, 401 = clé invalide, 429 = quota dépassé).",
+        "Texte 5": "Un bloc try/catch est présent pour gérer les erreurs réseau sans faire planter l'application."
+      }
+    },
+    {
+      "template": "VIBECODING - EXERCICE PRATIQUE",
+      "content": {
+        "EXERCICE": "EXERCICE",
+        "Titre": "À nous de jouer !",
+        "Intro": "Connecter une API publique à un projet existant avec l'aide de l'agent IA.",
+        "Titre 1": "Prompt de départ",
+        "Texte 1": "« Connecte l'API GitHub pour afficher mes 5 derniers dépôts publics sur la page /profil. »",
+        "Question 1": "Quelle méthode HTTP utiliser pour récupérer des dépôts ?",
+        "Question 2": "Où stocker le token GitHub pour ne pas l'exposer ?",
+        "Question 3": "Améliorer le prompt pour préciser l'endpoint et le composant cible.",
+        "Question 4": "Tester l'intégration et vérifier le code HTTP retourné dans la console."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "Une API REST expose des endpoints que l'on interroge avec des méthodes HTTP (GET, POST, PUT, DELETE). Chaque requête nécessite une URL précise, parfois une clé API, et retourne une réponse JSON. L'agent IA génère le code d'intégration à condition de recevoir une consigne structurée : endpoint, méthode, emplacement de la clé, composant cible. Des API comme OpenWeatherMap, Spotify ou GitHub sont accessibles gratuitement et constituent d'excellents terrains d'entraînement pour connecter un premier service tiers à un projet Vibe Coding.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Maîtriser les API REST, c'est débloquer un écosystème de milliers de services prêts à l'emploi. Dans les prochaines leçons, on verra comment gérer l'authentification OAuth et les webhooks pour des intégrations encore plus avancées — sans quitter l'environnement de développement."
+      }
+    }
+  ]
+}

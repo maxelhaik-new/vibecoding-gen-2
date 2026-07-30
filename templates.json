@@ -3273,65 +3273,6 @@
     ]
   },
   {
-    "name": "VIBECODING - PROMPT",
-    "status": "validé",
-    "description": "Template pour slide de type vibecoding - prompt.",
-    "text_layers": [
-      {
-        "key": "Exemple de prompt structuré",
-        "original_placeholder": "Exemple de prompt structuré",
-        "target_lenght": 27,
-        "min_lenght": 18,
-        "max_lenght": 41
-      },
-      {
-        "key": "Bloquer 15-30 min par jour ou 1h par semaine dans ",
-        "original_placeholder": "avec une trame ROCIF",
-        "target_lenght": 20,
-        "min_lenght": 14,
-        "max_lenght": 30
-      },
-      {
-        "key": "CONTEXTE : Je suis formateur en marketing pour PME",
-        "original_placeholder": "Rôle : Tu es un analyste marketing senior spécialisé  en e-commerce. \n\nObjectif : Créer une synthèse claire et exploitable  des tendances d'achat pour présentation direction. \n\nContexte : J'ai les données brutes de ventes Q4  et je dois préparer une présentation pour la direction.\n \nInstructions : Analyse les données et identifie : \n-1) Les 3 produits les plus performants, \n2) Les segments clients les plus actifs, \n3) Les tendances saisonnières, \n4) Les opportunités Q1. \n\nFormat : Rapport PowerPoint 5 slides max (slide 1 synthèse, slides 2-4 détails, slide 5 recommandations avec budget).",
-        "target_lenght": 594,
-        "min_lenght": 415,
-        "max_lenght": 773
-      },
-      {
-        "key": "CONTEXTE : Je suis formateur en marketing pour PME",
-        "original_placeholder": "Voici votre analyse Q4 structurée en 5 slides PowerPoint : \n\nSlide 1 - Synthèse : Croissance +23% vs Q3, portée par 3 catégories clés. \n\nSlide 2 - Top produits : 1) Électronique (+45%), 2) Mode (+32%), 3) Maison (+18%). Slide 3 - Segments clients : Millennials 35-44 ans représentent 42% du CA. Slide 4 - Tendances : Pic Black Friday +67%, reprise post-fêtes en janvier. Slide 5 - Opportunités Q1 : Focus électronique, budget marketing recommandé 150K€.",
-        "target_lenght": 453,
-        "min_lenght": 317,
-        "max_lenght": 589
-      },
-      {
-        "key": "TRAME ROCIF",
-        "original_placeholder": "TRAME ROCIF",
-        "target_lenght": 11,
-        "min_lenght": 7,
-        "max_lenght": 17
-      },
-      {
-        "key": "Ce prompt contient les 4 piliers essentiels qui ga",
-        "original_placeholder": "Une trame ROCIF structurée en 5 partie. On donne ici le rôle de l’IA (analyste marketing), les objectifs (une synthèse claire), le contexte (présentation à préparer), les tâches à effectuer  et le format (rapport powerpoint). ",
-        "target_lenght": 226,
-        "min_lenght": 158,
-        "max_lenght": 294
-      }
-    ],
-    "picto_layers": [
-      {
-        "key": "Picto 1",
-        "original_placeholder": "mdi:comment-user"
-      },
-      {
-        "key": "Picto 2",
-        "original_placeholder": "mdi:robot-outline"
-      }
-    ]
-  },
-  {
     "name": "VIBECODING - BRIEF ALT",
     "status": "validé",
     "description": "Template pour slide de type vibecoding - brief alt.",
@@ -3881,6 +3822,936 @@
         "target_lenght": 150,
         "min_lenght": 50,
         "max_lenght": 300
+      }
+    ]
+  },
+  {
+    "name": "PROJET - PROMPT 1",
+    "status": "validé",
+    "description": "Template spécial de projet fil rouge pour slide de type prompt 1.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "PROMPT.md",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Agis comme un développeur Frontend Expert en UX Mo",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "# 1. CONTEXTE & PERSONA",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Tu vas coder une application \"Mini-CRM\".",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "L'utilisateur final est Alexandre, un commercial t",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Cahier des charges :",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Alexandre, Commercial",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Utilisation 100% sur mobile en voiture.",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Plutôt que de devoir dicter chaque taille de bouto",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      }
+    ]
+  },
+  {
+    "name": "PROJET - PROMPT 2",
+    "status": "validé",
+    "description": "Template spécial de projet fil rouge pour slide de type prompt 2.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "PROMPT.md",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "# 2. PÉRIMÈTRE (MVP)",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "L'application a un périmètre volontairement très r",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Saisir un Nom, Téléphone et Note.",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Afficher un message de confirmation.",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "ATTENTION : NE CODE PAS de système de connexion (A",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "MVP: Ajouter un contact et une note (3 clics).",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "User Story",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Créer l'écran d'accueil avec un énorme bouton \"Ajo",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Construire le formulaire modal rapide : 3 champs (",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Gérer la sauvegarde fictive et afficher un toast d",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      }
+    ]
+  },
+  {
+    "name": "PROJET - PROMPT 3",
+    "status": "validé",
+    "description": "Template spécial de projet fil rouge pour slide de type prompt 3.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Stack technique choisie :",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "React / Next.js",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "La base solide et standardisée.",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Re",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Tailwind CSS v4",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Crucial pour que l'IA style tout inline sans créer",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "TW",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Lucide React",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "PROMPT.md",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "# 3. STACK TECHNIQUE",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Tu dois utiliser exclusivement les technologies su",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Frontend : React avec TypeScript.",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Style : Tailwind CSS (pas de fichiers CSS customs)",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Icônes : Import depuis 'lucide-react'.",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Données : Fake data en dur dans les composants.",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Imposez la librairie d'icônes pour éviter les SVG "
+      }
+    ]
+  },
+  {
+    "name": "PROJET - PROMPT 4",
+    "status": "validé",
+    "description": "Template spécial de projet fil rouge pour slide de type prompt 4.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "L'Amorce",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Rappel : On ne demande jamais de tout coder d'un coup. Le Prompt Zéro se termine toujours par la première User Story et le squelette de l’application.",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "PROMPT.md",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "# PREMIÈRE ACTION (AMORCE)",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Pour commencer, ne code pas toute l'application. G",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      }
+    ]
+  },
+  {
+    "name": "PROJET - DESIGN 1",
+    "status": "validé",
+    "description": "Template spécial de projet fil rouge pour slide de type design 1.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Sans consigne",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Avec consigne",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Agent.md",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "\"Utiliser des paddings et margins très généreux. L",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      }
+    ]
+  },
+  {
+    "name": "PROJET - DESIGN 2",
+    "status": "validé",
+    "description": "Template spécial de projet fil rouge pour slide de type design 2.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Agent.md",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "\"L'approche doit être strictement Mobile-First. Le",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Bouton",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      }
+    ]
+  },
+  {
+    "name": "PROJET - DESIGN 3",
+    "status": "validé",
+    "description": "Template spécial de projet fil rouge pour slide de type design 3.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Agent.md",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "\"L'approche doit être strictement Mobile-First. Le",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Dark Mode + Accent",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      }
+    ]
+  },
+  {
+    "name": "PROJET - DESIGN 4",
+    "status": "validé",
+    "description": "Template spécial de projet fil rouge pour slide de type design 4.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Agent.md",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "\"L'approche doit être strictement Mobile-First. Le",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Titre Principal",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Texte de corps avec un gris plus clair pour créer ",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      }
+    ]
+  },
+  {
+    "name": "PROJET - BRIEF",
+    "status": "validé",
+    "description": "Template spécial de projet fil rouge pour slide de type brief.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Titre Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Titre 1",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Texte 1",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      }
+    ],
+    "image_layers": [
+      {
+        "key": "image",
+        "original_placeholder": "Rectangle 7025",
+        "ratio": "16:9",
+        "width": 1161.0,
+        "height": 276.0
+      }
+    ]
+  },
+  {
+    "name": "PROJET - PERSONA",
+    "status": "validé",
+    "description": "Template spécial de projet fil rouge pour slide de type persona.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Alexandre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Commercial Terrain",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "En déplacement permanent",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Utilisation 100% sur Smartphone",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Ultra-pressé entre deux RDV",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "L'Interface Générée (UX/UI)",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Mobile-first : Grands boutons faciles à presser su",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Mode Sombre : Activé par défaut pour réduire la fa",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Action Rapide : Accès immédiat et omniprésent au b",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Le Périmètre du MVP",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Action unique ultra-optimisée : Ajouter un nouveau",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Pas de superflu : Aucune fonctionnalité d'analyse ",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon"
+      },
+      {
+        "key": "Picto 2",
+        "original_placeholder": "Icon"
+      },
+      {
+        "key": "Picto 3",
+        "original_placeholder": "Icon"
+      }
+    ]
+  },
+  {
+    "name": "PROJET - USER STORY",
+    "status": "validé",
+    "description": "Template spécial de projet fil rouge pour slide de type user story.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Application",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "\"Permettre au commercial d'ajouter une note post-R",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "User Story",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Créer l'écran d'accueil avec un énorme bouton \"Ajo",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Construire le formulaire modal rapide : 3 champs (",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Gérer la sauvegarde fictive et afficher un toast d",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon"
+      }
+    ]
+  },
+  {
+    "name": "PROJET - CAHIER",
+    "status": "validé",
+    "description": "Template spécial de projet fil rouge pour slide de type cahier.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Cahier-des-charges.txt",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Vision & Persona",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "**Projet :** Créer une Landing Page \"Waitlist\" pou",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "**Cible :** Sarah, 28 ans, solopreneur et digital ",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "**Sensibilité :** Très attachée à l'esthétique (\"v",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Périmètre (MVP)",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Le projet est un One-Pager sans backend complexe n",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "User Stories",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "En tant que Sarah, je veux un Hero Header massif p",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "En tant que Sarah, je veux un formulaire d'inscrip",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      }
+    ]
+  },
+  {
+    "name": "PROJET - DESIGN 5",
+    "status": "validé",
+    "description": "Template spécial de projet fil rouge pour slide de type design 5.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Agent.md",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "\"L'approche doit être strictement Mobile-First. Le",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      },
+      {
+        "key": "Survol (Hover)",
+        "original_placeholder": "",
+        "target_lenght": 0,
+        "min_lenght": 5,
+        "max_lenght": 0
+      }
+    ],
+    "picto_layers": [
+      {
+        "key": "Picto 1",
+        "original_placeholder": "Icon"
       }
     ]
   }

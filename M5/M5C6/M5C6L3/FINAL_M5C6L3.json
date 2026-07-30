@@ -1,0 +1,99 @@
+{
+  "lessonTitle": "M5C6L3 — Sécuriser ses clés API & secrets",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Sécuriser ses clés API & secrets"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Pourquoi protéger ses clés API ?",
+        "Intro": "Une clé API, c'est un mot de passe qui donne accès à un service payant ou sensible. Si elle est exposée dans le code, n'importe qui peut l'utiliser à notre place. Voyons comment éviter ça !",
+        "Titre 1": "Les risques concrets",
+        "Texte 1": "Voyons ce qui se passe concrètement quand une clé est exposée dans un dépôt public ou une application en ligne.",
+        "Titre 2": "Local vs. en ligne",
+        "Texte 2": "Zoom sur les deux contextes de protection : en développement local et lors du déploiement sur une plateforme cloud.",
+        "Titre 3": "L'agent IA à la rescousse",
+        "Texte 3": "Découvrons comment demander à un agent IA de configurer automatiquement la protection des secrets dans un projet."
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Les risques si une clé est exposée",
+        "Intro": "Publier une clé API dans le code, c'est laisser la porte ouverte. Les conséquences peuvent être immédiates et coûteuses.",
+        "Titre 1": "FACTURE INATTENDUE",
+        "Texte 1": "Un bot scanne GitHub en quelques minutes et exploite la clé OpenAI ou AWS trouvée. Des milliers d'euros de consommation peuvent s'accumuler en quelques heures.",
+        "Picto 1": "mdi:cash-alert",
+        "Titre 2": "ACCÈS AUX DONNÉES",
+        "Texte 2": "Une clé de base de données exposée donne un accès complet en lecture et écriture. Les données utilisateurs peuvent être volées ou supprimées.",
+        "Picto 2": "mdi:robber",
+        "Titre 3": "COMPTE SUSPENDU",
+        "Texte 3": "OpenAI, Stripe ou GitHub détectent les abus et suspendent le compte associé à la clé compromise, bloquant tout le projet en production.",
+        "Picto 3": "mdi:stop-alert",
+        "Titre 4": "RÉPUTATION EN JEU",
+        "Texte 4": "Si la clé appartient à un client ou à une organisation, la fuite constitue une violation de données. Les conséquences légales (RGPD) peuvent être sévères.",
+        "Picto 4": "mdi:shield-unlocked"
+      }
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Protéger ses secrets",
+        "Intro": "La méthode de protection diffère selon le contexte. En local, on utilise un fichier isolé. En ligne, la plateforme prend le relais.",
+        "Titre A": "EN LOCAL",
+        "Titre B": "EN LIGNE",
+        "Item 1": "Outil",
+        "Item 2": "Règle",
+        "Item 3": "Méthode",
+        "Item 4": "Résultat",
+        "Texte A Item 1": "Fichier .env à la racine du projet",
+        "Texte A Item 2": ".env ajouté dans .gitignore",
+        "Texte A Item 3": "process.env.MA_CLE dans le code",
+        "Texte A Item 4": "La clé n'est jamais écrite en dur",
+        "Texte B1": "Variables d'environnement Vercel",
+        "Texte B2": "Jamais dans le dépôt Git",
+        "Texte B3": "Saisie dans le dashboard Vercel",
+        "Texte B4": "Injectée au déploiement, invisible"
+      }
+    },
+    {
+      "template": "VIBECODING - PROMPT ALT",
+      "content": {
+        "Titre": "S'aider de l'agent IA",
+        "Intro": "Un agent IA peut générer et vérifier la configuration de sécurité des secrets en quelques secondes, sans risque d'oubli.",
+        "Texte 1": "Vérifie que ce projet gère bien ses clés API de façon sécurisée. Crée un fichier .env.example, assure-toi que .env est dans .gitignore, et remplace toute clé écrite en dur dans le code par une variable d'environnement.",
+        "Texte 2": "Le fichier .env.example a été créé et .gitignore mis à jour.",
+        "Texte 3": ".env.example",
+        "Texte 4": "# Variables d'environnement requises — ne jamais committer le fichier .env réel\n\n# Clé API OpenAI\nOPENAI_API_KEY=sk-...\n\n# URL de la base de données\nDATABASE_URL=postgresql://user:password@host:5432/dbname\n\n# Clé publique Stripe\nSTRIPE_PUBLIC_KEY=pk_live_...\n\n# Clé secrète Stripe (ne jamais exposer côté client)\nSTRIPE_SECRET_KEY=sk_live_...\n\n# Instructions : copier ce fichier en .env et renseigner les vraies valeurs.\n# Ne jamais partager le fichier .env ni le committer sur Git.",
+        "Texte Bulle": "On demande à l'agent de scanner le projet et de corriger automatiquement toute clé exposée en dur dans le code source."
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Bonnes pratiques à retenir",
+        "Nom Checklist": "La Checklist !",
+        "Intro": "Sécuriser ses secrets, c'est une habitude à prendre dès le premier commit.",
+        "Texte Intro": "Ces cinq réflexes évitent la majorité des fuites de clés API dans les projets Vibe Coding. À appliquer sur chaque nouveau projet.",
+        "Texte 1": "Créer un fichier .env à la racine et y stocker toutes les clés API du projet.",
+        "Texte 2": "Ajouter .env dans le fichier .gitignore avant le premier commit Git.",
+        "Texte 3": "Créer un fichier .env.example avec des valeurs fictives pour documenter les variables nécessaires.",
+        "Texte 4": "Saisir les vraies clés dans les variables d'environnement du dashboard Vercel (ou équivalent) lors du déploiement.",
+        "Texte 5": "Ne jamais écrire une clé API directement dans le code source, même temporairement."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Clés API bien protégées",
+        "Intro": "Une clé API exposée dans un dépôt public peut être détectée et exploitée en moins de deux minutes par des bots automatisés. La protection repose sur deux réflexes simples : un fichier .env en local, des variables d'environnement sur la plateforme de déploiement. Git ne lit jamais le fichier .env — il sait juste qu'il ne doit pas le suivre. On garde ainsi les secrets hors du code, sans complexité supplémentaire.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "La règle d'or : une clé API ne doit jamais apparaître dans l'historique Git. Si c'est déjà arrivé, révoquer immédiatement la clé depuis le dashboard du service concerné — l'effacer du code ne suffit pas, l'historique Git conserve la trace."
+      }
+    }
+  ]
+}

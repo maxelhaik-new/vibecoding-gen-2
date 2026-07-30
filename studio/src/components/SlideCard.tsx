@@ -36,8 +36,176 @@ import BriefAltLayout from './layouts/BriefAltLayout';
 import PersonaMvpLayout from './layouts/PersonaMvpLayout';
 import UserStoriesLayout from './layouts/UserStoriesLayout';
 import ExercicePratiqueLayout from './layouts/ExercicePratiqueLayout';
+import Layout4BlocsPhotoLayout from './layouts/Layout4BlocsPhotoLayout';
+import FicheRecapLayout from './layouts/FicheRecapLayout';
+import Layout2BlocsLayout from './layouts/Layout2BlocsLayout';
+import DemoLayout from './layouts/DemoLayout';
+import PromptAltLayout from './layouts/PromptAltLayout';
 import { EditableField } from './EditableField';
 import { EditorContext } from './EditorContext';
+
+const themeColorMap: Record<string, string> = {
+  '#18093B': 'var(--template-fig)',
+  '#18093b': 'var(--template-fig)',
+  '#6634D9': 'var(--template-purple)',
+  '#6634d9': 'var(--template-purple)',
+  '#FFFF77': 'var(--template-sunny)',
+  '#ffff77': 'var(--template-sunny)',
+  '#FFB2B2': 'var(--template-pink)',
+  '#ffb2b2': 'var(--template-pink)',
+  '#EFE8FF': 'var(--template-purple-light)',
+  '#efe8ff': 'var(--template-purple-light)',
+  '#FCB3AD': 'var(--template-coral)',
+  '#fcb3ad': 'var(--template-coral)',
+  '#FFBABB': 'var(--template-pink-light)',
+  '#ffbabb': 'var(--template-pink-light)',
+  '#F8DBDA': 'var(--template-coral-light)',
+  '#f8dbda': 'var(--template-coral-light)',
+  '#FCF1F0': 'var(--template-coral-lightest)',
+  '#fcf1f0': 'var(--template-coral-lightest)',
+  '#F3F0FF': 'var(--template-purple-lightest)',
+  '#f3f0ff': 'var(--template-purple-lightest)',
+  '#FF5CE8': 'var(--template-magenta)',
+  '#ff5ce8': 'var(--template-magenta)',
+};
+
+function mapStyleValue(val: any, isTextColor: boolean) {
+  if (typeof val !== 'string') return val;
+  const lower = val.toLowerCase().trim();
+  
+  if (lower === '#ffffff' || lower === 'white' || lower === 'rgb(255,255,255)' || lower === 'rgb(255, 255, 255)') {
+    return isTextColor ? 'var(--template-white-text)' : 'var(--template-white-bg)';
+  }
+  
+  for (const [hex, variable] of Object.entries(themeColorMap)) {
+    if (lower === hex.toLowerCase()) {
+      return variable;
+    }
+  }
+  
+  let newVal = val;
+  for (const [hex, variable] of Object.entries(themeColorMap)) {
+    const reg = new RegExp(hex, 'gi');
+    if (reg.test(newVal)) {
+      newVal = newVal.replace(reg, variable);
+    }
+  }
+  return newVal;
+}
+
+const isTextContainer = (node: any): boolean => {
+  if (!React.isValidElement(node)) return false;
+  const p = node.props as any;
+  if (!p) return false;
+  if (p.fieldKey || (p.style && (p.style.fontSize || p.style.fontFamily))) return true;
+  if (p.children) {
+    if (Array.isArray(p.children)) {
+      return p.children.some(isTextContainer);
+    }
+    return isTextContainer(p.children);
+  }
+  return false;
+};
+
+function colorify(node: React.ReactNode): React.ReactNode {
+  if (!React.isValidElement(node)) {
+    return node;
+  }
+
+  const props = node.props as any;
+  let newProps = { ...props };
+  let hasChanges = false;
+
+  if (props.style) {
+    const newStyle = { ...props.style };
+    let styleChanged = false;
+    for (const key of Object.keys(newStyle)) {
+      const originalVal = newStyle[key];
+      const isTextColor = key === 'color';
+      const mappedVal = mapStyleValue(originalVal, isTextColor);
+      if (mappedVal !== originalVal) {
+        newStyle[key] = mappedVal;
+        styleChanged = true;
+      }
+    }
+    if (styleChanged) {
+      newProps.style = newStyle;
+      hasChanges = true;
+    }
+  }
+
+  if (props.children) {
+    if (Array.isArray(props.children)) {
+      let mappedChildren = React.Children.toArray(props.children);
+      
+      // Sibling color propagation scan
+      for (let i = 0; i < mappedChildren.length; i++) {
+        const current = mappedChildren[i];
+        if (React.isValidElement(current) && current.type === 'div') {
+          const currentProps = current.props as any;
+          const currentStyle = currentProps?.style || {};
+          
+          // An empty color div carries color/background but has no size
+          const isColorDiv = 
+            (!currentProps.children || (Array.isArray(currentProps.children) && currentProps.children.length === 0)) &&
+            (currentStyle.color || currentStyle.background) &&
+            !currentStyle.width && !currentStyle.height;
+            
+          if (isColorDiv) {
+            const colorVal = currentStyle.color || currentStyle.background;
+            
+            // Find nearest text container sibling
+            let targetIdx = -1;
+            for (let j = i - 1; j >= 0; j--) {
+              if (isTextContainer(mappedChildren[j])) {
+                targetIdx = j;
+                break;
+              }
+            }
+            if (targetIdx === -1) {
+              for (let j = i + 1; j < mappedChildren.length; j++) {
+                if (isTextContainer(mappedChildren[j])) {
+                  targetIdx = j;
+                  break;
+                }
+              }
+            }
+            
+            if (targetIdx !== -1) {
+              const targetNode = mappedChildren[targetIdx] as React.ReactElement;
+              const targetProps = targetNode.props as any;
+              const targetStyle = { ...targetProps.style };
+              
+              if (!targetStyle.color) {
+                targetStyle.color = colorVal;
+                mappedChildren[targetIdx] = React.cloneElement(targetNode, {
+                  ...targetProps,
+                  style: targetStyle
+                });
+                hasChanges = true;
+              }
+            }
+          }
+        }
+      }
+      
+      const newChildren = mappedChildren.map(child => colorify(child));
+      newProps.children = newChildren;
+      hasChanges = true;
+    } else {
+      const newChild = colorify(props.children);
+      if (newChild !== props.children) {
+        newProps.children = newChild;
+        hasChanges = true;
+      }
+    }
+  }
+
+  if (hasChanges) {
+    return React.cloneElement(node, newProps);
+  }
+  return node;
+}
 
 interface SlideCardProps {
   slide: SlideData;
@@ -251,6 +419,21 @@ export const SlideCard: React.FC<SlideCardProps> = ({
         
       case 'VIBECODING - EXERCICE PRATIQUE':
         return <ExercicePratiqueLayout content={derivedContent} onChange={handleFieldChange} rules={rulesMap} />;
+
+      case 'VIBECODING - 4 BLOCS - PHOTO':
+        return <Layout4BlocsPhotoLayout content={derivedContent} onChange={handleFieldChange} rules={rulesMap} />;
+
+      case 'VIBECODING - FICHE RECAP':
+        return <FicheRecapLayout content={derivedContent} onChange={handleFieldChange} rules={rulesMap} />;
+
+      case 'VIBECODING - 2 BLOCS':
+        return <Layout2BlocsLayout content={derivedContent} onChange={handleFieldChange} rules={rulesMap} />;
+
+      case 'VIBECODING - DEMO':
+        return <DemoLayout content={derivedContent} onChange={handleFieldChange} rules={rulesMap} />;
+
+      case 'VIBECODING - PROMPT ALT':
+        return <PromptAltLayout content={derivedContent} onChange={handleFieldChange} rules={rulesMap} />;
 
       default:
         // Generic Editor Fallback
@@ -483,11 +666,13 @@ export const SlideCard: React.FC<SlideCardProps> = ({
         </div>
       </div>
 
-      {/* 16:9 Frame */}
+      {/* 16:9 or Portrait Frame */}
       <div
         style={{
           width: '100%',
-          aspectRatio: '16/9',
+          maxWidth: template === 'VIBECODING - FICHE RECAP' ? '520px' : undefined,
+          margin: template === 'VIBECODING - FICHE RECAP' ? '0 auto' : undefined,
+          aspectRatio: template === 'VIBECODING - FICHE RECAP' ? '1080/1528' : '16/9',
           backgroundColor: 'var(--slide-bg)', // Adapts to Light/Dark mode
           borderRadius: '8px',
           position: 'relative',
@@ -501,7 +686,7 @@ export const SlideCard: React.FC<SlideCardProps> = ({
         }}
       >
         <EditorContext.Provider value={{ ...parentContext, slideIndex: index }}>
-          {renderLayout()}
+          {colorify(renderLayout())}
         </EditorContext.Provider>
         {isRegenerating && (
           <div style={{
