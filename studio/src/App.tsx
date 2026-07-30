@@ -1228,7 +1228,7 @@ export const App: React.FC = () => {
         <div style={{ padding: '16px', borderBottom: '1px solid var(--border-color)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
             <h1 style={{ fontSize: '17px', fontWeight: 800, color: 'var(--text-primary)' }}>
-              🎬 Vibe Slicer Online
+              🎬 Vibe Slicer Studio
             </h1>
             <button
               onClick={() => setShowCreateModal(true)}
