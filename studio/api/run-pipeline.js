@@ -60,11 +60,26 @@ export default async function handler(req, res) {
     // Load strict reference rules dynamically from files
     const referenceRules = getReferenceRules();
 
-    const systemPrompt = `Tu es l'expert Vibe Slicer. Tu prends un plan de cours Markdown et tu génères un objet JSON valide de slides de cours selon les règles pédagogiques et techniques ci-dessous.
+    let phaseInstruction = '';
+    if (phase === 'decoupe') {
+      phaseInstruction = `OBJECTIF DE LA PHASE DECOUPE :
+Analyse le plan Markdown fourni et découpe-le en une séquence logique de 5 à 9 slides.
+Sélectionne les templates visuels appropriés parmi le catalogue (ex: VIBECODING - COVER, VIBECODING - INTRO, VIBECODING - PROCESS, VIBECODING - CONCEPT, VIBECODING - DEFINITION, VIBECODING - FIN).
+Pour chaque slide, fournis au minimum les clés "Titre" et les textes de structure.`;
+    } else {
+      phaseInstruction = `OBJECTIF DE LA PHASE ECRIS (RÉDACTION COMPLÈTE) :
+Rédige intégralement l'ensemble des slides du cours (6 à 10 slides) d'après le plan Markdown fourni.
+Applique rigoureusement les règles de ton de voix brand_voice (ex: tutoiement, langage direct, pas de jargon non expliqué, accroche percutante).
+Assure-toi que la dernière slide soit impérativement le template VIBECODING - FIN avec un encart EN BREF faisant la transition vers la suite.`;
+    }
+
+    const systemPrompt = `Tu es l'expert Vibe Slicer. Tu prends un plan de cours Markdown et tu génères un objet JSON valide de slides de cours selon les règles ci-dessous.
 
 ${referenceRules}
 
-INSTRUCTION DE STRUCTURE :
+${phaseInstruction}
+
+INSTRUCTION STRICTE DE FORMAT JSON :
 Le JSON doit impérativement respecter la structure exacte ci-dessous :
 {
   "lessonTitle": "${lesson.title}",
@@ -72,16 +87,18 @@ Le JSON doit impérativement respecter la structure exacte ci-dessous :
   "slides": [
     {
       "template": "NOM_DU_TEMPLATE_VALIDE",
-      "content": { ... }
+      "content": {
+        "Titre": "..."
+      }
     }
   ]
 }
-Renvoie UNIQUEMENT le JSON valide sans explications ni balises markdown.`;
+Renvoie EXCLUSIVEMENT le JSON valide brut, sans aucun texte d'introduction ni balises de bloc de code markdown.`;
 
     let generatedJsonText = '';
 
     if (process.env.GEMINI_API_KEY) {
-      if (isSSE) res.write(`data: [Pipeline] Exécution du modèle Google Gemini...\n\n`);
+      if (isSSE) res.write(`data: [Pipeline] Exécution du modèle Google Gemini pour la phase ${phase}...\n\n`);
       const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
@@ -93,7 +110,7 @@ Renvoie UNIQUEMENT le JSON valide sans explications ni balises markdown.`;
       });
       generatedJsonText = response.text;
     } else if (process.env.OPENAI_API_KEY) {
-      if (isSSE) res.write(`data: [Pipeline] Exécution du modèle OpenAI...\n\n`);
+      if (isSSE) res.write(`data: [Pipeline] Exécution du modèle OpenAI pour la phase ${phase}...\n\n`);
       const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
       const completion = await openai.chat.completions.create({
         model: 'gpt-4o-mini',
@@ -109,9 +126,17 @@ Renvoie UNIQUEMENT le JSON valide sans explications ni balises markdown.`;
       return sendError('Aucune clé d\'API IA (GEMINI_API_KEY ou OPENAI_API_KEY) n\'est configurée dans Vercel. Rendez-vous dans Vercel > Settings > Environment Variables pour l\'ajouter.');
     }
 
-    const parsedFinal = JSON.parse(generatedJsonText);
+    // Clean potential markdown blocks
+    let cleanJson = generatedJsonText.trim();
+    if (cleanJson.startsWith('```json')) {
+      cleanJson = cleanJson.replace(/^```json/, '').replace(/```$/, '').trim();
+    } else if (cleanJson.startsWith('```')) {
+      cleanJson = cleanJson.replace(/^```/, '').replace(/```$/, '').trim();
+    }
+
+    const parsedFinal = JSON.parse(cleanJson);
     const slideCount = parsedFinal.slides ? parsedFinal.slides.length : 0;
-    const newStatus = slideCount <= 1 ? 'sliced' : 'written';
+    const newStatus = phase === 'decoupe' ? 'sliced' : (slideCount > 1 ? 'written' : 'sliced');
 
     // Update Supabase
     const { data: updated, error: updateErr } = await supabase
@@ -131,7 +156,7 @@ Renvoie UNIQUEMENT le JSON valide sans explications ni balises markdown.`;
     }
 
     if (isSSE) {
-      res.write(`data: [Pipeline] Phase ${phase} terminée avec succès ! ${slideCount} slides générées dans Supabase.\n\n`);
+      res.write(`data: [Pipeline] Phase ${phase} terminée avec succès ! ${slideCount} slides générées et enregistrées dans Supabase.\n\n`);
       res.write(`data: [System] Process exited\n\n`);
       return res.end();
     }
@@ -144,6 +169,6 @@ Renvoie UNIQUEMENT le JSON valide sans explications ni balises markdown.`;
 
   } catch (err) {
     console.error('Error in run-pipeline execution:', err);
-    return sendError(err.message);
+    return sendError(`Erreur de traitement JSON ou API: ${err.message}`);
   }
 }
