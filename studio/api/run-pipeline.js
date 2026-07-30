@@ -3,9 +3,6 @@ import OpenAI from 'openai';
 import { supabase } from './_supabase.js';
 import { getStaticReferenceRules, getExtractedTemplates } from './_rules.js';
 
-let cachedGeminiName = null;
-let cachedRulesHash = null;
-
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -37,7 +34,7 @@ export default async function handler(req, res) {
   };
 
   if (!slug) {
-    return sendError('Le paramètre lesson ou slug est requis (ex: ?lesson=m4c5l2)');
+    return sendError('Le paramètre lesson ou slug est requis (ex: ?lesson=m4c5l3)');
   }
 
   try {
@@ -60,13 +57,12 @@ export default async function handler(req, res) {
       res.write(`data: [Pipeline] Démarrage de la phase ${phase} pour ${cleanSlug}...\n\n`);
     }
 
-    // 1. Token-optimized template extraction
+    // Token-optimized template extraction
     let templatesContext = '';
     if (phase === 'decoupe') {
       const summaryTemplates = getExtractedTemplates(null);
-      templatesContext = `CATALOGUE SIMPLIFIÉ DES TEMPLATES :\n${JSON.stringify(summaryTemplates, null, 2)}`;
+      templatesContext = `CATALOGUE DES TEMPLATES VALIDES VIBECODING :\n${JSON.stringify(summaryTemplates, null, 2)}`;
     } else {
-      // Phase ecris: Extract ONLY templates present in current lesson or standard list
       let neededNames = ['VIBECODING - COVER', 'VIBECODING - INTRO', 'VIBECODING - PROCESS', 'VIBECODING - FIN'];
       if (lesson.final && Array.isArray(lesson.final.slides)) {
         neededNames = [...new Set([...neededNames, ...lesson.final.slides.map(s => s.template)])];
@@ -80,13 +76,17 @@ export default async function handler(req, res) {
     let phaseInstruction = '';
     if (phase === 'decoupe') {
       phaseInstruction = `OBJECTIF DE LA PHASE DECOUPE :
-Analyse le plan Markdown et génère 5 à 9 slides.
-Utilise EXCLUSIVEMENT les noms de templates officiels du catalogue.`;
+Analyse le plan Markdown et génère une séquence de 5 à 9 slides.
+Chaque slide doit impérativement comporter :
+- "title" : le titre explicite du sujet traité par la slide
+- "template" : le nom exact d'un template valide parmi le catalogue ci-dessus
+- "content" : un objet contenant au minimum la clé {"Titre": "..."}`;
     } else {
       phaseInstruction = `OBJECTIF DE LA PHASE ECRIS (RÉDACTION COMPLÈTE) :
 Rédige intégralement l'ensemble des slides du cours (6 à 10 slides).
 Respecte les limites min/max de caractères fournies pour chaque champ.
-La dernière slide doit obligatoirement être "VIBECODING - FIN".`;
+Chaque slide doit avoir un "title", un "template" valide et son dictionnaire "content" complet.
+La dernière slide doit obligatoirement être le template "VIBECODING - FIN".`;
     }
 
     const systemPrompt = `Tu es l'expert Vibe Slicer.
@@ -103,8 +103,11 @@ INSTRUCTION STRICTE DE FORMAT JSON :
   "lessonType": "${lesson.type}",
   "slides": [
     {
+      "title": "Titre explicite de la slide",
       "template": "NOM_EXACT_DU_TEMPLATE_OFFICIEL",
-      "content": { ... }
+      "content": {
+        "Titre": "..."
+      }
     }
   ]
 }
@@ -113,7 +116,7 @@ Renvoie EXCLUSIVEMENT le JSON valide brut.`;
     let generatedJsonText = '';
 
     if (process.env.GEMINI_API_KEY) {
-      if (isSSE) res.write(`data: [Pipeline] Exécution optimisée Google Gemini (Prompt Caching)... \n\n`);
+      if (isSSE) res.write(`data: [Pipeline] Exécution du modèle Google Gemini...\n\n`);
       const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       
       const response = await ai.models.generateContent({
@@ -150,6 +153,16 @@ Renvoie EXCLUSIVEMENT le JSON valide brut.`;
     }
 
     const parsedFinal = JSON.parse(cleanJson);
+
+    // Ensure every slide has title and valid template structure
+    if (parsedFinal.slides && Array.isArray(parsedFinal.slides)) {
+      parsedFinal.slides = parsedFinal.slides.map(s => ({
+        title: s.title || (s.content && (s.content['Titre'] || s.content['Titre 1'])) || 'Slide',
+        template: s.template || 'VIBECODING - COVER CHAP',
+        content: s.content || { Titre: s.title || 'Slide' }
+      }));
+    }
+
     const slideCount = parsedFinal.slides ? parsedFinal.slides.length : 0;
     const newStatus = phase === 'decoupe' ? 'sliced' : (slideCount > 1 ? 'written' : 'sliced');
 
