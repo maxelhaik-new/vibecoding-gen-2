@@ -1,7 +1,10 @@
 import { GoogleGenAI } from '@google/genai';
 import OpenAI from 'openai';
 import { supabase } from './_supabase.js';
-import { getReferenceRules } from './_rules.js';
+import { getStaticReferenceRules, getExtractedTemplates } from './_rules.js';
+
+let cachedGeminiName = null;
+let cachedRulesHash = null;
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -34,7 +37,7 @@ export default async function handler(req, res) {
   };
 
   if (!slug) {
-    return sendError('Le paramètre lesson ou slug est requis (ex: ?lesson=m4c5l3)');
+    return sendError('Le paramètre lesson ou slug est requis (ex: ?lesson=m4c5l2)');
   }
 
   try {
@@ -57,75 +60,73 @@ export default async function handler(req, res) {
       res.write(`data: [Pipeline] Démarrage de la phase ${phase} pour ${cleanSlug}...\n\n`);
     }
 
-    const referenceRules = getReferenceRules();
+    // 1. Token-optimized template extraction
+    let templatesContext = '';
+    if (phase === 'decoupe') {
+      const summaryTemplates = getExtractedTemplates(null);
+      templatesContext = `CATALOGUE SIMPLIFIÉ DES TEMPLATES :\n${JSON.stringify(summaryTemplates, null, 2)}`;
+    } else {
+      // Phase ecris: Extract ONLY templates present in current lesson or standard list
+      let neededNames = ['VIBECODING - COVER', 'VIBECODING - INTRO', 'VIBECODING - PROCESS', 'VIBECODING - FIN'];
+      if (lesson.final && Array.isArray(lesson.final.slides)) {
+        neededNames = [...new Set([...neededNames, ...lesson.final.slides.map(s => s.template)])];
+      }
+      const targetedTemplates = getExtractedTemplates(neededNames);
+      templatesContext = `CONTRAINTES STRICTES DES TEMPLATES SÉLECTIONNÉS :\n${JSON.stringify(targetedTemplates, null, 2)}`;
+    }
 
-    const validTemplatesList = `
-TEMPLATES DE SLIDES OFFICIELS VIBECODING EXCLUSIFS (N'INVENTE AUCUN AUTRE NOM) :
-- "VIBECODING - COVER CHAP" (Titre)
-- "VIBECODING - COVER" (Titre, SousTitre)
-- "VIBECODING - INTRO" (Titre, Intro, Titre 1, Texte 1, Titre 2, Texte 2)
-- "VIBECODING - OBJECTIF CHAP" (Titre, Intro, Titre 1..6)
-- "VIBECODING - PROCESS" (Titre, Etape 1..4, Description 1..4)
-- "VIBECODING - CONCEPT" (Titre, Intro, Concept 1..3)
-- "VIBECODING - DEFINITION" (Titre, MotCle, Definition)
-- "VIBECODING - COMPARISON" (Titre, OptionA, OptionB, AvantagesA, AvantagesB)
-- "VIBECODING - EXERCICE" (Titre, Consigne, Question 1..3)
-- "VIBECODING - FOCUS OUTIL" (Titre, Description, Avantage 1..3)
-- "VIBECODING - FIN" (Titre, EnBref, Transition)
-`;
+    const staticRules = getStaticReferenceRules();
 
     let phaseInstruction = '';
     if (phase === 'decoupe') {
       phaseInstruction = `OBJECTIF DE LA PHASE DECOUPE :
 Analyse le plan Markdown et génère 5 à 9 slides.
-Utilise EXCLUSIVEMENT les noms de templates officiels ci-dessus. N'invente PAS de noms comme "TITRE_PRINCIPAL" ou "POINTS_CLES".`;
+Utilise EXCLUSIVEMENT les noms de templates officiels du catalogue.`;
     } else {
       phaseInstruction = `OBJECTIF DE LA PHASE ECRIS (RÉDACTION COMPLÈTE) :
 Rédige intégralement l'ensemble des slides du cours (6 à 10 slides).
-Utilise EXCLUSIVEMENT les noms de templates officiels ci-dessus.
+Respecte les limites min/max de caractères fournies pour chaque champ.
 La dernière slide doit obligatoirement être "VIBECODING - FIN".`;
     }
 
-    const systemPrompt = `Tu es l'expert Vibe Slicer. Tu prends un plan de cours Markdown et tu génères un objet JSON valide de slides de cours selon les règles ci-dessous.
+    const systemPrompt = `Tu es l'expert Vibe Slicer.
 
-${referenceRules}
+${staticRules}
 
-${validTemplatesList}
+${templatesContext}
 
 ${phaseInstruction}
 
 INSTRUCTION STRICTE DE FORMAT JSON :
-Le JSON doit impérativement respecter la structure exacte ci-dessous :
 {
   "lessonTitle": "${lesson.title}",
   "lessonType": "${lesson.type}",
   "slides": [
     {
       "template": "NOM_EXACT_DU_TEMPLATE_OFFICIEL",
-      "content": {
-        "Titre": "..."
-      }
+      "content": { ... }
     }
   ]
 }
-Renvoie EXCLUSIVEMENT le JSON valide brut, sans aucun texte d'introduction ni balises de bloc de code markdown.`;
+Renvoie EXCLUSIVEMENT le JSON valide brut.`;
 
     let generatedJsonText = '';
 
     if (process.env.GEMINI_API_KEY) {
-      if (isSSE) res.write(`data: [Pipeline] Exécution du modèle Google Gemini pour la phase ${phase}...\n\n`);
+      if (isSSE) res.write(`data: [Pipeline] Exécution optimisée Google Gemini (Prompt Caching)... \n\n`);
       const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      
       const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
         contents: `${systemPrompt}\n\nVoici le plan Markdown de la leçon :\n${lesson.plan}`,
         config: {
           responseMimeType: 'application/json',
-          temperature: 0.1
+          temperature: 0.2
         }
       });
       generatedJsonText = response.text;
     } else if (process.env.OPENAI_API_KEY) {
-      if (isSSE) res.write(`data: [Pipeline] Exécution du modèle OpenAI pour la phase ${phase}...\n\n`);
+      if (isSSE) res.write(`data: [Pipeline] Exécution OpenAI...\n\n`);
       const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
       const completion = await openai.chat.completions.create({
         model: 'gpt-4o-mini',
@@ -134,11 +135,11 @@ Renvoie EXCLUSIVEMENT le JSON valide brut, sans aucun texte d'introduction ni ba
           { role: 'user', content: `Voici le plan Markdown de la leçon :\n${lesson.plan}` }
         ],
         response_format: { type: 'json_object' },
-        temperature: 0.1
+        temperature: 0.2
       });
       generatedJsonText = completion.choices[0].message.content;
     } else {
-      return sendError('Aucune clé d\'API IA (GEMINI_API_KEY ou OPENAI_API_KEY) n\'est configurée dans Vercel.');
+      return sendError('Aucune clé d\'API IA configurée dans Vercel.');
     }
 
     let cleanJson = generatedJsonText.trim();
@@ -170,7 +171,7 @@ Renvoie EXCLUSIVEMENT le JSON valide brut, sans aucun texte d'introduction ni ba
     }
 
     if (isSSE) {
-      res.write(`data: [Pipeline] Phase ${phase} terminée avec succès ! ${slideCount} slides générées et enregistrées dans Supabase.\n\n`);
+      res.write(`data: [Pipeline] Phase ${phase} terminée avec succès ! ${slideCount} slides enregistrées dans Supabase.\n\n`);
       res.write(`data: [System] Process exited\n\n`);
       return res.end();
     }
@@ -183,6 +184,6 @@ Renvoie EXCLUSIVEMENT le JSON valide brut, sans aucun texte d'introduction ni ba
 
   } catch (err) {
     console.error('Error in run-pipeline execution:', err);
-    return sendError(`Erreur de traitement JSON ou API: ${err.message}`);
+    return sendError(`Erreur de traitement: ${err.message}`);
   }
 }
