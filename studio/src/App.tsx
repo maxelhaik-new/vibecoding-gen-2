@@ -430,6 +430,7 @@ export const App: React.FC = () => {
   ]);
   const [chatInput, setChatInput] = useState('');
   const [isChatLoading, setIsChatLoading] = useState(false);
+  const isChatLoadingRef = useRef(false);
   const [agentConfig, setAgentConfig] = useState<{ hasKey: boolean; model: string; availableModels?: Array<{ id: string; label: string }> } | null>(null);
   const [selectedAgentModel, setSelectedAgentModel] = useState<string>(() => {
     return localStorage.getItem('vibe_agentModel') || '';
@@ -842,8 +843,9 @@ export const App: React.FC = () => {
 
   const handleSendChatMessage = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
-    if (!chatInput.trim() || isChatLoading) return;
+    if (!chatInput.trim() || isChatLoadingRef.current) return;
 
+    isChatLoadingRef.current = true;
     const userMsg = { role: 'user' as const, content: chatInput };
     const updatedMessages = [...chatMessages, userMsg];
     setChatMessages(updatedMessages);
@@ -885,6 +887,7 @@ export const App: React.FC = () => {
       setChatMessages(prev => [...prev, { role: 'assistant', content: `❌ Erreur réseau : ${err.message}` }]);
     } finally {
       setIsChatLoading(false);
+      isChatLoadingRef.current = false;
     }
   };
 
