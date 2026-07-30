@@ -12,12 +12,29 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
 
-  // Parse parameters from query (GET) or body (POST)
+  const isSSE = req.headers.accept && req.headers.accept.includes('text/event-stream');
+
   const slug = req.query.lesson || req.query.slug || (req.body && req.body.slug);
   const phase = req.query.phase || (req.body && req.body.phase) || 'decoupe';
 
+  if (isSSE) {
+    res.setHeader('Content-Type', 'text/event-stream');
+    res.setHeader('Cache-Control', 'no-cache');
+    res.setHeader('Connection', 'keep-alive');
+  }
+
+  const sendError = (msg) => {
+    if (isSSE) {
+      res.write(`data: [Erreur API] ${msg}\n\n`);
+      res.write(`data: [System] Process exited\n\n`);
+      return res.end();
+    } else {
+      return res.status(400).json({ error: msg });
+    }
+  };
+
   if (!slug) {
-    return res.status(400).json({ error: 'Le paramètre lesson ou slug est requis (ex: ?lesson=m1c2l3)' });
+    return sendError('Le paramètre lesson ou slug est requis (ex: ?lesson=m4c5l2)');
   }
 
   try {
@@ -29,11 +46,15 @@ export default async function handler(req, res) {
       .single();
 
     if (error || !lesson) {
-      return res.status(404).json({ error: 'Leçon introuvable dans Supabase' });
+      return sendError(`Leçon ${cleanSlug} introuvable dans Supabase`);
     }
 
     if (!lesson.plan) {
-      return res.status(400).json({ error: 'La leçon n\'a pas encore de plan MD sur lequel effectuer la découpe ou rédaction.' });
+      return sendError(`La leçon ${cleanSlug} n'a pas encore de plan MD sur lequel effectuer la découpe ou rédaction.`);
+    }
+
+    if (isSSE) {
+      res.write(`data: [Pipeline] Démarrage de la phase ${phase} pour ${cleanSlug}...\n\n`);
     }
 
     // Load strict reference rules dynamically from files
@@ -60,6 +81,7 @@ Renvoie UNIQUEMENT le JSON valide sans explications ni balises markdown.`;
     let generatedJsonText = '';
 
     if (process.env.GEMINI_API_KEY) {
+      if (isSSE) res.write(`data: [Pipeline] Exécution du modèle Google Gemini...\n\n`);
       const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash',
@@ -71,6 +93,7 @@ Renvoie UNIQUEMENT le JSON valide sans explications ni balises markdown.`;
       });
       generatedJsonText = response.text;
     } else if (process.env.OPENAI_API_KEY) {
+      if (isSSE) res.write(`data: [Pipeline] Exécution du modèle OpenAI...\n\n`);
       const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
       const completion = await openai.chat.completions.create({
         model: 'gpt-4o-mini',
@@ -83,9 +106,7 @@ Renvoie UNIQUEMENT le JSON valide sans explications ni balises markdown.`;
       });
       generatedJsonText = completion.choices[0].message.content;
     } else {
-      return res.status(400).json({
-        error: 'Aucune clé d\'API IA (GEMINI_API_KEY ou OPENAI_API_KEY) configurée dans Vercel. Veuillez ajouter vos clés dans Environment Variables.'
-      });
+      return sendError('Aucune clé d\'API IA (GEMINI_API_KEY ou OPENAI_API_KEY) n\'est configurée dans Vercel. Rendez-vous dans Vercel > Settings > Environment Variables pour l\'ajouter.');
     }
 
     const parsedFinal = JSON.parse(generatedJsonText);
@@ -106,15 +127,11 @@ Renvoie UNIQUEMENT le JSON valide sans explications ni balises markdown.`;
       .single();
 
     if (updateErr) {
-      return res.status(500).json({ error: updateErr.message });
+      return sendError(updateErr.message);
     }
 
-    // Support both SSE text format and JSON response
-    if (req.headers.accept && req.headers.accept.includes('text/event-stream')) {
-      res.setHeader('Content-Type', 'text/event-stream');
-      res.setHeader('Cache-Control', 'no-cache');
-      res.setHeader('Connection', 'keep-alive');
-      res.write(`data: [Pipeline] Phase ${phase} terminée avec succès pour ${cleanSlug}\n\n`);
+    if (isSSE) {
+      res.write(`data: [Pipeline] Phase ${phase} terminée avec succès ! ${slideCount} slides générées dans Supabase.\n\n`);
       res.write(`data: [System] Process exited\n\n`);
       return res.end();
     }
@@ -127,6 +144,6 @@ Renvoie UNIQUEMENT le JSON valide sans explications ni balises markdown.`;
 
   } catch (err) {
     console.error('Error in run-pipeline execution:', err);
-    return res.status(500).json({ error: err.message });
+    return sendError(err.message);
   }
 }
