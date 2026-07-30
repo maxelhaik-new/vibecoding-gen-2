@@ -64,8 +64,7 @@ ${lessonContext}`;
       });
 
       return res.status(200).json({
-        content: response.text,
-        history: [...messages, { role: 'assistant', content: response.text }]
+        content: response.text
       });
     }
 
@@ -85,8 +84,7 @@ ${lessonContext}`;
 
       const reply = completion.choices[0].message.content;
       return res.status(200).json({
-        content: reply,
-        history: [...messages, { role: 'assistant', content: reply }]
+        content: reply
       });
     }
 
