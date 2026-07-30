@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 
-// Load static reference files (brand_voice, ai.md, icon_mapping, image_style_guide)
 export function getStaticReferenceRules() {
   const configDir = path.join(process.cwd(), 'config');
   const filesToRead = ['brand_voice.md', 'ai.md', 'icon_mapping.md', 'image_style_guide.md'];
@@ -16,18 +15,24 @@ export function getStaticReferenceRules() {
   return merged;
 }
 
-// Target extraction: Only load constraints for specific needed templates to save tokens
 export function getExtractedTemplates(templateNames) {
   const templatesPath = path.join(process.cwd(), 'templates.json');
   if (!fs.existsSync(templatesPath)) return [];
 
   try {
     const allTemplates = JSON.parse(fs.readFileSync(templatesPath, 'utf-8'));
+    
+    // Always include text_layers so UI rendering (SlideCard) can render text fields
     if (!templateNames || templateNames.length === 0) {
-      // If no specific names, return simplified summary
       return allTemplates.map(t => ({
         name: t.name,
-        description: t.description
+        description: t.description,
+        text_layers: t.text_layers ? t.text_layers.map(l => ({
+          key: l.key,
+          target_length: l.target_lenght,
+          min_length: l.min_lenght,
+          max_length: l.max_lenght
+        })) : []
       }));
     }
 
