@@ -1,0 +1,187 @@
+{
+  "moduleTitle": "Module Projet : Projets Fil Rouge",
+  "moduleSlug": "projets-fil-rouge",
+  "chapterTitle": "Suivi de projet : Projet : Stock Chef",
+  "chapterNumber": 9,
+  "lessons": [
+    {
+      "lessonSlug": "projet-une-application-mobile-de-gest",
+      "lessonTitle": "Projet : Stock Chef",
+      "lessonType": "cas_pratique",
+      "colorName": "Bleu clair",
+      "color": "#A0D2FF",
+      "backgroundColor": "#A0D2FF",
+      "colorHex": "#A0D2FF",
+      "slides": [
+        {
+          "template": "PROJET - BRIEF",
+          "content": {
+            "Titre": "Gestion de Stock\npour Chef Cuisinier",
+            "Titre Intro": "Le chaos du frigo, c'est fini.",
+            "Titre 1": "Le défi",
+            "Texte 1": "Un chef en plein service n'a pas le temps d'ouvrir un tableur. Il a besoin de savoir en 3 secondes si le stock de crème fraîche est critique — et de le mettre à jour d'un geste. Ce projet, c'est l'outil qu'aucun logiciel de caisse ne lui a jamais donné : simple, rapide, pensé pour les mains qui ont de la farine dessus.",
+            "image": "http://localhost:8080/assets/vibe_projet_une-application-mobile-de-gest_brief_le_défi_1785451422.png",
+            "Source": "Source : Le défi - Illustration générée par IA - Maxime Elhaik"
+          }
+        },
+        {
+          "template": "PROJET - PERSONA",
+          "content": {
+            "Titre": "Le Persona & le MVP",
+            "Alexandre": "Marco",
+            "Commercial Terrain": "Chef Cuisinier",
+            "En déplacement permanent": "Entre le fournisseur, la cuisine et le frigo",
+            "Utilisation 100% sur Smartphone": "Utilisation 100% sur Smartphone, mains occupées",
+            "Ultra-pressé entre deux RDV": "Ultra-pressé entre deux coups de feu",
+            "L'Interface Générée (UX/UI)": "L'Interface Générée (UX/UI)",
+            "Mobile-first : Grands boutons faciles à presser su": "Mobile-first : Grands boutons tactiles utilisables avec des mains humides ou gantées, zones de tap généreuses.",
+            "Mode Sombre : Activé par défaut pour réduire la fa": "Mode Sombre : Activé par défaut pour une lisibilité maximale dans les environnements lumineux ou sombres de cuisine.",
+            "Action Rapide : Accès immédiat et omniprésent au b": "Action Rapide : Bouton flottant toujours visible pour décrémenter ou incrémenter un stock en un seul tap.",
+            "Le Périmètre du MVP": "Le Périmètre du MVP",
+            "Action unique ultra-optimisée : Ajouter un nouveau": "Action unique ultra-optimisée : Consulter et mettre à jour le stock d'un ingrédient en moins de 3 taps.",
+            "Pas de superflu : Aucune fonctionnalité d'analyse ": "Pas de superflu : Aucune gestion de fournisseurs, de commandes automatiques ou de recettes dans ce MVP."
+          }
+        },
+        {
+          "template": "PROJET - USER STORY",
+          "content": {
+            "Titre": "Les User Stories du MVP",
+            "Application": "StockChef",
+            "\"Permettre au commercial d'ajouter une note post-R": "\"Permettre au chef de consulter son stock en temps réel et de le mettre à jour en moins de 3 taps, même en plein service.\"",
+            "User Story": "User Story",
+            "Créer l'écran d'accueil avec un énorme bouton \"Ajo": "Créer l'écran d'accueil avec la liste des ingrédients, leur quantité et un indicateur visuel de criticité (vert / orange / rouge).",
+            "Construire le formulaire modal rapide : 3 champs (": "Construire le formulaire modal d'ajout d'ingrédient : 3 champs (Nom, Quantité, Unité) avec un bouton de validation large.",
+            "Gérer la sauvegarde fictive et afficher un toast d": "Gérer la mise à jour de quantité (+/-) directement depuis la liste et afficher un toast de confirmation."
+          }
+        },
+        {
+          "template": "PROJET - CAHIER",
+          "content": {
+            "Titre": "Le Cahier des Charges",
+            "Cahier-des-charges.txt": "Cahier-des-charges.txt",
+            "Vision & Persona": "Vision & Persona",
+            "**Projet :** Créer une Landing Page \"Waitlist\" pou": "**Projet :** Créer une application mobile de gestion de stock pour une cuisine professionnelle.",
+            "**Cible :** Sarah, 28 ans, solopreneur et digital ": "**Cible :** Marco, 35 ans, chef cuisinier dans un restaurant gastronomique. Il gère ses stocks seul, souvent en plein service.",
+            "**Sensibilité :** Très attachée à l'esthétique (\"v": "**Sensibilité :** Très attaché à l'efficacité (\"si ça me fait perdre du temps, je n'utilise pas\"). Zéro tolérance pour la complexité.",
+            "Périmètre (MVP)": "Périmètre (MVP)",
+            "Le projet est un One-Pager sans backend complexe n": "Le projet est une Single Page App sans backend ni authentification. Les données sont stockées en mémoire (fake data). L'objectif est de valider l'UX de consultation et de mise à jour de stock.",
+            "User Stories": "User Stories",
+            "En tant que Sarah, je veux un Hero Header massif p": "En tant que Marco, je veux voir d'un coup d'œil quels ingrédients sont en stock critique (rouge), afin de prioriser mes commandes.",
+            "En tant que Sarah, je veux un formulaire d'inscrip": "En tant que Marco, je veux pouvoir incrémenter ou décrémenter une quantité directement depuis la liste, sans ouvrir de page dédiée."
+          }
+        },
+        {
+          "template": "PROJET - PROMPT 1",
+          "content": {
+            "Titre": "Le Prompt Zéro — Partie 1",
+            "PROMPT.md": "PROMPT.md",
+            "Agis comme un développeur Frontend Expert en UX Mo": "Agis comme un développeur Frontend expert en UX Mobile et en interfaces métier pour la restauration professionnelle.",
+            "# 1. CONTEXTE & PERSONA": "# 1. CONTEXTE & PERSONA",
+            "Tu vas coder une application \"Mini-CRM\".": "Tu vas coder une application \"StockChef\" : un outil de gestion de stock pour une cuisine professionnelle.",
+            "L'utilisateur final est Alexandre, un commercial t": "L'utilisateur final est Marco, un chef cuisinier de 35 ans qui gère ses stocks seul, souvent en plein service, les mains occupées.",
+            "Cahier des charges :": "Cahier des charges :",
+            "Alexandre, Commercial": "Marco, Chef Cuisinier",
+            "Utilisation 100% sur mobile en voiture.": "Utilisation 100% sur mobile, en cuisine, mains humides ou gantées.",
+            "Plutôt que de devoir dicter chaque taille de bouto": "Plutôt que de spécifier chaque taille de bouton, tu vas écrire un fichier Agent.md qui définira toutes les règles de design une seule fois. L'IA les appliquera automatiquement à chaque composant généré."
+          }
+        },
+        {
+          "template": "PROJET - PROMPT 2",
+          "content": {
+            "Titre": "Le Prompt Zéro — Partie 2",
+            "PROMPT.md": "PROMPT.md",
+            "# 2. PÉRIMÈTRE (MVP)": "# 2. PÉRIMÈTRE (MVP)",
+            "L'application a un périmètre volontairement très r": "L'application a un périmètre volontairement très réduit pour valider l'UX en priorité.",
+            "Saisir un Nom, Téléphone et Note.": "Afficher la liste des ingrédients avec leur quantité et un indicateur de criticité (vert / orange / rouge).",
+            "Afficher un message de confirmation.": "Permettre d'incrémenter ou décrémenter une quantité directement depuis la liste.",
+            "ATTENTION : NE CODE PAS de système de connexion (A": "ATTENTION : NE CODE PAS de système de connexion (Auth), de gestion de fournisseurs, de commandes automatiques ou de recettes.",
+            "MVP: Ajouter un contact et une note (3 clics).": "MVP : Consulter et mettre à jour un stock en moins de 3 taps.",
+            "User Story": "User Story",
+            "Créer l'écran d'accueil avec un énorme bouton \"Ajo": "Créer l'écran d'accueil avec la liste des ingrédients, leur quantité et leur indicateur de criticité coloré.",
+            "Construire le formulaire modal rapide : 3 champs (": "Construire le formulaire modal d'ajout d'ingrédient : 3 champs (Nom, Quantité, Unité) avec un bouton de validation large.",
+            "Gérer la sauvegarde fictive et afficher un toast d": "Gérer la mise à jour de quantité (+/-) depuis la liste et afficher un toast de confirmation."
+          }
+        },
+        {
+          "template": "PROJET - PROMPT 3",
+          "content": {
+            "Titre": "Le Prompt Zéro — Partie 3",
+            "Stack technique choisie :": "Stack technique choisie :",
+            "React / Next.js": "React / Next.js",
+            "La base solide et standardisée.": "La base solide et standardisée.",
+            "Re": "Re",
+            "Tailwind CSS v4": "Tailwind CSS v4",
+            "Crucial pour que l'IA style tout inline sans créer": "Crucial pour que l'IA style tout inline sans créer de fichiers CSS. Idéal pour les interfaces denses et les indicateurs colorés.",
+            "TW": "TW",
+            "Lucide React": "Lucide React",
+            "PROMPT.md": "PROMPT.md",
+            "# 3. STACK TECHNIQUE": "# 3. STACK TECHNIQUE",
+            "Tu dois utiliser exclusivement les technologies su": "Tu dois utiliser exclusivement les technologies suivantes. N'installe rien d'autre sans me le demander.",
+            "Frontend : React avec TypeScript.": "Frontend : React avec TypeScript.",
+            "Style : Tailwind CSS (pas de fichiers CSS customs)": "Style : Tailwind CSS v4 (pas de fichiers CSS customs, pas de styled-components).",
+            "Icônes : Import depuis 'lucide-react'.": "Icônes : Import exclusivement depuis 'lucide-react' (ex: ChefHat, Package, AlertTriangle, Plus, Minus).",
+            "Données : Fake data en dur dans les composants.": "Données : Fake data en dur dans les composants (tableau d'ingrédients avec nom, quantité, unité, seuil critique)."
+          }
+        },
+        {
+          "template": "PROJET - PROMPT 4",
+          "content": {
+            "Titre": "Le Prompt Zéro — Partie 4",
+            "L'Amorce": "L'Amorce",
+            "Rappel : On ne demande jamais de tout coder d'un coup. Le Prompt Zéro se termine toujours par la première User Story et le squelette de l'application.": "Rappel : On ne demande jamais de tout coder d'un coup. Le Prompt Zéro se termine toujours par la première User Story et le squelette de l'application.",
+            "PROMPT.md": "PROMPT.md",
+            "# PREMIÈRE ACTION (AMORCE)": "# PREMIÈRE ACTION (AMORCE)",
+            "Pour commencer, ne code pas toute l'application. G": "Pour commencer, ne code pas toute l'application. Génère uniquement : 1) Le fichier Agent.md avec toutes les règles de design définies ci-dessus. 2) Le squelette de l'application avec une liste statique de 5 ingrédients fictifs (ex: Crème fraîche, Farine T55, Beurre AOP, Thym frais, Huile d'olive), chacun avec une quantité, une unité et un statut de criticité. 3) L'indicateur coloré (vert/orange/rouge) visible sur chaque ligne de la liste. Arrête-toi là et montre-moi le résultat."
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 1",
+          "content": {
+            "Titre": "Agent.md — Respiration & Espacement",
+            "Sans consigne": "Sans consigne",
+            "Avec consigne": "Avec consigne",
+            "Agent.md": "Agent.md",
+            "\"Utiliser des paddings et margins très généreux. L": "\"Utiliser des paddings et margins très généreux. Les lignes de la liste d'ingrédients doivent avoir un padding vertical minimum de 16px pour être facilement tappables avec un doigt. Chaque carte ou ligne doit respirer : aucun élément ne doit être à moins de 12px d'un bord. L'espacement entre deux lignes de liste doit être d'au moins 8px.\""
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 2",
+          "content": {
+            "Titre": "Agent.md — Ergonomie Mobile",
+            "Agent.md": "Agent.md",
+            "\"L'approche doit être strictement Mobile-First. Le": "\"L'approche doit être strictement Mobile-First. Les boutons d'action (+/-) doivent avoir une taille minimale de 48x48px pour être utilisables avec des mains humides ou gantées. Le bouton flottant d'ajout d'ingrédient (FAB) doit être positionné en bas à droite, toujours visible, avec un diamètre de 64px minimum. Aucun élément interactif ne doit être placé dans les 20px supérieurs ou inférieurs de l'écran (zones de geste système).\"",
+            "Bouton": "Bouton +/- : min. 48x48px"
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 3",
+          "content": {
+            "Titre": "Agent.md — Couleurs & Thème",
+            "Agent.md": "Agent.md",
+            "\"L'approche doit être strictement Mobile-First. Le": "\"Le thème par défaut est Dark Mode. Fond principal : #111827 (gris très sombre). Surface des cartes : #1F2937. Couleur d'accent principale : #F59E0B (ambre chaud, évoque la cuisine). Les indicateurs de criticité utilisent exclusivement : vert #22C55E (stock OK), orange #F97316 (stock bas), rouge #EF4444 (stock critique). Ces couleurs ne doivent jamais être utilisées à d'autres fins pour conserver leur valeur sémantique.\"",
+            "Dark Mode + Accent": "Dark Mode + Accent Ambre #F59E0B"
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 4",
+          "content": {
+            "Titre": "Agent.md — Typographie",
+            "Agent.md": "Agent.md",
+            "\"L'approche doit être strictement Mobile-First. Le": "\"La police utilisée est Inter (Google Fonts). Le nom de l'ingrédient sur chaque ligne est en font-size 16px, font-weight 600, couleur #F9FAFB. La quantité et l'unité sont en font-size 14px, font-weight 400, couleur #9CA3AF. Les labels de section (ex: 'Stock Critique') sont en font-size 12px, font-weight 700, uppercase, letter-spacing 0.1em, couleur #6B7280. Aucune autre taille de police ne doit être utilisée.\"",
+            "Titre Principal": "Crème fraîche",
+            "Texte de corps avec un gris plus clair pour créer ": "2.5 L · #9CA3AF — pour créer une hiérarchie claire entre le nom et la quantité."
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 5",
+          "content": {
+            "Titre": "Agent.md — États & Interactions",
+            "Agent.md": "Agent.md",
+            "\"L'approche doit être strictement Mobile-First. Le": "\"Tous les éléments interactifs doivent avoir un état de survol (hover) et un état actif (active/pressed) explicites. Les boutons +/- utilisent un fond #374151 au repos, #4B5563 au hover et une légère scale(0.95) au pressed. Le bouton FAB utilise l'accent #F59E0B au repos et #D97706 au hover. Les lignes de la liste ont un fond transparent au repos et #1F2937 au hover. Toutes les transitions sont en 150ms ease-in-out.\"",
+            "Survol (Hover)": "Survol (Hover) : fond #4B5563 + transition 150ms"
+          }
+        }
+      ]
+    }
+  ]
+}

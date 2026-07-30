@@ -1,0 +1,206 @@
+{
+  "moduleTitle": "Module Projet : Projets Fil Rouge",
+  "moduleSlug": "projets-fil-rouge",
+  "chapterTitle": "Suivi de projet : Projet : VORTEX Energy",
+  "chapterNumber": 9,
+  "lessons": [
+    {
+      "lessonSlug": "projet-vortex-energy",
+      "lessonTitle": "Projet : VORTEX Energy",
+      "lessonType": "cas_pratique",
+      "colorName": "Bleu clair",
+      "color": "#A0D2FF",
+      "backgroundColor": "#A0D2FF",
+      "colorHex": "#A0D2FF",
+      "slides": [
+        {
+          "template": "PROJET - BRIEF",
+          "content": {
+            "Titre": "Exemple : VORTEX Energy",
+            "Titre Intro": "LE CONSTAT",
+            "Intro": "La consommation de boissons énergisantes est en hausse chez les jeunes, mais les marques actuelles proposent des visuels datés et peu inspirants.",
+            "Titre 1": "Objectif de l'application",
+            "Texte 1": "Créer une landing page Neo-Brutaliste immersive, avec des designs fluides et un parcours d'achat immédiat.",
+            "image": "http://localhost:8080/assets/vibe_projet_vortex_brief.png",
+            "Source": "Source : Canette VORTEX - Illustration générée par IA - Maxime Elhaik"
+          }
+        },
+        {
+          "template": "PROJET - PERSONA",
+          "content": {
+            "Titre": "PERSONA UTILISATEUR",
+            "Intro": "Analyse des besoins et contraintes d'usage sur le terrain.",
+            "Alexandre": "Lucas",
+            "Commercial Terrain": "Designer & Gamer",
+            "En déplacement permanent": "Surconsommateur de contenus mobiles",
+            "Utilisation 100% sur Smartphone": "Sensible aux designs atypiques et bold",
+            "Ultra-pressé entre deux RDV": "Achat compulsif en moins de 10 secondes",
+            "L'Interface Générée (UX/UI)": "L'Interface Générée (UX/UI)",
+            "Mobile-first : Grands boutons faciles à presser su": "Layout Neo-Brutaliste : Typographies massives et bordures noires épaisses.",
+            "Mode Sombre : Activé par défaut pour réduire la fa": "Couleurs Fluo : Fond sombre (slate-950) contrastant avec du vert acide (lime-400).",
+            "Action Rapide : Accès immédiat et omniprésent au b": "Checkout 1-Tap : Bouton d'achat collé en bas de l'écran, accessible à tout moment.",
+            "Le Périmètre du MVP": "Le Périmètre du MVP",
+            "Action unique ultra-optimisée : Ajouter un nouveau": "Achat instantané : Une seule action pour commander un pack de boissons.",
+            "Pas de superflu : Aucune fonctionnalité d'analyse ": "Zéro distraction : Ni espace client ni tableau de bord complexe.",
+            "Picto 1": "zap",
+            "Picto 2": "palette",
+            "Picto 3": "shopping-cart"
+          }
+        },
+        {
+          "template": "PROJET - USER STORY",
+          "content": {
+            "Titre": "PARCOURS USER STORY",
+            "Intro": "Définition du flux fonctionnel principal du MVP.",
+            "Application": "Vortex Landing Page",
+            "\"Permettre au commercial d'ajouter une note post-R": "\"Permettre à Lucas d'acheter un pack de VORTEX en moins de 10 secondes via une interaction ultra-fluide.\"",
+            "User Story": "User Stories MVP",
+            "Créer l'écran d'accueil avec un énorme bouton \"Ajo": "Afficher le Hero Header avec la canette 3D et le bouton d'achat fluo.",
+            "Construire le formulaire modal rapide : 3 champs (": "Ouvrir la pop-up de paiement simplifiée (email, adresse, sélection du pack).",
+            "Gérer la sauvegarde fictive et afficher un toast d": "Simuler la transaction et afficher un toast de succès animé en Neo-brutalisme.",
+            "Picto 1": "sparkles"
+          }
+        },
+        {
+          "template": "PROJET - CAHIER",
+          "content": {
+            "Titre": "CAHIER DES CHARGES",
+            "Intro": "Structure du document récapitulatif avant prompting.",
+            "Cahier-des-charges.txt": "Cahier-des-charges.txt",
+            "Vision & Persona": "Vision & Persona",
+            "**Projet :** Créer une Landing Page \"Waitlist\" pou": "**Projet :** Landing Page immersive et bold pour la boisson VORTEX.",
+            "**Cible :** Sarah, 28 ans, solopreneur et digital ": "**Cible :** Lucas, 22 ans, gamer et amateur de tendances graphiques.",
+            "**Sensibilité :** Très attachée à l'esthétique (\"v": "**Sensibilité :** Sensible aux micros-animations et aux designs originaux.",
+            "Périmètre (MVP)": "Périmètre (MVP)",
+            "Le projet est un One-Pager sans backend complexe n": "Un One-Pager statique intégrant des animations interactives locales sans base SQL.",
+            "User Stories": "User Stories",
+            "En tant que Sarah, je veux un Hero Header massif p": "En tant que Lucas, je veux voir la canette 3D tourner pour apprécier le design.",
+            "En tant que Sarah, je veux un formulaire d'inscrip": "En tant que Lucas, je veux commander en un tap sans créer de compte client."
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 5",
+          "content": {
+            "Titre": "DESIGN : EFFETS TACTILES",
+            "Intro": "Gestion du retour tactile lors des clics.",
+            "Agent.md": "Agent.md",
+            "\"L'approche doit être strictement Mobile-First. Le": "→ \"Intégrer des ombres noires décalées (shadow-[4px_4px_0px_0px_#000]) sur les boutons pour appuyer le style Neo-Brutaliste.\"",
+            "Survol (Hover)": "Survol (Hover)",
+            "Picto 1": "mouse-pointer"
+          }
+        },
+        {
+          "template": "PROJET - PROMPT 1",
+          "content": {
+            "Titre": "PROMPT 1 : CONTEXTE",
+            "Intro": "Initialisation du rôle et de la vision globale de l'application.",
+            "PROMPT.md": "PROMPT.md",
+            "Agis comme un développeur Frontend Expert en UX Mo": "Agis comme un développeur Frontend expert en interfaces Neo-Brutalistes bold.",
+            "# 1. CONTEXTE & PERSONA": "# 1. CONTEXTE & PERSONA",
+            "Tu vas coder une application \"Mini-CRM\".": "Tu vas coder la Landing Page mobile interactive pour la boisson énergisante 'VORTEX'.",
+            "L'utilisateur final est Alexandre, un commercial t": "La cible est Lucas, un gamer de 22 ans adepte de designs ultra modernes et fluides.",
+            "Cahier des charges :": "Cahier des charges :",
+            "Alexandre, Commercial": "Lucas, Gamer / Designer",
+            "Utilisation 100% sur mobile en voiture.": "Utilisation 100% sur mobile, recherche d'une expérience visuelle marquante.",
+            "Plutôt que de devoir dicter chaque taille de bouto": "→ Donnez un rôle d'expert en design moderne à l'IA pour garantir un rendu bold."
+          }
+        },
+        {
+          "template": "PROJET - PROMPT 2",
+          "content": {
+            "Titre": "PROMPT 2 : PÉRIMÈTRE",
+            "Intro": "Limitation du scope fonctionnel pour garantir la simplicité.",
+            "PROMPT.md": "PROMPT.md",
+            "# 2. PÉRIMÈTRE (MVP)": "# 2. PÉRIMÈTRE (MVP)",
+            "L'application a un périmètre volontairement très r": "La Landing Page se concentre sur l'effet visuel et l'action d'achat rapide :",
+            "Saisir un Nom, Téléphone et Note.": "Afficher le Hero Header avec la canette 3D et le bouton d'achat.",
+            "Afficher un message de confirmation.": "Proposer une pop-up d'achat épurée en 3 étapes.",
+            "ATTENTION : NE CODE PAS de système de connexion (A": "ATTENTION : Ne codez pas de gestion de panier complexe ni d'historique de commandes.",
+            "MVP: Ajouter un contact et une note (3 clics).": "MVP : Achat d'un pack de boissons en 2 clics.",
+            "User Story": "User Stories MVP",
+            "Créer l'écran d'accueil avec un énorme bouton \"Ajo": "Créer la section d'accueil avec l'illustration et le bouton d'achat.",
+            "Construire le formulaire modal rapide : 3 champs (": "Afficher le modal de checkout (nom, adresse, mode de paiement).",
+            "Gérer la sauvegarde fictive et afficher un toast d": "Simuler la transaction avec une notification de succès stylisée."
+          }
+        },
+        {
+          "template": "PROJET - PROMPT 3",
+          "content": {
+            "Titre": "PROMPT 3 : STACK",
+            "Intro": "Spécification des choix techniques imposés à l'IA.",
+            "Stack technique choisie :": "Stack technique choisie :",
+            "React / Next.js": "React / Next.js",
+            "La base solide et standardisée.": "Composants ultra-rapides.",
+            "Re": "Re",
+            "Tailwind CSS v4": "Tailwind CSS v4",
+            "Crucial pour que l'IA style tout inline sans créer": "Indispensable pour intégrer des ombres et bordures Neo-Brutalistes.",
+            "TW": "TW",
+            "Lucide React": "Lucide React",
+            "PROMPT.md": "PROMPT.md",
+            "# 3. STACK TECHNIQUE": "# 3. STACK TECHNIQUE",
+            "Tu dois utiliser exclusivement les technologies su": "Vous devez utiliser exclusivement la stack technologique suivante :",
+            "Frontend : React avec TypeScript.": "Frontend : React avec TypeScript et hooks d'animations.",
+            "Style : Tailwind CSS (pas de fichiers CSS customs)": "Style : Tailwind CSS v4 avec variables CSS personnalisées.",
+            "Icônes : Import depuis 'lucide-react'.": "Icônes : Imports explicites de 'lucide-react' (Zap, ShoppinBag).",
+            "Données : Fake data en dur dans les composants.": "Données : Mock local pour les types de packs de canettes.",
+            "Picto 1": "code"
+          }
+        },
+        {
+          "template": "PROJET - PROMPT 4",
+          "content": {
+            "Titre": "PROMPT 4 : AMORCE",
+            "Intro": "Lancement de la première itération de développement.",
+            "L'Amorce": "L'Amorce",
+            "Rappel : On ne demande jamais de tout coder d'un coup. Le Prompt Zéro se termine toujours par la première User Story et le squelette de l’application.": "Rappel : On ne demande jamais de tout coder d'un coup. Le Prompt Zéro se termine toujours par la première User Story et le squelette de l’application.",
+            "PROMPT.md": "PROMPT.md",
+            "# PREMIÈRE ACTION (AMORCE)": "# PREMIÈRE ACTION (AMORCE)",
+            "Pour commencer, ne code pas toute l'application. G": "Pour commencer, génère uniquement la mise en page d'accueil avec le titre géant et le bouton d'achat."
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 1",
+          "content": {
+            "Titre": "DESIGN : RESPIRATION",
+            "Intro": "Définition des règles d'espacement pour l'environnement mobile.",
+            "Sans consigne": "Sans consigne (Interface serrée)",
+            "Avec consigne": "Avec consigne (Neo-Brutalisme)",
+            "Agent.md": "Agent.md",
+            "\"Utiliser des paddings et margins très généreux. L": "→ \"Appliquer des marges et paddings excessifs (p-8, my-12) combinés à des bordures noires épaisses (border-4 border-black) pour accentuer l'effet brut.\""
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 2",
+          "content": {
+            "Titre": "DESIGN : ERGONOMIE",
+            "Intro": "Optimisation des cibles tactiles pour un usage en cuisine.",
+            "Agent.md": "Agent.md",
+            "\"L'approche doit être strictement Mobile-First. Le": "→ \"Concevoir une interface Mobile-First avec un bouton d'achat persistant (fixed bottom-0) de 64px de hauteur pour un clic immédiat.\"",
+            "Bouton": "Bouton Checkout"
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 3",
+          "content": {
+            "Titre": "DESIGN : COULEURS",
+            "Intro": "Choix des contrastes adaptés aux éclairages intenses.",
+            "Agent.md": "Agent.md",
+            "\"L'approche doit être strictement Mobile-First. Le": "→ \"Palette bold : fond sombre (slate-950) associé à du vert lime (#84cc16) et du rose fluo (#ec4899) pour attirer l'attention sur les boutons.\"",
+            "Dark Mode + Accent": "Néons Contrastés"
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 4",
+          "content": {
+            "Titre": "DESIGN : TYPOGRAPHIE",
+            "Intro": "Hiérarchie visuelle pour une lisibilité instantanée.",
+            "Agent.md": "Agent.md",
+            "\"L'approche doit être strictement Mobile-First. Le": "→ \"Utiliser une police grasse et sans-serif très large (font-black text-5xl uppercase) pour les titres, simulant les affiches de rue brutalistes.\"",
+            "Titre Principal": "Titres Ultra-Gras",
+            "Texte de corps avec un gris plus clair pour créer ": "Texte de corps avec un contraste important pour assurer la lisibilité globale."
+          }
+        }
+      ]
+    }
+  ]
+}

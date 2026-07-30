@@ -303,6 +303,10 @@ Lors de la génération du contenu de ces slides par l'IA, les clés de l'objet 
 
 ### Règles d'adaptation dynamique du projet
 Tous les calques textuels ci-dessus contiennent des exemples par défaut (ex: Alexandre, CRM mobile, Tailwind, etc.). L'IA doit obligatoirement réécrire et adapter l'ensemble de ces calques au sujet de projet validé avec l'utilisateur.
+
+> [!WARNING]
+> **Calques Statiques (INTRO & NUMÉROS)** : Les calques textuels nommés exactement `"Intro"` ainsi que les calques contenant uniquement des chiffres (puces comme `"1"`, `"2"`, `"3"`, etc.) ne doivent **jamais** être modifiés ni inclus dans les clés d'injection JSON. Ils doivent conserver leur valeur par défaut issue du template Figma.
+
 - *Exemple (Projet 3D pour adolescents)* : Le Persona devient un adolescent gamer, l'application devient un visualiseur de modèles 3D, la stack technique impose Three.js/React Three Fiber, les règles de design de l'Agent.md concernent le chargement progressif des géométries et l'adaptation à la souris/tactile pour la rotation de caméra.
 - *Exemple (Projet Cuisinier)* : Le Persona est un chef de cuisine les mains occupées, les consignes d'ergonomie imposent le contrôle vocal ou des boutons géants, la stack utilise un framework léger de reconnaissance vocale.
 

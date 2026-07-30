@@ -483,6 +483,14 @@ export const App: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
 
+  // Projet fil rouge generation state
+  const [projetTitle, setProjetTitle] = useState<string>('');
+  const [projetDescription, setProjetDescription] = useState<string>('');
+  const [isGeneratingProjet, setIsGeneratingProjet] = useState<boolean>(false);
+  const [projetResult, setProjetResult] = useState<any>(null);
+  const [showProjetModal, setShowProjetModal] = useState<boolean>(false);
+
+
   // Collapsible tree navigation states for UX/UI arborescence
   const [expandedModules, setExpandedModules] = useState<Record<number, boolean>>(() => {
     const saved = localStorage.getItem('vibe_expandedModules');
@@ -1101,6 +1109,49 @@ export const App: React.FC = () => {
       }
     };
   };
+
+  // Generate a full projet fil rouge via /api/generate-projet (SSE)
+  const runProjetGeneration = () => {
+    if (!projetTitle.trim() || !projetDescription.trim()) return;
+    setIsGeneratingProjet(true);
+    setProjetResult(null);
+    setLogs(`[Projet] Génération de "${projetTitle}"...\n`);
+
+    const params = new URLSearchParams({
+      projectTitle: projetTitle.trim(),
+      description: projetDescription.trim(),
+    });
+    const eventSource = new EventSource(`/api/generate-projet?${params.toString()}`);
+
+    eventSource.onmessage = (event) => {
+      const data = event.data;
+      // Detect the final JSON payload
+      if (data.startsWith('[Projet] JSON_RESULT:')) {
+        try {
+          const json = JSON.parse(data.replace('[Projet] JSON_RESULT:', ''));
+          setProjetResult(json);
+          setShowProjetModal(true);
+        } catch (e) {
+          setLogs((prev) => prev + '[Erreur] Impossible de parser le JSON résultat.\n');
+        }
+      } else {
+        setLogs((prev) => prev + data + '\n');
+      }
+
+      if (data.includes('[System] Process exited')) {
+        eventSource.close();
+        setIsGeneratingProjet(false);
+        fetchLessons(); // Refresh list to show new projet entry
+      }
+    };
+
+    eventSource.onerror = () => {
+      setLogs((prev) => prev + '[System Error] Connexion SSE interrompue.\n');
+      eventSource.close();
+      setIsGeneratingProjet(false);
+    };
+  };
+
 
   const handleRegenerateSlide = (slideIndex: number, instruction: string) => {
     if (!selectedSlug) return;
@@ -2630,6 +2681,125 @@ export const App: React.FC = () => {
                 </div>
               </section>
 
+              {/* ── Projet Fil Rouge ─────────────────────────────────── */}
+              <section className="glass-panel" style={{ padding: '16px', background: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: '8px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px', borderBottom: '1px solid var(--border-color)', paddingBottom: '8px' }}>
+                  <h3 style={{ fontSize: '14px', fontWeight: 700, margin: 0, display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-primary)' }}>
+                    <span>🎯</span>
+                    <span>Projet Fil Rouge</span>
+                  </h3>
+                  {isGeneratingProjet && (
+                    <span style={{ fontSize: '11px', color: 'var(--accent-blue)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <span className="spinner" style={{ width: '10px', height: '10px' }}></span>
+                      <span>En cours...</span>
+                    </span>
+                  )}
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <label style={{ fontSize: '11px', fontWeight: 600, color: 'var(--text-secondary)' }}>
+                      Nom du projet :
+                    </label>
+                    <input
+                      type="text"
+                      value={projetTitle}
+                      onChange={(e) => setProjetTitle(e.target.value)}
+                      placeholder="ex: MoodBoard AI"
+                      disabled={isGeneratingProjet}
+                      style={{
+                        padding: '7px 10px',
+                        background: 'var(--bg-tertiary)',
+                        border: '1px solid var(--border-color)',
+                        borderRadius: '6px',
+                        color: 'var(--text-primary)',
+                        fontSize: '12px',
+                        outline: 'none',
+                        opacity: isGeneratingProjet ? 0.6 : 1,
+                      }}
+                    />
+                  </div>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <label style={{ fontSize: '11px', fontWeight: 600, color: 'var(--text-secondary)' }}>
+                      Description du projet :
+                    </label>
+                    <textarea
+                      value={projetDescription}
+                      onChange={(e) => setProjetDescription(e.target.value)}
+                      placeholder="Décris le projet : cible, contexte, objectif, stack envisagée..."
+                      rows={4}
+                      disabled={isGeneratingProjet}
+                      style={{
+                        padding: '7px 10px',
+                        background: 'var(--bg-tertiary)',
+                        border: '1px solid var(--border-color)',
+                        borderRadius: '6px',
+                        color: 'var(--text-primary)',
+                        fontSize: '12px',
+                        outline: 'none',
+                        resize: 'vertical',
+                        fontFamily: 'inherit',
+                        opacity: isGeneratingProjet ? 0.6 : 1,
+                      }}
+                    />
+                  </div>
+
+                  <button
+                    onClick={runProjetGeneration}
+                    disabled={isGeneratingProjet || !projetTitle.trim() || !projetDescription.trim()}
+                    className="glow-btn"
+                    style={{
+                      width: '100%',
+                      padding: '9px',
+                      fontSize: '12px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '6px',
+                      marginTop: '2px',
+                      opacity: (!projetTitle.trim() || !projetDescription.trim()) ? 0.5 : 1,
+                    }}
+                  >
+                    {isGeneratingProjet ? (
+                      <>
+                        <span className="spinner" style={{ width: '12px', height: '12px' }}></span>
+                        <span>Génération en cours...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>⚡</span>
+                        <span>Générer les 13 slides (+ Supabase)</span>
+                      </>
+                    )}
+                  </button>
+
+                  {projetResult && (
+                    <button
+                      onClick={() => setShowProjetModal(true)}
+                      style={{
+                        width: '100%',
+                        padding: '7px',
+                        background: 'rgba(16, 185, 129, 0.1)',
+                        color: 'var(--accent-green)',
+                        border: '1px solid rgba(16, 185, 129, 0.3)',
+                        borderRadius: '6px',
+                        fontSize: '11px',
+                        fontWeight: 600,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '6px',
+                      }}
+                    >
+                      <span>📋</span>
+                      <span>Voir / Copier le JSON ({projetResult.slides?.length || 0} slides)</span>
+                    </button>
+                  )}
+                </div>
+              </section>
+
               {/* Console inline — sous les boutons de pipeline */}
               <section style={{ display: 'flex', flexDirection: 'column', minHeight: '180px', flex: '0 1 auto' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px', borderBottom: '1px solid var(--border-color)', paddingBottom: '4px' }}>
@@ -2994,6 +3164,105 @@ export const App: React.FC = () => {
                 }}
               >
                 Créer la leçon
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal JSON résultat Projet Fil Rouge */}
+      {showProjetModal && projetResult && (
+        <div style={{
+          position: 'fixed',
+          top: 0, left: 0,
+          width: '100vw', height: '100vh',
+          background: 'rgba(0,0,0,0.55)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          zIndex: 9999,
+          backdropFilter: 'blur(6px)',
+          padding: '20px',
+        }}>
+          <div className="glass-panel animate-fade-in" style={{
+            width: '100%',
+            maxWidth: '720px',
+            maxHeight: '85vh',
+            padding: '24px',
+            background: 'var(--bg-secondary)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '14px',
+            overflow: 'hidden',
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <h3 style={{ fontSize: '15px', fontWeight: 700, margin: 0, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span>🎯</span>
+                <span>{projetResult.projectTitle} — {projetResult.slides?.length || 0} slides générées</span>
+              </h3>
+              <button
+                onClick={() => setShowProjetModal(false)}
+                style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '18px', cursor: 'pointer', lineHeight: 1 }}
+              >×</button>
+            </div>
+
+            <div style={{ fontSize: '11px', color: 'var(--accent-green)', background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.25)', borderRadius: '6px', padding: '8px 12px' }}>
+              ✅ Projet sauvegardé dans Supabase sous le slug <strong>{projetResult.projectSlug}</strong>. Il apparaît maintenant dans la liste des leçons avec le type PROJET.
+            </div>
+
+            <pre style={{
+              flex: 1,
+              overflowY: 'auto',
+              background: 'var(--bg-tertiary)',
+              border: '1px solid var(--border-color)',
+              borderRadius: '6px',
+              padding: '12px',
+              fontSize: '11px',
+              fontFamily: 'monospace',
+              color: 'var(--text-primary)',
+              whiteSpace: 'pre-wrap',
+              wordBreak: 'break-all',
+              margin: 0,
+              maxHeight: '50vh',
+            }}>
+              {JSON.stringify(projetResult, null, 2)}
+            </pre>
+
+            <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end' }}>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(JSON.stringify(projetResult, null, 2));
+                }}
+                style={{
+                  padding: '8px 16px',
+                  background: 'var(--bg-tertiary)',
+                  border: '1px solid var(--border-color)',
+                  color: 'var(--text-primary)',
+                  borderRadius: '6px',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                }}
+              >
+                <span>📋</span> Copier le JSON
+              </button>
+              <button
+                onClick={() => {
+                  const blob = new Blob([JSON.stringify(projetResult, null, 2)], { type: 'application/json' });
+                  const url = URL.createObjectURL(blob);
+                  const a = document.createElement('a');
+                  a.href = url;
+                  a.download = `FINAL_PROJET_${(projetResult.projectSlug || 'projet').toUpperCase()}.json`;
+                  a.click();
+                  URL.revokeObjectURL(url);
+                }}
+                className="glow-btn"
+                style={{ padding: '8px 16px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}
+              >
+                <span>⬇️</span> Télécharger
               </button>
             </div>
           </div>
