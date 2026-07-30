@@ -1,17 +1,143 @@
 {
-  "lessonSlug": "m4c4l2",
-  "lessonTitle": "M4C4L2 — Lancer l'application web",
-  "lessonType": "logiciel",
+  "lessonTitle": "M4C4L2 — Front-end vs Back-end : pourquoi le navigateur ne suffit plus ?",
   "slides": [
     {
       "template": "VIBECODING - COVER",
       "content": {
-        "Titre": "Lancer l'application web"
+        "Titre": "Front-end vs Back-end : le navigateur ne suffit plus"
       }
     },
     {
-      "template": "VIBECODING - DEMO",
-      "content": {}
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Pourquoi séparer les rôles ?",
+        "Intro": "Une application qui tourne entièrement dans le navigateur expose ses secrets, perd ses données et ne peut pas sécuriser ses traitements. Pour aller plus loin, on sépare les rôles. Voyons comment !",
+        "Titre 1": "La vitrine publique",
+        "Texte 1": "Voyons ce que le navigateur exécute, ce qu'il expose et pourquoi on ne peut pas lui confier les secrets d'une application.",
+        "Titre 2": "Les limites du tout-navigateur",
+        "Texte 2": "Zoom sur les trois failles critiques qui apparaissent quand toute la logique reste côté client, sans serveur pour la protéger.",
+        "Titre 3": "Le moteur invisible",
+        "Texte 3": "Découvrons le rôle du serveur, comment il communique avec l'interface et pourquoi il garde les données hors de portée."
+      }
+    },
+    {
+      "template": "VIBECODING - CONCEPT - IMAGE",
+      "content": {
+        "Titre": "Le Front-end : la vitrine exposée",
+        "Mot": "Le code est public",
+        "Intro": "Tout ce qui s'exécute dans le navigateur est lisible par n'importe qui.",
+        "Definition": "Le Front-end gère l'affichage (HTML/CSS), l'interactivité (JavaScript) et l'expérience utilisateur. Le problème ? Chaque ligne de code est accessible via l'onglet F12 des outils de développement. Un utilisateur curieux peut lire, copier ou modifier ce code en quelques secondes. Résultat : on ne peut pas y stocker une clé API ni y placer une règle de sécurité critique.",
+        "Titre 1": "Affichage",
+        "Texte 1": "HTML, CSS, JavaScript : tout est rendu visible et modifiable via les outils du navigateur (F12).",
+        "Picto 1": "mdi:monitor-eye",
+        "Titre 2": "Exposition",
+        "Texte 2": "Aucun secret ne survit côté client : clés, logique, règles métier — tout est lisible à la source.",
+        "Picto 2": "mdi:shield-unlocked",
+        "Source": "Source : Front-end navigateur - Illustration générée par IA - Maxime Elhaik"
+      },
+      "image_concept": "A glowing shop window at night, fully transparent glass, every internal mechanism and price tag visible from the street — metaphor for exposed front-end code",
+      "image_style": "chiaroscuro",
+      "image_ratio": "1:1"
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "Pourquoi le navigateur ne suffit plus ?",
+        "Intro": "Trois situations concrètes où confier toute la logique au navigateur crée des failles impossibles à ignorer.",
+        "Titre 1": "Sécurité",
+        "Parametre 1": "Clés API",
+        "Violet 1": "Une clé API dans le code client est publique",
+        "Texte 1": "Une clé API écrite dans le JavaScript client est lisible par n'importe qui via F12. Elle peut être copiée, réutilisée ou revendue. En 2023, des milliers de clés OpenAI ont été exposées ainsi sur GitHub et dans des apps web non sécurisées.",
+        "Picto 1": "mdi:robber",
+        "Titre 2": "Persistance",
+        "Parametre 2": "localStorage",
+        "Violet 2": "Les données disparaissent avec le cache",
+        "Texte 2": "Le localStorage est lié au navigateur et à l'appareil. Si l'utilisateur vide son cache, change de navigateur ou passe sur mobile, toutes les données sont perdues. Aucune persistance réelle n'est possible sans base de données côté serveur.",
+        "Picto 2": "mdi:database-off-outline",
+        "Titre 3": "Logique métier",
+        "Parametre 3": "Règles critiques",
+        "Violet 3": "Les calculs sensibles ne restent pas côté client",
+        "Texte 3": "Un calcul de prix, une vérification de paiement ou une règle d'accès placés dans le JS client peuvent être contournés en modifiant le code directement dans F12. La logique confidentielle doit s'exécuter sur un serveur, hors de portée du navigateur.",
+        "Picto 3": "mdi:lock-alert-outline"
+      }
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO",
+      "content": {
+        "Titre": "Le Back-end : le moteur invisible",
+        "Intro": "Le serveur s'exécute hors du navigateur. Il protège les secrets, gère les données et applique les règles métier sans jamais être exposé directement.",
+        "Titre 1": "Logique & sécurité",
+        "Texte 1": "Le serveur vérifie les autorisations, masque les clés API et exécute les traitements sensibles (paiements, calculs). Aucune de ces opérations n'est visible depuis le navigateur — seule la réponse finale est renvoyée.",
+        "Titre 2": "Données persistantes",
+        "Texte Bulle": "Contrairement au localStorage, une base de données côté serveur conserve les informations entre les sessions, les appareils et les utilisateurs — sans jamais dépendre du cache du navigateur.",
+        "Titre 3": "Environnement d'exécution",
+        "Texte 3": "Le serveur tourne sur une machine distante ou en local avec Node.js. Il reçoit des requêtes HTTP, traite les données et renvoie une réponse structurée (JSON) — sans jamais exposer son code source.",
+        "Source": "Source : Architecture serveur - Illustration générée par IA - Maxime Elhaik"
+      },
+      "image_concept": "A powerful underground engine room with pipes, valves and glowing control panels, completely hidden beneath a calm city street — metaphor for invisible server-side processing",
+      "image_style": "constructivist",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO - ALT",
+      "content": {
+        "Titre": "La communication Client / Serveur",
+        "Intro": "Comment le navigateur et le serveur échangent des données sans jamais partager leur code source.",
+        "Titre 1": "1. Requête HTTP",
+        "Texte 1": "Le Front-end émet un appel (GET/POST) à destination du serveur pour demander une information ou soumettre des données.",
+        "Picto 1": "mdi:send-clock",
+        "Titre 2": "2. Traitement & Sécurité",
+        "Texte 2": "Le Back-end reçoit la demande, vérifie les autorisations, interroge la base de données et exécute la logique métier en toute confidentialité.",
+        "Picto 2": "mdi:cog-sync",
+        "Titre 3": "3. Réponse JSON",
+        "Texte 3": "Le serveur renvoie les données traitées sous forme d'objet JSON. Le Front-end les réceptionne et met à jour l'interface pour l'utilisateur.",
+        "Picto 3": "mdi:code-json",
+        "Source": "Source : Flux Client-Serveur - Illustration générée par IA - Maxime Elhaik"
+      },
+      "image_concept": "Digital data stream bridge connecting a sleek web browser client on the left to a secure glowing server datacenter on the right, high-tech isometric network flux",
+      "image_style": "minimalist-flat",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - 3 BLOCS - PHOTO - ALT",
+      "content": {
+        "Titre": "Analogie : le restaurant et la cuisine",
+        "Intro": "Front-end, Back-end, API : trois rôles distincts qui fonctionnent ensemble, comme dans un restaurant bien organisé.",
+        "Titre 1": "Front-end = La salle",
+        "Texte 1": "Le menu, le décor, les tables : tout ce que le client voit et touche. L'interface utilisateur affiche les informations et recueille les commandes — mais ne prépare rien.",
+        "Picto 1": "mdi:silverware-fork-knife",
+        "Titre 2": "API = Le serveur en salle",
+        "Texte 2": "Le serveur transporte la commande de la salle vers la cuisine, puis ramène le plat au client. L'API joue ce rôle : elle relie le Front-end au Back-end sans que les deux se touchent directement.",
+        "Picto 2": "mdi:swap-horizontal-bold",
+        "Titre 3": "Back-end = La cuisine",
+        "Texte 3": "Préparation des plats, stock des ingrédients, recettes secrètes : tout se passe hors de vue du client. Le Back-end traite, stocke et protège — sans jamais être exposé directement.",
+        "Picto 3": "mdi:chef-hat",
+        "Source": "Source : Analogie restaurant - Illustration générée par IA - Maxime Elhaik"
+      },
+      "image_concept": "A split cross-section illustration of a restaurant: the elegant dining room on one side, the bustling hidden kitchen on the other, a waiter passing through a swinging door in the middle",
+      "image_style": "offset-screenprint",
+      "image_ratio": "2:3"
+    },
+    {
+      "template": "VIBECODING - PROMPT ALT",
+      "content": {
+        "Titre": "Demander un serveur local à l'agent",
+        "Intro": "Exemple de prompt structuré dans Antigravity pour créer une architecture Full-Stack en séparant l'interface du serveur.",
+        "Texte 1": "Dans Antigravity, crée un serveur local avec Express.js. Déplace les appels vers l'API OpenAI de mon index.html vers un fichier server.js. Le Front-end doit désormais envoyer une requête POST au serveur local pour obtenir la réponse.",
+        "Texte 2": "Serveur Express généré avec succès dans server.js.",
+        "Texte 3": "server.js",
+        "Texte 4": "const express = require('express');\nconst app = express();\napp.use(express.json());\n\n// Le Back-end garde la clé API hors de portée du client\nconst OPENAI_KEY = process.env.OPENAI_API_KEY;\n\napp.post('/api/generate', async (req, res) => {\n  const { prompt } = req.body;\n  // Appel sécurisé serveur à serveur vers OpenAI\n  const reply = await callOpenAI(prompt, OPENAI_KEY);\n  res.json({ result: reply });\n});\n\napp.listen(3000, () => console.log('Serveur prêt !'));",
+        "Texte Bulle": "Explication du prompt : On explicite le rôle de chaque partie. Le serveur conserve les clés secrètes et gère l'appel externe, tandis que le navigateur ne fait que contacter notre endpoint local `/api/generate`."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "En résumé",
+        "Intro": "Le Front-end gère l'interface — tout y est public, lisible, modifiable. Le Back-end gère la sécurité, les données et la logique métier — rien n'y est exposé directement. Les deux communiquent via des requêtes HTTP : le Front-end demande, le Back-end traite et répond en JSON. Cette séparation n'est pas une contrainte technique : c'est ce qui rend une application fiable, sécurisée et scalable. On sait maintenant pourquoi le navigateur ne suffit plus.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Dans la leçon suivante (M4C4L3), on passe à la pratique : l'agent Antigravity génère un premier serveur local Node.js/Express. Pas besoin de connaître Express par cœur — il faut juste savoir lui décrire ce que le serveur doit faire et pourquoi il doit rester séparé de l'interface."
+      }
     }
   ]
 }
