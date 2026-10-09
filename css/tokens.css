@@ -1,0 +1,48 @@
+/* Design Tokens - Formation Vibe Coding (Standard 2026) */
+:root {
+  /* Brand Palette */
+  --color-brand-purple: #6634D9;
+  --color-brand-purple-hover: #5022BC;
+  --color-brand-fig: #18093B;
+  --color-brand-sunny: #FFFF77;
+  --color-brand-pink: #FFB2B2;
+  --color-pink-20: #FCF1F0;
+  
+  /* Neutral & Surfaces */
+  --color-bg-page: #F8FAFC;
+  --color-card-bg: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-border-dark: #CBD5E1;
+  --color-text-dark: #18093B;
+  --color-text-body: #334155;
+  --color-text-muted: #64748B;
+  
+  /* Functional Accents */
+  --color-success: #16A34A;
+  --color-success-bg: #DCFCE7;
+  --color-danger: #DC2626;
+  --color-danger-bg: #FEE2E2;
+  --color-info: #0284C7;
+  --color-info-bg: #E0F2FE;
+
+  /* Typography */
+  --font-main: 'Basic Sans Alt', 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  --font-code: 'Cousine', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Neo-Brutalist & Modern 2026 Shadows */
+  --shadow-sm: 2px 2px 0px var(--color-brand-fig);
+  --shadow-md: 3px 3px 0px var(--color-brand-fig);
+  --shadow-lg: 4px 4px 0px var(--color-brand-fig);
+  --shadow-subtle: 0 4px 12px rgba(24, 9, 59, 0.04), 0 1px 3px rgba(24, 9, 59, 0.02);
+  --shadow-card-hover: 0 12px 28px -6px rgba(102, 52, 217, 0.12), 3px 3px 0px var(--color-brand-fig);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}

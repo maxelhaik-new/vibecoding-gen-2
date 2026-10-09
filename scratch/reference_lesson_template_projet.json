@@ -1,0 +1,47 @@
+{
+  "templateType": "DECOUVERTE_PROJET",
+  "sourceNodeId": "3915:12485",
+  "description": "Template de référence pour les leçons de découverte de projet (L2/L3) avant les tutoriels",
+  "slidesPattern": [
+    {
+      "step": 1,
+      "template": "VIBECODING - COVER",
+      "purpose": "Lancement immersif de la leçon",
+      "exampleTitle": "Découvrons l'application CopyBoost que nous allons monétiser"
+    },
+    {
+      "step": 2,
+      "template": "VIBECODING - INTRO",
+      "purpose": "Annonce des 3 axes clés (Produit, Cible, Parcours)",
+      "exampleBlocks": ["Le produit SaaS", "Cible & Persona", "Parcours d'achat"]
+    },
+    {
+      "step": 3,
+      "template": "VIBECODING - USE CASE",
+      "purpose": "Problème récurrent résolu et proposition de valeur concrète de l'application",
+      "exampleContent": "CopyBoost résout un problème récurrent..."
+    },
+    {
+      "step": 4,
+      "template": "VIBECODING - 3 COLONNES",
+      "purpose": "Décomposition des 3 piliers / forfaits / caractéristiques de l'application",
+      "exampleColumns": ["DÉCOUVERTE", "FORFAIT PRO", "FORFAIT AGENCE"]
+    },
+    {
+      "step": 5,
+      "template": "VIBECODING - USER STORIES",
+      "purpose": "Les 3 User Stories fonctionnelles précises à implémenter",
+      "exampleStories": [
+        "Consulter les trois forfaits sur la page d'accueil",
+        "Cliquer sur le forfait choisi pour afficher le paiement sécurisé",
+        "Être redirigé vers l'application pour recevoir la confirmation immédiate"
+      ]
+    },
+    {
+      "step": 6,
+      "template": "VIBECODING - 6 BLOCS",
+      "purpose": "Passage à l'action : Récupération du starter kit / repo public GitHub",
+      "exampleTitle": "Récupérez le projet !"
+    }
+  ]
+}

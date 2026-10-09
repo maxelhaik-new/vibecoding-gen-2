@@ -1,5 +1,102 @@
+
+async function handleFicheRecap(instance, content) {
+  if (!content || typeof content !== 'object') return false;
+  
+  const hasCustomKeys = Object.keys(content).some(k => 
+    k.startsWith('Colonne') || k.startsWith('Puce') || k.startsWith('Sous-titre') || k.startsWith('Encart') || k === 'Tag' || k === 'Titre'
+  );
+  if (!hasCustomKeys) return false;
+
+  const allTextNodes = findTextNodes(instance).filter(isNodeVisible);
+  const used = new Set();
+
+  const directMaps = [
+    { match: (t) => t.includes("RECAP"), val: content["Tag"] || content["Badge"] || "BOÎTE À OUTILS" },
+    { match: (t) => t.includes("vocale") || t.includes("connexion") || t.includes("outils"), val: content["Titre"] || "Vos liens de connexion aux outils" },
+    { match: (t) => t.includes("Activer la voix") || t.includes("IA &"), val: content["Colonne 1 Titre"] || content["Sous-titre 1"] || "IA & Environnement" },
+    { match: (t) => t.includes("Parler naturellement") || t.includes("Code &"), val: content["Colonne 2 Titre"] || content["Sous-titre 2"] || "Code & Déploiement" },
+    { match: (t) => t.includes("Recevoir la réponse") || t.includes("Backend &"), val: content["Colonne 3 Titre"] || content["Sous-titre 3"] || "Backend & Monétisation" },
+    { match: (t) => t.includes("Quand l’utiliser") || t.includes("À quoi sert"), val: content["Encart Titre"] || "À quoi sert ce document ?" },
+    { match: (t) => t.includes("Idéal pour") || t.includes("Objectif"), val: content["Encart Sous-titre 1"] || "Objectif" },
+    { match: (t) => t.includes("Moins adapté pour") || t.includes("Sécurité"), val: content["Encart Sous-titre 2"] || "Sécurité" },
+    { match: (t) => t.includes("Brainstorming") || t.includes("Centraliser"), val: content["Encart Texte 1"] || "Centraliser les 7 comptes officiels indispensables pour suivre la formation sans chercher." },
+    { match: (t) => t.includes("Requêtes complexes") || t.includes("Activez"), val: content["Encart Texte 2"] || "Activez la double authentification (2FA) sur chaque plateforme et conservez vos accès en lieu sûr." },
+    { match: (t) => t.includes("Relisez la transcription") || t.includes("Document interactif"), val: content["Encart Astuce"] || "Document interactif : cliquez directement sur chaque nom d'outil pour ouvrir l'inscription." }
+  ];
+
+  for (const item of directMaps) {
+    const node = allTextNodes.find(n => !used.has(n) && item.match(n.characters));
+    if (node && item.val !== undefined) {
+      await loadFontForNode(node);
+      await applyMarkdownText(node, item.val);
+      used.add(node);
+    }
+  }
+
+  const bulletNodes = allTextNodes.filter(n => !used.has(n) && (n.characters.startsWith("→") || n.name.toLowerCase().includes("bullet") || n.name.toLowerCase().includes("item")));
+  bulletNodes.sort((a, b) => {
+    const aX = a.absoluteTransform[0][2];
+    const bX = b.absoluteTransform[0][2];
+    if (Math.abs(aX - bX) > 150) return aX - bX;
+    return a.absoluteTransform[1][2] - b.absoluteTransform[1][2];
+  });
+
+  const bulletsData = [
+    content["Puce 1.1"] || content["Lien 1.1"] || "",
+    content["Puce 1.2"] || content["Lien 1.2"] || "",
+    content["Puce 1.3"] || content["Lien 1.3"] || "",
+    content["Puce 1.4"] || content["Lien 1.4"] || "",
+    content["Puce 2.1"] || content["Lien 2.1"] || "",
+    content["Puce 2.2"] || content["Lien 2.2"] || "",
+    content["Puce 2.3"] || content["Lien 2.3"] || "",
+    content["Puce 2.4"] || content["Lien 2.4"] || "",
+    content["Puce 3.1"] || content["Lien 3.1"] || "",
+    content["Puce 3.2"] || content["Lien 3.2"] || "",
+    content["Puce 3.3"] || content["Lien 3.3"] || "",
+    content["Puce 3.4"] || content["Lien 3.4"] || ""
+  ];
+
+  for (let idx = 0; idx < Math.min(bulletsData.length, bulletNodes.length); idx++) {
+    const bNode = bulletNodes[idx];
+    await loadFontForNode(bNode);
+    await applyMarkdownText(bNode, bulletsData[idx]);
+    used.add(bNode);
+  }
+
+  return true;
+}
+
+
+async function applyMarkdownText(node, text) {
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let match;
+  let plainText = text;
+  let links = [];
+  
+  while ((match = linkRegex.exec(plainText)) !== null) {
+    const fullMatch = match[0];
+    const linkText = match[1];
+    const url = match[2];
+    const startIndex = match.index;
+    plainText = plainText.substring(0, startIndex) + linkText + plainText.substring(startIndex + fullMatch.length);
+    links.push({ start: startIndex, end: startIndex + linkText.length, url: url });
+    linkRegex.lastIndex = startIndex + linkText.length;
+  }
+  
+  node.characters = plainText;
+  
+  for (const link of links) {
+    try {
+      node.setRangeHyperlink(link.start, link.end, { type: 'URL', value: link.url });
+      node.setRangeTextDecoration(link.start, link.end, 'UNDERLINE');
+    } catch(e) {
+      console.warn("Failed to set hyperlink:", e);
+    }
+  }
+}
+
 // Affiche l'interface du plugin
-figma.showUI(__html__, { width: 240, height: 170, themeColors: true });
+figma.showUI(__html__, { width: 280, height: 170, themeColors: true });
 
 // Fonction récursive pour récupérer tous les nœuds de texte d'un élément
 function findTextNodes(node, list = []) {
@@ -11,6 +108,144 @@ function findTextNodes(node, list = []) {
     }
   }
   return list;
+}
+
+// Applique le formatage de texte (style de police, taille et hauteur de ligne) avec chargement asynchrone des polices
+async function applyTextFormat(textNode, fontStyle, fontSize, lineHeight) {
+  if (!textNode || textNode.type !== 'TEXT') return;
+  try {
+    if (textNode.fontName === figma.mixed) {
+      const len = textNode.characters.length;
+      for (let idx = 0; idx < len; idx++) {
+        const fn = textNode.getRangeFontName(idx, idx + 1);
+        if (fn && fn !== figma.mixed) {
+          try { await figma.loadFontAsync(fn); } catch (e) {}
+          if (fontStyle === "Bold") {
+            try { await figma.loadFontAsync({ family: fn.family, style: "Bold" }); } catch (e) {
+              try { await figma.loadFontAsync({ family: fn.family, style: "SemiBold" }); } catch (e2) {}
+            }
+          } else if (fontStyle) {
+            try { await figma.loadFontAsync({ family: fn.family, style: fontStyle }); } catch (e) {}
+          }
+        }
+      }
+      const baseFn = textNode.getRangeFontName(0, 1);
+      if (baseFn && baseFn !== figma.mixed) {
+        if (fontSize !== undefined) textNode.fontSize = fontSize;
+        if (fontStyle === "Bold") {
+          try {
+            await figma.loadFontAsync({ family: baseFn.family, style: "Bold" });
+            textNode.fontName = { family: baseFn.family, style: "Bold" };
+          } catch (e) {
+            try {
+              await figma.loadFontAsync({ family: baseFn.family, style: "SemiBold" });
+              textNode.fontName = { family: baseFn.family, style: "SemiBold" };
+            } catch (e2) {}
+          }
+        } else if (fontStyle) {
+          await figma.loadFontAsync({ family: baseFn.family, style: fontStyle });
+          textNode.fontName = { family: baseFn.family, style: fontStyle };
+        }
+        if (lineHeight !== undefined) {
+          textNode.lineHeight = { value: lineHeight, unit: 'PIXELS' };
+        }
+      }
+    } else {
+      const currentFn = textNode.fontName;
+      await figma.loadFontAsync(currentFn);
+      if (fontStyle === "Bold") {
+        try {
+          await figma.loadFontAsync({ family: currentFn.family, style: "Bold" });
+          textNode.fontName = { family: currentFn.family, style: "Bold" };
+        } catch (e) {
+          try {
+            await figma.loadFontAsync({ family: currentFn.family, style: "SemiBold" });
+            textNode.fontName = { family: currentFn.family, style: "SemiBold" };
+          } catch (e2) {}
+        }
+      } else if (fontStyle) {
+        await figma.loadFontAsync({ family: currentFn.family, style: fontStyle });
+        textNode.fontName = { family: currentFn.family, style: fontStyle };
+      }
+      if (fontSize !== undefined) {
+        textNode.fontSize = fontSize;
+      }
+      if (lineHeight !== undefined) {
+        textNode.lineHeight = { value: lineHeight, unit: 'PIXELS' };
+      }
+    }
+  } catch (e) {
+    console.error("Erreur lors de l'application du format de texte:", e);
+  }
+}
+
+// Extrait le code de la leçon (ex: "M1C1L1 - La premiere lecon" -> "M1C1L1")
+function extractLessonCode(name) {
+  if (!name) return "";
+  const match = name.match(/^([Mm]\d+(?:[Cc]\d+)?(?:[Ll]\d+)?|[Mm]\d+[\-_][Ll]\d+)/i);
+  if (match) return match[1].toUpperCase();
+  const parts = name.split(/\s*[\-:]\s*/);
+  if (parts.length > 0 && /^[A-Za-z0-9\-_]+$/.test(parts[0].trim())) {
+    return parts[0].trim().toUpperCase();
+  }
+  return name.trim();
+}
+
+// Détermine si un nœud de texte est un titre principal ou un mot-clé principal de slide (afin de ne jamais le modifier par erreur)
+function isTitleTextNode(node) {
+  if (!node || node.type !== 'TEXT') return false;
+  const norm = normalize(node.name);
+  if (norm === "titre" || norm === "title" || norm === "titreprincipal" || norm === "maintitle" || norm === "headertitle" || norm === "mot" || norm === "word") {
+    return true;
+  }
+  if (norm.startsWith("titre") && !/\d+$/.test(norm)) {
+    return true;
+  }
+  if (typeof node.fontSize === 'number' && node.fontSize >= 56) {
+    return true;
+  }
+  return false;
+}
+
+// S'assure que le conteneur de leçon est une Section pour permettre le prototypage natif de ses enfants sans les extraire
+function ensureSectionContainer(container) {
+  if (!container) return null;
+  if (container.type === 'SECTION') return container;
+  if (container.type === 'FRAME') {
+    try {
+      const parent = container.parent || figma.currentPage;
+      const section = figma.createSection();
+      section.name = container.name;
+      section.x = container.x;
+      section.y = container.y;
+      section.resize(container.width, Math.max(container.height, 10670));
+      
+      // Copie et préserve la couleur de fond d'origine de la Frame (fills)
+      if ('fills' in container && container.fills && Array.isArray(container.fills) && container.fills.length > 0 && container.fills !== figma.mixed) {
+        try {
+          section.fills = JSON.parse(JSON.stringify(container.fills));
+        } catch (e) {
+          section.fills = container.fills;
+        }
+      } else {
+        // Fallback couleur de fond gris très clair par défaut au lieu du gris foncé de Figma
+        section.fills = [{ type: 'SOLID', color: { r: 0.95, g: 0.95, b: 0.96 } }];
+      }
+
+      parent.appendChild(section);
+
+      const children = [...container.children];
+      for (const child of children) {
+        section.appendChild(child);
+      }
+      container.remove();
+      return section;
+    } catch (e) {
+      console.error("Erreur lors de la conversion de la Frame en Section :", e);
+      return container;
+    }
+  }
+  return container;
 }
 
 // Vérifie si un nœud et tous ses parents sont visibles
@@ -634,7 +869,7 @@ async function updateLegendTextPreservingStyles(targetLegend, sourceText) {
   }
 
   // Mettre à jour le texte
-  targetLegend.characters = sourceText;
+  await applyMarkdownText(targetLegend, sourceText);
 
   // Appliquer les styles aux nouveaux intervalles
   const newPrefixLen = sourceParts.prefix.length;
@@ -1544,7 +1779,7 @@ async function buildFigmaNodeFromSpec(spec) {
           const fontObj = await getFigmaFont(spec.styles ? spec.styles.fontWeight : 400);
           txt.fontName = fontObj;
           txt.name = childSpec.figmaName || "Texte";
-          txt.characters = childSpec.text;
+          await applyMarkdownText(txt, childSpec.text);
           if (spec.styles && spec.styles.fontSize) txt.fontSize = Math.min(140, Math.max(14, Math.round(spec.styles.fontSize)));
           if (spec.styles && spec.styles.color) {
             const c = parseCSSColor(spec.styles.color);
@@ -1717,7 +1952,7 @@ figma.ui.onmessage = async (msg) => {
         } else if (correction.action === 'set_text') {
           if (node.type === 'TEXT') {
             await loadFontForNode(node);
-            node.characters = String(correction.text);
+            await applyMarkdownText(node, String(correction.text));
             applied++;
           } else {
             console.warn(`[Corrections] set_text ignoré : ${node.id} n'est pas un TEXT`);
@@ -1848,7 +2083,7 @@ figma.ui.onmessage = async (msg) => {
                 }
               } else if (prop === 'characters' && nodeType === 'TEXT') {
                 await figma.loadFontAsync({ family: "Inter", style: "Regular" });
-                newNode.characters = String(val);
+                await applyMarkdownText(newNode, String(val));
               } else if (prop in newNode) {
                 newNode[prop] = val;
               }
@@ -2138,6 +2373,10 @@ figma.ui.onmessage = async (msg) => {
         const sortedShapeNodes = sortNodesByPosition(shapeNodes);
 
         let slideContent = slideData.content || slideData.data;
+        if (templateNode.name.toUpperCase().includes("FICHE RECAP")) {
+          const handled = await handleFicheRecap(instance, slideContent);
+          if (handled) continue;
+        }
 
         // Normalisation si le contenu est sous forme de tableau de paires clé-valeur [{"key": "...", "value": "..."}]
         if (Array.isArray(slideContent) && slideContent.length > 0 && typeof slideContent[0] === 'object' && slideContent[0] !== null && 'key' in slideContent[0]) {
@@ -2156,7 +2395,7 @@ figma.ui.onmessage = async (msg) => {
             const node = sortedTextNodes[j];
             const text = slideContent[j];
             await loadFontForNode(node);
-            node.characters = text;
+            await applyMarkdownText(node, text);
             node.visible = true; // S'assure que le calque est visible s'il a du contenu
           }
         } else if (typeof slideContent === 'object' && slideContent !== null) {
@@ -2194,60 +2433,75 @@ figma.ui.onmessage = async (msg) => {
                 }
               }
             } else {
-              // C'est du texte brut
-              const targetNode = textNodes.find(node =>
-                !usedNodes.has(node) &&
-                normalize(node.name) === normalize(key)
-              );
+              // C'est du texte brut : matching par nom de calque OU texte d'origine
+              const currentTemplateName = (slideData.template || instance.name || "").toUpperCase();
+              const targetNode = textNodes.find(node => {
+                if (usedNodes.has(node)) return false;
+                const normName = normalize(node.name);
+                const normChar = normalize(node.characters);
+                if (currentTemplateName.includes("PROJET")) {
+                  if (normName === "titre" || normName === "title") return false;
+                  if (normName === "intro" && (key !== "Intro" || !currentTemplateName.includes("BRIEF"))) return false;
+                }
+                return (
+                  normName === normalize(key) ||
+                  normChar === normalize(key) ||
+                  (key.length >= 8 && normChar.includes(normalize(key).substring(0, 15))) ||
+                  (normChar.length >= 8 && normalize(key).includes(normChar.substring(0, 15)))
+                );
+              });
 
               if (targetNode) {
                 await loadFontForNode(targetNode);
-                targetNode.characters = String(val);
+                await applyMarkdownText(targetNode, String(val));
                 targetNode.visible = true;
                 usedNodes.add(targetNode);
               }
             }
           }
 
-          // Étape 2 : Pour les clés restantes non associées, on remplit par ordre de position
+          // Étape 2 : Pour les clés restantes non associées, on remplit par ordre de position (DÉSACTIVÉ pour les templates PROJET)
+          const currentTemplateName = (slideData.template || instance.name || "").toUpperCase();
           const remainingTextKeys = [];
           const remainingIconKeys = [];
 
-          for (const key of keys) {
-            const val = slideContent[key];
-            const isConsumed = shapeNodes.some(node => usedNodes.has(node) && (normalize(node.name) === normalize(key) || (isImageUrlValue(val) && (normalize(node.name).includes("photo") || normalize(node.name).includes("image") || normalize(node.name).includes("illustration"))))) ||
-              textNodes.some(node => usedNodes.has(node) && normalize(node.name) === normalize(key));
+          if (!currentTemplateName.includes("PROJET")) {
 
-            if (!isConsumed) {
-              if (isImageUrlValue(val)) {
-                // C'est une image non consommée. On cherche une forme libre.
-                const targetNode = shapeNodes.find(node =>
-                  !usedNodes.has(node) &&
-                  (normalize(node.name).includes("photo") ||
-                   normalize(node.name).includes("image") ||
-                   normalize(node.name).includes("illustration"))
-                ) || shapeNodes.find(node => !usedNodes.has(node) && !isIconPlaceholderNode(node));
-                if (targetNode) {
-                  fetchTasks.push({ id: targetNode.id, url: val.trim(), name: key, type: 'image' });
-                  usedNodes.add(targetNode);
+            for (const key of keys) {
+              const val = slideContent[key];
+              const isConsumed = shapeNodes.some(node => usedNodes.has(node) && (normalize(node.name) === normalize(key) || (isImageUrlValue(val) && (normalize(node.name).includes("photo") || normalize(node.name).includes("image") || normalize(node.name).includes("illustration"))))) ||
+                textNodes.some(node => usedNodes.has(node) && (normalize(node.name) === normalize(key) || normalize(node.characters) === normalize(key)));
+
+              if (!isConsumed) {
+                if (isImageUrlValue(val)) {
+                  const targetNode = shapeNodes.find(node =>
+                    !usedNodes.has(node) &&
+                    (normalize(node.name).includes("photo") ||
+                     normalize(node.name).includes("image") ||
+                     normalize(node.name).includes("illustration"))
+                  ) || shapeNodes.find(node => !usedNodes.has(node) && !isIconPlaceholderNode(node));
+                  if (targetNode) {
+                    fetchTasks.push({ id: targetNode.id, url: val.trim(), name: key, type: 'image' });
+                    usedNodes.add(targetNode);
+                  }
+                } else if (isIconValue(val)) {
+                  remainingIconKeys.push(val);
+                } else {
+                  remainingTextKeys.push({ key, val });
                 }
-              } else if (isIconValue(val)) {
-                remainingIconKeys.push(val);
-              } else {
-                remainingTextKeys.push({ key, val });
               }
             }
-          }
 
-          // A. Remplissage des textes par position
-          const remainingTextNodes = sortedTextNodes.filter(node => !usedNodes.has(node));
-          for (let j = 0; j < Math.min(remainingTextKeys.length, remainingTextNodes.length); j++) {
-            const { val } = remainingTextKeys[j];
-            const node = remainingTextNodes[j];
-            await loadFontForNode(node);
-            node.characters = String(val);
-            node.visible = true;
-            usedNodes.add(node);
+            // A. Remplissage des textes par position
+            const remainingTextNodes = sortedTextNodes.filter(node => !usedNodes.has(node));
+            for (let j = 0; j < Math.min(remainingTextKeys.length, remainingTextNodes.length); j++) {
+              const { val } = remainingTextKeys[j];
+              const node = remainingTextNodes[j];
+              await loadFontForNode(node);
+              await applyMarkdownText(node, String(val));
+              node.visible = true;
+              usedNodes.add(node);
+            }
           }
 
           // B. Remplissage des icônes par position
@@ -2354,7 +2608,7 @@ figma.ui.onmessage = async (msg) => {
                         });
                       }
                     } else if (prop === 'characters' && nodeType === 'TEXT') {
-                      newNode.characters = String(val);
+                      await applyMarkdownText(newNode, String(val));
                     } else if (prop === 'image') {
                       fetchTasks.push({ id: newNode.id, url: val.trim(), name: 'image', type: 'image' });
                     } else if (prop === 'fontName') {
@@ -2430,7 +2684,7 @@ figma.ui.onmessage = async (msg) => {
                       }
                     } else if (prop === 'characters' && target.type === 'TEXT') {
                       await figma.loadFontAsync(target.fontName);
-                      target.characters = String(val);
+                      await applyMarkdownText(target, String(val));
                     } else if (prop === 'image') {
                       fetchTasks.push({ id: target.id, url: val.trim(), name: 'image', type: 'image' });
                     } else if (prop in target) {
@@ -2888,24 +3142,39 @@ figma.ui.onmessage = async (msg) => {
     }
     // Résout la sélection pour obtenir les slides cibles (gère la sélection de la Frame leçon parente)
     let targetSlides = [];
+    let lessonContainer = null;
+
+    const isSlideDim = (n) => {
+      return (n.type === 'FRAME' || n.type === 'COMPONENT' || n.type === 'INSTANCE') &&
+             Math.abs(n.width - 1920) < 20 && Math.abs(n.height - 1080) < 20;
+    };
+
     for (const node of selection) {
-      if (node.type === 'FRAME' || node.type === 'COMPONENT' || node.type === 'INSTANCE') {
-        const isLessonFrame = /^[Mm]\d+/.test(node.name);
-        const childSlides = 'children' in node 
-          ? node.children.filter(child => {
-              const isSlide = (child.type === 'FRAME' || child.type === 'COMPONENT' || child.type === 'INSTANCE') && child.width === 1920 && child.height === 1080;
-              if (isLessonFrame) {
-                return isSlide && child.y < 1830;
-              }
-              return isSlide;
-            })
-          : [];
-        if (childSlides.length > 0) {
-          targetSlides.push(...childSlides);
-        } else {
+      if (node.type === 'FRAME' || node.type === 'SECTION' || node.type === 'COMPONENT' || node.type === 'INSTANCE') {
+        const isContainer = ('children' in node && node.children.length > 0) || /^[Mm]\d+/i.test(node.name);
+        if (isContainer && !isSlideDim(node)) {
+          lessonContainer = node;
+          const childSlides = 'children' in node 
+            ? node.children.filter(child => {
+                const isSlide = isSlideDim(child);
+                const relY = child.y;
+                return isSlide && relY < 1830 && !child.name.includes("Étape");
+              })
+            : [];
+          if (childSlides.length > 0) {
+            targetSlides.push(...childSlides);
+          }
+        } else if (isSlideDim(node)) {
           targetSlides.push(node);
+          if (!lessonContainer && node.parent && node.parent.type !== 'PAGE' && node.parent.type !== 'DOCUMENT') {
+            lessonContainer = node.parent;
+          }
         }
       }
+    }
+
+    if (lessonContainer) {
+      lessonContainer = ensureSectionContainer(lessonContainer);
     }
 
     if (targetSlides.length === 0) {
@@ -3052,13 +3321,18 @@ figma.ui.onmessage = async (msg) => {
           const clone = workingSlide.clone();
           workingSlide.parent.appendChild(clone);
 
-          // Positionnement en colonne (en dessous de l'originale)
+          // Positionnement en colonne et inclusion stricte dans la Section / Frame parente de leçon
+          let destParent = lessonContainer || workingSlide.parent;
+          destParent = ensureSectionContainer(destParent);
+          destParent.appendChild(clone);
+
           clone.x = workingSlide.x;
-          const isLessonFrame = workingSlide.parent && workingSlide.parent.type === 'FRAME' && /^[Mm]\d+/.test(workingSlide.parent.name);
-          if (isLessonFrame) {
-            clone.y = 2280 + m * (workingSlide.height + 200);
-          } else {
-            clone.y = workingSlide.y + (m + 1) * (workingSlide.height + 200);
+          clone.y = 2300 + m * (workingSlide.height + 200);
+
+          if ('resize' in destParent && typeof destParent.resize === 'function') {
+            try {
+              destParent.resize(destParent.width, Math.max(destParent.height, clone.y + clone.height + 200));
+            } catch (e) {}
           }
 
           // Renommage
@@ -3129,6 +3403,22 @@ figma.ui.onmessage = async (msg) => {
       createdSlides.push(...columnSlides);
     }
 
+    // Ajuste dynamiquement la hauteur de la frame de leçon si les slides dépassent vers le bas
+    if (lessonContainer && 'children' in lessonContainer) {
+      let maxBottomY = lessonContainer.height;
+      for (const child of lessonContainer.children) {
+        const childBottom = child.y + (child.height || 0);
+        if (childBottom + 200 > maxBottomY) {
+          maxBottomY = childBottom + 200;
+        }
+      }
+      if (maxBottomY > lessonContainer.height && 'resize' in lessonContainer) {
+        try {
+          lessonContainer.resize(lessonContainer.width, maxBottomY);
+        } catch (e) {}
+      }
+    }
+
     // Sélectionne toutes les slides (originales + clones)
     figma.currentPage.selection = createdSlides;
 
@@ -3137,36 +3427,279 @@ figma.ui.onmessage = async (msg) => {
       message: `Découpage terminé. ${createdSlides.length} slides créées avec masquage progressif par suppression.`
     });
 
+  } else if (msg.type === 'apply-manual-corrections') {
+    const selection = figma.currentPage.selection;
+    if (!selection || selection.length === 0) {
+      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez la Frame de leçon ou les slides à corriger.' });
+      return;
+    }
+
+    const isSlideDim = (n) => {
+      return (n.type === 'FRAME' || n.type === 'COMPONENT' || n.type === 'INSTANCE') &&
+             Math.abs(n.width - 1920) < 20 && Math.abs(n.height - 1080) < 20;
+    };
+
+    let targetSlides = [];
+    for (const node of selection) {
+      if (node.type === 'FRAME' || node.type === 'SECTION' || node.type === 'COMPONENT' || node.type === 'INSTANCE') {
+        const isContainer = ('children' in node && node.children.length > 0) || /^[Mm]\d+/i.test(node.name);
+        if (isContainer && !isSlideDim(node)) {
+          if ('children' in node) {
+            for (const child of node.children) {
+              if (isSlideDim(child)) {
+                targetSlides.push(child);
+              }
+            }
+          }
+        } else if (isSlideDim(node)) {
+          targetSlides.push(node);
+        }
+      }
+    }
+
+    if (targetSlides.length === 0) {
+      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez des slides ou une Frame de leçon valide.' });
+      return;
+    }
+
+    let correctedCount = 0;
+
+    for (const slide of targetSlides) {
+      let workingSlide = slide;
+      if (slide.type === 'INSTANCE') {
+        try {
+          workingSlide = slide.detachInstance();
+        } catch (e) {
+          console.error("Impossible de détacher l'instance de la slide:", e);
+        }
+      }
+
+      try {
+        const slideNameNorm = normalize(workingSlide.name);
+        const isFinSlide = slideNameNorm.includes("fin");
+        const isExcludedFromIntro = isFinSlide || slideNameNorm.includes("objectif") || slideNameNorm.includes("chap") || slideNameNorm.includes("intro") || slideNameNorm.includes("checklist");
+        const isSlideFrame = (n) => n === workingSlide || isSlideDim(n);
+
+        // 1. Détection et mise en Bold de tous les calques "Texte Bulle" ou textes contenus dans un "Bloc Bulle"
+        const findBulleTextNodes = (node) => {
+          let nodes = [];
+          if (!node) return nodes;
+          if (isSlideFrame(node)) {
+            if ('children' in node) {
+              for (const child of node.children) {
+                nodes.push(...findBulleTextNodes(child));
+              }
+            }
+            return nodes;
+          }
+          const normName = normalize(node.name);
+          if (node.type === 'TEXT' && (normName.includes("bulle") || normName === "textebulle")) {
+            if (!isTitleTextNode(node)) nodes.push(node);
+          } else if (normName === "blocbulle" || normName === "zonebulle" || (typeof isBulleGroup === 'function' && isBulleGroup(node, workingSlide))) {
+            const childTexts = findTextNodes(node).filter(t => !isTitleTextNode(t));
+            nodes.push(...childTexts);
+          } else if ('children' in node) {
+            for (const child of node.children) {
+              nodes.push(...findBulleTextNodes(child));
+            }
+          }
+          return nodes;
+        };
+
+        const bulleNodes = findBulleTextNodes(workingSlide);
+        const uniqueBulleNodes = [...new Set(bulleNodes)];
+
+        for (const bNode of uniqueBulleNodes) {
+          await applyTextFormat(bNode, "Bold", undefined, undefined);
+          console.log(`[Correction] Texte Bulle mis en Bold sur la slide "${workingSlide.name}" (calque: "${bNode.name}")`);
+          correctedCount++;
+        }
+
+        // 2. Détection et ajustement du texte "Definition" (50 Regular, non italique, hauteur de ligne 60)
+        const findDefinitionTextNodes = (node) => {
+          let nodes = [];
+          if (!node) return nodes;
+          if (isSlideFrame(node)) {
+            if ('children' in node) {
+              for (const child of node.children) {
+                nodes.push(...findDefinitionTextNodes(child));
+              }
+            }
+            return nodes;
+          }
+          const normName = normalize(node.name);
+          if (node.type === 'TEXT' && (normName === "definition" || normName === "textedefinition")) {
+            if (!isTitleTextNode(node)) {
+              nodes.push(node);
+            }
+          } else if (normName === "blocdefinition" || normName === "zonedefinition") {
+            const childTexts = findTextNodes(node).filter(t => !isTitleTextNode(t));
+            nodes.push(...childTexts);
+          } else if ('children' in node) {
+            for (const child of node.children) {
+              nodes.push(...findDefinitionTextNodes(child));
+            }
+          }
+          return nodes;
+        };
+
+        const defNodes = findDefinitionTextNodes(workingSlide);
+        const uniqueDefNodes = [...new Set(defNodes)];
+        for (const dNode of uniqueDefNodes) {
+          await applyTextFormat(dNode, "Regular", 50, 60);
+          console.log(`[Correction] Texte "Definition" ajusté (50 Regular, hauteur de ligne 60) sur la slide "${workingSlide.name}" (calque: "${dNode.name}")`);
+          correctedCount++;
+        }
+
+        // 3. Détection et ajustement du texte "Intro" sur la slide FIN (45 Regular, hauteur de ligne 60)
+        if (isFinSlide) {
+          const findIntroTextNodesOnFin = (node) => {
+            let nodes = [];
+            if (!node) return nodes;
+            if (isSlideFrame(node)) {
+              if ('children' in node) {
+                for (const child of node.children) {
+                  nodes.push(...findIntroTextNodesOnFin(child));
+                }
+              }
+              return nodes;
+            }
+            if (node.type === 'TEXT') {
+              const norm = normalize(node.name);
+              const isIntroText = norm === "intro" || norm === "introduction" || norm === "texteintro";
+              if (isIntroText && !isTitleTextNode(node)) {
+                nodes.push(node);
+              }
+            } else if ('children' in node) {
+              const norm = normalize(node.name);
+              const isIntroContainer = norm === "blocintro" || norm === "zoneintro";
+              if (isIntroContainer) {
+                const childTexts = findTextNodes(node).filter(t => !isTitleTextNode(t));
+                nodes.push(...childTexts);
+              } else {
+                for (const child of node.children) {
+                  nodes.push(...findIntroTextNodesOnFin(child));
+                }
+              }
+            }
+            return nodes;
+          };
+
+          const finIntroNodes = findIntroTextNodesOnFin(workingSlide);
+          const uniqueFinIntroNodes = [...new Set(finIntroNodes)];
+          for (const fNode of uniqueFinIntroNodes) {
+            await applyTextFormat(fNode, "Regular", 45, 60);
+            console.log(`[Correction] Texte "Intro" sur slide FIN ajusté (45 Regular, hauteur de ligne 60) sur "${workingSlide.name}" (calque: "${fNode.name}")`);
+            correctedCount++;
+          }
+        }
+
+        // 4. Détection et mise en Taille 50 Regular pour les éléments Intro (hors FIN, OBJECTIF CHAP, INTRO et CHECKLIST)
+        if (!isExcludedFromIntro) {
+          const findIntroTextNodes = (node) => {
+            let nodes = [];
+            if (!node) return nodes;
+            if (isSlideFrame(node)) {
+              if ('children' in node) {
+                for (const child of node.children) {
+                  nodes.push(...findIntroTextNodes(child));
+                }
+              }
+              return nodes;
+            }
+            if (node.type === 'TEXT') {
+              const norm = normalize(node.name);
+              const isIntroText = norm === "intro" || norm === "introduction" || norm === "texteintro";
+              if (isIntroText && !isTitleTextNode(node)) {
+                nodes.push(node);
+              }
+            } else if ('children' in node) {
+              const norm = normalize(node.name);
+              const isIntroContainer = norm === "blocintro" || norm === "zoneintro";
+              if (isIntroContainer) {
+                const childTexts = findTextNodes(node).filter(t => !isTitleTextNode(t));
+                nodes.push(...childTexts);
+              } else {
+                for (const child of node.children) {
+                  nodes.push(...findIntroTextNodes(child));
+                }
+              }
+            }
+            return nodes;
+          };
+
+          const introNodes = findIntroTextNodes(workingSlide);
+          const uniqueIntroNodes = [...new Set(introNodes)];
+          for (const iNode of uniqueIntroNodes) {
+            await applyTextFormat(iNode, "Regular", 50, undefined);
+            console.log(`[Correction] Élément "Intro" ajusté (Taille 50, Regular) sur la slide "${workingSlide.name}" (calque: "${iNode.name}")`);
+            correctedCount++;
+          }
+        }
+      } catch (errCorr) {
+        console.error("Erreur lors des actions correctives :", errCorr);
+      }
+    }
+
+    figma.ui.postMessage({
+      type: 'success',
+      message: `Actions correctives appliquées (${correctedCount} élément(s) ajusté(s)).`
+    });
+
   } else if (msg.type === 'prototype-slides') {
     const selection = figma.currentPage.selection;
     if (!selection || selection.length === 0) {
       figma.ui.postMessage({ type: 'error', message: 'Sélectionnez les slides ou la Frame de leçon à relier.' });
       return;
     }
-    // Résout la sélection pour obtenir les slides cibles (gère la sélection de la Frame leçon parente)
+    // Résout la sélection pour obtenir le conteneur de leçon et ses slides découpées
     let rawSlides = [];
+    let lessonContainer = null;
+
+    const isSlideDim = (n) => {
+      return (n.type === 'FRAME' || n.type === 'COMPONENT' || n.type === 'INSTANCE') &&
+             Math.abs(n.width - 1920) < 20 && Math.abs(n.height - 1080) < 20;
+    };
+
     for (const node of selection) {
-      if (node.type === 'FRAME' || node.type === 'COMPONENT' || node.type === 'INSTANCE') {
-        const isLessonFrame = /^[Mm]\d+/.test(node.name);
-        const childSlides = 'children' in node 
-          ? node.children.filter(child => {
-              const isSlide = (child.type === 'FRAME' || child.type === 'COMPONENT' || child.type === 'INSTANCE') && child.width === 1920 && child.height === 1080;
-              if (isLessonFrame) {
-                return isSlide && child.y > 1830;
-              }
-              return isSlide;
-            })
-          : [];
-        if (childSlides.length > 0) {
-          rawSlides.push(...childSlides);
-        } else {
+      if (node.type === 'FRAME' || node.type === 'SECTION' || node.type === 'COMPONENT' || node.type === 'INSTANCE') {
+        const isContainer = ('children' in node && node.children.length > 0) || /^[Mm]\d+/i.test(node.name);
+        if (isContainer && !isSlideDim(node)) {
+          lessonContainer = node;
+          break;
+        } else if (node.parent && node.parent.type !== 'PAGE' && node.parent.type !== 'DOCUMENT') {
+          lessonContainer = node.parent;
+          break;
+        }
+      }
+    }
+
+    if (lessonContainer) {
+      lessonContainer = ensureSectionContainer(lessonContainer);
+    }
+
+    // Récupère STRICTEMENT les slides découpées situées à l'intérieur du conteneur de la leçon en cours
+    if (lessonContainer && 'children' in lessonContainer) {
+      for (const child of lessonContainer.children) {
+        if (isSlideDim(child)) {
+          const hasStepName = child.name.includes("Étape") || child.name.includes("étape") || child.name.includes("Etape");
+          const isBelowBase = child.y > 1500;
+          if (hasStepName || isBelowBase) {
+            rawSlides.push(child);
+          }
+        }
+      }
+    } else {
+      // Fallback si des slides découpées sont sélectionnées directement
+      for (const node of selection) {
+        if (isSlideDim(node)) {
           rawSlides.push(node);
         }
       }
     }
 
     if (rawSlides.length < 2) {
-      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez au moins 2 slides (ou une Frame de leçon contenant plusieurs slides) pour créer le prototype.' });
+      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez la Frame/Section de la leçon contenant plusieurs slides découpées pour créer le prototype.' });
       return;
     }
 
@@ -3188,9 +3721,14 @@ figma.ui.onmessage = async (msg) => {
 
     // Trie les slides par colonne (X croissant), puis de haut en bas au sein de chaque colonne (Y croissant)
     slides.sort((a, b) => {
-      const diffX = a.x - b.x;
+      const absAX = a.absoluteTransform ? a.absoluteTransform[0][2] : a.x;
+      const absBX = b.absoluteTransform ? b.absoluteTransform[0][2] : b.x;
+      const absAY = a.absoluteTransform ? a.absoluteTransform[1][2] : a.y;
+      const absBY = b.absoluteTransform ? b.absoluteTransform[1][2] : b.y;
+
+      const diffX = absAX - absBX;
       if (Math.abs(diffX) < 300) {
-        return a.y - b.y;
+        return absAY - absBY;
       }
       return diffX;
     });
@@ -3288,37 +3826,67 @@ figma.ui.onmessage = async (msg) => {
       }
     }
 
-    // Ajoute un point de départ pour le flux (Flow Starting Point)
+    // Ajoute un point de départ pour le flux (Flow Starting Point) uniquement sur la 1ère slide découpée du prototype
     try {
       if (slides.length > 0) {
-        const currentFlows = figma.currentPage.flowStartingPoints;
-        // Si la slide est au premier niveau de la page (top-level frame)
-        if (slides[0].parent === figma.currentPage) {
-          if (!currentFlows.some(flow => flow.nodeId === slides[0].id)) {
-            figma.currentPage.flowStartingPoints = [
-              ...currentFlows,
-              {
-                nodeId: slides[0].id,
-                name: "Présentation Auto"
-              }
-            ];
-          }
-        } else {
-          // Sinon, on cherche le conteneur parent de premier niveau (la Frame leçon)
-          let topParent = slides[0];
-          while (topParent.parent && topParent.parent.type !== 'PAGE') {
-            topParent = topParent.parent;
-          }
-          if (topParent && topParent.type === 'FRAME' && !currentFlows.some(flow => flow.nodeId === topParent.id)) {
-            figma.currentPage.flowStartingPoints = [
-              ...currentFlows,
-              {
-                nodeId: topParent.id,
-                name: topParent.name
-              }
-            ];
+        const firstSlide = slides[0];
+
+        // Retrouve le conteneur de leçon principal pour extraire son code (ex: M1C1L1)
+        let mainLessonName = lessonContainer ? lessonContainer.name : "";
+
+        const firstSlideAbsX = firstSlide.absoluteTransform ? firstSlide.absoluteTransform[0][2] : firstSlide.x;
+        const firstSlideAbsY = firstSlide.absoluteTransform ? firstSlide.absoluteTransform[1][2] : firstSlide.y;
+
+        // 1. Si la slide est directement enfant d'un conteneur de leçon
+        if (!mainLessonName && firstSlide.parent && (firstSlide.parent.type === 'FRAME' || firstSlide.parent.type === 'SECTION')) {
+          if (/^[Mm]\d+/i.test(firstSlide.parent.name)) {
+            mainLessonName = firstSlide.parent.name;
+            lessonContainer = firstSlide.parent;
           }
         }
+
+        // 2. Recherche spatiale : conteneur de leçon le plus proche situé directement au-dessus de la 1ère slide
+        if (!mainLessonName) {
+          const candidates = figma.currentPage.children.filter(c => {
+            if (c.type !== 'FRAME' && c.type !== 'SECTION') return false;
+            if (!/^[Mm]\d+/i.test(c.name)) return false;
+            const cAbsX = c.absoluteTransform ? c.absoluteTransform[0][2] : c.x;
+            const cAbsY = c.absoluteTransform ? c.absoluteTransform[1][2] : c.y;
+            const cWidth = c.width || 1920;
+            const alignX = (firstSlideAbsX >= cAbsX - 100) && (firstSlideAbsX <= cAbsX + cWidth + 100);
+            const isAbove = cAbsY <= firstSlideAbsY;
+            return alignX && isAbove;
+          });
+
+          if (candidates.length > 0) {
+            candidates.sort((a, b) => {
+              const aY = a.absoluteTransform ? a.absoluteTransform[1][2] : a.y;
+              const bY = b.absoluteTransform ? b.absoluteTransform[1][2] : b.y;
+              return (firstSlideAbsY - aY) - (firstSlideAbsY - bY);
+            });
+            lessonContainer = candidates[0];
+            mainLessonName = lessonContainer.name;
+          }
+        }
+
+        const flowName = extractLessonCode(mainLessonName) || firstSlide.name.replace(/ - Étape \d+$/, '').trim() || "Présentation Auto";
+
+        // Met à jour les flowStartingPoints : attribue le flux STRICTEMENT à la première slide (slides[0])
+        const currentFlows = figma.currentPage.flowStartingPoints || [];
+
+        // Supprime tout point d'entrée préexistant sur le conteneur principal ou la 1ère slide
+        const idsToRemove = new Set([firstSlide.id]);
+        if (lessonContainer) idsToRemove.add(lessonContainer.id);
+
+        const cleanedFlows = currentFlows.filter(flow => !idsToRemove.has(flow.nodeId));
+
+        figma.currentPage.flowStartingPoints = [
+          ...cleanedFlows,
+          {
+            nodeId: firstSlide.id,
+            name: flowName
+          }
+        ];
       }
     } catch (e) {
       console.warn("Impossible de créer le point de départ du flux:", e);
@@ -3341,113 +3909,103 @@ figma.ui.onmessage = async (msg) => {
   } else if (msg.type === 'clear-slides') {
     const selection = figma.currentPage.selection;
     if (!selection || selection.length === 0) {
-      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez au moins une slide ou une Frame de leçon.' });
+      figma.ui.postMessage({ type: 'error', message: 'Sélectionnez la Frame de leçon ou des slides découpées à supprimer.' });
       return;
     }
 
-    // Resolve context parent
-    let parent = null;
+    const isSlideDim = (n) => {
+      return (n.type === 'FRAME' || n.type === 'COMPONENT' || n.type === 'INSTANCE') &&
+             Math.abs(n.width - 1920) < 20 && Math.abs(n.height - 1080) < 20;
+    };
+
+    const isStepSlide = (node, nodeAbsY, parentAbsY) => {
+      if (!isSlideDim(node)) return false;
+      const hasStepName = node.name.includes("Étape") || node.name.includes("étape") || node.name.includes("Etape");
+      const relY = parentAbsY !== null ? (nodeAbsY - parentAbsY) : node.y;
+      return hasStepName || relY > 1500;
+    };
+
+    const toDelete = new Set();
+    const lessonCodesToClean = new Set();
+
     for (const node of selection) {
-      let current = node;
-      while (current) {
-        if (current.type === 'FRAME' && /^[Mm]\d+/.test(current.name)) {
-          parent = current;
-          break;
-        }
-        if (current.type === 'PAGE' || current.type === 'DOCUMENT') {
-          break;
-        }
-        current = current.parent;
-      }
-      if (parent) break;
-    }
+      if (node.type === 'FRAME' || node.type === 'SECTION' || node.type === 'COMPONENT' || node.type === 'INSTANCE') {
+        const isContainer = ('children' in node && node.children.length > 0) || /^[Mm]\d+/i.test(node.name);
 
-    if (!parent && selection[0].parent) {
-      parent = selection[0].parent;
-    }
+        if (isContainer && !isSlideDim(node)) {
+          const lessonCode = extractLessonCode(node.name);
+          if (lessonCode) lessonCodesToClean.add(lessonCode);
 
-    if (!parent) {
-      figma.ui.postMessage({ type: 'error', message: 'Aucun conteneur parent trouvé pour la sélection.' });
-      return;
-    }
+          const nodeAbsY = node.absoluteTransform ? node.absoluteTransform[1][2] : node.y;
+          const nodeAbsX = node.absoluteTransform ? node.absoluteTransform[0][2] : node.x;
 
-    // Collect all candidate children from this parent container (only Frame/Component/Instance)
-    const candidates = [];
-    if ('children' in parent) {
-      for (const child of parent.children) {
-        if (child.type === 'FRAME' || child.type === 'COMPONENT' || child.type === 'INSTANCE') {
-          candidates.push(child);
-        }
-      }
-    }
-
-    // Build sets of nodes that have prototype links:
-    // 1. outgoing target IDs (nodes that have reactions pointing to another node)
-    // 2. incoming target IDs (nodes that are destination of a reaction from another node)
-    const incomingTargets = new Set();
-    const hasOutgoing = new Set();
-
-    function analyzeReactions(node, rootCandidate) {
-      if ('reactions' in node && node.reactions && node.reactions.length > 0) {
-        for (const rx of node.reactions) {
-          let destId = null;
-          if (rx.action && rx.action.type === 'NODE' && rx.action.destinationId) {
-            destId = rx.action.destinationId;
-          } else if (rx.actions && Array.isArray(rx.actions)) {
-            for (const act of rx.actions) {
-              if (act && act.type === 'NODE' && act.destinationId) {
-                destId = act.destinationId;
-                break;
+          // 1. Cherche les slides découpées à l'intérieur du conteneur
+          if ('children' in node) {
+            for (const child of node.children) {
+              if (isSlideDim(child)) {
+                const childAbsY = child.absoluteTransform ? child.absoluteTransform[1][2] : (nodeAbsY + child.y);
+                if (isStepSlide(child, childAbsY, nodeAbsY)) {
+                  toDelete.add(child);
+                }
               }
             }
           }
-          if (destId) {
-            incomingTargets.add(destId);
-            hasOutgoing.add(rootCandidate.id);
+
+          // 2. Cherche aussi sur currentPage les slides découpées extraites sous le conteneur
+          for (const child of figma.currentPage.children) {
+            if (isSlideDim(child) && child !== node) {
+              const cAbsX = child.absoluteTransform ? child.absoluteTransform[0][2] : child.x;
+              const cAbsY = child.absoluteTransform ? child.absoluteTransform[1][2] : child.y;
+              const alignX = Math.abs(cAbsX - nodeAbsX) < (node.width || 10000);
+              if (alignX && isStepSlide(child, cAbsY, nodeAbsY)) {
+                toDelete.add(child);
+              }
+            }
+          }
+        } else if (isSlideDim(node)) {
+          // Slide sélectionnée directement
+          const parentContainer = node.parent;
+          const parentAbsY = (parentContainer && parentContainer.type !== 'PAGE' && parentContainer.absoluteTransform) 
+            ? parentContainer.absoluteTransform[1][2] 
+            : null;
+          const nodeAbsY = node.absoluteTransform ? node.absoluteTransform[1][2] : node.y;
+
+          if (isStepSlide(node, nodeAbsY, parentAbsY)) {
+            toDelete.add(node);
           }
         }
       }
-      if ('children' in node) {
-        for (const child of node.children) {
-          analyzeReactions(child, rootCandidate);
-        }
-      }
     }
 
-    for (const cand of candidates) {
-analyzeReactions(cand, cand);
+    if (toDelete.size === 0) {
+      figma.ui.postMessage({ type: 'warning', message: 'Aucune slide découpée à supprimer dans la sélection. Les slides d\'origine ont été conservées.' });
+      return;
     }
 
-    // Find candidates to delete: those that have outgoing or incoming prototype connections
-    const nodesToDelete = [];
-    for (const cand of candidates) {
-      const isPrototyped = hasOutgoing.has(cand.id) || incomingTargets.has(cand.id);
-      if (isPrototyped) {
-        nodesToDelete.push(cand);
-      }
-    }
+    // Nettoie les flowStartingPoints associés aux slides supprimées ou au code de leçon
+    const deletedIds = new Set([...toDelete].map(n => n.id));
+    let updatedFlows = (figma.currentPage.flowStartingPoints || []).filter(fp => {
+      const isDeletedNode = deletedIds.has(fp.nodeId);
+      const isMatchingCode = lessonCodesToClean.has(fp.name);
+      return !isDeletedNode && !isMatchingCode;
+    });
+    figma.currentPage.flowStartingPoints = updatedFlows;
 
+    // Suppression effective
     let deletedCount = 0;
-    for (const node of nodesToDelete) {
+    for (const node of toDelete) {
       try {
         node.remove();
         deletedCount++;
       } catch (e) {
-        console.error("Erreur de suppression de la slide prototypée :", e);
+        console.error("Erreur de suppression de la slide découpée :", e);
       }
     }
 
-    if (deletedCount > 0) {
-      figma.ui.postMessage({
-        type: 'success',
-        message: `Nettoyage réussi : ${deletedCount} slide(s) prototypée(s) supprimée(s). Les slides non prototypées ont été conservées.`
-      });
-    } else {
-      figma.ui.postMessage({
-        type: 'error',
-        message: 'Aucune slide prototypée (reliée par des liens entrants ou sortants) trouvée dans le conteneur.'
-      });
-    }
+    figma.ui.postMessage({
+      type: 'success',
+      message: `Suppression terminée : ${deletedCount} slide(s) découpée(s) supprimée(s). Les slides d'origine ont été conservées.`
+    });
   } else if (msg.type === 'transform-slides') {
     try {
       let data = msg.data;
@@ -3605,13 +4163,17 @@ analyzeReactions(cand, cand);
 
         const isCover = templateNode.name.includes("COVER");
         const isVide = templateNode.name.includes("VIDE");
+        if (templateNode.name.toUpperCase().includes("FICHE RECAP")) {
+          const handled = await handleFicheRecap(instance, slideData.content);
+          if (handled) continue;
+        }
 
         if (isCover) {
           // Slide COVER : titre de la leçon
           let titleNode = newTextNodes.find(n => normalize(n.name).includes("titre") || normalize(n.name).includes("title")) || newTextNodes[0];
           if (titleNode) {
             await loadFontForNode(titleNode);
-            titleNode.characters = extractedLessonTitle;
+            await applyMarkdownText(titleNode, extractedLessonTitle);
           }
         } else if (isVide) {
           // Slide VIDE : Titre et Intro
@@ -3620,19 +4182,20 @@ analyzeReactions(cand, cand);
 
           if (titreNode && slideData.content && slideData.content.Titre) {
             await loadFontForNode(titreNode);
-            titreNode.characters = slideData.content.Titre;
+            await applyMarkdownText(titreNode, slideData.content.Titre);
           }
           if (introNode && slideData.content && slideData.content.Intro) {
             await loadFontForNode(introNode);
-            introNode.characters = slideData.content.Intro;
+            await applyMarkdownText(introNode, slideData.content.Intro);
           }
         } else {
           // Tout autre template structurel : Remplissage standard
           if (slideData.content && typeof slideData.content === 'object') {
             const keys = Object.keys(slideData.content);
             const usedNodes = new Set();
+            const templateNameStr = templateNode ? templateNode.name.toUpperCase() : "";
 
-            // 1. Remplissage par correspondance exacte de nom de calque
+            // 1. Remplissage par correspondance exacte de nom de calque OU du texte d'origine du calque
             for (const key of keys) {
               const val = slideData.content[key];
               if (isIconValue(val)) {
@@ -3653,29 +4216,63 @@ analyzeReactions(cand, cand);
                   usedNodes.add(targetNode);
                 }
               } else {
-                const targetNode = newTextNodes.find(node => !usedNodes.has(node) && normalize(node.name) === normalize(key));
+                // Matching intelligent : nom de calque OU texte initial exact OU sous-chaîne
+                const targetNode = newTextNodes.find(node => {
+                  if (usedNodes.has(node)) return false;
+                  const normName = normalize(node.name);
+                  const normChar = normalize(node.characters);
+                  if (templateNameStr.includes("PROJET")) {
+                    if (normName === "titre" || normName === "title") return false;
+                    if (normName === "intro" && (key !== "Intro" || !templateNameStr.includes("BRIEF"))) return false;
+                  }
+                  return (
+                    normName === normalize(key) ||
+                    normChar === normalize(key) ||
+                    (key.length >= 8 && normChar.includes(normalize(key).substring(0, 15))) ||
+                    (normChar.length >= 8 && normalize(key).includes(normChar.substring(0, 15)))
+                  );
+                });
                 if (targetNode) {
                   await loadFontForNode(targetNode);
-                  targetNode.characters = String(val);
+                  await applyMarkdownText(targetNode, String(val));
                   usedNodes.add(targetNode);
                 }
               }
             }
 
-            // 2. Remplissage des textes restants par ordre de position
-            const remainingTextNodes = newTextNodes.filter(node => !usedNodes.has(node));
-            const remainingTextKeys = keys.filter(key => {
-              const val = slideData.content[key];
-              return !isIconValue(val) && !isImageUrlValue(val) && !newTextNodes.some(node => usedNodes.has(node) && normalize(node.name) === normalize(key));
-            });
+            // 2. Remplissage des textes restants par ordre de position (DÉSACTIVÉ pour les templates PROJET)
+            if (!templateNameStr.includes("PROJET")) {
+              const staticHeaders = [
+                "titre", "intro", "l'interface générée (ux/ui)", "le périmètre du mvp",
+                "user story", "user stories mvp", "vision & persona", "périmètre (mvp)",
+                "survol (hover)", "# 1. contexte & persona", "# 2. périmètre (mvp)",
+                "# 3. stack technique", "stack technique choisie :", "l'amorce",
+                "# première action (amorce)", "sans consigne", "avec consigne",
+                "cahier-des-charges.txt", "agent.md", "prompt.md"
+              ];
 
-            for (let j = 0; j < Math.min(remainingTextKeys.length, remainingTextNodes.length); j++) {
-              const key = remainingTextKeys[j];
-              const val = slideData.content[key];
-              const node = remainingTextNodes[j];
-              await loadFontForNode(node);
-              node.characters = String(val);
-              usedNodes.add(node);
+              const remainingTextNodes = newTextNodes.filter(node => {
+                if (usedNodes.has(node)) return false;
+                const normName = normalize(node.name);
+                const normChar = normalize(node.characters);
+                if (/^\d+$/.test(normChar.trim())) return false; // Exclure les chiffres seuls (puces)
+                if (staticHeaders.some(h => normName === h || normChar === h)) return false;
+                return true;
+              });
+
+              const remainingTextKeys = keys.filter(key => {
+                const val = slideData.content[key];
+                return !isIconValue(val) && !isImageUrlValue(val) && !newTextNodes.some(node => usedNodes.has(node) && (normalize(node.name) === normalize(key) || normalize(node.characters) === normalize(key)));
+              });
+
+              for (let j = 0; j < Math.min(remainingTextKeys.length, remainingTextNodes.length); j++) {
+                const key = remainingTextKeys[j];
+                const val = slideData.content[key];
+                const node = remainingTextNodes[j];
+                await loadFontForNode(node);
+                await applyMarkdownText(node, String(val));
+                usedNodes.add(node);
+              }
             }
           }
         }
@@ -3778,7 +4375,7 @@ analyzeReactions(cand, cand);
                         });
                       }
                     } else if (prop === 'characters' && nodeType === 'TEXT') {
-                      newNode.characters = String(val);
+                      await applyMarkdownText(newNode, String(val));
                     } else if (prop === 'image') {
                       fetchTasks.push({ id: newNode.id, url: val.trim(), name: 'image', type: 'image' });
                     } else if (prop === 'fontName') {
@@ -3847,7 +4444,7 @@ analyzeReactions(cand, cand);
                       }
                     } else if (prop === 'characters' && target.type === 'TEXT') {
                       await loadFontForNode(target);
-                      target.characters = String(val);
+                      await applyMarkdownText(target, String(val));
                     } else if (prop in target) {
                       target[prop] = val;
                     }

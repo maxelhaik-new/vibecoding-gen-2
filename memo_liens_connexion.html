@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiche Mémo — Liens de connexion aux outils</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --primary: #6634D9;
+      --primary-light: #F3EEFF;
+      --dark: #18093B;
+      --text: #334155;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --success: #10B981;
+      --shadow: 0 10px 25px -5px rgba(24, 9, 59, 0.06), 0 8px 10px -6px rgba(24, 9, 59, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      background: var(--card-bg);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      padding: 48px;
+      box-shadow: var(--shadow);
+    }
+
+    /* En-tête explicatif */
+    .header {
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 32px;
+      margin-bottom: 36px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .intro {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 860px;
+    }
+
+    /* Grille de 3 colonnes thématiques */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .column {
+      background: #FAFAFD;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .column-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tool-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(102, 52, 217, 0.08);
+      border-color: #D8B4FE;
+    }
+
+    .tool-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .tool-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .tool-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .tool-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 14px;
+      border-radius: 10px;
+      transition: background 0.15s ease;
+      margin-top: 4px;
+    }
+
+    .tool-btn:hover {
+      background: #5022BC;
+    }
+
+    .tool-btn svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.2;
+    }
+
+    /* Encart de recommandations */
+    .footer-box {
+      background: #F5F3FF;
+      border: 1px solid #DDD6FE;
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .footer-icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .footer-text h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .footer-text p {
+      font-size: 13.5px;
+      color: #4C1D95;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 860px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .container {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header avec explication de l'utilité du document -->
+    <div class="header">
+      <div class="badge">Accès officiels • Formation Vibe Coding</div>
+      <h1>Vos outils & liens de connexion</h1>
+      <p class="intro">
+        Cette fiche mémo centralise les <strong>7 plateformes officielles</strong> nécessaires pour concevoir, coder, héberger et monétiser vos applications. Cliquez sur les boutons ci-dessous pour ouvrir directement la page de création de compte de chaque service.
+      </p>
+    </div>
+
+    <!-- Grille des 3 thématiques -->
+    <div class="grid">
+      <!-- 1. IA & Environnement -->
+      <div class="column">
+        <div class="column-title">
+          <span>🧠</span> IA & Environnement
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Google AI Pro</div>
+          <div class="tool-desc">Forfait Gemini Pro pour débloquer les modèles avancés et quotas étendus.</div>
+          <a href="https://one.google.com/ai" target="_blank" class="tool-btn">
+            S'abonner à AI Pro
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Google AI Studio</div>
+          <div class="tool-desc">Console développeur pour générer vos clés d'API Gemini et prototyper.</div>
+          <a href="https://aistudio.google.com/apps" target="_blank" class="tool-btn">
+            Ouvrir AI Studio
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Google Antigravity</div>
+          <div class="tool-desc">L'IDE agentique pour orchestrer vos agents et travailler en local.</div>
+          <a href="https://antigravity.google/download/" target="_blank" class="tool-btn">
+            Télécharger l'IDE
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2. Code & Déploiement -->
+      <div class="column">
+        <div class="column-title">
+          <span>🚀</span> Code & Déploiement
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">GitHub</div>
+          <div class="tool-desc">Hébergement Git pour versionner votre code et collaborer avec l'agent IA.</div>
+          <a href="https://github.com/signup" target="_blank" class="tool-btn">
+            Créer un compte GitHub
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Vercel</div>
+          <div class="tool-desc">Déploiement continu en production de vos applications avec HTTPS automatique.</div>
+          <a href="https://vercel.com/signup" target="_blank" class="tool-btn">
+            Créer un compte Vercel
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Backend & Monétisation -->
+      <div class="column">
+        <div class="column-title">
+          <span>⚡</span> Backend & Paiement
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Supabase</div>
+          <div class="tool-desc">Base PostgreSQL Cloud, authentification utilisateurs et sécurité RLS.</div>
+          <a href="https://supabase.com/dashboard/sign-up" target="_blank" class="tool-btn">
+            Créer un compte Supabase
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-name">Stripe</div>
+          <div class="tool-desc">Passerelle de paiement en ligne pour encaisser vos premiers clients.</div>
+          <a href="https://dashboard.stripe.com/register" target="_blank" class="tool-btn">
+            Créer un compte Stripe
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Encart conseil et sécurité -->
+    <div class="footer-box">
+      <div class="footer-icon">💡</div>
+      <div class="footer-text">
+        <h3>Conseils de démarrage</h3>
+        <p>Utilisez de préférence une adresse email unique ou la connexion OAuth Google/GitHub pour simplifier votre navigation. Activez impérativement la double authentification (2FA) sur chaque compte pour protéger vos clés d'API et vos projets.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

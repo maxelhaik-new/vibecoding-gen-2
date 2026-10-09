@@ -155,6 +155,75 @@ for p in prompts_data:
 
 prompt_tags_list = sorted(list(prompt_tags_set))
 
+
+# --- 3. BOÎTE À OUTILS & LIENS DE CONNEXION ---
+tools_data = [
+    {
+        "id": "google-ai-pro",
+        "name": "Google AI Pro",
+        "category": "IA & Modèles",
+        "description": "Forfait Gemini Pro pour débloquer les modèles IA avancés et bénéficier de quotas de requêtes étendus pour vos sessions de code.",
+        "url": "https://one.google.com/ai",
+        "actionText": "S'abonner à Google AI Pro",
+        "icon": "🧠"
+    },
+    {
+        "id": "google-ai-studio",
+        "name": "Google AI Studio",
+        "category": "IA & Modèles",
+        "description": "Console développeur de Google pour tester vos prompts système, prototyper et générer vos clés d'API Gemini gratuites.",
+        "url": "https://aistudio.google.com/apps",
+        "actionText": "Accéder à AI Studio",
+        "icon": "⚡"
+    },
+    {
+        "id": "google-antigravity",
+        "name": "Google Antigravity",
+        "category": "IA & Modèles",
+        "description": "L'IDE agentique nouvelle génération de Google pour orchestrer et exécuter des agents IA autonomes directement dans votre code local.",
+        "url": "https://antigravity.google/download/",
+        "actionText": "Télécharger Antigravity",
+        "icon": "👾"
+    },
+    {
+        "id": "github",
+        "name": "GitHub",
+        "category": "Code & Déploiement",
+        "description": "Plateforme incontournable d'hébergement Git pour versionner votre code source, sécuriser l'historique et collaborer avec vos agents IA.",
+        "url": "https://github.com/signup",
+        "actionText": "Créer un compte GitHub",
+        "icon": "🐙"
+    },
+    {
+        "id": "vercel",
+        "name": "Vercel",
+        "category": "Code & Déploiement",
+        "description": "Plateforme cloud pour déployer vos applications web en continu avec certificats HTTPS automatiques, CDN mondial et Serverless.",
+        "url": "https://vercel.com/signup",
+        "actionText": "Créer un compte Vercel",
+        "icon": "▲"
+    },
+    {
+        "id": "supabase",
+        "name": "Supabase",
+        "category": "Backend & Monétisation",
+        "description": "Backend as a Service complet : base de données relationnelle PostgreSQL Cloud, authentification sécurisée et Row Level Security (RLS).",
+        "url": "https://supabase.com/dashboard/sign-up",
+        "actionText": "Créer un compte Supabase",
+        "icon": "⚡"
+    },
+    {
+        "id": "stripe",
+        "name": "Stripe",
+        "category": "Backend & Monétisation",
+        "description": "Infrastructure de paiement en ligne de référence pour encaisser vos premiers clients, gérer les abonnements et monétiser vos projets.",
+        "url": "https://dashboard.stripe.com/register",
+        "actionText": "Créer un compte Stripe",
+        "icon": "💳"
+    }
+]
+tools_json = json.dumps(tools_data, ensure_ascii=False)
+
 terms_json = json.dumps(glossary_rows, ensure_ascii=False)
 prompts_json = json.dumps(prompts_data, ensure_ascii=False)
 quiz_json = json.dumps(QUIZ_DATA, ensure_ascii=False)
@@ -293,7 +362,7 @@ html_content = f"""<!DOCTYPE html>
       background: var(--color-brand-purple);
       color: #FFFFFF;
       border-color: var(--color-brand-fig);
-      box-shadow: 3px 3px 0px var(--color-brand-fig);
+      box-shadow: 2px 2px 0px var(--color-brand-fig);
     }}
 
     .tab-badge {{
@@ -614,6 +683,142 @@ html_content = f"""<!DOCTYPE html>
     .ref-title {{
       color: var(--color-text-muted);
       font-weight: 600;
+    }}
+
+
+    /* Cards - Tools Section */
+    .tools-intro-banner {{
+      background: var(--color-pink-20);
+      border: 2px solid var(--color-brand-fig);
+      box-shadow: 3px 3px 0px var(--color-brand-fig);
+      padding: 1.15rem 1.35rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }}
+
+    .tools-intro-badge {{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--color-brand-purple);
+    }}
+
+    .tools-intro-title {{
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-brand-fig);
+    }}
+
+    .tools-intro-desc {{
+      font-size: 0.88rem;
+      color: var(--color-text-dark);
+      line-height: 1.45;
+    }}
+
+    .tools-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }}
+
+    .tool-card {{
+      background: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-left: 4px solid var(--color-brand-purple);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      padding: 1.25rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }}
+
+    .tool-card:hover {{
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      border-color: var(--color-brand-fig);
+    }}
+
+    .tool-card-header {{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }}
+
+    .tool-card-title {{
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--color-brand-fig);
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      line-height: 1.25;
+    }}
+
+    .tool-card-badge {{
+      background: #F1F5F9;
+      color: var(--color-brand-fig);
+      border: 1px solid var(--color-border-dark);
+      font-size: 0.70rem;
+      font-weight: 800;
+      padding: 0.15rem 0.45rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }}
+
+    .tool-card-desc {{
+      font-size: 0.90rem;
+      color: var(--color-text-muted);
+      line-height: 1.45;
+      font-weight: 500;
+    }}
+
+    .tool-card-footer {{
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      padding-top: 0.6rem;
+      border-top: 1px dashed var(--color-border);
+    }}
+
+    .tool-card-btn {{
+      background: var(--color-brand-purple);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 0.65rem 1rem;
+      font-family: var(--font-main);
+      font-weight: 800;
+      font-size: 0.88rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      border: 2px solid var(--color-brand-fig);
+      box-shadow: 2px 2px 0px var(--color-brand-fig);
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }}
+
+    .tool-card-btn:hover {{
+      background: var(--color-brand-fig);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+      box-shadow: 3px 3px 0px var(--color-brand-fig);
+    }}
+
+    .tool-card-url {{
+      font-family: var(--font-code);
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      text-align: center;
     }}
 
     /* Cards - Prompts Library (Bordures subtiles & fond gris très clair) */
@@ -1690,6 +1895,10 @@ html_content = f"""<!DOCTYPE html>
         <span>🎯 Entraînement Quizz</span>
         <span class="tab-badge">50Q</span>
       </button>
+      <button class="tab-btn" id="tabBtnTools" data-target="toolsView">
+        <span>🛠️ Outils & Accès</span>
+        <span class="tab-badge">{len(tools_data)}</span>
+      </button>
     </nav>
 
     <!-- Navigation retour Mode Isolé (Simple bouton, plus de carte jaune) -->
@@ -1834,10 +2043,10 @@ html_content += f"""          </div>
             <div class="quiz-featured-meta">
               <span>⏱️ 60 secondes / question</span>
               <span>•</span>
-              <span>Seuil de validation : 75%</span>
+              <span>Seuil de validation : 75% (38/50)</span>
             </div>
             <button class="btn-launch-exam" type="button" tabindex="-1">
-              <span>Lancer l'Examen Blanc</span>
+              <span>Lancer l'Examen Blanc (50 Q)</span>
               <span>→</span>
             </button>
           </div>
@@ -1855,7 +2064,7 @@ html_content += f"""          </div>
             <span style="font-weight: 900; font-size: 0.95rem; text-transform: uppercase; color: var(--color-brand-fig);" id="quizGameModuleTitle">Cadrer un produit</span>
           </div>
           <div class="quiz-stats-group">
-            <span class="quiz-stat-pill" id="quizScorePill">Score : 0 / 0</span>
+            <span class="quiz-stat-pill" id="quizScorePill">Score : 0 / 10</span>
             <span class="quiz-stat-pill highlight" id="quizProgressPill">0%</span>
           </div>
         </div>
@@ -1865,7 +2074,7 @@ html_content += f"""          </div>
         </div>
 
         <div class="quiz-question-box">
-          <div class="quiz-question-meta" id="quizQuestionMeta">Question 1 sur 5</div>
+          <div class="quiz-question-meta" id="quizQuestionMeta">Question 1 sur 10</div>
           <div class="quiz-question-text" id="quizQuestionText">Chargement...</div>
         </div>
 
@@ -1924,6 +2133,44 @@ html_content += f"""          </div>
 
     </div>
 
+    <!-- ============================================== -->
+    <!-- ONGLET 4 : OUTILS & LIENS DE CONNEXION          -->
+    <!-- ============================================== -->
+    <div class="tab-view" id="toolsView">
+      
+      <div class="tools-intro-banner">
+        <div class="tools-intro-badge">✨ Guide officiel des inscriptions</div>
+        <div class="tools-intro-title">Pourquoi cette boîte à outils ?</div>
+        <div class="tools-intro-desc">
+          Pour concevoir, déployer et monétiser vos applications, ces 7 services composent votre stack complète. Cliquez directement sur chaque bouton pour ouvrir la page officielle de création de compte sans chercher les URLs.
+        </div>
+      </div>
+
+      <div class="search-filter-section">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="toolsSearchInput" class="search-input" placeholder="Rechercher un outil (ex: GitHub, Supabase, Stripe...)" autocomplete="off">
+          <button id="toolsClearBtn" class="clear-btn" title="Effacer">✕</button>
+        </div>
+        <span class="counter-tag" id="toolsCounterTag">{len(tools_data)} outils</span>
+      </div>
+
+      <div class="filter-pills" id="toolsCategoryPills" style="margin-bottom: 1.25rem;">
+        <button class="filter-pill active" data-category="ALL">Tous ({len(tools_data)})</button>
+        <button class="filter-pill" data-category="IA & Modèles">IA & Modèles (3)</button>
+        <button class="filter-pill" data-category="Code & Déploiement">Code & Déploiement (2)</button>
+        <button class="filter-pill" data-category="Backend & Monétisation">Backend & Monétisation (2)</button>
+      </div>
+
+      <div class="tools-grid" id="toolsContainer"></div>
+
+      <div class="empty-state" id="toolsEmptyState">
+        <div class="empty-title">Aucun outil ne correspond à votre recherche</div>
+        <div class="empty-desc">Modifiez vos mots-clés ou réinitialisez les filtres.</div>
+        <button class="reset-btn" id="toolsResetBtn">Afficher tous les outils</button>
+      </div>
+
+    </div>
 
   </div>
 
@@ -1978,6 +2225,20 @@ html_content += f"""          </div>
     const isolatedNav = document.getElementById('isolatedNav');
     const btnBackAll = document.getElementById('btnBackAll');
     const toastMsg = document.getElementById('toastMsg');
+    const TOOLS_DATA = {tools_json};
+    let activeToolCategory = 'ALL';
+    let toolsQuery = '';
+
+    const tabBtnTools = document.getElementById('tabBtnTools');
+    const toolsView = document.getElementById('toolsView');
+    const toolsSearchInput = document.getElementById('toolsSearchInput');
+    const toolsClearBtn = document.getElementById('toolsClearBtn');
+    const toolsContainer = document.getElementById('toolsContainer');
+    const toolsCounterTag = document.getElementById('toolsCounterTag');
+    const toolsEmptyState = document.getElementById('toolsEmptyState');
+    const toolsResetBtn = document.getElementById('toolsResetBtn');
+    const toolsCategoryPills = document.getElementById('toolsCategoryPills');
+
 
     // Éléments Glossaire
     const glossarySearchInput = document.getElementById('glossarySearchInput');
@@ -2015,9 +2276,11 @@ html_content += f"""          </div>
       tabBtnGlossary.classList.remove('active');
       tabBtnPrompts.classList.remove('active');
       tabBtnQuizz.classList.remove('active');
+      tabBtnTools.classList.remove('active');
       glossaryView.classList.remove('active');
       promptsView.classList.remove('active');
       quizzView.classList.remove('active');
+      toolsView.classList.remove('active');
 
       if (tabName === 'prompts') {{
         tabBtnPrompts.classList.add('active');
@@ -2051,6 +2314,7 @@ html_content += f"""          </div>
     tabBtnGlossary.addEventListener('click', () => switchTab('glossary'));
     tabBtnPrompts.addEventListener('click', () => switchTab('prompts'));
     tabBtnQuizz.addEventListener('click', () => switchTab('quizz'));
+    tabBtnTools.addEventListener('click', () => switchTab('tools'));
 
     // --- RENDU GLOSSAIRE ---
     function matchWordStart(fullText, query) {{
@@ -2120,6 +2384,87 @@ html_content += f"""          </div>
         `;
       }}).join('');
     }}
+
+
+    // --- RENDU BOÎTE À OUTILS ---
+    function renderTools() {{
+      const q = toolsQuery.trim().toLowerCase();
+      const filtered = TOOLS_DATA.filter(t => {{
+        const matchCat = (activeToolCategory === 'ALL' || t.category === activeToolCategory);
+        const matchSearch = !q || (t.name.toLowerCase().includes(q) || t.description.toLowerCase().includes(q) || t.category.toLowerCase().includes(q));
+        return matchCat && matchSearch;
+      }});
+
+      toolsCounterTag.textContent = `${{filtered.length}} outil${{filtered.length > 1 ? 's' : ''}}`;
+
+      if (filtered.length === 0) {{
+        toolsContainer.style.display = 'none';
+        toolsEmptyState.style.display = 'block';
+        return;
+      }}
+
+      toolsContainer.style.display = 'grid';
+      toolsEmptyState.style.display = 'none';
+
+      toolsContainer.innerHTML = filtered.map(t => `
+        <div class="tool-card">
+          <div>
+            <div class="tool-card-header">
+              <div class="tool-card-title">
+                <span>${{t.icon}}</span>
+                <span>${{escapeHtml(t.name)}}</span>
+              </div>
+              <span class="tool-card-badge">${{escapeHtml(t.category_badge)}}</span>
+            </div>
+            <div class="tool-card-desc" style="margin-top: 0.65rem;">
+              ${{escapeHtml(t.description)}}
+            </div>
+          </div>
+          <div class="tool-card-footer">
+            <a href="${{t.url}}" target="_blank" rel="noopener noreferrer" class="tool-card-btn">
+              <span>${{escapeHtml(t.actionText)}}</span>
+              <span>↗</span>
+            </a>
+            <div class="tool-card-url">${{escapeHtml(t.cleanUrl)}}</div>
+          </div>
+        </div>
+      `).join('');
+    }}
+
+    // Événements Outils
+    toolsSearchInput.addEventListener('input', (e) => {{
+      toolsQuery = e.target.value;
+      toolsClearBtn.style.display = toolsQuery ? 'block' : 'none';
+      renderTools();
+    }});
+
+    toolsClearBtn.addEventListener('click', () => {{
+      toolsSearchInput.value = '';
+      toolsQuery = '';
+      toolsClearBtn.style.display = 'none';
+      toolsSearchInput.focus();
+      renderTools();
+    }});
+
+    toolsResetBtn.addEventListener('click', () => {{
+      toolsSearchInput.value = '';
+      toolsQuery = '';
+      toolsClearBtn.style.display = 'none';
+      activeToolCategory = 'ALL';
+      document.querySelectorAll('#toolsCategoryPills .filter-pill').forEach(b => {{
+        b.classList.toggle('active', b.dataset.category === 'ALL');
+      }});
+      renderTools();
+    }});
+
+    toolsCategoryPills.addEventListener('click', (e) => {{
+      const btn = e.target.closest('.filter-pill');
+      if (!btn) return;
+      activeToolCategory = btn.dataset.category;
+      document.querySelectorAll('#toolsCategoryPills .filter-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderTools();
+    }});
 
     // --- RENDU BIBLIOTHÈQUE DE PROMPTS ---
     function renderPrompts() {{
@@ -2466,12 +2811,14 @@ html_content += f"""          </div>
           bestScoreHtml = `<span class="quiz-score-pill ${{isHigh ? 'success' : 'warning'}}">Score : ${{best.score}}/${{best.total}} (${{best.percentage}}%)</span>`;
         }}
 
+        const seriesCount = mod.questionsPerSeries || 10;
+
         return `
           <div class="quiz-module-card" onclick="startQuiz('${{mod.id}}')" tabindex="0" role="button" aria-label="Module ${{escapeHtml(mod.code)}} : ${{escapeHtml(mod.title)}}" onkeydown="if(event.key==='Enter'||event.key===' '){{event.preventDefault();startQuiz('${{mod.id}}');}}">
             <div>
               <div class="quiz-module-top">
                 <span class="quiz-module-code">${{escapeHtml(mod.code)}}</span>
-                <span class="quiz-module-count">${{mod.questions.length}} question${{mod.questions.length > 1 ? 's' : ''}}</span>
+                <span class="quiz-module-count">${{seriesCount}} questions / série</span>
               </div>
               <div class="quiz-module-title" style="margin-top:0.6rem;">${{escapeHtml(mod.title)}}</div>
               <div class="quiz-module-desc" style="margin-top:0.35rem;">${{escapeHtml(mod.description)}}</div>
@@ -2504,13 +2851,27 @@ html_content += f"""          </div>
         activeQuizModule = QUIZ_DATA.finalExam;
         let pool = [];
         QUIZ_DATA.modules.forEach(m => pool.push(...m.questions));
-        pool = shuffleQuizArray(pool);
-        // Prendre jusqu'à 50 questions
-        activeQuizQuestions = pool.slice(0, Math.min(pool.length, QUIZ_DATA.finalExam.targetQuestionsCount));
+        const targetCount = QUIZ_DATA.finalExam.targetQuestionsCount || 50;
+        let examQuestions = [];
+        // Constituer un examen blanc de 50 questions (dupliquer/mélanger si pool < 50)
+        while (examQuestions.length < targetCount && pool.length > 0) {{
+          const shuffledPool = shuffleQuizArray(pool);
+          const needed = targetCount - examQuestions.length;
+          examQuestions.push(...shuffledPool.slice(0, needed));
+        }}
+        activeQuizQuestions = examQuestions;
       }} else {{
         activeQuizModule = QUIZ_DATA.modules.find(m => m.id === moduleId);
         if (!activeQuizModule) return;
-        activeQuizQuestions = shuffleQuizArray(activeQuizModule.questions);
+        const targetCount = activeQuizModule.questionsPerSeries || 10;
+        let seriesQuestions = [];
+        // Constituer une série de 10 questions pour le module (dupliquer/mélanger si questions < 10)
+        while (seriesQuestions.length < targetCount && activeQuizModule.questions.length > 0) {{
+          const shuffled = shuffleQuizArray(activeQuizModule.questions);
+          const needed = targetCount - seriesQuestions.length;
+          seriesQuestions.push(...shuffled.slice(0, needed));
+        }}
+        activeQuizQuestions = seriesQuestions;
       }}
 
       document.getElementById('quizScreenModules').style.display = 'none';
@@ -2674,10 +3035,10 @@ html_content += f"""          </div>
       document.getElementById('quizBilanTotal').textContent = `/ ${{total}}`;
       document.getElementById('quizBilanPercentage').textContent = `${{pct}}%`;
 
-      let comment = "📚 Entraînement nécessaire : reprenez les notions clés du glossaire et réessayez !";
-      if (pct >= 50) comment = "👍 Bonnes bases, mais plusieurs points méritent d'être consolidés avant la certification.";
-      if (pct >= 75) comment = "🚀 Excellent résultat ! Vous êtes sur la bonne voie pour réussir l'épreuve officielle.";
-      if (pct === 100) comment = "🏆 Score parfait ! Maîtrise absolue des concepts Vibe Coding.";
+      let comment = "📚 Entraînement nécessaire : reprenez les notions clés du glossaire et retentez une série !";
+      if (pct >= 50) comment = "👍 Bonnes bases, mais plusieurs points méritent d'être consolidés pour atteindre les 75% requis.";
+      if (pct >= 75) comment = "🚀 Excellent résultat ! Vous franchissez le seuil de validation de 75% requis pour la certification.";
+      if (pct === 100) comment = `🏆 Score parfait (${{quizScore}}/${{total}}) ! Maîtrise absolue des concepts Vibe Coding.`;
       document.getElementById('quizBilanComment').textContent = comment;
 
       // Pré-remplir pseudo
@@ -2781,11 +3142,70 @@ html_content += f"""          </div>
 </html>
 """
 
+# 1. Export des données pour l'architecture modulaire components/
+app_data_js = f"""// Données officielles de la plateforme Vibe Coding (Généré automatiquement)
+export const GLOSSARY_DATA = {json.dumps(glossary_rows, ensure_ascii=False, indent=2)};
+
+export const PROMPTS_DATA = {json.dumps(prompts_data, ensure_ascii=False, indent=2)};
+
+export const QUIZ_DATA = {json.dumps(QUIZ_DATA, ensure_ascii=False, indent=2)};
+
+export const TOOLS_DATA = {json.dumps(tools_data, ensure_ascii=False, indent=2)};
+"""
+os.makedirs(os.path.join(BASE_DIR, 'data'), exist_ok=True)
+with open(os.path.join(BASE_DIR, 'data', 'app-data.js'), 'w', encoding='utf-8') as f:
+    f.write(app_data_js)
+
+modular_html_shell = """<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Plateforme Formation Vibe Coding — Glossaire, Prompts, Outils & Quizz</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cousine:wght@400;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Modular Stylesheets (Standard 2026 Layout) -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Wide App Viewport (1440px / Standard 2026) -->
+  <div class="app-viewport">
+    
+    <!-- Mount : Header Component -->
+    <div id="appHeaderMount"></div>
+
+    <!-- Mount : Tab Navigation Component -->
+    <div id="appNavMount"></div>
+
+    <!-- Mount : Views Components -->
+    <main id="appMainContent">
+      <section class="tab-view active" id="viewGlossary"></section>
+      <section class="tab-view" id="viewPrompts"></section>
+      <section class="tab-view" id="viewQuizz"></section>
+      <section class="tab-view" id="viewTools"></section>
+    </main>
+
+  </div>
+
+  <!-- Main ES Module Assembler (Zero Monolith Architecture) -->
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>
+"""
+
 with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
-    f.write(html_content)
+    f.write(modular_html_shell)
 
 with open(INDEX_PATH, 'w', encoding='utf-8') as f:
-    f.write(html_content)
+    f.write(modular_html_shell)
 
 # Copier également vers le dossier d'export git et le dossier scripts
 if os.path.exists(SCRATCH_EXPORT_DIR):

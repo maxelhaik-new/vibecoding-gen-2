@@ -45,7 +45,7 @@ Quand l'utilisateur tape `IMPORTE` (sans argument) :
 ### Phase 2 : Découpage (`DÉCOUPE`)
 À partir d'un sujet, d'un plan ou de notes :
 1. Proposer un découpage slide par slide (Titre de la slide, concept, objectif).
-2. Pour chaque slide, associer le template le plus adapté en se basant sur le fichier [templates_charter.md](./templates_charter.md).
+2. Pour chaque slide, associer le template le plus adapté en se basant sur le fichier [templates_charter.md](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/templates_charter.md).
 3. Utiliser **uniquement** les templates ayant le statut `"status": "validé"` dans `templates.json`.
 4. **Structure Systématique de Leçon (hors L1)** :
    * **Slide 1 (Début)** : Toujours `VIBECODING - COVER`.
@@ -56,10 +56,10 @@ Quand l'utilisateur tape `IMPORTE` (sans argument) :
 ### Phase 3 : Écriture (`ECRIS`)
 Rédiger les contenus textuels pour chaque slide validée et présenter le résultat **en format lecture humaine uniquement** — aucun JSON ni aucune image ne doit être généré à cette étape. Attendre la validation de l'utilisateur avant de passer à la phase 4.
 
-1. **Style & Ton** : Appliquer systématiquement le ton de voix Wemodo décrit dans [brand_voice.md](./brand_voice.md) (pas de "tu" ou "vous", phrases courtes de moins de 15 mots, verbes à l'infinitif pour les listes).
+1. **Style & Ton** : Appliquer systématiquement le ton de voix Wemodo décrit dans [brand_voice.md](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/brand_voice.md) (pas de "tu" ou "vous", phrases courtes de moins de 15 mots, verbes à l'infinitif pour les listes).
 2. **Pas de numérotation** : Ne jamais insérer de chiffres en début de titre de bloc ou d'objectif (ex: pas de `"1. Initialiser"`), car les composants Figma gèrent déjà l'affichage des numéros.
 3. **Respect des limites** : S'assurer que chaque texte rédigé respecte la contrainte de caractères `min_lenght` et `max_lenght` définie pour sa clé dans `templates.json`.
-4. **Sélection d'icônes** : Renseigner pour chaque clé `Picto X` une icône pertinente de la bibliothèque Material Design Icons (ex: `mdi:shield-check`) en suivant les associations thématiques de [icon_mapping.md](./icon_mapping.md).
+4. **Sélection d'icônes** : Renseigner pour chaque clé `Picto X` une icône pertinente de la bibliothèque Material Design Icons (ex: `mdi:shield-check`) en suivant les associations thématiques de [icon_mapping.md](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/icon_mapping.md).
 5. **Proposition de sujet d'image** : Pour chaque slide utilisant un template avec image (`VIBECODING - USE CASE`, `VIBECODING - IMAGE`, `VIBECODING - 3 BLOCS - PHOTO`, `VIBECODING - 3 BLOCS - PHOTO - ALT`, etc.), proposer un **sujet d'illustration** sous ce format dans la lecture humaine :
    > 🖼️ **Image suggérée** : *[Description du sujet de l'illustration, style et intention visuelle]*
    > **Style** : `[woodcut | editorial | constructivist | chiaroscuro | grainy-editorial]`
@@ -115,16 +115,16 @@ Une fois les textes et les sujets d'images validés par l'utilisateur (ou lors d
 
 ## 3. Sources de Vérité
 
-* **Règles d'écriture, vocabulaire & ton** : Utiliser [brand_voice.md](./brand_voice.md).
-* **Icônes à utiliser en priorité** : Utiliser [icon_mapping.md](./icon_mapping.md).
-* **Choix du template par type de slide** : Utiliser [templates_charter.md](./templates_charter.md).
-* **Structure & Contraintes de caractères** : Utiliser uniquement les templates validés dans [templates.json](./templates.json).
+* **Règles d'écriture, vocabulaire & ton** : Utiliser [brand_voice.md](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/brand_voice.md).
+* **Icônes à utiliser en priorité** : Utiliser [icon_mapping.md](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/icon_mapping.md).
+* **Choix du template par type de slide** : Utiliser [templates_charter.md](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/templates_charter.md).
+* **Structure & Contraintes de caractères** : Utiliser uniquement les templates validés dans [templates.json](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/templates.json).
 
 ---
 
 ## 4. Raccourcis & Commandes de Test
 
-* **Lancement du jeu de test** : Lorsque l'utilisateur demande de *« lancer le jeu de test »* ou de *« générer la leçon de test »* (avec un sujet ou par défaut), l'IA doit charger et exécuter pas-à-pas la procédure définie dans [jeu_de_test.md](./jeu_de_test.md).
+* **Lancement du jeu de test** : Lorsque l'utilisateur demande de *« lancer le jeu de test »* ou de *« générer la leçon de test »* (avec un sujet ou par défaut), l'IA doit charger et exécuter pas-à-pas la procédure définie dans [jeu_de_test.md](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/jeu_de_test.md).
 
 * **Correction de Templates (`CORRIGE` / `RENOMME`)** : Lorsque l'utilisateur demande de renommer les calques, corriger un template ou auditer la hiérarchie (généralement en fournissant une URL Figma ou un `nodeId`) :
    1. **Analyse de l'arbre** : Utiliser l'API Figma (via curl ou MCP avec une profondeur `depth` suffisante) pour récupérer la hiérarchie complète du noeud ciblé.
@@ -141,78 +141,7 @@ Une fois les textes et les sujets d'images validés par l'utilisateur (ou lors d
       ```
    4. **Restitution** : Fournir ce JSON brut à l'utilisateur dans un bloc de code clair afin qu'il puisse le copier-coller dans le plugin Figma.
 
----
 
-## 5. Gestion du Sur-mesure (Génération de slides personnalisées)
-
-Le plugin supporte **deux modes** de génération sur-mesure :
-
-### 5.1 Mode JSON `custom_elements` (positionnement absolu via template VIDE)
-
-1. **Template** : `"template": "VIBECODING - VIDE"` (possède `Titre` et `Intro`).
-2. **Remplissage** : Remplir `Titre` et `Intro` dans `"content"`.
-3. **`custom_elements`** : Tableau au même niveau que `"content"`. Commandes supportées :
-   - `create_node` : `node_type: "FRAME" | "TEXT" | "RECTANGLE"`, `properties` (`x`, `y`, `width`, `height`, `fills`, `strokes`, `characters`), `icon: "mdi:nom-icone"`.
-   - `delete_node` / `delete_layer` : `selector: "nom_du_calque"`.
-   - `set_property` : `selector`, `property`, `value`.
-
-### 5.2 Mode HTML brut (Auto-Layout Figma via flexbox)
-
-Pour des layouts complexes avec cartes, grilles et typographies riches, générer du **HTML/CSS brut** que le plugin convertit automatiquement en Auto-Layout Figma.
-
-#### Propriétés CSS supportées par le plugin Figma
-
-| Propriété CSS | Mapping Figma | Notes |
-|---|---|---|
-| `display: flex` | `layoutMode` | `flex` ou `block` → Auto-Layout |
-| `flex-direction` | `VERTICAL` / `HORIZONTAL` | |
-| `gap` | `itemSpacing` | Valeur en `px` uniquement |
-| `padding-*` | `paddingTop/Right/Bottom/Left` | |
-| `background-color` | `fills` (SOLID) | Supporte `rgba()` avec opacité |
-| `color` | `fills` sur TextNode | |
-| `font-size` | `fontSize` | Clampé 14–140px |
-| `font-weight` | Style de police | 400→Regular, 600→SemiBold, 700→Bold, 800→ExtraBold, 900→Black |
-| `border-radius` | `cornerRadius` | |
-| `text-align` | `textAlignHorizontal` | `left`, `center`, `right`, `justify` |
-| `flex-grow` | `layoutGrow` | `flex-grow: 1` → la frame prend l'espace disponible |
-| `align-self` | `layoutAlign` | `stretch` ou héritage |
-| `justify-content` | `primaryAxisAlignItems` | `flex-start`, `center`, `flex-end`, `space-between` |
-| `align-items` | `counterAxisAlignItems` | `flex-start`, `center`, `flex-end`, `stretch` |
-| `opacity` | `frame.opacity` | ✅ Valeur 0–1 sur l'élément entier |
-| `overflow: hidden` | `clipsContent` | ✅ Masque les enfants débordants |
-| `border` | `strokes` + `strokeWeight` | ✅ Couleur, épaisseur, `strokeAlign: INSIDE` |
-| `box-shadow` | `effects` (DROP_SHADOW) | ✅ Offset, blur, spread, couleur rgba |
-| `position: absolute` | `layoutPositioning: ABSOLUTE` | ✅ Avec `top`/`left` en px |
-| `line-height` | `txt.lineHeight` | ✅ Valeur en px |
-| `letter-spacing` | `txt.letterSpacing` | ✅ Valeur en px |
-| `text-transform` | `txt.textCase` | ✅ `uppercase`→UPPER, `lowercase`→LOWER, `capitalize`→TITLE |
-| `max-width` | `frame.maxWidth` | ✅ Contrainte de largeur max |
-
-#### Propriétés CSS **NON SUPPORTÉES** (à ne JAMAIS utiliser)
-
-| Propriété | Raison |
-|---|---|
-| `background: linear-gradient(...)` | Seules les couleurs solides sont parsées |
-| `backdrop-filter`, `filter: blur()` | Effets CSS non traduisibles en Figma |
-| `transition`, `animation`, `transform` | Figma est statique |
-| `::before`, `::after` | Pseudo-éléments non traversés par le DOM parser |
-| `display: grid` (complexe) | Traduit en vertical simple ; préférer `display: flex` |
-| `%`, `em`, `rem`, `vh`, `vw` | Utiliser uniquement des valeurs en **`px`** |
-| `width: max-content` / `fit-content` | Utiliser des valeurs fixes ou `flex-grow: 1` |
-
-#### Règles de conception obligatoires pour le HTML sur-mesure
-
-1. **`data-figma-name`** obligatoire sur chaque `<div>` et `<span>` — c'est le nom du calque dans Figma.
-2. **Typographie** : Toujours `font-family: 'Basic Sans Alt', sans-serif`.
-3. **Palette** : Respecter la charte `Design_Charter.css` (`#18093B`, `#6634D9`, `#FFFF77`, `#FFB2B2`).
-4. **Canvas** : Le conteneur racine doit être `width: 1920px; height: 1080px`.
-5. **Valeurs en px** : Toutes les dimensions, gaps, paddings, font-sizes doivent être en **px** explicites.
-6. **Flexbox pur** : Utiliser `display: flex` avec `flex-direction`, `gap`, `padding`. Pas de grid complexe.
-7. **`position: absolute`** : Réservé aux décorations de fond (blobs, formes). Le parent doit avoir `position: relative`.
-8. **Pas de pseudo-éléments** : Tout le contenu visuel doit être dans des balises HTML réelles.
-9. **Pas de `width: max-content`** : Utiliser des largeurs fixes ou `flex-grow: 1`.
-
----
 
 ## 6. Légende Obligatoire pour les Images Générées par IA
 
@@ -233,14 +162,20 @@ Pour des layouts complexes avec cartes, grilles et typographies riches, génére
 
 ## 7. Gestion & Génération du Glossaire Vibe Coding
 
-* **Fichier source unique** : [glossaire_formation_vibe_coding.md](./glossaire_formation_vibe_coding.md) regroupe les 57 termes techniques des Modules 1 à 4.
-* **Formulations V2** : Les définitions doivent rester claires, courtes et adaptées à des adultes débutants, en évitant le jargon abstrait pour définir un autre terme (ex: éviter "arbre hiérarchique" pour le DOM, "moteur V8" pour Node.js). Appliquer la règle de non-tutoiement de [brand_voice.md](./brand_voice.md).
+* **Fichier source unique** : [glossaire_formation_vibe_coding.md](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/glossaire_formation_vibe_coding.md) regroupe les 57 termes techniques des Modules 1 à 4.
+* **Formulations V2** : Les définitions doivent rester claires, courtes et adaptées à des adultes débutants, en évitant le jargon abstrait pour définir un autre terme (ex: éviter "arbre hiérarchique" pour le DOM, "moteur V8" pour Node.js). Appliquer la règle de non-tutoiement de [brand_voice.md](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/brand_voice.md).
 * **Script de génération de la Cheat Sheet A4** : Si le fichier Markdown du glossaire est modifié ou enrichi, exécuter le script suivant pour mettre à jour la Cheat Sheet HTML multi-pages A4 côte-à-côte :
   ```bash
   python3 scripts/build_full_cheatsheet_html.py
   ```
+* **Script de l'Application Web Interactive & Bibliothèque de Prompts** :
+  ```bash
+  python3 scripts/build_interactive_web_glossary.py
+  ```
+  - **Fichiers générés** : [index.html](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/index.html) et [glossaire_interactive.html](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/glossaire_interactive.html)
+  - **Fonctionnalités** : Deux onglets dynamiques (*Glossaire* avec index A-Z et filtres par module/thématique ; *Bibliothèque de Prompts* avec recherche, filtres par tags, police monospace Cousine, copie en 1 clic et partage par URL isolée `?prompt=id`).
 * **Charte de la Cheat Sheet A4** :
-  - **Fichier généré** : [glossaire_cheatsheet_complet.html](./glossaire_cheatsheet_complet.html)
+  - **Fichier généré** : [glossaire_cheatsheet_complet.html](file:///Users/maximeelhaik/Documents/VIBE%20CODING%20GENERATION/glossaire_cheatsheet_complet.html)
   - **Dimensions** : A4 portrait (210mm x 297mm), 5 mots par page.
   - **Styles** : Fond blanc pur (`#FFFFFF`), en-têtes couleur Fig (`#18093B`), bordures de cartes subtiles gris clair (`#e2e8f0`), badges de types de mots en jaune sur noir (`#FFFF77` sur `#18093B`), disposition horizontale côte-à-côte des pages à l'écran.
 
@@ -309,5 +244,8 @@ Tous les calques textuels ci-dessus contiennent des exemples par défaut (ex: Al
 
 - *Exemple (Projet 3D pour adolescents)* : Le Persona devient un adolescent gamer, l'application devient un visualiseur de modèles 3D, la stack technique impose Three.js/React Three Fiber, les règles de design de l'Agent.md concernent le chargement progressif des géométries et l'adaptation à la souris/tactile pour la rotation de caméra.
 - *Exemple (Projet Cuisinier)* : Le Persona est un chef de cuisine les mains occupées, les consignes d'ergonomie imposent le contrôle vocal ou des boutons géants, la stack utilise un framework léger de reconnaissance vocale.
+
+
+
 
 

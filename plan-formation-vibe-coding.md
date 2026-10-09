@@ -1,4 +1,4 @@
-## MODULE 1 — Introduction au Vibe Coding
+## MODULE 1 — Introduction au Vibe Coding (19 leçons — 4 chapitres)
 
 <aside>
 🎓
@@ -7,48 +7,48 @@
 
 </aside>
 
-### Chapitre 1 — Bienvenue dans votre formation au vibe coding
+### Chapitre 1 — Bienvenue dans votre formation (5 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M1C1L1 | 8min | Bienvenue dans votre formation au Vibe Coding | M1C1L2 |
-| M1C1L2 | 5 min | Avant de commencer |  |
-| M1C1L3 | 5 min | Découvrir le programme  de la formation |  |
-| M1C1L4 | 4 min | Comprendre la certification  et ses compétences | M1C1L4 |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M1C1L1 | 1 min | Les objectifs du chapitre : bienvenue dans votre formation |
+| M1C1L2 | 5 min | Votre référent de formation |
+| M1C1L3 | 3 min | Découvrir le programme de formation |
+| M1C1L4 | 6 min | Comprendre la certification et ses compétences |
+| M1C1L5 | 5 min | Suivre la formation efficacement et adopter le bon état d’esprit |
 
-### Chapitre 2 — Qu’est ce que le vibe coding ?
+### Chapitre 2 — Qu’est-ce que le Vibe Coding ? (5 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M1C2L1 | 1 min | Qu’est-ce que le  Vibe Coding ? | M1C2L1 |
-| M1C2L2 | 5 min | Découvrir le vocabulaire essentiel du Vibe Coding |  |
-| M1C2L3 | 3 min | Définir ce qu’est le Vibe Coding | M1C2L2 |
-| M1C2L4 | 3 min | Histoire et développement récent | M1C2L3 |
-| M1C2L5 | 5 min | Vibe Coding, nocode et développement classique | M1C2L6 |
-| M1C2L6 | 4 min | Panorama des outils de Vibe Coding en 2026 | M1C2L7 |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M1C2L1 | 1 min | Les objectifs du chapitre : qu'est-ce que le Vibe Coding ? |
+| M1C2L2 | 7 min | Définir ce qu’est le Vibe Coding |
+| M1C2L3 | 7 min | Histoire et développement récent du Vibe Coding |
+| M1C2L4 | 10 min | Distinguer Vibe Coding, no-code et développement classique |
+| M1C2L5 | 5 min | Quiz - Introduction au Vibe Coding |
 
-### Chapitre 3 — La place du Vibe Coding en contexte professionnel.
+### Chapitre 3 — La place du Vibe Coding en contexte professionnel (4 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M1C3L1 | 5 min | La place du Vibe Coding en contexte professionnel |  |
-| M1C3L2 | 5 min | La place du Vibe Coding dans la société |  |
-| M1C3L3 | 5 min | Quels que exemples réels d’apps |  |
-| M1C3L4 | 4 min | En finir avec le mythe  de la fin du développeur | M1C3L6 |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M1C3L1 | 1 min | Les objectifs du chapitre : la place du Vibe Coding dans l'écosystème |
+| M1C3L2 | 6 min | La place du Vibe Coding dans la société |
+| M1C3L3 | 5 min | Quelques exemples réels d'applications créées en Vibe Coding |
+| M1C3L4 | 6 min | En finir avec le mythe du remplacement du développeur |
 
-### Chapitre 4 — L’importance de la veille même pendant votre formation
+### Chapitre 4 — L’importance de la veille même pendant votre formation (5 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M1C4L1 | 5 min | L'importance de la veille même pendant votre formation |  |
-| M1C4L2 | 5 min | Qu'est ce que la veille ? |  |
-| M1C4L3 | 4 min | Comprendre pourquoi la veille est vitale en Vibe Coding | M1C4L2 |
-| M1C4L4 | 5 min | Identifier de bons canaux et sources  à suivre | M1C4L3 |
-| M1C4L5 | 4 min | Mettre en place une routine de veille efficace | M1C4L4 |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M1C4L1 | 1 min | Les objectifs du chapitre : L'importance de la veille même pendant votre formation |
+| M1C4L2 | 4 min | Qu'est-ce que la veille ? |
+| M1C4L3 | 6 min | Comprendre pourquoi la veille est vitale en Vibe Coding |
+| M1C4L4 | 8 min | Identifier de bons canaux et sources à suivre |
+| M1C4L5 | 10 min | Mettre en place une routine efficace |
 
 ---
 
-## MODULE 2 — Fondamentaux du Vibe Coding (fonctionnement)
+## MODULE 2 — Les fondamentaux du Vibe Coding (35 leçons — 5 chapitres)
 
 <aside>
 🧠
@@ -57,18 +57,18 @@
 
 </aside>
 
-### Chapitre 1 — Comprendre le fonctionnement des agents de code
+### Chapitre 1 — Comprendre le fonctionnement des agents de code (6 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M2C1L1 | 6 min | Comprendre le fonctionnement des agents de code | M2C1L2 |
-| M2C1L2 | 6 min | Découvrir le fonctionnement  de l'IA générative de texte | M2C1L2 |
-| M2C1L3 | 6 min | Comprendre les modèles multimodaux | M2C1L3 |
-| M2C1L4 | 5 min | Du LLM conversationnel au LLM de code | M2C1L5 |
-| M2C1L5 | 6 min | Comprendre le principe des agents IA | M2C1L6 |
-| M2C1L6 | 5 min | Panorama des modèles IA pour le code | M2C1L7 |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M2C1L1 | 1 min | Les objectifs du chapitre : comprendre les LLM et les agents de code |
+| M2C1L2 | 6 min | Découvrir le fonctionnement de l'IA générative de texte |
+| M2C1L3 | 6 min | Comprendre les modèles multimodaux |
+| M2C1L4 | 5 min | Comprendre les modèles capables de coder |
+| M2C1L5 | 6 min | Comprendre le principe des agents IA |
+| M2C1L6 | 7 min | Panorama des modèles IA pour le code |
 
-### Chapitre 2 — Cadrer un projet de Vibe Coding
+### Chapitre 2 — Cadrer un projet de Vibe Coding (8 leçons)
 
 <aside>
 ⭐
@@ -77,193 +77,86 @@
 
 </aside>
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M2C2L1 | 1 min | Les objectifs du chapitre : cadrer un projet de Vibe Coding | M2C2L1 |
-| M2C2L2 | 6 min | Identifier des projets pour le Vibe Coding | M2C2L2 |
-| M2C2L3 | 5 min | Définir les besoins de son projet : MVP, Persona |  |
-| M2C2L4 | 5 min | Définir les besoins de son projet : User Stories |  |
-| M2C2L5 | 5 min | Créer le cahier des charges de son projet |  |
-| M2C2L6 | 5 min | Cas pratique |  |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M2C2L1 | 1 min | Les objectifs du chapitre : cadrer un projet de Vibe Coding |
+| M2C2L2 | 9 min | Identifier des projets pour le Vibe Coding |
+| M2C2L3 | 4 min | Créer un cahier des charges |
+| M2C2L4 | 9 min | Définir les besoins de son projet : MVP & Persona |
+| M2C2L5 | 6 min | Définir les besoins de son projet : User Stories |
+| M2C2L6 | 8 min | Définir les besoins de son projet : la Stack technique |
+| M2C2L7 | 5 min | Cas Pratique : Du besoin métier au cahier des charges |
+| M2C2L8 | 4 min | Les autres facteurs à prendre en compte |
 
-### Chapitre 3 — Le prompt engineering adapté au code
+### Chapitre 3 — Le prompt engineering adapté au code (7 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M2C3L1 | 1 min | Les objectifs du chapitre | M1C1L1 |
-| M2C3L2 | 1 min | Objectifs du chapitre | M1C1L1 |
-| M2C3L3 | 1 min | Objectifs du chapitre | M1C1L1 |
-| M2C3L4 | 1 min | Objectifs du chapitre | M1C1L1 |
-| M2C3L5 | 5 min | Le prompt engineering adapté au Vibe Coding |  |
-| M2C3L6 | 8 min | L’importance du process itératif en Vibe Coding | M2C3L8 |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M2C3L1 | 1 min | Les objectifs du chapitre : le prompt engineering |
+| M2C3L2 | 3 min | Définir le prompt engineering |
+| M2C3L3 | 5 min | Distinguer un prompt d'une recherche d'information |
+| M2C3L4 | 3 min | Les forces et faiblesses du prompting |
+| M2C3L5 | 5 min | Le prompt engineering adapté au Vibe Coding |
+| M2C3L6 | 8 min | La particularité du premier prompt (Prompt Zéro) |
+| M2C3L7 | 5 min | L’importance du process itératif en Vibe Coding |
 
-### Chapitre 4 — Éthique, IA Act & RGPD appliqués au code
+### Chapitre 4 — Enjeux éthiques, IA Act & RGPD appliqués au code (9 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M2C4L1 | 1 min | Les objectifs du chapitre : éthique, IA Act & RGPD appliqués au code | M2C4L1 |
-| M2C4L2 | 5 min | Des responsabilités partagées |  |
-| M2C4L3 | 8 min | Pourquoi l’éthique est centrale dans l’usage de l’IA générative ? | M2C4L2 |
-| M2C4L4 | 5 min | Ce que ça change pour l’IA générative |  |
-| M2C4L5 | 9 min | Les cas d’usage à risque  et les bonnes pratiques  à adopter | M2C4L5 |
-| M2C4L6 | 5 min | La correction des modèles d’IA |  |
-| M2C4L7 | 12 min | Créer du contenu inclusif et accessible | M2C4L8 |
-| M2C4L8 | 5 min | À qui appartient  le code généré ? |  |
-| M2C4L9 | 5 min | Responsabilité  du Vibe Coder et conformité  du produit final | M2C4L10 |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M2C4L1 | 1 min | Les objectifs du chapitre : éthique, IA Act & RGPD appliqués au code |
+| M2C4L2 | 8 min | Pourquoi l'éthique est centrale dans l'usage de l'IA générative |
+| M2C4L3 | 6 min | Les 4 piliers de l'éthique appliqués à l'IA |
+| M2C4L4 | 10 min | IA Act : comprendre la réglementation européenne |
+| M2C4L5 | 9 min | Les cas d'usage à risque et les bonnes pratiques à adopter |
+| M2C4L6 | 8 min | Comprendre l'enjeu des biais et discriminations algorithmiques |
+| M2C4L7 | 3 min | Comprendre les enjeux d'inclusivité numérique |
+| M2C4L8 | 8 min | Créer du contenu inclusif et accessible |
+| M2C4L9 | 6 min | À qui appartient le code généré ? |
 
-### Chapitre 5 — SECURIté & prompts surs
+### Chapitre 5 — Sécurité & prompts sûrs (5 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M2C5L1 | 1 min | Les objectifs du chapitre : la sécurité dès le prompt | M2C5L1 |
-| M2C5L2 | 5 min | Le compromis Confidentialité • Utilité |  |
-| M2C5L3 | 5 min | Sécuriser les données sensibles  pour l’IA générative |  |
-| M2C5L4 | 5 min | Identifier les mécanismes  à risque et s’en protéger |  |
-| M2C5L5 | 5 min | L'hygiène du contexte  en Vibe Coding |  |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M2C5L1 | 1 min | Les objectifs du chapitre : Sécurité & prompts sûrs |
+| M2C5L2 | 5 min | Comprendre les défis et enjeux de la protection des données |
+| M2C5L3 | 8 min | Sécuriser les données sensibles avec l'IA générative |
+| M2C5L4 | 5 min | Responsabilité du Vibe Coder et conformité du produit final |
+| M2C5L5 | 5 min | L'hygiène du contexte en Vibe Coding |
 
 ---
 
-## MODULE 3 — Maîtriser les briques techniques essentielles
+## MODULE 3 — Maîtriser les briques techniques essentielles (42 leçons — 7 chapitres)
 
 <aside>
 ⚙️
 
-**RS dominant** : C3 • **Pondération** : 40 % theory / 60 % pratique
+**RS dominant** : C3 • **Pondération** : 40 % théorie / 60 % pratique
 
 </aside>
 
-### Chapitre 1 — Être prêt à débuter la formation technique
+### Chapitre 1 — Être prêt à débuter la formation technique (4 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M3C1L1 | 5 min | Être prêt à débuter la formation technique |  |
-| M3C1L2 | 3 min | Préparer son environnement et ses accès | M1C1L5 |
-| M3C1L3 | 4 min | Adopter l'état d'esprit du Vibe Coder | M1C2L4 |
-| M3C1L4 | 3 min | Comment suivre la formation efficacement ? | M1C2L5 |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M3C1L1 | 1 min | Les objectifs du chapitre : Être prêt à débuter la formation technique |
+| M3C1L2 | 5 min | Le vocabulaire technique essentiel du Vibe Coding |
+| M3C1L3 | 6 min | Préparer son environnement et ses accès |
+| M3C1L4 | 13 min | Panorama des outils de Vibe Coding en 2026 |
 
----
+### Chapitre 2 — Découvrir & utiliser Google AI Studio (7 leçons)
 
-#### 📋 M3C1L3 — Adopter l'état d'esprit du Vibe Coder *(~4 min)*
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M3C2L1 | 1 min | Les objectifs du chapitre : Découvrir & utiliser Google AI Studio |
+| M3C2L2 | 5 min | Présentation de Google AI Studio |
+| M3C2L3 | 3 min | Créer son compte Google AI Pro et accéder à Google AI Studio |
+| M3C2L4 | 5 min | Explorer l'interface et ses fonctions principales |
+| M3C2L5 | 4 min | Découvrir quelques exemples d'application avec la Gallery |
+| M3C2L6 | 10 min | Faire ses premières demandes dans l'outil |
+| M3C2L7 | 6 min | Modifier le modèle de Gemini en fonction des tâches |
 
-> **Angle** : leçon-pivot, psychologique avant d'être technique. Son rôle : **désamorcer la peur du code** chez un apprenant non-développeur, avant qu'il ne touche au moindre outil. C'est la leçon qui fait dire *"OK, je peux le faire"*. À placer en clôture du chapitre d'onboarding, comme une respiration motivante avant d'entrer dans le vif (chapitre "Qu'est-ce que le Vibe Coding ?").
-
-**🎬 Intro**
-
-> *"Avant d'aller plus loin, parlons d'une chose qu'on oublie trop souvent dans les formations techniques : l'état d'esprit. Parce que devenir Vibe Coder, ce n'est pas devenir développeur. C'est adopter une nouvelle façon de travailler avec l'IA — et cette posture, elle s'apprend dès maintenant. Bonne nouvelle : elle est bien plus accessible que vous ne le pensez."*
-
-**🔑 Points clés**
-
-**1. Vous n'avez pas besoin de "savoir coder"**
-- Le Vibe Coder **pilote** l'IA, il ne tape pas tout le code à la main.
-- Votre vraie compétence : **savoir décrire clairement ce que vous voulez** (et ça, vous savez déjà le faire).
-- Casser le syndrome de l'imposteur : *"je ne suis pas développeur"* n'est pas un frein, c'est le point de départ de cette formation.
-
-**2. L'erreur fait partie du jeu**
-- L'IA **se trompe** — c'est normal, ce n'est pas vous le problème.
-- Le code qui ne marche pas du premier coup, **c'est la règle, pas l'exception**.
-- Le bon réflexe : ne pas paniquer, lire le message d'erreur, le redonner à l'IA. *(teaser vers les leçons "itérer" et "plan mode" du Module 2)*
-
-**3. Itérer plutôt que viser la perfection**
-- **Essayer → observer → corriger → recommencer**. Petit pas après petit pas.
-- On ne planifie pas tout parfaitement : on avance par **petites versions** qui s'améliorent.
-- Analogie : on ne sculpte pas une statue d'un coup, on l'affine.
-
-**4. Garder le contrôle et l'esprit critique**
-- L'IA est un **copilote, pas un pilote automatique** — c'est vous qui décidez et validez.
-- Toujours **relire et comprendre globalement** ce que l'IA produit (sans devoir tout maîtriser ligne par ligne).
-- *(amorce discrète des enjeux de sécurité/éthique vus plus tard dans le Module 2)*
-
-**5. La curiosité comme moteur**
-- Le domaine bouge vite : la bonne posture, c'est **tester, explorer, rester curieux**. *(pont naturel vers le chapitre "veille" du Module 1)*
-- Ne pas avoir peur de "casser" : tout est réversible, on peut toujours revenir en arrière.
-
-> 💡 *Illustrer chaque principe par une mini-situation vécue ("vous demandez un bouton bleu, l'IA en fait un rouge → que faites-vous ?") plutôt que par des affirmations abstraites.*
-
-**🧾 Résumé**
-
-> *"Retenez l'essentiel : être Vibe Coder, c'est une posture avant d'être une compétence technique. Vous pilotez l'IA, vous n'exécutez pas tout vous-même. L'erreur est normale et fait partie du processus — on avance par petites itérations, en gardant toujours un œil critique sur ce que l'IA produit. Avec de la curiosité et l'envie d'essayer, vous avez déjà tout ce qu'il faut. Maintenant que l'état d'esprit est posé, on peut vraiment commencer."*
-
-**🎞️ Découpage slides suggéré**
-
-| # | Type de slide | Contenu |
-|---|---|---|
-| 1 | COVER | Titre : "Adopter l'état d'esprit du Vibe Coder" |
-| 2 | INTRO | Accroche : "Ce n'est pas une question de code, c'est une question de posture." |
-| 3 | CONTENU | Point 1 — Vous n'avez pas besoin de savoir coder |
-| 4 | CONTENU | Point 2 — L'erreur fait partie du jeu |
-| 5 | CONTENU | Point 3 — Itérer plutôt que viser la perfection |
-| 6 | CONTENU | Point 4 — Garder le contrôle et l'esprit critique |
-| 7 | CONTENU | Point 5 — La curiosité comme moteur |
-| 8 | FIN | Résumé + teaser vers le chapitre suivant |
-
----
-
-#### 📋 M3C1L4 — Comment suivre la formation efficacement ? *(~3 min)*
-
-> **Angle** : la "notice d'utilisation" du parcours. Leçon pratico-pratique et rassurante qui répond à la question silencieuse de tout débutant : *"Comment je m'y prends pour réussir cette formation sans me perdre ?"*. Placée en clôture du chapitre d'onboarding, juste avant d'entrer dans le contenu.
-
-**🎬 Intro**
-
-> *"Vous avez le bon état d'esprit, vos outils et le vocabulaire. Reste une question : comment tirer le maximum de cette formation ? Une formation au Vibe Coding ne se regarde pas comme une série — elle se pratique. Voici quelques conseils simples pour apprendre vite, bien, et sans frustration."*
-
-**🔑 Points clés**
-
-**1. Pratiquer en parallèle, ne pas binge-watcher**
-- On **ouvre ses outils en même temps** que la vidéo, on refait les manipulations.
-- Le Vibe Coding s'apprend **avec les mains**, pas en spectateur.
-- Mieux vaut 20 min de pratique active qu'1 h de visionnage passif.
-
-**2. Le projet fil rouge, votre colonne vertébrale**
-- La formation se construit autour d'**un projet concret** qui grandit module après module. *(teaser direct vers le projet fil rouge du Module 4)*
-- Chaque notion apprise s'applique immédiatement à **votre propre projet**.
-- Conseil : choisir un projet qui vous tient à cœur pour rester motivé.
-
-**3. Avancer à son rythme, sans sauter les bases**
-- Les modules sont **progressifs** : chaque brique s'appuie sur la précédente.
-- Pas de honte à **revoir une leçon** ou à mettre en pause pour refaire une manip.
-- Les leçons "À vous de jouer" sont là pour s'entraîner : **ne pas les zapper**.
-
-**4. Utiliser les ressources mises à disposition**
-- Cartes mémo, liens, supports téléchargeables : **on les garde sous la hand**.
-- Rappeler où les trouver (ressources jointes aux leçons, page récapitulative).
-
-**5. Savoir débloquer une situation**
-- Premier réflexe : **redonner le problème à l'IA** (c'est ça, le Vibe Coding).
-- Deuxième réflexe : la **communauté / le support** *(adapter selon le canal : Slack, forum…)*.
-- Être bloqué quelques minutes est normal — c'est là qu'on apprend le plus.
-
-> 💡 *Présenter ces conseils comme une mini "routine de l'apprenant" (visuel en 5 étapes) plutôt qu'une liste de recommandations abstraites.*
-
-**🧾 Résumé**
-
-> *"En résumé : pratiquez en même temps que vous regardez, construisez votre projet fil rouge au fil des modules, avancez à votre rythme sans sauter les bases, et gardez vos ressources à portée de main. Et si vous bloquez, demandez d'abord à l'IA, puis à la communauté. Avec cette méthode, vous ne subissez pas la formation : vous la vivez. On est prêts — c'est parti !"*
-
-**🎞️ Découpage slides proposé**
-
-| # | Template | Contenu |
-|---|---|---|
-| 1 | `VIBECODING - COVER` | Titre : "Comment suivre la formation efficacement" |
-| 2 | `VIBECODING - INTRO` | Accroche + annonce des 3 axes (pratiquer / construire / débloquer) |
-| 3 | `VIBECODING - PROCESS` | La routine de l'apprenant en 5 étapes séquentielles |
-| 4 | `VIBECODING - USE CASE` | Focus : le projet fil rouge — le principe + teaser Module 4 |
-| 5 | `VIBECODING - CHECKLIST` | Et si je suis bloqué ? — 5 réflexes à enclencher |
-| 6 | `VIBECODING - FIN` | Résumé + "On est prêts — c'est parti !" |
-
----
-
-### Chapitre 2 — Découvrir GOOGLE AI STUDIO
-
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M3C2L1 | 1 min | Les objectifs du chapitre : découvrir Google AI Studio | M3C1L1 |
-| M3C2L2 | 4 min | Présentation de Google AI Studio | M3C1L2 |
-| M3C2L3 | 5 min | Créer son compte Google AI Pro et accéder à Google AI Studio |  |
-| M3C2L4 | 5 min | Explorer l'interface et ses fonctions principales |  |
-| M3C2L5 | 5 min | Découvrir quelques exemples d'application avec la Gallery |  |
-| M3C2L6 | 5 min | Faire ses premières demandes dans l'outil |  |
-| M3C2L7 | 5 min | Modifier le modèle de Gemini en fonction des tâches |  |
-
-### Chapitre 3 — Créer sa première application sur google ai studio
+### Chapitre 3 — Créer sa première application avec Google AI Studio (5 leçons)
 
 <aside>
 ⭐
@@ -272,239 +165,160 @@
 
 </aside>
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M3C3L1 | 1 min | Les objectifs du chapitre : itération agentique & plan mode | M3C2L1 |
-| M3C3L2 | 5 min | Du cahier des charge technique au Prompt Zero |  |
-| M3C3L3 | 5 min | Imposer une Stack technique dès le premier prompt |  |
-| M3C3L4 | 5 min | Modifier le design et l’interface |  |
-| M3C3L5 | 5 min | Corriger un bug et faire un retour constructif |  |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M3C3L1 | 1 min | Les objectifs du chapitre : Créer sa première application sur Google AI Studio |
+| M3C3L2 | 11 min | Du cahier des charge technique au Prompt Zero dans Google AI Studio |
+| M3C3L3 | 9 min | Modifier le design et l’interface |
+| M3C3L4 | 13 min | Itérer sur son application dans Google AI Studio |
+| M3C3L5 | 5 min | Corriger un bug grâce à l’agent IA |
 
-### Chapitre 4 — Maîtriser le terminal pour le Vibe Coding
+### Chapitre 4 — Git & GitHub : Comprendre le versionning (6 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M3C4L1 | 1 min | Les objectifs du chapitre : maîtriser le terminal |  |
-| M3C4L2 | 5 min | Comprendre le rôle du terminal pour un Vibe Coder |  |
-| M3C4L3 | 6 min | Installer et configurer son environnement local |  |
-| M3C4L4 | 6 min | Les commandes essentielles (les 95 % utiles) |  |
-| M3C4L5 | 6 min | Naviguer et gérer ses fichiers en ligne de commande |  |
-| M3C4L6 | 7 min | À vous de jouer : votre premier projet en terminal |  |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M3C4L1 | 1 min | Les objectifs du chapitre : Git & GitHub |
+| M3C4L2 | 7 min | Comprendre le versioning et son intérêt |
+| M3C4L3 | 7 min | Créer son compte et son premier Repository GitHub |
+| M3C4L4 | 6 min | Modifier son app et publier une nouvelle version |
+| M3C4L5 | 7 min | Comprendre l'historique des versions sur GitHub |
+| M3C4L6 | 3 min | À vous de jouer : Partagez votre app sur GitHub ! |
 
-### Chapitre 5 — Déployer avec Vercel
+### Chapitre 5 — Déployer avec Vercel (7 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M3C5L1 | 1 min | Les objectifs du chapitre : déployer avec Vercel | M3C5L1 |
-| M3C5L2 | 5 min | Comprendre le déploiement continu (CI/CD) | M3C5L2 |
-| M3C5L3 | 6 min | Connecter un dépôt GitHub à Vercel | M3C5L3 |
-| M3C5L4 | 7 min | Déployer son premier projet en production | M3C5L4 |
-| M3C5L5 | 6 min | Gérer domaines, variables d'environnement et secrets | M3C5L5 |
-| M3C5L6 | 6 min | Lire et exploiter les logs de production | M3C5L6 |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M3C5L1 | 1 min | Les objectifs du chapitre : Déployer avec Vercel |
+| M3C5L2 | 5 min | Comprendre le déploiement : du repo à l'app en production |
+| M3C5L3 | 3 min | Créer son compte sur Vercel et découvrir l'interface |
+| M3C5L4 | 8 min | Déployer son premier projet en production |
+| M3C5L5 | 4 min | Modifier son projet et déployer une nouvelle version |
+| M3C5L6 | 4 min | Connecter un nom de domaine personnalisé |
+| M3C5L7 | 3 min | À vous de jouer : Déployez et publiez votre application |
 
-### Chapitre 6 — Projets de A à Z : Du Brief au Déploiement
+### Chapitre 6 — Intégrer un service IA au sein de son projet (7 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M3C6L1 | 1 min | Les objectifs du chapitre : Projets de A à Z | |
-| M3C6L2 | 5 min | Brief 1 : Le Chrono-Pomodoro & Tracker d'Énergie | |
-| M3C6L3 | 5 min | Brief 2 : Le Générateur de Devis & Calculateur Carbone | |
-| M3C6L4 | 5 min | Brief 3 : La Matrice de Priorisation Eisenhower | |
-| M3C6L5 | 6 min | À vous de jouer : Bâtir et publier votre projet | |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M3C6L1 | 1 min | Les objectifs du chapitre : Intégrer un backend et un appel à un service API |
+| M3C6L2 | 7 min | Intégrer un service IA au sein de son projet |
+| M3C6L3 | 5 min | Front-end vs Back-end : pourquoi le navigateur ne suffit plus |
+| M3C6L4 | 5 min | Obtenir sa clé d’API Gemini et configurer la facturation |
+| M3C6L5 | 4 min | Injecter ses secrets en production : les variables d’environnement |
+| M3C6L6 | 7 min | Adapter son architecture pour Vercel et finaliser le déploiement |
+| M3C6L7 | 5 min | À vous de jouer : Connectez votre application à l'IA |
+
+### Chapitre 7 — Projets professionnalisants (6 leçons)
+
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M3C7L1 | 1 min | Les objectifs des projets professionnalisants |
+| M3C7L2 | 5 min | Créer une application de Timer (méthode Pomodoro) |
+| M3C7L3 | 4 min | Créer une Todolist Gamifiée |
+| M3C7L4 | 5 min | Créer un générateur de recettes IA |
+| M3C7L5 | 4 min | Créer un site web efficace pour un artisan |
+| M3C7L6 | 7 min | Créer une landing page avec une direction artistique marquée |
 
 ---
 
-## MODULE 4 — Maîtriser Antigravity (IDE Agentique)
+## MODULE 4 — Maîtriser Antigravity (29 leçons — 4 chapitres)
 
 <aside>
 🥇
 
-**RS dominant** : C2, C3, C4 • **Pondération** : 25 % théorie / 75 % pratique
+**RS dominant** : C2, C3, C4 • **Pondération** : 20 % théorie / 80 % pratique
 
-*Projet fil rouge intégré tout au long du module.*
+*Prise en main de l'IDE agentique, interfaçage avec Supabase (BaaS) et sécurisation par authentification et RLS.*
 
 </aside>
 
-### Chapitre 1 — Découvrir les bases d’Antigravity
+### Chapitre 1 — Découvrir les bases d’Antigravity (8 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M4C1L1 | 1 min | Les objectifs du chapitre : Découvrir les bases d'Antigravity |  |
-| M4C1L2 | 4 min | Pourquoi utiliser un IDE agentique local ? |  |
-| M4C1L3 | 4 min | Découvrir Antigravity et ses spécificités |  |
-| M4C1L4 | 6 min | Installer et paramétrer son environnement Antigravity |  |
-| M4C1L5 | 5 min | Découvrir l'interface et les fonctionnalités principales |  |
-| M4C1L6 | 5 min | Comprendre le terminal & les commandes clés du Vibe Coder |  |
-| M4C1L7 | 5 min | Réaliser des actions sur le terminal avec Antigravity |  |
-| M4C1L8 | 6 min | Sauvegarder son travail : réaliser ses premiers commits avec l'agent |  |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M4C1L1 | 1 min | Découvrir les bases d'Antigravity (Objectifs du chapitre) |
+| M4C1L2 | 7 min | Pourquoi utiliser un IDE agentique local ? |
+| M4C1L3 | 5 min | Découvrir Antigravity et ses spécificités |
+| M4C1L4 | 10 min | Installer et configurer son environnement Antigravity |
+| M4C1L5 | 5 min | Découvrir l'interface et les fonctionnalités principales d’Antigravity |
+| M4C1L6 | 6 min | Découvrir l'interface et les fonctionnalités principales d’Antigravity IDE |
+| M4C1L7 | 5 min | Comprendre le Terminal & ses commandes clés |
+| M4C1L8 | 6 min | Lancer des commandes de Terminal sur Antigravity |
 
-### Chapitre 2 — Les modes de prompt dans l'IDE
+### Chapitre 2 — Faire évoluer un projet existant avec Antigravity (7 leçons)
 
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M4C2L1 | 1 min | Les objectifs du chapitre : Faire évoluer une application dans un IDE local |  |
-| M4C2L2 | 5 min | Récupérer un projet existant |  |
-| M4C2L3 | 5 min | Le mode Chat : dialoguer et questionner son agent |  |
-| M4C2L4 | 6 min | Le mode Composer : générer et modifier du code |  |
-| M4C2L5 | 6 min | Réagir face à un bug : déboguer et transmettre une erreur à l'agent |  |
-| M4C2L6 | 5 min | Le mode Plan : Relire et accepter un plan de modification |  |
-| M4C2L7 | 6 min | À vous de jouer : Récupérez et modifiez votre application ! |  |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M4C2L1 | 1 min | Faire évoluer un projet existant avec Antigravity (Objectifs du chapitre) |
+| M4C2L2 | 6 min | Récupérer un projet de code avec Antigravity |
+| M4C2L3 | 6 min | Configurer ses secrets et variables locales |
+| M4C2L4 | 6 min | Installer les dépendances et lancer son projet en local |
+| M4C2L5 | 6 min | Auditer son projet et itérer en local |
+| M4C2L6 | 6 min | Réagir face à un bug : déboguer et transmettre une erreur à l'agent |
+| M4C2L7 | 7 min | À vous de jouer : Récupérez et modifiez votre application ! |
 
-### Chapitre 3 — Le cerveau du projet : AGENTS.md
+### Chapitre 3 — Interfacer une base de données Cloud (Supabase) (7 leçons)
+
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M4C3L1 | 1 min | Interfacer une base de données Cloud (Supabase) (Objectifs du chapitre) |
+| M4C3L2 | 4 min | Découvrir Supabase pour manipuler des données |
+| M4C3L3 | 5 min | Créer son compte Supabase et son premier projet |
+| M4C3L4 | 6 min | Connecter ses agents IA à Supabase via le MCP |
+| M4C3L5 | 6 min | Connecter son code à son projet Supabase |
+| M4C3L6 | 6 min | Structurer sa première table avec l'agent IA |
+| M4C3L7 | 7 min | Faire évoluer son interface pour utiliser la base de données |
+
+### Chapitre 4 — Authentification & Espace Membre Privé (7 leçons)
+
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M4C4L1 | 1 min | Authentification & Espace Membre Privé (Objectifs du chapitre) |
+| M4C4L2 | 5 min | Comprendre la gestion de session et l'identité utilisateur |
+| M4C4L3 | 6 min | Créer un portail de connexion classique (Email / Mot de passe) |
+| M4C4L4 | 6 min | Intégrer une connexion avec Google (OAuth) |
+| M4C4L5 | 6 min | Restreindre l’application et créer un espace membre |
+| M4C4L6 | 5 min | Comprendre l'importance critique du Row Level Security |
+| M4C4L7 | 7 min | Générer et appliquer les règles RLS |
+
+---
+
+## MODULE 5 — Intégrer des fonctionnalités avancées à un projet (15 leçons — 3 chapitres)
 
 <aside>
-⭐
+🧩
 
-**Critère certifiant visé** : CE1.3.1
-
-</aside>
-
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M4C3L1 | 1 min | Les objectifs du chapitre : La gestion des agents IA dans un IDE local |  |
-| M4C3L2 | 5 min | Le rôle d'AGENTS.md dans Antigravity |  |
-| M4C3L3 | 7 min | Créer le fichier de contexte AGENTS.md |  |
-| M4C3L4 | 5 min | Les sous-agents et la parallélisation de tâches |  |
-| M4C3L5 | 6 min | Itérer et faire évoluer son projet avec plusieurs agents IA |  |
-| M4C3L6 | 5 min | Comprendre et utiliser un Browser Agent |  |
-| M4C3L7 | 5 min | Faire évoluer son interface grâce à un Browser Agent |  |
-| M4C3L8 | 5 min | Comprendre et utiliser des SKILLS |  |
-| M4C3L9 | 6 min | Étendre les capacités de ses agents IA avec les SKILLS |  |
-
-### Chapitre 4 — Créer son premier Backend local & Fiabiliser son projet
-
-| Code leçon | Durée | Titre | Code leçon originale |
-| --- | --- | --- | --- |
-| M4C4L1 | 1 min | Les objectifs du chapitre : Découvrir le backend & fiabiliser son app |  |
-| M4C4L2 | 5 min | Front-end vs Back-end : pourquoi le navigateur ne suffit plus ? |  |
-| M4C4L3 | 6 min | Générer son premier serveur local (Node.js/Express) avec l'agent |  |
-| M4C4L4 | 7 min | Connecter l'interface Front-end au serveur local |  |
-| M4C4L5 | 6 min | Isoler ses secrets et variables locales dans .env.local |  |
-| M4C4L6 | 6 min | Déboguer la chaîne Front-Back et lire les logs d'erreur |  |
-| M4C4L7 | 6 min | Maîtriser Git local (Commits & Branches) sur un projet Full-Stack |  |
-| M4C4L8 | 7 min | À vous de jouer : Votre première application Full-Stack locale |  |
-
-## MODULE 5 — Full-Stack, Sécurité & Déploiement : Réussir son Projet Certifiant
-
-<aside>
-🏆
-
-**RS dominant** : C1, C2, C3, C4, C5, C6 • **Projet Fil Rouge Géant** : 1 seule application métier construite (Front-end + Back-end + RLS), sécurisée et déployée de A à Z.
+**Pondération** : 15 % théorie / 85 % pratique  
+*Projets indépendants et briques techniques prêtes à l'emploi : Monétisation Stripe, Stockage Cloud Supabase Storage et Emailing transactionnel Resend.*
 
 </aside>
 
-### Chapitre 1 — Cadrer son projet certifiant & Définir le produit
+### Chapitre 1 — Connecter un service de monétisation avec Stripe (5 leçons)
 
-<aside>
-⭐
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M5C1L1 | — | En apprendre plus sur la monétisation par abonnement |
+| M5C1L2 | — | Découvrons l'application que nous allons monétiser |
+| M5C1L3 | — | Récupérer le projet et créer la section abonnements |
+| M5C1L4 | — | Créer un compte Stripe et connecter son application |
+| M5C1L5 | — | Adapter et réutiliser la brique Stripe dans nos projets |
 
-**Critères certifiants visés** : C1 (Dossier de cadrage, besoins, parcours utilisateur)
+### Chapitre 2 — Connecter un service de stockage cloud (5 leçons)
 
-</aside>
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M5C2L1 | — | En apprendre plus sur le stockage dans le cloud avec Supabase Storage |
+| M5C2L2 | — | Découvrons l'application que nous allons relier au stockage cloud |
+| M5C2L3 | — | Récupérer le projet et connecter un bucket Supabase Storage |
+| M5C2L4 | — | Faire évoluer le stockage (comptes utilisateurs, multi-galeries) |
+| M5C2L5 | — | Adapter et réutiliser le stockage cloud dans nos projets |
 
-| Code leçon | Durée | Type | Titre | Description / Objectif |
-| --- | --- | --- | --- | --- |
-| M5C1L1 | 1 min | 📺 Leçon | Les objectifs du chapitre : Cadrer son projet certifiant & Définir le produit | Présentation des objectifs du chapitre 1 |
-| M5C1L2 | 2 min | 📺 Leçon | Découvrir le projet fil rouge & les exigences de la certification | Présentation de l'Épreuve 1 (Projet) & Épreuve 2 (QCM) |
-| M5C1L3 | 6 min | 📺 Leçon | Choisir et cadrer son application métier (Dossier de cadrage) | Formaliser les besoins, contraintes et le parcours utilisateur (C1) |
-| M5C1L4 | 6 min | 📺 Leçon | Structurer les règles contextuelles de son projet (`AGENTS.md`) | Définir le cadre technique et les règles d'instructions pour l'agent (CE1.3) |
+### Chapitre 3 — Connecter un service d’emailing (5 leçons)
 
-### Chapitre 2 — Générer l'Interface Utilisateur (Front-end & UX) avec l'IA
-
-<aside>
-⭐
-
-**Critères certifiants visés** : C2 (Génération & itération du prototype), CE3.3 (Composants réutilisables)
-
-</aside>
-
-| Code leçon | Durée | Type | Titre | Description / Objectif |
-| --- | --- | --- | --- | --- |
-| M5C2L1 | 1 min | 📺 Leçon | Les objectifs du chapitre : Générer l'Interface Utilisateur (Front-end & UX) | Présentation des objectifs du chapitre 2 |
-| M5C2L2 | 6 min | ⚙️ Logiciel | Générer la structure et le design system de l'application | Prompter l'agent pour créer le layout, la charte graphique et le responsive |
-| M5C2L3 | 7 min | ⚙️ Logiciel | Créer les composants UI métier (Tableaux, Formulaires, Cartes) | Générer l'ensemble des écrans et vues du parcours utilisateur (CE3.3) |
-| M5C2L4 | 7 min | ⚙️ Logiciel | Itérer sur l'ergonomie visuelle et corriger les bugs de style | Ajuster le design et résoudre les défauts visuels avec l'agent (CE2.1) |
-| M5C2L5 | 6 min | ⚙️ Logiciel | Rendre l'interface dynamique et réactive en Front-end | Gérer les états d'affichage (chargement, modals, soumission de formulaires) |
-
-### Chapitre 3 — Connecter la base de données Cloud (Supabase BaaS)
-
-<aside>
-⭐
-
-**Critère certifiant visé** : CE4.1 (Interfaçage BDD Cloud)
-
-</aside>
-
-| Code leçon | Durée | Type | Titre | Description / Objectif |
-| --- | --- | --- | --- | --- |
-| M5C3L1 | 1 min | 📺 Leçon | Les objectifs du chapitre : Connecter la base de données Cloud (Supabase BaaS) | Présentation des objectifs du chapitre 3 |
-| M5C3L2 | 4 min | 📺 Leçon | Front-end vs Back-end : pourquoi le navigateur ne suffit plus ? | Comprendre la nécessité de la persistance de données serveur |
-| M5C3L3 | 5 min | ⚙️ Logiciel | Créer et configurer son projet Supabase | Inscription Supabase, création du projet & récupération des clés API |
-| M5C3L4 | 7 min | ⚙️ Logiciel | Structurer les tables SQL du projet fil rouge avec l'agent IA | Générer et exécuter le script SQL de modélisation des données |
-| M5C3L5 | 7 min | ⚙️ Logiciel | Connecter les formulaires Front-end à la base de données | Faire persister les actions utilisateur (Create, Read, Update, Delete) |
-
-### Chapitre 4 — Authentification & Espace Membre Privé
-
-<aside>
-⭐
-
-**Critère certifiant visé** : CE5.3.3 (Protection des routes privées)
-
-</aside>
-
-| Code leçon | Durée | Type | Titre | Description / Objectif |
-| --- | --- | --- | --- | --- |
-| M5C4L1 | 1 min | 📺 Leçon | Les objectifs du chapitre : Authentification & Espace Membre Privé | Présentation des objectifs du chapitre 4 |
-| M5C4L2 | 5 min | 📺 Leçon | Comprendre la gestion de session et l'identité utilisateur | Analyser comment Supabase Auth sécurise l'identité utilisateur |
-| M5C4L3 | 6 min | ⚙️ Logiciel | Connecter la page de connexion & inscription avec l'agent IA | Mettre en place l'authentification (Email / Magic Link ou OAuth) |
-| M5C4L4 | 6 min | ⚙️ Logiciel | Protéger les routes privées et le dashboard de l'application | Restreindre l'accès aux seules personnes authentifiées (CE5.3.3) |
-| M5C4L5 | 6 min | ⚙️ Logiciel | Lier les données créées dans le Front-end à l'ID utilisateur | Associer chaque entrée BDD au jeton `auth.uid()` de l'utilisateur |
-
-### Chapitre 5 — Sécuriser les données par la faille (Row Level Security - RLS)
-
-<aside>
-🚨
-
-**Critère éliminatoire** : CE5.3.5 (Row Level Security - RLS) & CE5.3.4 (Étanchéité des données)
-
-</aside>
-
-| Code leçon | Durée | Type | Titre | Description / Objectif |
-| --- | --- | --- | --- | --- |
-| M5C5L1 | 1 min | 📺 Leçon | Les objectifs du chapitre : Sécuriser les données par la faille (RLS) | Présentation du critère éliminatoire CE5.3.5 de la certification |
-| M5C5L2 | 5 min | ⚙️ Logiciel | Démontrer la faille : accéder aux données d'un autre utilisateur | Constater le risque de fuite de données avant l'activation du RLS |
-| M5C5L3 | 8 min | ⚙️ Logiciel | Générer et appliquer les règles RLS SQL avec l'agent IA | Rédiger les politiques `CREATE POLICY` pour cloisonner par `auth.uid()` |
-| M5C5L4 | 6 min | 📝 Cas Pratique | Auditer et valider l'étanchéité totale de l'application dans l'UI | Tester dans le navigateur que chaque compte ne voit que ses données |
-
-### Chapitre 6 — Connecter le monde extérieur (API & Secrets)
-
-<aside>
-⭐
-
-**Critères certifiants visés** : CE4.1 (API externe / Service tiers), CE5.3.2 (Masquage des clés API)
-
-</aside>
-
-| Code leçon | Durée | Type | Titre | Description / Objectif |
-| --- | --- | --- | --- | --- |
-| M5C6L1 | 1 min | 📺 Leçon | Les objectifs du chapitre : Connecter le monde extérieur (API & Secrets) | Présentation des objectifs du chapitre 6 |
-| M5C6L2 | 5 min | 📺 Leçon | Qu'est-ce qu'une API REST et comment l'interroger avec l'IA ? | Comprendre le fonctionnement des requêtes HTTP et des réponses JSON |
-| M5C6L3 | 6 min | ⚙️ Logiciel | Sécuriser ses clés API & secrets dans le fichier `.env.local` | Isoler les variables d'environnement et vérifier qu'elles ne fuient pas |
-| M5C6L4 | 7 min | ⚙️ Logiciel | Brancher un service tiers au projet fil rouge (Stripe, Resend, API métier) | Connecter une API externe au projet et valider les échanges de données |
-
-### Chapitre 7 — Déploiement en production & Réussir son projet certifiant 🏆
-
-<aside>
-🏆
-
-**Livrables officiels de la certification** : Application Vercel + Dépôt GitHub + Vidéo de démonstration
-
-</aside>
-
-| Code leçon | Durée | Type | Titre | Description / Objectif |
-| --- | --- | --- | --- | --- |
-| M5C7L1 | 1 min | 📺 Leçon | Les objectifs du chapitre : Déploiement en production & Réussir son projet certifiant | Présentation des objectifs du chapitre 7 |
-| M5C7L2 | 7 min | ⚙️ Logiciel | Déployer en production sur Vercel avec HTTPS | Mettre l'application en ligne sur une URL publique accessible (CE5.1) |
-| M5C7L3 | 7 min | 📺 Leçon | Publier le dépôt GitHub propre avec un README détaillé | Versionner le code, structurer le dépôt et rédiger la documentation (C3) |
-| M5C7L4 | 7 min | 📝 Cas Pratique | Enregistrer la vidéo de démonstration du projet fil rouge | Enregistrer le walkthrough produit pour l'Épreuve 1 de la certification |
-| M5C7L5 | 5 min | 📺 Leçon | Auto-évaluation sur la grille certifiante & Préparation au QCM | Vérification finale de la grille d'évaluation et conseils pour l'Épreuve 2 |
+| Code leçon | Durée | Titre |
+| --- | --- | --- |
+| M5C3L1 | — | En apprendre plus sur les emails transactionnels |
+| M5C3L2 | — | Découvrons l'application Memō que nous allons relier au cloud |
+| M5C3L3 | — | Configurer son compte Resend et les variables d'environnement |
+| M5C3L4 | — | Créer le template et déclencher l'envoi d'emails |
+| M5C3L5 | — | Adapter et réutiliser la brique Resend dans nos projets |

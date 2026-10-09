@@ -1,0 +1,1666 @@
+[
+  {
+    "id": "rec0P8DSyitvfisaX",
+    "createdTime": "2026-06-16T16:08:32.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 4,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 8,
+      "isRecorded_check": true,
+      "PHASE": "V1",
+      "Commentaires / Problèmes": "M2C3L7 Design fait --> GO\n",
+      "Lien viméo": "https://vimeo.com/1220182196",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Les autres facteurs à prendre en compte ",
+      "Lien viméo player": "https://player.vimeo.com/video/1220182196",
+      "Chapitre": "Chapitre 2 : Cadrer un projet de Vibe Coding"
+    }
+  },
+  {
+    "id": "rec188yQhidZbJpBC",
+    "createdTime": "2026-06-17T11:51:23.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 7,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Faire évoluer son interface grâce à un Browser Agent",
+      "Chapitre": "Chapitre 3 : Configurer un nouveau projet avec Antigravity"
+    }
+  },
+  {
+    "id": "rec1MVOcSCGErYgTi",
+    "createdTime": "2026-06-17T10:11:07.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 7,
+      "État": "🎥 Tournage validé",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Comprendre l'historique des versions sur GitHub",
+      "Chapitre": "Chapitre 4 : Git & GitHub : Comprendre le versionning"
+    }
+  },
+  {
+    "id": "rec1dlgEppj3ULe4f",
+    "createdTime": "2026-07-28T16:56:16.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Rendre l'interface dynamique et réactive en Front-end",
+      "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+    }
+  },
+  {
+    "id": "rec2NQyHf6CLBC1yJ",
+    "createdTime": "2026-06-17T10:09:22.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✂️ A monter",
+      "Type": "📺 Leçon ",
+      "N° leçons": 7,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Comprendre le terminal & ses commandes clés",
+      "Chapitre": "Chapitre 1 : Découvrir les bases d’Antigravity"
+    }
+  },
+  {
+    "id": "rec3VcNKz74hXlMpQ",
+    "createdTime": "2026-07-28T16:56:31.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Qu'est-ce qu'une API REST et comment l'interroger avec l'IA ?",
+      "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+    }
+  },
+  {
+    "id": "rec3Z9azFDRwE6u81",
+    "createdTime": "2026-06-17T11:52:23.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Les objectifs du chapitre : Découvrir le backend & fiabiliser son app",
+      "Chapitre": "Chapitre 4 : Itérer avec Antigravity en multi-agent"
+    }
+  },
+  {
+    "id": "rec3tILqGSeB71qbl",
+    "createdTime": "2026-07-23T13:41:12.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 4,
+      "État": "🎥 Tournage validé",
+      "Type": "📝 Cas Pratique",
+      "N° leçons": 5,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Créer un site vitrine avec formulaire de contact",
+      "Chapitre": "Chapitre 7 : Projets professionnalisants"
+    }
+  },
+  {
+    "id": "rec3tepTtozHe1eTA",
+    "createdTime": "2026-07-28T16:56:15.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Créer les composants UI métier (Tableaux, Formulaires, Cartes)",
+      "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+    }
+  },
+  {
+    "id": "rec4qhRBzgGSwmP7O",
+    "createdTime": "2026-06-17T08:14:27.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 4,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Lien viméo": "https://vimeo.com/1220180350",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Comprendre les modèles capables de coder",
+      "Lien viméo player": "https://player.vimeo.com/video/1220180350",
+      "Chapitre": "Chapitre 1 : Comprendre le fonctionnement des agents de code"
+    }
+  },
+  {
+    "id": "rec57Iy6zaRzeI138",
+    "createdTime": "2026-06-17T10:01:59.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "Hybride (Leçon + pratique)",
+      "N° leçons": 4,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Explorer l'interface et ses fonctions principales",
+      "Chapitre": "Chapitre 2 : Découvrir & utiliser Google AI Studio"
+    }
+  },
+  {
+    "id": "rec5A6WnIWJLeybG1",
+    "createdTime": "2026-07-28T16:56:29.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Lier les données créées dans le Front-end à l'ID utilisateur",
+      "Chapitre": "Chapitre 4 : La sécurité (RLS) par la faille"
+    }
+  },
+  {
+    "id": "rec5BiHSchMLSTFOq",
+    "createdTime": "2026-06-16T16:03:22.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 1,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Lien viméo": "https://vimeo.com/1220178354",
+      "isWritten_check": true,
+      "Module": "Module 1 : Introduction au Vibe Coding",
+      "Nom de la leçon": "Les objectifs du chapitre : qu'est-ce que le Vibe Coding ?",
+      "Lien viméo player": "https://player.vimeo.com/video/1220178354",
+      "Chapitre": "Chapitre 2 : Qu'est-ce que le Vibe Coding ?"
+    }
+  },
+  {
+    "id": "rec5GB37MXo2Cqi3v",
+    "createdTime": "2026-07-28T16:56:35.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Brancher un service tiers au projet fil rouge (Stripe, Resend, API métier)",
+      "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+    }
+  },
+  {
+    "id": "rec5OD3Idpgq2v6Zc",
+    "createdTime": "2026-07-28T16:56:27.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Générer et appliquer les règles RLS SQL avec l'agent IA",
+      "Chapitre": "Chapitre 5 : Connecter le monde extérieur (API, MCP & variables d'environnement)"
+    }
+  },
+  {
+    "id": "rec5f0Di8S36MOKEb",
+    "createdTime": "2026-06-17T08:17:23.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 9,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 4,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "\n",
+      "Lien viméo": "https://vimeo.com/1220181102",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Définir les besoins de son projet : MVP & Persona",
+      "Lien viméo player": "https://player.vimeo.com/video/1220181102",
+      "Chapitre": "Chapitre 2 : Cadrer un projet de Vibe Coding"
+    }
+  },
+  {
+    "id": "rec5hXo0QXp7Km2SF",
+    "createdTime": "2026-06-17T08:39:19.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "✅ Fichage validé",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "PHASE": "V1",
+      "Commentaires / Problèmes": "À passer en design par R. - M2C8L6\n",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Comprendre les défis et enjeux de la protection des données",
+      "Chapitre": "Chapitre 5 : Sécurité & prompts sûrs"
+    }
+  },
+  {
+    "id": "rec5rjeLdvxQIRvRr",
+    "createdTime": "2026-06-17T11:53:35.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Front-end vs Back-end : pourquoi le navigateur ne suffit plus ?",
+      "Chapitre": "Chapitre 4 : Itérer avec Antigravity en multi-agent"
+    }
+  },
+  {
+    "id": "rec66JfC7GoI6LTEM",
+    "createdTime": "2026-07-17T11:50:29.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 7,
+      "État": "🎥 Tournage validé",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 3,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Créér son compte et son premier Repository GitHub",
+      "Chapitre": "Chapitre 4 : Git & GitHub : Comprendre le versionning"
+    }
+  },
+  {
+    "id": "rec685VHMaxQvH946",
+    "createdTime": "2026-07-24T13:12:21.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 6,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Comprendre et utiliser un Browser Agent",
+      "Chapitre": "Chapitre 3 : Configurer un nouveau projet avec Antigravity"
+    }
+  },
+  {
+    "id": "rec6RWSqojaeVuhRa",
+    "createdTime": "2026-06-16T16:06:29.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 1,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Lien viméo": "https://vimeo.com/1220178638",
+      "isWritten_check": true,
+      "Module": "Module 1 : Introduction au Vibe Coding",
+      "Nom de la leçon": "Les objectifs du chapitre : la place du Vibe Coding dans l'écosystème",
+      "Lien viméo player": "https://player.vimeo.com/video/1220178638",
+      "Chapitre": "Chapitre 3 : La place du Vibe Coding en contexte professionnel"
+    }
+  },
+  {
+    "id": "rec7C254wA3mX3Ndj",
+    "createdTime": "2026-06-17T08:27:03.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 3,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 4,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "M2C5L4\n",
+      "Lien viméo": "https://vimeo.com/1220183887",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Les forces et faiblesses du prompting",
+      "Lien viméo player": "https://player.vimeo.com/video/1220183887",
+      "Chapitre": "Chapitre 3 : Le prompt engineering adapté au code"
+    }
+  },
+  {
+    "id": "rec7ZHGdeAnG3wBC5",
+    "createdTime": "2026-06-16T16:04:07.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "⏳ À ficher",
+      "Type": "❓ Quiz",
+      "N° leçons": 7,
+      "PHASE": "V1",
+      "Module": "Module 1 : Introduction au Vibe Coding",
+      "Nom de la leçon": "Quiz - Introduction au vibe coding",
+      "Chapitre": "Chapitre 2 : Qu'est-ce que le Vibe Coding ?"
+    }
+  },
+  {
+    "id": "rec7mIAkFYoUuowbW",
+    "createdTime": "2026-07-28T16:41:48.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "🎨 Contenu validé - Design à faire",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Découvrir le projet fil rouge & les exigences de la certification",
+      "Chapitre": "Chapitre 1 : Projet final certifiant 🏆"
+    }
+  },
+  {
+    "id": "rec8SdwJAU5OFZhO1",
+    "createdTime": "2026-06-16T16:10:56.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 10,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 5,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "\n",
+      "Lien viméo": "https://vimeo.com/1220179122",
+      "isWritten_check": true,
+      "Module": "Module 1 : Introduction au Vibe Coding",
+      "Nom de la leçon": "Mettre en place une routine efficace",
+      "Lien viméo player": "https://player.vimeo.com/video/1220179122",
+      "Chapitre": "Chapitre 4 : L'importance de la veille même pendant votre formation"
+    }
+  },
+  {
+    "id": "recAC2zazoE47WbWH",
+    "createdTime": "2026-06-17T10:12:54.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Modifier son projet et déployer une nouvelle version",
+      "Chapitre": "Chapitre 5 : Déployer avec Vercel"
+    }
+  },
+  {
+    "id": "recB6WNpV4vz58gvF",
+    "createdTime": "2026-06-17T11:49:53.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Le mode Composer : générer et modifier du code",
+      "Chapitre": "Chapitre 2 : Faire évoluer un projet existant avec Antigravity"
+    }
+  },
+  {
+    "id": "recBBVrT6hR86Lbyp",
+    "createdTime": "2026-06-17T08:16:52.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 1,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Lien viméo": "https://vimeo.com/1221066547",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Les objectifs du chapitre : cadrer un projet de Vibe Coding",
+      "Lien viméo player": "https://player.vimeo.com/video/1221066547",
+      "Chapitre": "Chapitre 2 : Cadrer un projet de Vibe Coding"
+    }
+  },
+  {
+    "id": "recBq8bYzTHNA4ydD",
+    "createdTime": "2026-06-16T16:04:00.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "📺 Leçon ",
+      "N° leçons": 6,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Panorama des outils de Vibe Coding en 2026",
+      "Chapitre": "Chapitre 1 : Être prêt à débuter la formation"
+    }
+  },
+  {
+    "id": "recC5gzj9Hgq22DCh",
+    "createdTime": "2026-06-17T10:04:15.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "Hybride (Leçon + pratique)",
+      "N° leçons": 7,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Modifier le modèle de Gemini en fonction des tâches",
+      "Chapitre": "Chapitre 2 : Découvrir & utiliser Google AI Studio"
+    }
+  },
+  {
+    "id": "recCFunwTAFHBujNI",
+    "createdTime": "2026-07-28T16:56:18.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Front-end vs Back-end : pourquoi le navigateur ne suffit plus ?",
+      "Chapitre": "Chapitre 3 : Gérer l'authentification des utilisateurs"
+    }
+  },
+  {
+    "id": "recCNrlo7ffQYHvUE",
+    "createdTime": "2026-07-16T22:38:13.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 8,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 6,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Lien viméo": "https://vimeo.com/1220184482",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "La particularité du premier prompt (Prompt Zéro)",
+      "Lien viméo player": "https://player.vimeo.com/video/1220184482",
+      "Chapitre": "Chapitre 3 : Le prompt engineering adapté au code"
+    }
+  },
+  {
+    "id": "recCY2I3fHYrDSubv",
+    "createdTime": "2026-06-17T08:13:51.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 3,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "<https://drive.google.com/drive/folders/10eBrEevYWKn0pT13on41YrjXElAY12SP>\n",
+      "Lien viméo": "https://vimeo.com/1204839607",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Comprendre les modèles multimodaux",
+      "Lien viméo player": "https://player.vimeo.com/video/1204839607",
+      "Chapitre": "Chapitre 1 : Comprendre le fonctionnement des agents de code"
+    }
+  },
+  {
+    "id": "recCi2DqLpGywMQ9e",
+    "createdTime": "2026-06-17T08:32:12.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 8,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 6,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "Design OK Ben. - M2C8L2\n",
+      "Lien viméo": "https://vimeo.com/1220186690",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Comprendre l'enjeu des biais et discriminations algorithmiques",
+      "Lien viméo player": "https://player.vimeo.com/video/1220186690",
+      "Chapitre": "Chapitre 4 : Enjeux éthiques, IA Act & RGPD appliqués au code"
+    }
+  },
+  {
+    "id": "recCuWiJrEviV3a0W",
+    "createdTime": "2026-07-28T16:56:19.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Créer et configurer son projet Supabase",
+      "Chapitre": "Chapitre 3 : Gérer l'authentification des utilisateurs"
+    }
+  },
+  {
+    "id": "recD0VasThZN4TZZA",
+    "createdTime": "2026-07-28T16:56:27.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Les objectifs du chapitre : Authentification & Espace Membre Privé",
+      "Chapitre": "Chapitre 4 : La sécurité (RLS) par la faille"
+    }
+  },
+  {
+    "id": "recEQ7dHysEd7Z6W6",
+    "createdTime": "2026-07-28T16:56:28.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "⏳ À ficher",
+      "Type": "📝 Cas Pratique",
+      "N° leçons": 5,
+      "PHASE": "V1",
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Auditer et valider l'étanchéité totale de son application",
+      "Chapitre": "Chapitre 5 : Connecter le monde extérieur (API, MCP & variables d'environnement)"
+    }
+  },
+  {
+    "id": "recEp5T4CWuaDePv0",
+    "createdTime": "2026-06-22T11:37:04.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 5,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 5,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "[@Benjamin Kerlirzin](https://airtable.com/appt360zhTgDY1t4B/menF85X3EfnZy5dPy/usrnAqT1H9YIJerOS?recordId=recEp5T4CWuaDePv0&fieldId=fldSvgbPGDJnzsqJL) remis a fiché car inversé des slides. A valider rapidement\n\n",
+      "Lien viméo": "https://vimeo.com/1220184480",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Le prompt engineering adapté au Vibe Coding",
+      "Lien viméo player": "https://player.vimeo.com/video/1220184480",
+      "Chapitre": "Chapitre 3 : Le prompt engineering adapté au code"
+    }
+  },
+  {
+    "id": "recGF36XEiHAYqW0K",
+    "createdTime": "2026-06-17T11:51:43.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Les sous-agents et la parallélisation de tâches",
+      "Chapitre": "Chapitre 3 : Configurer un nouveau projet avec Antigravity"
+    }
+  },
+  {
+    "id": "recGlk0SexH1OUGas",
+    "createdTime": "2026-07-17T12:01:39.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 3,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Créer son compte sur Vercel et découvrir l'interface\n",
+      "Chapitre": "Chapitre 5 : Déployer avec Vercel"
+    }
+  },
+  {
+    "id": "recGw6rzoXLaeENGv",
+    "createdTime": "2026-06-17T08:41:15.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 5,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 5,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Lien viméo": "https://vimeo.com/1220188871",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "L'hygiène du contexte en Vibe Coding",
+      "Lien viméo player": "https://player.vimeo.com/video/1220188871",
+      "Chapitre": "Chapitre 5 : Sécurité & prompts sûrs"
+    }
+  },
+  {
+    "id": "recH6VU1IIklUsuIf",
+    "createdTime": "2026-06-17T08:32:04.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 9,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 5,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "<https://drive.google.com/drive/folders/10eBrEevYWKn0pT13on41YrjXElAY12SP>\n",
+      "Lien viméo": "https://vimeo.com/1220186624",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Les cas d'usage à risque et les bonnes pratiques à adopter",
+      "Lien viméo player": "https://player.vimeo.com/video/1220186624",
+      "Chapitre": "Chapitre 4 : Enjeux éthiques, IA Act & RGPD appliqués au code"
+    }
+  },
+  {
+    "id": "recHK41ZXv4atLNnO",
+    "createdTime": "2026-06-17T08:26:17.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 3,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "Design OK Ben. - M2C5L2\n",
+      "Lien viméo": "https://vimeo.com/1220183885",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Définir le prompt engineering",
+      "Lien viméo player": "https://player.vimeo.com/video/1220183885",
+      "Chapitre": "Chapitre 3 : Le prompt engineering adapté au code"
+    }
+  },
+  {
+    "id": "recHkcoeeh1pJQTIj",
+    "createdTime": "2026-06-17T11:41:02.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✂️ A monter",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 4,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Liens utiles": "Télecharger Antigravity - https://antigravity.google/download\n",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Installer et paramétrer son environnement Antigravity",
+      "Chapitre": "Chapitre 1 : Découvrir les bases d’Antigravity"
+    }
+  },
+  {
+    "id": "recIjgzhJwbSX7Dhf",
+    "createdTime": "2026-06-17T08:39:28.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 8,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 3,
+      "isRecorded_check": true,
+      "PHASE": "V1",
+      "Commentaires / Problèmes": "À passer en design par R. - M2C8L7\n",
+      "Lien viméo": "https://vimeo.com/1220188083",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Sécuriser les données sensibles avec l'IA générative",
+      "Lien viméo player": "https://player.vimeo.com/video/1220188083",
+      "Chapitre": "Chapitre 5 : Sécurité & prompts sûrs"
+    }
+  },
+  {
+    "id": "recJP3s4bSXUCSlzM",
+    "createdTime": "2026-06-17T08:17:15.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 4,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 3,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "\n",
+      "Lien viméo": "https://vimeo.com/1220181104",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Créer un cahier des charges",
+      "Lien viméo player": "https://player.vimeo.com/video/1220181104",
+      "Chapitre": "Chapitre 2 : Cadrer un projet de Vibe Coding"
+    }
+  },
+  {
+    "id": "recJs6eR10iCcc9vb",
+    "createdTime": "2026-07-28T16:56:15.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Itérer sur l'ergonomie visuelle et corriger les bugs de style",
+      "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+    }
+  },
+  {
+    "id": "recK5pVXl4l23Cp1x",
+    "createdTime": "2026-06-18T14:44:42.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "⏳ À ficher",
+      "Type": "📺 Leçon ",
+      "N° leçons": 10,
+      "PHASE": "V1",
+      "Commentaires / Problèmes": "A mettre ici ou plus tot dans la formation\n",
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Comprendre les MCP Servers",
+      "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+    }
+  },
+  {
+    "id": "recK7w0FxUDso5cr6",
+    "createdTime": "2026-06-16T16:10:19.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 6,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 3,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "\n",
+      "Lien viméo": "https://vimeo.com/1220179121",
+      "isWritten_check": true,
+      "Module": "Module 1 : Introduction au Vibe Coding",
+      "Nom de la leçon": "Comprendre pourquoi la veille est vitale en Vibe Coding",
+      "Lien viméo player": "https://player.vimeo.com/video/1220179121",
+      "Chapitre": "Chapitre 4 : L'importance de la veille même pendant votre formation"
+    }
+  },
+  {
+    "id": "recKiODICYKchylWN",
+    "createdTime": "2026-07-29T11:14:33.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Réagir face à un bug : déboguer et transmettre une erreur à l'agent",
+      "Chapitre": "Chapitre 2 : Faire évoluer un projet existant avec Antigravity"
+    }
+  },
+  {
+    "id": "recKvBl9MCiXqBDGM",
+    "createdTime": "2026-07-28T15:00:56.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 8,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Comprendre et utiliser des SKILLS",
+      "Chapitre": "Chapitre 3 : Configurer un nouveau projet avec Antigravity"
+    }
+  },
+  {
+    "id": "recL3GqDBXe9wqDWj",
+    "createdTime": "2026-07-28T16:56:34.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Les objectifs du chapitre : Déployer en production & Réussir son projet certifiant",
+      "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+    }
+  },
+  {
+    "id": "recLBbsLRzCOixfi9",
+    "createdTime": "2026-07-28T16:56:35.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "Hybride (Leçon + pratique)",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "SCHEMA FIGMA MAKE (2)\n",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Publier le dépôt GitHub propre avec un README détaillé",
+      "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+    }
+  },
+  {
+    "id": "recLEQIJ7K3ypLYIj",
+    "createdTime": "2026-07-28T16:56:24.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Protéger les routes privées et le dashboard de l'application",
+      "Chapitre": "Chapitre 4 : La sécurité (RLS) par la faille"
+    }
+  },
+  {
+    "id": "recLqcCGWxsk1aiyN",
+    "createdTime": "2026-07-28T16:56:26.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Les objectifs du chapitre : Sécuriser les données par la faille (RLS)",
+      "Chapitre": "Chapitre 5 : Connecter le monde extérieur (API, MCP & variables d'environnement)"
+    }
+  },
+  {
+    "id": "recNQvOpBBVYXBVHN",
+    "createdTime": "2026-06-17T10:12:48.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 4,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Déployer son premier projet en production",
+      "Chapitre": "Chapitre 5 : Déployer avec Vercel"
+    }
+  },
+  {
+    "id": "recO35RYrPXq4N3jJ",
+    "createdTime": "2026-07-28T16:41:54.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "🎨 Contenu validé - Design à faire",
+      "Type": "📝 Cas Pratique",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Structurer les règles contextuelles de son projet (AGENTS.md)",
+      "Chapitre": "Chapitre 1 : Projet final certifiant 🏆"
+    }
+  },
+  {
+    "id": "recOB3Cl1LxeGRTUi",
+    "createdTime": "2026-06-16T16:03:36.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 7,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 3,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "Petite superposition sur la slide du tableau, corrigé dans figma\n",
+      "Lien viméo": "https://vimeo.com/1220178351",
+      "isWritten_check": true,
+      "Module": "Module 1 : Introduction au Vibe Coding",
+      "Nom de la leçon": "Définir ce qu’est le Vibe Coding",
+      "Lien viméo player": "https://player.vimeo.com/video/1220178351",
+      "Chapitre": "Chapitre 2 : Qu'est-ce que le Vibe Coding ?"
+    }
+  },
+  {
+    "id": "recOGkq8t0SthNiuk",
+    "createdTime": "2026-07-29T11:14:54.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 7,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Maîtriser Git local (Commits & Branches) sur un projet Full-Stack",
+      "Chapitre": "Chapitre 4 : Itérer avec Antigravity en multi-agent"
+    }
+  },
+  {
+    "id": "recOmDTYQ7EYFIRpD",
+    "createdTime": "2026-06-17T10:12:30.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Comprendre le déploiement : du repo à l'app en production",
+      "Chapitre": "Chapitre 5 : Déployer avec Vercel"
+    }
+  },
+  {
+    "id": "recPJVaJh0O5FwKPh",
+    "createdTime": "2026-07-28T16:56:38.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "⏳ À ficher",
+      "Type": "📺 Leçon ",
+      "N° leçons": 5,
+      "PHASE": "V1",
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Auto-évaluation sur la grille certifiante & Préparation au QCM",
+      "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+    }
+  },
+  {
+    "id": "recPZpkcnNvkBRH7a",
+    "createdTime": "2026-06-17T10:01:50.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 3,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Docs à ajouter": "\n",
+      "Liens utiles": "Forfaits Google AI - https://one.google.com/ai\n",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Créer son compte Google AI Pro et accéder à Google AI Studio",
+      "Chapitre": "Chapitre 2 : Découvrir & utiliser Google AI Studio"
+    }
+  },
+  {
+    "id": "recPwcrhun4pFkIZN",
+    "createdTime": "2026-06-17T08:32:48.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 6,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 9,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Lien viméo": "https://vimeo.com/1220186736",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "À qui appartient  le code généré ?",
+      "Lien viméo player": "https://player.vimeo.com/video/1220186736",
+      "Chapitre": "Chapitre 4 : Enjeux éthiques, IA Act & RGPD appliqués au code"
+    }
+  },
+  {
+    "id": "recQDlj9xhfDEUloR",
+    "createdTime": "2026-07-28T16:41:54.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "🎨 Contenu validé - Design à faire",
+      "Type": "📝 Cas Pratique",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Choisir et cadrer son application métier (Dossier de cadrage)",
+      "Chapitre": "Chapitre 1 : Projet final certifiant 🏆"
+    }
+  },
+  {
+    "id": "recQXYETiK1rFExO8",
+    "createdTime": "2026-06-17T10:10:23.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 1,
+      "État": "🎥 Tournage validé",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Les objectifs du chapitre : Git & GitHub",
+      "Chapitre": "Chapitre 4 : Git & GitHub : Comprendre le versionning"
+    }
+  },
+  {
+    "id": "recQxcDBXMQ2dajkl",
+    "createdTime": "2026-07-23T13:39:23.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 5,
+      "État": "🎥 Tournage validé",
+      "Type": "📝 Cas Pratique",
+      "N° leçons": 2,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Créer une application Timer (méthode Pomodoro)",
+      "Chapitre": "Chapitre 7 : Projets professionnalisants"
+    }
+  },
+  {
+    "id": "recR0vi3cLzJuZLMp",
+    "createdTime": "2026-06-17T11:41:27.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "[@Benjamin Kerlirzin](https://airtable.com/appt360zhTgDY1t4B/menLYfMndadXccqDp/usrnAqT1H9YIJerOS?recordId=recR0vi3cLzJuZLMp&fieldId=fldSvgbPGDJnzsqJL)voir lequel on reprend. Objectif \"importer\" un projet deja créé précédemment. \n\n",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Récupérer un projet existant depuis GitHub",
+      "Chapitre": "Chapitre 2 : Faire évoluer un projet existant avec Antigravity"
+    }
+  },
+  {
+    "id": "recRIKbsCJEsaQ14u",
+    "createdTime": "2026-07-28T16:56:27.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Démontrer la faille : accéder aux données d'un autre utilisateur",
+      "Chapitre": "Chapitre 5 : Connecter le monde extérieur (API, MCP & variables d'environnement)"
+    }
+  },
+  {
+    "id": "recRuljx5Ccbopo9D",
+    "createdTime": "2026-07-23T13:38:20.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 1,
+      "État": "🎥 Tournage validé",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Les objectifs des projets professionnalisants",
+      "Chapitre": "Chapitre 7 : Projets professionnalisants"
+    }
+  },
+  {
+    "id": "recSSj9dFdsrMS9Rm",
+    "createdTime": "2026-06-17T11:40:05.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✂️ A monter",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Les objectifs du chapitre : Découvrir les bases d'Antigravity",
+      "Chapitre": "Chapitre 1 : Découvrir les bases d’Antigravity"
+    }
+  },
+  {
+    "id": "recSUwX2sQNsK7bwV",
+    "createdTime": "2026-06-17T11:49:46.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Le mode Chat : dialoguer et questionner son agent",
+      "Chapitre": "Chapitre 2 : Faire évoluer un projet existant avec Antigravity"
+    }
+  },
+  {
+    "id": "recSZ2ehUsj3SlxXh",
+    "createdTime": "2026-06-17T08:31:54.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 10,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 4,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "<https://drive.google.com/drive/folders/10eBrEevYWKn0pT13on41YrjXElAY12SP>\n",
+      "Lien viméo": "https://vimeo.com/1220186627",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "IA Act : comprendre la réglementation européenne",
+      "Lien viméo player": "https://player.vimeo.com/video/1220186627",
+      "Chapitre": "Chapitre 4 : Enjeux éthiques, IA Act & RGPD appliqués au code"
+    }
+  },
+  {
+    "id": "recSbWd7EkXH3YYHC",
+    "createdTime": "2026-06-16T16:02:09.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "📺 Leçon ",
+      "N° leçons": 3,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 1 : Introduction au Vibe Coding",
+      "Nom de la leçon": "Découvrir le programme de formation",
+      "Chapitre": "Chapitre 1 : Bienvenue dans votre formation"
+    }
+  },
+  {
+    "id": "recSchk77ARjDAngk",
+    "createdTime": "2026-06-17T08:31:45.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 6,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 3,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "<https://drive.google.com/drive/folders/10eBrEevYWKn0pT13on41YrjXElAY12SP>\n",
+      "Lien viméo": "https://vimeo.com/1220186625",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Les 4 piliers de l'éthique appliqués à l'IA",
+      "Lien viméo player": "https://player.vimeo.com/video/1220186625",
+      "Chapitre": "Chapitre 4 : Enjeux éthiques, IA Act & RGPD appliqués au code"
+    }
+  },
+  {
+    "id": "recSzq2PcYBMc0jA1",
+    "createdTime": "2026-07-29T11:14:54.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 6,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Déboguer la chaîne Front-Back et lire les logs d'erreur",
+      "Chapitre": "Chapitre 4 : Itérer avec Antigravity en multi-agent"
+    }
+  },
+  {
+    "id": "recT4i6ZvU7HnVWRA",
+    "createdTime": "2026-06-17T08:32:38.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 8,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 8,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Lien viméo": "https://vimeo.com/1220186729",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Créer du contenu inclusif et accessible",
+      "Lien viméo player": "https://player.vimeo.com/video/1220186729",
+      "Chapitre": "Chapitre 4 : Enjeux éthiques, IA Act & RGPD appliqués au code"
+    }
+  },
+  {
+    "id": "recTSv4lGG9xcKZCT",
+    "createdTime": "2026-06-16T16:01:42.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 1 : Introduction au Vibe Coding",
+      "Nom de la leçon": "Votre référent de formation",
+      "Chapitre": "Chapitre 1 : Bienvenue dans votre formation"
+    }
+  },
+  {
+    "id": "recTm6tcoITw1CzkO",
+    "createdTime": "2026-06-17T11:53:51.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Générer son premier serveur local (Node.js/Express) avec l'agent",
+      "Chapitre": "Chapitre 4 : Itérer avec Antigravity en multi-agent"
+    }
+  },
+  {
+    "id": "recTtyNYGvdJvxbDm",
+    "createdTime": "2026-07-04T15:09:00.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 5,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 7,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "[@Benjamin Kerlirzin](https://airtable.com/appt360zhTgDY1t4B/menNmwVhdHcmuHd2G/usrnAqT1H9YIJerOS?recordId=recTtyNYGvdJvxbDm&fieldId=fldSvgbPGDJnzsqJL) remis a fiché car inversé des slides. A valider rapidement\n\n",
+      "Lien viméo": "https://vimeo.com/1220184481",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "L’importance du process itératif en Vibe Coding",
+      "Lien viméo player": "https://player.vimeo.com/video/1220184481",
+      "Chapitre": "Chapitre 3 : Le prompt engineering adapté au code"
+    }
+  },
+  {
+    "id": "recUkTVvUcES2s9aC",
+    "createdTime": "2026-07-28T16:56:28.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "SCHEMA FIGMA MAKE\n",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Connecter la page de connexion & inscription avec l'agent IA",
+      "Chapitre": "Chapitre 4 : La sécurité (RLS) par la faille"
+    }
+  },
+  {
+    "id": "recVJFy4dCns67suv",
+    "createdTime": "2026-06-16T16:03:43.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 7,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 4,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "Bloc textes qui \"clignotent\" - apparition et disparition des blocs\n",
+      "Lien viméo": "https://vimeo.com/1220178352",
+      "isWritten_check": true,
+      "Module": "Module 1 : Introduction au Vibe Coding",
+      "Nom de la leçon": "Histoire et développement récent du Vibe Coding",
+      "Lien viméo player": "https://player.vimeo.com/video/1220178352",
+      "Chapitre": "Chapitre 2 : Qu'est-ce que le Vibe Coding ?"
+    }
+  },
+  {
+    "id": "recVn63vrZwgiwEUw",
+    "createdTime": "2026-06-17T11:41:12.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Découvrir l'interface et les fonctionnalités principales d'Antigravity",
+      "Chapitre": "Chapitre 1 : Découvrir les bases d’Antigravity"
+    }
+  },
+  {
+    "id": "recVoO7JIS6qnu5uC",
+    "createdTime": "2026-07-28T16:56:18.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Les objectifs du chapitre : Connecter la base de données Cloud (Supabase BaaS)",
+      "Chapitre": "Chapitre 3 : Gérer l'authentification des utilisateurs"
+    }
+  },
+  {
+    "id": "recWFlQUIgqbXAUu6",
+    "createdTime": "2026-06-17T10:02:35.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "✅ Fichage validé",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Corriger un bug grâce à l’agent IA",
+      "Chapitre": "Chapitre 3 : Créer sa première application avec Google AI Studio"
+    }
+  },
+  {
+    "id": "recWICSap3Wfv6AJf",
+    "createdTime": "2026-07-16T13:00:30.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Découvrir quelques exemples d'application avec la Gallery",
+      "Chapitre": "Chapitre 2 : Découvrir & utiliser Google AI Studio"
+    }
+  },
+  {
+    "id": "recWTcsmlDAGiy0IC",
+    "createdTime": "2026-07-29T11:14:29.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 8,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 4 : Maîtriser Antigravity",
+      "Nom de la leçon": "Sauvegarder son travail : réaliser ses premiers commits avec l'agent",
+      "Chapitre": "Chapitre 2 : Faire évoluer un projet existant avec Antigravity"
+    }
+  },
+  {
+    "id": "recWb8rcrFlO2U0oH",
+    "createdTime": "2026-06-17T10:03:40.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "✅ Fichage validé",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "[@Benjamin Kerlirzin](https://airtable.com/appt360zhTgDY1t4B/menCUulR2JqoNaxFw/usrnAqT1H9YIJerOS?recordId=recWb8rcrFlO2U0oH&fieldId=fldSvgbPGDJnzsqJL) IMPORTANT : Changer le titre du chapitre --> Créer sa première application sur Google AI Studio\n",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Les objectifs du chapitre : Créer sa première application sur Google AI Studio",
+      "Chapitre": "Chapitre 3 : Créer sa première application avec Google AI Studio"
+    }
+  },
+  {
+    "id": "recX5dsTmz97fFj1b",
+    "createdTime": "2026-07-28T16:56:36.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Déployer son projet en production sur Vercel ",
+      "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+    }
+  },
+  {
+    "id": "recXCpBDj2H7e6rIK",
+    "createdTime": "2026-07-28T16:56:20.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Structurer les tables SQL du projet fil rouge avec l'agent IA",
+      "Chapitre": "Chapitre 3 : Gérer l'authentification des utilisateurs"
+    }
+  },
+  {
+    "id": "recXxUYmrbZYpVz3T",
+    "createdTime": "2026-08-24T18:17:37.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "📺 Leçon ",
+      "N° leçons": 5,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 1 : Introduction au Vibe Coding",
+      "Nom de la leçon": "Suivre la formation efficacement et adopter le bon état d’esprit",
+      "Chapitre": "Chapitre 1 : Bienvenue dans votre formation"
+    }
+  },
+  {
+    "id": "recY26EoUAoI9uG3u",
+    "createdTime": "2026-06-18T14:43:40.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "SCHEMA FIGMA MAKE (3)\n",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Comprendre l'importance critique du Row Level Security",
+      "Chapitre": "Chapitre 5 : Connecter le monde extérieur (API, MCP & variables d'environnement)"
+    }
+  },
+  {
+    "id": "recY9s3dzxQd6tqZS",
+    "createdTime": "2026-06-17T08:31:16.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 1,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Lien viméo": "https://vimeo.com/1221068085",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Les objectifs du chapitre : éthique, IA Act & RGPD appliqués au code",
+      "Lien viméo player": "https://player.vimeo.com/video/1221068085",
+      "Chapitre": "Chapitre 4 : Enjeux éthiques, IA Act & RGPD appliqués au code"
+    }
+  },
+  {
+    "id": "recY9uUiARk53Rirw",
+    "createdTime": "2026-07-28T16:55:19.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Les objectifs du chapitre : Générer l'Interface Utilisateur (Front-end & UX)",
+      "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+    }
+  },
+  {
+    "id": "recYQHejwEuSUgffd",
+    "createdTime": "2026-07-28T16:56:30.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Les objectifs du chapitre : Connecter le monde extérieur (API & Secrets)",
+      "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+    }
+  },
+  {
+    "id": "recZW6PCc7GHuFDgS",
+    "createdTime": "2026-06-17T09:09:12.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Les objectifs du chapitre : Découvrir & utiliser Google AI Studio",
+      "Chapitre": "Chapitre 2 : Découvrir & utiliser Google AI Studio"
+    }
+  },
+  {
+    "id": "recZuUYhQj4qgrOdW",
+    "createdTime": "2026-07-28T16:56:37.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "Hybride (Leçon + pratique)",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Enregistrer la vidéo de démonstration du projet fil rouge",
+      "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+    }
+  },
+  {
+    "id": "reca5wheCa9c4qnnk",
+    "createdTime": "2026-06-22T11:46:18.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 9,
+      "État": "💾 Dans viméo",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "\n",
+      "Lien viméo": "https://vimeo.com/1220181099",
+      "isWritten_check": true,
+      "Module": "Module 2 : Les fondamentaux du Vibe Coding",
+      "Nom de la leçon": "Identifier des projets pour le Vibe Coding\n",
+      "Lien viméo player": "https://player.vimeo.com/video/1220181099",
+      "Chapitre": "Chapitre 2 : Cadrer un projet de Vibe Coding"
+    }
+  },
+  {
+    "id": "recaIIIM2SigJJzFk",
+    "createdTime": "2026-06-22T10:11:17.000Z",
+    "fields": {
+      "isWritten": 0,
+      "durée ( min)": 1,
+      "État": "🎥 Tournage validé",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "\n",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Les objectifs du chapitre : Être prêt à débuter la formation technique\n",
+      "Chapitre": "Chapitre 1 : Être prêt à débuter la formation"
+    }
+  },
+  {
+    "id": "recb2OHUEZN4c48zh",
+    "createdTime": "2026-06-17T10:13:07.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "📝 Cas Pratique",
+      "N° leçons": 6,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "Docs à ajouter": "brief à prendre dans figma\n",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "À vous de jouer : Déployez et publiez votre application !",
+      "Chapitre": "Chapitre 5 : Déployer avec Vercel"
+    }
+  },
+  {
+    "id": "recbbXNV0n3QAuAMC",
+    "createdTime": "2026-06-17T10:01:04.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "🎥 Tournage validé",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "isRecorded_check": true,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 3 : Maîtriser les briques techniques essentielles",
+      "Nom de la leçon": "Présentation de Google AI Studio",
+      "Chapitre": "Chapitre 2 : Découvrir & utiliser Google AI Studio"
+    }
+  }
+]

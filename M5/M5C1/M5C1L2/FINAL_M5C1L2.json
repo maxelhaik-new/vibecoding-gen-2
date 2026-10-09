@@ -1,0 +1,103 @@
+{
+  "lessonSlug": "m5c1l2",
+  "lessonTitle": "M5C1L2 — Découvrir les exigences de la certification",
+  "lessonType": "cours",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Découvrir les exigences de la certification"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Ce que la certification évalue",
+        "Intro": "L'Épreuve 1 certifie la capacité à concevoir et déployer une application réelle avec l'IA. Pour réussir cette mise en situation, plusieurs attendus précis encadrent le projet. Faisons le point.",
+        "Titre 1": "Le cadre de l'épreuve",
+        "Texte 1": "Découvrons les objectifs de cette mise en situation et les critères validés chez le candidat.",
+        "Titre 2": "Les attendus du projet",
+        "Texte 2": "Focus sur les productions à livrer et sur les compétences clés mobilisées durant l'évaluation.",
+        "Titre 3": "Les règles à respecter",
+        "Texte 3": "Zoom sur les exigences techniques requises et le piège éliminatoire à éviter pour valider l'épreuve."
+      }
+    },
+    {
+      "template": "VIBECODING - CONCEPT",
+      "content": {
+        "Titre": "La certification en deux mots",
+        "Mot": "Construire une application",
+        "Definition": "L'Épreuve 1 est une mise en situation professionnelle. Le candidat conçoit, développe et déploie une application web. L'outil IA est libre. L'application intègre une API externe et un système d'authentification ou de persistance.",
+        "Bulle": "Ce n'est pas un examen de code : c'est un examen de produit déployé."
+      }
+    },
+    {
+      "template": "VIBECODING - 4 BLOCS",
+      "content": {
+        "Titre": "Les 4 livrables attendus",
+        "Intro": "Quatre productions concrètes constituent le dossier de l'Épreuve 1. Chacune est évaluée indépendamment selon les critères du référentiel.",
+        "Titre 1": "DOSSIER DE CADRAGE DU PROJET",
+        "Texte 1": "Objectifs produit, profils utilisateurs, besoins fonctionnels classés par priorité et contraintes explicitement formalisées.",
+        "Picto 1": "mdi:script-text",
+        "Titre 2": "APPLICATION DÉPLOYÉE EN LIGNE",
+        "Texte 2": "L'application est accessible en ligne via HTTPS. Elle fonctionne sans erreur bloquante sur desktop et sur mobile.",
+        "Picto 2": "mdi:city-variant",
+        "Titre 3": "CODE SOURCE GITHUB STRUCTURÉ",
+        "Texte 3": "Le code source est versionné et publié sur un dépôt GitHub structuré, avec un README documentant l'installation et l'usage.",
+        "Picto 3": "mdi:code-braces-box",
+        "Titre 4": "VIDÉO DE PRÉSENTATION DU PROJET",
+        "Texte 4": "Une vidéo de démonstration présente le projet, le parcours utilisateur fonctionnel et les choix techniques réalisés pendant le développement.",
+        "Picto 4": "mdi:magic"
+      }
+    },
+    {
+      "template": "VIBECODING - 6 BLOCS",
+      "content": {
+        "Titre": "Les 6 compétences certifiées",
+        "Intro": "La certification couvre le cycle complet de création d'une application web. Chaque compétence correspond à une étape du projet fil rouge.",
+        "Titre 1": "C1",
+        "Texte 1": "Cadrer le produit — Transformer une idée en parcours utilisateur structuré et en instructions exploitables par une IA.",
+        "Picto 1": "mdi:target",
+        "Titre 2": "C2",
+        "Texte 2": "Itérer le prototype — Piloter les cycles de correction jusqu'à un produit stable et fonctionnel.",
+        "Picto 2": "mdi:refresh-circle",
+        "Titre 3": "C3",
+        "Texte 3": "Configurer l'environnement local — Cloner, versionner et synchroniser le code avec Git depuis son poste de travail.",
+        "Picto 3": "mdi:laptop",
+        "Titre 4": "C4",
+        "Texte 4": "Interfacer des services externes — Connecter une API, une base de données ou un service d'authentification.",
+        "Picto 4": "mdi:api",
+        "Titre 5": "C5",
+        "Texte 5": "Déployer en production — Rendre l'application accessible en ligne avec HTTPS et sécuriser les accès et les données.",
+        "Picto 5": "mdi:rocket-launch-outline",
+        "Titre 6": "C6",
+        "Texte 6": "Maintenir une veille — Évaluer et justifier les outils d'IA mobilisés et respecter les principes éthiques.",
+        "Picto 6": "mdi:eye-outline",
+        "Texte Bulle": "Ce référentiel de 6 compétences est évalué dans sa globalité à travers un seul projet fil rouge. Chaque livrable touche plusieurs critères simultanément."
+      }
+    },
+    {
+      "template": "VIBECODING - CHECKLIST",
+      "content": {
+        "Titre": "Les prérequis techniques",
+        "Intro": "Ces 5 points sont les conditions minimales pour valider l'Épreuve 1.",
+        "Texte Intro": "Ces prérequis ne sont pas optionnels. L'absence de l'un d'eux — en particulier le RLS — peut entraîner un échec, même si les autres livrables sont complets.",
+        "Nom Checklist": "Prérequis projet",
+        "Texte 1": "Intégrer au minimum une API externe opérationnelle dans l'application.",
+        "Texte 2": "Implémenter un système d'authentification ou de persistance des données.",
+        "Texte 3": "Déployer l'application en ligne avec une URL accessible via HTTPS.",
+        "Texte 4": "Stocker les clés API dans des variables d'environnement — jamais dans le code source.",
+        "Texte 5": "Activer le Row Level Security (RLS) sur les tables. 🚨 Éliminatoire."
+      }
+    },
+    {
+      "template": "VIBECODING - FIN",
+      "content": {
+        "Titre": "Ce qu'il faut retenir",
+        "Intro": "L'Épreuve 1 n'évalue pas la qualité du code en lui-même. Elle évalue la capacité à produire un projet numérique complet, fonctionnel et sécurisé. Le dossier de cadrage, l'application déployée, le dépôt GitHub et la vidéo de présentation forment un tout : quatre preuves tangibles d'un travail mené de A à Z. La seule erreur éliminatoire est l'absence de Row Level Security — un critère qui sera travaillé étape par étape dans ce chapitre.",
+        "Titre Bulle": "EN BREF",
+        "Texte Bulle": "Dans la prochaine leçon, on commence concrètement : définir le périmètre et l'architecture de son projet fil rouge, pour poser les bases du dossier de cadrage et préparer le Prompt Zéro."
+      }
+    }
+  ]
+}

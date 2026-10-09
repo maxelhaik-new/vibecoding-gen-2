@@ -1,0 +1,302 @@
+[
+  {
+    "id": "rec1dlgEppj3ULe4f",
+    "createdTime": "2026-07-28T16:56:16.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Rendre l'interface dynamique et réactive en Front-end",
+      "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+    }
+  },
+  {
+    "id": "rec3VcNKz74hXlMpQ",
+    "createdTime": "2026-07-28T16:56:31.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Qu'est-ce qu'une API REST et comment l'interroger avec l'IA ?",
+      "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+    }
+  },
+  {
+    "id": "rec3tepTtozHe1eTA",
+    "createdTime": "2026-07-28T16:56:15.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Créer les composants UI métier (Tableaux, Formulaires, Cartes)",
+      "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+    }
+  },
+  {
+    "id": "rec5GB37MXo2Cqi3v",
+    "createdTime": "2026-07-28T16:56:35.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Brancher un service tiers au projet fil rouge (Stripe, Resend, API métier)",
+      "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+    }
+  },
+  {
+    "id": "rec7mIAkFYoUuowbW",
+    "createdTime": "2026-07-28T16:41:48.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "🎨 Contenu validé - Design à faire",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Découvrir le projet fil rouge & les exigences de la certification",
+      "Chapitre": "Chapitre 1 : Projet final certifiant 🏆"
+    }
+  },
+  {
+    "id": "recJs6eR10iCcc9vb",
+    "createdTime": "2026-07-28T16:56:15.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Itérer sur l'ergonomie visuelle et corriger les bugs de style",
+      "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+    }
+  },
+  {
+    "id": "recK5pVXl4l23Cp1x",
+    "createdTime": "2026-06-18T14:44:42.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "⏳ À ficher",
+      "Type": "📺 Leçon ",
+      "N° leçons": 10,
+      "PHASE": "V1",
+      "Commentaires / Problèmes": "A mettre ici ou plus tot dans la formation\n",
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Comprendre les MCP Servers",
+      "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+    }
+  },
+  {
+    "id": "recL3GqDBXe9wqDWj",
+    "createdTime": "2026-07-28T16:56:34.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Les objectifs du chapitre : Déployer en production & Réussir son projet certifiant",
+      "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+    }
+  },
+  {
+    "id": "recLBbsLRzCOixfi9",
+    "createdTime": "2026-07-28T16:56:35.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "Hybride (Leçon + pratique)",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "SCHEMA FIGMA MAKE (2)\n",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Publier le dépôt GitHub propre avec un README détaillé",
+      "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+    }
+  },
+  {
+    "id": "recO35RYrPXq4N3jJ",
+    "createdTime": "2026-07-28T16:41:54.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "🎨 Contenu validé - Design à faire",
+      "Type": "📝 Cas Pratique",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Structurer les règles contextuelles de son projet (AGENTS.md)",
+      "Chapitre": "Chapitre 1 : Projet final certifiant 🏆"
+    }
+  },
+  {
+    "id": "recPJVaJh0O5FwKPh",
+    "createdTime": "2026-07-28T16:56:38.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "⏳ À ficher",
+      "Type": "📺 Leçon ",
+      "N° leçons": 5,
+      "PHASE": "V1",
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Auto-évaluation sur la grille certifiante & Préparation au QCM",
+      "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+    }
+  },
+  {
+    "id": "recQDlj9xhfDEUloR",
+    "createdTime": "2026-07-28T16:41:54.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "🎨 Contenu validé - Design à faire",
+      "Type": "📝 Cas Pratique",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Choisir et cadrer son application métier (Dossier de cadrage)",
+      "Chapitre": "Chapitre 1 : Projet final certifiant 🏆"
+    }
+  },
+  {
+    "id": "recX5dsTmz97fFj1b",
+    "createdTime": "2026-07-28T16:56:36.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Déployer son projet en production sur Vercel ",
+      "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+    }
+  },
+  {
+    "id": "recY9uUiARk53Rirw",
+    "createdTime": "2026-07-28T16:55:19.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Les objectifs du chapitre : Générer l'Interface Utilisateur (Front-end & UX)",
+      "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+    }
+  },
+  {
+    "id": "recYQHejwEuSUgffd",
+    "createdTime": "2026-07-28T16:56:30.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Les objectifs du chapitre : Connecter le monde extérieur (API & Secrets)",
+      "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+    }
+  },
+  {
+    "id": "recZuUYhQj4qgrOdW",
+    "createdTime": "2026-07-28T16:56:37.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "Hybride (Leçon + pratique)",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Enregistrer la vidéo de démonstration du projet fil rouge",
+      "Chapitre": "À SUPP - Chapitre 6 : Projet guidé : Outil interne métier"
+    }
+  },
+  {
+    "id": "receV0Es1F8cetYlK",
+    "createdTime": "2026-07-28T16:56:31.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Sécuriser ses clés API & secrets dans le fichier .env.local",
+      "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+    }
+  },
+  {
+    "id": "recfSIpvaH5DX72Fe",
+    "createdTime": "2026-06-17T08:41:08.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Clés API & secrets : le principe de sécurisation",
+      "Chapitre": "Chapitre 6 : Projet guidé : Application CRUD avec Auth & RLS"
+    }
+  },
+  {
+    "id": "recltHCZPgxDNEj7X",
+    "createdTime": "2026-07-28T16:48:04.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Les objectifs du chapitre : Définir & cadrer son projet certifiant",
+      "Chapitre": "Chapitre 1 : Projet final certifiant 🏆"
+    }
+  },
+  {
+    "id": "recyjZW88tiLl4TuE",
+    "createdTime": "2026-07-28T16:56:14.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Passer en production & réussir son projet certifiant",
+      "Nom de la leçon": "Générer la structure et le design system de l'application",
+      "Chapitre": "Chapitre 2 : Concevoir le backend & l'architecture"
+    }
+  }
+]

@@ -53,4 +53,7 @@
   - Identifier le domaine métier du projet fil rouge.
   - Exécuter la génération d'image systématiquement avec le paramètre `--style photorealistic`.
 
-
+## 11. Interdiction des push Git automatiques
+- **Règle** : L'agent ne doit jamais exécuter de commande `git push` de manière automatique. Tous les déploiements et push distants sont gérés exclusivement et manuellement par l'utilisateur.
+- **Application** :
+  - L'agent peut préparer les modifications et créer des commits locaux (`git commit`) si demandé, mais ne doit en aucun cas lancer `git push`.

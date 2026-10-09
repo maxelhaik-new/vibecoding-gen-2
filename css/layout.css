@@ -1,0 +1,350 @@
+/* Layout & Spacing - Standard 2026 Wide Viewport */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-page);
+  color: var(--color-text-dark);
+  line-height: 1.55;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Wide Container (2026 standard : 1440px max width instead of 960px) */
+.app-viewport {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 4rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .app-viewport {
+    padding: 2rem 2rem 5rem 2rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .app-viewport {
+    max-width: 1560px;
+    padding: 2.5rem 3rem 6rem 3rem;
+  }
+}
+
+/* Header & Banner Layout */
+.app-header {
+  background: var(--color-brand-fig);
+  color: #FFFFFF;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--color-brand-fig);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.header-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Burger Menu Button Trigger (Mobile & Tablet < 1024px) */
+.burger-menu-btn {
+  display: none;
+  background: var(--color-brand-sunny);
+  color: var(--color-brand-fig);
+  border: 2px solid var(--color-brand-fig);
+  padding: 0.5rem 0.95rem;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px var(--color-brand-fig);
+  transition: all var(--transition-fast);
+  align-items: center;
+  gap: 0.55rem;
+  line-height: 1;
+}
+
+@media (max-width: 1023px) {
+  .burger-menu-btn {
+    display: inline-flex !important;
+  }
+}
+
+.burger-menu-btn:hover,
+.burger-menu-btn:focus-visible {
+  background: #FFFFFF;
+  color: var(--color-brand-fig);
+  outline: none;
+}
+
+.burger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 16px;
+  height: 12px;
+}
+
+.burger-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+.brand-badge {
+  background: var(--color-brand-sunny);
+  color: var(--color-brand-fig);
+  font-weight: 900;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.65rem;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--color-brand-fig);
+  text-transform: uppercase;
+}
+
+.learner-space {
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #E2E8F0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.app-title {
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.app-subtitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-brand-sunny);
+  max-width: 900px;
+}
+
+/* Tab Navigation (Desktop >= 1024px) */
+.tab-nav {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 3px solid var(--color-brand-fig);
+  padding: 4px 4px 0.75rem 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+@media (max-width: 1023px) {
+  .tab-nav {
+    display: none !important;
+  }
+}
+
+.tab-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  background: #FFFFFF;
+  color: var(--color-brand-fig);
+  border: 2px solid var(--color-brand-fig);
+  padding: 0.75rem 1.35rem;
+  font-family: var(--font-main);
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  white-space: nowrap;
+  transform: none;
+}
+
+.tab-btn:hover {
+  background: var(--color-pink-20);
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.tab-btn.active {
+  background: var(--color-brand-purple);
+  color: #FFFFFF;
+  border-color: var(--color-brand-fig);
+  box-shadow: var(--shadow-sm);
+  transform: none;
+}
+
+.tab-badge {
+  background: var(--color-brand-fig);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-pill);
+}
+
+.tab-btn.active .tab-badge {
+  background: var(--color-brand-sunny);
+  color: var(--color-brand-fig);
+}
+
+/* Tab Views */
+.tab-view {
+  display: none;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.tab-view.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Grids for Cards */
+.glossary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 860px) {
+  .glossary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1320px) {
+  .glossary-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.prompts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 920px) {
+  .prompts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1380px) {
+  .prompts-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1040px) {
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1380px) {
+  .tools-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile & Tablet Layout Refinements (< 1024px) */
+body.mobile-menu-locked {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+@media (max-width: 1023px) {
+  .app-viewport {
+    padding: 1.25rem 1.25rem 4rem 1.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .app-viewport {
+    padding: 1rem 1rem 3.5rem 1rem;
+  }
+
+  .app-header {
+    padding: 1.25rem 1.25rem;
+    margin-bottom: 1.25rem;
+    gap: 0.6rem;
+  }
+
+  .header-top {
+    gap: 0.6rem;
+  }
+
+  .app-title {
+    font-size: clamp(1.4rem, 5.5vw, 1.9rem);
+  }
+
+  .app-subtitle {
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .toast-msg {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1.25rem;
+    text-align: center;
+    transform: translateY(200%);
+  }
+
+  .toast-msg.show {
+    transform: translateY(0);
+  }
+}

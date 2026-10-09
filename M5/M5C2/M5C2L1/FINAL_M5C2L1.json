@@ -1,0 +1,26 @@
+{
+  "lessonSlug": "m5c2l1",
+  "lessonTitle": "M5C2L1 — Les objectifs du chapitre : Développer l'application de A à Z",
+  "lessonType": "objectif",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER CHAP",
+      "content": {
+        "Titre": "Chapitre 2 : Développer l'application de A à Z"
+      }
+    },
+    {
+      "template": "VIBECODING - OBJECTIF CHAP",
+      "content": {
+        "Titre": "Les objectifs du chapitre",
+        "Intro": "Construire l'application pas à pas pour son projet fil rouge : de la génération du code initial à la sécurisation des accès et la correction des bugs.",
+        "Titre 1": "Générer la structure initiale du projet",
+        "Titre 2": "Reprendre le code et cadrer le contexte IA",
+        "Titre 3": "Intégrer une API externe à l'application",
+        "Titre 4": "Structurer et relier la base de données",
+        "Titre 5": "Sécuriser les tables avec les règles RLS",
+        "Titre 6": "Auditer le projet et corriger les erreurs"
+      }
+    }
+  ]
+}

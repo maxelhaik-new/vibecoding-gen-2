@@ -1,0 +1,302 @@
+[
+  {
+    "id": "rec1dlgEppj3ULe4f",
+    "createdTime": "2026-07-28T16:56:16.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Étape 4 : Intégrer l'API externe",
+      "Chapitre": "Chapitre 2 : Connecter un service de stockage cloud"
+    }
+  },
+  {
+    "id": "rec3VcNKz74hXlMpQ",
+    "createdTime": "2026-07-28T16:56:31.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Refactoriser son code avec un agent IA",
+      "Chapitre": "Chapitre 3 : Connecter un service d’emailing"
+    }
+  },
+  {
+    "id": "rec3tepTtozHe1eTA",
+    "createdTime": "2026-07-28T16:56:15.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Étape 2 : Reprendre le code localement",
+      "Chapitre": "Chapitre 2 : Connecter un service de stockage cloud"
+    }
+  },
+  {
+    "id": "rec5GB37MXo2Cqi3v",
+    "createdTime": "2026-07-28T16:56:35.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 6,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Étape 5 : Configurer la base de données",
+      "Chapitre": "Chapitre 2 : Connecter un service de stockage cloud"
+    }
+  },
+  {
+    "id": "rec7mIAkFYoUuowbW",
+    "createdTime": "2026-07-28T16:41:48.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "🎨 Contenu validé - Design à faire",
+      "Type": "📺 Leçon ",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Découvrir les exigences de la certification",
+      "Chapitre": "Chapitre 1 : Connecter un service de monétisation avec Stripe"
+    }
+  },
+  {
+    "id": "recJs6eR10iCcc9vb",
+    "createdTime": "2026-07-28T16:56:15.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Étape 3 : Initialiser le contexte IA",
+      "Chapitre": "Chapitre 2 : Connecter un service de stockage cloud"
+    }
+  },
+  {
+    "id": "recL3GqDBXe9wqDWj",
+    "createdTime": "2026-07-28T16:56:34.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Les objectifs du chapitre : Déployer en production & Réussir son projet certifiant",
+      "Chapitre": "Chapitre 3 : Connecter un service d’emailing"
+    }
+  },
+  {
+    "id": "recLBbsLRzCOixfi9",
+    "createdTime": "2026-07-28T16:56:35.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 5,
+      "PHASE": "MVP",
+      "Commentaires / Problèmes": "SCHEMA FIGMA MAKE (2)\n",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Publier un dépôt GitHub propre avec un README détaillé",
+      "Chapitre": "Chapitre 3 : Connecter un service d’emailing"
+    }
+  },
+  {
+    "id": "recO35RYrPXq4N3jJ",
+    "createdTime": "2026-07-28T16:41:54.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "🎨 Contenu validé - Design à faire",
+      "Type": "📝 Cas Pratique",
+      "N° leçons": 4,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Structurer les règles contextuelles de son projet (AGENTS.md)",
+      "Chapitre": "Chapitre 1 : Connecter un service de monétisation avec Stripe"
+    }
+  },
+  {
+    "id": "recPJVaJh0O5FwKPh",
+    "createdTime": "2026-07-28T16:56:38.000Z",
+    "fields": {
+      "isWritten": 0,
+      "État": "⏳ À ficher",
+      "Type": "📺 Leçon ",
+      "N° leçons": 7,
+      "PHASE": "V1",
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Auto-évaluation sur la grille certifiante & Préparation au QCM",
+      "Chapitre": "Chapitre 3 : Connecter un service d’emailing"
+    }
+  },
+  {
+    "id": "recQDlj9xhfDEUloR",
+    "createdTime": "2026-07-28T16:41:54.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "🎨 Contenu validé - Design à faire",
+      "Type": "📝 Cas Pratique",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Définir le périmètre et l’architecture de son projet",
+      "Chapitre": "Chapitre 1 : Connecter un service de monétisation avec Stripe"
+    }
+  },
+  {
+    "id": "recX5dsTmz97fFj1b",
+    "createdTime": "2026-07-28T16:56:36.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Déployer en production sur Vercel\n",
+      "Chapitre": "Chapitre 3 : Connecter un service d’emailing"
+    }
+  },
+  {
+    "id": "recY9uUiARk53Rirw",
+    "createdTime": "2026-07-28T16:55:19.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Les objectifs du chapitre : Développer l'application de A à Z",
+      "Chapitre": "Chapitre 2 : Connecter un service de stockage cloud"
+    }
+  },
+  {
+    "id": "recYQHejwEuSUgffd",
+    "createdTime": "2026-07-28T16:56:30.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 3,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "L’importance de bien structurer son code",
+      "Chapitre": "Chapitre 3 : Connecter un service d’emailing"
+    }
+  },
+  {
+    "id": "recYRszkGQN4Wmojp",
+    "createdTime": "2026-09-16T09:05:06.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 5,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Modéliser le parcours de l’utilisateur",
+      "Chapitre": "Chapitre 1 : Connecter un service de monétisation avec Stripe"
+    }
+  },
+  {
+    "id": "recZuUYhQj4qgrOdW",
+    "createdTime": "2026-07-28T16:56:37.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 6,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Enregistrer la vidéo de démonstration du projet certifiant",
+      "Chapitre": "Chapitre 3 : Connecter un service d’emailing"
+    }
+  },
+  {
+    "id": "receV0Es1F8cetYlK",
+    "createdTime": "2026-07-28T16:56:31.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 7,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Étape 6 : Sécuriser les accès avec le RLS",
+      "Chapitre": "Chapitre 2 : Connecter un service de stockage cloud"
+    }
+  },
+  {
+    "id": "recfSIpvaH5DX72Fe",
+    "createdTime": "2026-06-17T08:41:08.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 8,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Étape 7 : Auditer et corriger les bugs",
+      "Chapitre": "Chapitre 2 : Connecter un service de stockage cloud"
+    }
+  },
+  {
+    "id": "recltHCZPgxDNEj7X",
+    "createdTime": "2026-07-28T16:48:04.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "📺 Leçon ",
+      "N° leçons": 1,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Les objectifs du chapitre : Définir & Cadrer son projet certifiant",
+      "Chapitre": "Chapitre 1 : Connecter un service de monétisation avec Stripe"
+    }
+  },
+  {
+    "id": "recyjZW88tiLl4TuE",
+    "createdTime": "2026-07-28T16:56:14.000Z",
+    "fields": {
+      "isWritten": 1,
+      "État": "✍️ Fichée",
+      "Type": "⚙️ Logiciel",
+      "N° leçons": 2,
+      "PHASE": "MVP",
+      "isWritten_check": true,
+      "Module": "Module 5 : Intégrer des fonctionnalités avancées à un projet",
+      "Nom de la leçon": "Étape 1 : Générer la base de l'application",
+      "Chapitre": "Chapitre 2 : Connecter un service de stockage cloud"
+    }
+  }
+]

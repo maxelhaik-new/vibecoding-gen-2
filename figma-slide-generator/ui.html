@@ -216,6 +216,14 @@
       </svg>
     </button>
 
+    <!-- Actions Correctives -->
+    <button id="correctBtn" class="icon-btn" title="Appliquer les actions correctives (Texte Bulle Bold, Intro 50 Regular)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 20h9"/>
+        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+      </svg>
+    </button>
+
     <!-- Split -->
     <button id="splitBtn" class="icon-btn" title="Découper les étapes">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -263,6 +271,7 @@
     const renameBtn       = document.getElementById('renameBtn');
     const replaceImageBtn = document.getElementById('replaceImageBtn');
     const splitBtn        = document.getElementById('splitBtn');
+    const correctBtn      = document.getElementById('correctBtn');
     const prototypeBtn    = document.getElementById('prototypeBtn');
     const clearBtn        = document.getElementById('clearBtn');
     const transformBtn    = document.getElementById('transformBtn');
@@ -531,6 +540,11 @@
     splitBtn.onclick = () => {
       showStatus('Découpage...', '');
       parent.postMessage({ pluginMessage: { type: 'split-slides' } }, '*');
+    };
+
+    correctBtn.onclick = () => {
+      showStatus('Application des corrections...', '');
+      parent.postMessage({ pluginMessage: { type: 'apply-manual-corrections' } }, '*');
     };
 
     prototypeBtn.onclick = () => {

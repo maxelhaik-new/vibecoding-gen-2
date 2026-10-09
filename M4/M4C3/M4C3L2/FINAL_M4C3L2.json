@@ -1,147 +1,99 @@
 {
-  "lessonTitle": "M4C3L2 — Comprendre l'Agent Manager parallèle et ses avantages",
+  "lessonSlug": "m4c3l2",
+  "lessonTitle": "M4C3L2 — Découvrir Supabase pour manipuler des données",
+  "lessonType": "standard",
   "slides": [
     {
       "template": "VIBECODING - COVER",
       "content": {
-        "Titre": "L'Agent Manager et la parallélisation"
+        "Titre": "Découvrir Supabase pour manipuler des données"
       }
     },
     {
       "template": "VIBECODING - INTRO",
       "content": {
-        "Titre": "Ce qu'on va voir dans cette leçon",
-        "Intro": "Dans Antigravity, un seul agent ne fait pas tout le travail. Plusieurs agents peuvent tourner en même temps, chacun sur une tâche distincte. C'est le principe de la parallélisation. Faisons le tour de ce mécanisme et de ses avantages concrets.",
-        "Titre 1": "Plusieurs agents à la fois",
-        "Texte 1": "Voyons comment Antigravity orchestre plusieurs agents simultanément sur un même projet, et pourquoi ce n'est pas la même chose qu'un agent unique.",
-        "Titre 2": "Le rôle du chef d'orchestre",
-        "Texte 2": "Zoom sur l'Agent Manager : ce qu'il fait concrètement, comment il distribue les tâches et ce qui le distingue des sous-agents.",
-        "Titre 3": "Tâches et parallélisation",
-        "Texte 3": "Découvrons quelles tâches peuvent être confiées aux sous-agents et dans quels cas lancer plusieurs agents en parallèle fait vraiment gagner du temps."
-      }
-    },
-    {
-      "template": "VIBECODING - CONCEPT",
-      "content": {
-        "Titre": "Antigravity, pas qu'un seul agent !",
-        "Mot": "Un projet, plusieurs agents actifs",
-        "Definition": "Dans Antigravity, un projet peut mobiliser plusieurs agents en même temps. Chaque agent reçoit une tâche précise et l'exécute de façon autonome. Pendant qu'un agent rédige la documentation, un autre génère les tests, et un troisième corrige les bugs. Aucun n'attend que l'autre ait fini.",
-        "Bulle": "C'est comme un chantier avec plusieurs corps de métier : le plombier, l'électricien et le peintre avancent en même temps."
+        "Titre": "Comprendre le rôle d'une base cloud",
+        "Intro": "Stocker des données en local limite vite les projets dès que plusieurs personnes collaborent. Relier son application à une base cloud change la donne et assure la persistance des données. Faisons le tour !",
+        "Titre 1": "Le concept de BaaS",
+        "Texte 1": "Découvrons comment l'infrastructure cloud prend en charge la logique interne et le flux de données.",
+        "Titre 2": "L'outil Supabase",
+        "Texte 2": "Focus sur les caractéristiques majeures de cette solution et son intégration avec le standard PostgreSQL.",
+        "Titre 3": "Local versus Cloud",
+        "Texte 3": "Zoom sur les différences clés pour comprendre pourquoi abandonner un simple stockage sur fichier local."
       }
     },
     {
       "template": "VIBECODING - DEFINITION",
       "content": {
         "Titre": "Un peu de vocabulaire",
-        "Mot": "Agent Manager",
-        "Definition": "L'Agent Manager est l'agent central qui pilote tous les autres dans Antigravity. Il reçoit l'objectif global, le découpe en sous-tâches, puis assigne chaque sous-tâche à un sous-agent dédié. Il ne code pas lui-même : il coordonne, surveille l'avancement et consolide les résultats produits par chaque sous-agent. C'est le seul point de contrôle de toute la chaîne d'exécution.",
-        "Bulle": "L'Agent Manager ne produit pas de code directement. Si on lui demande d'écrire une fonction, il délègue à un sous-agent spécialisé. Son rôle est de garder la vue d'ensemble et de s'assurer que les pièces s'assemblent correctement à la fin.",
-        "Picto 1": "mdi:account-cowboy-hat"
-      }
-    },
-    {
-      "template": "VIBECODING - PROCESS",
-      "content": {
-        "Titre": "Lancer plusieurs agents",
-        "Intro": "Dans Antigravity, lancer plusieurs agents en parallèle suit un enchaînement logique en quelques étapes clés. Voici comment ça se déroule concrètement.",
-        "Titre 1": "Définir l'objectif",
-        "Violet 1 ": "Décrire la tâche globale à l'Agent Manager",
-        "Titre 2": "Découper",
-        "Violet 2": "L'Agent Manager divise en sous-tâches indépendantes",
-        "Titre 3": "Assigner",
-        "Violet 3": "Chaque sous-tâche est confiée à un sous-agent distinct",
-        "Titre 4": "Exécution",
-        "Violet 4": "Les sous-agents travaillent en parallèle, simultanément",
-        "Titre 5": "Suivi",
-        "Violet 5": "L'Agent Manager surveille et collecte les résultats",
-        "Titre 6": "Fusion",
-        "Violet 6": "Les sorties sont consolidées en un résultat final cohérent"
-      }
-    },
-    {
-      "template": "VIBECODING - 3 COLONNES",
-      "content": {
-        "Titre": "Pourquoi paralléliser les tâches ?",
-        "Intro": "Exécuter les tâches une par une, c'est lent. La parallélisation change radicalement le rapport au temps et à la complexité d'un projet.",
-        "Titre 1": "Rapidité",
-        "Parametre 1": "⚡ Temps",
-        "Violet 1": "Plusieurs tâches finies en même temps",
-        "Texte 1": "Trois sous-agents travaillent simultanément : la documentation, les tests et la correction de bugs avancent en parallèle. Ce qui prendrait 3 heures en séquentiel se boucle en 1 heure. Le gain de temps est direct et mesurable dès le premier projet.",
-        "Titre 2": "Spécialisation",
-        "Parametre 2": "🎯 Focus",
-        "Violet 2": "Chaque agent fait une seule chose",
-        "Texte 2": "Un agent dédié aux tests ne se préoccupe pas de la rédaction. Cette concentration sur une seule tâche réduit les erreurs de contexte. Chaque sous-agent produit un résultat plus fiable qu'un agent généraliste qui jongle entre plusieurs objectifs à la fois.",
-        "Titre 3": "Scalabilité",
-        "Parametre 3": "📈 Volume",
-        "Violet 3": "Ajouter des agents sans tout refaire",
-        "Texte 3": "Si le projet grossit, on ajoute un sous-agent supplémentaire sans modifier l'architecture existante. L'Agent Manager absorbe la complexité croissante. Un projet de 10 fonctionnalités se gère avec 10 sous-agents aussi facilement qu'avec 3.",
-        "Picto 1": "mdi:lightning-bolt",
-        "Picto 2": "mdi:target",
-        "Picto 3": "mdi:chart-line"
-      }
-    },
-    {
-      "template": "VIBECODING - 6 BLOCS",
-      "content": {
-        "Titre": "Tâches des sous-agents",
-        "Intro": "Les sous-agents dans Antigravity ne font pas tous la même chose. Chacun peut se voir confier un type de tâche précis, selon les besoins du projet en cours.",
-        "Titre 1": "CODE",
-        "Texte 1": "Générer ou modifier des fonctions, des composants ou des modules entiers selon les instructions reçues de l'Agent Manager.",
-        "Picto 1": "mdi:code-braces-box",
-        "Titre 2": "TESTS",
-        "Texte 2": "Écrire et exécuter des tests unitaires ou d'intégration pour valider le code produit par les autres sous-agents.",
-        "Picto 2": "mdi:check-all",
-        "Titre 3": "DOCS",
-        "Texte 3": "Rédiger la documentation technique : commentaires de code, README, guides d'utilisation générés automatiquement.",
-        "Picto 3": "mdi:book-open-variant",
-        "Titre 4": "DEBUG",
-        "Texte 4": "Analyser les erreurs remontées, identifier leur origine dans le code et proposer une correction ciblée sans toucher au reste.",
-        "Picto 4": "mdi:microscope",
-        "Titre 5": "REVUE",
-        "Texte 5": "Relire le code produit par un autre sous-agent, détecter les incohérences de style ou de logique avant la consolidation finale.",
-        "Picto 5": "mdi:magnify",
-        "Titre 6": "PLAN",
-        "Texte 6": "Décomposer une fonctionnalité complexe en étapes actionnables, que l'Agent Manager redistribue ensuite aux autres agents.",
-        "Picto 6": "mdi:flowchart",
-        "Texte Bulle": "Un sous-agent ne choisit pas sa tâche : c'est l'Agent Manager qui décide de l'assignation. On peut cependant orienter ce choix en formulant précisément l'objectif global au départ."
+        "Mot": "Plateforme BaaS",
+        "Definition": "Une solution d'infrastructure hébergée en ligne qui prend en charge le stockage, la sécurité et la mise à disposition des données d'une application sans devoir configurer ni administrer un serveur manuellement. Elle génère automatiquement des points d'accès sécurisés pour permettre à l'interface utilisateur de lire et modifier les informations en continu.",
+        "Bulle": "EN BREF : Au lieu de perdre des journées à coder des serveurs et des liaisons complexes, la plateforme cloud gère les coulisses. On branche directement son interface pour enregistrer et récupérer les données.",
+        "Picto 1": "mdi:book-open-variant"
       }
     },
     {
       "template": "VIBECODING - SCHEMA - 3 COLONNES",
       "content": {
-        "Titre": "Un chef, plusieurs exécutants",
-        "Intro": "L'Agent Manager occupe le centre du schéma. Il reçoit l'objectif, distribue les tâches et collecte les résultats. Les sous-agents n'interagissent jamais entre eux directement.",
-        "Titre 1": "L'Agent Manager reçoit l'objectif global et découpe le travail en sous-tâches indépendantes",
-        "Violet 1": "Point d'entrée unique de toute la chaîne",
-        "Picto 1": "mdi:account-cowboy-hat",
-        "Titre 3": "Les sous-agents exécutent chacun une tâche précise : code, tests, docs, debug ou revue",
-        "Violet 4": "Travail simultané, sans coordination directe entre eux",
-        "Titre 5": "L'Agent Manager consolide les résultats et livre un output final cohérent et complet",
-        "Violet 5": "Seul l'Agent Manager voit l'ensemble du projet",
-        "Picto 3": "mdi:code-braces-box",
-        "Picto 5": "mdi:text-short"
+        "Titre": "Le flux de communication des données",
+        "Intro": "Comprendre comment les requêtes circulent entre l'écran visible et l'espace de stockage distant à chaque interaction.",
+        "Titre 1": "L'interface utilisateur déclenche un ajout ou une lecture",
+        "Violet 1": "Un clic valide un formulaire sur l'écran",
+        "Picto 1": "mdi:monitor",
+        "Titre 3": "L'API générée traite la demande et vérifie les permissions",
+        "Violet 4": "Vérification des droits et accès direct",
+        "Picto 3": "mdi:flowchart",
+        "Titre 5": "La base PostgreSQL enregistre ou renvoie les informations",
+        "Violet 5": "Tables relationnelles hébergées en ligne",
+        "Picto 5": "mdi:database"
       }
     },
     {
-      "template": "VIBECODING - EXERCICE",
+      "template": "VIBECODING - FOCUS OUTIL",
       "content": {
-        "Titre": "Exercice : quelles tâches paralléliser ?",
-        "Intro": "On prend un projet concret : créer une API de gestion d'utilisateurs. L'objectif est d'identifier quelles tâches peuvent tourner en parallèle et lesquelles doivent rester séquentielles.",
-        "Titre 1": "Tâches indépendantes",
-        "Texte 1": "Quelles tâches de ce projet peuvent être lancées simultanément sans dépendre l'une de l'autre ?",
-        "Titre 2": "Tâches séquentielles",
-        "Texte 2": "Quelles tâches doivent attendre qu'une autre soit terminée avant de pouvoir démarrer ?",
-        "Titre 3": "Rôle de l'Agent Manager",
-        "Texte 3": "Comment l'Agent Manager devrait-il organiser l'enchaînement pour livrer le résultat le plus vite possible ?"
+        "Titre": "Focus sur l'outil Supabase",
+        "Intro": "Cette solution rassemble tous les services indispensables pour relier une application à des données en quelques clics.",
+        "Chiffre 2": "500 Mo",
+        "Titre 2": "de stockage en formule gratuite",
+        "Chiffre 3": "100 %",
+        "Titre 3": "compatible SQL et PostgreSQL",
+        "Titre 4": "Une alternative moderne et ouverte à Firebase",
+        "Texte 4": "Contrairement aux solutions fermées, l'outil repose sur le standard PostgreSQL. Les tables restent portables, les relations sont claires et l'API se génère sans écrire de serveur.",
+        "Texte Bulle": "Formule gratuite suffisante pour prototyper · Offre Pro à 25 $/mois · Facturation à l'usage réel",
+        "Source": "Source : Supabase"
+      },
+      "image_concept": "Dashboard interface of Supabase showing relational database tables, columns, and real-time data rows in a modern clean dark UI",
+      "image_style": "editorial",
+      "image_ratio": "16:9"
+    },
+    {
+      "template": "VIBECODING - COMPARAISON",
+      "content": {
+        "Titre": "Stockage local vs Base Cloud",
+        "Intro": "Sauvegarder des données dans un simple fichier montre vite ses limites dès que plusieurs utilisateurs interagissent.",
+        "Titre A": "LOCAL",
+        "Titre B": "CLOUD",
+        "Item 1": "PARTAGE",
+        "Texte A Item 1": "Isolé sur une seule machine ou un navigateur",
+        "Texte B1": "Accessible en continu par tous les clients connectés",
+        "Item 2": "DURÉE",
+        "Texte A Item 2": "Volatile ou écrasé lors du rechargement de page",
+        "Texte B2": "Persistant et sauvegardé sur des serveurs fiables",
+        "Item 3": "VOLUME",
+        "Texte A Item 3": "Limité à quelques mégaoctets",
+        "Texte B3": "Évolutif sans impacter la machine",
+        "Item 4": "SÛRETÉ",
+        "Texte A Item 4": "Aucun contrôle ni gestion des autorisations",
+        "Texte B4": "Règles d'accès par utilisateur"
       }
     },
     {
       "template": "VIBECODING - FIN",
       "content": {
         "Titre": "Ce qu'il faut retenir",
-        "Intro": "Antigravity ne repose pas sur un agent unique. L'Agent Manager orchestre plusieurs sous-agents qui travaillent en parallèle, chacun sur une tâche précise : code, tests, documentation, debug ou revue. Ce modèle réduit le temps d'exécution, améliore la fiabilité de chaque sortie et permet de faire grossir un projet sans tout reconfigurer. L'Agent Manager ne produit rien lui-même : il coordonne, surveille et consolide. C'est lui qui transforme un objectif global en résultat livrable.",
+        "Intro": "Une base cloud transforme une application statique en produit dynamique et collaboratif. Supabase met la puissance de PostgreSQL à notre portée sans la lourdeur d'un serveur dédié. L'outil génère automatiquement les accès nécessaires pour lire et enregistrer les données. On gagne ainsi un temps précieux pour concevoir l'interface utilisateur de notre projet en toute sérénité.",
         "Titre Bulle": "EN BREF",
-        "Texte Bulle": "EN BREF : La parallélisation n'est pas réservée aux projets complexes. Dès qu'un projet comporte deux tâches indépendantes, les lancer en parallèle fait gagner du temps. La prochaine leçon montre comment configurer concrètement ces agents dans l'interface Antigravity."
+        "Texte Bulle": "EN BREF : Inutile de coder une logique serveur complexe pour stocker des données. Une base cloud assure la persistance et la synchronisation en quelques clics. Dans la prochaine leçon, on va créer notre compte Supabase et initialiser notre premier projet !"
       }
     }
   ]

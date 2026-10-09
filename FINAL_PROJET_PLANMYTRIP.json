@@ -1,0 +1,164 @@
+{
+  "moduleTitle": "Module Projet : Projets Fil Rouge",
+  "moduleSlug": "projets-fil-rouge",
+  "chapterTitle": "Suivi de projet : PlanMyTrip",
+  "chapterNumber": 1,
+  "lessons": [
+    {
+      "lessonSlug": "projet-plan-my-trip",
+      "lessonTitle": "Projet : PlanMyTrip",
+      "lessonType": "cas_pratique",
+      "colorName": "Bleu clair",
+      "color": "#A0D2FF",
+      "backgroundColor": "#A0D2FF",
+      "colorHex": "#A0D2FF",
+      "slides": [
+        {
+          "template": "PROJET - BRIEF",
+          "content": {
+            "Titre Intro": "LE CONSTAT",
+            "Intro": "L'organisation d'un séjour de quelques jours se transforme souvent en un véritable parcours du combattant. Entre la multiplication des blogs, les avis contradictoires et l'absence de vision synthétique, planifier son voyage prend un temps considérable. PlanMyTrip résout ce problème en centralisant la création d'un itinéraire clair, fluide et structuré par journée.",
+            "Titre 1": "Objectif de l'application",
+            "Texte 1": "Créer une webapp responsive et fluide permettant de composer et visualiser un itinéraire par jour avec étapes et budget.",
+            "image": "http://localhost:8080/assets/vibe_projet_planmytrip_brief.png",
+            "Source": "Source : Voyageur organisant son séjour - Illustration générée par IA - Maxime Elhaik"
+          }
+        },
+        {
+          "template": "PROJET - PERSONA",
+          "content": {
+            "Alexandre": "Alexandre",
+            "Commercial Terrain": "Voyageur & Urban Explorer",
+            "En déplacement permanent": "Organise ses week-ends au dernier moment",
+            "Utilisation 100% sur Smartphone": "Utilise principalement son smartphone",
+            "Ultra-pressé entre deux RDV": "Veut un itinéraire clair en 3 clics",
+            "Mobile-first : Grands boutons faciles à presser su": "Layout Mobile-first : Filtres simples et onglets par jour accessibles au pouce.",
+            "Mode Sombre : Activé par défaut pour réduire la fa": "Style Clean & Adaptatif : Contrastes élevés pour la lisibilité en extérieur.",
+            "Action Rapide : Accès immédiat et omniprésent au b": "Timeline Interactive : Vue chronologique claire (Matin, Midi, Soirée).",
+            "Action unique ultra-optimisée : Ajouter un nouveau": "Consultation & Filtres : Afficher l'itinéraire d'une ville et cocher les étapes.",
+            "Pas de superflu : Aucune fonctionnalité d'analyse ": "Sans complexité : Pas de réservation ni de paiement en ligne dans le MVP.",
+            "Picto 1": "map-pin",
+            "Picto 2": "compass",
+            "Picto 3": "calendar"
+          }
+        },
+        {
+          "template": "PROJET - USER STORY",
+          "content": {
+            "Application": "PlanMyTrip App",
+            "\"Permettre au commercial d'ajouter une note post-R": "\"Permettre à Alexandre d'obtenir un itinéraire structuré par jour pour sa destination et de suivre son budget.\"",
+            "Créer l'écran d'accueil avec un énorme bouton \"Ajo": "Sélectionner la destination (ex: Paris, Rome) et le nombre de jours.",
+            "Construire le formulaire modal rapide : 3 champs (": "Consulter la timeline des étapes filtrées par thématique (Culture, Food, Détente).",
+            "Gérer la sauvegarde fictive et afficher un toast d": "Cocher les activités effectuées et afficher l'estimation du budget total.",
+            "Picto 1": "map"
+          }
+        },
+        {
+          "template": "PROJET - CAHIER",
+          "content": {
+            "Cahier-des-charges.txt": "Cahier-des-charges.txt",
+            "**Projet :** Créer une Landing Page \"Waitlist\" pou": "**Projet :** Webapp d'itinéraires de voyage express dynamiques par jour.",
+            "**Cible :** Sarah, 28 ans, solopreneur et digital ": "**Cible :** Alexandre, 29 ans, jeune actif amateur de city-breaks.",
+            "**Sensibilité :** Très attachée à l'esthétique (\"v": "**Sensibilité :** Recherche la simplicité, la lisibilité et des conseils rapides.",
+            "Le projet est un One-Pager sans backend complexe ni": "Application frontend autonome fonctionnant avec un fichier de données mockées JSON.",
+            "En tant que Sarah, je veux un Hero Header massif p": "En tant qu'Alexandre, je veux filtrer les activités par jour pour m'organiser.",
+            "En tant que Sarah, je veux un formulaire d'inscrip": "En tant qu'Alexandre, je veux calculer le budget total estimé du séjour."
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 5",
+          "content": {
+            "Agent.md": "Agent.md",
+            "\"L'approche doit être strictement Mobile-First. Le": "→ \"Utiliser des cartes d'étapes arrondies (rounded-2xl) avec badges de prix et boutons à coche faciles à presser sur mobile.\"",
+            "Picto 1": "smartphone"
+          }
+        },
+        {
+          "template": "PROJET - PROMPT 1",
+          "content": {
+            "PROMPT.md": "PROMPT.md",
+            "Agis comme un développeur Frontend Expert en UX Mo": "Agis comme un développeur Frontend expert en interfaces de voyage modernes.",
+            "Tu vas coder une application \"Mini-CRM\".": "Tu vas coder l'application web responsive 'PlanMyTrip AI'.",
+            "L'utilisateur final est Alexandre, un commercial t": "L'utilisateur final est Alexandre, un voyageur cherchant des itinéraires de 1 à 3 jours.",
+            "Alexandre, Commercial": "Alexandre, Voyageur",
+            "Utilisation 100% sur mobile en voiture.": "Utilisation mobile et desktop en déplacement.",
+            "Plutôt que de devoir dicter chaque taille de bouto": "L'UI doit être claire avec onglets par jour et filtres instantanés."
+          }
+        },
+        {
+          "template": "PROJET - PROMPT 2",
+          "content": {
+            "PROMPT.md": "PROMPT.md",
+            "L'application a un périmètre volontairement très r": "Périmètre restreint aux fonctionnalités de consultation et de filtrage.",
+            "Saisir un Nom, Téléphone et Note.": "Sélectionner une destination et consulter la timeline par jour.",
+            "Afficher un message de confirmation.": "Filtrer les étapes et cocher les activités visitées.",
+            "ATTENTION : NE CODE PAS de système de connexion (A": "ATTENTION : Ne code PAS de système de réservation, de paiement ou d'authentification.",
+            "MVP: Ajouter un contact et une note (3 clics).": "MVP: Générer un carnet de voyage et filtrer les étapes en 3 clics.",
+            "Créer l'écran d'accueil avec un énorme bouton \"Ajo": "Écran d'accueil avec choix de ville et durée.",
+            "Construire le formulaire modal rapide : 3 champs (": "Onglets par jour et timeline des activités.",
+            "Gérer la sauvegarde fictive et afficher un toast d": "Calcul automatique du budget estimé."
+          }
+        },
+        {
+          "template": "PROJET - PROMPT 3",
+          "content": {
+            "PROMPT.md": "PROMPT.md",
+            "Tu dois utiliser exclusivement les technologies su": "Utilise exclusivement la stack moderne suivante :",
+            "Frontend : React avec TypeScript.": "Frontend : React (Hooks useState, useMemo).",
+            "Style : Tailwind CSS (pas de fichiers CSS customs)": "Style : Tailwind CSS v4 (Glassmorphism, Dark mode).",
+            "Icônes : Import depuis 'lucide-react'.": "Icônes : Lucide React.",
+            "Données : Fake data en dur dans les composants.": "Données : Jeux de données mockées JSON.",
+            "React / Next.js": "React",
+            "La base solide et standardisée.": "Composants React modulaires et réutilisables.",
+            "Re": "Re",
+            "Tailwind CSS v4": "Tailwind CSS v4",
+            "Crucial pour que l'IA style tout inline sans créer": "Style moderne, responsive et fluide.",
+            "TW": "TW",
+            "Lucide React": "Lucide React",
+            "Picto 1": "layers"
+          }
+        },
+        {
+          "template": "PROJET - PROMPT 4",
+          "content": {
+            "Rappel : On ne demande jamais de tout coder d'un coup. Le Prompt Zéro se termine toujours par la première User Story et le squelette de l’application.": "Rappel : On ne demande jamais à l'IA de tout coder d'un coup. On amorce par le squelette et la première User Story.",
+            "PROMPT.md": "PROMPT.md",
+            "Pour commencer, ne code pas toute l'application. G": "Pour commencer, génère le squelette React de l'application avec le Header, le formulaire de choix de destination et les données mockées de test."
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 1",
+          "content": {
+            "Agent.md": "Agent.md",
+            "\"Utiliser des paddings et margins très généreux. L": "→ \"Appliquer des paddings généreux (p-6, space-y-4) entre les cartes d'étapes pour aérer la lecture de l'itinéraire sur mobile.\""
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 2",
+          "content": {
+            "Agent.md": "Agent.md",
+            "\"L'approche doit être strictly Mobile-First. Le": "→ \"Positionner les onglets par jour en haut de l'écran avec une barre de défilement horizontal fluide sur smartphone.\"",
+            "Bouton": "Onglets"
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 3",
+          "content": {
+            "Agent.md": "Agent.md",
+            "\"L'approche doit être strictement Mobile-First. Le": "→ \"Adopter un fond sombre slate-900 avec cartes translucides backdrop-blur-md et badges violet/rose réactifs.\"",
+            "Dark Mode + Accent": "Dark Glassmorphism"
+          }
+        },
+        {
+          "template": "PROJET - DESIGN 4",
+          "content": {
+            "Agent.md": "Agent.md",
+            "\"L'approche doit être strictement Mobile-First. Le": "→ \"Mettre en valeur le nom des activités en caractères gras (font-bold) et les heures/prix dans des badges gris clair discrets.\"",
+            "Titre Principal": "Titres d'étapes",
+            "Texte de corps avec un gris plus clair pour créer ": "Badges d'horaires et de budget"
+          }
+        }
+      ]
+    }
+  ]
+}

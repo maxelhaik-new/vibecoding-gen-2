@@ -62,3 +62,23 @@ Ces règles s'appliquent lors du découpage d'un plan en slides pour garantir un
 * **Exception de répétition (Parallèle)** : L'utilisation de templates identiques consécutifs n'est autorisée QUE si les slides sont conçues pour être lues en parallèle pour une parité visuelle (ex: comparer "Outil A" puis "Outil B" individuellement avec le même layout). Dans les autres cas, la diversification est obligatoire.
 * **Limitation de `VIBECODING - CONCEPT`** : À utiliser UNIQUEMENT pour présenter un modèle théorique ou une notion abstraite. Si une slide très textuelle est nécessaire pour du contexte ou de la narration, privilégier plutôt `VIBECODING - USE CASE` (sans en abuser non plus).
 * **Groupement des listes (Densité visuelle)** : Si le plan présente une liste ou une énumération d'éléments similaires, regrouper OBLIGATOIREMENT ces points dans un seul template multi-blocs (`2 BLOCS`, `3 COLONNES`, `4 BLOCS`, `5 BLOCS`, `6 BLOCS`) au lieu de créer une slide concept séparée pour chaque élément. Cela réduit le bruit et augmente la densité visuelle.
+
+---
+
+## 3. Template Séquentiel : Découverte du Projet Exemple (Leçon L2 ou L3)
+
+Cette séquence type de 6 slides (issue du nœud de référence Figma `3915:12485`) sert de template officiel pour toutes les leçons de présentation d'une application ou d'un projet fil rouge (notamment pour les Chapitres 2 et 3) :
+
+1. **`VIBECODING - COVER`** :
+   - Titre immersif : *« Découvrons l'application [Nom] que nous allons [action métier] »*.
+2. **`VIBECODING - INTRO`** :
+   - Vue d'ensemble en 3 blocs d'annonce : (1) Le produit SaaS, (2) Cible & Persona, (3) Parcours d'achat / d'action.
+3. **`VIBECODING - USE CASE`** :
+   - Présentation du projet concret : le problème récurrent résolu, la proposition de valeur et le modèle économique.
+4. **`VIBECODING - 3 COLONNES`** :
+   - Décomposition des 3 piliers, formules ou offres clés de l'application (ex: Découverte 0€, Pro 19€, Agence 49€).
+5. **`VIBECODING - USER STORIES`** :
+   - Les 3 User Stories fonctionnelles majeures à implémenter, avec icône sur-mesure pour l'application (`Picto 1`).
+6. **`VIBECODING - 6 BLOCS` (Module Starter / Passage à l'action)** :
+   - Slide d'amorce *« Récupérez le projet ! »* invitant l'apprenant à cloner ou importer le repository GitHub public dans son IDE avant d'attaquer les tutoriels.
+

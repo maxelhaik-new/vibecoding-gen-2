@@ -503,6 +503,156 @@ app.get('/api/run-pipeline', (req, res) => {
   });
 });
 
+// 5b. GET /api/generate-projet - SSE: generate projet fil rouge slides and save to Supabase
+app.get('/api/generate-projet', async (req, res) => {
+  const { projectTitle, description } = req.query;
+
+  if (!description || description.trim().length < 10) {
+    return res.status(400).json({ error: 'description trop courte (min 10 chars).' });
+  }
+
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive',
+    'Access-Control-Allow-Origin': '*'
+  });
+
+  const title = (projectTitle || description).trim();
+  // Combine title + description so the script receives both
+  const combinedDesc = projectTitle
+    ? `${projectTitle.trim()} — ${description.trim()}`
+    : description.trim();
+
+  const args = [
+    path.join('scripts', 'generate_projet_slides.py'),
+    combinedDesc
+  ];
+
+  res.write(`data: [Projet] Démarrage pour "${title}"...\n\n`);
+
+  const keepAlive = setInterval(() => res.write(': keep-alive\n\n'), 5000);
+
+  const pyProcess = spawn('python3', args, {
+    cwd: rootDir,
+    env: { ...process.env, PYTHONWARNINGS: 'ignore' }
+  });
+
+  // Collect stdout to capture the final file path
+  let stdoutAccum = '';
+
+  pyProcess.stdout.on('data', (data) => {
+    const lines = data.toString().split('\n');
+    for (const line of lines) {
+      if (line.trim()) {
+        res.write(`data: ${line}\n\n`);
+        stdoutAccum += line + '\n';
+      }
+    }
+  });
+
+  pyProcess.stderr.on('data', (data) => {
+    const lines = data.toString().split('\n');
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (trimmed && !trimmed.includes('DeprecationWarning') && !trimmed.includes('FutureWarning')) {
+        res.write(`data: [Stderr] ${trimmed}\n\n`);
+      }
+    }
+  });
+
+  pyProcess.on('close', async (code) => {
+    clearInterval(keepAlive);
+
+    if (code === 0) {
+      // Find the generated JSON file path from stdout (line contains "Enregistré sous :")
+      const match = stdoutAccum.match(/Enregistré sous\s*:\s*(.+\.json)/);
+      if (match) {
+        const jsonPath = match[1].trim();
+        try {
+          const raw = fs.readFileSync(jsonPath, 'utf-8');
+          const parsed = JSON.parse(raw);
+
+          // Extract slug and slides from the JSON structure
+          const lessonNode = parsed.lessons && parsed.lessons[0];
+          const slug = lessonNode?.lessonSlug || `projet-${Date.now()}`;
+          const lessonTitle = lessonNode?.lessonTitle || title;
+          const slides = lessonNode?.slides || [];
+          const slideCount = slides.length;
+
+          // Build the final object we expose to the UI
+          const finalObj = {
+            projectTitle: lessonTitle,
+            projectSlug: slug,
+            slides,
+          };
+
+          res.write(`data: [Projet] Sauvegarde dans Supabase (${slideCount} slides)...\n\n`);
+
+          // Upsert into Supabase via REST API (no SDK needed in server.js)
+          const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+          const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+          if (supabaseUrl && supabaseKey) {
+            const upsertBody = {
+              slug,
+              title: lessonTitle,
+              status: 'written',
+              type: 'projet',
+              slide_count: slideCount,
+              plan: `# Projet : ${lessonTitle}\n\n## Description\n${description}`,
+              final: finalObj,
+              updated_at: new Date().toISOString(),
+            };
+
+            const upsertRes = await fetch(`${supabaseUrl}/rest/v1/lessons`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'apikey': supabaseKey,
+                'Authorization': `Bearer ${supabaseKey}`,
+                'Prefer': 'resolution=merge-duplicates,return=minimal',
+              },
+              body: JSON.stringify(upsertBody),
+            });
+
+            if (upsertRes.ok) {
+              res.write(`data: [Projet] 💾 Projet "${lessonTitle}" sauvegardé (slug: ${slug}).\n\n`);
+            } else {
+              const errText = await upsertRes.text();
+              res.write(`data: [Projet] ⚠️ Supabase upsert échoué : ${errText}\n\n`);
+            }
+
+            // Send the JSON payload so the UI can display it
+            res.write(`data: [Projet] JSON_RESULT:${JSON.stringify(finalObj)}\n\n`);
+          } else {
+            res.write(`data: [Projet] ⚠️ Variables Supabase manquantes - pas de persistance.\n\n`);
+            res.write(`data: [Projet] JSON_RESULT:${JSON.stringify(finalObj)}\n\n`);
+          }
+        } catch (err) {
+          res.write(`data: [Projet] ⚠️ Erreur lecture/upsert JSON : ${err.message}\n\n`);
+        }
+      } else {
+        res.write(`data: [Projet] ⚠️ Fichier JSON non trouvé dans la sortie du script.\n\n`);
+      }
+    }
+
+    res.write(`data: [System] Process exited with code ${code}\n\n`);
+    res.end();
+  });
+
+  pyProcess.on('error', (err) => {
+    clearInterval(keepAlive);
+    res.write(`data: [System Error] Failed to start python process: ${err.message}\n\n`);
+    res.end();
+  });
+
+  req.on('close', () => {
+    clearInterval(keepAlive);
+    pyProcess.kill();
+  });
+});
+
 // 6. GET /api/generate-intro - SSE endpoint to execute local intro generator and stream output
 app.get('/api/generate-intro', (req, res) => {
   const { lesson, update } = req.query;

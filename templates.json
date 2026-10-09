@@ -1757,6 +1757,85 @@
     ]
   },
   {
+    "name": "VIBECODING - FOCUS OUTIL ALT",
+    "status": "validé",
+    "description": "Template alternative pour focus outil avec année de sortie, budget mensuel, bulle de spécificité et capture d'écran.",
+    "text_layers": [
+      {
+        "key": "Titre",
+        "original_placeholder": "Focus sur GitHub Copilot",
+        "target_lenght": 23,
+        "min_lenght": 16,
+        "max_lenght": 35
+      },
+      {
+        "key": "Intro",
+        "original_placeholder": "Le pionnier de l'assistance IA au code, lancé en 2021 par GitHub. L'outil le plus répandu chez les développeurs professionnels.",
+        "target_lenght": 124,
+        "min_lenght": 87,
+        "max_lenght": 161
+      },
+      {
+        "key": "Chiffre 2",
+        "original_placeholder": "2021",
+        "target_lenght": 4,
+        "min_lenght": 2,
+        "max_lenght": 10
+      },
+      {
+        "key": "Titre 2",
+        "original_placeholder": "année de lancement (premier copilote IA grand public)",
+        "target_lenght": 53,
+        "min_lenght": 37,
+        "max_lenght": 69
+      },
+      {
+        "key": "Chiffre 3",
+        "original_placeholder": "20$",
+        "target_lenght": 3,
+        "min_lenght": 2,
+        "max_lenght": 10
+      },
+      {
+        "key": "Titre 3",
+        "original_placeholder": "/ mois pour un abonnement GitHub Copilot Pro",
+        "target_lenght": 44,
+        "min_lenght": 31,
+        "max_lenght": 57
+      },
+      {
+        "key": "Titre Bulle",
+        "original_placeholder": "Une extension devenue outil autonome",
+        "target_lenght": 36,
+        "min_lenght": 25,
+        "max_lenght": 47
+      },
+      {
+        "key": "Texte Bulle",
+        "original_placeholder": "Copilot complète le code en temps réel et répond aux questions via un chat intégré. Il s'installe comme extension dans un editeur comme VS Code ou s’utilise en ligne",
+        "target_lenght": 167,
+        "min_lenght": 117,
+        "max_lenght": 217
+      },
+      {
+        "key": "Source",
+        "original_placeholder": "Source : GitHub 2025",
+        "target_lenght": 20,
+        "min_lenght": 10,
+        "max_lenght": 50
+      }
+    ],
+    "image_layers": [
+      {
+        "key": "image",
+        "original_placeholder": "Bloc Image",
+        "ratio": "3:2",
+        "width": 950.0,
+        "height": 613.0
+      }
+    ]
+  },
+  {
     "name": "VIBECODING - ACRONYME",
     "status": "validé",
     "description": "Template pour slide de type vibecoding - acronyme.",

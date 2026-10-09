@@ -16,6 +16,7 @@ QUIZ_DATA = {
             "icon": "🎯",
             "color": "var(--color-brand-purple)",
             "badge": "Compétence 1",
+            "questionsPerSeries": 10,
             "questions": [
                 {
                     "id": 101,
@@ -88,6 +89,7 @@ QUIZ_DATA = {
             "icon": "⚡",
             "color": "var(--color-brand-purple)",
             "badge": "Compétence 2",
+            "questionsPerSeries": 10,
             "questions": [
                 {
                     "id": 201,
@@ -136,6 +138,7 @@ QUIZ_DATA = {
             "icon": "💻",
             "color": "var(--color-brand-purple)",
             "badge": "Compétence 3",
+            "questionsPerSeries": 10,
             "questions": [
                 {
                     "id": 301,
@@ -184,6 +187,7 @@ QUIZ_DATA = {
             "icon": "🔌",
             "color": "var(--color-brand-purple)",
             "badge": "Compétence 4",
+            "questionsPerSeries": 10,
             "questions": [
                 {
                     "id": 401,
@@ -232,6 +236,7 @@ QUIZ_DATA = {
             "icon": "🛡️",
             "color": "var(--color-brand-purple)",
             "badge": "Compétence 5",
+            "questionsPerSeries": 10,
             "questions": [
                 {
                     "id": 501,
@@ -280,6 +285,7 @@ QUIZ_DATA = {
             "icon": "🧠",
             "color": "var(--color-brand-purple)",
             "badge": "Compétence 6",
+            "questionsPerSeries": 10,
             "questions": [
                 {
                     "id": 601,

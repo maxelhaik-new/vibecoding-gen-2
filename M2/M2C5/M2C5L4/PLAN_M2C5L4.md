@@ -1,64 +1,81 @@
-# Plan de la leçon M2C5L4 — Partager sa logique sans donner ses données
+# Plan de la leçon M2C5L4 — Identifier les mécanismes à risque et s'en protéger
 
-Cette leçon explique comment faire corriger un bug ou concevoir une fonctionnalité complexe par son agent sans jamais lui transmettre de données réelles d'utilisateurs ou d'informations confidentielles de son entreprise.
+Cette leçon détaille les vecteurs d'attaque et pièges de sécurité spécifiques à l'usage des agents de code d'IA (Vibe Coding) et présente les règles d'audit indispensables pour s'en protéger.
 
-## Déroulé des slides
+## Déroulé des slides (8 slides)
 
 ### Slide 1 : VIBECODING - COVER
-* Titre : Partager sa logique sans livrer ses données
+* **Titre** : Identifier les mécanismes à risque et s'en protéger
 
 ### Slide 2 : VIBECODING - INTRO
-* Titre : Résoudre un bug sans fuites
-* Intro : Pour aider à résoudre un problème, l'agent a besoin de comprendre la structure de nos données, pas les valeurs réelles de nos clients ou utilisateurs. Coller une vraie liste de noms ou d'achats dans le chat est une faille de sécurité majeure. Voyons comment masquer ces informations.
-* Titre 1 : La structure vs. les données
-* Texte 1 : Voyons comment extraire la logique d'un code sans y joindre les informations personnelles.
-* Titre 2 : Les techniques de masque
-* Texte 2 : Zoom sur les méthodes simples pour remplacer les vrais noms par des exemples fictifs.
-* Titre 3 : Les réflexes de prompt
-* Texte 3 : Apprenons à prompter l'agent en utilisant uniquement des structures vides et des schémas.
+* **Titre** : Sécuriser la chaîne de Vibe Coding
+* **Intro** : L'usage d'agents de code accélère la création mais introduit de nouveaux risques d'exécution et de dépendances. Voyons les 3 mécanismes d'attaque majeurs et les bonnes pratiques pour protéger ses projets.
+* **Titre 1** : L'exécution aveugle
+* **Texte 1** : Voyons les risques de laisser un agent exécuter des commandes shell ou du code sans aucun contrôle humain.
+* **Titre 2** : Le typosquatting IA
+* **Texte 2** : Zoom sur le piège des paquets logiciels inventés par l'IA et enregistrés par des acteurs malveillants.
+* **Titre 3** : L'injection indirecte
+* **Texte 3** : Focus sur la manipulation des instructions d'un agent via des fichiers ou des données externes empoisonnés.
 
-### Slide 3 : VIBECODING - CONCEPT
-* Titre : Schéma vs. données réelles
-* Mot : Le schéma de données
-* Definition : Un schéma de données (ou structure) décrit l'organisation des informations (par exemple : «&nbsp;un utilisateur a un nom, un email et un âge&nbsp;»). C'est cette structure dont l'agent a besoin pour coder. Les données réelles (les vrais noms ou vrais emails) ne servent à rien pour écrire l'algorithme.
-* Bulle : Pour réparer un tuyau, le plombier a besoin des plans de la maison — pas de l'eau qui y coule.
+### Slide 3 : VIBECODING - COMPARAISON
+* **Titre** : Exécution directe vs Environnement isolé
+* **Intro** : Accorder à un agent un accès direct au système d'exploitation sans contrainte multiplie les risques de sécurité.
+* **Titre A** : DIRECT
+* **Titre B** : ISOLÉ
+* **Item 1** : CONTRÔLE
+* **Texte A Item 1** : Aucune validation avant l'action shell
+* **Texte B1** : Validation explicite des commandes shell
+* **Item 2** : RISQUE
+* **Texte A Item 2** : Destruction de fichiers ou fuite locale
+* **Texte B2** : Conteneur sandbox sans accès système
+* **Item 3** : ACCÈS
+* **Texte A Item 3** : Accès total au disque et au réseau
+* **Texte B3** : Droits restreints au dossier projet
+* **Item 4** : RÈGLE
+* **Texte A Item 4** : À proscrire sur un système critique
+* **Texte B4** : Indispensable pour tout projet Vibe
 
-### Slide 4 : VIBECODING - COMPARAISON
-* Titre : Anonymiser vs. Pseudonymiser
-* Intro : Deux techniques simples permettent de nettoyer ses prompts avant envoi, selon le niveau de sécurité recherché.
-* Titre A : ANONYMER
-* Titre B : PSEUDONYMER
-* Item 1 : Principe
-* Item 2 : Méthode
-* Item 3 : Retour
-* Item 4 : Usage
-* Texte A Item 1 : Remplacer l'information par une généralité
-* Texte A Item 2 : « Un utilisateur » ou « Client A »
-* Texte A Item 3 : Impossible — modification irréversible
-* Texte A Item 4 : Idéal pour des analyses de logs ou de bugs
-* Texte B1 : Remplacer l'identifiant par un code factice
-* Texte B2 : Utiliser de fausses données réalistes
-* Texte B3 : Possible à l'aide d'une table de correspondance
-* Texte B4 : Utile pour tester des scénarios complexes
+### Slide 4 : VIBECODING - DEFINITION
+* **Titre** : Un piège spécifique à l'IA
+* **Mot** : Typosquatting IA
+* **Definition** : Technique d'attaque où un pirate enregistre sur un registre public (npm, PyPI) un nom de paquet fréquemment halluciné par les modèles d'IA. Lorsqu'un développeur exécute aveuglément les commandes d'installation générées par l'agent sans vérifier l'existence du paquet, son projet télécharge et exécute automatiquement du code malveillant.
+* **Bulle** : Les pirates analysent les hallucinations récurrentes des LLM pour publier de faux paquets sur npm ou PyPI. L'installation automatique d'une dépendance non vérifiée devient une porte d'entrée directe.
 
 ### Slide 5 : VIBECODING - PROCESS
-* Titre : Protocole de nettoyage de prompt
-* Intro : Avant d'envoyer un extrait de base de données ou de fichier à son agent, on suit ces étapes simples pour nettoyer les données.
-* Titre 1 : Repérer
-* Violet 1 : Identifier les informations nominatives
-* Titre 2 : Remplacer
-* Violet 2 : Changer les noms et emails par des alias
-* Titre 3 : Agréger
-* Violet 3 : Transformer les valeurs exactes en tranches
-* Titre 4 : Tronquer
-* Violet 4 : Supprimer les colonnes inutiles au bug
-* Titre 5 : Valider
-* Violet 5 : Relire le prompt nettoyé avant envoi
-* Titre 6 : Envoyer
-* Violet 6 : Soumettre le cas simplifié à l'agent
+* **Titre** : Audit du code généré
+* **Intro** : Pour éviter d'introduire des failles invisibles dans un projet, chaque proposition de l'agent doit suivre un protocole d'audit rapide.
+* **Titre 1** : Inspecter | **Violet 1 ** : Vérifier le code avant validation
+* **Titre 2** : VERIF | **Violet 2** : Tester les paquets sur les registres
+* **Titre 3** : ISOLER | **Violet 3** : Exécuter les scripts en sandbox
+* **Titre 4** : Auditer | **Violet 4** : Passer un linter de sécurité
+* **Titre 5** : RESTR | **Violet 5** : Bloquer les accès non requis
+* **Titre 6** : VALID | **Violet 6** : Conserver le contrôle final
 
-### Slide 6 : VIBECODING - FIN
-* Titre : Le développeur est le filtre
-* Intro : L'agent IA n'a pas conscience de la confidentialité des données que nous lui envoyons. C'est à nous de faire office de filtre avant chaque clic sur «&nbsp;Envoyer&nbsp;». On prend l'habitude de ne fournir à l'IA que des schémas de base de données, des fausses données de test (mock data) ou des exemples génériques. En bref, on partage l'architecture du problème, jamais la vie privée de ses utilisateurs.
-* Titre Bulle : EN BREF
-* Texte Bulle : La prochaine leçon rassemble ces bonnes pratiques sous forme de checklist réflexe : un protocole simple à suivre avant chaque envoi de prompt pour garantir un Vibe Coding sécurisé de bout en bout.
+### Slide 6 : VIBECODING - 4 BLOCS
+* **Titre** : Quatre pièges fréquents du code IA
+* **Intro** : L'IA cherche d'abord la solution la plus simple pour faire marcher l'application, en oubliant souvent les réflexes de protection de base.
+* **Titre 1** : Portes de sécurité désactivées
+* **Texte 1** : Pour aller vite, l'IA enlève parfois les serrures de l'application et laisse n'importe quel site externe se connecter.
+* **Titre 2** : Mots de passe visibles dans le code
+* **Texte 2** : L'agent écrit souvent les vrais codes d'accès directement dans les fichiers, risquant de les publier sans s'en rendre compte.
+* **Titre 3** : Formulaires et entrées non filtrés
+* **Texte 3** : Le code généré oublie souvent de vérifier ce que les utilisateurs tapent, laissant entrer des pièges dans l'application.
+* **Titre 4** : Fichiers externes avec des pièges
+* **Texte 4** : Un document ou une page web lue par l'agent peut cacher de fausses consignes qui détournent l'IA de son travail initial.
+
+### Slide 7 : VIBECODING - CHECKLIST
+* **Titre** : Les réflexes de sécurité
+* **Nom Checklist** : Les réflexes !
+* **Intro** : Quatre priorités simples à appliquer à chaque session pour coder sereinement.
+* **Texte Intro** : Adopter ces réflexes au quotidien permet de tirer parti de la vitesse de l'agent sans jamais mettre en danger son ordinateur ou ses projets.
+* **Texte 1** : Relire systématiquement les lignes de commande avant d'exécuter.
+* **Texte 2** : Vérifier le nom des nouveaux paquets d'outils avant installation.
+* **Texte 3** : Isoler tous les mots de passe et clés secrètes dans un fichier séparé.
+* **Texte 4** : Faire tourner le code généré dans un bac à sable isolé du système.
+* **Texte 5** : Conserver le contrôle humain final sur toutes les modifications.
+
+### Slide 8 : VIBECODING - FIN
+* **Titre** : Le développeur garde le contrôle
+* **Intro** : Travailler avec un agent d'IA transforme la création informatique mais requiert une vigilance constante sur les vecteurs d'attaque. L'exécution de commandes, l'ajout de paquets et la structure du code exigent une validation humaine systématique. En gardant le contrôle sur l'environnement de développement, on profite de la vitesse du Vibe Coding en toute sécurité.
+* **Titre Bulle** : EN BREF
+* **Texte Bulle** : EN BREF : Maintenant qu'on maîtrise les mécanismes de risque technique, la leçon suivante aborde l'hygiène du contexte en Vibe Coding : comment protéger ses données sensibles et masquer ses secrets dans les prompts.

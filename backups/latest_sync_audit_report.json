@@ -1,0 +1,195 @@
+{
+  "timestamp": "2026-09-07T16:39:04.489160",
+  "figma_anomalies": [
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 1,
+      "chapitre": 1,
+      "lecon": 2,
+      "message": "M1C1L2 apparaît 2 fois dans Figma : ['✅ M1C1L2', '✅ M1C1L2']"
+    },
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 1,
+      "chapitre": 1,
+      "lecon": 4,
+      "message": "M1C1L4 apparaît 2 fois dans Figma : ['✅ M1C1L4', '✅ M1C1L4']"
+    },
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 1,
+      "chapitre": 2,
+      "lecon": 2,
+      "message": "M1C2L2 apparaît 2 fois dans Figma : ['Leçon M1C2L2 : Définir le Vibe Coding', '✅ M1C2L2']"
+    },
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 1,
+      "chapitre": 3,
+      "lecon": 4,
+      "message": "M1C3L4 apparaît 2 fois dans Figma : ['✅ M1C3L4', '✅ M1C3L4']"
+    },
+    {
+      "type": "TROU_INCREMENTATION_FIGMA",
+      "module": 3,
+      "chapitre": 1,
+      "lecon": 5,
+      "message": "M3C1 : Leçon M3C1L5 manquante dans la suite (présents : [1, 2, 3, 4, 8])"
+    },
+    {
+      "type": "TROU_INCREMENTATION_FIGMA",
+      "module": 3,
+      "chapitre": 1,
+      "lecon": 6,
+      "message": "M3C1 : Leçon M3C1L6 manquante dans la suite (présents : [1, 2, 3, 4, 8])"
+    },
+    {
+      "type": "TROU_INCREMENTATION_FIGMA",
+      "module": 3,
+      "chapitre": 1,
+      "lecon": 7,
+      "message": "M3C1 : Leçon M3C1L7 manquante dans la suite (présents : [1, 2, 3, 4, 8])"
+    },
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 3,
+      "chapitre": 2,
+      "lecon": 5,
+      "message": "M3C2L5 apparaît 2 fois dans Figma : ['M3C2L5', 'M3C2L5']"
+    },
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 3,
+      "chapitre": 3,
+      "lecon": 4,
+      "message": "M3C3L4 apparaît 2 fois dans Figma : ['M3C3L4', 'M3C3L4']"
+    },
+    {
+      "type": "TROU_INCREMENTATION_FIGMA",
+      "module": 3,
+      "chapitre": 4,
+      "lecon": 4,
+      "message": "M3C4 : Leçon M3C4L4 manquante dans la suite (présents : [1, 2, 3, 5, 6])"
+    },
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 3,
+      "chapitre": 5,
+      "lecon": 6,
+      "message": "M3C5L6 apparaît 2 fois dans Figma : ['M3C5L6', 'M3C5L6']"
+    },
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 3,
+      "chapitre": 6,
+      "lecon": 1,
+      "message": "M3C6L1 apparaît 2 fois dans Figma : ['M3C6L1', 'M3C6L1']"
+    },
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 3,
+      "chapitre": 6,
+      "lecon": 2,
+      "message": "M3C6L2 apparaît 2 fois dans Figma : [\"M3C6L2 —Le Chrono-Pomodoro & Tracker d'Énergie\", 'M3C6L2']"
+    },
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 3,
+      "chapitre": 6,
+      "lecon": 3,
+      "message": "M3C6L3 apparaît 2 fois dans Figma : ['M3C6L3 —La TodoList Gamifiée', 'M3C6L3']"
+    },
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 3,
+      "chapitre": 6,
+      "lecon": 4,
+      "message": "M3C6L4 apparaît 2 fois dans Figma : ['M3C6L4', 'M3C6L4']"
+    },
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 3,
+      "chapitre": 6,
+      "lecon": 5,
+      "message": "M3C6L5 apparaît 3 fois dans Figma : ['M3C6L5 — Une landing page', 'M3C6L5 — Une landing page', 'M3C6L5']"
+    },
+    {
+      "type": "TROU_INCREMENTATION_FIGMA",
+      "module": 4,
+      "chapitre": 2,
+      "lecon": 5,
+      "message": "M4C2 : Leçon M4C2L5 manquante dans la suite (présents : [1, 2, 3, 4, 6])"
+    },
+    {
+      "type": "TROU_INCREMENTATION_FIGMA",
+      "module": 4,
+      "chapitre": 5,
+      "lecon": 1,
+      "message": "M4C5 : Leçon M4C5L1 manquante dans la suite (présents : [2, 4])"
+    },
+    {
+      "type": "TROU_INCREMENTATION_FIGMA",
+      "module": 4,
+      "chapitre": 5,
+      "lecon": 3,
+      "message": "M4C5 : Leçon M4C5L3 manquante dans la suite (présents : [2, 4])"
+    },
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 5,
+      "chapitre": 1,
+      "lecon": 1,
+      "message": "M5C1L1 apparaît 3 fois dans Figma : ['M5C1L1 — Les objectifs du chapitre : Cadrer son projet certifiant & Définir le produit', 'M5C1L1 — Les objectifs du chapitre : Cadrer son projet certifiant & Définir le produit', 'M5C1L1 — Les objectifs du chapitre : Cadrer son projet certifiant & Définir le produit']"
+    },
+    {
+      "type": "TROU_INCREMENTATION_FIGMA",
+      "module": 5,
+      "chapitre": 3,
+      "lecon": 2,
+      "message": "M5C3 : Leçon M5C3L2 manquante dans la suite (présents : [1, 3, 4, 5])"
+    },
+    {
+      "type": "DOUBLON_FIGMA",
+      "module": 5,
+      "chapitre": 4,
+      "lecon": 2,
+      "message": "M5C4L2 apparaît 2 fois dans Figma : ['M5C4L2', 'M5C4L2']"
+    },
+    {
+      "type": "TROU_INCREMENTATION_FIGMA",
+      "module": 5,
+      "chapitre": 7,
+      "lecon": 3,
+      "message": "M5C7 : Leçon M5C7L3 manquante dans la suite (présents : [1, 2, 4, 5])"
+    }
+  ],
+  "modules_found": {
+    "M1C2": 4,
+    "M1C1": 7,
+    "M2C1": 6,
+    "M1C4": 5,
+    "M2C3": 7,
+    "M2C4": 9,
+    "M2C5": 5,
+    "M1C3": 5,
+    "M2C2": 7,
+    "M4C2": 5,
+    "M4C3": 6,
+    "M4C4": 7,
+    "M3C2": 8,
+    "M5C1": 6,
+    "M5C2": 5,
+    "M5C3": 4,
+    "M5C6": 5,
+    "M5C4": 6,
+    "M5C5": 4,
+    "M5C7": 4,
+    "M4C5": 2,
+    "M4C1": 7,
+    "M3C1": 5,
+    "M3C6": 13,
+    "M3C3": 6,
+    "M3C4": 5,
+    "M3C5": 7
+  }
+}

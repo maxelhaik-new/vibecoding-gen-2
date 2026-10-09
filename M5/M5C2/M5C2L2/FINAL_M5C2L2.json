@@ -1,0 +1,80 @@
+{
+  "lessonSlug": "m5c2l2",
+  "lessonTitle": "M5C2L2 — Découvrons l'application Memō que nous allons relier au cloud",
+  "backgroundColor": "#E2E4E9",
+  "lessonType": "cours",
+  "slides": [
+    {
+      "template": "VIBECODING - COVER",
+      "content": {
+        "Titre": "Découvrons l'application Memō que nous allons relier au cloud"
+      }
+    },
+    {
+      "template": "VIBECODING - INTRO",
+      "content": {
+        "Titre": "Présentation de l'application Memō",
+        "Intro": "Memō est une galerie photo éphémère conçue pour rassembler les clichés d'un événement sans aucune friction. Pour comprendre son fonctionnement avant d'y intégrer le stockage cloud, faisons le tour de ses trois piliers.",
+        "Titre 1": "La galerie d'images",
+        "Texte 1": "Découvrons la vitrine visuelle pensée pour mettre en valeur les clichés en direct avec fluidité.",
+        "Titre 2": "Le public et l'usage",
+        "Texte 2": "Zoom sur les besoins réels des participants qui souhaitent partager des souvenirs sans créer de compte.",
+        "Titre 3": "Le dépôt de fichiers",
+        "Texte 3": "Voyons comment s'articulent l'envoi simultané par lot et la récupération immédiate en haute qualité."
+      }
+    },
+    {
+      "template": "VIBECODING - USE CASE",
+      "content": {
+        "Titre": "Le cas de l'événementiel",
+        "Intro": "PARTAGE PHOTO EN DIRECT",
+        "Texte 1": "Partager des photos lors d'un mariage, d'une soirée d'entreprise ou d'un workshop tourne souvent au casse-tête : les messageries instantanées compressent fortement les images et dégradent leur netteté, tandis que les disques partagés imposent la création d'un compte et bloquent les invités. Le problème ? Plus de la moitié des clichés ne sont jamais récupérés. Memō résout cette friction avec un espace éphémère accessible par QR code, où chacun dépose et télécharge librement les originaux haute définition.",
+        "Texte Bulle": "La simplicité d'accès est le facteur numéro un d'adoption : supprimer la barrière du mot de passe décuple le volume de contributions des participants lors d'une fête ou d'un séminaire.",
+        "Source": "Source : Memō App"
+      }
+    },
+    {
+      "template": "VIBECODING - 3 COLONNES",
+      "content": {
+        "Titre": "Les trois piliers d'interaction",
+        "Intro": "L'architecture de Memō repose sur trois fonctionnalités complémentaires organisées pour une navigation immédiate.",
+        "Titre 1": "GALERIE",
+        "Parametre 1": "MASONRY",
+        "Violet 1": "Mise en page dynamique et vivante",
+        "Texte 1": "Grille adaptative organisant automatiquement les clichés verticaux et horizontaux. Les transitions fluides et le défilement doux mettent en valeur chaque instant sans rupture visuelle.",
+        "Titre 2": "DÉPÔT LOT",
+        "Parametre 2": "DRAG&DROP",
+        "Violet 2": "Ajout multiple sans authentification",
+        "Texte 2": "Modale de dépôt par glisser-déposer prenant en charge plusieurs fichiers à la fois. Prévisualisation miniature instantanée et barre de progression pour suivre l'envoi en direct.",
+        "Titre 3": "VISION HD",
+        "Parametre 3": "LIGHTBOX",
+        "Violet 3": "Plein écran et téléchargement brut",
+        "Texte 3": "Visionneuse plein écran avec navigation au clavier et sur mobile. Un bouton d'action dédié permet d'enregistrer immédiatement la photo originale sans aucune compression destructrice."
+      }
+    },
+    {
+      "template": "VIBECODING - USER STORIES",
+      "content": {
+        "Les User Stories": "Les User Stories",
+        "Traduire la vision produit en petites étapes testa": "Traduire les besoins fonctionnels en scénarios utilisateurs concrets :",
+        "Titre App": "L'application Memō",
+        "Description MVP": "Une galerie photo éphémère sans friction pour déposer et récupérer les clichés d'un événement en haute qualité.",
+        "User Story": "User Story",
+        "User Story 1": "Parcourir la galerie masonry fluide et ouvrir un cliché en plein écran dans la lightbox interactive.",
+        "User Story 2": "Glisser-déposer plusieurs photos dans la modale d'upload pour les envoyer sur le bucket cloud.",
+        "User Story 3": "Télécharger le fichier original en haute définition directement depuis la visionneuse.",
+        "Picto 1": "mdi:camera-burst"
+      }
+    },
+    {
+      "template": "VIBECODING - 6 BLOCS",
+      "content": {
+        "Titre": "Récupérez le projet !",
+        "Intro": "L'application du projet existe déjà, pas besoin de la coder de zéro ! On part de cette base en important le dépôt public GitHub dans son éditeur de code.",
+        "Bulle": "Accédez-y directement depuis cette leçon",
+        "Texte Bulle": "Accédez-y directement depuis cette leçon",
+        "Source": "Source : Glossaire Vibecoding - Maxime Elhaik"
+      }
+    }
+  ]
+}
