@@ -73,21 +73,24 @@ body {
 /* Burger Menu Button Trigger (Mobile & Tablet < 1024px) */
 .burger-menu-btn {
   display: none;
-  background: var(--color-brand-sunny);
+  background: #FFFFFF;
   color: var(--color-brand-fig);
-  border: 2px solid var(--color-brand-fig);
-  padding: 0.5rem 0.95rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0.45rem 0.75rem;
   font-family: var(--font-main);
-  font-size: 0.85rem;
-  font-weight: 900;
+  font-size: 0.78rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   cursor: pointer;
-  box-shadow: 2px 2px 0px var(--color-brand-fig);
+  box-shadow: none;
+  border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
   align-items: center;
-  gap: 0.55rem;
+  justify-content: center;
+  gap: 0.45rem;
   line-height: 1;
+  min-height: 40px;
   margin-left: auto;
   flex-shrink: 0;
 }
@@ -102,7 +105,7 @@ body {
 
 .burger-menu-btn:hover,
 .burger-menu-btn:focus-visible {
-  background: #FFFFFF;
+  background: var(--color-brand-sunny);
   color: var(--color-brand-fig);
   outline: none;
 }
@@ -136,7 +139,7 @@ body {
 
 .learner-space {
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: #E2E8F0;
   display: inline-flex;
   align-items: center;
@@ -144,7 +147,7 @@ body {
 }
 
 .app-title {
-  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+  font-size: clamp(1.35rem, 4vw, 2.2rem);
   font-weight: 900;
   line-height: 1.15;
   text-transform: uppercase;
@@ -153,7 +156,7 @@ body {
 }
 
 .app-subtitle {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--color-brand-sunny);
   max-width: 900px;
@@ -351,7 +354,7 @@ body.mobile-menu-locked {
   }
 
   .brand-badge {
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     padding: 0.22rem 0.55rem;
     letter-spacing: 0.04em;
     border-radius: var(--radius-sm);
@@ -368,14 +371,14 @@ body.mobile-menu-locked {
     font-size: 0.78rem;
     font-weight: 800;
     box-shadow: none;
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: var(--radius-sm);
-    min-height: 42px;
+    min-height: 40px;
     gap: 0.45rem;
   }
 
   .app-title {
-    font-size: clamp(1.25rem, 5.2vw, 1.55rem);
+    font-size: 1.15rem;
     font-weight: 800;
     line-height: 1.2;
     letter-spacing: -0.015em;
@@ -383,7 +386,7 @@ body.mobile-menu-locked {
   }
 
   .app-subtitle {
-    font-size: 0.84rem;
+    font-size: 0.95rem;
     line-height: 1.35;
     font-weight: 500;
     color: #F8E37E;

@@ -65,7 +65,7 @@ export function initQuizzView(container, quizData) {
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
           <div style="display:flex; align-items:center; gap:0.6rem;">
             <span class="brand-badge">Simulation Officielle</span>
-            <span style="font-size:0.85rem; font-weight:700; color:var(--color-text-muted);">50 Questions • Tirage aléatoire</span>
+            <span style="font-size:0.78rem; font-weight:700; color:var(--color-text-muted);">50 Questions • Tirage aléatoire</span>
           </div>
           <span class="filter-pill" id="examBestScoreBadge">Non complété</span>
         </div>
@@ -76,7 +76,7 @@ export function initQuizzView(container, quizData) {
           Épreuve globale chronométrée couvrant l'ensemble des compétences de la certification Vibe Coding. Simulation intégrale des conditions d'examen avec corrigé et explications détaillées.
         </p>
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; padding-top: 0.75rem; border-top: 1px dashed var(--color-border);">
-          <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-muted);">⏱️ 60s par question • Seuil requis : 75% (38/50)</span>
+          <span style="font-size: 0.78rem; font-weight: 700; color: var(--color-text-muted);">⏱️ 60s par question • Seuil requis : 75% (38/50)</span>
           <button class="btn-copy-prompt" style="background: var(--color-brand-purple); color: #FFF; border-color: var(--color-brand-fig);" type="button">
             Lancer l'Examen Blanc (50 Q) →
           </button>
@@ -95,13 +95,13 @@ export function initQuizzView(container, quizData) {
       </div>
 
       <div class="card-item" style="padding: 1.5rem; margin-bottom: 1.5rem;">
-        <div style="font-size: 0.82rem; font-weight: 800; color: var(--color-brand-purple); text-transform: uppercase; margin-bottom: 0.5rem;" id="quizQuestionCategory">Compétence</div>
+        <div style="font-size: 0.78rem; font-weight: 800; color: var(--color-brand-purple); text-transform: uppercase; margin-bottom: 0.5rem;" id="quizQuestionCategory">Compétence</div>
         <h2 id="quizQuestionText" style="font-size: 1.35rem; font-weight: 800; color: var(--color-brand-fig); line-height: 1.4; margin-bottom: 1.5rem;">Intitulé de la question</h2>
         
         <div id="quizOptionsList" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.75rem;"></div>
 
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px dashed var(--color-border); padding-top: 1.25rem;">
-          <span style="font-size: 0.85rem; color: var(--color-text-muted); font-weight: 600;">Raccourcis : touches [1], [2], [3], [4] puis [Entrée]</span>
+          <span style="font-size: 0.78rem; color: var(--color-text-muted); font-weight: 600;">Raccourcis : touches [1], [2], [3], [4] puis [Entrée]</span>
           <button id="btnValidateQuiz" class="tool-card-btn" style="min-width: 200px;">Valider ma réponse</button>
         </div>
       </div>
@@ -110,14 +110,14 @@ export function initQuizzView(container, quizData) {
     <!-- ÉCRAN 3 : BILAN -->
     <div id="quizScreenBilan" style="display: none;">
       <div class="card-item" style="padding: 2.5rem; text-align: center; max-width: 800px; margin: 0 auto 2rem auto;">
-        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🏆</div>
+        <div style="font-size: clamp(1.8rem, 6.5vw, 3.2rem); margin-bottom: 0.5rem;">🏆</div>
         <h2 style="font-size: 1.8rem; font-weight: 900; color: var(--color-brand-fig); margin-bottom: 0.5rem;">Bilan de votre session</h2>
         <div style="display: flex; align-items: baseline; justify-content: center; gap: 0.5rem; margin: 1.5rem 0;">
-          <span id="quizBilanScore" style="font-size: 3.5rem; font-weight: 900; color: var(--color-brand-purple);">0</span>
-          <span id="quizBilanTotal" style="font-size: 1.5rem; font-weight: 800; color: var(--color-text-muted);">/ 10</span>
-          <span id="quizBilanPercentage" class="counter-tag" style="margin-left: 1rem; font-size: 1.1rem;">0%</span>
+          <span id="quizBilanScore" style="font-size: clamp(1.8rem, 6.5vw, 3.2rem); font-weight: 900; color: var(--color-brand-purple);">0</span>
+          <span id="quizBilanTotal" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-muted);">/ 10</span>
+          <span id="quizBilanPercentage" class="counter-tag" style="margin-left: 1rem; font-size: 1.15rem;">0%</span>
         </div>
-        <p id="quizBilanComment" style="font-size: 1rem; font-weight: 600; color: var(--color-text-body); max-width: 600px; margin: 0 auto 1.5rem auto;"></p>
+        <p id="quizBilanComment" style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-body); max-width: 600px; margin: 0 auto 1.5rem auto;"></p>
         
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
           <button id="btnRetryQuiz" class="filter-pill active" style="padding: 0.75rem 1.35rem; font-size: 0.95rem;">🔄 Recommencer ce module</button>
@@ -152,11 +152,11 @@ export function initQuizzView(container, quizData) {
               ${scoreBadge}
             </div>
             <h3 style="font-size:1.15rem; font-weight:800; color:var(--color-brand-fig); line-height:1.3; margin-bottom:0.5rem;">${escapeHtml(m.title)}</h3>
-            <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.45;">${escapeHtml(m.description)}</p>
+            <p style="font-size:0.95rem; color:var(--color-text-muted); line-height:1.45;">${escapeHtml(m.description)}</p>
           </div>
           <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--color-border); padding-top:0.75rem;">
             <span style="font-size:0.78rem; font-weight:700; color:var(--color-text-muted);">${m.questions.length} questions dispo</span>
-            <span style="font-size:0.85rem; font-weight:800; color:var(--color-brand-purple);">Démarrer (10 Q) →</span>
+            <span style="font-size:0.78rem; font-weight:800; color:var(--color-brand-purple);">Démarrer (10 Q) →</span>
           </div>
         </div>
       `;

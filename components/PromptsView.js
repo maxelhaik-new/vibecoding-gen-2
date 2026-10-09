@@ -18,7 +18,7 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
   container.innerHTML = `
     <!-- Top Isolated Return Button (if isolated) -->
     <div id="promptsIsolatedNav" style="display: ${isolatedPromptId ? 'block' : 'none'}; margin-bottom: 1.25rem;">
-      <button class="filter-pill active" id="btnBackAllPrompts" style="padding: 0.6rem 1.1rem; font-size: 0.9rem;">
+      <button class="filter-pill active" id="btnBackAllPrompts" style="padding: 0.6rem 1.1rem; font-size: 0.95rem;">
         ← Revenir à tous les prompts (${promptsData.length})
       </button>
     </div>
