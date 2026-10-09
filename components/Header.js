@@ -6,7 +6,7 @@ export function renderHeader(container) {
         <div class="header-brand-group">
           <span class="brand-badge">Formation Vibe Coding</span>
           <span class="learner-space">
-            <span>●</span> Espace Apprenant • v2.2
+            <span>●</span> Espace Apprenant
           </span>
         </div>
 

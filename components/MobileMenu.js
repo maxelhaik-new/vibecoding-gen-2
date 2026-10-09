@@ -17,8 +17,8 @@ export function initMobileMenu({ getActiveTab, counts = {}, onTabChange }) {
         <div class="mobile-menu-header">
           <span class="brand-badge">Formation Vibe Coding</span>
           <button class="mobile-menu-close" id="mobileMenuCloseBtn" aria-label="Fermer le menu">
-            <span>Fermer</span>
-            <span class="close-symbol">✕</span>
+            <span class="close-symbol" aria-hidden="true">✕</span>
+            <span class="close-text">Fermer</span>
           </button>
         </div>
 
@@ -86,7 +86,7 @@ export function initMobileMenu({ getActiveTab, counts = {}, onTabChange }) {
     const burgerBtn = document.getElementById('burgerMenuBtn');
     if (burgerBtn) {
       burgerBtn.setAttribute('aria-expanded', 'false');
-      burgerBtn.focus();
+      burgerBtn.blur();
     }
   }
 
