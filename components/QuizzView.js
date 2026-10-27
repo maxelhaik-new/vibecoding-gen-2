@@ -103,7 +103,7 @@ export function initQuizzView(container, quizData) {
         <div id="quizOptionsList" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;"></div>
 
         <!-- Encart d'explication pédagogique immédiate -->
-        <div id="quizExplanationBox" style="display: none; background: #F8FAFC; border: 2px solid var(--color-brand-fig); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin-bottom: 1.5rem;">
+        <div id="quizExplanationBox" style="display: none; background: #F8FAFC; border: 1px solid var(--color-border-dark); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin-bottom: 1.5rem;">
           <div id="quizExplanationStatus" style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.35rem;"></div>
           <p id="quizExplanationText" style="font-size: 0.95rem; line-height: 1.55; color: var(--color-text-body); margin: 0;"></p>
         </div>
@@ -279,8 +279,8 @@ export function initQuizzView(container, quizData) {
 
     const list = container.querySelector('#quizOptionsList');
     list.innerHTML = q.options.map((opt, idx) => `
-      <button class="quiz-option-btn filter-pill" data-idx="${idx}" style="text-align: left; padding: 0.95rem 1.25rem; font-size: 0.95rem; width: 100%; display: flex; align-items: center; gap: 0.85rem; border-width: 2px;">
-        <span style="font-family: var(--font-code); font-weight: 900; background: var(--color-brand-fig); color: #FFF; padding: 0.15rem 0.45rem; border-radius: var(--radius-sm);">${idx + 1}</span>
+      <button class="quiz-option-btn filter-pill" data-idx="${idx}" style="text-align: left; padding: 0.95rem 1.25rem; font-size: 0.95rem; width: 100%; display: flex; align-items: center; gap: 0.85rem; border-width: 1px;">
+        <span style="font-family: var(--font-code); font-weight: 800; background: var(--color-brand-fig); color: #FFF; padding: 0.15rem 0.45rem; border-radius: var(--radius-sm);">${idx + 1}</span>
         <span>${escapeHtml(opt)}</span>
       </button>
     `).join('');
@@ -457,7 +457,7 @@ export function initQuizzView(container, quizData) {
     container.querySelector('#quizBilanComment').textContent = comment;
 
     renderReviewList();
-    saveScore(activeQuizModule.id, 'Apprenant', quizScore, total);
+    saveScore(activeQuizModule.id, 'Session', quizScore, total);
   }
 
   btnQuit.addEventListener('click', () => {

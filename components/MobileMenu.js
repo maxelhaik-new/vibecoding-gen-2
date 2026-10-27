@@ -1,6 +1,6 @@
-// MobileMenu Component (Standard 2026 - Fullscreen Indigo Navigation)
+// MobileMenu Component (Standard 2026 - Distilled & Clarified)
 
-export function initMobileMenu({ getActiveTab, counts = {}, onTabChange }) {
+export function initMobileMenu({ getActiveTab, getUser, counts = {}, onTabChange, onLoginClick, onLogoutClick }) {
   let overlay = document.getElementById('mobileMenuOverlay');
   if (!overlay) {
     overlay = document.createElement('div');
@@ -11,30 +11,49 @@ export function initMobileMenu({ getActiveTab, counts = {}, onTabChange }) {
   }
 
   function renderOverlay(activeTab) {
+    const user = getUser ? getUser() : null;
+    const isAuthenticated = Boolean(user);
+    const lockSvg = `<svg class="tab-lock-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block; vertical-align:-2px; margin-right:0.35rem;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`;
+
     overlay.innerHTML = `
       <div class="mobile-menu-container">
-        <!-- Top Bar with Brand Badge & Close Button -->
+        <!-- Top Bar strictement alignée sur l'en-tête replié (mêmes marges, taille de logo et boutons) -->
         <div class="mobile-menu-header">
           <div class="mobile-menu-brand-group" id="mobileMenuBrandBadge" role="button" tabindex="0" style="cursor:pointer;" aria-label="Retour à l'accueil">
-            <img src="assets/wemodo/wemodo_logo_white.svg" alt="Wemodo" class="mobile-brand-logo" width="110" height="21">
+            <img src="assets/wemodo/wemodo_logo_white.svg" alt="Wemodo" class="mobile-brand-logo" width="124" height="24">
+            <span class="header-brand-divider" aria-hidden="true"></span>
             <span class="brand-badge">Formation Vibe Coding</span>
           </div>
-          <button class="mobile-menu-close" id="mobileMenuCloseBtn" aria-label="Fermer le menu">
-            <span class="close-symbol" aria-hidden="true">✕</span>
-            <span class="close-text">Fermer</span>
-          </button>
+
+          <div class="mobile-menu-top-actions">
+            ${!isAuthenticated ? `
+              <button type="button" class="mobile-top-auth-btn" id="mobileHeaderAuthBtn">
+                Se connecter
+              </button>
+            ` : `
+              <button type="button" class="mobile-top-auth-btn is-logout" id="mobileHeaderAuthBtn" title="Connecté : ${user.email || ''}">
+                Déconnexion
+              </button>
+            `}
+            <button class="mobile-menu-close" id="mobileMenuCloseBtn" aria-label="Fermer le menu">
+              <span class="close-symbol" aria-hidden="true">✕</span>
+              <span class="close-text">Fermer</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Fullscreen Navigation Links (Gros titres épurés) -->
+        <!-- Navigation épurée directe -->
         <nav class="mobile-menu-links">
           <button class="mobile-nav-item ${activeTab === 'welcome' ? 'active' : ''}" data-tab="welcome">
             <span class="mobile-nav-meta">01</span>
             <span class="mobile-nav-title">Accueil</span>
           </button>
 
-          <button class="mobile-nav-item ${activeTab === 'parcours' ? 'active' : ''}" data-tab="parcours">
+          <button class="mobile-nav-item ${activeTab === 'parcours' ? 'active' : ''} ${!isAuthenticated ? 'is-locked' : ''}" data-tab="parcours">
             <span class="mobile-nav-meta">02</span>
-            <span class="mobile-nav-title">Parcours</span>
+            <span class="mobile-nav-title">
+              ${!isAuthenticated ? lockSvg : ''}Parcours Coaching
+            </span>
             <span class="mobile-nav-count">${counts.parcours || 6}</span>
           </button>
 
@@ -58,22 +77,30 @@ export function initMobileMenu({ getActiveTab, counts = {}, onTabChange }) {
 
           <button class="mobile-nav-item ${activeTab === 'tools' ? 'active' : ''}" data-tab="tools">
             <span class="mobile-nav-meta">06</span>
-            <span class="mobile-nav-title">Outils</span>
+            <span class="mobile-nav-title">Outils & Accès</span>
             <span class="mobile-nav-count">${counts.tools || 7}</span>
           </button>
         </nav>
-
-        <!-- Minimalist Footer -->
-        <div class="mobile-menu-footer">
-          <span>Espace Apprenant • Standard 2026</span>
-        </div>
       </div>
     `;
 
-    // Close button listener
+    // Listener du bouton Connexion / Déconnexion dans la barre supérieure
+    const topAuthBtn = overlay.querySelector('#mobileHeaderAuthBtn');
+    if (topAuthBtn) {
+      topAuthBtn.addEventListener('click', () => {
+        if (!isAuthenticated) {
+          closeMenu();
+          if (onLoginClick) onLoginClick();
+        } else {
+          if (onLogoutClick) onLogoutClick();
+        }
+      });
+    }
+
+    // Listener du bouton de fermeture
     overlay.querySelector('#mobileMenuCloseBtn').addEventListener('click', closeMenu);
 
-    // Brand badge click listener (return to welcome)
+    // Retour accueil sur clic du logo
     const brandBadge = overlay.querySelector('#mobileMenuBrandBadge');
     if (brandBadge) {
       brandBadge.addEventListener('click', () => {
@@ -89,7 +116,7 @@ export function initMobileMenu({ getActiveTab, counts = {}, onTabChange }) {
       });
     }
 
-    // Nav items listeners
+    // Navigation onglets
     overlay.querySelectorAll('.mobile-nav-item').forEach(btn => {
       btn.addEventListener('click', () => {
         const tab = btn.dataset.tab;
@@ -120,6 +147,12 @@ export function initMobileMenu({ getActiveTab, counts = {}, onTabChange }) {
     }
   }
 
+  function refreshMenu() {
+    if (overlay.classList.contains('open')) {
+      renderOverlay(getActiveTab ? getActiveTab() : 'welcome');
+    }
+  }
+
   // Bind burger trigger button
   const burgerBtn = document.getElementById('burgerMenuBtn');
   if (burgerBtn) {
@@ -132,19 +165,17 @@ export function initMobileMenu({ getActiveTab, counts = {}, onTabChange }) {
     });
   }
 
-  // Keyboard navigation: Escape key to close
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && overlay.classList.contains('open')) {
       closeMenu();
     }
   });
 
-  // Close when clicking outside the menu card on backdrop
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) {
       closeMenu();
     }
   });
 
-  return { openMenu, closeMenu };
+  return { openMenu, closeMenu, refreshMenu };
 }

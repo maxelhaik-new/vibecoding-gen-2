@@ -50,7 +50,6 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
           <kbd class="search-shortcut-badge" title="Raccourci clavier ⌘K ou /">⌘K</kbd>
           <button id="promptsClearBtn" class="clear-btn" title="Effacer">✕</button>
         </div>
-        <span class="counter-tag" id="promptsCounterTag">${promptsData.length} prompts</span>
       </div>
 
       <!-- Filter Pills (5 thèmes initiaux + Déploiement inline sans carte) -->
@@ -66,7 +65,7 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
       </div>
     </div>
 
-    <!-- Prompts Multi-Column Grid (Standard 2026 Wide Desktop) -->
+    <!-- Prompts Multi-Column Grid -->
     <div class="prompts-grid" id="promptsCardsContainer"></div>
 
     <!-- Empty State -->
@@ -79,7 +78,6 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
 
   const searchInput = container.querySelector('#promptsSearchInput');
   const clearBtn = container.querySelector('#promptsClearBtn');
-  const counterTag = container.querySelector('#promptsCounterTag');
   const cardsContainer = container.querySelector('#promptsCardsContainer');
   const emptyState = container.querySelector('#promptsEmptyState');
   const resetBtn = container.querySelector('#promptsResetBtn');
@@ -109,8 +107,6 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
       const matchSearch = !q || textToSearch.includes(q);
       return matchTag && matchSearch;
     });
-
-    counterTag.textContent = `${filtered.length} prompt${filtered.length > 1 ? 's' : ''}`;
 
     if (filtered.length === 0) {
       cardsContainer.style.display = 'none';

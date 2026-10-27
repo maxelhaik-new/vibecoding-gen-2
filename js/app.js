@@ -1,10 +1,13 @@
 // Main App Assembler - Platform Formation Vibe Coding (Standard 2026)
-import { GLOSSARY_DATA, PROMPTS_DATA, QUIZ_DATA, TOOLS_DATA, PARCOURS_DATA } from '../data/app-data.js?v=20261021-synced-v4';
+import { GLOSSARY_DATA, PROMPTS_DATA, QUIZ_DATA, TOOLS_DATA, PARCOURS_DATA } from '../data/app-data.js?v=20261027-quieter-v4';
+import { supabase, signOutUser } from './supabaseClient.js?v=20261027-quieter-v4';
 import {
   renderHeader,
   updateHeader,
+  updateHeaderAuth,
   renderTabNav,
   setActiveTabBtn,
+  updateTabNavAuth,
   initGlossaryView,
   initPromptsView,
   initToolsView,
@@ -13,8 +16,10 @@ import {
   initParcoursView,
   initTourGuide,
   initMobileMenu,
-  renderFooter
-} from '../components/index.js?v=20261021-synced-v4';
+  renderFooter,
+  initAuthView,
+  showToast
+} from '../components/index.js?v=20261027-quieter-v4';
 
 class AppController {
   constructor() {
@@ -26,22 +31,39 @@ class AppController {
     this.promptsMount = document.getElementById('viewPrompts');
     this.toolsMount = document.getElementById('viewTools');
     this.quizzMount = document.getElementById('viewQuizz');
+    this.authMount = document.getElementById('viewAuth');
     this.footerMount = document.getElementById('appFooterMount');
 
     this.activeTab = 'welcome';
     this.initializedViews = new Set();
     this.tour = null;
+    this.mobileMenu = null;
+    this.currentUser = null;
+    this.pendingParcoursParam = null;
+    this.wantsParcoursAfterLogin = false;
   }
 
-  init() {
-    // 1. Render Header with click-to-home handler
+  async init() {
+    // 0. Récupérer la session Supabase initiale
+    try {
+      const { data } = await supabase.auth.getSession();
+      this.currentUser = data?.session?.user || null;
+    } catch (e) {
+      console.warn('[App] Session Supabase initiale indisponible:', e);
+    }
+
+    // 1. Render Header avec bouton de connexion épuré
     renderHeader(this.headerMount, {
-      onHomeClick: () => this.switchTab('welcome', true)
+      onHomeClick: () => this.switchTab('welcome', true),
+      user: this.currentUser,
+      onLoginClick: () => this.switchTab('auth', true),
+      onLogoutClick: () => this.handleLogout()
     });
 
-    // 2. Render Tab Navigation (Desktop)
+    // 2. Render Tab Navigation (Desktop) avec cadenas sur Parcours si non connecté
     renderTabNav(this.navMount, {
       activeTab: this.activeTab,
+      isAuthenticated: Boolean(this.currentUser),
       counts: {
         parcours: PARCOURS_DATA.length,
         glossary: GLOSSARY_DATA.length,
@@ -51,27 +73,49 @@ class AppController {
       onTabChange: (tab) => this.switchTab(tab, true)
     });
 
-    // 3. Initialize Mobile & Tablet Fullscreen Menu (< 1024px)
-    initMobileMenu({
+    // 3. Initialize Mobile & Tablet Menu (< 1024px) avec bouton compact en haut
+    this.mobileMenu = initMobileMenu({
       getActiveTab: () => this.activeTab,
+      getUser: () => this.currentUser,
       counts: {
         parcours: PARCOURS_DATA.length,
         glossary: GLOSSARY_DATA.length,
         prompts: PROMPTS_DATA.length,
         tools: TOOLS_DATA.length
       },
-      onTabChange: (tab) => this.switchTab(tab, true)
+      onTabChange: (tab) => this.switchTab(tab, true),
+      onLoginClick: () => this.switchTab('auth', true),
+      onLogoutClick: () => this.handleLogout()
     });
 
-    // 4. Parse URL params (tab, prompt)
+    // 4. Écouter les changements d'état d'authentification Supabase
+    supabase.auth.onAuthStateChange((event, session) => {
+      const nextUser = session?.user || null;
+      const prevUserId = this.currentUser?.id || null;
+      const nextUserId = nextUser?.id || null;
+
+      if (prevUserId !== nextUserId || event === 'SIGNED_IN' || event === 'SIGNED_OUT') {
+        this.handleUserStateChange(nextUser, event);
+      }
+    });
+
+    // 5. Parse URL params (tab, prompt)
     const params = new URLSearchParams(window.location.search);
     const tabParam = params.get('tab');
     const promptParam = params.get('prompt');
 
     if (promptParam) {
       this.switchTab('prompts', false, promptParam);
+    } else if (tabParam === 'connexion' || tabParam === 'login' || tabParam === 'auth') {
+      this.switchTab('auth', false);
     } else if (tabParam === 'parcours' || tabParam === 'seances' || tabParam === 'coaching') {
-      this.switchTab('parcours', false);
+      if (this.currentUser) {
+        this.switchTab('parcours', false);
+      } else {
+        this.wantsParcoursAfterLogin = true;
+        this.switchTab('auth', false);
+        showToast('Connexion requise pour accéder au Parcours Coaching');
+      }
     } else if (tabParam === 'tools' || tabParam === 'outils') {
       this.switchTab('tools', false);
     } else if (tabParam === 'prompts') {
@@ -81,35 +125,111 @@ class AppController {
     } else if (tabParam === 'glossary' || tabParam === 'glossaire') {
       this.switchTab('glossary', false);
     } else {
-      // Default initial view: Welcome page
       this.switchTab('welcome', false);
     }
 
-    // 5. Initialize Interactive Onboarding Walkthrough (Auto on 1st visit)
+    // 6. Initialize Interactive Onboarding Walkthrough
     this.tour = initTourGuide();
 
-    // 6. Render Footer Component (Wemodo Integration)
+    // 7. Render Footer Component
     if (this.footerMount) {
       renderFooter(this.footerMount, {
         onNavigate: (tab) => {
           this.switchTab(tab, true);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          if (tab !== 'parcours' || this.currentUser) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
         },
         onStartTour: () => this.tour?.startTour()
       });
     }
   }
 
+  async handleLogout() {
+    try {
+      await signOutUser();
+      showToast('Vous êtes déconnecté');
+    } catch (e) {
+      console.error('[App] Erreur déconnexion:', e);
+    }
+  }
+
+  handleUserStateChange(user, event = '') {
+    const wasLoggedIn = Boolean(this.currentUser);
+    this.currentUser = user;
+    const isNowLoggedIn = Boolean(user);
+
+    // Mettre à jour l'en-tête, les onglets et le menu mobile
+    updateHeaderAuth(this.headerMount, {
+      user: this.currentUser,
+      onLoginClick: () => this.switchTab('auth', true),
+      onLogoutClick: () => this.handleLogout()
+    });
+    updateTabNavAuth(this.navMount, isNowLoggedIn);
+    this.mobileMenu?.refreshMenu();
+
+    // Réinitialiser les vues dépendantes de l'utilisateur
+    this.initializedViews.delete('parcours');
+    this.initializedViews.delete('auth');
+
+    if (isNowLoggedIn && !wasLoggedIn) {
+      const targetParam = this.pendingParcoursParam;
+      this.wantsParcoursAfterLogin = false;
+      this.pendingParcoursParam = null;
+      this.switchTab('parcours', true, targetParam);
+    } else if (!isNowLoggedIn && wasLoggedIn) {
+      if (this.parcoursMount) this.parcoursMount.innerHTML = '';
+      if (this.activeTab === 'parcours') {
+        this.switchTab('welcome', true);
+      } else if (this.activeTab === 'auth') {
+        this.renderAuthView();
+      }
+    }
+  }
+
+  renderAuthView() {
+    initAuthView(this.authMount, {
+      user: this.currentUser,
+      onAuthSuccess: (user) => {
+        this.handleUserStateChange(user);
+      },
+      onNavigate: (tab) => this.switchTab(tab, true)
+    });
+  }
+
   switchTab(tabName, updateUrl = true, specificParamId = null) {
+    // Si l'utilisateur clique sur Parcours sans être connecté, redirection immédiate vers le panneau de connexion
+    if (tabName === 'parcours' && !this.currentUser) {
+      this.wantsParcoursAfterLogin = true;
+      this.pendingParcoursParam = specificParamId || null;
+      showToast('Connexion requise pour accéder au Parcours');
+      this.switchTab('auth', updateUrl);
+      return;
+    }
+
     this.activeTab = tabName;
     setActiveTabBtn(this.navMount, tabName);
+    updateHeaderAuth(this.headerMount, {
+      user: this.currentUser,
+      isAuthActive: tabName === 'auth',
+      onLoginClick: () => this.switchTab('auth', true),
+      onLogoutClick: () => this.handleLogout()
+    });
 
-    // Hide all views
-    [this.welcomeMount, this.parcoursMount, this.glossaryMount, this.promptsMount, this.toolsMount, this.quizzMount].forEach(el => {
+    // Cacher toutes les vues
+    [
+      this.welcomeMount,
+      this.parcoursMount,
+      this.glossaryMount,
+      this.promptsMount,
+      this.toolsMount,
+      this.quizzMount,
+      this.authMount
+    ].forEach(el => {
       if (el) el.classList.remove('active');
     });
 
-    // Handle each tab view
+    // Afficher la vue demandée
     if (tabName === 'welcome') {
       this.welcomeMount.classList.add('active');
       updateHeader(
@@ -134,9 +254,22 @@ class AppController {
         "Découvrez les objectifs des 6 séances (Séance 0 à 5), le programme abordé et vos devoirs intersession à valider"
       );
       if (!this.initializedViews.has('parcours') || specificParamId) {
-        initParcoursView(this.parcoursMount, PARCOURS_DATA, { initialSessionId: specificParamId });
+        initParcoursView(this.parcoursMount, PARCOURS_DATA, {
+          initialSessionId: specificParamId,
+          user: this.currentUser,
+          onLoginRequest: () => this.switchTab('auth', true)
+        });
         this.initializedViews.add('parcours');
       }
+    } else if (tabName === 'auth') {
+      this.authMount.classList.add('active');
+      updateHeader(
+        "Espace Apprenant Wemodo",
+        this.currentUser
+          ? "Gérez votre compte et accédez à votre Parcours Coaching"
+          : "Connectez-vous avec votre adresse email pour déverrouiller votre Parcours Coaching"
+      );
+      this.renderAuthView();
     } else if (tabName === 'tools') {
       this.toolsMount.classList.add('active');
       updateHeader(

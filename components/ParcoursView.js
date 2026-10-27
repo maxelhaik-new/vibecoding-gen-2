@@ -1,70 +1,79 @@
-// ParcoursView Component (Standard 2026 - Suivi des 6 Séances & Checklist Devoirs Intersession)
-import { showToast } from './Toast.js?v=20261021-synced-v4';
+// ParcoursView Component (Standard 2026 - Suivi des Devoirs Persisté via Supabase RLS)
+import { showToast } from './Toast.js?v=20261027-quieter-v4';
+import {
+  fetchUserParcoursState,
+  setHomeworkTaskStatus,
+  completeAllSessionTasks,
+  resetAllUserHomework,
+  updateUserParcoursPrefs
+} from '../js/supabaseClient.js?v=20261027-quieter-v4';
 
-const STORAGE_KEY_HOMEWORK = 'vibecoding_parcours_homework_v1';
-const STORAGE_KEY_ACTIVE_SESSION = 'vibecoding_parcours_active_session_v1';
-const STORAGE_KEY_VIEW_MODE = 'vibecoding_parcours_view_mode_v1';
+export async function initParcoursView(container, parcoursData = [], { initialSessionId = null, user = null, onLoginRequest = null } = {}) {
+  // Nettoyage des anciennes clés localStorage obsolètes (source de vérité unique : Supabase)
+  try {
+    localStorage.removeItem('vibecoding_parcours_homework_v1');
+    localStorage.removeItem('vibecoding_parcours_active_session_v1');
+    localStorage.removeItem('vibecoding_parcours_view_mode_v1');
+  } catch (e) {}
 
-export function initParcoursView(container, parcoursData = [], { initialSessionId = null } = {}) {
-  let completedTasks = loadCompletedTasks();
-  let activeSessionIndex = loadActiveSessionIndex();
-  let viewMode = loadViewMode(); // 'focus' | 'grid'
+  if (!user) {
+    const lockSvg = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`;
+    container.innerHTML = `
+      <div class="parcours-locked-card">
+        <div class="parcours-locked-icon" aria-hidden="true">${lockSvg}</div>
+        <h2 class="parcours-locked-title">Parcours Coaching réservé aux apprenants connectés</h2>
+        <p class="parcours-locked-desc">
+          Connectez-vous avec votre adresse email autorisée pour accéder au suivi de vos 6 séances et sauvegarder l’avancement de vos devoirs intersession.
+        </p>
+        <button type="button" class="parcours-locked-cta" id="parcoursLockedLoginBtn">
+          Se connecter à mon espace →
+        </button>
+      </div>
+    `;
+    const btn = container.querySelector('#parcoursLockedLoginBtn');
+    if (btn && onLoginRequest) {
+      btn.addEventListener('click', () => onLoginRequest());
+    }
+    return;
+  }
+
+  let completedTasks = new Set();
+  let activeSessionIndex = 0;
+  let viewMode = 'focus'; // 'focus' | 'grid'
+  let isSyncing = false;
+
+  // État de chargement initial depuis Supabase
+  container.innerHTML = `
+    <div class="parcours-wrapper">
+      <div class="parcours-loading-card" role="status" aria-live="polite">
+        <span class="parcours-loading-spinner" aria-hidden="true"></span>
+        <span>Synchronisation de votre Parcours Coaching...</span>
+      </div>
+    </div>
+  `;
+
+  try {
+    const remoteState = await fetchUserParcoursState(user.id);
+    completedTasks = remoteState.completedTasks;
+    if (remoteState.activeSessionIndex >= 0 && remoteState.activeSessionIndex < parcoursData.length) {
+      activeSessionIndex = remoteState.activeSessionIndex;
+    }
+    viewMode = remoteState.viewMode;
+  } catch (err) {
+    console.error('[ParcoursView] Erreur chargement Supabase:', err);
+    showToast('Erreur de chargement de vos devoirs');
+  }
 
   if (initialSessionId) {
     const foundIdx = parcoursData.findIndex(s => s.id === initialSessionId);
     if (foundIdx !== -1) {
       activeSessionIndex = foundIdx;
       viewMode = 'focus';
-      saveActiveSessionIndex(activeSessionIndex);
-      saveViewMode(viewMode);
+      updateUserParcoursPrefs(user.id, user.email, {
+        active_session_index: activeSessionIndex,
+        parcours_view_mode: viewMode
+      });
     }
-  }
-
-  function loadCompletedTasks() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY_HOMEWORK);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed)) return new Set(parsed);
-      }
-    } catch (e) {}
-    return new Set();
-  }
-
-  function saveCompletedTasks() {
-    try {
-      localStorage.setItem(STORAGE_KEY_HOMEWORK, JSON.stringify([...completedTasks]));
-    } catch (e) {}
-  }
-
-  function loadActiveSessionIndex() {
-    try {
-      const saved = parseInt(localStorage.getItem(STORAGE_KEY_ACTIVE_SESSION), 10);
-      if (!isNaN(saved) && saved >= 0 && saved < parcoursData.length) {
-        return saved;
-      }
-    } catch (e) {}
-    return 0;
-  }
-
-  function saveActiveSessionIndex(idx) {
-    try {
-      localStorage.setItem(STORAGE_KEY_ACTIVE_SESSION, String(idx));
-    } catch (e) {}
-  }
-
-  function loadViewMode() {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY_VIEW_MODE);
-      if (saved === 'grid' || saved === 'focus') return saved;
-    } catch (e) {}
-    return 'focus';
-  }
-
-  function saveViewMode(mode) {
-    try {
-      localStorage.setItem(STORAGE_KEY_VIEW_MODE, mode);
-    } catch (e) {}
   }
 
   function escapeHtml(str) {
@@ -84,6 +93,15 @@ export function initParcoursView(container, parcoursData = [], { initialSessionI
     const total = list.length;
     const done = list.filter(h => completedTasks.has(h.id)).length;
     return { done, total, isComplete: total > 0 && done === total };
+  }
+
+  function findSessionIdForHomework(hwId) {
+    for (const s of parcoursData) {
+      if ((s.homework || []).some(h => h.id === hwId)) {
+        return s.id;
+      }
+    }
+    return 'seance-0';
   }
 
   function formatLabel(label) {
@@ -107,7 +125,10 @@ export function initParcoursView(container, parcoursData = [], { initialSessionI
         <div class="parcours-cockpit-bar">
           <div class="parcours-progress-summary">
             <div class="parcours-progress-header">
-              <span class="parcours-progress-label">Devoirs intersession</span>
+              <div class="parcours-progress-title-group">
+                <span class="parcours-progress-label">Suivi des devoirs</span>
+                ${isSyncing ? `<span class="parcours-cloud-badge">Sauvegarde...</span>` : ''}
+              </div>
               <span class="parcours-progress-stats">
                 <strong>${totalDone}/${totalTasks}</strong> (${globalPercent}%)
               </span>
@@ -193,72 +214,56 @@ export function initParcoursView(container, parcoursData = [], { initialSessionI
           <p class="parcours-objective-text">${escapeHtml(session.objectives)}</p>
         </header>
 
-        <!-- Two-Column Split : Left = Contenus en séance (6 points) | Right = Travail intersession interactif (5 points) -->
-        <div class="parcours-focus-columns">
-          <!-- Colonne Gauche : Contenus abordés pendant le coaching -->
-          <section class="parcours-col-contents">
-            <div class="parcours-col-header">
-              <h3 class="parcours-col-title">En séance</h3>
-            </div>
-
-            <ol class="parcours-contents-list">
-              ${session.contents.map((item, i) => `
-                <li class="parcours-content-item">
-                  <span class="parcours-content-num">0${i + 1}</span>
-                  <span class="parcours-content-text">${escapeHtml(item)}</span>
-                </li>
-              `).join('')}
-            </ol>
-          </section>
-
-          <!-- Colonne Droite : Devoirs & Travail Intersession (Interactive Checklist) -->
-          <section class="parcours-col-homework">
-            <div class="parcours-col-header">
+        <!-- Suivi des devoirs (Interface sans contenu de séance coach) -->
+        <section class="parcours-focus-homework">
+          <div class="parcours-col-header">
+            <div>
               <h3 class="parcours-col-title">${escapeHtml(session.homeworkLabel || 'Travail intersession')}</h3>
-              <div class="parcours-homework-header-right">
-                <span class="parcours-count-pill ${prog.isComplete ? 'complete' : ''}">
-                  ${prog.done}/${prog.total}
-                </span>
-                ${prog.done < prog.total ? `
-                  <button type="button" class="parcours-check-all-btn" data-check-session="${session.id}">
-                    Tout cocher
-                  </button>
-                ` : ''}
+              <p class="parcours-homework-desc">Cochez vos étapes terminées avant votre prochain rendez-vous de coaching.</p>
+            </div>
+            <div class="parcours-homework-header-right">
+              <span class="parcours-count-pill ${prog.isComplete ? 'complete' : ''}">
+                ${prog.done}/${prog.total}
+              </span>
+              ${prog.done < prog.total ? `
+                <button type="button" class="parcours-check-all-btn" data-check-session="${session.id}">
+                  Tout cocher
+                </button>
+              ` : ''}
+            </div>
+          </div>
+
+          <div class="parcours-homework-list">
+            ${session.homework.map((hw) => {
+              const isChecked = completedTasks.has(hw.id);
+              return `
+                <label class="parcours-hw-item ${isChecked ? 'checked' : ''} ${hw.isKeyDeliverable ? 'key-deliverable' : ''}" for="hw-${hw.id}">
+                  <input
+                    type="checkbox"
+                    id="hw-${hw.id}"
+                    class="parcours-hw-checkbox"
+                    data-hw-id="${hw.id}"
+                    ${isChecked ? 'checked' : ''}
+                  >
+                  <span class="parcours-hw-custom-check" aria-hidden="true">${isChecked ? '✓' : ''}</span>
+                  <div class="parcours-hw-body">
+                    ${hw.isKeyDeliverable ? `<span class="parcours-hw-key-tag">Livrable clé</span>` : ''}
+                    <span class="parcours-hw-text">${escapeHtml(hw.text)}</span>
+                  </div>
+                </label>
+              `;
+            }).join('')}
+          </div>
+
+          ${prog.isComplete ? `
+            <div class="parcours-homework-footer">
+              <div class="parcours-session-done-banner">
+                <span>✓ Séance validée !</span>
+                ${nextSession ? `<button type="button" class="parcours-next-cta" data-goto-index="${idx + 1}">Séance suivante →</button>` : ''}
               </div>
             </div>
-
-            <div class="parcours-homework-list">
-              ${session.homework.map((hw) => {
-                const isChecked = completedTasks.has(hw.id);
-                return `
-                  <label class="parcours-hw-item ${isChecked ? 'checked' : ''} ${hw.isKeyDeliverable ? 'key-deliverable' : ''}" for="hw-${hw.id}">
-                    <input
-                      type="checkbox"
-                      id="hw-${hw.id}"
-                      class="parcours-hw-checkbox"
-                      data-hw-id="${hw.id}"
-                      ${isChecked ? 'checked' : ''}
-                    >
-                    <span class="parcours-hw-custom-check" aria-hidden="true">${isChecked ? '✓' : ''}</span>
-                    <div class="parcours-hw-body">
-                      ${hw.isKeyDeliverable ? `<span class="parcours-hw-key-tag">Livrable clé</span>` : ''}
-                      <span class="parcours-hw-text">${escapeHtml(hw.text)}</span>
-                    </div>
-                  </label>
-                `;
-              }).join('')}
-            </div>
-
-            ${prog.isComplete ? `
-              <div class="parcours-homework-footer">
-                <div class="parcours-session-done-banner">
-                  <span>Séance validée.</span>
-                  ${nextSession ? `<button type="button" class="parcours-next-cta" data-goto-index="${idx + 1}">Séance suivante →</button>` : ''}
-                </div>
-              </div>
-            ` : ''}
-          </section>
-        </div>
+          ` : ''}
+        </section>
       </article>
     `;
   }
@@ -280,18 +285,6 @@ export function initParcoursView(container, parcoursData = [], { initialSessionI
               </div>
 
               <div class="parcours-grid-card-body">
-                <div class="parcours-grid-section">
-                  <h4 class="parcours-grid-label">En séance</h4>
-                  <ul class="parcours-grid-bullets">
-                    ${session.contents.map(c => `
-                      <li>
-                        <span class="parcours-grid-dot"></span>
-                        <span>${escapeHtml(c)}</span>
-                      </li>
-                    `).join('')}
-                  </ul>
-                </div>
-
                 <div class="parcours-grid-section parcours-grid-homework-block">
                   <div class="parcours-grid-hw-head">
                     <h4 class="parcours-grid-label">${escapeHtml(session.homeworkLabel || 'Travail intersession')}</h4>
@@ -339,7 +332,7 @@ export function initParcoursView(container, parcoursData = [], { initialSessionI
         const mode = btn.dataset.mode;
         if (mode && mode !== viewMode) {
           viewMode = mode;
-          saveViewMode(viewMode);
+          updateUserParcoursPrefs(user.id, user.email, { parcours_view_mode: viewMode });
           render();
         }
       });
@@ -351,11 +344,13 @@ export function initParcoursView(container, parcoursData = [], { initialSessionI
         const idx = parseInt(pill.dataset.sessionIndex, 10);
         if (!isNaN(idx)) {
           activeSessionIndex = idx;
-          saveActiveSessionIndex(activeSessionIndex);
           if (viewMode !== 'focus') {
             viewMode = 'focus';
-            saveViewMode('focus');
           }
+          updateUserParcoursPrefs(user.id, user.email, {
+            active_session_index: activeSessionIndex,
+            parcours_view_mode: viewMode
+          });
           render();
         }
       });
@@ -367,11 +362,11 @@ export function initParcoursView(container, parcoursData = [], { initialSessionI
         const dir = btn.dataset.navDir;
         if (dir === 'prev' && activeSessionIndex > 0) {
           activeSessionIndex--;
-          saveActiveSessionIndex(activeSessionIndex);
+          updateUserParcoursPrefs(user.id, user.email, { active_session_index: activeSessionIndex });
           render();
         } else if (dir === 'next' && activeSessionIndex < parcoursData.length - 1) {
           activeSessionIndex++;
-          saveActiveSessionIndex(activeSessionIndex);
+          updateUserParcoursPrefs(user.id, user.email, { active_session_index: activeSessionIndex });
           render();
         }
       });
@@ -383,7 +378,7 @@ export function initParcoursView(container, parcoursData = [], { initialSessionI
         const idx = parseInt(btn.dataset.gotoIndex, 10);
         if (!isNaN(idx) && idx >= 0 && idx < parcoursData.length) {
           activeSessionIndex = idx;
-          saveActiveSessionIndex(activeSessionIndex);
+          updateUserParcoursPrefs(user.id, user.email, { active_session_index: activeSessionIndex });
           render();
         }
       });
@@ -395,53 +390,95 @@ export function initParcoursView(container, parcoursData = [], { initialSessionI
         const idx = parseInt(btn.dataset.openSession, 10);
         if (!isNaN(idx)) {
           activeSessionIndex = idx;
-          saveActiveSessionIndex(activeSessionIndex);
           viewMode = 'focus';
-          saveViewMode('focus');
+          updateUserParcoursPrefs(user.id, user.email, {
+            active_session_index: activeSessionIndex,
+            parcours_view_mode: 'focus'
+          });
           render();
           container.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     });
 
-    // 6. Homework Checkboxes
+    // 6. Homework Checkboxes (Persistance Supabase RLS)
     container.querySelectorAll('.parcours-hw-checkbox').forEach(input => {
-      input.addEventListener('change', (e) => {
+      input.addEventListener('change', async (e) => {
         const hwId = e.target.dataset.hwId;
         if (!hwId) return;
-        if (e.target.checked) {
+
+        const isChecked = e.target.checked;
+        const sessionId = findSessionIdForHomework(hwId);
+
+        if (isChecked) {
           completedTasks.add(hwId);
-          showToast('Devoir validé');
+          showToast('Devoir sauvegardé ✓');
         } else {
           completedTasks.delete(hwId);
         }
-        saveCompletedTasks();
-        render();
-      });
-    });
 
-    // 7. Check all tasks for a session
-    container.querySelectorAll('[data-check-session]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const sId = btn.dataset.checkSession;
-        const target = parcoursData.find(s => s.id === sId);
-        if (target && target.homework) {
-          target.homework.forEach(h => completedTasks.add(h.id));
-          saveCompletedTasks();
-          showToast(`${formatLabel(target.label)} complétée`);
+        isSyncing = true;
+        render();
+
+        try {
+          await setHomeworkTaskStatus(user.id, sessionId, hwId, isChecked);
+        } catch (err) {
+          console.error('[ParcoursView] Erreur sauvegarde devoir:', err);
+          if (isChecked) completedTasks.delete(hwId);
+          else completedTasks.add(hwId);
+          showToast('Erreur de synchronisation Supabase');
+        } finally {
+          isSyncing = false;
           render();
         }
       });
     });
 
-    // 8. Reset all homework progress
+    // 7. Check all tasks for a session (Persistance Supabase RLS)
+    container.querySelectorAll('[data-check-session]').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const sId = btn.dataset.checkSession;
+        const target = parcoursData.find(s => s.id === sId);
+        if (target && target.homework) {
+          const hwIds = target.homework.map(h => h.id);
+          hwIds.forEach(id => completedTasks.add(id));
+          isSyncing = true;
+          render();
+
+          try {
+            await completeAllSessionTasks(user.id, sId, hwIds);
+            showToast(`${formatLabel(target.label)} complétée ✓`);
+          } catch (err) {
+            console.error('[ParcoursView] Erreur validation séance:', err);
+            showToast('Erreur lors de la sauvegarde');
+          } finally {
+            isSyncing = false;
+            render();
+          }
+        }
+      });
+    });
+
+    // 8. Reset all homework progress (Persistance Supabase RLS)
     const resetAllBtn = container.querySelector('#parcoursResetAllBtn');
     if (resetAllBtn) {
-      resetAllBtn.addEventListener('click', () => {
+      resetAllBtn.addEventListener('click', async () => {
+        const backup = new Set(completedTasks);
         completedTasks.clear();
-        saveCompletedTasks();
-        showToast('Suivi des devoirs réinitialisé');
+        isSyncing = true;
         render();
+
+        try {
+          await resetAllUserHomework(user.id);
+          showToast('Suivi des devoirs réinitialisé');
+        } catch (err) {
+          console.error('[ParcoursView] Erreur réinitialisation:', err);
+          completedTasks = backup;
+          showToast('Erreur lors de la réinitialisation');
+        } finally {
+          isSyncing = false;
+          render();
+        }
       });
     }
   }

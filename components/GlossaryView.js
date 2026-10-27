@@ -29,12 +29,11 @@ export function initGlossaryView(container, glossaryData) {
         <kbd class="search-shortcut-badge" title="Raccourci clavier ⌘K ou /">⌘K</kbd>
         <button id="glossaryClearBtn" class="clear-btn" title="Effacer">✕</button>
       </div>
-      <span class="counter-tag" id="glossaryCounterTag">${glossaryData.length} termes</span>
     </div>
 
     <!-- Toggle Filters Bar -->
     <button class="filter-accordion-toggle" id="btnToggleFilters">
-      <span>⚙️ Index Alphabétique & Filtres par Module</span>
+      <span>Index Alphabétique & Filtres par Module</span>
       <span id="filterToggleIcon">▼</span>
     </button>
 
@@ -44,7 +43,7 @@ export function initGlossaryView(container, glossaryData) {
       <div>
         <div class="filter-group-title">Filtrer par Module :</div>
         <div class="filter-pills" id="moduleFilterPills">
-          <button class="filter-pill active" data-module="ALL">Tous les modules</button>
+          <button class="filter-pill active" data-module="ALL">Tous (${glossaryData.length})</button>
           <button class="filter-pill" data-module="M1">Module 1 (Fondations)</button>
           <button class="filter-pill" data-module="M2">Module 2 (Stack & Outils)</button>
           <button class="filter-pill" data-module="M3">Module 3 (Projets & Code)</button>
@@ -63,7 +62,7 @@ export function initGlossaryView(container, glossaryData) {
       </div>
     </div>
 
-    <!-- Cards Multi-Column Grid (Standard 2026 Wide Desktop) -->
+    <!-- Cards Multi-Column Grid -->
     <div class="glossary-grid" id="glossaryCardsContainer"></div>
 
     <!-- Empty State -->
@@ -76,7 +75,6 @@ export function initGlossaryView(container, glossaryData) {
 
   const searchInput = container.querySelector('#glossarySearchInput');
   const clearBtn = container.querySelector('#glossaryClearBtn');
-  const counterTag = container.querySelector('#glossaryCounterTag');
   const cardsContainer = container.querySelector('#glossaryCardsContainer');
   const emptyState = container.querySelector('#glossaryEmptyState');
   const resetBtn = container.querySelector('#glossaryResetBtn');
@@ -101,8 +99,6 @@ export function initGlossaryView(container, glossaryData) {
 
       return matchMod && matchAlpha && matchSearch;
     });
-
-    counterTag.textContent = `${filtered.length} terme${filtered.length > 1 ? 's' : ''}`;
 
     if (filtered.length === 0) {
       cardsContainer.style.display = 'none';

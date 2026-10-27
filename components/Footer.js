@@ -65,7 +65,6 @@ export function renderFooter(container, { onNavigate, onStartTour } = {}) {
       <div class="footer-bottom-banner">
         <div class="footer-bottom-meta">
           <span>© 2026 Wemodo • Plateforme Formation Vibe Coding</span>
-          <span class="footer-edition-badge">Standard 2026</span>
         </div>
       </div>
     </footer>

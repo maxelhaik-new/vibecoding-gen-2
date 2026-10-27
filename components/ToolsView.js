@@ -17,7 +17,6 @@ export function initToolsView(container, toolsData) {
         <kbd class="search-shortcut-badge" title="Raccourci clavier ⌘K ou /">⌘K</kbd>
         <button id="toolsClearBtn" class="clear-btn" title="Effacer">✕</button>
       </div>
-      <span class="counter-tag" id="toolsCounterTag">${toolsData.length} outils</span>
     </div>
 
     <div class="filter-pills" id="toolsCategoryPills" style="margin-bottom: 1.5rem;">
@@ -27,7 +26,7 @@ export function initToolsView(container, toolsData) {
       <button class="filter-pill" data-category="Backend & Monétisation">Backend & Monétisation (2)</button>
     </div>
 
-    <!-- Tools Multi-Column Grid (Standard 2026 Wide Desktop) -->
+    <!-- Tools Multi-Column Grid -->
     <div class="tools-grid" id="toolsCardsContainer"></div>
 
     <!-- Empty State -->
@@ -40,7 +39,6 @@ export function initToolsView(container, toolsData) {
 
   const searchInput = container.querySelector('#toolsSearchInput');
   const clearBtn = container.querySelector('#toolsClearBtn');
-  const counterTag = container.querySelector('#toolsCounterTag');
   const cardsContainer = container.querySelector('#toolsCardsContainer');
   const emptyState = container.querySelector('#toolsEmptyState');
   const resetBtn = container.querySelector('#toolsResetBtn');
@@ -55,8 +53,6 @@ export function initToolsView(container, toolsData) {
       const matchSearch = !q || textToSearch.includes(q);
       return matchCat && matchSearch;
     });
-
-    counterTag.textContent = `${filtered.length} outil${filtered.length > 1 ? 's' : ''}`;
 
     if (filtered.length === 0) {
       cardsContainer.style.display = 'none';

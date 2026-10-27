@@ -6,11 +6,6 @@ export function initWelcomeView(container, { parcoursData = [], glossaryData = [
       <div class="welcome-container">
         <!-- Central Unboxed Hero Section -->
         <section class="welcome-hero-central" id="welcomeHeroCentral">
-          <div class="welcome-hero-meta">
-            <span class="welcome-badge">RESSOURCES FORMATION</span>
-            <span class="welcome-edition">Édition 2026</span>
-          </div>
-
           <h2 class="welcome-headline">Bienvenue sur la plateforme Vibe Coding</h2>
           <p class="welcome-subline">
             Votre plateforme complémentaire à la formation Vibe Coding : suivez vos 6 séances de coaching et vos devoirs intersession, explorez le glossaire, copiez des prompts prêts à l'emploi et préparez votre certification.

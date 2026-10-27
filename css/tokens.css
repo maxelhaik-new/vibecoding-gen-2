@@ -30,12 +30,13 @@
   --font-main: 'Basic Sans Alt', 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
   --font-code: 'Cousine', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Neo-Brutalist & Modern 2026 Shadows (Neutral & Quieter) */
-  --shadow-sm: 2px 2px 0px var(--color-brand-fig);
-  --shadow-md: 3px 3px 0px var(--color-brand-fig);
-  --shadow-lg: 4px 4px 0px var(--color-brand-fig);
+  /* Neo-Brutalist & Modern 2026 Shadows (Quieter & Accessible) */
+  --shadow-sm: 0 1px 2px rgba(24, 9, 59, 0.05);
+  --shadow-md: 0 2px 8px rgba(24, 9, 59, 0.05), 0 1px 2px rgba(24, 9, 59, 0.03);
+  --shadow-lg: 0 8px 20px -4px rgba(24, 9, 59, 0.08), 0 2px 6px rgba(24, 9, 59, 0.04);
   --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
-  --shadow-card-hover: 0 10px 24px -4px rgba(0, 0, 0, 0.12), 3px 3px 0px var(--color-brand-fig);
+  --shadow-card-hover: 0 10px 24px -6px rgba(24, 9, 59, 0.09), 2px 2px 0px rgba(24, 9, 59, 0.14);
+  --shadow-accent: 2px 2px 0px var(--color-brand-fig);
 
   /* Radii */
   --radius-sm: 6px;

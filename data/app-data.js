@@ -1076,7 +1076,7 @@ export const PARCOURS_DATA = [
     typeBadge: "Brief vidéo en amont",
     modulesCovered: "M1 & début M2",
     title: "Présentation de la formation et préparation au premier coaching",
-    objectives: "La vidéo de session zero présente le programme et les outils de la formation. Donne les modalités de réservation de rendez-vous et les premières vidéos à regarder en vue de la séance 1.",
+    objectives: "Découvrir le programme et les outils de la formation, comprendre les modalités de coaching et préparer votre première séance pratique.",
     contents: [
       "Accueil",
       "Présentation du référent de formation IA",
@@ -1090,7 +1090,7 @@ export const PARCOURS_DATA = [
       { id: "s0-h1", text: "Terminer le module 1 en entier", isKeyDeliverable: false },
       { id: "s0-h2", text: "Avoir commencé le deuxième module (chapitres 1 à 3)", isKeyDeliverable: false },
       { id: "s0-h3", text: "Télécharger le livrable unique de certification et ses templates", isKeyDeliverable: false },
-      { id: "s0-h4", text: "Créer son accès à un compte Google", isKeyDeliverable: false },
+      { id: "s0-h4", text: "Créer votre accès à un compte Google", isKeyDeliverable: false },
       { id: "s0-h5", text: "Prendre un forfait à Google AI Pro pour préparer la pratique.", isKeyDeliverable: true }
     ]
   },
@@ -1102,9 +1102,9 @@ export const PARCOURS_DATA = [
     typeBadge: "Coaching #1",
     modulesCovered: "M2 & M3 (C1 à C3)",
     title: "Cadrage projet, cahier des charges & prompt engineering appliqué",
-    objectives: "Identifier le projet professionnel de l'apprenant. Évaluer sa capacité à traduire un besoin métier en cahier des charges structuré (MVP, Persona, User Stories...) et à concevoir un Prompt Zéro.",
+    objectives: "Identifier votre projet professionnel. Traduire votre besoin métier en cahier des charges structuré (MVP, Persona, User Stories...) et concevoir votre premier Prompt Zéro.",
     contents: [
-      "Cadrage projet de l'apprenant (objectifs, besoins, profil...)",
+      "Cadrage de votre projet (objectifs, besoins, profil...)",
       "Idéation / brainstorming sur le projet fil rouge professionnel",
       "Présentation de « Prompt Zéro » et approche itérative",
       "Présentation rapide de Google AI Studio",
@@ -1127,20 +1127,20 @@ export const PARCOURS_DATA = [
     typeBadge: "Coaching #2",
     modulesCovered: "M3 (C4 à C7) & M4 (C1-C2)",
     title: "Itérations sur Google AI Studio, versionning GitHub & mise en ligne",
-    objectives: "Évaluer la bonne prise en main par l'apprenant de Google AI Studio. Introduire le versionning sur GitHub et le déploiement en production sur Vercel. Répondre aux premières questions / blocages techniques.",
+    objectives: "Valider votre prise en main de Google AI Studio. Mettre en place le versionning sur GitHub et le déploiement sur Vercel, et lever vos questions techniques.",
     contents: [
       "Revue du cahier des charges et du premier prototype",
       "Échange autour de l'éthique, l'IA Act, le RGPD et la sécurité",
       "Itération en direct sur Google AI Studio (design et débogage)",
       "Création d'un Repo GitHub, sensibilisation au versionning",
-      "Brainstorming sur les fonctionnalités IA que l'apprenant peut intégrer dans son projet"
+      "Brainstorming sur les fonctionnalités IA utiles pour votre projet"
     ],
     homeworkLabel: "Travail intersession",
     homework: [
       { id: "s2-h1", text: "Terminer le module 3 → chapitres 4, 5 & 6 (GitHub, Vercel, IA ...)", isKeyDeliverable: false },
       { id: "s2-h2", text: "S'entraîner sur un projet pro (module 3 chapitre 7)", isKeyDeliverable: false },
       { id: "s2-h3", text: "Regarder le module 4 → chapitres 1 & 2 (Bases d'Antigravity)", isKeyDeliverable: false },
-      { id: "s2-h4", text: "Installer et configurer l'IDE Antigravity sur son poste", isKeyDeliverable: false },
+      { id: "s2-h4", text: "Installer et configurer l'IDE Antigravity sur votre poste", isKeyDeliverable: false },
       { id: "s2-h5", text: "Déployer une application complète depuis Google AI Studio (+ Vercel & Github) avec l'API Gemini connectée.", isKeyDeliverable: true }
     ]
   },
@@ -1152,20 +1152,20 @@ export const PARCOURS_DATA = [
     typeBadge: "Coaching #3",
     modulesCovered: "M4 (C3-C4) & découverte M5",
     title: "Développement local sur Antigravity & base de données Supabase",
-    objectives: "Accompagner le passage de l'outil en ligne (Google AI Studio) à l'IDE agentique local (Antigravity ou alternative). Évaluer la capacité de l'apprenant à interfacer son projet avec une base de données Cloud Supabase.",
+    objectives: "Passer de l'outil en ligne à l'IDE agentique local (Antigravity ou alternative) et interfacer votre application avec une base de données Cloud Supabase.",
     contents: [
       "Vérification d'une app déployée sur Vercel et des secrets API",
       "Récupération du projet dans Antigravity et lancement local",
       "Présentation des alternatives (Claude Code, Codex...)",
       "Réponses aux questions sur l'IDE local",
-      "Réflexions sur le projet de l'apprenant, et les fonctionnalités liées à la persistance (Base de donnée) / les comptes (admin)"
+      "Réflexions sur votre projet et les fonctionnalités de persistance (Base de données) / comptes admin"
     ],
     homeworkLabel: "Travail intersession",
     homework: [
       { id: "s3-h1", text: "Regarder le module 4 → chapitres 3 & 4 (Supabase, Auth & RLS)", isKeyDeliverable: false },
-      { id: "s3-h2", text: "Paramétrer Supabase et connecter son projet", isKeyDeliverable: false },
+      { id: "s3-h2", text: "Paramétrer Supabase et connecter votre projet", isKeyDeliverable: false },
       { id: "s3-h3", text: "Créer un portail de connexion et un espace membre privé", isKeyDeliverable: false },
-      { id: "s3-h4", text: "Identifier les briques du module 5 utiles à son projet pro", isKeyDeliverable: false },
+      { id: "s3-h4", text: "Identifier les briques du module 5 utiles à votre projet", isKeyDeliverable: false },
       { id: "s3-h5", text: "Livrer un projet développé en local, avec une base de données cloud et un portail de connexion. Règles RLS configurées.", isKeyDeliverable: true }
     ]
   },
@@ -1177,7 +1177,7 @@ export const PARCOURS_DATA = [
     typeBadge: "Coaching #4",
     modulesCovered: "M5 & Examen blanc",
     title: "Sécurisation Auth/RLS, briques avancées & lancement de l'examen blanc",
-    objectives: "Vérifier la sécurisation complète de l'application (authentification et règles RLS). Accompagner l'intégration des fonctionnalités avancées (Stripe, Storage, Resend) et présenter l'examen blanc.",
+    objectives: "Sécuriser complètement votre application (authentification et règles RLS), intégrer des fonctionnalités avancées (Stripe, Storage, Resend) et préparer l'examen blanc.",
     contents: [
       "Correction de l'authentification (Email / Google OAuth)",
       "Revue de sécurité sur les règles Row Level Security (RLS)",
@@ -1188,9 +1188,9 @@ export const PARCOURS_DATA = [
     homeworkLabel: "Travail intersession",
     homework: [
       { id: "s4-h1", text: "Regarder le module 5 à la carte (Stripe, Storage, Resend)", isKeyDeliverable: false },
-      { id: "s4-h2", text: "Appliquer les corrections de sécurité et d'UI sur son projet", isKeyDeliverable: false },
+      { id: "s4-h2", text: "Appliquer les corrections de sécurité et d'UI sur votre projet", isKeyDeliverable: false },
       { id: "s4-h3", text: "Finaliser la rédaction du livrable unique de certification", isKeyDeliverable: false },
-      { id: "s4-h4", text: "Lister toutes ses questions techniques et méthodologiques", isKeyDeliverable: false },
+      { id: "s4-h4", text: "Lister vos questions techniques et méthodologiques", isKeyDeliverable: false },
       { id: "s4-h5", text: "Réaliser l'examen blanc joint au compte-rendu avant la séance 5.", isKeyDeliverable: true }
     ]
   },
@@ -1202,9 +1202,9 @@ export const PARCOURS_DATA = [
     typeBadge: "Coaching final #5",
     modulesCovered: "Bilan, Certification & Après-formation",
     title: "Bilan sur les compétences acquises & préparation à la certification",
-    objectives: "Évaluer la bonne acquisition des compétences générales, corriger l'examen blanc et accompagner l'apprenant sur la valorisation professionnelle de ses applications après la formation.",
+    objectives: "Bilan des compétences acquises, débriefing de l'examen blanc et conseils de valorisation professionnelle pour l'après-formation.",
     contents: [
-      "Mini-oral de l'examen blanc et démonstration de l'app",
+      "Mini-oral de l'examen blanc et démonstration de votre application",
       "Revue du livrable écrit",
       "Points d'attention vis à vis de l'examen final, sensibilisation à la création de README, dépot Git propre",
       "Échange sur les briques avancées explorées via le module 5",
@@ -1214,7 +1214,7 @@ export const PARCOURS_DATA = [
     homework: [
       { id: "s5-h1", text: "Terminer le visionnage du module 5 en autonomie", isKeyDeliverable: false },
       { id: "s5-h2", text: "Optimiser l'ensemble des applications déployées sur Vercel", isKeyDeliverable: false },
-      { id: "s5-h3", text: "Se préparer à filmer son écran et présenter son application.", isKeyDeliverable: false },
+      { id: "s5-h3", text: "Vous préparer à enregistrer votre écran et présenter votre application.", isKeyDeliverable: false },
       { id: "s5-h4", text: "S'entraîner aux quizz sur la plateforme Vibe Coding", isKeyDeliverable: false },
       { id: "s5-h5", text: "Réaliser le QCM puis l'examen final en 5H : application fonctionnelle déployée sur Vercel, sécurité RLS activée.", isKeyDeliverable: true }
     ]
