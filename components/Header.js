@@ -1,9 +1,11 @@
 // Header Component
-export function renderHeader(container) {
+export function renderHeader(container, { onHomeClick } = {}) {
   container.innerHTML = `
     <header class="app-header">
       <div class="header-top">
-        <div class="header-brand-group">
+        <div class="header-brand-group" id="headerBrandGroup" role="button" tabindex="0" aria-label="Retour à l'accueil de la formation" style="cursor: pointer;">
+          <img src="assets/wemodo/wemodo_logo_white.svg" alt="Wemodo" class="header-brand-logo" width="130" height="25">
+          <span class="header-brand-divider" aria-hidden="true"></span>
           <span class="brand-badge">Formation Vibe Coding</span>
           <span class="learner-space">
             <span>●</span> Espace Apprenant
@@ -24,6 +26,17 @@ export function renderHeader(container) {
       <div class="app-subtitle" id="mainSubtitle">57 notions clés et définitions pour le Vibe Coding</div>
     </header>
   `;
+
+  const brandGroup = container.querySelector('#headerBrandGroup');
+  if (brandGroup && onHomeClick) {
+    brandGroup.addEventListener('click', onHomeClick);
+    brandGroup.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        onHomeClick();
+      }
+    });
+  }
 }
 
 export function updateHeader(title, subtitle) {

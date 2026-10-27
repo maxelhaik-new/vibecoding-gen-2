@@ -1,23 +1,32 @@
 {
   "lessonSlug": "m5c1l1",
-  "lessonTitle": "M5C1L1 — Les objectifs du chapitre : Cadrer son projet certifiant",
+  "lessonTitle": "M5C1L1 — Les objectifs du chapitre : Connecter un service de monétisation avec Stripe",
   "lessonType": "objectif",
   "slides": [
     {
       "template": "VIBECODING - COVER CHAP",
       "content": {
-        "Titre": "Chapitre 1 : Cadrer son projet certifiant"
-      }
+        "Titre": "Chapitre 1 : Monétisation par abonnement avec Stripe"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     },
     {
       "template": "VIBECODING - OBJECTIF CHAP",
       "content": {
         "Titre": "Les objectifs du chapitre",
-        "Intro": "Découvrir les exigences de la certification, définir le périmètre du projet fil rouge et fixer les règles contextuelles de l'agent avec AGENTS.md.",
-        "Titre 1": "Découvrir les critères de la certification",
-        "Titre 2": "Définir le périmètre et l'architecture",
-        "Titre 3": "Structurer les règles du fichier AGENTS.md"
-      }
+        "Intro": "Comprendre l'intégration d'une passerelle de paiement sécurisée pour transformer son application en SaaS rentable avec abonnements récurrents.",
+        "Titre 1": "Comprendre le modèle économique par abonnement",
+        "Titre 2": "Découvrir l'architecture technique de Stripe",
+        "Titre 3": "Cadrer la grille tarifaire et les forfaits",
+        "Titre 4": "Connecter le paiement hébergé Stripe Checkout",
+        "Titre 5": "Synchroniser les abonnements via les webhooks",
+        "Titre 6": "Déployer le portail client pour l'autonomie"
+      },
+      "image_concept": null,
+      "image_style": null,
+      "image_ratio": null
     }
   ]
 }

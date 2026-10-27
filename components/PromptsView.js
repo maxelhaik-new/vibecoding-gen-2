@@ -6,10 +6,28 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
   let query = '';
   let isolatedPromptId = initialPromptId;
 
-  // Extract unique tags
-  const tagsSet = new Set();
-  promptsData.forEach(p => p.tags.forEach(t => tagsSet.add(t)));
-  const allTags = [...tagsSet].sort();
+  // Extract unique tags and calculate frequencies
+  const tagCounts = {};
+  promptsData.forEach(p => p.tags.forEach(t => {
+    tagCounts[t] = (tagCounts[t] || 0) + 1;
+  }));
+
+  // Preferred 5 core topics (excluding 'Exemple' which is on 10/13 prompts)
+  const allUniqueTags = Object.keys(tagCounts);
+  const preferredPrimary = ['Frontend', 'Architecture', 'Sécurité', 'UI / UX', 'Backend'];
+  const primaryTags = preferredPrimary.filter(t => allUniqueTags.includes(t));
+  
+  if (primaryTags.length < 5) {
+    const candidates = allUniqueTags
+      .filter(t => !primaryTags.includes(t) && t !== 'Exemple')
+      .sort((a, b) => tagCounts[b] - tagCounts[a] || a.localeCompare(b));
+    primaryTags.push(...candidates.slice(0, 5 - primaryTags.length));
+  }
+
+  // Remaining tags sorted alphabetically for easy scanning
+  const remainingTags = allUniqueTags
+    .filter(t => !primaryTags.includes(t))
+    .sort((a, b) => a.localeCompare(b));
 
   function escapeHtml(str) {
     return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -35,9 +53,16 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
         <span class="counter-tag" id="promptsCounterTag">${promptsData.length} prompts</span>
       </div>
 
+      <!-- Filter Pills (5 thèmes initiaux + Déploiement inline sans carte) -->
       <div class="filter-pills" id="promptTagPills" style="margin-bottom: 1.5rem;">
         <button class="filter-pill active" data-tag="ALL">Tous les thèmes (${promptsData.length})</button>
-        ${allTags.map(t => `<button class="filter-pill" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join('')}
+        ${primaryTags.map(t => `<button class="filter-pill" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join('')}
+        <span id="promptExtraTags" class="filter-pills-extra collapsed">
+          ${remainingTags.map(t => `<button class="filter-pill" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join('')}
+        </span>
+        <button type="button" class="filter-pill filter-pill-toggle" id="btnToggleTags" aria-expanded="false" title="Déployer les autres thèmes">
+          <span class="toggle-icon">+</span> <span class="toggle-count">${remainingTags.length} autres</span> <span class="toggle-arrow">▾</span>
+        </button>
       </div>
     </div>
 
@@ -121,13 +146,20 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
     `;
   }
 
-  // Copy to clipboard event delegation
+  // Copy to clipboard event delegation with tactile micro-interaction
   cardsContainer.addEventListener('click', (e) => {
     const btn = e.target.closest('.btn-copy-prompt');
     if (!btn) return;
     const promptText = decodeURIComponent(btn.dataset.prompt);
     navigator.clipboard.writeText(promptText).then(() => {
+      btn.classList.add('copied');
+      const originalHtml = btn.innerHTML;
+      btn.innerHTML = '<span>✓</span> Copié !';
       showToast("Prompt copié dans le presse-papiers ! ✓");
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = originalHtml;
+      }, 1800);
     }).catch(() => {
       showToast("Erreur lors de la copie");
     });
@@ -151,11 +183,39 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
     renderCards();
   });
 
+  // Toggle More Themes handler
+  let isTagsExpanded = false;
+  const btnToggleTags = container.querySelector('#btnToggleTags');
+  const extraTagsContainer = container.querySelector('#promptExtraTags');
+
+  function updateToggleBtnState() {
+    if (!btnToggleTags) return;
+    btnToggleTags.setAttribute('aria-expanded', String(isTagsExpanded));
+    btnToggleTags.classList.toggle('expanded', isTagsExpanded);
+    if (isTagsExpanded) {
+      btnToggleTags.innerHTML = `<span class="toggle-icon">−</span> <span class="toggle-count">Moins</span> <span class="toggle-arrow">▴</span>`;
+      btnToggleTags.setAttribute('title', 'Réduire les thèmes');
+    } else {
+      btnToggleTags.innerHTML = `<span class="toggle-icon">+</span> <span class="toggle-count">${remainingTags.length} autres</span> <span class="toggle-arrow">▾</span>`;
+      btnToggleTags.setAttribute('title', 'Déployer les autres thèmes');
+    }
+  }
+
+  if (btnToggleTags && extraTagsContainer) {
+    btnToggleTags.addEventListener('click', (e) => {
+      e.stopPropagation();
+      isTagsExpanded = !isTagsExpanded;
+      extraTagsContainer.classList.toggle('collapsed', !isTagsExpanded);
+      extraTagsContainer.classList.toggle('open', isTagsExpanded);
+      updateToggleBtnState();
+    });
+  }
+
   tagPillsContainer.addEventListener('click', (e) => {
     const btn = e.target.closest('.filter-pill');
-    if (!btn) return;
+    if (!btn || btn.id === 'btnToggleTags') return;
     activeTag = btn.dataset.tag;
-    tagPillsContainer.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+    tagPillsContainer.querySelectorAll('.filter-pill:not(#btnToggleTags)').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     renderCards();
   });
@@ -165,7 +225,7 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
     searchInput.value = '';
     clearBtn.style.display = 'none';
     activeTag = 'ALL';
-    tagPillsContainer.querySelectorAll('.filter-pill').forEach(b => b.classList.toggle('active', b.dataset.tag === 'ALL'));
+    tagPillsContainer.querySelectorAll('.filter-pill:not(#btnToggleTags)').forEach(b => b.classList.toggle('active', b.dataset.tag === 'ALL'));
     renderCards();
   });
 

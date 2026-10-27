@@ -5,6 +5,40 @@
   margin: 0;
   padding: 0;
   -webkit-tap-highlight-color: transparent;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-dark) var(--color-bg-page);
+}
+
+*::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--color-bg-page);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-border-dark);
+  border-radius: var(--radius-pill);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-purple);
+}
+
+::selection {
+  background: var(--color-brand-sunny);
+  color: var(--color-brand-fig);
+}
+
+input, textarea {
+  caret-color: var(--color-brand-purple);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-purple);
+  outline-offset: 2px;
 }
 
 body {
@@ -44,7 +78,8 @@ body {
   color: #FFFFFF;
   padding: 1.75rem 2rem;
   margin-bottom: 1.5rem;
-  border: 3px solid var(--color-brand-fig);
+  border: 2px solid var(--color-brand-fig);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
@@ -162,17 +197,19 @@ body {
   max-width: 900px;
 }
 
-/* Tab Navigation (Desktop >= 1024px) */
+/* Tab Navigation (Desktop & Universal Responsive 2026) */
 .tab-nav {
   display: flex;
   gap: 0.75rem;
   margin-bottom: 1.75rem;
-  border-bottom: 3px solid var(--color-brand-fig);
+  border-bottom: 2px solid var(--color-brand-fig);
   padding: 4px 4px 0.75rem 2px;
   overflow-x: auto;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
+/* Dès que le menu burger apparaît (< 1024px), suppression complète des onglets */
 @media (max-width: 1023px) {
   .tab-nav {
     display: none !important;
@@ -187,6 +224,7 @@ body {
   background: #FFFFFF;
   color: var(--color-brand-fig);
   border: 2px solid var(--color-brand-fig);
+  border-radius: var(--radius-sm);
   padding: 0.75rem 1.35rem;
   font-family: var(--font-main);
   font-weight: 800;
@@ -196,15 +234,17 @@ body {
   align-items: center;
   gap: 0.65rem;
   box-shadow: var(--shadow-sm);
-  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform 0.1s ease, box-shadow var(--transition-fast);
   white-space: nowrap;
-  transform: none;
 }
 
 .tab-btn:hover {
   background: var(--color-pink-20);
-  transform: none;
   box-shadow: var(--shadow-sm);
+}
+
+.tab-btn:active {
+  transform: scale(0.97);
 }
 
 .tab-btn.active {
@@ -212,7 +252,6 @@ body {
   color: #FFFFFF;
   border-color: var(--color-brand-fig);
   box-shadow: var(--shadow-sm);
-  transform: none;
 }
 
 .tab-badge {
@@ -222,26 +261,34 @@ body {
   font-weight: 800;
   padding: 0.15rem 0.5rem;
   border-radius: var(--radius-pill);
+  transition: background var(--transition-fast), color var(--transition-fast), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .tab-btn.active .tab-badge {
   background: var(--color-brand-sunny);
   color: var(--color-brand-fig);
+  transform: scale(1.05);
 }
 
-/* Tab Views */
+/* Tab Views with 2026 Smooth Settle Transition */
 .tab-view {
   display: none;
-  animation: fadeIn 0.2s ease-in-out;
 }
 
 .tab-view.active {
   display: block;
+  animation: tabViewEnter 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes tabViewEnter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Grids for Cards */
@@ -323,17 +370,17 @@ body.mobile-menu-locked {
 
 @media (max-width: 767px) {
   .app-viewport {
-    padding: 0 0.85rem 3.5rem 0.85rem;
+    padding: 1rem 0.85rem 3.5rem 0.85rem;
   }
 
-  /* Refonte Mobile Header : UX/UI First, Suppression des marges et du superflu */
+  /* Mobile Header : Alignement harmonieux avec le reste et le pied de page */
   .app-header {
-    margin: 0 -0.85rem 1.15rem -0.85rem;
-    padding: 0.85rem 1rem 1.1rem 1rem;
-    border: none;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.25);
-    box-shadow: none;
-    gap: 0.45rem;
+    margin: 0 0 1.25rem 0;
+    padding: 1.2rem 1.15rem 1.35rem 1.15rem;
+    border: 2px solid var(--color-brand-fig);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    gap: 0.5rem;
   }
 
   .header-top {

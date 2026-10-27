@@ -1,20 +1,27 @@
 // TabNav Component
-export function renderTabNav(container, { activeTab = 'glossary', counts = {}, onTabChange }) {
+export function renderTabNav(container, { activeTab = 'welcome', counts = {}, onTabChange }) {
   container.innerHTML = `
-    <nav class="tab-nav">
-      <button class="tab-btn ${activeTab === 'glossary' ? 'active' : ''}" data-tab="glossary">
+    <nav class="tab-nav" aria-label="Navigation principale par onglets">
+      <button class="tab-btn ${activeTab === 'welcome' ? 'active' : ''}" id="tabBtnWelcome" data-tab="welcome">
+        <span>🏠 Accueil</span>
+      </button>
+      <button class="tab-btn ${activeTab === 'parcours' ? 'active' : ''}" id="tabBtnParcours" data-tab="parcours">
+        <span>🗺️ Parcours Coaching</span>
+        <span class="tab-badge">${counts.parcours || '6'}</span>
+      </button>
+      <button class="tab-btn ${activeTab === 'glossary' ? 'active' : ''}" id="tabBtnGlossary" data-tab="glossary">
         <span>📖 Glossaire</span>
         <span class="tab-badge">${counts.glossary || 57}</span>
       </button>
-      <button class="tab-btn ${activeTab === 'prompts' ? 'active' : ''}" data-tab="prompts">
+      <button class="tab-btn ${activeTab === 'prompts' ? 'active' : ''}" id="tabBtnPrompts" data-tab="prompts">
         <span>⚡ Bibliothèque de Prompts</span>
         <span class="tab-badge">${counts.prompts || 13}</span>
       </button>
-      <button class="tab-btn ${activeTab === 'quizz' ? 'active' : ''}" data-tab="quizz">
+      <button class="tab-btn ${activeTab === 'quizz' ? 'active' : ''}" id="tabBtnQuizz" data-tab="quizz">
         <span>🎯 Entraînement Quizz</span>
         <span class="tab-badge">50Q</span>
       </button>
-      <button class="tab-btn ${activeTab === 'tools' ? 'active' : ''}" data-tab="tools">
+      <button class="tab-btn ${activeTab === 'tools' ? 'active' : ''}" id="tabBtnTools" data-tab="tools">
         <span>🛠️ Outils & Accès</span>
         <span class="tab-badge">${counts.tools || 7}</span>
       </button>

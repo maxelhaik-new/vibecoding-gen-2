@@ -1,13 +1,13 @@
 {
   "lessons": [
     {
-      "lessonTitle": "M5C1L1 — En apprendre plus sur la monétisation par abonnement",
+      "lessonTitle": "M5C1L1 — Les objectifs du chapitre : Connecter un service de monétisation avec Stripe",
       "backgroundColor": "#E2E4E9",
       "slides": [
         {
           "template": "VIBECODING - COVER CHAP",
           "content": {
-            "Titre": "En apprendre plus sur la monétisation par abonnement"
+            "Titre": "Chapitre 1 : Monétisation par abonnement avec Stripe"
           }
         },
         {
@@ -15,16 +15,123 @@
           "content": {
             "Titre": "Les objectifs du chapitre",
             "Intro": "Comprendre l'intégration d'une passerelle de paiement sécurisée pour transformer son application en SaaS rentable avec abonnements récurrents.",
-            "Titre 1": "Cadrer la grille tarifaire et les User Stories",
-            "Titre 2": "Créer des produits et forfaits dans Stripe",
-            "Titre 3": "Connecter la grille tarifaire au paiement hébergé",
-            "Titre 4": "Gérer le cycle de vie et le portail client"
+            "Titre 1": "Comprendre le modèle économique par abonnement",
+            "Titre 2": "Découvrir l'architecture technique de Stripe",
+            "Titre 3": "Cadrer la grille tarifaire et les forfaits",
+            "Titre 4": "Connecter le paiement hébergé Stripe Checkout",
+            "Titre 5": "Synchroniser les abonnements via les webhooks",
+            "Titre 6": "Déployer le portail client pour l'autonomie"
           }
         }
       ]
     },
     {
-      "lessonTitle": "M5C1L2 — Découvrons l'application CopyBoost que nous allons monétiser",
+      "lessonTitle": "M5C1L2 — En apprendre plus sur la monétisation par abonnement",
+      "backgroundColor": "#E2E4E9",
+      "slides": [
+        {
+          "template": "VIBECODING - COVER",
+          "content": {
+            "Titre": "En apprendre plus sur la monétisation par abonnement"
+          }
+        },
+        {
+          "template": "VIBECODING - INTRO",
+          "content": {
+            "Titre": "La monétisation par abonnement",
+            "Intro": "Monétiser une application transforme un projet vitrine en produit rentable. Pour encaisser des revenus réguliers sans gérer de serveur bancaire complexe, on s'appuie sur une brique spécialisée. Faisons le point.",
+            "Titre 1": "Le modèle récurrent",
+            "Texte 1": "Découvrons pourquoi le format par abonnement s'impose comme le standard économique des applications web.",
+            "Titre 2": "L'infrastructure Stripe",
+            "Texte 2": "Zoom sur les composants clés mis à disposition pour déléguer les transactions bancaires en toute sécurité.",
+            "Titre 3": "Le cycle de paiement",
+            "Texte 3": "Voyons comment circulent les informations entre l'interface utilisateur, notre logique interne et la passerelle."
+          }
+        },
+        {
+          "template": "VIBECODING - 2 BLOCS",
+          "content": {
+            "Titre": "Deux approches de vente",
+            "Intro": "Choisir le bon format de paiement conditionne la viabilité technique et financière de son application.",
+            "Titre 1": "Paiement unique",
+            "Texte 1": "Achat ponctuel d'une licence ou d'une transaction sans engagement",
+            "Texte 2": "Revenu perçu une seule fois nécessitant de trouver de nouveaux clients",
+            "Texte 3": "Inadapté pour absorber les coûts continus d'API IA et de serveurs",
+            "Titre 2": "Abonnement SaaS",
+            "Texte 4": "Facturation automatique par mois ou par an pour un service actif",
+            "Texte 5": "Revenu mensuel prévisible garantissant la pérennité financière",
+            "Texte 6": "Modèle idéal pour financer les requêtes IA et la maintenance",
+            "Picto 1": "mdi:currency-usd-off",
+            "Picto 2": "mdi:autorenew"
+          }
+        },
+        {
+          "template": "VIBECODING - 4 BLOCS",
+          "content": {
+            "Titre": "Les 4 piliers de la brique Stripe",
+            "Intro": "Stripe prend en charge l'ensemble des contraintes financières pour permettre de se concentrer sur l'application.",
+            "Titre 1": "STRIPE CHECKOUT CLÉ EN MAIN",
+            "Texte 1": "Page de paiement hébergée conforme aux normes bancaires : prise en charge du 3D Secure sans stocker de numéro de carte.",
+            "Titre 2": "PORTAIL CLIENT EN LIBRE-SERVICE",
+            "Texte 2": "Espace dédié où l'utilisateur met à jour sa carte, télécharge ses factures ou résilie son offre sans solliciter d'assistance.",
+            "Titre 3": "WEBHOOKS ET NOTIFICATIONS TEMPS RÉEL",
+            "Texte 3": "Alertes instantanées envoyées au serveur lors d'un paiement réussi ou d'un échec pour ajuster les droits d'accès.",
+            "Titre 4": "MODE TEST ET ENVIRONNEMENT ISOLÉ",
+            "Texte 4": "Bac à sable complet avec cartes bancaires fictives pour tester l'intégralité du tunnel de vente sans débourser un centime.",
+            "Picto 1": "mdi:shield-unlocked",
+            "Picto 2": "mdi:people-group",
+            "Picto 3": "mdi:flowchart",
+            "Picto 4": "mdi:lifebuoy"
+          }
+        },
+        {
+          "template": "VIBECODING - 3 COLONNES",
+          "content": {
+            "Titre": "Le cycle de vie d'un abonnement",
+            "Titre 1": "Activation",
+            "Parametre 1": "SOUSCRIPTION",
+            "Violet 1": "Sélection d'offre et premier paiement",
+            "Texte 1": "L'utilisateur sélectionne son forfait sur la grille de prix et bascule vers Stripe Checkout. Une fois le règlement validé, Stripe crée un identifiant client unique associé au profil.",
+            "Titre 2": "Récurrence",
+            "Parametre 2": "AUTOMATISATION",
+            "Violet 2": "Facturation récurrente et alertes",
+            "Texte 2": "Chaque mois, Stripe prélève le montant automatiquement. En cas d'échec ou d'expiration de la carte bancaire, le système envoie des relances automatiques et informe notre serveur par webhook.",
+            "Titre 3": "Résiliation",
+            "Parametre 3": "PORTAIL CLIENT",
+            "Violet 3": "Fermeture des droits à l'échéance",
+            "Texte 3": "L'abonné peut interrompre son forfait à tout instant depuis le portail client. L'accès aux fonctionnalités premium reste actif jusqu'à la fin de la période payée avant d'être révoqué.",
+            "Picto 1": "mdi:cart-check",
+            "Picto 2": "mdi:sync",
+            "Picto 3": "mdi:cancel"
+          }
+        },
+        {
+          "template": "VIBECODING - CHECKLIST",
+          "content": {
+            "Titre": "Règles d'or Stripe",
+            "Intro": "Cinq impératifs techniques pour intégrer des paiements sécurisés sans risque.",
+            "Texte Intro": "La manipulation d'argent exige une rigueur absolue : déléguer les données sensibles reste la meilleure garantie de conformité.",
+            "Nom Checklist": "Points clés",
+            "Texte 1": "Ne jamais manipuler ni stocker de numéros de cartes sur son serveur.",
+            "Texte 2": "Isoler la clé secrète Stripe dans le fichier .env, jamais dans le code.",
+            "Texte 3": "Utiliser Stripe Checkout pour déléguer la conformité bancaire et la TVA.",
+            "Texte 4": "Vérifier la signature des webhooks pour bloquer toute fausse requête.",
+            "Texte 5": "Tester l'intégralité du tunnel d'achat en mode test."
+          }
+        },
+        {
+          "template": "VIBECODING - FIN",
+          "content": {
+            "Titre": "Ce qu'il faut retenir",
+            "Intro": "Monétiser une application par abonnement garantit des revenus récurrents et soutient l'utilisation des modèles d'IA. Stripe élimine la complexité réglementaire grâce à sa page Checkout et à son portail client en libre-service. Côté code, l'application se contente d'écouter les webhooks pour activer ou restreindre les fonctionnalités selon le statut du compte, tout en gardant ses clés secrètes protégées.",
+            "Titre Bulle": "EN BREF",
+            "Texte Bulle": "Dans la prochaine leçon, on découvre l'application CopyBoost : on analyse son interface, ses fonctionnalités gratuites et la grille d'abonnements premium que l'on va monétiser avec Stripe !"
+          }
+        }
+      ]
+    },
+    {
+      "lessonTitle": "M5C1L3 — Découvrons l'application CopyBoost que nous allons monétiser",
       "backgroundColor": "#E2E4E9",
       "slides": [
         {

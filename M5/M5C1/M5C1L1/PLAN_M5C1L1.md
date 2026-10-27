@@ -1,13 +1,20 @@
-# Plan de la leçon M5C1L1 — Les objectifs du chapitre : Cadrer son projet certifiant
+# Plan de la leçon M5C1L1 — Les objectifs du chapitre : Connecter un service de monétisation avec Stripe
 
-Cette leçon présente les objectifs du Chapitre 1 du Module 5 consacré au cadrage du projet fil rouge certifiant (critères CE1.1, CE1.2 et CE1.3).
+Cette leçon présente les objectifs du Chapitre 1 du Module 5 consacré à l'intégration de la brique de monétisation Stripe pour transformer une application en SaaS à abonnements récurrents.
 
-**Slide 1 : VIBECODING - COVER CHAP**
-* Titre : Chapitre 1 : Cadrer son projet certifiant
+---
 
-**Slide 2 : VIBECODING - OBJECTIF CHAP**
-* Titre : Les objectifs du chapitre
-* Intro : Découvrir les exigences de la certification, définir le périmètre du projet fil rouge et fixer les règles contextuelles de l'agent avec AGENTS.md.
-* Titre 1 : Découvrir les critères de la certification
-* Titre 2 : Définir le périmètre et l'architecture
-* Titre 3 : Structurer les règles du fichier AGENTS.md
+### Slide 1 : Lancement du Chapitre
+* **Template** : `VIBECODING - COVER CHAP`
+* **Titre** : Chapitre 1 : Monétisation par abonnement avec Stripe
+
+### Slide 2 : Objectifs Pédagogiques du Chapitre
+* **Template** : `VIBECODING - OBJECTIF CHAP`
+* **Titre** : Les objectifs du chapitre
+* **Intro** : Comprendre l'intégration d'une passerelle de paiement sécurisée pour transformer son application en SaaS rentable avec abonnements récurrents.
+* **Titre 1** : Comprendre le modèle économique par abonnement
+* **Titre 2** : Découvrir l'architecture technique de Stripe
+* **Titre 3** : Cadrer la grille tarifaire et les forfaits
+* **Titre 4** : Connecter le paiement hébergé Stripe Checkout
+* **Titre 5** : Synchroniser les abonnements via les webhooks
+* **Titre 6** : Déployer le portail client pour l'autonomie

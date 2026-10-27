@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-09T14:55:00.000Z",
+  "generatedAt": "2026-10-09T17:10:30Z",
   "title": "Design System: Plateforme Formation Vibe Coding",
   "extensions": {
     "colorMeta": {
@@ -8,112 +8,251 @@
         "role": "primary",
         "displayName": "Electric Violet",
         "canonical": "#6634D9",
-        "tonalRamp": ["#1f0a4f", "#331278", "#451fa8", "#572bd6", "#6634D9", "#8a5cf5", "#b498fb", "#e8e0fd"]
+        "tonalRamp": ["#1A074A", "#2B0F6E", "#3F1899", "#5322C4", "#6634D9", "#8B5CF6", "#B495FB", "#DDD0FD"]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Deep Electric Violet",
+        "canonical": "#5022BC",
+        "tonalRamp": ["#16073E", "#230C5D", "#341384", "#451AAC", "#5022BC", "#7447D7", "#A485E8", "#D5C6F5"]
       },
       "brand-fig": {
         "role": "secondary",
         "displayName": "Midnight Fig",
         "canonical": "#18093B",
-        "tonalRamp": ["#080314", "#100627", "#18093B", "#261358", "#381f78", "#54379c", "#7e62c4", "#ded5f7"]
+        "tonalRamp": ["#080314", "#0E0522", "#130730", "#18093B", "#2E1B5A", "#4A327E", "#7257A6", "#B3A2D5"]
       },
       "brand-sunny": {
         "role": "secondary",
-        "displayName": "Sunny Acid Yellow",
+        "displayName": "Warm Sunny Gold",
+        "canonical": "#F8E37E",
+        "tonalRamp": ["#4F420C", "#7C6813", "#B3981B", "#E3C223", "#F8E37E", "#FCEEAB", "#FEF6D2", "#FFFDF2"]
+      },
+      "brand-sunny-vibrant": {
+        "role": "secondary",
+        "displayName": "Acid Yellow",
         "canonical": "#FFFF77",
-        "tonalRamp": ["#5c5c00", "#8a8a00", "#b8b800", "#e6e600", "#FFFF77", "#ffff99", "#ffffcc", "#ffffee"]
+        "tonalRamp": ["#555500", "#888800", "#BBBB00", "#EEEE00", "#FFFF77", "#FFFFAA", "#FFFFCC", "#FFFFEE"]
+      },
+      "brand-pink": {
+        "role": "tertiary",
+        "displayName": "Pastel Pink",
+        "canonical": "#FFB2B2",
+        "tonalRamp": ["#4D1414", "#7A2222", "#B03535", "#E85D5D", "#FFB2B2", "#FFCDCD", "#FFE4E4", "#FFF5F5"]
+      },
+      "pink-surface": {
+        "role": "tertiary",
+        "displayName": "Blossom Wash",
+        "canonical": "#FCF1F0",
+        "tonalRamp": ["#402422", "#663B38", "#945652", "#CC7E78", "#FCF1F0", "#FDF5F5", "#FEFAFA", "#FFFFFF"]
       },
       "neutral-bg": {
         "role": "neutral",
         "displayName": "Slate Light Canvas",
         "canonical": "#F8FAFC",
-        "tonalRamp": ["#0f172a", "#1e293b", "#334155", "#64748b", "#94a3b8", "#cbd5e1", "#e2e8f0", "#F8FAFC"]
+        "tonalRamp": ["#0F172A", "#1E293B", "#334155", "#64748B", "#94A3B8", "#CBD5E1", "#E2E8F0", "#F8FAFC"]
+      },
+      "slate-hover": {
+        "role": "neutral",
+        "displayName": "Slate Soft Hover",
+        "canonical": "#F1F5F9",
+        "tonalRamp": ["#0F172A", "#1E293B", "#334155", "#64748B", "#94A3B8", "#CBD5E1", "#E2E8F0", "#F1F5F9"]
+      },
+      "card-bg": {
+        "role": "neutral",
+        "displayName": "Pure Surface White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1", "#F1F5F9", "#FFFFFF"]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Border Subtle Slate",
+        "canonical": "#E2E8F0",
+        "tonalRamp": ["#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1", "#E2E8F0", "#F8FAFC"]
+      },
+      "border-dark": {
+        "role": "neutral",
+        "displayName": "Border Dark Slate",
+        "canonical": "#CBD5E1",
+        "tonalRamp": ["#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1", "#E2E8F0", "#F8FAFC"]
+      },
+      "text-dark": {
+        "role": "neutral",
+        "displayName": "Text Midnight Headings",
+        "canonical": "#18093B",
+        "tonalRamp": ["#080314", "#0E0522", "#130730", "#18093B", "#2E1B5A", "#4A327E", "#7257A6", "#B3A2D5"]
+      },
+      "text-body": {
+        "role": "neutral",
+        "displayName": "Text Body Slate",
+        "canonical": "#334155",
+        "tonalRamp": ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1", "#F1F5F9"]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Text Muted Slate",
+        "canonical": "#64748B",
+        "tonalRamp": ["#0F172A", "#1E293B", "#334155", "#475569", "#64748B", "#94A3B8", "#CBD5E1", "#F1F5F9"]
       }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display XXL", "purpose": "Fullscreen overlay navigation headlines." },
-      "headline": { "displayName": "Headline Header", "purpose": "Main active section titles." },
-      "title": { "displayName": "Card Title", "purpose": "Glossary words and prompt titles." },
-      "body": { "displayName": "Reading Body", "purpose": "Definitions, descriptions and code guides." },
-      "label": { "displayName": "Monospace Meta", "purpose": "Tags, shortcuts and category pills." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Titres immersifs du menu plein écran mobile."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Titres majeurs de sections dans le header."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Noms des termes, cartes outils et prompts."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Définitions, paragraphes et consignes pédagogiques."
+      },
+      "label": {
+        "displayName": "Label / Code",
+        "purpose": "Badges de leçons, métadonnées et raccourcis clavier."
+      }
     },
     "shadows": [
-      { "name": "shadow-sm", "value": "2px 2px 0px #18093B", "purpose": "Tab buttons, counters and filter pills." },
-      { "name": "shadow-md", "value": "3px 3px 0px #18093B", "purpose": "Content cards and interaction containers." },
-      { "name": "shadow-lg", "value": "4px 4px 0px #18093B", "purpose": "Desktop header banner." },
-      { "name": "shadow-ambient", "value": "0 4px 12px rgba(24, 9, 59, 0.04)", "purpose": "Modern subtle depth layer." }
+      {
+        "name": "shadow-sm",
+        "value": "2px 2px 0px #18093B",
+        "purpose": "Onglets au repos, boutons utilitaires et champs de saisie."
+      },
+      {
+        "name": "shadow-md",
+        "value": "3px 3px 0px #18093B",
+        "purpose": "Cartes de contenu du glossaire, des prompts et des modules quizz."
+      },
+      {
+        "name": "shadow-lg",
+        "value": "4px 4px 0px #18093B",
+        "purpose": "En-tête principal sur écran bureau et notifications toast."
+      },
+      {
+        "name": "shadow-subtle",
+        "value": "0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03)",
+        "purpose": "Sous-couche diffuse de profondeur sans halo."
+      },
+      {
+        "name": "shadow-card-hover",
+        "value": "0 10px 24px -4px rgba(0, 0, 0, 0.12), 3px 3px 0px #18093B",
+        "purpose": "Élévation lumineuse au survol sans déplacement physique des cartes."
+      }
     ],
     "motion": [
-      { "name": "transition-fast", "value": "0.15s cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Quick state transitions (hover, color change)." },
-      { "name": "transition-smooth", "value": "0.25s cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Modal overlay fade and menu expansion." }
+      {
+        "name": "transition-fast",
+        "value": "0.15s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Changements d'états rapides au survol et au focus."
+      },
+      {
+        "name": "transition-smooth",
+        "value": "0.25s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Ouverture/fermeture du menu plein écran et transitions de vues."
+      }
     ],
     "breakpoints": [
-      { "name": "mobile", "value": "768px" },
-      { "name": "tablet", "value": "1024px" },
-      { "name": "desktop-wide", "value": "1440px" }
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1440px"
+      }
     ]
   },
   "components": [
     {
-      "name": "Utility Action Button",
+      "name": "Bouton Primaire",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Bouton d'action principal et état sélectionné.",
+      "html": "<button class=\"ds-btn-primary\">VALIDER MA RÉPONSE</button>",
+      "css": ".ds-btn-primary { background: #6634D9; color: #FFFFFF; border: 2px solid #18093B; border-radius: 6px; padding: 12px 22px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 800; cursor: pointer; box-shadow: 2px 2px 0px #18093B; transition: background 0.15s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: #5022BC; }"
+    },
+    {
+      "name": "Bouton Utilitaire / Burger",
       "kind": "button",
       "refersTo": "button-utility",
-      "description": "Ergonomic right-aligned trigger for burger menu and fullscreen close.",
-      "html": "<button class=\"ds-btn-utility\"><span class=\"ds-icon\">≡</span><span>MENU</span></button>",
-      "css": ".ds-btn-utility { background: #FFFFFF; color: #18093B; border: 1px solid rgba(0,0,0,0.12); padding: 7px 12px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; border-radius: 6px; display: inline-flex; align-items: center; gap: 7px; cursor: pointer; transition: background 0.15s, color 0.15s; } .ds-btn-utility:hover { background: #FFFF77; color: #18093B; } .ds-icon { font-size: 14px; font-weight: 900; }"
+      "description": "Boutons de déclenchement du menu et de fermeture tactile.",
+      "html": "<button class=\"ds-btn-utility\"><span class=\"ds-icon\">≡</span> Menu</button>",
+      "css": ".ds-btn-utility { background: #FFFFFF; color: #18093B; border: 1px solid rgba(0, 0, 0, 0.12); border-radius: 6px; padding: 8px 12px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; min-height: 40px; transition: background 0.15s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-utility:hover { background: #F8E37E; color: #18093B; }"
     },
     {
-      "name": "Primary Navigation Tab",
-      "kind": "nav",
+      "name": "Bouton Copie de Prompt",
+      "kind": "button",
       "refersTo": "button-primary",
-      "description": "Desktop navigation tab button with live count pill.",
-      "html": "<button class=\"ds-tab-btn\"><span class=\"ds-tab-label\">Glossaire</span><span class=\"ds-tab-badge\">57</span></button>",
-      "css": ".ds-tab-btn { background: #6634D9; color: #FFFFFF; border: 2px solid #18093B; padding: 10px 18px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 15px; display: inline-flex; align-items: center; gap: 10px; box-shadow: 2px 2px 0px #18093B; cursor: pointer; } .ds-tab-badge { background: #FFFF77; color: #18093B; font-size: 12px; font-weight: 800; padding: 2px 8px; border-radius: 9999px; }"
+      "description": "Bouton de copie rapide au presse-papier avec pastille dorée.",
+      "html": "<button class=\"ds-btn-copy\">Copier le prompt 📋</button>",
+      "css": ".ds-btn-copy { background: #F8E37E; color: #18093B; border: 2px solid #18093B; border-radius: 6px; padding: 10px 16px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.78rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 2px 2px 0px #18093B; transition: background 0.15s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-copy:hover { background: #FFFF99; }"
     },
     {
-      "name": "Search Field",
-      "kind": "input",
-      "refersTo": "input-search",
-      "description": "Instant search input with icon and mobile anti-zoom 16px text.",
-      "html": "<div class=\"ds-search-box\"><span class=\"ds-search-icon\">🔍</span><input type=\"text\" class=\"ds-search-input\" placeholder=\"Rechercher une notion...\"></div>",
-      "css": ".ds-search-box { position: relative; width: 100%; max-width: 480px; display: flex; align-items: center; } .ds-search-icon { position: absolute; left: 14px; font-size: 16px; pointer-events: none; } .ds-search-input { width: 100%; padding: 12px 16px 12px 42px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; border: 2px solid #18093B; background: #FFFFFF; color: #18093B; box-shadow: 2px 2px 0px #18093B; outline: none; border-radius: 6px; } .ds-search-input:focus { border-color: #6634D9; box-shadow: 3px 3px 0px #18093B; }"
-    },
-    {
-      "name": "Glossary Content Card",
+      "name": "Carte de Glossaire",
       "kind": "card",
       "refersTo": "card",
-      "description": "High-contrast card for concepts, definitions, and code syntax.",
-      "html": "<div class=\"ds-card\"><div class=\"ds-card-head\"><h3>AGENTS.md</h3><span class=\"ds-tag\">CONTEXTE</span></div><p class=\"ds-card-body\">Fichier texte situé à la racine regroupant les consignes et règles de travail.</p></div>",
-      "css": ".ds-card { background: #FFFFFF; border: 2px solid #18093B; box-shadow: 3px 3px 0px #18093B; border-radius: 10px; padding: 20px 24px; font-family: 'Inter', sans-serif; } .ds-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 12px; } .ds-card-head h3 { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 900; color: #18093B; text-transform: uppercase; } .ds-tag { background: #18093B; color: #FFFF77; font-family: 'Cousine', monospace; font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 4px; } .ds-card-body { margin: 0; color: #334155; font-size: 15px; line-height: 1.55; }"
+      "description": "Conteneur de terme technique avec titre, type, définition et référence de leçon.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-head\"><h3 class=\"ds-card-title\">Vibe Coding</h3><span class=\"ds-badge\">Concept</span></div><p class=\"ds-card-def\">Méthode de programmation augmentée par IA où le développeur pilote des agents autonomes.</p><footer class=\"ds-card-foot\"><span class=\"ds-ref\">M1C2L2</span> Définition officielle</footer></article>",
+      "css": ".ds-card { background: #FFFFFF; border: 2px solid #18093B; border-radius: 10px; box-shadow: 3px 3px 0px #18093B; padding: 22px 24px; display: flex; flex-direction: column; gap: 16px; font-family: 'Plus Jakarta Sans', sans-serif; transition: border-color 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1); } .ds-card:hover { border-color: #6634D9; box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.12), 3px 3px 0px #18093B; } .ds-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; } .ds-card-title { font-size: 1.15rem; font-weight: 800; color: #18093B; margin: 0; line-height: 1.3; } .ds-badge { background: #18093B; color: #F8E37E; font-size: 0.78rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; } .ds-card-def { font-family: 'Inter', sans-serif; font-size: 0.95rem; color: #334155; line-height: 1.6; margin: 0; } .ds-card-foot { border-top: 1px dashed #E2E8F0; padding-top: 12px; font-size: 0.78rem; color: #64748B; font-weight: 600; display: flex; align-items: center; gap: 8px; } .ds-ref { background: #6634D9; color: #FFFFFF; padding: 2px 8px; border-radius: 6px; font-weight: 800; }"
+    },
+    {
+      "name": "Champ de Recherche",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "Champ de filtrage instantané avec bordure franche et raccourci ⌘K.",
+      "html": "<div class=\"ds-search-wrapper\"><input type=\"text\" class=\"ds-input-search\" placeholder=\"Rechercher un terme, une syntaxe... (⌘K)\" /></div>",
+      "css": ".ds-search-wrapper { position: relative; width: 100%; max-width: 480px; } .ds-input-search { width: 100%; padding: 12px 16px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 600; color: #18093B; background: #FFFFFF; border: 2px solid #18093B; border-radius: 6px; box-shadow: 2px 2px 0px #18093B; outline: none; transition: border-color 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1); } .ds-input-search:focus { border-color: #6634D9; box-shadow: 3px 3px 0px #18093B; }"
+    },
+    {
+      "name": "Bouton d'Onglet",
+      "kind": "nav",
+      "refersTo": "button-utility",
+      "description": "Navigation par onglets desktop avec pastille de comptage.",
+      "html": "<button class=\"ds-nav-tab active\"><span>Glossaire</span><span class=\"ds-tab-count\">57</span></button>",
+      "css": ".ds-nav-tab { background: #FFFFFF; color: #18093B; border: 2px solid #18093B; border-radius: 6px; padding: 12px 20px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; box-shadow: 2px 2px 0px #18093B; transition: background 0.15s cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav-tab:hover { background: #FCF1F0; } .ds-nav-tab.active { background: #6634D9; color: #FFFFFF; } .ds-tab-count { background: #18093B; color: #FFFFFF; font-size: 0.75rem; font-weight: 800; padding: 2px 8px; border-radius: 9999px; } .ds-nav-tab.active .ds-tab-count { background: #F8E37E; color: #18093B; }"
     }
   ],
   "narrative": {
     "northStar": "The High-Contrast Coding Atelier",
-    "overview": "La Plateforme Formation Vibe Coding combine la franchise typographique et structurelle du néo-brutalisme contemporain avec la fluidité ergonomique et la retenue d'une application professionnelle de 2026. L'expérience privilégie la clarté immédiate sur l'ornementation gratuite.",
+    "overview": "La Plateforme Formation Vibe Coding combine la franchise typographique et structurelle du néo-brutalisme contemporain avec la fluidité ergonomique et la retenue d'une application professionnelle de 2026. L'expérience privilégie la clarté immédiate (UX/UI first) sur l'ornementation gratuite. Les blocs d'information reposent sur des aplats nets (Midnight Fig, Electric Violet, Warm Sunny Gold), des bordures franches de 2px, des angles adoucis (rayons 6px et 10px), et un contraste typographique maximal.",
     "keyCharacteristics": [
-      "Contraste franc & Hiérarchie directe (Slate Canvas, Midnight Fig, Electric Violet)",
-      "Néo-brutalisme calibré avec ombres dures stabilisées sans translation disruptive",
-      "Ergonomie mobile 2026 avec app-bar flush et menu plein écran indigo immersif",
-      "Zéro friction de saisie avec cibles tactiles >= 44px et raccourci ⌘K"
+      "Contraste franc & Hiérarchie directe : Fond ardoise clair (#F8FAFC) confronté à un Midnight Fig profond (#18093B) et des accents Violet Électrique (#6634D9).",
+      "Néo-brutalisme calibré & Quieter : Ombres dures franches (2px 2px 0px à 4px 4px 0px) sur desktop pour structurer l'information, adoucies par des rayons de courbure systématiques (6px et 10px) et stabilisées sans translation intempestive au survol.",
+      "Ergonomie mobile 2026 : Menu burger plein écran avec gros titres épurés, disparition du superflu décoratif sur téléphone, et app-bar bord à bord à hauteur optimisée (~105px).",
+      "Zéro friction de saisie : Cibles tactiles ≥ 44px, police des champs à 16px anti-zoom Safari iOS, et raccourci global ⌘K sur desktop."
     ],
     "rules": [
       {
         "name": "The Stability First Rule",
-        "body": "Aucun bouton ou onglet ne doit subir de translation géométrique (translateY) au survol qui déborderait de son conteneur parent.",
-        "section": "colors"
+        "body": "Aucun bouton, onglet ou carte ne doit subir de translation géométrique (translateY ou translate(-2px, -2px)) au survol qui déborderait de son conteneur parent ou ferait sauter la grille. L'interaction est communiquée par la couleur et le contraste, jamais par le déplacement structurel.",
+        "section": "elevation"
       },
       {
         "name": "The Mobile Flush Rule",
-        "body": "Sur écran mobile (< 768px), le header supprime son ombre portée néo-brutaliste et ses bordures épaisses pour s'étendre en pleine largeur bord à bord.",
-        "section": "colors"
+        "body": "Sur écran mobile (< 768px), le header supprime son ombre portée néo-brutaliste et ses bordures épaisses pour s'étendre en pleine largeur bord à bord sans marges parasites ni arrondis superflus.",
+        "section": "layout"
       },
       {
         "name": "The Raw Case Rule",
-        "body": "Les termes techniques, acronymes et noms de fichiers conservent scrupuleusement leur casse authentique sans être forcés en bas-de-casse.",
+        "body": "Les termes techniques, acronymes et noms de fichiers (AGENTS.md, API, SDK, MCP) conservent scrupuleusement leur casse authentique sans être forcés arbitrairement en bas-de-casse.",
         "section": "typography"
       },
       {
         "name": "The Flat On Mobile Rule",
-        "body": "Sur smartphone (< 768px), l'en-tête et les boutons de navigation suppriment leurs ombres portées décalées afin d'éviter tout décalage d'alignement.",
+        "body": "Sur smartphone (< 768px), l'en-tête et les boutons de navigation suppriment leurs ombres portées décalées afin d'éviter tout décalage d'alignement ou gaspillage d'espace tactile.",
         "section": "elevation"
       }
     ],
@@ -122,10 +261,11 @@
       "Do aligner le burger menu strictement à droite de l'en-tête (margin-left: auto; flex-shrink: 0;).",
       "Do conserver une taille de police d'au moins 16px sur tous les champs de saisie mobile.",
       "Do utiliser des composants modulaires isolés dans components/ avec injection contrôlée par app.js.",
-      "Do stabiliser les ombres portées et interdire tout décalage translateY sur les boutons."
+      "Do stabiliser les ombres portées et interdire tout décalage transform: translateY ou translate(-2px, -2px) sur les cartes et boutons.",
+      "Do employer des ombres de survol neutres en niveaux de gris/noir (rgba(0, 0, 0, ...)) plutôt que des halos colorés."
     ],
     "donts": [
-      "Don't ajouter de marges extérieures ou d'ombres portées décalées à l'en-tête en affichage mobile (< 768px).",
+      "Don't ajouter de marges extérieures, de coins arrondis ou d'ombres portées décalées à l'en-tête en affichage mobile (< 768px).",
       "Don't laisser .header-top passer à la ligne (flex-wrap: wrap), ce qui rejetterait le bouton burger à gauche.",
       "Don't afficher de mentions décoratives superflues de version ou de sous-titres verbeux sur smartphone.",
       "Don't utiliser margin: auto 0 dans les menus superposés afin d'éviter la formation de zones de vide excessives.",

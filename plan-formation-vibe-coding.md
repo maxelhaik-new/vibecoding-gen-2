@@ -293,15 +293,16 @@
 
 </aside>
 
-### Chapitre 1 — Connecter un service de monétisation avec Stripe (5 leçons)
+### Chapitre 1 — Connecter un service de monétisation avec Stripe (6 leçons)
 
 | Code leçon | Durée | Titre |
 | --- | --- | --- |
-| M5C1L1 | — | En apprendre plus sur la monétisation par abonnement |
-| M5C1L2 | — | Découvrons l'application que nous allons monétiser |
-| M5C1L3 | — | Récupérer le projet et créer la section abonnements |
-| M5C1L4 | — | Créer un compte Stripe et connecter son application |
-| M5C1L5 | — | Adapter et réutiliser la brique Stripe dans nos projets |
+| M5C1L1 | 1 min | Les objectifs du chapitre : Connecter un service de monétisation avec Stripe |
+| M5C1L2 | 6 min | En apprendre plus sur la monétisation par abonnement |
+| M5C1L3 | — | Découvrons l'application CopyBoost que nous allons monétiser |
+| M5C1L4 | — | Récupérer le projet et créer la section abonnements |
+| M5C1L5 | — | Créer un compte Stripe et connecter son application |
+| M5C1L6 | — | Adapter et réutiliser la brique Stripe dans nos projets |
 
 ### Chapitre 2 — Connecter un service de stockage cloud (5 leçons)
 

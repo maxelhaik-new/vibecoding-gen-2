@@ -1883,6 +1883,9 @@ html_content = f"""<!DOCTYPE html>
 
     <!-- Navigation entre Onglets -->
     <nav class="tab-nav">
+      <button class="tab-btn" id="tabBtnWelcome" data-target="welcomeView">
+        <span>🏠 Accueil</span>
+      </button>
       <button class="tab-btn active" id="tabBtnGlossary" data-target="glossaryView">
         <span>📖 Glossaire</span>
         <span class="tab-badge">{len(glossary_rows)}</span>

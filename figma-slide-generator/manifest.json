@@ -6,5 +6,14 @@
   "ui": "ui.html",
   "editorType": [
     "figma"
-  ]
+  ],
+  "networkAccess": {
+    "allowedDomains": [
+      "https://api.iconify.design"
+    ],
+    "devAllowedDomains": [
+      "http://localhost:8080"
+    ],
+    "reasoning": "Chargement des icônes SVG depuis Iconify et du serveur local"
+  }
 }
