@@ -1,4 +1,4 @@
-// QuizzView Component (Standard 2026 Wide Desktop Grid)
+// QuizzView Component (Standard 2026 Wide Desktop Grid — WCAG 2.1 AA Verified)
 import { showToast } from './Toast.js';
 
 export function initQuizzView(container, quizData) {
@@ -63,82 +63,81 @@ export function initQuizzView(container, quizData) {
     <div id="quizScreenModules" style="display: block;">
       <div class="quiz-modules-grid" id="quizModulesGrid"></div>
 
-      <div class="quiz-featured-card" id="cardFinalExam" style="margin-top: 1.5rem;" tabindex="0" role="button">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
-          <div style="display:flex; align-items:center; gap:0.6rem;">
+      <div class="quiz-featured-card" id="cardFinalExam" style="margin-top: 1.5rem;" tabindex="0" role="button" aria-label="Lancer le Grand Examen Blanc de 50 questions">
+        <div class="quiz-featured-top">
+          <div class="quiz-featured-badges">
             <span class="brand-badge">Simulation Officielle</span>
-            <span style="font-size:0.78rem; font-weight:700; color:var(--color-text-muted);">50 Questions • Tirage aléatoire</span>
+            <span class="quiz-card-meta">50 Questions • Tirage aléatoire</span>
           </div>
-          <span class="filter-pill" id="examBestScoreBadge">Non complété</span>
+          <span class="filter-pill quiz-score-pill-empty" id="examBestScoreBadge">Non complété</span>
         </div>
-        <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--color-brand-fig); margin-bottom: 0.5rem;">
+        <h2 class="quiz-featured-title">
           Grand Examen Blanc (50 Questions)
         </h2>
-        <p style="font-size: 0.94rem; color: var(--color-text-body); line-height: 1.5; margin-bottom: 1rem;">
+        <p class="quiz-featured-desc">
           Épreuve globale chronométrée couvrant l'ensemble des compétences de la certification Vibe Coding. Simulation intégrale des conditions d'examen avec corrigé et explications détaillées.
         </p>
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; padding-top: 0.75rem; border-top: 1px dashed var(--color-border);">
-          <span style="font-size: 0.78rem; font-weight: 700; color: var(--color-text-muted);">⏱️ 60s par question • Seuil requis : 75% (38/50)</span>
-          <button class="btn-copy-prompt" style="background: var(--color-brand-purple); color: #FFF; border-color: var(--color-brand-fig);" type="button">
+        <div class="quiz-featured-footer">
+          <span class="quiz-card-meta">60s par question • Seuil requis : 75% (38/50)</span>
+          <span class="filter-pill active quiz-featured-cta" aria-hidden="true">
             Lancer l'Examen Blanc (50 Q) →
-          </button>
+          </span>
         </div>
       </div>
     </div>
 
     <!-- ÉCRAN 2 : SESSION DE QUIZ -->
     <div id="quizScreenGame" style="display: none;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
-        <button class="filter-pill" id="btnQuitQuiz">✕ Quitter l'entraînement</button>
-        <div style="display: flex; align-items: center; gap: 1rem;">
-          <span id="quizTimerTag" style="font-family: var(--font-code); font-weight: 900; background: var(--color-brand-fig); color: var(--color-brand-sunny); padding: 0.35rem 0.75rem; border: 1px solid var(--color-brand-fig); border-radius: var(--radius-sm);">⏱️ 60s</span>
-          <span id="quizProgressTag" class="counter-tag" style="padding: 0.35rem 0.75rem;">Question 1/10</span>
+      <div class="quiz-game-toolbar">
+        <button class="filter-pill" id="btnQuitQuiz" type="button">✕ Quitter l'entraînement</button>
+        <div class="quiz-game-status">
+          <span id="quizTimerTag" class="quiz-timer-tag">60s</span>
+          <span id="quizProgressTag" class="counter-tag">Question 1/10</span>
         </div>
       </div>
 
-      <div class="card-item" style="padding: 1.5rem; margin-bottom: 1.5rem;">
-        <div style="font-size: 0.78rem; font-weight: 800; color: var(--color-brand-purple); text-transform: uppercase; margin-bottom: 0.5rem;" id="quizQuestionCategory">Compétence</div>
-        <h2 id="quizQuestionText" style="font-size: 1.35rem; font-weight: 800; color: var(--color-brand-fig); line-height: 1.4; margin-bottom: 1.5rem;">Intitulé de la question</h2>
+      <div class="card-item quiz-question-card">
+        <div class="quiz-question-category" id="quizQuestionCategory">Compétence</div>
+        <h2 id="quizQuestionText" class="quiz-question-title">Intitulé de la question</h2>
         
-        <div id="quizOptionsList" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;"></div>
+        <div id="quizOptionsList" class="quiz-options-list"></div>
 
         <!-- Encart d'explication pédagogique immédiate -->
-        <div id="quizExplanationBox" style="display: none; background: #F8FAFC; border: 1px solid var(--color-border-dark); border-radius: var(--radius-sm); padding: 1rem 1.25rem; margin-bottom: 1.5rem;">
-          <div id="quizExplanationStatus" style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.35rem;"></div>
-          <p id="quizExplanationText" style="font-size: 0.95rem; line-height: 1.55; color: var(--color-text-body); margin: 0;"></p>
+        <div id="quizExplanationBox" class="quiz-explanation-box" role="status" aria-live="polite">
+          <div id="quizExplanationStatus" class="quiz-explanation-status"></div>
+          <p id="quizExplanationText" class="quiz-explanation-text"></p>
         </div>
 
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px dashed var(--color-border); padding-top: 1.25rem;">
-          <span style="font-size: 0.78rem; color: var(--color-text-muted); font-weight: 600;">Raccourcis : touches [1], [2], [3], [4] puis [Entrée]</span>
-          <button id="btnValidateQuiz" class="tool-card-btn" style="min-width: 200px;">Valider ma réponse</button>
+        <div class="quiz-game-footer">
+          <span class="quiz-shortcuts-hint">Raccourcis : touches [1], [2], [3], [4] puis [Entrée]</span>
+          <button id="btnValidateQuiz" class="tool-card-btn quiz-validate-btn" type="button">Valider ma réponse</button>
         </div>
       </div>
     </div>
 
     <!-- ÉCRAN 3 : BILAN -->
     <div id="quizScreenBilan" style="display: none;">
-      <div class="card-item" style="padding: 2.5rem; text-align: center; max-width: 800px; margin: 0 auto 2rem auto;">
-        <div style="font-size: clamp(1.8rem, 6.5vw, 3.2rem); margin-bottom: 0.5rem;">🏆</div>
-        <h2 style="font-size: 1.8rem; font-weight: 900; color: var(--color-brand-fig); margin-bottom: 0.5rem;">Bilan de votre session</h2>
-        <div style="display: flex; align-items: baseline; justify-content: center; gap: 0.5rem; margin: 1.5rem 0;">
-          <span id="quizBilanScore" style="font-size: clamp(1.8rem, 6.5vw, 3.2rem); font-weight: 900; color: var(--color-brand-purple);">0</span>
-          <span id="quizBilanTotal" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-muted);">/ 10</span>
-          <span id="quizBilanPercentage" class="counter-tag" style="margin-left: 1rem; font-size: 1.15rem;">0%</span>
+      <div class="card-item quiz-bilan-card">
+        <h2 class="quiz-featured-title">Bilan de votre session</h2>
+        <div class="quiz-bilan-score-row">
+          <span id="quizBilanScore" class="quiz-bilan-score">0</span>
+          <span id="quizBilanTotal" class="quiz-bilan-total">/ 10</span>
+          <span id="quizBilanPercentage" class="counter-tag quiz-bilan-pct">0%</span>
         </div>
-        <p id="quizBilanComment" style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-body); max-width: 600px; margin: 0 auto 1.5rem auto;"></p>
+        <p id="quizBilanComment" class="quiz-bilan-comment"></p>
         
-        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-          <button id="btnRetryQuiz" class="filter-pill active" style="padding: 0.75rem 1.35rem; font-size: 0.95rem;">🔄 Recommencer ce module</button>
-          <button id="btnReturnModules" class="filter-pill" style="padding: 0.75rem 1.35rem; font-size: 0.95rem;">← Retour aux modules</button>
+        <div class="quiz-bilan-actions">
+          <button id="btnRetryQuiz" class="filter-pill active quiz-bilan-btn" type="button">Recommencer ce module</button>
+          <button id="btnReturnModules" class="filter-pill quiz-bilan-btn" type="button">← Retour aux modules</button>
         </div>
 
         <!-- Section Revue Détaillée des Réponses -->
-        <div id="quizReviewContainer" style="text-align: left; border-top: 1px dashed var(--color-border); padding-top: 1.5rem;">
-          <button id="btnToggleReview" class="filter-pill" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; font-size: 0.95rem; margin-bottom: 1rem;" type="button">
-            <span>📖 Revoir les questions et explications pédagogiques</span>
+        <div id="quizReviewContainer" class="quiz-review-container">
+          <button id="btnToggleReview" class="filter-pill quiz-review-toggle" type="button">
+            <span>Revoir les questions et explications pédagogiques</span>
             <span id="reviewToggleIcon">▼</span>
           </button>
-          <div id="quizReviewList" style="display: none; flex-direction: column; gap: 1rem;"></div>
+          <div id="quizReviewList" class="quiz-review-list"></div>
         </div>
       </div>
     </div>
@@ -158,22 +157,22 @@ export function initQuizzView(container, quizData) {
     modulesGrid.innerHTML = quizData.modules.map(m => {
       const best = getBestScore(m.id);
       const scoreBadge = best 
-        ? `<span class="filter-pill" style="background:var(--color-brand-sunny); font-weight:800;">${best.score}/${best.total} (${best.percentage}%)</span>`
-        : `<span class="filter-pill" style="opacity:0.7;">Non complété</span>`;
+        ? `<span class="filter-pill quiz-score-pill-done">${best.score}/${best.total} (${best.percentage}%)</span>`
+        : `<span class="filter-pill quiz-score-pill-empty">Non complété</span>`;
 
       return `
         <div class="quiz-card" data-module-id="${m.id}" tabindex="0" role="button">
           <div>
-            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem; gap:0.5rem;">
+            <div class="quiz-card-header">
               <span class="ref-code">${escapeHtml(m.code)}</span>
               ${scoreBadge}
             </div>
-            <h3 style="font-size:1.15rem; font-weight:800; color:var(--color-brand-fig); line-height:1.3; margin-bottom:0.5rem;">${escapeHtml(m.title)}</h3>
-            <p style="font-size:0.95rem; color:var(--color-text-muted); line-height:1.45;">${escapeHtml(m.description)}</p>
+            <h3 class="quiz-card-title">${escapeHtml(m.title)}</h3>
+            <p class="quiz-card-desc">${escapeHtml(m.description)}</p>
           </div>
-          <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px dashed var(--color-border); padding-top:0.75rem;">
-            <span style="font-size:0.78rem; font-weight:700; color:var(--color-text-muted);">${m.questions.length} questions dispo</span>
-            <span style="font-size:0.78rem; font-weight:800; color:var(--color-brand-purple);">Démarrer (10 Q) →</span>
+          <div class="quiz-card-footer">
+            <span class="quiz-card-meta">${m.questions.length} questions dispo</span>
+            <span class="quiz-card-cta">Démarrer (10 Q) →</span>
           </div>
         </div>
       `;
@@ -181,10 +180,10 @@ export function initQuizzView(container, quizData) {
 
     const examBest = getBestScore('final-exam');
     const examBadge = container.querySelector('#examBestScoreBadge');
-    if (examBest) {
+    if (examBest && examBadge) {
       examBadge.textContent = `${examBest.score}/${examBest.total} (${examBest.percentage}%)`;
-      examBadge.style.background = 'var(--color-brand-sunny)';
-      examBadge.style.fontWeight = '800';
+      examBadge.classList.remove('quiz-score-pill-empty');
+      examBadge.classList.add('quiz-score-pill-done');
     }
   }
 
@@ -267,10 +266,12 @@ export function initQuizzView(container, quizData) {
     quizHasValidated = false;
     btnValidate.textContent = "Valider ma réponse";
     btnValidate.disabled = true;
-    btnValidate.style.opacity = '0.5';
 
     const explBox = container.querySelector('#quizExplanationBox');
-    if (explBox) explBox.style.display = 'none';
+    if (explBox) {
+      explBox.style.display = 'none';
+      explBox.classList.remove('is-correct', 'is-wrong');
+    }
 
     const q = activeQuizQuestions[currentQuestionIndex];
     container.querySelector('#quizProgressTag').textContent = `Question ${currentQuestionIndex + 1} / ${activeQuizQuestions.length}`;
@@ -279,8 +280,8 @@ export function initQuizzView(container, quizData) {
 
     const list = container.querySelector('#quizOptionsList');
     list.innerHTML = q.options.map((opt, idx) => `
-      <button class="quiz-option-btn filter-pill" data-idx="${idx}" style="text-align: left; padding: 0.95rem 1.25rem; font-size: 0.95rem; width: 100%; display: flex; align-items: center; gap: 0.85rem; border-width: 1px;">
-        <span style="font-family: var(--font-code); font-weight: 800; background: var(--color-brand-fig); color: #FFF; padding: 0.15rem 0.45rem; border-radius: var(--radius-sm);">${idx + 1}</span>
+      <button class="quiz-option-btn filter-pill" data-idx="${idx}" type="button">
+        <span class="quiz-option-key">${idx + 1}</span>
         <span>${escapeHtml(opt)}</span>
       </button>
     `).join('');
@@ -289,20 +290,14 @@ export function initQuizzView(container, quizData) {
     clearInterval(quizTimerInterval);
     quizSecondsLeft = 60;
     const timerTag = container.querySelector('#quizTimerTag');
-    timerTag.textContent = `⏱️ ${quizSecondsLeft}s`;
-    timerTag.style.background = 'var(--color-brand-fig)';
-    timerTag.style.color = 'var(--color-brand-sunny)';
-    timerTag.style.borderColor = 'var(--color-brand-fig)';
+    timerTag.textContent = `${quizSecondsLeft}s`;
     timerTag.classList.remove('urgent');
 
     quizTimerInterval = setInterval(() => {
       quizSecondsLeft--;
-      timerTag.textContent = `⏱️ ${quizSecondsLeft}s`;
+      timerTag.textContent = `${quizSecondsLeft}s`;
       if (quizSecondsLeft <= 10) {
         timerTag.classList.add('urgent');
-        timerTag.style.background = 'var(--color-danger)';
-        timerTag.style.color = '#FFFFFF';
-        timerTag.style.borderColor = 'var(--color-danger)';
       }
       if (quizSecondsLeft <= 0) {
         clearInterval(quizTimerInterval);
@@ -337,38 +332,33 @@ export function initQuizzView(container, quizData) {
     const buttons = container.querySelectorAll('.quiz-option-btn');
     buttons.forEach((btn, idx) => {
       btn.disabled = true;
+      btn.classList.remove('active');
       if (idx === q.correctAnswer) {
         btn.classList.add('correct');
-        btn.style.background = 'var(--color-success-bg)';
-        btn.style.borderColor = 'var(--color-success)';
       } else if (idx === quizSelectedOption && !isCorrect) {
         btn.classList.add('incorrect');
-        btn.style.background = 'var(--color-danger-bg)';
-        btn.style.borderColor = 'var(--color-danger)';
+      } else {
+        btn.classList.add('is-locked-neutral');
       }
     });
 
     const explBox = container.querySelector('#quizExplanationBox');
     const explStatus = container.querySelector('#quizExplanationStatus');
     const explText = container.querySelector('#quizExplanationText');
-    if (explBox && explText) {
+    if (explBox && explText && explStatus) {
       explBox.style.display = 'block';
+      explBox.classList.remove('is-correct', 'is-wrong');
       if (isCorrect) {
-        explBox.style.borderColor = 'var(--color-success)';
-        explBox.style.background = 'var(--color-success-bg)';
-        explStatus.style.color = 'var(--color-success)';
+        explBox.classList.add('is-correct');
         explStatus.textContent = '✓ Bonne réponse !';
       } else {
-        explBox.style.borderColor = 'var(--color-danger)';
-        explBox.style.background = 'var(--color-danger-bg)';
-        explStatus.style.color = 'var(--color-danger)';
-        explStatus.textContent = timeout ? '⏱️ Temps écoulé !' : '✗ Réponse incorrecte';
+        explBox.classList.add('is-wrong');
+        explStatus.textContent = timeout ? 'Temps écoulé !' : '✗ Réponse incorrecte';
       }
       explText.textContent = q.explanation || "Consultez le glossaire et la documentation du cours pour approfondir ce concept.";
     }
 
     btnValidate.disabled = false;
-    btnValidate.style.opacity = '1';
     btnValidate.textContent = (currentQuestionIndex + 1 < activeQuizQuestions.length) ? "Question suivante →" : "Voir le bilan final →";
   }
 
@@ -380,7 +370,6 @@ export function initQuizzView(container, quizData) {
     container.querySelectorAll('.quiz-option-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     btnValidate.disabled = false;
-    btnValidate.style.opacity = '1';
   });
 
   btnValidate.addEventListener('click', () => {
@@ -401,8 +390,8 @@ export function initQuizzView(container, quizData) {
     if (!reviewList) return;
     reviewList.innerHTML = quizSessionHistory.map((item, idx) => {
       const badge = item.isCorrect 
-        ? `<span class="ref-code" style="background:var(--color-success); color:#FFF;">✓ Correct</span>`
-        : `<span class="ref-code" style="background:var(--color-danger); color:#FFF;">✗ Erreur</span>`;
+        ? `<span class="ref-code quiz-review-badge-ok">✓ Correct</span>`
+        : `<span class="ref-code quiz-review-badge-ko">✗ Erreur</span>`;
       
       const userChoiceText = (item.selectedIndex !== null && item.options && item.options[item.selectedIndex]) 
         ? item.options[item.selectedIndex] 
@@ -410,17 +399,17 @@ export function initQuizzView(container, quizData) {
       const correctChoiceText = (item.options && item.options[item.correctIndex]) ? item.options[item.correctIndex] : '';
 
       return `
-        <div class="card-item" style="padding: 1.15rem; background: #FFFFFF; border-width: 1px; gap: 0.65rem;">
-          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.5rem;">
-            <span style="font-size:0.78rem; font-weight:800; color:var(--color-brand-purple);">Question ${idx + 1} ${item.competence ? '• ' + escapeHtml(item.competence) : ''}</span>
+        <div class="card-item quiz-review-item">
+          <div class="quiz-review-item-top">
+            <span class="quiz-review-q-label">Question ${idx + 1} ${item.competence ? '• ' + escapeHtml(item.competence) : ''}</span>
             ${badge}
           </div>
-          <h4 style="font-size:0.95rem; font-weight:800; color:var(--color-brand-fig); margin:0;">${escapeHtml(item.questionText)}</h4>
-          <div style="font-size:0.78rem; display:flex; flex-direction:column; gap:0.25rem;">
-            <div><strong style="color:var(--color-text-muted);">Votre réponse :</strong> <span style="color:${item.isCorrect ? 'var(--color-success)' : 'var(--color-danger)'}; font-weight:600;">${escapeHtml(userChoiceText)}</span></div>
-            ${!item.isCorrect ? `<div><strong style="color:var(--color-text-muted);">Bonne réponse :</strong> <span style="color:var(--color-success); font-weight:600;">${escapeHtml(correctChoiceText)}</span></div>` : ''}
+          <h4 class="quiz-review-q-title">${escapeHtml(item.questionText)}</h4>
+          <div class="quiz-review-answers">
+            <div><strong style="color:var(--color-text-muted);">Votre réponse :</strong> <span class="${item.isCorrect ? 'quiz-review-ans-ok' : 'quiz-review-ans-ko'}">${escapeHtml(userChoiceText)}</span></div>
+            ${!item.isCorrect ? `<div><strong style="color:var(--color-text-muted);">Bonne réponse :</strong> <span class="quiz-review-ans-ok">${escapeHtml(correctChoiceText)}</span></div>` : ''}
           </div>
-          ${item.explanation ? `<div style="font-size:0.78rem; color:var(--color-text-body); background:#F8FAFC; border-left:3px solid var(--color-brand-purple); padding:0.5rem 0.75rem; line-height:1.45;">💡 ${escapeHtml(item.explanation)}</div>` : ''}
+          ${item.explanation ? `<div class="quiz-review-expl">${escapeHtml(item.explanation)}</div>` : ''}
         </div>
       `;
     }).join('');

@@ -1,10 +1,10 @@
 // GlossaryView Component (Standard 2026 Wide Desktop Grid)
 
-export function initGlossaryView(container, glossaryData) {
+export function initGlossaryView(container, glossaryData, { initialQuery = '' } = {}) {
   let activeModule = 'ALL';
   let activeLetter = 'ALL';
-  let query = '';
-  let showAdvancedFilters = false;
+  let query = initialQuery || '';
+  const searchIconSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`;
 
   // Extract alphabet letters
   const alphabet = [...new Set(glossaryData.map(d => {
@@ -23,11 +23,11 @@ export function initGlossaryView(container, glossaryData) {
   container.innerHTML = `
     <!-- Search & Quick Filter Toolbar -->
     <div class="search-filter-section">
-      <div class="search-box" id="glossarySearchBox">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="glossarySearchInput" class="search-input" placeholder="Rechercher une notion, un acronyme ou mot-clé..." autocomplete="off">
+      <div class="search-box ${query ? 'has-query' : ''}" id="glossarySearchBox">
+        <span class="search-icon">${searchIconSvg}</span>
+        <input type="text" id="glossarySearchInput" class="search-input" value="${escapeHtml(query)}" placeholder="Rechercher une notion, un acronyme ou mot-clé..." autocomplete="off">
         <kbd class="search-shortcut-badge" title="Raccourci clavier ⌘K ou /">⌘K</kbd>
-        <button id="glossaryClearBtn" class="clear-btn" title="Effacer">✕</button>
+        <button id="glossaryClearBtn" class="clear-btn" style="display: ${query ? 'inline-flex' : 'none'};" title="Effacer" type="button">✕</button>
       </div>
     </div>
 
@@ -147,7 +147,7 @@ export function initGlossaryView(container, glossaryData) {
   // Event Listeners
   searchInput.addEventListener('input', (e) => {
     query = e.target.value;
-    clearBtn.style.display = query ? 'block' : 'none';
+    clearBtn.style.display = query ? 'inline-flex' : 'none';
     searchBox.classList.toggle('has-query', !!query);
     renderCards();
   });

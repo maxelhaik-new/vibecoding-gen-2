@@ -1,6 +1,6 @@
 // Main App Assembler - Platform Formation Vibe Coding (Standard 2026)
-import { GLOSSARY_DATA, PROMPTS_DATA, QUIZ_DATA, TOOLS_DATA, PARCOURS_DATA } from '../data/app-data.js?v=20261027-quieter-v4';
-import { supabase, signOutUser } from './supabaseClient.js?v=20261027-quieter-v4';
+import { GLOSSARY_DATA, PROMPTS_DATA, QUIZ_DATA, TOOLS_DATA, PARCOURS_DATA } from '../data/app-data.js?v=20261027-polish-v6';
+import { supabase, signOutUser } from './supabaseClient.js?v=20261027-polish-v6';
 import {
   renderHeader,
   updateHeader,
@@ -19,7 +19,7 @@ import {
   renderFooter,
   initAuthView,
   showToast
-} from '../components/index.js?v=20261027-quieter-v4';
+} from '../components/index.js?v=20261027-polish-v6';
 
 class AppController {
   constructor() {
@@ -44,12 +44,23 @@ class AppController {
   }
 
   async init() {
-    // 0. Récupérer la session Supabase initiale
+    // 0. Récupérer et vérifier la session Supabase initiale auprès du serveur
     try {
       const { data } = await supabase.auth.getSession();
-      this.currentUser = data?.session?.user || null;
+      if (data?.session?.user) {
+        const { data: userData, error: userErr } = await supabase.auth.getUser();
+        if (userErr || !userData?.user) {
+          await supabase.auth.signOut();
+          this.currentUser = null;
+        } else {
+          this.currentUser = userData.user;
+        }
+      } else {
+        this.currentUser = null;
+      }
     } catch (e) {
       console.warn('[App] Session Supabase initiale indisponible:', e);
+      this.currentUser = null;
     }
 
     // 1. Render Header avec bouton de connexion épuré
@@ -276,8 +287,8 @@ class AppController {
         "Boîte à Outils & Accès Officiels",
         "7 plateformes incontournables pour concevoir, coder, héberger et monétiser vos projets"
       );
-      if (!this.initializedViews.has('tools')) {
-        initToolsView(this.toolsMount, TOOLS_DATA);
+      if (!this.initializedViews.has('tools') || specificParamId) {
+        initToolsView(this.toolsMount, TOOLS_DATA, { initialQuery: specificParamId || '' });
         this.initializedViews.add('tools');
       }
     } else if (tabName === 'prompts') {
@@ -306,8 +317,8 @@ class AppController {
         "Le Glossaire Vibe Coding",
         `${GLOSSARY_DATA.length} notions clés, acronymes et définitions pour le Vibe Coding`
       );
-      if (!this.initializedViews.has('glossary')) {
-        initGlossaryView(this.glossaryMount, GLOSSARY_DATA);
+      if (!this.initializedViews.has('glossary') || specificParamId) {
+        initGlossaryView(this.glossaryMount, GLOSSARY_DATA, { initialQuery: specificParamId || '' });
         this.initializedViews.add('glossary');
       }
     }
@@ -327,7 +338,7 @@ class AppController {
 }
 
 // Global Search Shortcut (Cmd + K / Ctrl + K or '/')
-function setupGlobalSearchShortcut() {
+function setupGlobalSearchShortcut(app) {
   window.addEventListener('keydown', (e) => {
     const isCmdK = (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k';
     const isSlash = e.key === '/' && !['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName) && !document.activeElement?.isContentEditable;
@@ -335,8 +346,11 @@ function setupGlobalSearchShortcut() {
     if (isCmdK || isSlash) {
       e.preventDefault();
       const activeView = document.querySelector('.tab-view.active');
-      if (!activeView) return;
-      const searchInput = activeView.querySelector('.search-input');
+      let searchInput = activeView ? activeView.querySelector('.search-input') : null;
+      if (!searchInput && app) {
+        app.switchTab('welcome');
+        searchInput = document.getElementById('welcomeSearchInput');
+      }
       if (searchInput) {
         searchInput.focus();
         searchInput.select();
@@ -350,5 +364,5 @@ function setupGlobalSearchShortcut() {
 document.addEventListener('DOMContentLoaded', () => {
   const app = new AppController();
   app.init();
-  setupGlobalSearchShortcut();
+  setupGlobalSearchShortcut(app);
 });

@@ -40,7 +40,7 @@ export function renderFooter(container, { onNavigate, onStartTour } = {}) {
             <li><a href="?tab=tools" class="footer-nav-link" data-footer-tab="tools">Boîte à Outils (7)</a></li>
             <li class="footer-tour-item">
               <button type="button" class="footer-tour-btn" id="footerBtnTour" aria-label="Lancer la visite guidée de la plateforme">
-                <span class="footer-tour-icon" aria-hidden="true">🧭</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
                 <span>Visite guidée</span>
               </button>
             </li>

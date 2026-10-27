@@ -14,35 +14,35 @@ export function initTourGuide(options = {}) {
     },
     {
       targetSelector: '.tab-btn[data-tab="parcours"]',
-      fallbackSelector: '#appNavMount',
+      fallbackSelector: '#burgerMenuBtn',
       title: '1. Parcours Coaching (6 séances)',
       text: 'Suivez le programme de vos séances de coaching, consultez les objectifs et cochez vos devoirs intersession au fil de votre progression.',
       placement: 'bottom'
     },
     {
       targetSelector: '.tab-btn[data-tab="glossary"]',
-      fallbackSelector: '#appNavMount',
+      fallbackSelector: '#burgerMenuBtn',
       title: '2. Le Glossaire (57 notions)',
       text: 'Tous les termes et acronymes clés (Context Window, RAG, Zero-Shot, System Prompt...) avec des définitions concrètes pour réviser sans ambiguïté.',
       placement: 'bottom'
     },
     {
       targetSelector: '.tab-btn[data-tab="prompts"]',
-      fallbackSelector: '#appNavMount',
+      fallbackSelector: '#burgerMenuBtn',
       title: '3. Bibliothèque de Prompts',
       text: 'Des templates prêts à l\'emploi : cadrer une application, générer des architectures propres, déboguer et automatiser vos tests.',
       placement: 'bottom'
     },
     {
       targetSelector: '.tab-btn[data-tab="quizz"]',
-      fallbackSelector: '#appNavMount',
+      fallbackSelector: '#burgerMenuBtn',
       title: '4. Entraînement Quizz',
       text: 'Entraînez-vous en conditions d\'examen : chrono 60s, raccourcis clavier [1-4], feedback explicatif immédiat et revue de vos erreurs.',
       placement: 'bottom'
     },
     {
       targetSelector: '.tab-btn[data-tab="tools"]',
-      fallbackSelector: '#appNavMount',
+      fallbackSelector: '#burgerMenuBtn',
       title: '5. Accès & Outils officiels',
       text: 'Accédez aux plateformes officielles (GitHub, Supabase, Stripe...) pour créer vos comptes, héberger et déployer vos projets.',
       placement: 'bottom'
@@ -143,7 +143,7 @@ export function initTourGuide(options = {}) {
     if (!step) return;
 
     let target = document.querySelector(step.targetSelector);
-    if (!target && step.fallbackSelector) {
+    if ((!target || target.offsetParent === null) && step.fallbackSelector) {
       target = document.querySelector(step.fallbackSelector);
     }
 

@@ -1,6 +1,9 @@
 // WelcomeView Component (Standard 2026 - Unboxed Central Hero)
 
 export function initWelcomeView(container, { parcoursData = [], glossaryData = [], promptsData = [], toolsData = [], onNavigate, onStartTour }) {
+  const searchIconSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`;
+  let outsideClickHandler = null;
+
   function render() {
     container.innerHTML = `
       <div class="welcome-container">
@@ -13,8 +16,8 @@ export function initWelcomeView(container, { parcoursData = [], glossaryData = [
 
           <!-- Central Universal Search Cockpit -->
           <div class="welcome-search-wrapper" id="welcomeSearchWrapper">
-            <div class="search-box welcome-search-box">
-              <span class="search-icon" aria-hidden="true">🔍</span>
+            <div class="search-box welcome-search-box" id="welcomeSearchBox">
+              <span class="search-icon" aria-hidden="true">${searchIconSvg}</span>
               <input 
                 type="text" 
                 id="welcomeSearchInput" 
@@ -23,10 +26,11 @@ export function initWelcomeView(container, { parcoursData = [], glossaryData = [
                 autocomplete="off"
                 aria-label="Recherche universelle dans toute la plateforme"
               >
+              <kbd class="search-shortcut-badge" title="Raccourci clavier ⌘K ou /">⌘K</kbd>
               <button 
                 type="button" 
                 id="welcomeSearchClear" 
-                class="btn-clear" 
+                class="clear-btn" 
                 style="display:none;" 
                 aria-label="Effacer la recherche"
               >✕</button>
@@ -70,12 +74,14 @@ export function initWelcomeView(container, { parcoursData = [], glossaryData = [
     });
 
     // 3. Universal Search Logic
+    const searchBox = container.querySelector('#welcomeSearchBox');
     const searchInput = container.querySelector('#welcomeSearchInput');
     const searchClear = container.querySelector('#welcomeSearchClear');
     const resultsContainer = container.querySelector('#welcomeSearchResults');
 
     function executeSearch(query) {
       const q = (query || '').trim().toLowerCase();
+      if (searchBox) searchBox.classList.toggle('has-query', Boolean(q));
       if (!q) {
         resultsContainer.style.display = 'none';
         resultsContainer.innerHTML = '';
@@ -105,7 +111,7 @@ export function initWelcomeView(container, { parcoursData = [], glossaryData = [
           matches.push({
             type: 'parcours',
             tab: 'parcours',
-            badge: `🗺️ ${label}`,
+            badge: label,
             title: title,
             snippet: obj.slice(0, 115) + '...',
             param: session.id
@@ -113,35 +119,47 @@ export function initWelcomeView(container, { parcoursData = [], glossaryData = [
         }
       });
 
-      // A. Glossary matches
+      // A. Glossary matches (word, definition, category, ref)
       glossaryData.forEach(item => {
-        const term = item.term || '';
-        const def = item.def || '';
-        const tag = item.tag || '';
-        if (term.toLowerCase().includes(q) || def.toLowerCase().includes(q) || tag.toLowerCase().includes(q)) {
+        const word = item.word || '';
+        const def = item.definition || '';
+        const cat = item.category || '';
+        const ref = item.ref || '';
+        if (
+          word.toLowerCase().includes(q) ||
+          def.toLowerCase().includes(q) ||
+          cat.toLowerCase().includes(q) ||
+          ref.toLowerCase().includes(q)
+        ) {
           matches.push({
             type: 'glossary',
             tab: 'glossary',
-            badge: '📖 Glossaire',
-            title: term,
-            snippet: def.slice(0, 110) + '...',
-            param: null
+            badge: 'Glossaire',
+            title: word,
+            snippet: def.slice(0, 115) + (def.length > 115 ? '...' : ''),
+            param: word
           });
         }
       });
 
-      // B. Prompts matches
+      // B. Prompts matches (title, description, prompt, tags)
       promptsData.forEach(item => {
         const title = item.title || '';
         const desc = item.description || '';
-        const cat = item.category || '';
-        if (title.toLowerCase().includes(q) || desc.toLowerCase().includes(q) || cat.toLowerCase().includes(q)) {
+        const promptBody = item.prompt || '';
+        const tagsJoined = (item.tags || []).join(' ');
+        if (
+          title.toLowerCase().includes(q) ||
+          desc.toLowerCase().includes(q) ||
+          promptBody.toLowerCase().includes(q) ||
+          tagsJoined.toLowerCase().includes(q)
+        ) {
           matches.push({
             type: 'prompts',
             tab: 'prompts',
-            badge: '⚡ Prompt',
+            badge: 'Prompt',
             title: title,
-            snippet: desc.slice(0, 110) + '...',
+            snippet: desc.slice(0, 115) + (desc.length > 115 ? '...' : ''),
             param: item.id
           });
         }
@@ -156,10 +174,10 @@ export function initWelcomeView(container, { parcoursData = [], glossaryData = [
           matches.push({
             type: 'tools',
             tab: 'tools',
-            badge: '🛠️ Outil',
+            badge: 'Outil',
             title: name,
-            snippet: desc.slice(0, 110) + '...',
-            param: null
+            snippet: desc.slice(0, 115) + (desc.length > 115 ? '...' : ''),
+            param: name
           });
         }
       });
@@ -264,14 +282,18 @@ export function initWelcomeView(container, { parcoursData = [], glossaryData = [
       });
     }
 
-    // Close results when clicking outside
-    document.addEventListener('click', (e) => {
+    // Close results when clicking outside (guarded against duplicate registration)
+    if (outsideClickHandler) {
+      document.removeEventListener('click', outsideClickHandler);
+    }
+    outsideClickHandler = (e) => {
       if (!container.contains(e.target)) {
         if (resultsContainer) {
           resultsContainer.style.display = 'none';
         }
       }
-    });
+    };
+    document.addEventListener('click', outsideClickHandler);
   }
 
   function escapeHtml(str) {

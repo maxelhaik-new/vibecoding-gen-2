@@ -1,8 +1,19 @@
 // ToolsView Component (Standard 2026 Wide Desktop Grid)
 
-export function initToolsView(container, toolsData) {
+export function initToolsView(container, toolsData, { initialQuery = '' } = {}) {
   let activeCategory = 'ALL';
-  let query = '';
+  let query = initialQuery || '';
+  const searchIconSvg = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`;
+
+  const toolSvgById = {
+    'google-ai-pro': `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8L12 2z"></path></svg>`,
+    'google-ai-studio': `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>`,
+    'google-antigravity': `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`,
+    'github': `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M13 6h3a2 2 0 0 1 2 2v7"></path><line x1="6" y1="9" x2="6" y2="21"></line></svg>`,
+    'vercel': `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 3 22 20 2 20 12 3"></polygon></svg>`,
+    'supabase': `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>`,
+    'stripe': `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>`
+  };
 
   function escapeHtml(str) {
     return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -11,11 +22,11 @@ export function initToolsView(container, toolsData) {
   container.innerHTML = `
     <!-- Toolbar Section -->
     <div class="search-filter-section">
-      <div class="search-box" id="toolsSearchBox">
-        <span class="search-icon">🔍</span>
-        <input type="text" id="toolsSearchInput" class="search-input" placeholder="Rechercher un outil (ex: GitHub, Supabase, Stripe...)" autocomplete="off">
+      <div class="search-box ${query ? 'has-query' : ''}" id="toolsSearchBox">
+        <span class="search-icon">${searchIconSvg}</span>
+        <input type="text" id="toolsSearchInput" class="search-input" value="${escapeHtml(query)}" placeholder="Rechercher un outil (ex: GitHub, Supabase, Stripe...)" autocomplete="off">
         <kbd class="search-shortcut-badge" title="Raccourci clavier ⌘K ou /">⌘K</kbd>
-        <button id="toolsClearBtn" class="clear-btn" title="Effacer">✕</button>
+        <button id="toolsClearBtn" class="clear-btn" style="display: ${query ? 'inline-flex' : 'none'};" title="Effacer" type="button">✕</button>
       </div>
     </div>
 
@@ -49,7 +60,7 @@ export function initToolsView(container, toolsData) {
 
     const filtered = toolsData.filter(t => {
       const matchCat = (activeCategory === 'ALL' || t.category === activeCategory);
-      const textToSearch = `${t.name} ${t.description} ${t.category} ${t.cleanUrl}`.toLowerCase();
+      const textToSearch = `${t.name} ${t.description} ${t.category} ${t.url || ''}`.toLowerCase();
       const matchSearch = !q || textToSearch.includes(q);
       return matchCat && matchSearch;
     });
@@ -68,7 +79,7 @@ export function initToolsView(container, toolsData) {
         <div>
           <div class="tool-card-header">
             <h2 class="tool-card-title">
-              <span class="tool-card-icon">${t.icon}</span>
+              <span class="tool-card-icon">${toolSvgById[t.id] || ''}</span>
               <span>${escapeHtml(t.name)}</span>
             </h2>
           </div>
@@ -90,7 +101,7 @@ export function initToolsView(container, toolsData) {
 
   searchInput.addEventListener('input', (e) => {
     query = e.target.value;
-    clearBtn.style.display = query ? 'block' : 'none';
+    clearBtn.style.display = query ? 'inline-flex' : 'none';
     if (searchBox) searchBox.classList.toggle('has-query', !!query);
     renderCards();
   });

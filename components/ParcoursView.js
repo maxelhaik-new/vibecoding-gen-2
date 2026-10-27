@@ -419,6 +419,11 @@ export async function initParcoursView(container, parcoursData = [], { initialSe
 
         isSyncing = true;
         render();
+        const restoreFocus = () => {
+          const cb = container.querySelector(`.parcours-hw-checkbox[data-hw-id="${hwId}"]`);
+          if (cb) cb.focus({ preventScroll: true });
+        };
+        restoreFocus();
 
         try {
           await setHomeworkTaskStatus(user.id, sessionId, hwId, isChecked);
@@ -430,6 +435,7 @@ export async function initParcoursView(container, parcoursData = [], { initialSe
         } finally {
           isSyncing = false;
           render();
+          restoreFocus();
         }
       });
     });
@@ -463,6 +469,9 @@ export async function initParcoursView(container, parcoursData = [], { initialSe
     const resetAllBtn = container.querySelector('#parcoursResetAllBtn');
     if (resetAllBtn) {
       resetAllBtn.addEventListener('click', async () => {
+        if (!confirm('Réinitialiser toute votre progression de devoirs sur les 6 séances ?')) {
+          return;
+        }
         const backup = new Set(completedTasks);
         completedTasks.clear();
         isSyncing = true;

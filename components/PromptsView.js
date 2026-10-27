@@ -6,20 +6,21 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
   let query = '';
   let isolatedPromptId = initialPromptId;
 
-  // Extract unique tags and calculate frequencies
+  // Extract unique tags and calculate frequencies (excluding generic 'Exemple')
   const tagCounts = {};
   promptsData.forEach(p => p.tags.forEach(t => {
+    if (t === 'Exemple') return;
     tagCounts[t] = (tagCounts[t] || 0) + 1;
   }));
 
-  // Preferred 5 core topics (excluding 'Exemple' which is on 10/13 prompts)
+  // Preferred 5 core topics
   const allUniqueTags = Object.keys(tagCounts);
   const preferredPrimary = ['Frontend', 'Architecture', 'Sécurité', 'UI / UX', 'Backend'];
   const primaryTags = preferredPrimary.filter(t => allUniqueTags.includes(t));
   
   if (primaryTags.length < 5) {
     const candidates = allUniqueTags
-      .filter(t => !primaryTags.includes(t) && t !== 'Exemple')
+      .filter(t => !primaryTags.includes(t))
       .sort((a, b) => tagCounts[b] - tagCounts[a] || a.localeCompare(b));
     primaryTags.push(...candidates.slice(0, 5 - primaryTags.length));
   }
@@ -45,7 +46,7 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
     <div id="promptsToolbar" style="display: ${isolatedPromptId ? 'none' : 'block'};">
       <div class="search-filter-section">
         <div class="search-box" id="promptsSearchBox">
-          <span class="search-icon">🔍</span>
+          <span class="search-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
           <input type="text" id="promptsSearchInput" class="search-input" placeholder="Rechercher un prompt par mot-clé (ex: Vercel, Supabase, bug...)" autocomplete="off">
           <kbd class="search-shortcut-badge" title="Raccourci clavier ⌘K ou /">⌘K</kbd>
           <button id="promptsClearBtn" class="clear-btn" title="Effacer">✕</button>
@@ -120,41 +121,70 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
     cardsContainer.innerHTML = filtered.map(renderPromptCardHtml).join('');
   }
 
+  const copyIconSvg = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>`;
+  const checkIconSvg = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+
   function renderPromptCardHtml(item) {
+    const cleanTags = (item.tags || []).filter(t => t !== 'Exemple').slice(0, 3);
     return `
       <article class="prompt-card">
-        <div>
-          <div class="prompt-header">
-            <h2 class="prompt-title">${escapeHtml(item.title)}</h2>
-            <div class="prompt-tags">
-              ${item.tags.map(t => `<span class="prompt-tag-badge">${escapeHtml(t)}</span>`).join('')}
-            </div>
-          </div>
-          <p class="prompt-desc" style="margin: 0.65rem 0 1rem 0;">${escapeHtml(item.description)}</p>
-          <div class="prompt-box">${escapeHtml(item.prompt)}</div>
+        <div class="prompt-card-top">
+          <h2 class="prompt-title">${escapeHtml(item.title)}</h2>
+          <p class="prompt-desc">${escapeHtml(item.description)}</p>
         </div>
-        <div style="display: flex; justify-content: flex-end; padding-top: 0.75rem; border-top: 1px dashed var(--color-border);">
-          <button class="btn-copy-prompt" data-prompt="${encodeURIComponent(item.prompt)}">
-            <span>📋</span> Copier le prompt
+
+        <div class="prompt-box">
+          <button
+            type="button"
+            class="prompt-copy-toggle"
+            data-prompt="${encodeURIComponent(item.prompt)}"
+            aria-label="Copier le prompt"
+            aria-pressed="false"
+            title="Copier le prompt"
+          >
+            ${copyIconSvg}
           </button>
+          <div class="prompt-code-text">${escapeHtml(item.prompt)}</div>
         </div>
+
+        ${cleanTags.length > 0 ? `
+          <div class="prompt-tags">
+            ${cleanTags.map(t => `<button type="button" class="prompt-tag-badge" data-tag-click="${escapeHtml(t)}">${escapeHtml(t)}</button>`).join('')}
+          </div>
+        ` : ''}
       </article>
     `;
   }
 
-  // Copy to clipboard event delegation with tactile micro-interaction
+  // Copy to clipboard toggle & tag click delegation
   cardsContainer.addEventListener('click', (e) => {
-    const btn = e.target.closest('.btn-copy-prompt');
+    const tagBtn = e.target.closest('[data-tag-click]');
+    if (tagBtn && !isolatedPromptId) {
+      const clickedTag = tagBtn.dataset.tagClick;
+      if (clickedTag) {
+        activeTag = clickedTag;
+        tagPillsContainer.querySelectorAll('.filter-pill:not(#btnToggleTags)').forEach(b => {
+          b.classList.toggle('active', b.dataset.tag === clickedTag);
+        });
+        renderCards();
+      }
+      return;
+    }
+
+    const btn = e.target.closest('.prompt-copy-toggle');
     if (!btn) return;
     const promptText = decodeURIComponent(btn.dataset.prompt);
     navigator.clipboard.writeText(promptText).then(() => {
       btn.classList.add('copied');
-      const originalHtml = btn.innerHTML;
-      btn.innerHTML = '<span>✓</span> Copié !';
-      showToast("Prompt copié dans le presse-papiers ! ✓");
+      btn.setAttribute('aria-pressed', 'true');
+      btn.setAttribute('title', 'Copié !');
+      btn.innerHTML = checkIconSvg;
+      showToast("Prompt copié ✓");
       setTimeout(() => {
         btn.classList.remove('copied');
-        btn.innerHTML = originalHtml;
+        btn.setAttribute('aria-pressed', 'false');
+        btn.setAttribute('title', 'Copier le prompt');
+        btn.innerHTML = copyIconSvg;
       }, 1800);
     }).catch(() => {
       showToast("Erreur lors de la copie");
@@ -165,7 +195,7 @@ export function initPromptsView(container, promptsData, { initialPromptId = null
 
   searchInput.addEventListener('input', (e) => {
     query = e.target.value;
-    clearBtn.style.display = query ? 'block' : 'none';
+    clearBtn.style.display = query ? 'inline-flex' : 'none';
     if (searchBox) searchBox.classList.toggle('has-query', !!query);
     renderCards();
   });
